@@ -289,7 +289,8 @@ repository:
       endCaptures:
         '0': { name: punctuation.definition.parameters.end.ballerina }
       patterns:
-      - match: '{{identifier}}'
+      - include: '#types'
+      - match: \b({{identifier}})\b
         name: variable.parameter.ballerina
       - include: '#defaultValue'
 
@@ -428,6 +429,7 @@ repository:
       end: '(?<=\})'
       patterns:
       - include: '#varDefBlockBody'
+      - include: '#functionDec'
 
   varDefBlockBody:
     patterns:
@@ -453,6 +455,17 @@ repository:
       - include: '#continuedType'
       - include: '#comment'
 
+  types:
+    patterns:
+    - name: storage.type.ballerina
+      match: \b(boolean|int|float|string|var|any|datatable|table|blob)\b
+
+    - name: storage.type.ballerina
+      match: \b(map|exception|json|xml|xmlns|error)\b
+
+    - name: storage.type.siddhi.ballerina
+      match: \b(stream|streamlet|aggregation)\b
+
   keywords:
     patterns:
     - name: keyword.control.ballerina
@@ -464,15 +477,6 @@ repository:
     - name: keyword.other.siddhi.ballerina
       match: \b(from|on|select|group|by|having|order|where|followed|insert|into|update|delete|set|for|window|query)\b
 
-    - name: storage.type.ballerina
-      match: \b(boolean|int|float|string|var|any|datatable|table|blob)\b
-
-    - name: storage.type.ballerina
-      match: \b(map|exception|json|xml|xmlns|error)\b
-
-    - name: storage.type.siddhi.ballerina
-      match: \b(stream|streamlet|aggregation)\b
-
     - name: keyword.other.ballerina
       match: \b(annotation|package|type|typedesc|connector|function|resource|service|action|worker|struct|transformer|endpoint|object)\b
 
@@ -481,6 +485,8 @@ repository:
 
     - name: keyword.operator.ballerina
       match: (!|%|\+|\-|~=|==|=|!=|<|>|&&|\|\|)
+
+    - include: '#types'
 
   code:
     patterns:
