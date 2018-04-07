@@ -24,26 +24,8 @@ patterns:
 repository:
   annotationDec:
     patterns:
-    - begin: '@'
-      beginCaptures:
-        '0': { name: storage.type.annotation.ballerina }
-      end: '(?<=\})'
-      patterns:
-      - include: '#annotationDecBody'
-      - match: '{{identifier}}'
-        name: storage.type.annotation.ballerina
-
-  annotationDecBody:
-    patterns:
-    - begin: \{
-      beginCaptures:
-        '0': { name: punctuation.definition.block.ballerina.documentation }
-      end: \}
-      endCaptures:
-        '0': { name: punctuation.definition.block.ballerina.documentation }
-      patterns:
-      - include: '#comment'
-      - include: '#code'
+    - match: '@{{identifier}}'
+      name: storage.type.annotation.ballerina
 
   booleans:
     patterns:
