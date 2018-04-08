@@ -389,10 +389,6 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#matchStatement</string>
-              </dict>
-              <dict>
-                <key>include</key>
                 <string>#code</string>
               </dict>
             </array>
@@ -1538,6 +1534,10 @@
           <dict>
             <key>include</key>
             <string>#comment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#matchStatement</string>
           </dict>
           <dict>
             <key>include</key>

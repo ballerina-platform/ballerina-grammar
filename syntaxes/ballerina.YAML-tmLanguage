@@ -135,7 +135,6 @@ repository:
         '0': { name: punctuation.definition.block.ballerina }
       patterns:
       - include: '#comment'
-      - include: '#matchStatement'
       - include: '#code'
 
   functionDec:
@@ -512,5 +511,6 @@ repository:
     - include: '#paranthesisedBracket'
     - include: '#numbers'
     - include: '#comment'
+    - include: '#matchStatement'
     - include: '#butExp'
     - include: '#identifiers'
