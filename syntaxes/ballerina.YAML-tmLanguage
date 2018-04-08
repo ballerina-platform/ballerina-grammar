@@ -32,6 +32,38 @@ repository:
     - match: '\b(true|false)\b'
       name: constant.language.boolean.ballerina
 
+  butExp:
+    patterns:
+    - begin: '\b(but)\b'
+      beginCaptures:
+        '1': { name:  keyword.ballerina }
+      end: '(?<=\})'
+      patterns:
+      - include: '#butExpBody'
+
+  butExpBody:
+    patterns:
+    - begin: \{
+      beginCaptures:
+        '0': { name: punctuation.definition.block.ballerina.documentation }
+      end: \}
+      endCaptures:
+        '0': { name: punctuation.definition.block.ballerina.documentation }
+      patterns:
+      - match: '\b{{identifier}}\b'
+        name: storage.type.ballerina
+      - include: '#butClause'
+      - include: '#comment'
+
+  butClause:
+    patterns:
+    - begin: '=>'
+      beginCaptures:
+        '0': { name:  keyword.ballerina }
+      end: ','
+      patterns:
+      - include: '#code'
+
   comment:
     patterns:
     - name: comment.ballerina
@@ -177,12 +209,12 @@ repository:
       - include: '#comment'
       - include: '#code'
 
-  matchedStatement:
+  matchStatementPatternClause:
     patterns:
     - begin: '=>'
       beginCaptures:
         '0': { name:  keyword.ballerina }
-      end: '((?<=\})|;)'
+      end: '((?<=\})|;|,)'
       patterns:
       - include: '#functionBody'
       - include: '#code'
@@ -208,7 +240,7 @@ repository:
         '0': { name: punctuation.definition.block.ballerina.documentation }
       patterns:
       - include: '#varDefStatement'
-      - include: '#matchedStatement'
+      - include: '#matchStatementPatternClause'
 
   numbers:
     patterns:
@@ -474,10 +506,11 @@ repository:
     patterns:
     - include: '#booleans'
     - include: '#keywords'
-    - include: '#identifiers'
     - include: '#strings'
     - include: '#maps'
     - include: '#paranthesised'
     - include: '#paranthesisedBracket'
     - include: '#numbers'
     - include: '#comment'
+    - include: '#butExp'
+    - include: '#identifiers'
