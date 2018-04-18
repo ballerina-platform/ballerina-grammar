@@ -461,7 +461,7 @@ repository:
     - begin: \b({{identifier}})\b
       beginCaptures:
         '1': { name: storage.type.ballerina }
-      end: \b({{identifier}})\b
+      end: \b({{identifier}})\b|(?==>)
       endCaptures:
         '1': { name: variable.parameter.ballerina }
       patterns:
