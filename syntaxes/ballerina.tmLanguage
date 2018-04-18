@@ -1406,7 +1406,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>\b(([a-zA-Z_]([a-zA-Z0-9_])*)|(\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))\b</string>
+            <string>\b(([a-zA-Z_]([a-zA-Z0-9_])*)|(\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))\b|(?==&gt;)</string>
             <key>endCaptures</key>
             <dict>
               <key>1</key>
