@@ -33,6 +33,8 @@ variables.forEach(name => {
     setVariable(grammar, {name, value: grammar.variables[name]});
 });
 
+delete grammar.variables;
+
 const outText = plist.build(grammar);
 fs.writeFileSync(outFile, outText);
 
