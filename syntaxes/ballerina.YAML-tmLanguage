@@ -6,26 +6,38 @@ fileTypes: [bal]
 uuid: c01f5512-489a-41bd-ba5d-caf4b55ae3b3
 
 variables:
-  identifier: '({{letter}}({{letterOrDigit}})*)|(\^"{{identifierLiteralChar}}+")'
+  identifier: '(?:{{letter}}{{letterOrDigit}}*)|(?:\^"{{identifierLiteralChar}}+")'
   letter: '[a-zA-Z_]'
   letterOrDigit: '[a-zA-Z0-9_]'
   identifierLiteralChar: ([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])
 
+monarchVariables:
+  typeScope: 'type.ballerina'
+  annotationScope: 'type.ballerina'
+  numberScope: 'number'
+
+tmlVariables:
+  typeScope: 'storage.type.ballerina'
+  annotationScope: 'storage.type.annotation.ballerina'
+  numberScope: 'constant.numeric.decimal.ballerina'
+
 patterns:
-- include: '#publicKeyword'
 - include: '#functionDec'
 - include: '#serviceDec'
+- include: '#endpointDef'
 - include: '#documentationDef'
 - include: '#typeDef'
 - include: '#objectDec'
 - include: '#annotationDec'
+- include: '#recordLiteral'
+- include: '#comment'
 - include: '#code'
 
 repository:
   annotationDec:
     patterns:
-    - match: '@{{identifier}}'
-      name: storage.type.annotation.ballerina
+    - match: '@((?:{{identifier}}):)?(?:{{identifier}})'
+      name: '{{annotationScope}}'
 
   booleans:
     patterns:
@@ -34,13 +46,42 @@ repository:
 
   butExp:
     patterns:
-    - begin: '\b(but)\b'
+    - begin: '\bbut\b'
       beginCaptures:
-        '1': { name:  keyword.ballerina }
-      end: '(?<=\})'
+        '0': { name:  keyword.ballerina }
+      end: '\}'
+      endCaptures:
+        '0': { name: punctuation.definition.block.ballerina.documentation }
       patterns:
-      - include: '#matchStatementBody'
+      - include: '#butExpBody'
       - include: '#comment'
+
+  butExpBody:
+    patterns:
+    - begin: \{
+      beginCaptures:
+        '0': { name: punctuation.definition.block.ballerina.documentation }
+      end: '(?=\})'
+      endCaptures:
+        '0': { name: punctuation.definition.block.ballerina.documentation }
+      patterns:
+      - include: '#parameter'
+      - include: '#butClause'
+      - include: '#comment'
+
+  butClause:
+    patterns:
+    - begin: '=>'
+      beginCaptures:
+        '0': { name:  keyword.operator.ballerina }
+      end: ',|(?=\})'
+      patterns:
+      - include: '#code'
+
+  call:
+    patterns:
+    - match: ({{identifier}})\s*(?=\()
+      name: entity.name.function.ballerina
 
   comment:
     patterns:
@@ -50,9 +91,11 @@ repository:
   continuedType:
     patterns:
     - begin: '[|,:]'
-      end: \b({{identifier}})\b
+      beginCaptures:
+        '0': { name:  keyword.operator.ballerina }
+      end: \b{{identifier}}\b
       endCaptures:
-        '1': { name: storage.type.ballerina }
+        '0': { name: '{{typeScope}}' }
       patterns:
       - include: '#comment'
 
@@ -74,29 +117,34 @@ repository:
   defaultValue:
     patterns:
     - begin: '[=:]'
+      beginCaptures:
+        '0': { name:  keyword.operator.ballerina }
       end: (?=[,)])
       patterns:
         - include: '#code'
 
   documentationDef:
     patterns:
-    - begin: \b(documentation|deprecated)\b
+    - begin: \b(?:documentation|deprecated)\b
       beginCaptures:
-        '1': { name:  keyword.ballerina }
-      end: '(?<=\})'
+        '0': { name:  keyword.ballerina }
+      end: '\}'
+      endCaptures:
+        '0': { name: delimiter.curly }
       patterns:
       - include: '#documentationBody'
+      - include: '#comment'
   
   documentationBody:
     patterns:
     - begin: \{
       beginCaptures:
         '0': { name: punctuation.definition.block.ballerina.documentation }
-      end: \}
+      end: '(?=\})'
       endCaptures:
         '0': { name: punctuation.definition.block.ballerina.documentation }
       patterns:
-      - match: (P|R|T|F|V)({{)(.+)(}})
+      - match: (P|R|T|F|V)({{)(.*)(}})
         captures:
           '1': {name: keyword.other.ballerina.documentation}
           '2': {name: keyword.other.ballerina.documentation}
@@ -117,25 +165,37 @@ repository:
 
       - name: comment.block.ballerina.documentation
         match: .
+  
+  endpointDef:
+    patterns:
+    - begin: '\bendpoint\b'
+      beginCaptures:
+        '0': { name:  keyword.ballerina }
+      end: ';'
+      patterns:
+      - include: '#parameter'
+      - include: '#recordLiteral'
+      - include: '#comment'
 
   functionBody:
     patterns:
     - begin: '\{'
-      end: '\}'
+      end: '(?=\})'
       beginCaptures:
         '0': { name: punctuation.definition.block.ballerina }
       endCaptures:
         '0': { name: punctuation.definition.block.ballerina }
       patterns:
-      - include: '#comment'
       - include: '#code'
 
   functionDec:
     patterns:
-    - begin: '\b(function)\b'
+    - begin: '\bfunction\b'
       beginCaptures:
-        '1': { name:  keyword.ballerina }
-      end: '(?<=\})'
+        '0': { name:  keyword.ballerina }
+      end: '\}|(?=;)'
+      endCaptures:
+        '0': { name:  punctuation.definition.block.ballerina }
       patterns:
       - include: '#functionReceiver'
       - include: '#functionParameters'
@@ -154,12 +214,13 @@ repository:
     - begin: '\('
       end: '\)'
       beginCaptures:
-        '0': { name: punctuation.definition.parameters.begin.ballerina }
+        '0': { name: delimiter.parenthesis }
       endCaptures:
-        '0': { name: punctuation.definition.parameters.end.ballerina }
+        '0': { name: delimiter.parenthesis }
       patterns:
-      - include: '#varDefStatement'
+      - include: '#parameter'
       - include: '#defaultValue'
+      - include: '#comment'
 
   functionReceiver:
     patterns:
@@ -170,7 +231,7 @@ repository:
       endCaptures:
         '0': { name: punctuation.definition.parameters.end.ballerina }
       patterns:
-      - include: '#varDefStatement'
+      - include: '#parameter'
       - include: '#comment'
 
   functionReturns:
@@ -178,16 +239,13 @@ repository:
     - begin: '\breturns\b'
       beginCaptures:
         '0': { name: keyword.ballerina }
-      end: (?=\{)
+      end: (?=\{|;)
+      endCaptures:
+        '0': { name: curly }
       patterns:
         - match: '{{identifier}}'
-          name: storage.type.ballerina
+          name: '{{typeScope}}'
         - include: '#comment'
-
-  identifiers:
-    patterns:
-    - match: '{{identifier}}'
-      name: variable.other.ballerina
 
   maps:
     patterns:
@@ -198,7 +256,6 @@ repository:
       endCaptures:
         '0': { name: punctuation.definition.string.end.ballerina }
       patterns:
-      - include: '#comment'
       - include: '#code'
 
   matchStatementPatternClause:
@@ -206,49 +263,52 @@ repository:
     - begin: '=>'
       beginCaptures:
         '0': { name:  keyword.ballerina }
-      end: '((?<=\})|;|,)'
+      end: '((\})|;|,)'
       patterns:
       - include: '#functionBody'
       - include: '#code'
 
   matchStatement:
     patterns:
-    - begin: '\b(match)\b'
+    - begin: '\bmatch\b'
       beginCaptures:
-        '1': { name:  keyword.ballerina }
-      end: '(?<=\})'
+        '0': { name:  keyword.ballerina }
+      end: '\}'
       patterns:
       - match: '{{identifier}}'
         name: variable.parameter.ballerina
       - include: '#matchStatementBody'
+      - include: '#comment'
 
   matchStatementBody:
     patterns:
     - begin: \{
       beginCaptures:
         '0': { name: punctuation.definition.block.ballerina.documentation }
-      end: \}
+      end: (?=\})
       endCaptures:
         '0': { name: punctuation.definition.block.ballerina.documentation }
       patterns:
-      - include: '#varDefStatement'
+      - include: '#parameter'
       - include: '#matchStatementPatternClause'
+      - include: '#comment'
 
   numbers:
     patterns:
-    - match: '\b[0-9]+\b'
-      name: constant.numeric.decimal.ballerina
+    - match: '\b0[xX][\da-f]+\b|\b\d+\.?\d*'
+      name: '{{numberScope}}'
 
   objectBody:
     patterns:
     - begin: '\{'
-      end: '\}'
+      end: '(?=\})'
       beginCaptures:
         '0': { name: punctuation.definition.block.ballerina }
       endCaptures:
         '0': { name: punctuation.definition.block.ballerina }
       patterns:
       - include: '#varDefBlock'
+      - include: '#documentationDef'
       - include: '#objectInitDec'
       - include: '#functionDec'
       - include: '#comment'
@@ -256,10 +316,12 @@ repository:
 
   objectDec:
     patterns:
-    - begin: '\b(object)\b'
+    - begin: '\bobject\b'
       beginCaptures:
-        '1': { name:  keyword.ballerina }
-      end: '(?<=\})'
+        '0': { name:  keyword.ballerina }
+      end: '\}'
+      endCaptures:
+        '0': { name: delimiter.curly }
       patterns:
       - include: '#objectBody'
       - include: '#comment'
@@ -267,7 +329,7 @@ repository:
   objectInitBody:
     patterns:
     - begin: '\{'
-      end: '\}'
+      end: '(?=\})'
       beginCaptures:
         '0': { name: punctuation.definition.block.ballerina }
       endCaptures:
@@ -278,10 +340,10 @@ repository:
 
   objectInitDec:
     patterns:
-    - begin: '\b(new)\b'
+    - begin: '\bnew\b'
       beginCaptures:
-        '1': { name:  keyword.ballerina }
-      end: '(?<=\})'
+        '0': { name:  keyword.ballerina }
+      end: '\}'
       patterns:
       - include: '#objectInitParameters'
       - include: '#objectInitBody'
@@ -295,10 +357,9 @@ repository:
       endCaptures:
         '0': { name: punctuation.definition.parameters.end.ballerina }
       patterns:
-      - include: '#types'
+      - include: '#code'
       - match: \b({{identifier}})\b
         name: variable.parameter.ballerina
-      - include: '#defaultValue'
 
   paranthesised:
     patterns:
@@ -316,15 +377,21 @@ repository:
       - include: '#comment'
       - include: '#code'
 
-  publicKeyword:
+  recordLiteral:
     patterns:
-    - match: '\bpublic\b'
-      name: keyword.ballerina
+    - begin: '\{'
+      end: '\}'
+      beginCaptures:
+        '0': { name: punctuation.definition.block.ballerina }
+      endCaptures:
+        '0': { name: punctuation.definition.block.ballerina }
+      patterns:
+      - include: '#code'
 
   resourceBody:
     patterns:
     - begin: '\{'
-      end: '\}'
+      end: '(?=\})'
       beginCaptures:
         '0': { name: punctuation.definition.block.ballerina }
       endCaptures:
@@ -335,10 +402,10 @@ repository:
 
   resourceDef:
     patterns:
-    - begin: '\b({{identifier}})\b'
+    - begin: '\b{{identifier}}\b'
       beginCaptures:
-        '1': { name: entity.name.function.ballerina }
-      end: '(?<=\})'
+        '0': { name: entity.name.function.ballerina }
+      end: '\}'
       patterns:
       - include: '#comment'
       - include: '#functionParameters'
@@ -347,40 +414,65 @@ repository:
   serviceBody:
     patterns:
     - begin: '\{'
-      end: '\}'
+      end: '(?=\})'
       beginCaptures:
         '0': { name: punctuation.definition.block.ballerina }
       endCaptures:
-        '0': { name: punctuation.definition.block.ballerina }
+        # '0': { name: punctuation.definition.block.ballerina }
+        '0': { name: keyword }
       patterns:
       - include: '#comment'
       - include: '#documentationDef'
       - include: '#annotationDec'
       - include: '#resourceDef'
+      - include: '#recordLiteral'
 
   serviceDec:
     patterns:
-    - begin: '\b(service)\b'
+    - begin: '\bservice\b'
+      end: '\}'
       beginCaptures:
-        '1': { name:  keyword.ballerina }
-      end: '(?<=\})'
+        '0': { name:  keyword.ballerina }
+      endCaptures:
+        '0': { name: punctuation.definition.block.ballerina }
       patterns:
       - include: '#serviceReceiver'
       - include: '#serviceEndpointAttachments'
       - include: '#serviceName'
-      - include: '#serviceBody'
       - include: '#comment'
+      - include: '#serviceBody'
+      - include: '#serviceBindVarContinued'
+
+  serviceBindVarContinued:
+    patterns:
+    - begin: ','
+      end: '{{identifier}}'
+      endCaptures:
+        '0': { name: variable.parameter.ballerina }
 
   serviceEndpointAttachments:
     patterns:
     - begin: 'bind'
       beginCaptures:
         '0': { name: keyword.ballerina }
-      end: (?=\{)
+      end: '(\})|({{identifier}})'
+      endCaptures:
+        '1': { name: punctuation.definition.block.ballerina }
+        '2': { name: variable.parameter.ballerina }
       patterns:
-        - match: '{{identifier}}'
-          name: variable.parameter.ballerina
+        - include: '#serviceBindRecordLiteral'
         - include: '#comment'
+
+  serviceBindRecordLiteral:
+    patterns:
+    - begin: '\{'
+      end: '(?=\})'
+      beginCaptures:
+        '0': { name: punctuation.definition.block.ballerina }
+      endCaptures:
+        '0': { name: punctuation.definition.block.ballerina }
+      patterns:
+      - include: '#code'
 
   serviceName:
     patterns:
@@ -402,25 +494,26 @@ repository:
 
   strings:
     patterns:
-    - name: string.quoted.double.ballerina
-      begin: \"
+    - begin: \"
       end: \"
       beginCaptures:
-        '0': { name: punctuation.definition.string.begin.ballerina }
+        '0': { name: string.begin.ballerina }
       endCaptures:
-        '0': { name: punctuation.definition.string.end.ballerina }
+        '0': { name: string.end.ballerina }
       patterns:
         - name: constant.character.escape.ballerina
           match: \\.
+        - name: string
+          match: '.'
 
   typeDef:
     patterns:
-    - begin: '\b(type)\b'
+    - begin: '\btype\b'
       beginCaptures:
-        '1': { name:  keyword.ballerina }
-      end: '\b({{identifier}})\b'
+        '0': { name:  keyword.ballerina }
+      end: '\b{{identifier}}\b'
       endCaptures:
-        '1': { name: entity.name.function.ballerina }
+        '0': { name: entity.name.function.ballerina }
       patterns:
       - include: '#objectDec'
       - match: '{{identifier}}'
@@ -429,10 +522,10 @@ repository:
 
   varDefBlock:
     patterns:
-    - begin: \b(private|public)\b
+    - begin: \b(?:private|public)\b
       beginCaptures:
-        '1': { name:  keyword.ballerina }
-      end: '(?<=\})'
+        '0': { name:  keyword.ballerina }
+      end: '\}|;'
       patterns:
       - include: '#varDefBlockBody'
       - include: '#functionDec'
@@ -442,21 +535,20 @@ repository:
     - begin: \{
       beginCaptures:
         '0': { name: punctuation.definition.block.ballerina.documentation }
-      end: \}
+      end: (?=\})
       endCaptures:
         '0': { name: punctuation.definition.block.ballerina.documentation }
       patterns:
-      - include: '#comment'
-      - include: '#varDefStatement'
+      - include: '#code'
 
-  varDefStatement:
+  parameter:
     patterns:
-    - begin: \b({{identifier}})\b
+    - begin: \b(?:{{identifier}})\b
       beginCaptures:
-        '1': { name: storage.type.ballerina }
-      end: \b({{identifier}})\b|(?==>)
+        '0': { name: '{{typeScope}}' }
+      end: \b(?:{{identifier}})\b|(?==>)|(?=\))
       endCaptures:
-        '1': { name: variable.parameter.ballerina }
+        '0': { name: variable.parameter.ballerina }
       patterns:
       - include: '#continuedType'
       - include: '#constrainType'
@@ -464,13 +556,13 @@ repository:
 
   types:
     patterns:
-    - name: storage.type.ballerina
+    - name: '{{typeScope}}'
       match: \b(boolean|int|float|string|var|any|datatable|table|blob)\b
 
-    - name: storage.type.ballerina
+    - name: '{{typeScope}}'
       match: \b(map|exception|json|xml|xmlns|error)\b
 
-    - name: storage.type.siddhi.ballerina
+    - name: '{{typeScope}}'
       match: \b(stream|streamlet|aggregation)\b
 
   keywords:
@@ -479,7 +571,7 @@ repository:
       match: \b(if|else|iterator|try|catch|finally|fork|join|all|some|while|foreach|in|throw|return|returns|break|timeout|transaction|aborted|abort|committed|failed|retries|next|bind|with|lengthof|typeof|enum)\b
 
     - name: keyword.other.ballerina
-      match: \b(import|version|public|private|attach|as|native|documentation|lock)\b
+      match: \b(import|version|public|private|attach|as|native|documentation|lock|new)\b
 
     - name: keyword.other.siddhi.ballerina
       match: \b(forever|from|on|select|group|by|having|order|where|followed|insert|into|update|delete|set|for|window|query)\b
@@ -498,6 +590,8 @@ repository:
   code:
     patterns:
     - include: '#booleans'
+    - include: '#matchStatement'
+    - include: '#butExp'
     - include: '#keywords'
     - include: '#strings'
     - include: '#maps'
@@ -505,6 +599,3 @@ repository:
     - include: '#paranthesisedBracket'
     - include: '#numbers'
     - include: '#comment'
-    - include: '#matchStatement'
-    - include: '#butExp'
-    - include: '#identifiers'
