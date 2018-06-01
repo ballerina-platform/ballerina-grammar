@@ -1735,13 +1735,13 @@
             <key>name</key>
             <string>keyword.control.ballerina</string>
             <key>match</key>
-            <string>\b(if|else|iterator|try|catch|finally|fork|join|all|some|while|foreach|in|throw|return|returns|break|timeout|transaction|aborted|abort|committed|failed|retries|next|bind|with|lengthof|typeof|enum)\b</string>
+            <string>\b(if|else|iterator|try|catch|finally|fork|join|all|some|while|foreach|in|throw|return|returns|break|timeout|transaction|aborted|abort|committed|failed|retries|onretry|oncommit|onabort|continue|bind|with|lengthof|typeof|enum)\b</string>
           </dict>
           <dict>
             <key>name</key>
             <string>keyword.other.ballerina</string>
             <key>match</key>
-            <string>\b(import|version|public|private|attach|as|native|documentation|lock|new)\b</string>
+            <string>\b(import|version|public|private|attach|as|native|documentation|lock|new|record|limit|ascending|descending|check|start|done|untaint)\b</string>
           </dict>
           <dict>
             <key>name</key>
