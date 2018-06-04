@@ -83,7 +83,7 @@
             <key>match</key>
             <string>@((?:(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+")):)?(?:(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))</string>
             <key>name</key>
-            <string>{{annotationScope}}</string>
+            <string>storage.type.annotation.ballerina</string>
           </dict>
         </array>
       </dict>
@@ -254,7 +254,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>{{typeScope}}</string>
+                <string>storage.type.ballerina</string>
               </dict>
             </dict>
             <key>patterns</key>
@@ -720,7 +720,7 @@
                 <key>match</key>
                 <string>(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+")</string>
                 <key>name</key>
-                <string>{{typeScope}}</string>
+                <string>storage.type.ballerina</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -884,7 +884,7 @@
             <key>match</key>
             <string>\b0[xX][\da-f]+\b|\b\d+\.?\d*</string>
             <key>name</key>
-            <string>{{numberScope}}</string>
+            <string>constant.numeric.decimal.ballerina</string>
           </dict>
         </array>
       </dict>
@@ -1672,7 +1672,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>{{typeScope}}</string>
+                <string>storage.type.ballerina</string>
               </dict>
             </dict>
             <key>end</key>
@@ -1709,19 +1709,19 @@
         <array>
           <dict>
             <key>name</key>
-            <string>{{typeScope}}</string>
+            <string>storage.type.ballerina</string>
             <key>match</key>
             <string>\b(boolean|int|float|string|var|any|datatable|table|blob)\b</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>{{typeScope}}</string>
+            <string>storage.type.ballerina</string>
             <key>match</key>
             <string>\b(map|exception|json|xml|xmlns|error)\b</string>
           </dict>
           <dict>
             <key>name</key>
-            <string>{{typeScope}}</string>
+            <string>storage.type.ballerina</string>
             <key>match</key>
             <string>\b(stream|streamlet|aggregation)\b</string>
           </dict>

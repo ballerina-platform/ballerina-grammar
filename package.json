@@ -1,6 +1,6 @@
 {
   "name": "ballerina-grammar",
-  "version": "0.970.0-alpha1",
+  "version": "0.972.1",
   "description": "Grammar files for ballerina",
   "main": "index.js",
   "scripts": {

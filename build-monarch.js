@@ -28,7 +28,7 @@ const inText = fs.readFileSync(inFile, 'utf-8');
 
 grammar = yaml.safeLoad(inText);
 
-variables = Object.assign({}, grammar.monarchVariables, grammar.variables);
+const variables = Object.assign({}, grammar.monarchVariables, grammar.variables);
 
 Object.keys(variables).forEach(name => {
     setVariable(grammar, {name, value: variables[name]});

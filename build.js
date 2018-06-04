@@ -27,10 +27,10 @@ const outFile = 'syntaxes/ballerina.tmLanguage';
 const inText = fs.readFileSync(inFile, 'utf-8');
 const grammar = yaml.safeLoad(inText);
 
-const variables = Object.keys(grammar.variables);
+const variables = Object.assign({}, grammar.tmlVariables, grammar.variables);
 
-variables.forEach(name => {
-    setVariable(grammar, {name, value: grammar.variables[name]});
+Object.keys(variables).forEach(name => {
+    setVariable(grammar, {name, value: variables[name]});
 });
 
 delete grammar.variables;
