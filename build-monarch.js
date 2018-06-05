@@ -19,10 +19,9 @@
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
-const plist = require('plist');
 
 const inFile = path.join(__dirname, 'syntaxes', 'ballerina.YAML-tmLanguage');
-const outFile = path.join(__dirname, 'syntaxes', 'monarch-tokenizer.json');
+const outFile = path.join(__dirname, 'syntaxes', 'ballerina.monarch.json');
 
 const inText = fs.readFileSync(inFile, 'utf-8');
 

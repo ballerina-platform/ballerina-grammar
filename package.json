@@ -4,8 +4,9 @@
   "description": "Grammar files for ballerina",
   "main": "index.js",
   "scripts": {
-    "build": "node build",
-    "build-monarch": "node build-monarch"
+    "build-tm": "node build-tm",
+    "build-monarch": "node build-monarch",
+    "build": "npm run build-tm && npm run build-monarch"
   },
   "repository": {
     "type": "git",

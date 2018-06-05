@@ -21,8 +21,8 @@ const path = require('path');
 const yaml = require('js-yaml');
 const plist = require('plist');
 
-const inFile = 'syntaxes/ballerina.YAML-tmLanguage';
-const outFile = 'syntaxes/ballerina.tmLanguage';
+const inFile = path.join(__dirname, 'syntaxes', 'ballerina.YAML-tmLanguage');
+const outFile = path.join(__dirname, 'syntaxes', 'ballerina.tmLanguage');
 
 const inText = fs.readFileSync(inFile, 'utf-8');
 const grammar = yaml.safeLoad(inText);
