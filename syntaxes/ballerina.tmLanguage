@@ -1777,7 +1777,7 @@
             <key>name</key>
             <string>storage.type.ballerina</string>
             <key>match</key>
-            <string>\b(boolean|int|float|string|var|any|datatable|table|blob)\b</string>
+            <string>\b(boolean|int|float|string|var|any|datatable|table|blob|future|typedesc)\b</string>
           </dict>
           <dict>
             <key>name</key>
@@ -1801,13 +1801,13 @@
             <key>name</key>
             <string>keyword.control.ballerina</string>
             <key>match</key>
-            <string>\b(if|else|iterator|try|catch|finally|fork|join|all|some|while|foreach|in|throw|return|returns|break|timeout|transaction|aborted|abort|committed|failed|retries|onretry|oncommit|onabort|continue|bind|with|lengthof|typeof|enum)\b</string>
+            <string>\b(if|else|iterator|try|catch|finally|fork|join|all|some|while|foreach|in|throw|return|returns|break|timeout|transaction|abort|retry|retries|continue|bind|with|lengthof|typeof|enum)\b</string>
           </dict>
           <dict>
             <key>name</key>
             <string>keyword.other.ballerina</string>
             <key>match</key>
-            <string>\b(import|version|public|private|attach|as|native|documentation|lock|new|record|limit|ascending|descending|check|start|done|untaint)\b</string>
+            <string>\b(import|version|public|private|attach|as|native|documentation|lock|new|record|limit|ascending|descending|check|start|done|untaint|onretry|oncommit|onabort)\b</string>
           </dict>
           <dict>
             <key>name</key>
@@ -1819,7 +1819,7 @@
             <key>name</key>
             <string>keyword.other.ballerina</string>
             <key>match</key>
-            <string>\b(annotation|package|type|typedesc|connector|function|resource|service|action|worker|struct|transformer|endpoint|object)\b</string>
+            <string>\b(annotation|package|type|connector|function|resource|service|action|worker|struct|transformer|endpoint|object)\b</string>
           </dict>
           <dict>
             <key>name</key>
