@@ -93,11 +93,12 @@ repository:
     - begin: '[|,:]'
       beginCaptures:
         '0': { name:  keyword.operator.ballerina }
-      end: \b{{identifier}}\b
+      end: \b({{identifier}})\b|\)
       endCaptures:
-        '0': { name: '{{typeScope}}' }
+        '1': { name: '{{typeScope}}' }
       patterns:
       - include: '#comment'
+      - include: '#continuedTupleType'
 
   constrainType:
     patterns:
@@ -111,7 +112,18 @@ repository:
       - include: '#comment'
       - include: '#continuedType'
       - inclued: '#constrainType'
-      - name: storage.type.constrain.ballerina
+      - name: '{{typeScope}}'
+        match: \b({{identifier}})\b
+
+  continuedTupleType:
+    patterns:
+    - begin: '\('
+      end: '(?=\))'
+      patterns:
+      - include: '#comment'
+      - include: '#continuedType'
+      - inclued: '#constrainType'
+      - name: '{{typeScope}}'
         match: \b({{identifier}})\b
 
   defaultValue:
@@ -165,7 +177,7 @@ repository:
 
       - name: comment.block.ballerina.documentation
         match: .
-  
+
   endpointDef:
     patterns:
     - begin: '\bendpoint\b'
@@ -177,7 +189,7 @@ repository:
       - include: '#recordLiteral'
       - include: '#comment'
 
-  functionBody:
+  callableUnitBody:
     patterns:
     - begin: '\{'
       end: '(?=\})'
@@ -186,6 +198,8 @@ repository:
       endCaptures:
         '0': { name: punctuation.definition.block.ballerina }
       patterns:
+      - include: '#endpointDef'
+      - include: '#workerDef'
       - include: '#code'
 
   functionDec:
@@ -201,7 +215,7 @@ repository:
       - include: '#functionParameters'
       - include: '#functionReturns'
       - include: '#functionName'
-      - include: '#functionBody'
+      - include: '#callableUnitBody'
       - include: '#comment'
 
   functionName:
@@ -265,7 +279,7 @@ repository:
         '0': { name:  keyword.ballerina }
       end: '((\})|;|,)'
       patterns:
-      - include: '#functionBody'
+      - include: '#callableUnitBody'
       - include: '#code'
 
   matchStatement:
@@ -275,10 +289,9 @@ repository:
         '0': { name:  keyword.ballerina }
       end: '\}'
       patterns:
-      - match: '{{identifier}}'
-        name: variable.parameter.ballerina
       - include: '#matchStatementBody'
       - include: '#comment'
+      - include: '#code'
 
   matchStatementBody:
     patterns:
@@ -388,28 +401,18 @@ repository:
       patterns:
       - include: '#code'
 
-  resourceBody:
-    patterns:
-    - begin: '\{'
-      end: '(?=\})'
-      beginCaptures:
-        '0': { name: punctuation.definition.block.ballerina }
-      endCaptures:
-        '0': { name: punctuation.definition.block.ballerina }
-      patterns:
-      - include: '#comment'
-      - include: '#code'
-
   resourceDef:
     patterns:
     - begin: '\b{{identifier}}\b'
       beginCaptures:
         '0': { name: entity.name.function.ballerina }
       end: '\}'
+      endCaptures:
+        '0': { name: punctuation.definition.block.ballerina }
       patterns:
       - include: '#comment'
       - include: '#functionParameters'
-      - include: '#resourceBody'
+      - include: '#callableUnitBody'
 
   serviceBody:
     patterns:
@@ -418,12 +421,12 @@ repository:
       beginCaptures:
         '0': { name: punctuation.definition.block.ballerina }
       endCaptures:
-        # '0': { name: punctuation.definition.block.ballerina }
-        '0': { name: keyword }
+        '0': { name: punctuation.definition.block.ballerina }
       patterns:
       - include: '#comment'
       - include: '#documentationDef'
       - include: '#annotationDec'
+      - include: '#endpointDef'
       - include: '#resourceDef'
       - include: '#recordLiteral'
 
@@ -538,6 +541,22 @@ repository:
       end: (?=\})
       endCaptures:
         '0': { name: punctuation.definition.block.ballerina.documentation }
+      patterns:
+      - include: '#code'
+
+  workerDef:
+    patterns:
+    - begin: '\bworker\b'
+      beginCaptures:
+        '0': { name:  keyword.ballerina }
+      end: '\}'
+      patterns:
+      - include: '#workerBody'
+
+  workerBody:
+    patterns:
+    - begin: '\{'
+      end: (?=\})
       patterns:
       - include: '#code'
 

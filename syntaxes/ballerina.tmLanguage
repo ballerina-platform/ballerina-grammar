@@ -248,10 +248,10 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>\b(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+")\b</string>
+            <string>\b((?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))\b|\)</string>
             <key>endCaptures</key>
             <dict>
-              <key>0</key>
+              <key>1</key>
               <dict>
                 <key>name</key>
                 <string>storage.type.ballerina</string>
@@ -262,6 +262,10 @@
               <dict>
                 <key>include</key>
                 <string>#comment</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#continuedTupleType</string>
               </dict>
             </array>
           </dict>
@@ -308,7 +312,40 @@
               </dict>
               <dict>
                 <key>name</key>
-                <string>storage.type.constrain.ballerina</string>
+                <string>storage.type.ballerina</string>
+                <key>match</key>
+                <string>\b((?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))\b</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>continuedTupleType</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\(</string>
+            <key>end</key>
+            <string>(?=\))</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#continuedType</string>
+              </dict>
+              <dict>
+                <key>inclued</key>
+                <string>#constrainType</string>
+              </dict>
+              <dict>
+                <key>name</key>
+                <string>storage.type.ballerina</string>
                 <key>match</key>
                 <string>\b((?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))\b</string>
               </dict>
@@ -505,7 +542,7 @@
           </dict>
         </array>
       </dict>
-      <key>functionBody</key>
+      <key>callableUnitBody</key>
       <dict>
         <key>patterns</key>
         <array>
@@ -532,6 +569,14 @@
             </dict>
             <key>patterns</key>
             <array>
+              <dict>
+                <key>include</key>
+                <string>#endpointDef</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#workerDef</string>
+              </dict>
               <dict>
                 <key>include</key>
                 <string>#code</string>
@@ -585,7 +630,7 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#functionBody</string>
+                <string>#callableUnitBody</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -786,7 +831,7 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#functionBody</string>
+                <string>#callableUnitBody</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -816,18 +861,16 @@
             <key>patterns</key>
             <array>
               <dict>
-                <key>match</key>
-                <string>(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+")</string>
-                <key>name</key>
-                <string>variable.parameter.ballerina</string>
-              </dict>
-              <dict>
                 <key>include</key>
                 <string>#matchStatementBody</string>
               </dict>
               <dict>
                 <key>include</key>
                 <string>#comment</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#code</string>
               </dict>
             </array>
           </dict>
@@ -1174,23 +1217,23 @@
           </dict>
         </array>
       </dict>
-      <key>resourceBody</key>
+      <key>resourceDef</key>
       <dict>
         <key>patterns</key>
         <array>
           <dict>
             <key>begin</key>
-            <string>\{</string>
-            <key>end</key>
-            <string>(?=\})</string>
+            <string>(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+")\s*(?=\()</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.block.ballerina</string>
+                <string>entity.name.function.ballerina</string>
               </dict>
             </dict>
+            <key>end</key>
+            <string>\}</string>
             <key>endCaptures</key>
             <dict>
               <key>0</key>
@@ -1207,42 +1250,11 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#code</string>
-              </dict>
-            </array>
-          </dict>
-        </array>
-      </dict>
-      <key>resourceDef</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>begin</key>
-            <string>\b(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+")\b</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>entity.name.function.ballerina</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>\}</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
-              </dict>
-              <dict>
-                <key>include</key>
                 <string>#functionParameters</string>
               </dict>
               <dict>
                 <key>include</key>
-                <string>#resourceBody</string>
+                <string>#callableUnitBody</string>
               </dict>
             </array>
           </dict>
@@ -1270,7 +1282,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>keyword</string>
+                <string>punctuation.definition.block.ballerina</string>
               </dict>
             </dict>
             <key>patterns</key>
@@ -1286,6 +1298,10 @@
               <dict>
                 <key>include</key>
                 <string>#annotationDec</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#endpointDef</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -1650,6 +1666,52 @@
                 <string>punctuation.definition.block.ballerina.documentation</string>
               </dict>
             </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#code</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>workerDef</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\bworker\b</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>\}</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#workerBody</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>workerBody</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\{</string>
+            <key>end</key>
+            <string>(?=\})</string>
             <key>patterns</key>
             <array>
               <dict>
