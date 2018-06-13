@@ -403,7 +403,7 @@ repository:
 
   resourceDef:
     patterns:
-    - begin: '\b{{identifier}}\b'
+    - begin: '({{identifier}})\s*(?=\()'
       beginCaptures:
         '0': { name: entity.name.function.ballerina }
       end: '\}'
@@ -429,6 +429,7 @@ repository:
       - include: '#endpointDef'
       - include: '#resourceDef'
       - include: '#recordLiteral'
+      - include: '#code'
 
   serviceDec:
     patterns:
