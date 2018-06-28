@@ -1569,6 +1569,52 @@
           </dict>
         </array>
       </dict>
+      <key>stringTemplate</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\b(string)\s*(`)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>string.template.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>`</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>string.template.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#templateVariable</string>
+              </dict>
+              <dict>
+                <key>name</key>
+                <string>string</string>
+                <key>match</key>
+                <string>.</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
       <key>typeDef</key>
       <dict>
         <key>patterns</key>
@@ -1793,6 +1839,87 @@
           </dict>
         </array>
       </dict>
+      <key>xml</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\b(xml)\s*(`)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>string.template.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>`</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>string.template.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#templateVariable</string>
+              </dict>
+              <dict>
+                <key>name</key>
+                <string>string</string>
+                <key>match</key>
+                <string>.</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>templateVariable</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>{{</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>constant.character.escape.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>}}</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>constant.character.escape.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#code</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
       <key>keywords</key>
       <dict>
         <key>patterns</key>
@@ -1854,6 +1981,14 @@
           <dict>
             <key>include</key>
             <string>#butExp</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#xml</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#stringTemplate</string>
           </dict>
           <dict>
             <key>include</key>
