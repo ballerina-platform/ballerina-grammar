@@ -510,6 +510,20 @@ repository:
         - name: string
           match: '.'
 
+  stringTemplate:
+    patterns:
+    - begin: '\b(string)\s*(`)'
+      beginCaptures:
+        '1': { name: 'keyword.ballerina' }
+        '2': { name: 'string.template.ballerina' }
+      end: '`'
+      endCaptures:
+        '0': { name: 'string.template.ballerina' }
+      patterns:
+      - include: '#templateVariable'
+      - name: string
+        match: '.'
+
   typeDef:
     patterns:
     - begin: '\btype\b'
@@ -585,6 +599,31 @@ repository:
     - name: '{{typeScope}}'
       match: \b(stream|streamlet|aggregation)\b
 
+  xml:
+    patterns:
+    - begin: '\b(xml)\s*(`)'
+      beginCaptures:
+        '1': { name: 'keyword.ballerina' }
+        '2': { name: 'string.template.ballerina' }
+      end: '`'
+      endCaptures:
+        '0': { name: 'string.template.ballerina' }
+      patterns:
+      - include: '#templateVariable'
+      - name: string
+        match: '.'
+
+  templateVariable:
+    patterns:
+    - begin: '{{'
+      beginCaptures:
+        '0': { name: 'constant.character.escape.ballerina'}
+      end: '}}'
+      endCaptures:
+        '0': { name: 'constant.character.escape.ballerina'}
+      patterns:
+      - include: '#code'
+
   keywords:
     patterns:
     - name: keyword.control.ballerina
@@ -612,6 +651,8 @@ repository:
     - include: '#booleans'
     - include: '#matchStatement'
     - include: '#butExp'
+    - include: '#xml'
+    - include: '#stringTemplate'
     - include: '#keywords'
     - include: '#strings'
     - include: '#maps'
