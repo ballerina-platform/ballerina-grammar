@@ -93,9 +93,10 @@ repository:
     - begin: '[|,:]'
       beginCaptures:
         '0': { name:  keyword.operator.ballerina }
-      end: \b({{identifier}})\b|\)
+      end: (\b{{identifier}}\b)|(\))
       endCaptures:
         '1': { name: '{{typeScope}}' }
+        '2': { name: 'source.ballerina' }
       patterns:
       - include: '#comment'
       - include: '#continuedTupleType'
@@ -512,10 +513,11 @@ repository:
 
   stringTemplate:
     patterns:
-    - begin: '\b(string)\s*(`)'
+    - begin: '(\bstring)(\s*)(`)'
       beginCaptures:
         '1': { name: 'keyword.ballerina' }
-        '2': { name: 'string.template.ballerina' }
+        '2': { name: '' }
+        '3': { name: 'string.template.ballerina' }
       end: '`'
       endCaptures:
         '0': { name: 'string.template.ballerina' }
@@ -601,10 +603,11 @@ repository:
 
   xml:
     patterns:
-    - begin: '\b(xml)\s*(`)'
+    - begin: '(\bxml)(\s*)(`)'
       beginCaptures:
         '1': { name: 'keyword.ballerina' }
-        '2': { name: 'string.template.ballerina' }
+        '2': { name: '' }
+        '3': { name: 'string.template.ballerina' }
       end: '`'
       endCaptures:
         '0': { name: 'string.template.ballerina' }

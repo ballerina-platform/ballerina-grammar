@@ -56,7 +56,7 @@ monarch.code.push(['[a-z][\\w$]*', {
     },
 }])
 
-fs.writeFileSync(outFile, JSON.stringify(monarch));
+fs.writeFileSync(outFile, JSON.stringify(monarch, null, 4));
 
 function setVariable(grammar, variable) {
     const rules = Object.keys(grammar.repository);
@@ -163,7 +163,7 @@ function convertCaptures(captures, target, pattern, next) {
 
     if (captures['1']) {
         const subRegexes = splitToGroups(pattern);
-        if (subRegexes.length > 0) {
+        if (subRegexes.length > 1) {
             subRegexes.forEach((subRegex, i) => {
                 const ruleObj = {
                     next,
@@ -187,7 +187,7 @@ function convertCaptures(captures, target, pattern, next) {
             }
             ruleObj.push(captures[cap].name);
         });
-        target.unshift([subRegexes[i], ruleObj]);
+        target.unshift([subRegexes[0], ruleObj]);
     }
 }
 
