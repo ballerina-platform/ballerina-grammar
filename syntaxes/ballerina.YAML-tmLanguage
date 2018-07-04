@@ -28,6 +28,7 @@ patterns:
 - include: '#documentationDef'
 - include: '#typeDef'
 - include: '#objectDec'
+- include: '#record'
 - include: '#annotationDec'
 - include: '#recordLiteral'
 - include: '#comment'
@@ -119,7 +120,7 @@ repository:
   continuedTupleType:
     patterns:
     - begin: '\('
-      end: '(?=\))'
+      end: '(?=\)|;)'
       patterns:
       - include: '#comment'
       - include: '#continuedType'
@@ -325,6 +326,8 @@ repository:
       - include: '#documentationDef'
       - include: '#objectInitDec'
       - include: '#functionDec'
+      - include: '#annotationDec'
+      - include: '#variableDef'
       - include: '#comment'
       - include: '#code'
 
@@ -375,6 +378,22 @@ repository:
       - match: \b({{identifier}})\b
         name: variable.parameter.ballerina
 
+  objectMemberFunctionDec:
+    patterns:
+    - begin: '\bfunction\b'
+      beginCaptures:
+        '0': { name:  keyword.ballerina }
+      end: '(?=(?:\}|;))'
+      endCaptures:
+        '0': { name:  punctuation.definition.block.ballerina }
+      patterns:
+      - include: '#functionReceiver'
+      - include: '#functionParameters'
+      - include: '#functionReturns'
+      - include: '#functionName'
+      - include: '#callableUnitBody'
+      - include: '#comment'
+
   paranthesised:
     patterns:
     - begin: \(
@@ -388,6 +407,32 @@ repository:
     - begin: \[
       end: \]
       patterns:
+      - include: '#comment'
+      - include: '#code'
+
+  record:
+    patterns:
+    - begin: '\brecord\b'
+      beginCaptures:
+        '0': { name:  keyword.ballerina }
+      end: '\}'
+      endCaptures:
+        '0': { name: delimiter.curly }
+      patterns:
+      - include: '#recordBody'
+      - include: '#comment'
+
+  recordBody:
+    patterns:
+    - begin: '\{'
+      end: '(?=\})'
+      beginCaptures:
+        '0': { name: punctuation.definition.block.ballerina }
+      endCaptures:
+        '0': { name: punctuation.definition.block.ballerina }
+      patterns:
+      - include: '#annotationDec'
+      - include: '#variableDef'
       - include: '#comment'
       - include: '#code'
 
@@ -535,9 +580,6 @@ repository:
       endCaptures:
         '0': { name: entity.name.function.ballerina }
       patterns:
-      - include: '#objectDec'
-      - match: '{{identifier}}'
-        name: entity.name.function.ballerina
       - include: '#comment'
 
   varDefBlock:
@@ -545,21 +587,25 @@ repository:
     - begin: \b(?:private|public)\b
       beginCaptures:
         '0': { name:  keyword.ballerina }
-      end: '\}|;'
+      end: '\}|;|,'
       patterns:
-      - include: '#varDefBlockBody'
-      - include: '#functionDec'
-
-  varDefBlockBody:
-    patterns:
-    - begin: \{
-      beginCaptures:
-        '0': { name: punctuation.definition.block.ballerina.documentation }
-      end: (?=\})
-      endCaptures:
-        '0': { name: punctuation.definition.block.ballerina.documentation }
-      patterns:
+      - include: '#objectMemberFunctionDec'
+      - include: '#variableDef'
       - include: '#code'
+
+  variableDef:
+    patterns:
+    - begin: \b(?:{{identifier}})\b|(?=\()
+      beginCaptures:
+        '0': { name: '{{typeScope}}' }
+      end: \b(?:{{identifier}})\b|(?=\,)|(?=;)
+      endCaptures:
+        '0': { name: variable.ballerina }
+      patterns:
+      - include: '#continuedTupleType'
+      - include: '#continuedType'
+      - include: '#constrainType'
+      - include: '#comment'
 
   workerDef:
     patterns:
