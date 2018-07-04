@@ -578,7 +578,7 @@ repository:
         '0': { name:  keyword.ballerina }
       end: '\b{{identifier}}\b'
       endCaptures:
-        '0': { name: entity.name.function.ballerina }
+        '0': { name: source.ballerina }
       patterns:
       - include: '#comment'
 
@@ -600,7 +600,7 @@ repository:
         '0': { name: '{{typeScope}}' }
       end: \b(?:{{identifier}})\b|(?=\,)|(?=;)
       endCaptures:
-        '0': { name: variable.ballerina }
+        '0': { name: source.ballerina }
       patterns:
       - include: '#continuedTupleType'
       - include: '#continuedType'

@@ -1800,7 +1800,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>entity.name.function.ballerina</string>
+                <string>source.ballerina</string>
               </dict>
             </dict>
             <key>patterns</key>
@@ -1870,7 +1870,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>variable.ballerina</string>
+                <string>source.ballerina</string>
               </dict>
             </dict>
             <key>patterns</key>
