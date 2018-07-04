@@ -58,6 +58,10 @@
       </dict>
       <dict>
         <key>include</key>
+        <string>#record</string>
+      </dict>
+      <dict>
+        <key>include</key>
         <string>#annotationDec</string>
       </dict>
       <dict>
@@ -248,13 +252,18 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>\b((?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))\b|\)</string>
+            <string>(\b(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+")\b)|(\))</string>
             <key>endCaptures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
                 <string>storage.type.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>source.ballerina</string>
               </dict>
             </dict>
             <key>patterns</key>
@@ -328,7 +337,7 @@
             <key>begin</key>
             <string>\(</string>
             <key>end</key>
-            <string>(?=\))</string>
+            <string>(?=\)|;)</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -976,6 +985,14 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#annotationDec</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#variableDef</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#comment</string>
               </dict>
               <dict>
@@ -1136,6 +1153,61 @@
           </dict>
         </array>
       </dict>
+      <key>objectMemberFunctionDec</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\bfunction\b</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=(?:\}|;))</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.block.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#functionReceiver</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#functionParameters</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#functionReturns</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#functionName</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#callableUnitBody</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
       <key>paranthesised</key>
       <dict>
         <key>patterns</key>
@@ -1170,6 +1242,92 @@
             <string>\]</string>
             <key>patterns</key>
             <array>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#code</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>record</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\brecord\b</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>\}</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>delimiter.curly</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#recordBody</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>recordBody</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\{</string>
+            <key>end</key>
+            <string>(?=\})</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.block.ballerina</string>
+              </dict>
+            </dict>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.block.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#annotationDec</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#variableDef</string>
+              </dict>
               <dict>
                 <key>include</key>
                 <string>#comment</string>
@@ -1575,7 +1733,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>\b(string)\s*(`)</string>
+            <string>(\bstring)(\s*)(`)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -1584,6 +1742,11 @@
                 <string>keyword.ballerina</string>
               </dict>
               <key>2</key>
+              <dict>
+                <key>name</key>
+                <string/>
+              </dict>
+              <key>3</key>
               <dict>
                 <key>name</key>
                 <string>string.template.ballerina</string>
@@ -1637,21 +1800,11 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>entity.name.function.ballerina</string>
+                <string>source.ballerina</string>
               </dict>
             </dict>
             <key>patterns</key>
             <array>
-              <dict>
-                <key>include</key>
-                <string>#objectDec</string>
-              </dict>
-              <dict>
-                <key>match</key>
-                <string>(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+")</string>
-                <key>name</key>
-                <string>entity.name.function.ballerina</string>
-              </dict>
               <dict>
                 <key>include</key>
                 <string>#comment</string>
@@ -1676,51 +1829,67 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>\}|;</string>
+            <string>\}|;|,</string>
             <key>patterns</key>
             <array>
               <dict>
                 <key>include</key>
-                <string>#varDefBlockBody</string>
+                <string>#objectMemberFunctionDec</string>
               </dict>
               <dict>
                 <key>include</key>
-                <string>#functionDec</string>
+                <string>#variableDef</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#code</string>
               </dict>
             </array>
           </dict>
         </array>
       </dict>
-      <key>varDefBlockBody</key>
+      <key>variableDef</key>
       <dict>
         <key>patterns</key>
         <array>
           <dict>
             <key>begin</key>
-            <string>\{</string>
+            <string>\b(?:(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))\b|(?=\()</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.block.ballerina.documentation</string>
+                <string>storage.type.ballerina</string>
               </dict>
             </dict>
             <key>end</key>
-            <string>(?=\})</string>
+            <string>\b(?:(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))\b|(?=\,)|(?=;)</string>
             <key>endCaptures</key>
             <dict>
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.block.ballerina.documentation</string>
+                <string>source.ballerina</string>
               </dict>
             </dict>
             <key>patterns</key>
             <array>
               <dict>
                 <key>include</key>
-                <string>#code</string>
+                <string>#continuedTupleType</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#continuedType</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#constrainType</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
               </dict>
             </array>
           </dict>
@@ -1845,7 +2014,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>\b(xml)\s*(`)</string>
+            <string>(\bxml)(\s*)(`)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -1854,6 +2023,11 @@
                 <string>keyword.ballerina</string>
               </dict>
               <key>2</key>
+              <dict>
+                <key>name</key>
+                <string/>
+              </dict>
+              <key>3</key>
               <dict>
                 <key>name</key>
                 <string>string.template.ballerina</string>
