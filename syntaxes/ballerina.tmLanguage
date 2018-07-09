@@ -1992,7 +1992,7 @@
             <key>name</key>
             <string>storage.type.ballerina</string>
             <key>match</key>
-            <string>\b(boolean|int|float|string|var|any|datatable|table|blob|future|typedesc)\b</string>
+            <string>\b(boolean|int|float|string|var|any|datatable|table|byte|future|typedesc)\b</string>
           </dict>
           <dict>
             <key>name</key>
@@ -2108,7 +2108,7 @@
             <key>name</key>
             <string>keyword.other.ballerina</string>
             <key>match</key>
-            <string>\b(import|version|public|private|attach|as|native|documentation|lock|new|record|limit|ascending|descending|check|start|done|untaint|onretry|oncommit|onabort)\b</string>
+            <string>\b(import|version|public|private|attach|as|native|documentation|lock|new|record|limit|ascending|descending|check|start|done|untaint|onretry|oncommit|onabort|scope|compensate|compensation|primarykey)\b</string>
           </dict>
           <dict>
             <key>name</key>
