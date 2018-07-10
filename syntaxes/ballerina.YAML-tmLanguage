@@ -598,7 +598,7 @@ repository:
     - begin: \b(?:{{identifier}})\b|(?=\()
       beginCaptures:
         '0': { name: '{{typeScope}}' }
-      end: \b(?:{{identifier}})\b|(?=\,)|(?=;)
+      end: \b(?:{{identifier}})\b|(?=\,)|(?=;)|\.\.\.
       endCaptures:
         '0': { name: source.ballerina }
       patterns:
