@@ -15,11 +15,17 @@ monarchVariables:
   typeScope: 'type.ballerina'
   annotationScope: 'type.ballerina'
   numberScope: 'number'
+  xmlTagAngle: 'tag'
+  xmlAttribute: 'variable.parameter'
+  xmlTag: 'tag'
 
 tmlVariables:
   typeScope: 'storage.type.ballerina'
   annotationScope: 'storage.type.annotation.ballerina'
   numberScope: 'constant.numeric.decimal.ballerina'
+  xmlTagAngle: 'punctuation.definition.tag.begin.xml.ballerina'
+  xmlAttribute: 'entity.other.attribute-name.xml.ballerina'
+  xmlTag: 'entity.name.tag.xml.ballerina'
 
 patterns:
 - include: '#functionDec'
@@ -658,9 +664,64 @@ repository:
       endCaptures:
         '0': { name: 'string.template.ballerina' }
       patterns:
+      - include: '#xmlTag'
+      - include: '#xmlComment'
       - include: '#templateVariable'
-      - name: string
+      - name: text.xml.ballerina
         match: '.'
+
+  xmlTag:
+    patterns:
+    - begin: '(<\/?\??)\s*([-_a-zA-Z0-9]+)'
+      beginCaptures:
+        '1': { name: '{{xmlTagAngle}}' }
+        '2': { name: '{{xmlTag}}' }
+      end: '\??\/?>'
+      endCaptures:
+        '0': { name: '{{xmlTagAngle}}' }
+      patterns:
+      - include: '#xmlSingleQuotedString'
+      - include: '#xmlDoubleQuotedString'
+      - name: '{{xmlAttribute}}'
+        match: '([a-zA-Z-]+)'
+
+  xmlComment:
+    patterns:
+    - begin: '<!--'
+      beginCaptures:
+        '0': { name: comment.block.xml.ballerina }
+      end: '-->'
+      endCaptures:
+        '0': { name: comment.block.xml.ballerina }
+      name: 'comment.block.xml.ballerina'
+
+  xmlSingleQuotedString:
+    patterns:
+    - begin: \'
+      end: \'
+      beginCaptures:
+        '0': { name: string.begin.ballerina }
+      endCaptures:
+        '0': { name: string.end.ballerina }
+      patterns:
+        - name: constant.character.escape.ballerina
+          match: \\.
+        - name: string
+          match: '.'
+
+  xmlDoubleQuotedString:
+    patterns:
+    - begin: \"
+      end: \"
+      beginCaptures:
+        '0': { name: string.begin.ballerina }
+      endCaptures:
+        '0': { name: string.end.ballerina }
+      patterns:
+        - name: constant.character.escape.ballerina
+          match: \\.
+        - name: string
+          match: '.'
 
   templateVariable:
     patterns:
