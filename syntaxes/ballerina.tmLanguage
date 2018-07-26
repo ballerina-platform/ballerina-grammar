@@ -20,6 +20,12 @@
       <string>type.ballerina</string>
       <key>numberScope</key>
       <string>number</string>
+      <key>xmlTagAngle</key>
+      <string>tag</string>
+      <key>xmlAttribute</key>
+      <string>variable.parameter</string>
+      <key>xmlTag</key>
+      <string>tag</string>
     </dict>
     <key>tmlVariables</key>
     <dict>
@@ -29,6 +35,12 @@
       <string>storage.type.annotation.ballerina</string>
       <key>numberScope</key>
       <string>constant.numeric.decimal.ballerina</string>
+      <key>xmlTagAngle</key>
+      <string>punctuation.definition.tag.begin.xml.ballerina</string>
+      <key>xmlAttribute</key>
+      <string>entity.other.attribute-name.xml.ballerina</string>
+      <key>xmlTag</key>
+      <string>entity.name.tag.xml.ballerina</string>
     </dict>
     <key>patterns</key>
     <array>
@@ -2047,7 +2059,181 @@
             <array>
               <dict>
                 <key>include</key>
+                <string>#xmlTag</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#xmlComment</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#templateVariable</string>
+              </dict>
+              <dict>
+                <key>name</key>
+                <string>text.xml.ballerina</string>
+                <key>match</key>
+                <string>.</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>xmlTag</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>(&lt;\/?\??)\s*([-_a-zA-Z0-9]+)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.tag.begin.xml.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>entity.name.tag.xml.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>\??\/?&gt;</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.tag.begin.xml.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#xmlSingleQuotedString</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#xmlDoubleQuotedString</string>
+              </dict>
+              <dict>
+                <key>name</key>
+                <string>entity.other.attribute-name.xml.ballerina</string>
+                <key>match</key>
+                <string>([a-zA-Z-]+)</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>xmlComment</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>&lt;!--</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>comment.block.xml.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>--&gt;</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>comment.block.xml.ballerina</string>
+              </dict>
+            </dict>
+            <key>name</key>
+            <string>comment.block.xml.ballerina</string>
+          </dict>
+        </array>
+      </dict>
+      <key>xmlSingleQuotedString</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\'</string>
+            <key>end</key>
+            <string>\'</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>string.begin.ballerina</string>
+              </dict>
+            </dict>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>string.end.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>name</key>
+                <string>constant.character.escape.ballerina</string>
+                <key>match</key>
+                <string>\\.</string>
+              </dict>
+              <dict>
+                <key>name</key>
+                <string>string</string>
+                <key>match</key>
+                <string>.</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>xmlDoubleQuotedString</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\"</string>
+            <key>end</key>
+            <string>\"</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>string.begin.ballerina</string>
+              </dict>
+            </dict>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>string.end.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>name</key>
+                <string>constant.character.escape.ballerina</string>
+                <key>match</key>
+                <string>\\.</string>
               </dict>
               <dict>
                 <key>name</key>
