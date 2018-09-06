@@ -316,7 +316,7 @@ repository:
 
   numbers:
     patterns:
-    - match: '\b0[xX][\da-f]+\b|\b\d+\.?\d*'
+    - match: '\b0[xX][\da-f]+\b|\b\d+(?:\.(?:\d+|$))?'
       name: '{{numberScope}}'
 
   objectBody:
@@ -752,7 +752,7 @@ repository:
       match: \b(const|true|false|reply|create|parameter)\b
 
     - name: keyword.operator.ballerina
-      match: (!|%|\+|\-|~=|==|=|!=|<|>|&&|\|\||\?:)
+      match: (!|%|\+|\-|~=|==|=|!=|<|>|&&|\|\||\?:|\.\.\.)
 
     - include: '#types'
 
