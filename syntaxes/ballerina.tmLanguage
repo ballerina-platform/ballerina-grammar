@@ -62,6 +62,10 @@
       </dict>
       <dict>
         <key>include</key>
+        <string>#mdDocumentation</string>
+      </dict>
+      <dict>
+        <key>include</key>
         <string>#typeDef</string>
       </dict>
       <dict>
@@ -935,6 +939,124 @@
               <dict>
                 <key>include</key>
                 <string>#comment</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>mdDocumentation</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#mdDocumentationReturnParamDescription</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#mdDocumentationParamDescription</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>#.*</string>
+            <key>name</key>
+            <string>comment.mddocs.ballerina</string>
+          </dict>
+        </array>
+      </dict>
+      <key>mdDocumentationParamDescription</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>(#)(?: ?)(\+)(?: *)((?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))?(?: *)(-)?(.*)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>comment.mddocs.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.ballerina</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>variable.parameter.ballerina</string>
+              </dict>
+              <key>5</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.ballerina</string>
+              </dict>
+              <key>6</key>
+              <dict>
+                <key>name</key>
+                <string>comment.mddocs.paramdesc.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=[^#\r\n]|(?:# ?\+))</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>match</key>
+                <string>#.*</string>
+                <key>name</key>
+                <string>comment.mddocs.paramdesc.ballerina</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>mdDocumentationReturnParamDescription</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>(#)(?: ?)(\+)(?: *)(return)(?: *)(-)?(.*)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>comment.mddocs.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.ballerina</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.ballerina</string>
+              </dict>
+              <key>4</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.ballerina</string>
+              </dict>
+              <key>5</key>
+              <dict>
+                <key>name</key>
+                <string>comment.mddocs.returnparamdesc.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=[^#\r\n]|(?:# ?\+))</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>match</key>
+                <string>#.*</string>
+                <key>name</key>
+                <string>comment.mddocs.returnparamdesc.ballerina</string>
               </dict>
             </array>
           </dict>

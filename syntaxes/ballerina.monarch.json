@@ -13,6 +13,9 @@
             "include": "documentationDef"
         },
         {
+            "include": "mdDocumentation"
+        },
+        {
             "include": "typeDef"
         },
         {
@@ -1225,6 +1228,74 @@
                 "next": "@pop",
                 "token": "variable.parameter.ballerina"
             }
+        ]
+    ],
+    "mdDocumentation": [
+        {
+            "include": "mdDocumentationReturnParamDescription"
+        },
+        {
+            "include": "mdDocumentationParamDescription"
+        },
+        [
+            "#.*",
+            "comment.mddocs.ballerina"
+        ]
+    ],
+    "mdDocumentationReturnParamDescription": [
+        [
+            "(#)(?: ?)(\\+)(?: *)(return)(?: *)(-)?(.*)",
+            [
+                {
+                    "next": "mdDocumentationReturnParamDescription__b__0",
+                    "token": "comment.mddocs.ballerina"
+                },
+                "keyword.ballerina",
+                "keyword.ballerina",
+                "keyword.ballerina",
+                "comment.mddocs.returnparamdesc.ballerina"
+            ]
+        ]
+    ],
+    "mdDocumentationReturnParamDescription__b__0": [
+        [
+            "(?=[^#\\r\\n]|(?:# ?\\+))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        [
+            "#.*",
+            "comment.mddocs.returnparamdesc.ballerina"
+        ]
+    ],
+    "mdDocumentationParamDescription": [
+        [
+            "(#)(?: ?)(\\+)(?: *)((?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\\^\"([^|\"\\\\\\f\\n\\r\\t]|\\\\\\\\[btnfr]|\\\\[|\"\\\\/])+\"))?(?: *)(-)?(.*)",
+            [
+                {
+                    "next": "mdDocumentationParamDescription__b__0",
+                    "token": "comment.mddocs.ballerina"
+                },
+                "keyword.ballerina",
+                "variable.parameter.ballerina",
+                "keyword.ballerina",
+                "comment.mddocs.paramdesc.ballerina"
+            ]
+        ]
+    ],
+    "mdDocumentationParamDescription__b__0": [
+        [
+            "(?=[^#\\r\\n]|(?:# ?\\+))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        [
+            "#.*",
+            "comment.mddocs.paramdesc.ballerina"
         ]
     ],
     "typeDef": [
