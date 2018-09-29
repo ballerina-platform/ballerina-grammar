@@ -120,7 +120,7 @@ repository:
       patterns:
       - include: '#comment'
       - include: '#continuedType'
-      - inclued: '#constrainType'
+      - include: '#constrainType'
       - name: '{{typeScope}}'
         match: \b({{identifier}})\b
 
@@ -131,7 +131,7 @@ repository:
       patterns:
       - include: '#comment'
       - include: '#continuedType'
-      - inclued: '#constrainType'
+      - include: '#constrainType'
       - name: '{{typeScope}}'
         match: \b({{identifier}})\b
 
