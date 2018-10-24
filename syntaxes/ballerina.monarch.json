@@ -294,6 +294,9 @@
             "include": "paranthesisedBracket"
         },
         {
+            "include": "SymbolicStringLiteral"
+        },
+        {
             "include": "numbers"
         },
         {
@@ -868,6 +871,12 @@
         {
             "include": "code"
         }
+    ],
+    "SymbolicStringLiteral": [
+        [
+            "\\'[a-zA-z_][a-zA-z_0-9]*",
+            "string.symbolic.ballerina"
+        ]
     ],
     "numbers": [
         [

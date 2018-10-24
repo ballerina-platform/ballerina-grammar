@@ -613,6 +613,11 @@ repository:
       - name: string
         match: '.'
 
+  SymbolicStringLiteral:
+    patterns:
+    - name: string.symbolic.ballerina
+      match: \'[a-zA-z_][a-zA-z_0-9]*
+
   typeDef:
     patterns:
     - begin: '\btype\b'
@@ -804,5 +809,6 @@ repository:
     - include: '#maps'
     - include: '#paranthesised'
     - include: '#paranthesisedBracket'
+    - include: '#SymbolicStringLiteral'
     - include: '#numbers'
     - include: '#comment'
