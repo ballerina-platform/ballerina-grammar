@@ -1912,6 +1912,18 @@
           </dict>
         </array>
       </dict>
+      <key>SymbolicStringLiteral</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>string.symbolic.ballerina</string>
+            <key>match</key>
+            <string>\'[a-zA-z_][a-zA-z_0-9]*</string>
+          </dict>
+        </array>
+      </dict>
       <key>typeDef</key>
       <dict>
         <key>patterns</key>
@@ -2491,6 +2503,10 @@
           <dict>
             <key>include</key>
             <string>#paranthesisedBracket</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#SymbolicStringLiteral</string>
           </dict>
           <dict>
             <key>include</key>
