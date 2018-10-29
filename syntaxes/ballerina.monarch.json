@@ -184,6 +184,9 @@
         {
             "include": "continuedType"
         },
+        {
+            "include": "constrainType"
+        },
         [
             "\\b((?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\\^\"([^|\"\\\\\\f\\n\\r\\t]|\\\\\\\\[btnfr]|\\\\[|\"\\\\/])+\"))\\b",
             "type.ballerina"
@@ -211,6 +214,9 @@
         },
         {
             "include": "continuedType"
+        },
+        {
+            "include": "constrainType"
         },
         [
             "\\b((?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\\^\"([^|\"\\\\\\f\\n\\r\\t]|\\\\\\\\[btnfr]|\\\\[|\"\\\\/])+\"))\\b",
@@ -1055,6 +1061,9 @@
             "include": "comment"
         },
         {
+            "include": "mdDocumentation"
+        },
+        {
             "include": "documentationDef"
         },
         {
@@ -1072,6 +1081,74 @@
         {
             "include": "code"
         }
+    ],
+    "mdDocumentation": [
+        {
+            "include": "mdDocumentationReturnParamDescription"
+        },
+        {
+            "include": "mdDocumentationParamDescription"
+        },
+        [
+            "#.*",
+            "comment.mddocs.ballerina"
+        ]
+    ],
+    "mdDocumentationReturnParamDescription": [
+        [
+            "(#)(?: ?)(\\+)(?: *)(return)(?: *)(-)?(.*)",
+            [
+                {
+                    "next": "mdDocumentationReturnParamDescription__b__0",
+                    "token": "comment.mddocs.ballerina"
+                },
+                "keyword.ballerina",
+                "keyword.ballerina",
+                "keyword.ballerina",
+                "comment.mddocs.returnparamdesc.ballerina"
+            ]
+        ]
+    ],
+    "mdDocumentationReturnParamDescription__b__0": [
+        [
+            "(?=[^#\\r\\n]|(?:# ?\\+))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        [
+            "#.*",
+            "comment.mddocs.returnparamdesc.ballerina"
+        ]
+    ],
+    "mdDocumentationParamDescription": [
+        [
+            "(#)(?: ?)(\\+)(?: *)((?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\\^\"([^|\"\\\\\\f\\n\\r\\t]|\\\\\\\\[btnfr]|\\\\[|\"\\\\/])+\"))?(?: *)(-)?(.*)",
+            [
+                {
+                    "next": "mdDocumentationParamDescription__b__0",
+                    "token": "comment.mddocs.ballerina"
+                },
+                "keyword.ballerina",
+                "variable.parameter.ballerina",
+                "keyword.ballerina",
+                "comment.mddocs.paramdesc.ballerina"
+            ]
+        ]
+    ],
+    "mdDocumentationParamDescription__b__0": [
+        [
+            "(?=[^#\\r\\n]|(?:# ?\\+))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        [
+            "#.*",
+            "comment.mddocs.paramdesc.ballerina"
+        ]
     ],
     "documentationDef": [
         [
@@ -1215,6 +1292,9 @@
             "include": "comment"
         },
         {
+            "include": "mdDocumentation"
+        },
+        {
             "include": "functionParameters"
         },
         {
@@ -1237,74 +1317,6 @@
                 "next": "@pop",
                 "token": "variable.parameter.ballerina"
             }
-        ]
-    ],
-    "mdDocumentation": [
-        {
-            "include": "mdDocumentationReturnParamDescription"
-        },
-        {
-            "include": "mdDocumentationParamDescription"
-        },
-        [
-            "#.*",
-            "comment.mddocs.ballerina"
-        ]
-    ],
-    "mdDocumentationReturnParamDescription": [
-        [
-            "(#)(?: ?)(\\+)(?: *)(return)(?: *)(-)?(.*)",
-            [
-                {
-                    "next": "mdDocumentationReturnParamDescription__b__0",
-                    "token": "comment.mddocs.ballerina"
-                },
-                "keyword.ballerina",
-                "keyword.ballerina",
-                "keyword.ballerina",
-                "comment.mddocs.returnparamdesc.ballerina"
-            ]
-        ]
-    ],
-    "mdDocumentationReturnParamDescription__b__0": [
-        [
-            "(?=[^#\\r\\n]|(?:# ?\\+))",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        [
-            "#.*",
-            "comment.mddocs.returnparamdesc.ballerina"
-        ]
-    ],
-    "mdDocumentationParamDescription": [
-        [
-            "(#)(?: ?)(\\+)(?: *)((?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\\^\"([^|\"\\\\\\f\\n\\r\\t]|\\\\\\\\[btnfr]|\\\\[|\"\\\\/])+\"))?(?: *)(-)?(.*)",
-            [
-                {
-                    "next": "mdDocumentationParamDescription__b__0",
-                    "token": "comment.mddocs.ballerina"
-                },
-                "keyword.ballerina",
-                "variable.parameter.ballerina",
-                "keyword.ballerina",
-                "comment.mddocs.paramdesc.ballerina"
-            ]
-        ]
-    ],
-    "mdDocumentationParamDescription__b__0": [
-        [
-            "(?=[^#\\r\\n]|(?:# ?\\+))",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        [
-            "#.*",
-            "comment.mddocs.paramdesc.ballerina"
         ]
     ],
     "typeDef": [
@@ -1371,6 +1383,9 @@
         ],
         {
             "include": "varDefBlock"
+        },
+        {
+            "include": "mdDocumentation"
         },
         {
             "include": "documentationDef"
