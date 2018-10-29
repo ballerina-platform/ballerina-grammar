@@ -365,6 +365,7 @@ repository:
         '0': { name: punctuation.definition.block.ballerina }
       patterns:
       - include: '#varDefBlock'
+      - include: '#mdDocumentation'
       - include: '#documentationDef'
       - include: '#objectInitDec'
       - include: '#functionDec'
@@ -499,6 +500,7 @@ repository:
         '0': { name: punctuation.definition.block.ballerina }
       patterns:
       - include: '#comment'
+      - include: '#mdDocumentation'
       - include: '#functionParameters'
       - include: '#callableUnitBody'
 
@@ -512,6 +514,7 @@ repository:
         '0': { name: punctuation.definition.block.ballerina }
       patterns:
       - include: '#comment'
+      - include: '#mdDocumentation'
       - include: '#documentationDef'
       - include: '#annotationDec'
       - include: '#endpointDef'
