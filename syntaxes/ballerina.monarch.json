@@ -184,6 +184,9 @@
         {
             "include": "continuedType"
         },
+        {
+            "include": "constrainType"
+        },
         [
             "\\b((?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\\^\"([^|\"\\\\\\f\\n\\r\\t]|\\\\\\\\[btnfr]|\\\\[|\"\\\\/])+\"))\\b",
             "type.ballerina"
@@ -211,6 +214,9 @@
         },
         {
             "include": "continuedType"
+        },
+        {
+            "include": "constrainType"
         },
         [
             "\\b((?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\\^\"([^|\"\\\\\\f\\n\\r\\t]|\\\\\\\\[btnfr]|\\\\[|\"\\\\/])+\"))\\b",
