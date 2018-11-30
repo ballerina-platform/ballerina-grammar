@@ -721,10 +721,10 @@ repository:
   keywords:
     patterns:
     - name: keyword.control.ballerina
-      match: \b(if|else|iterator|try|catch|finally|fork|join|all|some|while|foreach|in|throw|return|returns|break|timeout|transaction|abort|retry|retries|continue|bind|with|lengthof|typeof|enum)\b
+      match: \b(if|else|iterator|try|catch|finally|fork|join|all|some|while|foreach|in|throw|return|returns|break|timeout|transaction|abort|retry|retries|continue|bind|with|lengthof|typeof|enum|wait)\b
 
     - name: keyword.other.ballerina
-      match: \b(import|version|public|private|attach|as|native|documentation|lock|new|record|limit|ascending|descending|check|start|done|untaint|onretry|oncommit|onabort|scope|compensate|compensation|primarykey|channel|abstract)\b
+      match: \b(import|version|public|private|attach|as|native|documentation|lock|new|record|limit|ascending|descending|check|start|done|untaint|onretry|oncommit|onabort|scope|compensate|compensation|primarykey|channel|abstract|extern|final|listener|remote|client|__init)\b
 
     - name: keyword.other.siddhi.ballerina
       match: \b(forever|from|on|select|group|by|having|order|where|followed|insert|into|update|delete|set|for|window|query)\b
