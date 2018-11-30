@@ -29,7 +29,7 @@ tmlVariables:
 
 patterns:
 - include: '#functionDefinition'
-- include: '#serviceDec'
+- include: '#serviceDefinition'
 - include: '#endpointDef'
 - include: '#documentationDef'
 - include: '#mdDocumentation'
@@ -95,19 +95,6 @@ repository:
     patterns:
     - name: comment.ballerina
       match: \/\/.*
-
-  # continuedType:
-  #   patterns:
-  #   - begin: '[|,:]'
-  #     beginCaptures:
-  #       '0': { name:  source.ballerina }
-  #     end: (\b{{identifier}}\b)|(\))
-  #     endCaptures:
-  #       '1': { name: '{{typeScope}}' }
-  #       '2': { name: 'source.ballerina' }
-  #     patterns:
-  #     - include: '#comment'
-  #     - include: '#tupleType'
 
   constrainType:
     patterns:
@@ -478,20 +465,6 @@ repository:
       patterns:
       - include: '#code'
 
-  resourceDef:
-    patterns:
-    - begin: '({{identifier}})\s*(?=\()'
-      beginCaptures:
-        '0': { name: entity.name.function.ballerina }
-      end: '\}'
-      endCaptures:
-        '0': { name: punctuation.definition.block.ballerina }
-      patterns:
-      - include: '#comment'
-      - include: '#mdDocumentation'
-      - include: '#functionParameters'
-      - include: '#callableUnitBody'
-
   serviceBody:
     patterns:
     - begin: '\{'
@@ -506,11 +479,11 @@ repository:
       - include: '#documentationDef'
       - include: '#annotationDec'
       - include: '#endpointDef'
-      - include: '#resourceDef'
+      - include: '#functionDefinition'
       - include: '#recordLiteral'
       - include: '#code'
 
-  serviceDec:
+  serviceDefinition:
     patterns:
     - begin: '\bservice\b'
       end: '\}'
@@ -519,61 +492,24 @@ repository:
       endCaptures:
         '0': { name: punctuation.definition.block.ballerina }
       patterns:
-      - include: '#serviceReceiver'
-      - include: '#serviceEndpointAttachments'
-      - include: '#serviceName'
       - include: '#comment'
       - include: '#serviceBody'
-      - include: '#serviceBindVarContinued'
-
-  serviceBindVarContinued:
-    patterns:
-    - begin: ','
-      end: '{{identifier}}'
-      endCaptures:
-        '0': { name: variable.parameter.ballerina }
-
-  serviceEndpointAttachments:
-    patterns:
-    - begin: 'bind'
-      beginCaptures:
-        '0': { name: keyword.ballerina }
-      end: '(\})|({{identifier}})'
-      endCaptures:
-        '1': { name: punctuation.definition.block.ballerina }
-        '2': { name: variable.parameter.ballerina }
-      patterns:
-        - include: '#serviceBindRecordLiteral'
-        - include: '#comment'
-
-  serviceBindRecordLiteral:
-    patterns:
-    - begin: '\{'
-      end: '(?=\})'
-      beginCaptures:
-        '0': { name: punctuation.definition.block.ballerina }
-      endCaptures:
-        '0': { name: punctuation.definition.block.ballerina }
-      patterns:
-      - include: '#code'
+      - include: '#serviceOn'
+      - include: '#serviceName'
 
   serviceName:
     patterns:
     - name: entity.name.function.ballerina
       match: '{{identifier}}'
 
-  serviceReceiver:
+  serviceOn:
     patterns:
-    - begin: '<'
-      end: '>'
+    - begin: 'on'
+      end: '(?={)'
       beginCaptures:
-        '0': { name: punctuation.definition.parameters.begin.ballerina }
-      endCaptures:
-        '0': { name: punctuation.definition.parameters.end.ballerina }
+        '0': { name: keyword.ballerina }
       patterns:
-      - match: '{{identifier}}'
-        name: storage.type.ballerina
-      - include: '#comment'
+      - include: "#code"
 
   strings:
     patterns:

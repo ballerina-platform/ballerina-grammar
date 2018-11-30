@@ -50,7 +50,7 @@
       </dict>
       <dict>
         <key>include</key>
-        <string>#serviceDec</string>
+        <string>#serviceDefinition</string>
       </dict>
       <dict>
         <key>include</key>
@@ -662,7 +662,7 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#tupleParameter</string>
+                <string>#parameterTuple</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -1426,53 +1426,6 @@
           </dict>
         </array>
       </dict>
-      <key>resourceDef</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>begin</key>
-            <string>((?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))\s*(?=\()</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>entity.name.function.ballerina</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>\}</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.block.ballerina</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#mdDocumentation</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#functionParameters</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#callableUnitBody</string>
-              </dict>
-            </array>
-          </dict>
-        </array>
-      </dict>
       <key>serviceBody</key>
       <dict>
         <key>patterns</key>
@@ -1522,7 +1475,7 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#resourceDef</string>
+                <string>#functionDefinition</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -1536,7 +1489,7 @@
           </dict>
         </array>
       </dict>
-      <key>serviceDec</key>
+      <key>serviceDefinition</key>
       <dict>
         <key>patterns</key>
         <array>
@@ -1565,18 +1518,6 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#serviceReceiver</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#serviceEndpointAttachments</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#serviceName</string>
-              </dict>
-              <dict>
-                <key>include</key>
                 <string>#comment</string>
               </dict>
               <dict>
@@ -1585,106 +1526,11 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#serviceBindVarContinued</string>
-              </dict>
-            </array>
-          </dict>
-        </array>
-      </dict>
-      <key>serviceBindVarContinued</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>begin</key>
-            <string>,</string>
-            <key>end</key>
-            <string>(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+")</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>variable.parameter.ballerina</string>
-              </dict>
-            </dict>
-          </dict>
-        </array>
-      </dict>
-      <key>serviceEndpointAttachments</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>begin</key>
-            <string>bind</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.ballerina</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>(\})|((?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.block.ballerina</string>
-              </dict>
-              <key>2</key>
-              <dict>
-                <key>name</key>
-                <string>variable.parameter.ballerina</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#serviceBindRecordLiteral</string>
+                <string>#serviceOn</string>
               </dict>
               <dict>
                 <key>include</key>
-                <string>#comment</string>
-              </dict>
-            </array>
-          </dict>
-        </array>
-      </dict>
-      <key>serviceBindRecordLiteral</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>begin</key>
-            <string>\{</string>
-            <key>end</key>
-            <string>(?=\})</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.block.ballerina</string>
-              </dict>
-            </dict>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.block.ballerina</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#code</string>
+                <string>#serviceName</string>
               </dict>
             </array>
           </dict>
@@ -1702,42 +1548,28 @@
           </dict>
         </array>
       </dict>
-      <key>serviceReceiver</key>
+      <key>serviceOn</key>
       <dict>
         <key>patterns</key>
         <array>
           <dict>
             <key>begin</key>
-            <string>&lt;</string>
+            <string>on</string>
             <key>end</key>
-            <string>&gt;</string>
+            <string>(?={)</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.parameters.begin.ballerina</string>
-              </dict>
-            </dict>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.parameters.end.ballerina</string>
+                <string>keyword.ballerina</string>
               </dict>
             </dict>
             <key>patterns</key>
             <array>
               <dict>
-                <key>match</key>
-                <string>(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+")</string>
-                <key>name</key>
-                <string>storage.type.ballerina</string>
-              </dict>
-              <dict>
                 <key>include</key>
-                <string>#comment</string>
+                <string>#code</string>
               </dict>
             </array>
           </dict>
@@ -2041,7 +1873,7 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#tupleParameter</string>
+                <string>#parameterTuple</string>
               </dict>
               <dict>
                 <key>match</key>
@@ -2053,7 +1885,7 @@
           </dict>
         </array>
       </dict>
-      <key>tupleParameter</key>
+      <key>parameterTuple</key>
       <dict>
         <key>patterns</key>
         <array>
@@ -2070,13 +1902,13 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#tupleParameterEnd</string>
+                <string>#parameterTupleEnd</string>
               </dict>
             </array>
           </dict>
         </array>
       </dict>
-      <key>tupleParameterEnd</key>
+      <key>parameterTupleEnd</key>
       <dict>
         <key>patterns</key>
         <array>
