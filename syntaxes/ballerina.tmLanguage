@@ -46,11 +46,11 @@
     <array>
       <dict>
         <key>include</key>
-        <string>#functionDec</string>
+        <string>#functionDefinition</string>
       </dict>
       <dict>
         <key>include</key>
-        <string>#serviceDec</string>
+        <string>#serviceDefinition</string>
       </dict>
       <dict>
         <key>include</key>
@@ -252,50 +252,6 @@
           </dict>
         </array>
       </dict>
-      <key>continuedType</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>begin</key>
-            <string>[|,:]</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.operator.ballerina</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>(\b(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+")\b)|(\))</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>storage.type.ballerina</string>
-              </dict>
-              <key>2</key>
-              <dict>
-                <key>name</key>
-                <string>source.ballerina</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#continuedTupleType</string>
-              </dict>
-            </array>
-          </dict>
-        </array>
-      </dict>
       <key>constrainType</key>
       <dict>
         <key>patterns</key>
@@ -345,7 +301,7 @@
           </dict>
         </array>
       </dict>
-      <key>continuedTupleType</key>
+      <key>tupleType</key>
       <dict>
         <key>patterns</key>
         <array>
@@ -610,7 +566,7 @@
           </dict>
         </array>
       </dict>
-      <key>functionDec</key>
+      <key>functionDefinition</key>
       <dict>
         <key>patterns</key>
         <array>
@@ -637,10 +593,6 @@
             </dict>
             <key>patterns</key>
             <array>
-              <dict>
-                <key>include</key>
-                <string>#functionReceiver</string>
-              </dict>
               <dict>
                 <key>include</key>
                 <string>#functionParameters</string>
@@ -710,46 +662,11 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#parameterTuple</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#defaultValue</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
-              </dict>
-            </array>
-          </dict>
-        </array>
-      </dict>
-      <key>functionReceiver</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>begin</key>
-            <string>&lt;</string>
-            <key>end</key>
-            <string>&gt;</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.parameters.begin.ballerina</string>
-              </dict>
-            </dict>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.parameters.end.ballerina</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#parameter</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -1116,10 +1033,6 @@
               <dict>
                 <key>include</key>
                 <string>#objectInitDec</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#functionDec</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -1513,53 +1426,6 @@
           </dict>
         </array>
       </dict>
-      <key>resourceDef</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>begin</key>
-            <string>((?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))\s*(?=\()</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>entity.name.function.ballerina</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>\}</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.block.ballerina</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#mdDocumentation</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#functionParameters</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#callableUnitBody</string>
-              </dict>
-            </array>
-          </dict>
-        </array>
-      </dict>
       <key>serviceBody</key>
       <dict>
         <key>patterns</key>
@@ -1609,7 +1475,7 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#resourceDef</string>
+                <string>#functionDefinition</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -1623,7 +1489,7 @@
           </dict>
         </array>
       </dict>
-      <key>serviceDec</key>
+      <key>serviceDefinition</key>
       <dict>
         <key>patterns</key>
         <array>
@@ -1652,18 +1518,6 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#serviceReceiver</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#serviceEndpointAttachments</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#serviceName</string>
-              </dict>
-              <dict>
-                <key>include</key>
                 <string>#comment</string>
               </dict>
               <dict>
@@ -1672,106 +1526,11 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#serviceBindVarContinued</string>
-              </dict>
-            </array>
-          </dict>
-        </array>
-      </dict>
-      <key>serviceBindVarContinued</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>begin</key>
-            <string>,</string>
-            <key>end</key>
-            <string>(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+")</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>variable.parameter.ballerina</string>
-              </dict>
-            </dict>
-          </dict>
-        </array>
-      </dict>
-      <key>serviceEndpointAttachments</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>begin</key>
-            <string>bind</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.ballerina</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>(\})|((?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>1</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.block.ballerina</string>
-              </dict>
-              <key>2</key>
-              <dict>
-                <key>name</key>
-                <string>variable.parameter.ballerina</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#serviceBindRecordLiteral</string>
+                <string>#serviceOn</string>
               </dict>
               <dict>
                 <key>include</key>
-                <string>#comment</string>
-              </dict>
-            </array>
-          </dict>
-        </array>
-      </dict>
-      <key>serviceBindRecordLiteral</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>begin</key>
-            <string>\{</string>
-            <key>end</key>
-            <string>(?=\})</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.block.ballerina</string>
-              </dict>
-            </dict>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.block.ballerina</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#code</string>
+                <string>#serviceName</string>
               </dict>
             </array>
           </dict>
@@ -1789,42 +1548,28 @@
           </dict>
         </array>
       </dict>
-      <key>serviceReceiver</key>
+      <key>serviceOn</key>
       <dict>
         <key>patterns</key>
         <array>
           <dict>
             <key>begin</key>
-            <string>&lt;</string>
+            <string>on</string>
             <key>end</key>
-            <string>&gt;</string>
+            <string>(?={)</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.parameters.begin.ballerina</string>
-              </dict>
-            </dict>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.parameters.end.ballerina</string>
+                <string>keyword.ballerina</string>
               </dict>
             </dict>
             <key>patterns</key>
             <array>
               <dict>
-                <key>match</key>
-                <string>(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+")</string>
-                <key>name</key>
-                <string>storage.type.ballerina</string>
-              </dict>
-              <dict>
                 <key>include</key>
-                <string>#comment</string>
+                <string>#code</string>
               </dict>
             </array>
           </dict>
@@ -2035,7 +1780,7 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#continuedTupleType</string>
+                <string>#tupleType</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -2115,21 +1860,9 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>\b(?:(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))\b|(?==&gt;)|(?=\))</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>variable.parameter.ballerina</string>
-              </dict>
-            </dict>
+            <string>(?:\,)|(?:\|)|(?:\:)|(?==&gt;)|(?=\))</string>
             <key>patterns</key>
             <array>
-              <dict>
-                <key>include</key>
-                <string>#continuedType</string>
-              </dict>
               <dict>
                 <key>include</key>
                 <string>#constrainType</string>
@@ -2137,6 +1870,60 @@
               <dict>
                 <key>include</key>
                 <string>#comment</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#parameterTuple</string>
+              </dict>
+              <dict>
+                <key>match</key>
+                <string>(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+")</string>
+                <key>name</key>
+                <string>variable.parameter.ballerina</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>parameterTuple</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\(</string>
+            <key>end</key>
+            <string>(?=\,)|(?=\|)|(?=\:)|(?==&gt;)</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#parameter</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#parameterTupleEnd</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>parameterTupleEnd</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\)</string>
+            <key>end</key>
+            <string>(?=\,)|(?=\|)|(?=\:)|(?==&gt;)|(?=\))</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>match</key>
+                <string>(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+")</string>
+                <key>name</key>
+                <string>variable.parameter.ballerina</string>
               </dict>
             </array>
           </dict>
@@ -2434,13 +2221,13 @@
             <key>name</key>
             <string>keyword.control.ballerina</string>
             <key>match</key>
-            <string>\b(if|else|iterator|try|catch|finally|fork|join|all|some|while|foreach|in|throw|return|returns|break|timeout|transaction|abort|retry|retries|continue|bind|with|lengthof|typeof|enum)\b</string>
+            <string>\b(if|else|iterator|try|catch|finally|fork|join|all|some|while|foreach|in|throw|return|returns|break|timeout|transaction|abort|retry|retries|continue|bind|with|lengthof|typeof|enum|wait)\b</string>
           </dict>
           <dict>
             <key>name</key>
             <string>keyword.other.ballerina</string>
             <key>match</key>
-            <string>\b(import|version|public|private|attach|as|native|documentation|lock|new|record|limit|ascending|descending|check|start|done|untaint|onretry|oncommit|onabort|scope|compensate|compensation|primarykey|channel|abstract)\b</string>
+            <string>\b(import|version|public|private|attach|as|native|documentation|lock|new|record|limit|ascending|descending|check|start|done|untaint|onretry|oncommit|onabort|scope|compensate|compensation|primarykey|channel|abstract|extern|final|listener|remote|client|__init)\b</string>
           </dict>
           <dict>
             <key>name</key>
