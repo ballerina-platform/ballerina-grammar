@@ -28,7 +28,7 @@ tmlVariables:
   xmlTag: 'entity.name.tag.xml.ballerina'
 
 patterns:
-- include: '#functionDec'
+- include: '#functionDefinition'
 - include: '#serviceDec'
 - include: '#endpointDef'
 - include: '#documentationDef'
@@ -96,18 +96,18 @@ repository:
     - name: comment.ballerina
       match: \/\/.*
 
-  continuedType:
-    patterns:
-    - begin: '[|,:]'
-      beginCaptures:
-        '0': { name:  keyword.operator.ballerina }
-      end: (\b{{identifier}}\b)|(\))
-      endCaptures:
-        '1': { name: '{{typeScope}}' }
-        '2': { name: 'source.ballerina' }
-      patterns:
-      - include: '#comment'
-      - include: '#continuedTupleType'
+  # continuedType:
+  #   patterns:
+  #   - begin: '[|,:]'
+  #     beginCaptures:
+  #       '0': { name:  source.ballerina }
+  #     end: (\b{{identifier}}\b)|(\))
+  #     endCaptures:
+  #       '1': { name: '{{typeScope}}' }
+  #       '2': { name: 'source.ballerina' }
+  #     patterns:
+  #     - include: '#comment'
+  #     - include: '#tupleType'
 
   constrainType:
     patterns:
@@ -124,7 +124,7 @@ repository:
       - name: '{{typeScope}}'
         match: \b({{identifier}})\b
 
-  continuedTupleType:
+  tupleType:
     patterns:
     - begin: '\('
       end: '(?=\)|;)'
@@ -211,7 +211,7 @@ repository:
       - include: '#workerDef'
       - include: '#code'
 
-  functionDec:
+  functionDefinition:
     patterns:
     - begin: '\bfunction\b'
       beginCaptures:
@@ -220,7 +220,6 @@ repository:
       endCaptures:
         '0': { name:  punctuation.definition.block.ballerina }
       patterns:
-      - include: '#functionReceiver'
       - include: '#functionParameters'
       - include: '#functionReturns'
       - include: '#functionName'
@@ -242,19 +241,8 @@ repository:
         '0': { name: delimiter.parenthesis }
       patterns:
       - include: '#parameter'
+      - include: '#parameterTuple'
       - include: '#defaultValue'
-      - include: '#comment'
-
-  functionReceiver:
-    patterns:
-    - begin: '<'
-      end: '>'
-      beginCaptures:
-        '0': { name: punctuation.definition.parameters.begin.ballerina }
-      endCaptures:
-        '0': { name: punctuation.definition.parameters.end.ballerina }
-      patterns:
-      - include: '#parameter'
       - include: '#comment'
 
   functionReturns:
@@ -368,7 +356,7 @@ repository:
       - include: '#mdDocumentation'
       - include: '#documentationDef'
       - include: '#objectInitDec'
-      - include: '#functionDec'
+      # - include: '#functionDec'
       - include: '#annotationDec'
       - include: '#variableDef'
       - include: '#comment'
@@ -652,7 +640,7 @@ repository:
       endCaptures:
         '0': { name: source.ballerina }
       patterns:
-      - include: '#continuedTupleType'
+      - include: '#tupleType'
       - include: '#continuedType'
       - include: '#constrainType'
       - include: '#comment'
@@ -678,13 +666,29 @@ repository:
     - begin: \b(?:{{identifier}})\b
       beginCaptures:
         '0': { name: '{{typeScope}}' }
-      end: \b(?:{{identifier}})\b|(?==>)|(?=\))
-      endCaptures:
-        '0': { name: variable.parameter.ballerina }
+      end: (?:\,)|(?:\|)|(?:\:)|(?==>)|(?=\))
       patterns:
-      - include: '#continuedType'
       - include: '#constrainType'
       - include: '#comment'
+      - include: '#parameterTuple'
+      - match: '{{identifier}}'
+        name: variable.parameter.ballerina
+
+  parameterTuple:
+    patterns:
+    - begin: '\('
+      end: (?=\,)|(?=\|)|(?=\:)|(?==>)
+      patterns:
+      - include: '#parameter'
+      - include: '#parameterTupleEnd'
+
+  parameterTupleEnd:
+    patterns:
+    - begin: '\)'
+      end: (?=\,)|(?=\|)|(?=\:)|(?==>)|(?=\))
+      patterns:
+      - match: '{{identifier}}'
+        name: variable.parameter.ballerina
 
   types:
     patterns:
