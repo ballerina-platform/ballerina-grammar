@@ -28,12 +28,12 @@ tmlVariables:
   xmlTag: 'entity.name.tag.xml.ballerina'
 
 patterns:
-- include: '#functionDefinition'
 - include: '#serviceDefinition'
+- include: '#functionDefinition'
+- include: '#typeDefinition'
 - include: '#endpointDef'
 - include: '#documentationDef'
 - include: '#mdDocumentation'
-- include: '#typeDef'
 - include: '#objectDec'
 - include: '#record'
 - include: '#annotationDec'
@@ -339,12 +339,12 @@ repository:
       endCaptures:
         '0': { name: punctuation.definition.block.ballerina }
       patterns:
-      - include: '#varDefBlock'
       - include: '#mdDocumentation'
       - include: '#documentationDef'
-      - include: '#objectInitDec'
-      # - include: '#functionDec'
+      - include: '#functionDefinition'
       - include: '#annotationDec'
+      - match: (public|private|extern|resource|remote)
+        name: keyword.ballerina
       - include: '#variableDef'
       - include: '#comment'
       - include: '#code'
@@ -372,16 +372,6 @@ repository:
       patterns:
       - include: '#comment'
       - include: '#code'
-
-  objectInitDec:
-    patterns:
-    - begin: '\bnew\b'
-      beginCaptures:
-        '0': { name:  keyword.ballerina }
-      end: '\}'
-      patterns:
-      - include: '#objectInitParameters'
-      - include: '#objectInitBody'
 
   objectInitParameters:
     patterns:
@@ -545,31 +535,35 @@ repository:
     - name: string.symbolic.ballerina
       match: \'[a-zA-z_][a-zA-z_0-9]*
 
-  typeDef:
+  typeDefinition:
     patterns:
     - begin: '\btype\b'
       beginCaptures:
         '0': { name:  keyword.ballerina }
-      end: '\b{{identifier}}\b'
+      end: ';'
       endCaptures:
         '0': { name: source.ballerina }
       patterns:
       - include: '#comment'
+      - include: '#typeDescription'
 
-  varDefBlock:
+  typeDescription:
     patterns:
-    - begin: \b(?:private|public)\b
+    - begin: '{{identifier}}'
       beginCaptures:
-        '0': { name:  keyword.ballerina }
-      end: '\}|;|,'
+        '0': { name: entity.name.function.ballerina }
+      end: '(?=;)'
+      endCaptures:
+        '0': { name: source.ballerina }
       patterns:
-      - include: '#objectMemberFunctionDec'
-      - include: '#variableDef'
-      - include: '#code'
+      - include: '#comment'
+      - include: '#objectDec'
+      - match: '{{identifier}}'
+        name: '{{typeScope}}'
 
   variableDef:
     patterns:
-    - begin: \b(?:{{identifier}})\b|(?=\()
+    - begin: (?:{{identifier}}) |(?=\()
       beginCaptures:
         '0': { name: '{{typeScope}}' }
       end: \b(?:{{identifier}})\b|(?=\,)|(?=;)|\.\.\.
