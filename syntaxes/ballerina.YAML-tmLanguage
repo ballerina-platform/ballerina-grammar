@@ -250,6 +250,8 @@ repository:
       endCaptures:
         '0': { name: curly }
       patterns:
+        - include: '#record'
+        - include: '#objectDec'
         - match: '{{identifier}}'
           name: '{{typeScope}}'
         - include: '#comment'
@@ -295,9 +297,20 @@ repository:
       endCaptures:
         '0': { name: punctuation.definition.block.ballerina.documentation }
       patterns:
-      - include: '#parameter'
+      - include: '#literal'
+      - include: '#matchBindingPattern'
       - include: '#matchStatementPatternClause'
       - include: '#comment'
+
+  matchBindingPattern:
+    patterns:
+    - begin: 'var'
+      beginCaptures:
+        '0': { name: '{{typeScope}}' }
+      end: '(?==>)'
+      patterns:
+      - match: '{{identifier}}'
+        name: variable.parameter.ballerina
 
   mdDocumentation:
     patterns:
@@ -604,11 +617,13 @@ repository:
 
   parameter:
     patterns:
-    - begin: \b(?:{{identifier}})\b
+    - begin: ((?=record|object)|(?:{{identifier}}))
       beginCaptures:
         '0': { name: '{{typeScope}}' }
       end: (?:\,)|(?:\|)|(?:\:)|(?==>)|(?=\))
       patterns:
+      - include: '#record'
+      - include: '#objectDec'
       - include: '#constrainType'
       - include: '#comment'
       - include: '#parameterTuple'
@@ -620,6 +635,8 @@ repository:
     - begin: '\('
       end: (?=\,)|(?=\|)|(?=\:)|(?==>)
       patterns:
+      - include: '#record'
+      - include: '#objectDec'
       - include: '#parameter'
       - include: '#parameterTupleEnd'
 
