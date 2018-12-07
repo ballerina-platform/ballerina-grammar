@@ -1535,7 +1535,7 @@
             <key>begin</key>
             <string>\bservice\b</string>
             <key>end</key>
-            <string>\}</string>
+            <string>\}|;|=</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1937,6 +1937,10 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#defaultValue</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#comment</string>
               </dict>
               <dict>
@@ -2013,7 +2017,7 @@
             <key>name</key>
             <string>storage.type.ballerina</string>
             <key>match</key>
-            <string>\b(boolean|int|float|string|var|any|datatable|table|byte|future|typedesc)\b</string>
+            <string>\b(boolean|int|float|string|var|any|anydata|datatable|table|byte|future|typedesc)\b</string>
           </dict>
           <dict>
             <key>name</key>

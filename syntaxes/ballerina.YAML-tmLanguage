@@ -498,7 +498,7 @@ repository:
   serviceDefinition:
     patterns:
     - begin: '\bservice\b'
-      end: '\}'
+      end: '\}|;|='
       beginCaptures:
         '0': { name:  keyword.ballerina }
       endCaptures:
@@ -625,6 +625,7 @@ repository:
       - include: '#record'
       - include: '#objectDec'
       - include: '#constrainType'
+      - include: '#defaultValue'
       - include: '#comment'
       - include: '#parameterTuple'
       - match: '{{identifier}}'
@@ -651,7 +652,7 @@ repository:
   types:
     patterns:
     - name: '{{typeScope}}'
-      match: \b(boolean|int|float|string|var|any|datatable|table|byte|future|typedesc)\b
+      match: \b(boolean|int|float|string|var|any|anydata|datatable|table|byte|future|typedesc)\b
 
     - name: '{{typeScope}}'
       match: \b(map|exception|json|xml|xmlns|error)\b
