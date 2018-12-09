@@ -2313,7 +2313,7 @@
             <key>name</key>
             <string>keyword.other.siddhi.ballerina</string>
             <key>match</key>
-            <string>\b(forever|from|on|select|group|by|having|order|where|followed|insert|into|update|delete|set|for|window|query)\b</string>
+            <string>\b(forever|from|on|select|group|by|having|order|where|followed|insert|into|update|set|for|window|query)\b</string>
           </dict>
           <dict>
             <key>name</key>
