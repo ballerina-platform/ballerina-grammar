@@ -94,6 +94,10 @@
       </dict>
       <dict>
         <key>include</key>
+        <string>#variableDef</string>
+      </dict>
+      <dict>
+        <key>include</key>
         <string>#code</string>
       </dict>
     </array>
@@ -1109,6 +1113,10 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#variableDefInline</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#variableDef</string>
               </dict>
               <dict>
@@ -1412,6 +1420,10 @@
               <dict>
                 <key>include</key>
                 <string>#annotationAttachment</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#variableDefInline</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -1827,7 +1839,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>\b(?:(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))\b|(?=\,)|(?=;)|\.\.\.</string>
+            <string>(?:(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))|(?=\,)|(?=;)|\.\.\.</string>
             <key>endCaptures</key>
             <dict>
               <key>0</key>
@@ -1853,6 +1865,35 @@
               <dict>
                 <key>include</key>
                 <string>#comment</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>variableDefInline</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>(?=record)|(?=object)</string>
+            <key>end</key>
+            <string>(?=;)</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#record</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#objectDec</string>
+              </dict>
+              <dict>
+                <key>match</key>
+                <string>(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+")</string>
+                <key>name</key>
+                <string>source.ballerina</string>
               </dict>
             </array>
           </dict>
