@@ -368,6 +368,7 @@ repository:
       - include: '#annotationAttachment'
       - match: (public|private|extern|resource|remote)
         name: keyword.ballerina
+      - include: '#variableDefInline'
       - include: '#variableDef'
       - include: '#comment'
       - include: '#code'
@@ -463,6 +464,7 @@ repository:
         '0': { name: punctuation.definition.block.ballerina }
       patterns:
       - include: '#annotationAttachment'
+      - include: '#variableDefInline'
       - include: '#variableDef'
       - include: '#comment'
       - include: '#code'
@@ -599,6 +601,16 @@ repository:
       - include: '#continuedType'
       - include: '#constrainType'
       - include: '#comment'
+
+  variableDefInline:
+    patterns:
+    - begin: '(?=record)|(?=object)'
+      end: '(?=;)'
+      patterns:
+      - include: '#record'
+      - include: '#objectDec'
+      - match: '{{identifier}}'
+        name: source.ballerina
 
   workerDef:
     patterns:
