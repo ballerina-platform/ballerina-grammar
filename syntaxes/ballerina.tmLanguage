@@ -94,6 +94,10 @@
       </dict>
       <dict>
         <key>include</key>
+        <string>#variableDef</string>
+      </dict>
+      <dict>
+        <key>include</key>
         <string>#code</string>
       </dict>
     </array>
@@ -1827,7 +1831,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>\b(?:(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))\b|(?=\,)|(?=;)|\.\.\.</string>
+            <string>(?:(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\^"([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])+"))|(?=\,)|(?=;)|\.\.\.</string>
             <key>endCaptures</key>
             <dict>
               <key>0</key>
