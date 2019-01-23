@@ -62,10 +62,6 @@
       </dict>
       <dict>
         <key>include</key>
-        <string>#endpointDef</string>
-      </dict>
-      <dict>
-        <key>include</key>
         <string>#documentationDef</string>
       </dict>
       <dict>
@@ -91,10 +87,6 @@
       <dict>
         <key>include</key>
         <string>#comment</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#variableDef</string>
       </dict>
       <dict>
         <key>include</key>
@@ -518,41 +510,6 @@
           </dict>
         </array>
       </dict>
-      <key>endpointDef</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>begin</key>
-            <string>\bendpoint\b</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.ballerina</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>;</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#parameter</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#recordLiteral</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
-              </dict>
-            </array>
-          </dict>
-        </array>
-      </dict>
       <key>callableUnitBody</key>
       <dict>
         <key>patterns</key>
@@ -580,10 +537,6 @@
             </dict>
             <key>patterns</key>
             <array>
-              <dict>
-                <key>include</key>
-                <string>#endpointDef</string>
-              </dict>
               <dict>
                 <key>include</key>
                 <string>#workerDef</string>
@@ -1521,10 +1474,6 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#endpointDef</string>
-              </dict>
-              <dict>
-                <key>include</key>
                 <string>#functionDefinition</string>
               </dict>
               <dict>
@@ -2342,7 +2291,7 @@
             <key>name</key>
             <string>keyword.control.ballerina</string>
             <key>match</key>
-            <string>\b(if|else|iterator|try|catch|finally|fork|join|all|some|while|foreach|in|throw|return|returns|break|timeout|transaction|abort|retry|retries|continue|bind|with|lengthof|typeof|enum|wait)\b</string>
+            <string>\b(if|else|iterator|try|catch|finally|fork|join|all|some|while|foreach|in|throw|return|returns|break|timeout|transaction|abort|retry|retries|continue|bind|with|typeof|enum|wait)\b</string>
           </dict>
           <dict>
             <key>name</key>
@@ -2360,7 +2309,7 @@
             <key>name</key>
             <string>keyword.other.ballerina</string>
             <key>match</key>
-            <string>\b(annotation|package|type|connector|function|resource|service|action|worker|struct|transformer|endpoint|object)\b</string>
+            <string>\b(annotation|package|type|connector|function|resource|service|action|worker|struct|transformer|object)\b</string>
           </dict>
           <dict>
             <key>name</key>
