@@ -205,6 +205,8 @@ repository:
       patterns:
       - include: '#functionParameters'
       - include: '#functionReturns'
+      - name: keyword.ballerina
+        match: 'extern\b'
       - include: '#functionName'
       - include: '#callableUnitBody'
       - include: '#comment'
@@ -745,7 +747,7 @@ repository:
       match: \b(if|else|iterator|try|catch|finally|fork|join|all|some|while|foreach|in|throw|return|returns|break|timeout|transaction|abort|retry|retries|continue|bind|with|typeof|enum|wait)\b
 
     - name: keyword.other.ballerina
-      match: \b(import|version|public|private|attach|as|native|documentation|lock|new|record|limit|ascending|descending|check|start|done|untaint|onretry|oncommit|onabort|scope|compensate|compensation|primarykey|channel|abstract|extern|final|listener|remote|client|is|__init)\b
+      match: \b(import|version|public|private|attach|as|native|documentation|lock|new|record|limit|ascending|descending|check|checkpanic|start|done|untaint|onretry|oncommit|onabort|scope|compensate|compensation|primarykey|channel|abstract|extern|final|listener|remote|client|is|__init)\b
 
     - name: keyword.other.siddhi.ballerina
       match: \b(forever|from|on|select|group|by|having|order|where|followed|insert|into|update|set|for|window|query)\b
