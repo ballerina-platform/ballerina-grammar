@@ -634,7 +634,7 @@ repository:
   parameterTuple:
     patterns:
     - begin: '\('
-      end: (?=\,)|(?=\|)|(?=\:)|(?==>)
+      end: (?=\,)|(?=\|)|(?=\:)|(?==>)|(?=\))
       patterns:
       - include: '#record'
       - include: '#objectDec'
