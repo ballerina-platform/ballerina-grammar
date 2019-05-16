@@ -307,10 +307,6 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#continuedType</string>
-              </dict>
-              <dict>
-                <key>include</key>
                 <string>#constrainType</string>
               </dict>
               <dict>
@@ -337,10 +333,6 @@
               <dict>
                 <key>include</key>
                 <string>#comment</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#continuedType</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -1808,10 +1800,6 @@
               <dict>
                 <key>include</key>
                 <string>#tupleType</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#continuedType</string>
               </dict>
               <dict>
                 <key>include</key>

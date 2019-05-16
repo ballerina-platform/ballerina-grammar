@@ -99,6 +99,10 @@ function convert(grammar, patterns, monarch, targetKey) {
             }
 
             const subrule = grammar.repository[include];
+            if (!subrule) {
+                console.log(`${include} is not found`);
+            }
+
             monarch[targetKey].push({include});
             convert(grammar, subrule.patterns, monarch, include, targetKey);
             return;
