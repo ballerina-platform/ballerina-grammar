@@ -114,7 +114,6 @@ repository:
         '0': { name: punctuation.definition.parameters.end.ballerina }
       patterns:
       - include: '#comment'
-      - include: '#continuedType'
       - include: '#constrainType'
       - name: '{{typeScope}}'
         match: \b({{identifier}})\b
@@ -125,7 +124,6 @@ repository:
       end: '(?=\)|;)'
       patterns:
       - include: '#comment'
-      - include: '#continuedType'
       - include: '#constrainType'
       - name: '{{typeScope}}'
         match: \b({{identifier}})\b
@@ -585,7 +583,6 @@ repository:
         '0': { name: source.ballerina }
       patterns:
       - include: '#tupleType'
-      - include: '#continuedType'
       - include: '#constrainType'
       - include: '#comment'
 
