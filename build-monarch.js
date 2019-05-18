@@ -41,20 +41,13 @@ delete grammar.monarchVariables;
 // We can't convert the keywords highlighting from the yaml file due to what seems
 // to be a bug in monaco. Its reported here. https://github.com/Microsoft/monaco-editor/issues/890
 // For now keywords entry is manually added.
-const exceptions = ['keywords', 'types', 'boolean'];
+const exceptions = [];
 const patterns = grammar.patterns;
 const monarch = {};
 convert(grammar, grammar.patterns, monarch, 'root');
 
-//Following is manually adding keywords
-monarch.code.push(['[a-z][\\w$]*', {
-    cases: {
-        '@controlKeywords': 'keyword.control',
-        '@otherKeywords': 'keyword',
-        '@typeKeywords': 'type',
-        '@default': 'identifier',
-    },
-}])
+// Following is manually adding keywords
+monarch.code.push(['[a-z][\\w$]*', 'identifier']);
 
 fs.writeFileSync(outFile, JSON.stringify(monarch, null, 4));
 
