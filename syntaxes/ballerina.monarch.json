@@ -298,7 +298,7 @@
     "annotationAttachment": [
         [
             "@((?:(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\\^\"([^|\"\\\\\\f\\n\\r\\t]|\\\\\\\\[btnfr]|\\\\[|\"\\\\/])+\")):)?(?:(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\\^\"([^|\"\\\\\\f\\n\\r\\t]|\\\\\\\\[btnfr]|\\\\[|\"\\\\/])+\"))",
-            "type.ballerina"
+            "type"
         ]
     ],
     "functionDefinition": [
@@ -373,7 +373,7 @@
             "((?=record|object)|(?:(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\\^\"([^|\"\\\\\\f\\n\\r\\t]|\\\\\\\\[btnfr]|\\\\[|\"\\\\/])+\")))",
             {
                 "next": "parameter__b__0",
-                "token": "type.ballerina"
+                "token": "type"
             }
         ]
     ],
@@ -568,7 +568,7 @@
             "(?:(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\\^\"([^|\"\\\\\\f\\n\\r\\t]|\\\\\\\\[btnfr]|\\\\[|\"\\\\/])+\"))(?: |\\t)|(?=\\()",
             {
                 "next": "variableDef__b__0",
-                "token": "type.ballerina"
+                "token": "type"
             }
         ]
     ],
@@ -615,7 +615,7 @@
         },
         [
             "\\b((?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\\^\"([^|\"\\\\\\f\\n\\r\\t]|\\\\\\\\[btnfr]|\\\\[|\"\\\\/])+\"))\\b",
-            "type.ballerina"
+            "type"
         ]
     ],
     "constrainType": [
@@ -643,7 +643,7 @@
         },
         [
             "\\b((?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\\^\"([^|\"\\\\\\f\\n\\r\\t]|\\\\\\\\[btnfr]|\\\\[|\"\\\\/])+\"))\\b",
-            "type.ballerina"
+            "type"
         ]
     ],
     "code": [
@@ -661,6 +661,9 @@
         },
         {
             "include": "stringTemplate"
+        },
+        {
+            "include": "keywords"
         },
         {
             "include": "strings"
@@ -685,14 +688,7 @@
         },
         [
             "[a-z][\\w$]*",
-            {
-                "cases": {
-                    "@controlKeywords": "keyword.control",
-                    "@otherKeywords": "keyword",
-                    "@typeKeywords": "type",
-                    "@default": "identifier"
-                }
-            }
+            "identifier"
         ]
     ],
     "booleans": [
@@ -830,7 +826,7 @@
             "var",
             {
                 "next": "matchBindingPattern__b__0",
-                "token": "type.ballerina"
+                "token": "type"
             }
         ]
     ],
@@ -1199,6 +1195,49 @@
             "string"
         ]
     ],
+    "keywords": [
+        [
+            "\\b(if|else|iterator|try|catch|finally|fork|join|all|some|while|foreach|in|throw|return|returns|break|timeout|transaction|abort|retry|retries|continue|bind|with|typeof|enum|wait)\\b",
+            "keyword.control.ballerina"
+        ],
+        [
+            "\\b(import|version|public|private|attach|as|native|documentation|lock|new|record|limit|ascending|descending|check|checkpanic|start|done|untaint|onretry|oncommit|onabort|scope|compensate|compensation|primarykey|channel|abstract|extern|final|listener|remote|client|is|__init)\\b",
+            "keyword.other.ballerina"
+        ],
+        [
+            "\\b(forever|from|on|select|group|by|having|order|where|followed|insert|into|update|set|for|window|query)\\b",
+            "keyword.other.siddhi.ballerina"
+        ],
+        [
+            "\\b(annotation|package|type|connector|function|resource|service|action|worker|struct|transformer|object)\\b",
+            "keyword.other.ballerina"
+        ],
+        [
+            "\\b(const|true|false|reply|create|parameter)\\b",
+            "keyword.other.ballerina"
+        ],
+        [
+            "(!|%|\\+|\\-|~=|==|=|!=|<|>|&&|\\|\\||\\?:|\\.\\.\\.)",
+            "keyword.operator.ballerina"
+        ],
+        {
+            "include": "types"
+        }
+    ],
+    "types": [
+        [
+            "\\b(boolean|int|float|string|var|any|anydata|datatable|table|byte|future|typedesc)\\b",
+            "type"
+        ],
+        [
+            "\\b(map|exception|json|xml|xmlns|error)\\b",
+            "type"
+        ],
+        [
+            "\\b(stream|streamlet|aggregation)\\b",
+            "type"
+        ]
+    ],
     "paranthesised": [
         [
             "\\(",
@@ -1351,7 +1390,7 @@
         },
         [
             "(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\\^\"([^|\"\\\\\\f\\n\\r\\t]|\\\\\\\\[btnfr]|\\\\[|\"\\\\/])+\")",
-            "type.ballerina"
+            "type"
         ],
         {
             "include": "comment"
@@ -1466,10 +1505,26 @@
         },
         [
             "(?:[a-zA-Z_][a-zA-Z0-9_]*)|(?:\\^\"([^|\"\\\\\\f\\n\\r\\t]|\\\\\\\\[btnfr]|\\\\[|\"\\\\/])+\")",
-            "type.ballerina"
+            "type"
         ]
     ],
     "annotationDefinition": [
+        [
+            "\\bannotation\\b",
+            {
+                "next": "annotationDefinition__b__0",
+                "token": "keyword.ballerina"
+            }
+        ]
+    ],
+    "annotationDefinition__b__0": [
+        [
+            ";",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
         {
             "include": "typeDescription"
         }

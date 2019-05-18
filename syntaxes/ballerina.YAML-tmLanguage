@@ -12,8 +12,8 @@ variables:
   identifierLiteralChar: ([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])
 
 monarchVariables:
-  typeScope: 'type.ballerina'
-  annotationScope: 'type.ballerina'
+  typeScope: 'type'
+  annotationScope: 'type'
   numberScope: 'number'
   xmlTagAngle: 'tag'
   xmlAttribute: 'variable.parameter'
@@ -48,12 +48,13 @@ repository:
       name: '{{annotationScope}}'
 
   annotationDefinition:
-    begin: '\bannotation\b'
-    beginCaptures:
-      '0': { name:  keyword.ballerina }
-    end: ';'
     patterns:
-    - include: '#typeDescription'
+    - begin: '\bannotation\b'
+      beginCaptures:
+        '0': { name:  keyword.ballerina }
+      end: ';'
+      patterns:
+      - include: '#typeDescription'
 
   booleans:
     patterns:

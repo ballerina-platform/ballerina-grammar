@@ -15,9 +15,9 @@
     <key>monarchVariables</key>
     <dict>
       <key>typeScope</key>
-      <string>type.ballerina</string>
+      <string>type</string>
       <key>annotationScope</key>
-      <string>type.ballerina</string>
+      <string>type</string>
       <key>numberScope</key>
       <string>number</string>
       <key>xmlTagAngle</key>
@@ -109,23 +109,28 @@
       </dict>
       <key>annotationDefinition</key>
       <dict>
-        <key>begin</key>
-        <string>\bannotation\b</string>
-        <key>beginCaptures</key>
-        <dict>
-          <key>0</key>
-          <dict>
-            <key>name</key>
-            <string>keyword.ballerina</string>
-          </dict>
-        </dict>
-        <key>end</key>
-        <string>;</string>
         <key>patterns</key>
         <array>
           <dict>
-            <key>include</key>
-            <string>#typeDescription</string>
+            <key>begin</key>
+            <string>\bannotation\b</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>;</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#typeDescription</string>
+              </dict>
+            </array>
           </dict>
         </array>
       </dict>
