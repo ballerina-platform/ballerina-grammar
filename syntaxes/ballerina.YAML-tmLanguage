@@ -121,8 +121,8 @@ repository:
 
   tupleType:
     patterns:
-    - begin: '\('
-      end: '(?=\)|;)'
+    - begin: '\['
+      end: '(?=\]|;)'
       patterns:
       - include: '#comment'
       - include: '#constrainType'
@@ -631,8 +631,8 @@ repository:
 
   parameterTuple:
     patterns:
-    - begin: '\('
-      end: (?=\,)|(?=\|)|(?=\:)|(?==>)|(?=\))
+    - begin: '\['
+      end: (?=\,)|(?=\|)|(?=\:)|(?==>)|(?=\])
       patterns:
       - include: '#record'
       - include: '#objectDec'
@@ -641,8 +641,8 @@ repository:
 
   parameterTupleEnd:
     patterns:
-    - begin: '\)'
-      end: (?=\,)|(?=\|)|(?=\:)|(?==>)|(?=\))
+    - begin: '\]'
+      end: (?=\,)|(?=\|)|(?=\:)|(?==>)|(?=\])
       patterns:
       - match: '{{identifier}}'
         name: variable.parameter.ballerina
