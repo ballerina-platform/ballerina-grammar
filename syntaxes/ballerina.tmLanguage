@@ -330,9 +330,9 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>\(</string>
+            <string>\[</string>
             <key>end</key>
-            <string>(?=\)|;)</string>
+            <string>(?=\]|;)</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -1952,9 +1952,9 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>\(</string>
+            <string>\[</string>
             <key>end</key>
-            <string>(?=\,)|(?=\|)|(?=\:)|(?==&gt;)|(?=\))</string>
+            <string>(?=\,)|(?=\|)|(?=\:)|(?==&gt;)|(?=\])</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -1983,9 +1983,9 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>\)</string>
+            <string>\]</string>
             <key>end</key>
-            <string>(?=\,)|(?=\|)|(?=\:)|(?==&gt;)|(?=\))</string>
+            <string>(?=\,)|(?=\|)|(?=\:)|(?==&gt;)|(?=\])</string>
             <key>patterns</key>
             <array>
               <dict>
