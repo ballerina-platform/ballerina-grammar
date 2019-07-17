@@ -1201,7 +1201,7 @@
             "keyword.control.ballerina"
         ],
         [
-            "\\b(import|version|public|private|attach|as|native|documentation|lock|new|record|limit|ascending|descending|check|checkpanic|start|done|untaint|onretry|oncommit|onabort|scope|compensate|compensation|primarykey|channel|abstract|extern|final|listener|remote|client|is|__init)\\b",
+            "\\b(import|version|public|private|attach|as|native|documentation|lock|new|record|limit|ascending|descending|check|checkpanic|start|done|untainted|tainted|onretry|oncommit|onabort|scope|compensate|compensation|primarykey|channel|abstract|extern|final|listener|remote|client|is|__init)\\b",
             "keyword.other.ballerina"
         ],
         [
