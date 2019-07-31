@@ -6,10 +6,9 @@ fileTypes: [bal]
 uuid: c01f5512-489a-41bd-ba5d-caf4b55ae3b3
 
 variables:
-  identifier: '(?:{{letter}}{{letterOrDigit}}*)|(?:\^"{{identifierLiteralChar}}+")'
-  letter: '[a-zA-Z_]'
-  letterOrDigit: '[a-zA-Z0-9_]'
-  identifierLiteralChar: ([^|"\\\f\n\r\t]|\\\\[btnfr]|\\[|"\\/])
+  identifier: "(?:'?(?:(?:{{letter}})|\\\\(?:{{nonLetter}})|\\\\)+)"
+  letter: "[^ (){}\\[\\]\\-?*=><?\"',.\\s\\\\]"
+  nonLetter: "[ (){}\\[\\]\\-?*=><?\"',.\\s]"
 
 monarchVariables:
   typeScope: 'type'
@@ -541,11 +540,6 @@ repository:
       - name: string
         match: '.'
 
-  SymbolicStringLiteral:
-    patterns:
-    - name: string.symbolic.ballerina
-      match: \'[a-zA-z_][a-zA-z_0-9]*
-
   typeDefinition:
     patterns:
     - begin: '\btype\b'
@@ -777,9 +771,9 @@ repository:
     - include: '#stringTemplate'
     - include: '#keywords'
     - include: '#strings'
+    - match: '{{identifier}}'
     - include: '#maps'
     - include: '#paranthesised'
     - include: '#paranthesisedBracket'
-    - include: '#SymbolicStringLiteral'
     - include: '#numbers'
     - include: '#comment'
