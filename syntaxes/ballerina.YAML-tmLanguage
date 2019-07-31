@@ -7,8 +7,8 @@ uuid: c01f5512-489a-41bd-ba5d-caf4b55ae3b3
 
 variables:
   identifier: "(?:'?(?:(?:{{letter}})|\\\\(?:{{nonLetter}})|\\\\)+)"
-  letter: "[^ (){}\\[\\]\\-?*=><?\"',.\\s\\\\]"
-  nonLetter: "[ (){}\\[\\]\\-?*=><?\"',.\\s]"
+  letter: "[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\]"
+  nonLetter: "[ (){}\\[\\]\\-?*=><?;\"',.\\s]"
 
 monarchVariables:
   typeScope: 'type'
@@ -354,9 +354,9 @@ repository:
       - include: '#annotationAttachment'
       - match: (public|private|extern|resource|remote)
         name: keyword.ballerina
+      - include: '#comment'
       - include: '#variableDefInline'
       - include: '#variableDef'
-      - include: '#comment'
       - include: '#code'
 
   objectDec:
@@ -450,9 +450,9 @@ repository:
         '0': { name: punctuation.definition.block.ballerina }
       patterns:
       - include: '#annotationAttachment'
+      - include: '#comment'
       - include: '#variableDefInline'
       - include: '#variableDef'
-      - include: '#comment'
       - include: '#code'
 
   recordLiteral:
@@ -771,9 +771,9 @@ repository:
     - include: '#stringTemplate'
     - include: '#keywords'
     - include: '#strings'
+    - include: '#comment'
     - match: '{{identifier}}'
     - include: '#maps'
     - include: '#paranthesised'
     - include: '#paranthesisedBracket'
     - include: '#numbers'
-    - include: '#comment'
