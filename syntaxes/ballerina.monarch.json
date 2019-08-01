@@ -839,10 +839,34 @@
                 "token": ""
             }
         ],
+        {
+            "include": "errorDestructure"
+        },
         [
             "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
             "variable.parameter.ballerina"
         ]
+    ],
+    "errorDestructure": [
+        [
+            "error",
+            {
+                "next": "errorDestructure__b__0",
+                "token": "type"
+            }
+        ]
+    ],
+    "errorDestructure__b__0": [
+        [
+            "(?==>)",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "code"
+        }
     ],
     "matchStatementPatternClause": [
         [

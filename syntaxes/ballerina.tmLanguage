@@ -507,6 +507,33 @@
           </dict>
         </array>
       </dict>
+      <key>errorDestructure</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>error</string>
+            <key>end</key>
+            <string>(?==&gt;)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#code</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
       <key>callableUnitBody</key>
       <dict>
         <key>patterns</key>
@@ -878,6 +905,10 @@
             <string>(?==&gt;)</string>
             <key>patterns</key>
             <array>
+              <dict>
+                <key>include</key>
+                <string>#errorDestructure</string>
+              </dict>
               <dict>
                 <key>match</key>
                 <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
