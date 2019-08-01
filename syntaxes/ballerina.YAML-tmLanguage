@@ -180,6 +180,15 @@ repository:
       - name: comment.block.ballerina.documentation
         match: .
 
+  errorDestructure:
+    patterns:
+    - begin: 'error'
+      end: '(?==>)'
+      beginCaptures:
+        '0': { name: '{{typeScope}}' }
+      patterns:
+      - include: '#code'
+
   callableUnitBody:
     patterns:
     - begin: '\{'
@@ -296,6 +305,7 @@ repository:
         '0': { name: '{{typeScope}}' }
       end: '(?==>)'
       patterns:
+      - include: '#errorDestructure'
       - match: '{{identifier}}'
         name: variable.parameter.ballerina
 
