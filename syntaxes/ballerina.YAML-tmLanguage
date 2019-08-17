@@ -734,10 +734,10 @@ repository:
 
   templateVariable:
     patterns:
-    - begin: '{{'
+    - begin: '\${'
       beginCaptures:
         '0': { name: 'constant.character.escape.ballerina'}
-      end: '}}'
+      end: '}'
       endCaptures:
         '0': { name: 'constant.character.escape.ballerina'}
       patterns:

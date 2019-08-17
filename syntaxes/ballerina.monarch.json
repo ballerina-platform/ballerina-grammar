@@ -1172,7 +1172,7 @@
     ],
     "templateVariable": [
         [
-            "{{",
+            "\\${",
             {
                 "next": "templateVariable__b__0",
                 "token": "constant.character.escape.ballerina"
@@ -1181,7 +1181,7 @@
     ],
     "templateVariable__b__0": [
         [
-            "}}",
+            "}",
             {
                 "next": "@pop",
                 "token": "constant.character.escape.ballerina"
