@@ -963,12 +963,12 @@
                 <key>name</key>
                 <string>variable.parameter.ballerina</string>
               </dict>
-              <key>5</key>
+              <key>4</key>
               <dict>
                 <key>name</key>
                 <string>keyword.ballerina</string>
               </dict>
-              <key>6</key>
+              <key>5</key>
               <dict>
                 <key>name</key>
                 <string>comment.mddocs.paramdesc.ballerina</string>
@@ -2272,7 +2272,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>{{</string>
+            <string>\${</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -2282,7 +2282,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>}}</string>
+            <string>}</string>
             <key>endCaptures</key>
             <dict>
               <key>0</key>
