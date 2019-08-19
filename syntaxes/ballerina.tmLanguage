@@ -670,6 +670,20 @@
             <key>patterns</key>
             <array>
               <dict>
+                <key>match</key>
+                <string>public</string>
+                <key>name</key>
+                <string>keyword</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#annotationAttachment</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#recordLiteral</string>
+              </dict>
+              <dict>
                 <key>include</key>
                 <string>#parameter</string>
               </dict>
@@ -705,7 +719,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(?=\{|;)</string>
+            <string>(?=\{|;|,)</string>
             <key>endCaptures</key>
             <dict>
               <key>0</key>
@@ -729,6 +743,165 @@
                 <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
                 <key>name</key>
                 <string>storage.type.ballerina</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>functionType</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\bfunction\b</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=\,)|(?=\|)|(?=\:)|(?==&gt;)|(?=\))|(?=\])</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#functionTypeParamList</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#functionTypeReturns</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>functionTypeParamList</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\(</string>
+            <key>end</key>
+            <string>\)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>delimiter.parenthesis</string>
+              </dict>
+            </dict>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>delimiter.parenthesis</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>match</key>
+                <string>public</string>
+                <key>name</key>
+                <string>keyword</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#annotationAttachment</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#recordLiteral</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#record</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#objectDec</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#functionType</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#constrainType</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#parameterTuple</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#functionTypeType</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>functionTypeType</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?:\,)|(?:\|)|(?=\])|(?=\))</string>
+          </dict>
+        </array>
+      </dict>
+      <key>functionTypeReturns</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\breturns\b</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>keyword</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=\,)</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#parameter</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -1689,6 +1862,12 @@
             <key>patterns</key>
             <array>
               <dict>
+                <key>name</key>
+                <string>constant.character.escape.ballerina</string>
+                <key>match</key>
+                <string>\\.</string>
+              </dict>
+              <dict>
                 <key>include</key>
                 <string>#templateVariable</string>
               </dict>
@@ -1918,7 +2097,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>((?=record|object)|(?:(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)))</string>
+            <string>((?=record|object|function)|(?:(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)))</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1928,7 +2107,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(?:\,)|(?:\|)|(?:\:)|(?==&gt;)|(?=\))</string>
+            <string>(?:\,)|(?:\|)|(?:\:)|(?==&gt;)|(?=\))|(?=\])</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -1938,6 +2117,10 @@
               <dict>
                 <key>include</key>
                 <string>#objectDec</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#functionType</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -1973,7 +2156,7 @@
             <key>begin</key>
             <string>\[</string>
             <key>end</key>
-            <string>(?=\,)|(?=\|)|(?=\:)|(?==&gt;)|(?=\])</string>
+            <string>(?=\,)|(?=\|)|(?=\:)|(?==&gt;)|(?=\))</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -1986,13 +2169,37 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#parameter</string>
+                <string>#parameterTupleType</string>
               </dict>
               <dict>
                 <key>include</key>
                 <string>#parameterTupleEnd</string>
               </dict>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
+              </dict>
             </array>
+          </dict>
+        </array>
+      </dict>
+      <key>parameterTupleType</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?:\,)|(?:\|)|(?=\])</string>
           </dict>
         </array>
       </dict>
@@ -2004,7 +2211,7 @@
             <key>begin</key>
             <string>\]</string>
             <key>end</key>
-            <string>(?=\,)|(?=\|)|(?=\:)|(?==&gt;)|(?=\])</string>
+            <string>(?=\,)|(?=\|)|(?=\:)|(?==&gt;)|(?=\))</string>
             <key>patterns</key>
             <array>
               <dict>

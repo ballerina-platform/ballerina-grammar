@@ -232,6 +232,10 @@ repository:
       endCaptures:
         '0': { name: delimiter.parenthesis }
       patterns:
+      - match: public
+        name: keyword
+      - include: '#annotationAttachment'
+      - include: '#recordLiteral'
       - include: '#parameter'
       - include: '#parameterTuple'
       - include: '#defaultValue'
@@ -242,7 +246,7 @@ repository:
     - begin: '\breturns\b'
       beginCaptures:
         '0': { name: keyword.ballerina }
-      end: (?=\{|;)
+      end: (?=\{|;|,)
       endCaptures:
         '0': { name: curly }
       patterns:
@@ -251,6 +255,55 @@ repository:
         - match: '{{identifier}}'
           name: '{{typeScope}}'
         - include: '#comment'
+
+  functionType:
+    patterns:
+    - begin: '\bfunction\b'
+      beginCaptures:
+        '0': { name: keyword.ballerina }
+      end: (?=\,)|(?=\|)|(?=\:)|(?==>)|(?=\))|(?=\])
+      patterns:
+      - include: '#comment'
+      - include: '#functionTypeParamList'
+      - include: '#functionTypeReturns'
+
+  functionTypeParamList:
+    patterns:
+    - begin: '\('
+      end: '\)'
+      beginCaptures:
+        '0': { name: delimiter.parenthesis }
+      endCaptures:
+        '0': { name: delimiter.parenthesis }
+      patterns:
+      - match: public
+        name: keyword
+      - include: '#annotationAttachment'
+      - include: '#recordLiteral'
+      - include: '#record'
+      - include: '#objectDec'
+      - include: '#functionType'
+      - include: '#constrainType'
+      - include: '#parameterTuple'
+      - include: '#functionTypeType'
+      - include: '#comment'
+
+  functionTypeType:
+    patterns:
+    - begin: '{{identifier}}'
+      beginCaptures:
+        '0': { name: '{{typeScope}}' }
+      end: (?:\,)|(?:\|)|(?=\])|(?=\))
+
+  functionTypeReturns:
+    patterns:
+    - begin: '\breturns\b'
+      beginCaptures:
+        '0': { name: 'keyword' }
+      end: (?=\,)
+      patterns:
+      - include: '#parameter'
+      - include: '#comment'
 
   maps:
     patterns:
@@ -546,6 +599,8 @@ repository:
       endCaptures:
         '0': { name: 'string.template.ballerina' }
       patterns:
+      - name: constant.character.escape.ballerina
+        match: \\.
       - include: '#templateVariable'
       - name: string
         match: '.'
@@ -619,13 +674,14 @@ repository:
 
   parameter:
     patterns:
-    - begin: ((?=record|object)|(?:{{identifier}}))
+    - begin: ((?=record|object|function)|(?:{{identifier}}))
       beginCaptures:
         '0': { name: '{{typeScope}}' }
-      end: (?:\,)|(?:\|)|(?:\:)|(?==>)|(?=\))
+      end: (?:\,)|(?:\|)|(?:\:)|(?==>)|(?=\))|(?=\])
       patterns:
       - include: '#record'
       - include: '#objectDec'
+      - include: '#functionType'
       - include: '#constrainType'
       - include: '#defaultValue'
       - include: '#comment'
@@ -636,17 +692,25 @@ repository:
   parameterTuple:
     patterns:
     - begin: '\['
-      end: (?=\,)|(?=\|)|(?=\:)|(?==>)|(?=\])
+      end: (?=\,)|(?=\|)|(?=\:)|(?==>)|(?=\))
       patterns:
       - include: '#record'
       - include: '#objectDec'
-      - include: '#parameter'
+      - include: '#parameterTupleType'
       - include: '#parameterTupleEnd'
+      - include: '#comment'
+  
+  parameterTupleType:
+    patterns:
+    - begin: '{{identifier}}'
+      beginCaptures:
+        '0': { name: '{{typeScope}}' }
+      end: (?:\,)|(?:\|)|(?=\])
 
   parameterTupleEnd:
     patterns:
     - begin: '\]'
-      end: (?=\,)|(?=\|)|(?=\:)|(?==>)|(?=\])
+      end: (?=\,)|(?=\|)|(?=\:)|(?==>)|(?=\))
       patterns:
       - match: '{{identifier}}'
         name: variable.parameter.ballerina
