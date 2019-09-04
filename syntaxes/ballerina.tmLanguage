@@ -920,22 +920,6 @@
             <string>\{</string>
             <key>end</key>
             <string>\}</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.string.begin.ballerina</string>
-              </dict>
-            </dict>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.string.end.ballerina</string>
-              </dict>
-            </dict>
             <key>patterns</key>
             <array>
               <dict>
@@ -2611,6 +2595,10 @@
           <dict>
             <key>include</key>
             <string>#comment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#annotationAttachment</string>
           </dict>
           <dict>
             <key>match</key>

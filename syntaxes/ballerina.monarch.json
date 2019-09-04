@@ -424,6 +424,9 @@
         {
             "include": "comment"
         },
+        {
+            "include": "annotationAttachment"
+        },
         [
             "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
             null
@@ -559,7 +562,7 @@
             "\\{",
             {
                 "next": "maps__b__0",
-                "token": "punctuation.definition.string.begin.ballerina"
+                "token": ""
             }
         ]
     ],
@@ -568,7 +571,7 @@
             "\\}",
             {
                 "next": "@pop",
-                "token": "punctuation.definition.string.end.ballerina"
+                "token": ""
             }
         ],
         {
