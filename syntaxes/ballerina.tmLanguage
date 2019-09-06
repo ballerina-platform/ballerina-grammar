@@ -876,7 +876,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(?:\,)|(?:\|)|(?=\])|(?=\))</string>
+            <string>(?=\,)|(?:\|)|(?=\])|(?=\))</string>
           </dict>
         </array>
       </dict>
@@ -896,16 +896,73 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(?=\,)</string>
+            <string>(?=\,)|(?:\|)|(?=\])|(?=\))</string>
             <key>patterns</key>
             <array>
               <dict>
                 <key>include</key>
-                <string>#parameter</string>
+                <string>#functionTypeReturnsParameter</string>
               </dict>
               <dict>
                 <key>include</key>
                 <string>#comment</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>functionTypeReturnsParameter</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>((?=record|object|function)|(?:(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)))</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=\,)|(?:\|)|(?:\:)|(?==&gt;)|(?=\))|(?=\])</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#record</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#objectDec</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#functionType</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#constrainType</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#defaultValue</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#parameterTuple</string>
+              </dict>
+              <dict>
+                <key>match</key>
+                <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
+                <key>name</key>
+                <string>variable.parameter.ballerina</string>
               </dict>
             </array>
           </dict>
@@ -2530,7 +2587,7 @@
             <key>name</key>
             <string>keyword.operator.ballerina</string>
             <key>match</key>
-            <string>(!|%|\+|\-|~=|==|=|!=|&lt;|&gt;|&amp;&amp;|\|\||\?:|\.\.\.)</string>
+            <string>(!|%|\+|\-|~=|==|=|!=|&lt;|&gt;|&amp;|\||\?:|\.\.\.)</string>
           </dict>
           <dict>
             <key>include</key>
