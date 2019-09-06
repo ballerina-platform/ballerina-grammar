@@ -1203,7 +1203,7 @@
     ],
     "functionTypeType__b__0": [
         [
-            "(?:\\,)|(?:\\|)|(?=\\])|(?=\\))",
+            "(?=\\,)|(?:\\|)|(?=\\])|(?=\\))",
             {
                 "next": "@pop",
                 "token": ""
@@ -1221,18 +1221,61 @@
     ],
     "functionTypeReturns__b__0": [
         [
-            "(?=\\,)",
+            "(?=\\,)|(?:\\|)|(?=\\])|(?=\\))",
             {
                 "next": "@pop",
                 "token": ""
             }
         ],
         {
-            "include": "parameter"
+            "include": "functionTypeReturnsParameter"
         },
         {
             "include": "comment"
         }
+    ],
+    "functionTypeReturnsParameter": [
+        [
+            "((?=record|object|function)|(?:(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)))",
+            {
+                "next": "functionTypeReturnsParameter__b__0",
+                "token": "type"
+            }
+        ]
+    ],
+    "functionTypeReturnsParameter__b__0": [
+        [
+            "(?=\\,)|(?:\\|)|(?:\\:)|(?==>)|(?=\\))|(?=\\])",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "record"
+        },
+        {
+            "include": "objectDec"
+        },
+        {
+            "include": "functionType"
+        },
+        {
+            "include": "constrainType"
+        },
+        {
+            "include": "defaultValue"
+        },
+        {
+            "include": "comment"
+        },
+        {
+            "include": "parameterTuple"
+        },
+        [
+            "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
+            "variable.parameter.ballerina"
+        ]
     ],
     "defaultValue": [
         [
@@ -1492,7 +1535,7 @@
             "keyword.other.ballerina"
         ],
         [
-            "(!|%|\\+|\\-|~=|==|=|!=|<|>|&&|\\|\\||\\?:|\\.\\.\\.)",
+            "(!|%|\\+|\\-|~=|==|=|!=|<|>|&|\\||\\?:|\\.\\.\\.)",
             "keyword.operator.ballerina"
         ],
         {

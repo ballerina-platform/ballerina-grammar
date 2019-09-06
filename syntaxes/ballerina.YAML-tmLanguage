@@ -293,17 +293,34 @@ repository:
     - begin: '{{identifier}}'
       beginCaptures:
         '0': { name: '{{typeScope}}' }
-      end: (?:\,)|(?:\|)|(?=\])|(?=\))
+      end: (?=\,)|(?:\|)|(?=\])|(?=\))
 
   functionTypeReturns:
     patterns:
     - begin: '\breturns\b'
       beginCaptures:
         '0': { name: 'keyword' }
-      end: (?=\,)
+      end: (?=\,)|(?:\|)|(?=\])|(?=\))
       patterns:
-      - include: '#parameter'
+      - include: '#functionTypeReturnsParameter'
       - include: '#comment'
+
+  functionTypeReturnsParameter:
+    patterns:
+    - begin: ((?=record|object|function)|(?:{{identifier}}))
+      beginCaptures:
+        '0': { name: '{{typeScope}}' }
+      end: (?=\,)|(?:\|)|(?:\:)|(?==>)|(?=\))|(?=\])
+      patterns:
+      - include: '#record'
+      - include: '#objectDec'
+      - include: '#functionType'
+      - include: '#constrainType'
+      - include: '#defaultValue'
+      - include: '#comment'
+      - include: '#parameterTuple'
+      - match: '{{identifier}}'
+        name: variable.parameter.ballerina
 
   maps:
     patterns:
@@ -825,7 +842,7 @@ repository:
       match: \b(const|true|false|reply|create|parameter)\b
 
     - name: keyword.operator.ballerina
-      match: (!|%|\+|\-|~=|==|=|!=|<|>|&&|\|\||\?:|\.\.\.)
+      match: (!|%|\+|\-|~=|==|=|!=|<|>|&|\||\?:|\.\.\.)
 
     - include: '#types'
 
