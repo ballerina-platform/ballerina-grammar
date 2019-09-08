@@ -1522,7 +1522,7 @@
             "keyword.control.ballerina"
         ],
         [
-            "\\b(import|version|public|private|attach|as|native|handle|documentation|lock|new|record|limit|ascending|descending|check|checkpanic|panic|trap|start|done|untainted|tainted|onretry|oncommit|onabort|scope|compensate|compensation|primarykey|channel|abstract|extern|final|listener|remote|client|is|__init)\\b",
+            "\\b(import|version|public|private|attach|as|native|handle|documentation|lock|new|record|limit|ascending|descending|check|checkpanic|panic|trap|start|flush|done|untainted|tainted|onretry|oncommit|onabort|scope|compensate|compensation|primarykey|channel|abstract|extern|final|listener|remote|client|is|__init)\\b",
             "keyword.other.ballerina"
         ],
         [
