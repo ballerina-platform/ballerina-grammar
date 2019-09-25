@@ -2563,7 +2563,7 @@
             <key>name</key>
             <string>keyword.other.ballerina</string>
             <key>match</key>
-            <string>\b(import|version|public|private|attach|as|native|handle|documentation|lock|new|record|limit|ascending|descending|check|checkpanic|panic|trap|start|flush|done|untainted|tainted|onretry|oncommit|onabort|scope|compensate|compensation|primarykey|channel|abstract|extern|final|listener|remote|client|is|__init)\b</string>
+            <string>\b(import|version|public|private|attach|as|native|handle|documentation|lock|new|record|limit|ascending|descending|check|checkpanic|panic|trap|start|flush|done|untainted|tainted|onretry|committed|aborted|scope|compensate|compensation|primarykey|channel|abstract|extern|final|listener|remote|client|is|__init)\b</string>
           </dict>
           <dict>
             <key>name</key>
