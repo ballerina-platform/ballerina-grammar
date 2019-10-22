@@ -206,7 +206,7 @@ repository:
     - begin: '\bfunction\b'
       beginCaptures:
         '0': { name:  keyword.ballerina }
-      end: '\}|(?=;)'
+      end: '\}|(?=;|=)'
       endCaptures:
         '0': { name:  punctuation.definition.block.ballerina }
       patterns:
@@ -246,12 +246,13 @@ repository:
     - begin: '\breturns\b'
       beginCaptures:
         '0': { name: keyword.ballerina }
-      end: (?=\{|;|,)
+      end: (?=\{|;|,|=)
       endCaptures:
         '0': { name: curly }
       patterns:
         - include: '#record'
         - include: '#objectDec'
+        - include: '#tupleType'
         - match: '{{identifier}}'
           name: '{{typeScope}}'
         - include: '#comment'

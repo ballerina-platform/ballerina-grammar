@@ -312,7 +312,7 @@
     ],
     "functionDefinition__b__0": [
         [
-            "\\}|(?=;)",
+            "\\}|(?=;|=)",
             {
                 "next": "@pop",
                 "token": "punctuation.definition.block.ballerina"
@@ -1618,7 +1618,7 @@
     ],
     "functionReturns__b__0": [
         [
-            "(?=\\{|;|,)",
+            "(?=\\{|;|,|=)",
             {
                 "next": "@pop",
                 "token": "curly"
@@ -1629,6 +1629,9 @@
         },
         {
             "include": "objectDec"
+        },
+        {
+            "include": "tupleType"
         },
         [
             "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
