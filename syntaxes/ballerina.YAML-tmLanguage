@@ -824,7 +824,7 @@ repository:
   keywords:
     patterns:
     - name: keyword.control.ballerina
-      match: \b(if|else|iterator|try|catch|finally|fork|join|all|some|while|foreach|in|throw|return|returns|break|timeout|transaction|abort|retry|retries|continue|bind|with|typeof|enum|wait)\b
+      match: \b(if|else|iterator|try|catch|finally|fork|join|all|some|while|foreach|in|throw|return|returns|break|timeout|transaction|abort|retry|retries|continue|bind|with|typeof|enum|wait|let)\b
 
     - name: keyword.other.ballerina
       match: \b(import|version|public|private|attach|as|native|handle|documentation|lock|new|record|limit|ascending|descending|check|checkpanic|panic|trap|start|flush|done|untainted|tainted|onretry|committed|aborted|scope|compensate|compensation|primarykey|channel|abstract|extern|final|listener|remote|client|is|__init)\b

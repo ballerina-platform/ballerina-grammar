@@ -2561,7 +2561,7 @@
             <key>name</key>
             <string>keyword.control.ballerina</string>
             <key>match</key>
-            <string>\b(if|else|iterator|try|catch|finally|fork|join|all|some|while|foreach|in|throw|return|returns|break|timeout|transaction|abort|retry|retries|continue|bind|with|typeof|enum|wait)\b</string>
+            <string>\b(if|else|iterator|try|catch|finally|fork|join|all|some|while|foreach|in|throw|return|returns|break|timeout|transaction|abort|retry|retries|continue|bind|with|typeof|enum|wait|let)\b</string>
           </dict>
           <dict>
             <key>name</key>
