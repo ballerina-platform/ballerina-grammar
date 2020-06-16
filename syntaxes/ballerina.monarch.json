@@ -1518,27 +1518,27 @@
     ],
     "keywords": [
         [
-            "\\b(if|else|iterator|try|catch|finally|fork|join|all|some|while|foreach|in|throw|return|returns|break|timeout|transaction|abort|retry|retries|continue|bind|with|typeof|enum|wait|let)\\b",
+            "\\b(if|else|fork|join|while|foreach|in|return|returns|break|transaction|transactional|retry|commit|rollback|continue|typeof|enum|wait|check|checkpanic|panic|trap|match)\\b",
             "keyword.control.ballerina"
         ],
         [
-            "\\b(import|version|public|private|attach|as|native|handle|documentation|lock|new|record|limit|ascending|descending|check|checkpanic|panic|trap|start|flush|done|untainted|tainted|onretry|committed|aborted|scope|compensate|compensation|primarykey|channel|abstract|extern|final|listener|remote|client|is|__init)\\b",
+            "\\b(import|version|public|private|as|lock|new|record|limit|start|flush|untainted|tainted|abstract|external|final|listener|remote|is)\\b",
             "keyword.other.ballerina"
         ],
         [
-            "\\b(forever|from|on|select|group|by|having|order|where|followed|insert|into|update|set|for|window|query)\\b",
+            "\\b(from|on|select|where)\\b",
             "keyword.other.siddhi.ballerina"
         ],
         [
-            "\\b(annotation|package|type|connector|function|resource|service|action|worker|struct|transformer|object)\\b",
+            "\\b(annotation|type|function|resource|service|worker|object|client|const|let|source|parameter|field|xmlns)\\b",
             "keyword.other.ballerina"
         ],
         [
-            "\\b(const|true|false|reply|create|parameter)\\b",
+            "\\b(true|false|null|table|key|default|do|base16|base64|conflict|outer|equals)\\b",
             "keyword.other.ballerina"
         ],
         [
-            "(!|%|\\+|\\-|~=|==|=|!=|<|>|&|\\||\\?:|\\.\\.\\.)",
+            "(!|%|\\+|\\-|~=|===|==|=|!=|!==|<|>|&|\\||\\?:|\\.\\.\\.|\\?|<=|=>|>=|&&|\\|\\||~|>>|>>>)",
             "keyword.operator.ballerina"
         ],
         {
@@ -1547,15 +1547,15 @@
     ],
     "types": [
         [
-            "\\b(boolean|int|float|string|var|any|anydata|datatable|table|byte|future|typedesc)\\b",
+            "\\b(boolean|int|float|string|decimal|handle|var|any|anydata|byte|future|typedesc)\\b",
             "type"
         ],
         [
-            "\\b(map|exception|json|xml|xmlns|error)\\b",
+            "\\b(map|json|xml|error|never|readonly|distinct)\\b",
             "type"
         ],
         [
-            "\\b(stream|streamlet|aggregation)\\b",
+            "\\b(stream)\\b",
             "type"
         ]
     ],
