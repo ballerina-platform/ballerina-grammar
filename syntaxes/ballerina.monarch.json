@@ -1522,19 +1522,19 @@
             "keyword.control.ballerina"
         ],
         [
-            "\\b(import|version|public|private|as|lock|new|record|limit|start|flush|untainted|tainted|abstract|external|final|listener|remote|is)\\b",
+            "\\b(public|private|function|external|type|record|object|remote|abstract|client|true|false|fail|import|version)\\b",
             "keyword.other.ballerina"
         ],
         [
-            "\\b(from|on|select|where)\\b",
-            "keyword.other.siddhi.ballerina"
-        ],
-        [
-            "\\b(annotation|type|function|resource|service|worker|object|client|const|let|source|parameter|field|xmlns)\\b",
+            "\\b(as|on|resource|listener|const|final|is|null|lock|annotation|source|worker|parameter|field|isolated)\\b",
             "keyword.other.ballerina"
         ],
         [
-            "\\b(true|false|null|table|key|default|do|base16|base64|conflict|outer|equals)\\b",
+            "\\b(xmlns|table|key|let|new|from|where|select|start|flush|default|do|base16|base64|conflict)\\b",
+            "keyword.other.ballerina"
+        ],
+        [
+            "\\b(limit|outer|equals|order|by|ascending|descending|class|variable|module|service)\\b",
             "keyword.other.ballerina"
         ],
         [
