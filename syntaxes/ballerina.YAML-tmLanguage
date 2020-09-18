@@ -827,16 +827,16 @@ repository:
       match: \b(if|else|fork|join|while|foreach|in|return|returns|break|transaction|transactional|retry|commit|rollback|continue|typeof|enum|wait|check|checkpanic|panic|trap|match)\b
 
     - name: keyword.other.ballerina
-      match: \b(import|version|public|private|as|lock|new|record|limit|start|flush|untainted|tainted|abstract|external|final|listener|remote|is)\b
-
-    - name: keyword.other.siddhi.ballerina
-      match: \b(from|on|select|where)\b
+      match: \b(public|private|function|external|type|record|object|remote|abstract|client|true|false|fail|import|version)\b
 
     - name: keyword.other.ballerina
-      match: \b(annotation|type|function|resource|service|worker|object|client|const|let|source|parameter|field|xmlns)\b
+      match: \b(as|on|resource|listener|const|final|is|null|lock|annotation|source|worker|parameter|field|isolated)\b
 
     - name: keyword.other.ballerina
-      match: \b(true|false|null|table|key|default|do|base16|base64|conflict|outer|equals)\b
+      match: \b(xmlns|table|key|let|new|from|where|select|start|flush|default|do|base16|base64|conflict)\b
+
+    - name: keyword.other.ballerina
+      match: \b(limit|outer|equals|order|by|ascending|descending|class|variable|module|service)\b
 
     - name: keyword.operator.ballerina
       match: (!|%|\+|\-|~=|===|==|=|!=|!==|<|>|&|\||\?:|\.\.\.|\?|<=|=>|>=|&&|\|\||~|>>|>>>)
