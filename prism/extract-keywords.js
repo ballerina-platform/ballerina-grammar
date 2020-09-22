@@ -28,9 +28,9 @@ fs.readFile(process.argv[2], 'utf8', function (err, data) {
         }
         var keyword_groups = [];
         chunk(keywords,15).forEach((group)=>{
-            keyword_groups.push("'" + group.join("|") + "'");
+            keyword_groups.push(group.join("|") + "'");
         });
-        var str = "'keyword': (new RegExp(\n\t\t" + "'\\\\b(?:' +\n\t\t"  + keyword_groups.join(" +\n\t\t") + " +\n\t\t')\\\\b'\n\t))";
+        var str = "'keyword': (new RegExp(\n\t\t" + "'\\\\b(?:' +\n\t\t'"  + keyword_groups.join(" +\n\t\t'|") + " +\n\t\t')\\\\b'\n\t))";
 
         var result = data.replace(/'keyword': \(new RegExp\((.|\n)*\)\)/g, str);
 
