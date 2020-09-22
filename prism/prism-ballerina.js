@@ -7,13 +7,13 @@ Prism.languages.ballerina = {
     'boolean': /\b(?:true|false)\b/,
     'keyword': (new RegExp(
 		'\\b(?:' +
-		'public|private|function|return|returns|external|type|record|object|remote|abstract|client|if|else|while' +
-		'|panic|true|false|check|fail|checkpanic|continue|break|import|version|as|on|resource|listener|const' +
-		'|final|typeof|is|null|lock|annotation|source|worker|parameter|field|isolated|xmlns|fork|trap|in' +
-		'|foreach|table|key|error|let|stream|new|readonly|distinct|from|where|select|start|flush|default' +
-		'|wait|do|transaction|transactional|commit|retry|rollback|enum|base16|base64|match|conflict|limit|join|outer' +
-		'|equals|order|by|ascending|descending|class|variable|module|int|float|string|boolean|decimal|xml|json' +
-		'|handle|any|anydata|service|var|never|map|future|typedesc|byte' +
+		'abstract|annotation|any|anydata|as|ascending|base16|base64|boolean|break|by|byte|check|checkpanic|class' +
+		'|client|commit|conflict|const|continue|decimal|default|descending|distinct|do|else|enum|equals|error|external' +
+		'|fail|false|field|final|float|flush|foreach|fork|from|function|future|handle|if|import|in' +
+		'|int|is|isolated|join|json|key|let|limit|listener|lock|map|match|module|never|new' +
+		'|null|object|on|order|outer|panic|parameter|private|public|readonly|record|remote|resource|retry|return' +
+		'|returns|rollback|select|service|source|start|stream|string|table|transaction|transactional|trap|true|type|typedesc' +
+		'|typeof|var|variable|version|wait|where|while|worker|xml|xmlns' +
 		')\\b'
 	)),
     'operator': /(?:!|%|\+|\-|~|=|=|!|<|>|&|\|)/,

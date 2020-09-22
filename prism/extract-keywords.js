@@ -19,7 +19,7 @@ fs.readFile(process.argv[2], 'utf8', function (err, data) {
     keywords = keywords.map((item) => {
         return item.replace("= \"", "").replace("\"", "");
     })
-
+    keywords.sort();
     console.log(keywords);
 
     fs.readFile('./prism-ballerina.js', 'utf8', function (err, data) {
