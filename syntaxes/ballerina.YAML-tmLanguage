@@ -34,6 +34,7 @@ patterns:
 - include: '#documentationDef'
 - include: '#mdDocumentation'
 - include: '#objectDec'
+- include: '#classDec'
 - include: '#record'
 - include: '#annotationAttachment'
 - include: '#recordLiteral'
@@ -435,6 +436,18 @@ repository:
       - include: '#variableDefInline'
       - include: '#variableDef'
       - include: '#code'
+
+  classDec:
+    patterns:
+    - begin: '\bclass\b'
+      beginCaptures:
+        '0': { name:  keyword.ballerina }
+      end: '\}'
+      endCaptures:
+        '0': { name: delimiter.curly }
+      patterns:
+      - include: '#objectBody'
+      - include: '#comment'
 
   objectDec:
     patterns:
