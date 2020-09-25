@@ -22,6 +22,9 @@
             "include": "objectDec"
         },
         {
+            "include": "classDec"
+        },
+        {
             "include": "record"
         },
         {
@@ -1751,6 +1754,30 @@
         ],
         {
             "include": "typeDescription"
+        }
+    ],
+    "classDec": [
+        [
+            "\\bclass\\b",
+            {
+                "next": "classDec__b__0",
+                "token": "keyword.ballerina"
+            }
+        ]
+    ],
+    "classDec__b__0": [
+        [
+            "\\}",
+            {
+                "next": "@pop",
+                "token": "delimiter.curly"
+            }
+        ],
+        {
+            "include": "objectBody"
+        },
+        {
+            "include": "comment"
         }
     ]
 }

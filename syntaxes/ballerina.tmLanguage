@@ -74,6 +74,10 @@
       </dict>
       <dict>
         <key>include</key>
+        <string>#classDec</string>
+      </dict>
+      <dict>
+        <key>include</key>
         <string>#record</string>
       </dict>
       <dict>
@@ -1331,6 +1335,45 @@
               <dict>
                 <key>include</key>
                 <string>#code</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>classDec</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\bclass\b</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>\}</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>delimiter.curly</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#objectBody</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
               </dict>
             </array>
           </dict>
