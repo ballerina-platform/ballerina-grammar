@@ -1537,7 +1537,7 @@
             "keyword.other.ballerina"
         ],
         [
-            "\\b(limit|outer|equals|order|by|ascending|descending|class|variable|module|service)\\b",
+            "\\b(limit|outer|equals|order|by|ascending|descending|class|configurable|variable|module|service)\\b",
             "keyword.other.ballerina"
         ],
         [

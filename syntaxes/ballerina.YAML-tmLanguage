@@ -849,7 +849,7 @@ repository:
       match: \b(xmlns|table|key|let|new|from|where|select|start|flush|default|do|base16|base64|conflict)\b
 
     - name: keyword.other.ballerina
-      match: \b(limit|outer|equals|order|by|ascending|descending|class|variable|module|service)\b
+      match: \b(limit|outer|equals|order|by|ascending|descending|class|configurable|variable|module|service)\b
 
     - name: keyword.operator.ballerina
       match: (!|%|\+|\-|~=|===|==|=|!=|!==|<|>|&|\||\?:|\.\.\.|\?|<=|=>|>=|&&|\|\||~|>>|>>>)
