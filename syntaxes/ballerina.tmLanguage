@@ -2616,7 +2616,7 @@
             <key>name</key>
             <string>keyword.other.ballerina</string>
             <key>match</key>
-            <string>\b(as|on|resource|listener|const|final|is|null|lock|annotation|source|worker|parameter|field|isolated)\b</string>
+            <string>\b(as|on|resource|listener|const|final|is|null|lock|annotation|source|worker|parameter|field|isolated|configurable)\b</string>
           </dict>
           <dict>
             <key>name</key>
@@ -2628,7 +2628,7 @@
             <key>name</key>
             <string>keyword.other.ballerina</string>
             <key>match</key>
-            <string>\b(limit|outer|equals|order|by|ascending|descending|class|configurable|variable|module|service)\b</string>
+            <string>\b(limit|outer|equals|order|by|ascending|descending|class|variable|module|service)\b</string>
           </dict>
           <dict>
             <key>name</key>
