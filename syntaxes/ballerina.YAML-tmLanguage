@@ -446,8 +446,8 @@ repository:
       endCaptures:
         '0': { name: delimiter.curly }
       patterns:
-      - include: '#objectBody'
       - include: '#comment'
+      - include: '#objectBody'
 
   objectDec:
     patterns:
