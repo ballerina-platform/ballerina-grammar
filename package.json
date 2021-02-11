@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/ballerina-platform/ballerina-grammar#readme",
   "devDependencies": {
-    "js-yaml": "^3.13.1",
+    "js-yaml": "^3.14.1",
     "plist": "^3.0.1"
   }
 }

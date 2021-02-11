@@ -1774,10 +1774,10 @@
             }
         ],
         {
-            "include": "objectBody"
+            "include": "comment"
         },
         {
-            "include": "comment"
+            "include": "objectBody"
         }
     ]
 }
