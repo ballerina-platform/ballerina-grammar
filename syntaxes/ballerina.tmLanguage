@@ -1514,7 +1514,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(?=(?:\}|;))</string>
+            <string>;</string>
             <key>endCaptures</key>
             <dict>
               <key>0</key>
@@ -1527,27 +1527,17 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#functionReceiver</string>
-              </dict>
-              <dict>
-                <key>include</key>
                 <string>#functionParameters</string>
               </dict>
               <dict>
-                <key>include</key>
-                <string>#functionReturns</string>
+                <key>match</key>
+                <string>\breturns\b</string>
+                <key>name</key>
+                <string>keyword.ballerina</string>
               </dict>
               <dict>
                 <key>include</key>
-                <string>#functionName</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#callableUnitBody</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
+                <string>#code</string>
               </dict>
             </array>
           </dict>
@@ -1672,6 +1662,10 @@
               <dict>
                 <key>include</key>
                 <string>#comment</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#objectMemberFunctionDec</string>
               </dict>
               <dict>
                 <key>include</key>

@@ -859,11 +859,42 @@
             "include": "comment"
         },
         {
+            "include": "objectMemberFunctionDec"
+        },
+        {
             "include": "variableDefInline"
         },
         {
             "include": "variableDef"
         },
+        {
+            "include": "code"
+        }
+    ],
+    "objectMemberFunctionDec": [
+        [
+            "\\bfunction\\b",
+            {
+                "next": "objectMemberFunctionDec__b__0",
+                "token": "keyword.ballerina"
+            }
+        ]
+    ],
+    "objectMemberFunctionDec__b__0": [
+        [
+            ";",
+            {
+                "next": "@pop",
+                "token": "punctuation.definition.block.ballerina"
+            }
+        ],
+        {
+            "include": "functionParameters"
+        },
+        [
+            "\\breturns\\b",
+            "keyword.ballerina"
+        ],
         {
             "include": "code"
         }

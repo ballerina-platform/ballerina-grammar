@@ -491,16 +491,14 @@ repository:
     - begin: '\bfunction\b'
       beginCaptures:
         '0': { name:  keyword.ballerina }
-      end: '(?=(?:\}|;))'
+      end: ';'
       endCaptures:
         '0': { name:  punctuation.definition.block.ballerina }
       patterns:
-      - include: '#functionReceiver'
       - include: '#functionParameters'
-      - include: '#functionReturns'
-      - include: '#functionName'
-      - include: '#callableUnitBody'
-      - include: '#comment'
+      - match: '\breturns\b'
+        name: 'keyword.ballerina'
+      - include: '#code'
 
   paranthesised:
     patterns:
@@ -541,6 +539,7 @@ repository:
       patterns:
       - include: '#annotationAttachment'
       - include: '#comment'
+      - include: '#objectMemberFunctionDec'
       - include: '#variableDefInline'
       - include: '#variableDef'
       - include: '#code'
