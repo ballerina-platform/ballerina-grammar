@@ -1167,7 +1167,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(#)(?: ?)(\+)(?: *)((?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+))?(?: *)(-)?(.*)</string>
+            <string>(#)(?: *?)(\+)(?: *)((?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+))?(?: *)(-)?(.*)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -1197,7 +1197,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(?=[^#\r\n]|(?:# ?\+))</string>
+            <string>(?=[^#\r\n]|(?:# *?\+))</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -1216,7 +1216,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(#)(?: ?)(\+)(?: *)(return)(?: *)(-)?(.*)</string>
+            <string>(#)(?: *?)(\+)(?: *)(return)(?: *)(-)?(.*)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -1246,7 +1246,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(?=[^#\r\n]|(?:# ?\+))</string>
+            <string>(?=[^#\r\n]|(?:# *?\+))</string>
             <key>patterns</key>
             <array>
               <dict>

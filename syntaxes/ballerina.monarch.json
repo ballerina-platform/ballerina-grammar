@@ -129,7 +129,7 @@
     ],
     "mdDocumentationReturnParamDescription": [
         [
-            "(#)(?: ?)(\\+)(?: *)(return)(?: *)(-)?(.*)",
+            "(#)(?: *?)(\\+)(?: *)(return)(?: *)(-)?(.*)",
             [
                 {
                     "next": "mdDocumentationReturnParamDescription__b__0",
@@ -144,7 +144,7 @@
     ],
     "mdDocumentationReturnParamDescription__b__0": [
         [
-            "(?=[^#\\r\\n]|(?:# ?\\+))",
+            "(?=[^#\\r\\n]|(?:# *?\\+))",
             {
                 "next": "@pop",
                 "token": ""
@@ -157,7 +157,7 @@
     ],
     "mdDocumentationParamDescription": [
         [
-            "(#)(?: ?)(\\+)(?: *)((?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))?(?: *)(-)?(.*)",
+            "(#)(?: *?)(\\+)(?: *)((?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))?(?: *)(-)?(.*)",
             [
                 {
                     "next": "mdDocumentationParamDescription__b__0",
@@ -172,7 +172,7 @@
     ],
     "mdDocumentationParamDescription__b__0": [
         [
-            "(?=[^#\\r\\n]|(?:# ?\\+))",
+            "(?=[^#\\r\\n]|(?:# *?\\+))",
             {
                 "next": "@pop",
                 "token": ""
