@@ -738,8 +738,18 @@ repository:
     - begin: '\]'
       end: (?=\,)|(?=\|)|(?=\:)|(?==>)|(?=\))
       patterns:
+      - include: '#defaultWithParentheses'
       - match: '{{identifier}}'
         name: variable.parameter.ballerina
+
+  defaultWithParentheses:
+    patterns:
+    - begin: '\('
+      beginCaptures: 
+        '0': { name: punctuation.definition.block.ballerina }
+      end: '\)'
+      endCaptures:
+        '0': { name: punctuation.definition.block.ballerina }
 
   types:
     patterns:
