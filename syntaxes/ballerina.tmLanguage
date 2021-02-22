@@ -1385,7 +1385,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>\bobject\b</string>
+            <string>\bobject\b(?!:)</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1912,7 +1912,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(\bstring)(\s*)(`)</string>
+            <string>(\bstring)(\s*)(`)|(`)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -2381,7 +2381,7 @@
               </dict>
               <dict>
                 <key>name</key>
-                <string>text.xml.ballerina</string>
+                <string>string</string>
                 <key>match</key>
                 <string>.</string>
               </dict>
@@ -2433,7 +2433,7 @@
                 <key>name</key>
                 <string>entity.other.attribute-name.xml.ballerina</string>
                 <key>match</key>
-                <string>([a-zA-Z-]+)</string>
+                <string>([a-zA-Z0-9-]+)</string>
               </dict>
             </array>
           </dict>
