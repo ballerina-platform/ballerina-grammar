@@ -1316,7 +1316,7 @@
               </dict>
               <dict>
                 <key>match</key>
-                <string>(public|private|extern|resource|remote)</string>
+                <string>(public|private|extern|resource|remote|isolated)</string>
                 <key>name</key>
                 <string>keyword.ballerina</string>
               </dict>
@@ -1385,7 +1385,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>\bobject\b</string>
+            <string>\bobject\b(?!:)</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1916,7 +1916,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(\bstring)(\s*)(`)</string>
+            <string>(\bstring)(\s*)(`)|(`)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -2065,7 +2065,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(?:(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+))(?: |\t)|(?=\()</string>
+            <string>(?:(?!\+)(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+))(?: |\t)|(?=\()</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -2301,12 +2301,44 @@
             <key>patterns</key>
             <array>
               <dict>
+                <key>include</key>
+                <string>#defaultWithParentheses</string>
+              </dict>
+              <dict>
                 <key>match</key>
                 <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
                 <key>name</key>
                 <string>variable.parameter.ballerina</string>
               </dict>
             </array>
+          </dict>
+        </array>
+      </dict>
+      <key>defaultWithParentheses</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\(</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.block.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>\)</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.block.ballerina</string>
+              </dict>
+            </dict>
           </dict>
         </array>
       </dict>
@@ -2385,7 +2417,7 @@
               </dict>
               <dict>
                 <key>name</key>
-                <string>text.xml.ballerina</string>
+                <string>string</string>
                 <key>match</key>
                 <string>.</string>
               </dict>
@@ -2437,7 +2469,7 @@
                 <key>name</key>
                 <string>entity.other.attribute-name.xml.ballerina</string>
                 <key>match</key>
-                <string>([a-zA-Z-]+)</string>
+                <string>([a-zA-Z0-9-]+)</string>
               </dict>
             </array>
           </dict>
@@ -2703,6 +2735,10 @@
             <string>#annotationAttachment</string>
           </dict>
           <dict>
+            <key>include</key>
+            <string>#numbers</string>
+          </dict>
+          <dict>
             <key>match</key>
             <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
           </dict>
@@ -2717,10 +2753,6 @@
           <dict>
             <key>include</key>
             <string>#paranthesisedBracket</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#numbers</string>
           </dict>
         </array>
       </dict>

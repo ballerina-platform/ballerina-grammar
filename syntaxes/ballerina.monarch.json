@@ -81,7 +81,7 @@
     ],
     "objectDec": [
         [
-            "\\bobject\\b",
+            "\\bobject\\b(?!:)",
             {
                 "next": "objectDec__b__0",
                 "token": "keyword.ballerina"
@@ -133,7 +133,7 @@
             "include": "annotationAttachment"
         },
         [
-            "(public|private|extern|resource|remote)",
+            "(public|private|extern|resource|remote|isolated)",
             "keyword.ballerina"
         ],
         {
@@ -464,6 +464,9 @@
         {
             "include": "annotationAttachment"
         },
+        {
+            "include": "numbers"
+        },
         [
             "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
             null
@@ -476,9 +479,6 @@
         },
         {
             "include": "paranthesisedBracket"
-        },
-        {
-            "include": "numbers"
         },
         [
             "[a-z][\\w$]*",
@@ -963,7 +963,7 @@
     ],
     "variableDef": [
         [
-            "(?:(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))(?: |\\t)|(?=\\()",
+            "(?:(?!\\+)(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))(?: |\\t)|(?=\\()",
             {
                 "next": "variableDef__b__0",
                 "token": "type"
@@ -1188,9 +1188,30 @@
                 "token": ""
             }
         ],
+        {
+            "include": "defaultWithParentheses"
+        },
         [
             "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
             "variable.parameter.ballerina"
+        ]
+    ],
+    "defaultWithParentheses": [
+        [
+            "\\(",
+            {
+                "next": "defaultWithParentheses__b__0",
+                "token": "punctuation.definition.block.ballerina"
+            }
+        ]
+    ],
+    "defaultWithParentheses__b__0": [
+        [
+            "\\)",
+            {
+                "next": "@pop",
+                "token": "punctuation.definition.block.ballerina"
+            }
         ]
     ],
     "functionTypeType": [
@@ -1352,7 +1373,7 @@
         },
         [
             ".",
-            "text.xml.ballerina"
+            "string"
         ]
     ],
     "xmlTag": [
@@ -1382,7 +1403,7 @@
             "include": "xmlDoubleQuotedString"
         },
         [
-            "([a-zA-Z-]+)",
+            "([a-zA-Z0-9-]+)",
             "variable.parameter"
         ]
     ],
@@ -1483,15 +1504,18 @@
     ],
     "stringTemplate": [
         [
+            "(`)",
+            {
+                "next": "stringTemplate__b__0",
+                "token": ""
+            }
+        ],
+        [
             "(\\bstring)(\\s*)(`)",
-            [
-                {
-                    "next": "stringTemplate__b__0",
-                    "token": "keyword.ballerina"
-                },
-                "",
-                "string.template.ballerina"
-            ]
+            {
+                "next": "stringTemplate__b__0",
+                "token": "keyword.ballerina"
+            }
         ]
     ],
     "stringTemplate__b__0": [
