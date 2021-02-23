@@ -430,6 +430,9 @@
         {
             "include": "annotationAttachment"
         },
+        {
+            "include": "numbers"
+        },
         [
             "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
             null
@@ -442,9 +445,6 @@
         },
         {
             "include": "paranthesisedBracket"
-        },
-        {
-            "include": "numbers"
         },
         [
             "[a-z][\\w$]*",
