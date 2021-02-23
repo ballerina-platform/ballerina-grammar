@@ -451,7 +451,7 @@ repository:
 
   objectDec:
     patterns:
-    - begin: '\bobject\b'
+    - begin: '\bobject\b(?!:)'
       beginCaptures:
         '0': { name:  keyword.ballerina }
       end: '\}'
@@ -616,7 +616,7 @@ repository:
 
   stringTemplate:
     patterns:
-    - begin: '(\bstring)(\s*)(`)'
+    - begin: '(\bstring)(\s*)(`)|(`)'
       beginCaptures:
         '1': { name: 'keyword.ballerina' }
         '2': { name: '' }
@@ -776,7 +776,7 @@ repository:
       - include: '#xmlTag'
       - include: '#xmlComment'
       - include: '#templateVariable'
-      - name: text.xml.ballerina
+      - name: string
         match: '.'
 
   xmlTag:
@@ -792,7 +792,7 @@ repository:
       - include: '#xmlSingleQuotedString'
       - include: '#xmlDoubleQuotedString'
       - name: '{{xmlAttribute}}'
-        match: '([a-zA-Z-]+)'
+        match: '([a-zA-Z0-9-]+)'
 
   xmlComment:
     patterns:

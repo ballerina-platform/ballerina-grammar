@@ -929,7 +929,7 @@
     ],
     "objectDec": [
         [
-            "\\bobject\\b",
+            "\\bobject\\b(?!:)",
             {
                 "next": "objectDec__b__0",
                 "token": "keyword.ballerina"
@@ -1409,7 +1409,7 @@
         },
         [
             ".",
-            "text.xml.ballerina"
+            "string"
         ]
     ],
     "xmlTag": [
@@ -1439,7 +1439,7 @@
             "include": "xmlDoubleQuotedString"
         },
         [
-            "([a-zA-Z-]+)",
+            "([a-zA-Z0-9-]+)",
             "variable.parameter"
         ]
     ],
@@ -1540,15 +1540,18 @@
     ],
     "stringTemplate": [
         [
+            "(`)",
+            {
+                "next": "stringTemplate__b__0",
+                "token": ""
+            }
+        ],
+        [
             "(\\bstring)(\\s*)(`)",
-            [
-                {
-                    "next": "stringTemplate__b__0",
-                    "token": "keyword.ballerina"
-                },
-                "",
-                "string.template.ballerina"
-            ]
+            {
+                "next": "stringTemplate__b__0",
+                "token": "keyword.ballerina"
+            }
         ]
     ],
     "stringTemplate__b__0": [
