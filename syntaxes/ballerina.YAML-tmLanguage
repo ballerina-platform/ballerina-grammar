@@ -589,7 +589,7 @@ repository:
   serviceName:
     patterns:
     - name: entity.name.function.ballerina
-      match: '{{identifier}}'
+      match: '(\/({{identifier}}*)|\"{{identifier}}\")'
 
   serviceOn:
     patterns:
