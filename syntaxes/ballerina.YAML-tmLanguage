@@ -365,6 +365,7 @@ repository:
       - include: '#matchBindingPattern'
       - include: '#matchStatementPatternClause'
       - include: '#comment'
+      - include: '#code'
 
   matchBindingPattern:
     patterns:
