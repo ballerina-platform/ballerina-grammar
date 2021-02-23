@@ -2297,12 +2297,44 @@
             <key>patterns</key>
             <array>
               <dict>
+                <key>include</key>
+                <string>#defaultWithParentheses</string>
+              </dict>
+              <dict>
                 <key>match</key>
                 <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
                 <key>name</key>
                 <string>variable.parameter.ballerina</string>
               </dict>
             </array>
+          </dict>
+        </array>
+      </dict>
+      <key>defaultWithParentheses</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\(</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.block.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>\)</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.block.ballerina</string>
+              </dict>
+            </dict>
           </dict>
         </array>
       </dict>

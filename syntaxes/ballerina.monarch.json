@@ -1224,9 +1224,30 @@
                 "token": ""
             }
         ],
+        {
+            "include": "defaultWithParentheses"
+        },
         [
             "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
             "variable.parameter.ballerina"
+        ]
+    ],
+    "defaultWithParentheses": [
+        [
+            "\\(",
+            {
+                "next": "defaultWithParentheses__b__0",
+                "token": "punctuation.definition.block.ballerina"
+            }
+        ]
+    ],
+    "defaultWithParentheses__b__0": [
+        [
+            "\\)",
+            {
+                "next": "@pop",
+                "token": "punctuation.definition.block.ballerina"
+            }
         ]
     ],
     "functionTypeType": [
