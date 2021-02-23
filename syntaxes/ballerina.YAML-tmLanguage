@@ -582,6 +582,7 @@ repository:
         '0': { name: punctuation.definition.block.ballerina }
       patterns:
       - include: '#comment'
+      - include: '#objectDec' 
       - include: '#serviceBody'
       - include: '#serviceOn'
       - include: '#serviceName'

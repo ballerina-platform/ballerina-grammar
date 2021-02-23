@@ -61,6 +61,9 @@
             "include": "comment"
         },
         {
+            "include": "objectDec"
+        },
+        {
             "include": "serviceBody"
         },
         {
@@ -76,16 +79,40 @@
             "comment.ballerina"
         ]
     ],
-    "serviceBody": [
+    "objectDec": [
+        [
+            "\\bobject\\b",
+            {
+                "next": "objectDec__b__0",
+                "token": "keyword.ballerina"
+            }
+        ]
+    ],
+    "objectDec__b__0": [
+        [
+            "\\}",
+            {
+                "next": "@pop",
+                "token": "delimiter.curly"
+            }
+        ],
+        {
+            "include": "objectBody"
+        },
+        {
+            "include": "comment"
+        }
+    ],
+    "objectBody": [
         [
             "\\{",
             {
-                "next": "serviceBody__b__0",
+                "next": "objectBody__b__0",
                 "token": "punctuation.definition.block.ballerina"
             }
         ]
     ],
-    "serviceBody__b__0": [
+    "objectBody__b__0": [
         [
             "(?=\\})",
             {
@@ -94,22 +121,29 @@
             }
         ],
         {
-            "include": "comment"
-        },
-        {
             "include": "mdDocumentation"
         },
         {
             "include": "documentationDef"
         },
         {
-            "include": "annotationAttachment"
-        },
-        {
             "include": "functionDefinition"
         },
         {
-            "include": "recordLiteral"
+            "include": "annotationAttachment"
+        },
+        [
+            "(public|private|extern|resource|remote)",
+            "keyword.ballerina"
+        ],
+        {
+            "include": "comment"
+        },
+        {
+            "include": "variableDefInline"
+        },
+        {
+            "include": "variableDef"
         },
         {
             "include": "code"
@@ -298,12 +332,6 @@
             "comment.block.code.ballerina.documentation"
         ]
     ],
-    "annotationAttachment": [
-        [
-            "@((?:(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)):)?(?:(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))",
-            "type"
-        ]
-    ],
     "functionDefinition": [
         [
             "\\bfunction\\b",
@@ -380,6 +408,12 @@
         {
             "include": "comment"
         }
+    ],
+    "annotationAttachment": [
+        [
+            "@((?:(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)):)?(?:(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))",
+            "type"
+        ]
     ],
     "recordLiteral": [
         [
@@ -926,76 +960,6 @@
             "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
             "source.ballerina"
         ]
-    ],
-    "objectDec": [
-        [
-            "\\bobject\\b",
-            {
-                "next": "objectDec__b__0",
-                "token": "keyword.ballerina"
-            }
-        ]
-    ],
-    "objectDec__b__0": [
-        [
-            "\\}",
-            {
-                "next": "@pop",
-                "token": "delimiter.curly"
-            }
-        ],
-        {
-            "include": "objectBody"
-        },
-        {
-            "include": "comment"
-        }
-    ],
-    "objectBody": [
-        [
-            "\\{",
-            {
-                "next": "objectBody__b__0",
-                "token": "punctuation.definition.block.ballerina"
-            }
-        ]
-    ],
-    "objectBody__b__0": [
-        [
-            "(?=\\})",
-            {
-                "next": "@pop",
-                "token": "punctuation.definition.block.ballerina"
-            }
-        ],
-        {
-            "include": "mdDocumentation"
-        },
-        {
-            "include": "documentationDef"
-        },
-        {
-            "include": "functionDefinition"
-        },
-        {
-            "include": "annotationAttachment"
-        },
-        [
-            "(public|private|extern|resource|remote)",
-            "keyword.ballerina"
-        ],
-        {
-            "include": "comment"
-        },
-        {
-            "include": "variableDefInline"
-        },
-        {
-            "include": "variableDef"
-        },
-        {
-            "include": "code"
-        }
     ],
     "variableDef": [
         [
@@ -1680,6 +1644,45 @@
             "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
             "entity.name.function.ballerina"
         ]
+    ],
+    "serviceBody": [
+        [
+            "\\{",
+            {
+                "next": "serviceBody__b__0",
+                "token": "punctuation.definition.block.ballerina"
+            }
+        ]
+    ],
+    "serviceBody__b__0": [
+        [
+            "(?=\\})",
+            {
+                "next": "@pop",
+                "token": "punctuation.definition.block.ballerina"
+            }
+        ],
+        {
+            "include": "comment"
+        },
+        {
+            "include": "mdDocumentation"
+        },
+        {
+            "include": "documentationDef"
+        },
+        {
+            "include": "annotationAttachment"
+        },
+        {
+            "include": "functionDefinition"
+        },
+        {
+            "include": "recordLiteral"
+        },
+        {
+            "include": "code"
+        }
     ],
     "serviceOn": [
         [
