@@ -64,6 +64,9 @@
             "include": "objectDec"
         },
         {
+            "include": "classDec"
+        },
+        {
             "include": "serviceBody"
         },
         {
@@ -1669,6 +1672,30 @@
             "entity.name.function.ballerina"
         ]
     ],
+    "classDec": [
+        [
+            "\\bclass\\b",
+            {
+                "next": "classDec__b__0",
+                "token": "keyword.ballerina"
+            }
+        ]
+    ],
+    "classDec__b__0": [
+        [
+            "\\}",
+            {
+                "next": "@pop",
+                "token": "delimiter.curly"
+            }
+        ],
+        {
+            "include": "comment"
+        },
+        {
+            "include": "objectBody"
+        }
+    ],
     "serviceBody": [
         [
             "\\{",
@@ -1812,30 +1839,6 @@
         ],
         {
             "include": "typeDescription"
-        }
-    ],
-    "classDec": [
-        [
-            "\\bclass\\b",
-            {
-                "next": "classDec__b__0",
-                "token": "keyword.ballerina"
-            }
-        ]
-    ],
-    "classDec__b__0": [
-        [
-            "\\}",
-            {
-                "next": "@pop",
-                "token": "delimiter.curly"
-            }
-        ],
-        {
-            "include": "comment"
-        },
-        {
-            "include": "objectBody"
         }
     ]
 }

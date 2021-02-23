@@ -1814,6 +1814,10 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#classDec</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#serviceBody</string>
               </dict>
               <dict>
