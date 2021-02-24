@@ -2198,6 +2198,10 @@
             <array>
               <dict>
                 <key>include</key>
+                <string>#parameterWithDescriptor</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#record</string>
               </dict>
               <dict>
@@ -2309,6 +2313,33 @@
                 <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
                 <key>name</key>
                 <string>variable.parameter.ballerina</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>parameterWithDescriptor</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\&amp;</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=\,)|(?=\|)|(?=\))</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#parameter</string>
               </dict>
             </array>
           </dict>

@@ -820,6 +820,9 @@
             }
         ],
         {
+            "include": "parameterWithDescriptor"
+        },
+        {
             "include": "record"
         },
         {
@@ -844,6 +847,27 @@
             "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
             "variable.parameter.ballerina"
         ]
+    ],
+    "parameterWithDescriptor": [
+        [
+            "\\&",
+            {
+                "next": "parameterWithDescriptor__b__0",
+                "token": "keyword.operator.ballerina"
+            }
+        ]
+    ],
+    "parameterWithDescriptor__b__0": [
+        [
+            "(?=\\,)|(?=\\|)|(?=\\))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "parameter"
+        }
     ],
     "record": [
         [
