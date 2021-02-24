@@ -1330,11 +1330,11 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#variableDef</string>
+                <string>#code</string>
               </dict>
               <dict>
                 <key>include</key>
-                <string>#code</string>
+                <string>#variableDef</string>
               </dict>
             </array>
           </dict>
@@ -1673,11 +1673,11 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#variableDef</string>
+                <string>#code</string>
               </dict>
               <dict>
                 <key>include</key>
-                <string>#code</string>
+                <string>#variableDef</string>
               </dict>
             </array>
           </dict>

@@ -434,8 +434,8 @@ repository:
         name: keyword.ballerina
       - include: '#comment'
       - include: '#variableDefInline'
-      - include: '#variableDef'
       - include: '#code'
+      - include: '#variableDef'
 
   classDec:
     patterns:
@@ -541,8 +541,8 @@ repository:
       - include: '#comment'
       - include: '#objectMemberFunctionDec'
       - include: '#variableDefInline'
-      - include: '#variableDef'
       - include: '#code'
+      - include: '#variableDef'
 
   recordLiteral:
     patterns:
