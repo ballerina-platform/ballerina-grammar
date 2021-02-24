@@ -127,6 +127,9 @@
             "include": "documentationDef"
         },
         {
+            "include": "workerDef"
+        },
+        {
             "include": "functionDefinition"
         },
         {
@@ -332,104 +335,42 @@
             "comment.block.code.ballerina.documentation"
         ]
     ],
-    "functionDefinition": [
+    "workerDef": [
         [
-            "\\bfunction\\b",
+            "\\bworker\\b",
             {
-                "next": "functionDefinition__b__0",
+                "next": "workerDef__b__0",
                 "token": "keyword.ballerina"
             }
         ]
     ],
-    "functionDefinition__b__0": [
-        [
-            "\\}|(?=;|=)",
-            {
-                "next": "@pop",
-                "token": "punctuation.definition.block.ballerina"
-            }
-        ],
-        {
-            "include": "functionParameters"
-        },
-        {
-            "include": "functionReturns"
-        },
-        [
-            "extern\\b",
-            "keyword.ballerina"
-        ],
-        {
-            "include": "functionName"
-        },
-        {
-            "include": "callableUnitBody"
-        },
-        {
-            "include": "comment"
-        }
-    ],
-    "functionParameters": [
-        [
-            "\\(",
-            {
-                "next": "functionParameters__b__0",
-                "token": "delimiter.parenthesis"
-            }
-        ]
-    ],
-    "functionParameters__b__0": [
-        [
-            "\\)",
-            {
-                "next": "@pop",
-                "token": "delimiter.parenthesis"
-            }
-        ],
-        [
-            "public",
-            "keyword"
-        ],
-        {
-            "include": "annotationAttachment"
-        },
-        {
-            "include": "recordLiteral"
-        },
-        {
-            "include": "parameter"
-        },
-        {
-            "include": "parameterTuple"
-        },
-        {
-            "include": "defaultValue"
-        },
-        {
-            "include": "comment"
-        }
-    ],
-    "annotationAttachment": [
-        [
-            "@((?:(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)):)?(?:(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))",
-            "type"
-        ]
-    ],
-    "recordLiteral": [
-        [
-            "\\{",
-            {
-                "next": "recordLiteral__b__0",
-                "token": "punctuation.definition.block.ballerina"
-            }
-        ]
-    ],
-    "recordLiteral__b__0": [
+    "workerDef__b__0": [
         [
             "\\}",
             {
                 "next": "@pop",
-                "token": "punctuation.definition.block.ballerina"
+                "token": ""
+            }
+        ],
+        {
+            "include": "workerBody"
+        }
+    ],
+    "workerBody": [
+        [
+            "\\{",
+            {
+                "next": "workerBody__b__0",
+                "token": ""
+            }
+        ]
+    ],
+    "workerBody__b__0": [
+        [
+            "(?=\\})",
+            {
+                "next": "@pop",
+                "token": ""
             }
         ],
         {
@@ -709,48 +650,6 @@
             "include": "code"
         }
     ],
-    "workerDef": [
-        [
-            "\\bworker\\b",
-            {
-                "next": "workerDef__b__0",
-                "token": "keyword.ballerina"
-            }
-        ]
-    ],
-    "workerDef__b__0": [
-        [
-            "\\}",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        {
-            "include": "workerBody"
-        }
-    ],
-    "workerBody": [
-        [
-            "\\{",
-            {
-                "next": "workerBody__b__0",
-                "token": ""
-            }
-        ]
-    ],
-    "workerBody__b__0": [
-        [
-            "(?=\\})",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        {
-            "include": "code"
-        }
-    ],
     "butExp": [
         [
             "\\bbut\\b",
@@ -905,6 +804,12 @@
             "include": "code"
         }
     ],
+    "annotationAttachment": [
+        [
+            "@((?:(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)):)?(?:(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))",
+            "type"
+        ]
+    ],
     "objectMemberFunctionDec": [
         [
             "\\bfunction\\b",
@@ -928,6 +833,182 @@
         [
             "\\breturns\\b",
             "keyword.ballerina"
+        ],
+        {
+            "include": "code"
+        }
+    ],
+    "functionParameters": [
+        [
+            "\\(",
+            {
+                "next": "functionParameters__b__0",
+                "token": "delimiter.parenthesis"
+            }
+        ]
+    ],
+    "functionParameters__b__0": [
+        [
+            "\\)",
+            {
+                "next": "@pop",
+                "token": "delimiter.parenthesis"
+            }
+        ],
+        [
+            "public",
+            "keyword"
+        ],
+        {
+            "include": "annotationAttachment"
+        },
+        {
+            "include": "recordLiteral"
+        },
+        {
+            "include": "parameter"
+        },
+        {
+            "include": "parameterTuple"
+        },
+        {
+            "include": "defaultValue"
+        },
+        {
+            "include": "comment"
+        }
+    ],
+    "recordLiteral": [
+        [
+            "\\{",
+            {
+                "next": "recordLiteral__b__0",
+                "token": "punctuation.definition.block.ballerina"
+            }
+        ]
+    ],
+    "recordLiteral__b__0": [
+        [
+            "\\}",
+            {
+                "next": "@pop",
+                "token": "punctuation.definition.block.ballerina"
+            }
+        ],
+        {
+            "include": "code"
+        }
+    ],
+    "parameterTuple": [
+        [
+            "\\[",
+            {
+                "next": "parameterTuple__b__0",
+                "token": ""
+            }
+        ]
+    ],
+    "parameterTuple__b__0": [
+        [
+            "(?=\\,)|(?=\\|)|(?=\\:)|(?==>)|(?=\\))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "record"
+        },
+        {
+            "include": "objectDec"
+        },
+        {
+            "include": "parameterTupleType"
+        },
+        {
+            "include": "parameterTupleEnd"
+        },
+        {
+            "include": "comment"
+        }
+    ],
+    "parameterTupleType": [
+        [
+            "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
+            {
+                "next": "parameterTupleType__b__0",
+                "token": "type"
+            }
+        ]
+    ],
+    "parameterTupleType__b__0": [
+        [
+            "(?:\\,)|(?:\\|)|(?=\\])",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ]
+    ],
+    "parameterTupleEnd": [
+        [
+            "\\]",
+            {
+                "next": "parameterTupleEnd__b__0",
+                "token": ""
+            }
+        ]
+    ],
+    "parameterTupleEnd__b__0": [
+        [
+            "(?=\\,)|(?=\\|)|(?=\\:)|(?==>)|(?=\\))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "defaultWithParentheses"
+        },
+        [
+            "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
+            "variable.parameter.ballerina"
+        ]
+    ],
+    "defaultWithParentheses": [
+        [
+            "\\(",
+            {
+                "next": "defaultWithParentheses__b__0",
+                "token": "punctuation.definition.block.ballerina"
+            }
+        ]
+    ],
+    "defaultWithParentheses__b__0": [
+        [
+            "\\)",
+            {
+                "next": "@pop",
+                "token": "punctuation.definition.block.ballerina"
+            }
+        ]
+    ],
+    "defaultValue": [
+        [
+            "[=:]",
+            {
+                "next": "defaultValue__b__0",
+                "token": "keyword.operator.ballerina"
+            }
+        ]
+    ],
+    "defaultValue__b__0": [
+        [
+            "(?=[,)])",
+            {
+                "next": "@pop",
+                "token": ""
+            }
         ],
         {
             "include": "code"
@@ -1120,100 +1201,6 @@
             "include": "comment"
         }
     ],
-    "parameterTuple": [
-        [
-            "\\[",
-            {
-                "next": "parameterTuple__b__0",
-                "token": ""
-            }
-        ]
-    ],
-    "parameterTuple__b__0": [
-        [
-            "(?=\\,)|(?=\\|)|(?=\\:)|(?==>)|(?=\\))",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        {
-            "include": "record"
-        },
-        {
-            "include": "objectDec"
-        },
-        {
-            "include": "parameterTupleType"
-        },
-        {
-            "include": "parameterTupleEnd"
-        },
-        {
-            "include": "comment"
-        }
-    ],
-    "parameterTupleType": [
-        [
-            "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
-            {
-                "next": "parameterTupleType__b__0",
-                "token": "type"
-            }
-        ]
-    ],
-    "parameterTupleType__b__0": [
-        [
-            "(?:\\,)|(?:\\|)|(?=\\])",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ]
-    ],
-    "parameterTupleEnd": [
-        [
-            "\\]",
-            {
-                "next": "parameterTupleEnd__b__0",
-                "token": ""
-            }
-        ]
-    ],
-    "parameterTupleEnd__b__0": [
-        [
-            "(?=\\,)|(?=\\|)|(?=\\:)|(?==>)|(?=\\))",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        {
-            "include": "defaultWithParentheses"
-        },
-        [
-            "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
-            "variable.parameter.ballerina"
-        ]
-    ],
-    "defaultWithParentheses": [
-        [
-            "\\(",
-            {
-                "next": "defaultWithParentheses__b__0",
-                "token": "punctuation.definition.block.ballerina"
-            }
-        ]
-    ],
-    "defaultWithParentheses__b__0": [
-        [
-            "\\)",
-            {
-                "next": "@pop",
-                "token": "punctuation.definition.block.ballerina"
-            }
-        ]
-    ],
     "functionTypeType": [
         [
             "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
@@ -1298,27 +1285,6 @@
             "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
             "variable.parameter.ballerina"
         ]
-    ],
-    "defaultValue": [
-        [
-            "[=:]",
-            {
-                "next": "defaultValue__b__0",
-                "token": "keyword.operator.ballerina"
-            }
-        ]
-    ],
-    "defaultValue__b__0": [
-        [
-            "(?=[,)])",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        {
-            "include": "code"
-        }
     ],
     "butClause": [
         [
@@ -1627,6 +1593,43 @@
         },
         {
             "include": "code"
+        }
+    ],
+    "functionDefinition": [
+        [
+            "\\bfunction\\b",
+            {
+                "next": "functionDefinition__b__0",
+                "token": "keyword.ballerina"
+            }
+        ]
+    ],
+    "functionDefinition__b__0": [
+        [
+            "\\}|(?=;|=)",
+            {
+                "next": "@pop",
+                "token": "punctuation.definition.block.ballerina"
+            }
+        ],
+        {
+            "include": "functionParameters"
+        },
+        {
+            "include": "functionReturns"
+        },
+        [
+            "extern\\b",
+            "keyword.ballerina"
+        ],
+        {
+            "include": "functionName"
+        },
+        {
+            "include": "objectBody"
+        },
+        {
+            "include": "comment"
         }
     ],
     "functionReturns": [

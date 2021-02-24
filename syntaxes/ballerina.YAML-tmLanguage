@@ -216,7 +216,7 @@ repository:
       - name: keyword.ballerina
         match: 'extern\b'
       - include: '#functionName'
-      - include: '#callableUnitBody'
+      - include: '#objectBody'
       - include: '#comment'
 
   functionName:
@@ -428,6 +428,7 @@ repository:
       patterns:
       - include: '#mdDocumentation'
       - include: '#documentationDef'
+      - include: '#workerDef'
       - include: '#functionDefinition'
       - include: '#annotationAttachment'
       - match: (public|private|extern|resource|remote|isolated)

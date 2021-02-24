@@ -624,7 +624,7 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#callableUnitBody</string>
+                <string>#objectBody</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -1305,6 +1305,10 @@
               <dict>
                 <key>include</key>
                 <string>#documentationDef</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#workerDef</string>
               </dict>
               <dict>
                 <key>include</key>
