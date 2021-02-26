@@ -254,6 +254,7 @@ repository:
         - include: '#record'
         - include: '#objectDec'
         - include: '#tupleType'
+        - include: '#multiType'
         - match: '{{identifier}}'
           name: '{{typeScope}}'
         - include: '#comment'
@@ -411,6 +412,13 @@ repository:
       patterns:
       - match: '#.*'
         name: comment.mddocs.returnparamdesc.ballerina
+
+  multiType: 
+    patterns: 
+    - match: '(?<=\|)({{identifier}})|({{identifier}})(?=\|)'
+      name: '{{typeScope}}'
+    - match: \|
+      name: keyword.operator.ballerina 
 
   numbers:
     patterns:

@@ -747,6 +747,10 @@
                 <string>#tupleType</string>
               </dict>
               <dict>
+                <key>include</key>
+                <string>#multiType</string>
+              </dict>
+              <dict>
                 <key>match</key>
                 <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
                 <key>name</key>
@@ -1256,6 +1260,24 @@
                 <string>comment.mddocs.returnparamdesc.ballerina</string>
               </dict>
             </array>
+          </dict>
+        </array>
+      </dict>
+      <key>multiType</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>(?&lt;=\|)((?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+))|((?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+))(?=\|)</string>
+            <key>name</key>
+            <string>storage.type.ballerina</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\|</string>
+            <key>name</key>
+            <string>keyword.operator.ballerina</string>
           </dict>
         </array>
       </dict>
