@@ -1338,7 +1338,7 @@
               </dict>
               <dict>
                 <key>match</key>
-                <string>(public|private|extern|resource|remote|isolated)</string>
+                <string>(public|private|extern|resource|remote|isolated|final)</string>
                 <key>name</key>
                 <string>keyword.ballerina</string>
               </dict>

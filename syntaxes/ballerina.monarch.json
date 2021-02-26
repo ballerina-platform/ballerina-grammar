@@ -133,7 +133,7 @@
             "include": "annotationAttachment"
         },
         [
-            "(public|private|extern|resource|remote|isolated)",
+            "(public|private|extern|resource|remote|isolated|final)",
             "keyword.ballerina"
         ],
         {

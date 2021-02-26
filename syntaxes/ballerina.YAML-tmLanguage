@@ -438,7 +438,7 @@ repository:
       - include: '#documentationDef'
       - include: '#functionDefinition'
       - include: '#annotationAttachment'
-      - match: (public|private|extern|resource|remote|isolated)
+      - match: (public|private|extern|resource|remote|isolated|final)
         name: keyword.ballerina
       - include: '#comment'
       - include: '#variableDefInline'
