@@ -226,8 +226,8 @@ repository:
 
   functionParameters:
     patterns:
-    - begin: '\('
-      end: '\)'
+    - begin: '\(|\['
+      end: '\)|\]'
       beginCaptures:
         '0': { name: delimiter.parenthesis }
       endCaptures:

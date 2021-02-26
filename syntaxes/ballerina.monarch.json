@@ -371,7 +371,7 @@
     ],
     "functionParameters": [
         [
-            "\\(",
+            "\\(|\\[",
             {
                 "next": "functionParameters__b__0",
                 "token": "delimiter.parenthesis"
@@ -380,7 +380,7 @@
     ],
     "functionParameters__b__0": [
         [
-            "\\)",
+            "\\)|\\]",
             {
                 "next": "@pop",
                 "token": "delimiter.parenthesis"
