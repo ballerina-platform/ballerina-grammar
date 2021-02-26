@@ -143,10 +143,10 @@
             "include": "variableDefInline"
         },
         {
-            "include": "variableDef"
+            "include": "code"
         },
         {
-            "include": "code"
+            "include": "variableDef"
         }
     ],
     "mdDocumentation": [
@@ -899,10 +899,10 @@
             "include": "variableDefInline"
         },
         {
-            "include": "variableDef"
+            "include": "code"
         },
         {
-            "include": "code"
+            "include": "variableDef"
         }
     ],
     "objectMemberFunctionDec": [
