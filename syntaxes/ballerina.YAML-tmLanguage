@@ -714,6 +714,7 @@ repository:
         '0': { name: '{{typeScope}}' }
       end: (?:\,)|(?:\|)|(?:\:)|(?==>)|(?=\))|(?=\])
       patterns:
+      - include: '#parameterWithDescriptor'
       - include: '#record'
       - include: '#objectDec'
       - include: '#functionType'
@@ -750,6 +751,15 @@ repository:
       - include: '#defaultWithParentheses'
       - match: '{{identifier}}'
         name: variable.parameter.ballerina
+
+  parameterWithDescriptor:
+    patterns: 
+    - begin: '\&'
+      beginCaptures: 
+        '0': { name: keyword.operator.ballerina }
+      end: (?=\,)|(?=\|)|(?=\))
+      patterns: 
+      - include: '#parameter' 
 
   defaultWithParentheses:
     patterns:
