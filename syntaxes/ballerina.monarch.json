@@ -546,6 +546,9 @@
         },
         {
             "include": "comment"
+        },
+        {
+            "include": "code"
         }
     ],
     "literal": [
