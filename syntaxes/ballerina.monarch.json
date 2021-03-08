@@ -1878,7 +1878,7 @@
             }
         ],
         {
-            "include": "typeDescription"
+            "include": "code"
         }
     ]
 }
