@@ -2077,6 +2077,10 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#objectMemberFunctionDec</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#literal</string>
               </dict>
               <dict>

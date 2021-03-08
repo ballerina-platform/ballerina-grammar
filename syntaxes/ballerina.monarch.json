@@ -1853,6 +1853,9 @@
             "include": "record"
         },
         {
+            "include": "objectMemberFunctionDec"
+        },
+        {
             "include": "literal"
         },
         [
