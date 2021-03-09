@@ -373,9 +373,10 @@ repository:
     - begin: 'var'
       beginCaptures:
         '0': { name: '{{typeScope}}' }
-      end: '(?==>)'
+      end: '(?==>)|,'
       patterns:
       - include: '#errorDestructure'
+      - include: '#code'
       - match: '{{identifier}}'
         name: variable.parameter.ballerina
 

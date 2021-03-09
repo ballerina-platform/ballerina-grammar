@@ -1132,12 +1132,16 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(?==&gt;)</string>
+            <string>(?==&gt;)|,</string>
             <key>patterns</key>
             <array>
               <dict>
                 <key>include</key>
                 <string>#errorDestructure</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#code</string>
               </dict>
               <dict>
                 <key>match</key>
