@@ -1629,6 +1629,9 @@
             }
         ],
         {
+            "include": "functionDefinition"
+        },
+        {
             "include": "comment"
         },
         {
