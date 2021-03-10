@@ -126,6 +126,7 @@ repository:
       patterns:
       - include: '#comment'
       - include: '#constrainType'
+      - include: '#paranthesisedBracket'
       - name: '{{typeScope}}'
         match: \b({{identifier}})\b
 
