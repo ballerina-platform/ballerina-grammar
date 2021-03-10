@@ -711,7 +711,7 @@ repository:
 
   parameter:
     patterns:
-    - begin: ((?=record|object|function)|(?:{{identifier}}))
+    - begin: ((?=record|object|function)|({{identifier}})(?=\|)|(?:{{identifier}}))
       beginCaptures:
         '0': { name: '{{typeScope}}' }
       end: (?:\,)|(?:\|)|(?:\:)|(?==>)|(?=\))|(?=\])
