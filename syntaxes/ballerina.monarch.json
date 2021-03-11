@@ -718,6 +718,9 @@
             "include": "serviceDefinition"
         },
         {
+            "include": "objectDec"
+        },
+        {
             "include": "code"
         }
     ],
