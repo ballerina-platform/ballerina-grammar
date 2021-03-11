@@ -669,6 +669,7 @@ repository:
       - include: '#comment'
       - include: '#objectDec'
       - include: '#record'
+      - include: '#objectMemberFunctionDec'
       - include: '#literal'
       - match: '{{identifier}}'
         name: '{{typeScope}}'
