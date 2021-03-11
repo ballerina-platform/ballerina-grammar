@@ -630,7 +630,7 @@ repository:
 
   stringTemplate:
     patterns:
-    - begin: '(\bstring)(\s*)(`)|(`)'
+    - begin: '(\bstring|\bbase[1-9]*)(\s*)(`)|(`)'
       beginCaptures:
         '1': { name: 'keyword.ballerina' }
         '2': { name: '' }
