@@ -514,6 +514,7 @@ repository:
     - begin: \(
       end: \)
       patterns:
+      - include: '#functionDefinition'
       - include: '#comment'
       - include: '#code'
 

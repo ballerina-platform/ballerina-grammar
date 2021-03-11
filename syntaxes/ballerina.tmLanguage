@@ -1582,6 +1582,10 @@
             <array>
               <dict>
                 <key>include</key>
+                <string>#functionDefinition</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#comment</string>
               </dict>
               <dict>
