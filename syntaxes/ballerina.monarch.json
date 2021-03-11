@@ -1041,6 +1041,9 @@
         {
             "include": "constrainType"
         },
+        {
+            "include": "paranthesisedBracket"
+        },
         [
             "\\b((?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))\\b",
             "type"
@@ -1073,6 +1076,30 @@
             "\\b((?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))\\b",
             "type"
         ]
+    ],
+    "paranthesisedBracket": [
+        [
+            "\\[",
+            {
+                "next": "paranthesisedBracket__b__0",
+                "token": ""
+            }
+        ]
+    ],
+    "paranthesisedBracket__b__0": [
+        [
+            "\\]",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "comment"
+        },
+        {
+            "include": "code"
+        }
     ],
     "functionType": [
         [
@@ -1631,30 +1658,6 @@
         {
             "include": "functionDefinition"
         },
-        {
-            "include": "comment"
-        },
-        {
-            "include": "code"
-        }
-    ],
-    "paranthesisedBracket": [
-        [
-            "\\[",
-            {
-                "next": "paranthesisedBracket__b__0",
-                "token": ""
-            }
-        ]
-    ],
-    "paranthesisedBracket__b__0": [
-        [
-            "\\]",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
         {
             "include": "comment"
         },

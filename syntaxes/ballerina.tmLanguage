@@ -348,6 +348,10 @@
                 <string>#constrainType</string>
               </dict>
               <dict>
+                <key>include</key>
+                <string>#paranthesisedBracket</string>
+              </dict>
+              <dict>
                 <key>name</key>
                 <string>storage.type.ballerina</string>
                 <key>match</key>
