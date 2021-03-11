@@ -132,7 +132,7 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#typeDescription</string>
+                <string>#code</string>
               </dict>
             </array>
           </dict>

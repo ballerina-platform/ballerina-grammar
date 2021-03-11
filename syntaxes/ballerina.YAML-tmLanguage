@@ -54,7 +54,7 @@ repository:
         '0': { name:  keyword.ballerina }
       end: ';'
       patterns:
-      - include: '#typeDescription'
+      - include: '#code'
 
   booleans:
     patterns:
