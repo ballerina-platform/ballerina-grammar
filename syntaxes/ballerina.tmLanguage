@@ -575,6 +575,10 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#serviceDefinition</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#code</string>
               </dict>
             </array>

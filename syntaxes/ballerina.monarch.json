@@ -715,6 +715,9 @@
             "include": "workerDef"
         },
         {
+            "include": "serviceDefinition"
+        },
+        {
             "include": "code"
         }
     ],
