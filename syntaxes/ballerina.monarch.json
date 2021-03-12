@@ -1571,7 +1571,7 @@
             }
         ],
         [
-            "(\\bstring)(\\s*)(`)",
+            "(\\bstring|\\bbase[1-9]*)(\\s*)(`)",
             {
                 "next": "stringTemplate__b__0",
                 "token": "keyword.ballerina"
