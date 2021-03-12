@@ -203,6 +203,7 @@ repository:
       - include: '#workerDef'
       - include: '#serviceDefinition'
       - include: '#objectDec'
+      - include: '#functionDefinition'
       - include: '#code'
 
   functionDefinition:

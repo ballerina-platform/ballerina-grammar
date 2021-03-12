@@ -721,6 +721,9 @@
             "include": "objectDec"
         },
         {
+            "include": "functionDefinition"
+        },
+        {
             "include": "code"
         }
     ],
