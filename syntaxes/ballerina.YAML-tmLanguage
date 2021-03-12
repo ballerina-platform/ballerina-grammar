@@ -201,6 +201,8 @@ repository:
         '0': { name: punctuation.definition.block.ballerina }
       patterns:
       - include: '#workerDef'
+      - include: '#serviceDefinition'
+      - include: '#objectDec'
       - include: '#code'
 
   functionDefinition:

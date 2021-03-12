@@ -715,6 +715,12 @@
             "include": "workerDef"
         },
         {
+            "include": "serviceDefinition"
+        },
+        {
+            "include": "objectDec"
+        },
+        {
             "include": "code"
         }
     ],
