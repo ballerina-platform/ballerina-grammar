@@ -451,6 +451,18 @@ repository:
       - include: '#code'
       - include: '#variableDef'
 
+  classBody:
+    patterns:
+    - begin: '\bclass\b'
+      beginCaptures:
+        '0': { name:  keyword.ballerina }
+      end: '(?=\})'
+      endCaptures:
+        '0': { name: delimiter.curly }
+      patterns:
+      - include: '#comment'
+      - include: '#objectBody'
+
   classDec:
     patterns:
     - begin: '\bclass\b'
@@ -598,7 +610,7 @@ repository:
       patterns:
       - include: '#comment'
       - include: '#objectDec' 
-      - include: '#classDec' 
+      - include: '#classBody' 
       - include: '#serviceBody'
       - include: '#serviceOn'
       - include: '#serviceName'
