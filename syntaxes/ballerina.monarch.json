@@ -64,7 +64,7 @@
             "include": "objectDec"
         },
         {
-            "include": "classDec"
+            "include": "classBody"
         },
         {
             "include": "serviceBody"
@@ -1730,18 +1730,18 @@
             "entity.name.function.ballerina"
         ]
     ],
-    "classDec": [
+    "classBody": [
         [
             "\\bclass\\b",
             {
-                "next": "classDec__b__0",
+                "next": "classBody__b__0",
                 "token": "keyword.ballerina"
             }
         ]
     ],
-    "classDec__b__0": [
+    "classBody__b__0": [
         [
-            "\\}",
+            "(?=\\})",
             {
                 "next": "@pop",
                 "token": "delimiter.curly"
@@ -1900,6 +1900,30 @@
         ],
         {
             "include": "code"
+        }
+    ],
+    "classDec": [
+        [
+            "\\bclass\\b",
+            {
+                "next": "classDec__b__0",
+                "token": "keyword.ballerina"
+            }
+        ]
+    ],
+    "classDec__b__0": [
+        [
+            "\\}",
+            {
+                "next": "@pop",
+                "token": "delimiter.curly"
+            }
+        ],
+        {
+            "include": "comment"
+        },
+        {
+            "include": "objectBody"
         }
     ]
 }
