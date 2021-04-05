@@ -215,13 +215,13 @@ repository:
       endCaptures:
         '0': { name:  punctuation.definition.block.ballerina }
       patterns:
+      - include: '#comment'
       - include: '#functionParameters'
       - include: '#functionReturns'
       - name: keyword.ballerina
         match: 'extern\b'
       - include: '#functionName'
       - include: '#callableUnitBody'
-      - include: '#comment'
 
   functionName:
     patterns:

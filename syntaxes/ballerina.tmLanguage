@@ -622,6 +622,10 @@
             <array>
               <dict>
                 <key>include</key>
+                <string>#comment</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#functionParameters</string>
               </dict>
               <dict>
@@ -641,10 +645,6 @@
               <dict>
                 <key>include</key>
                 <string>#callableUnitBody</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
               </dict>
             </array>
           </dict>

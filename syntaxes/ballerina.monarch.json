@@ -353,6 +353,9 @@
             }
         ],
         {
+            "include": "comment"
+        },
+        {
             "include": "functionParameters"
         },
         {
@@ -367,9 +370,6 @@
         },
         {
             "include": "callableUnitBody"
-        },
-        {
-            "include": "comment"
         }
     ],
     "functionParameters": [
