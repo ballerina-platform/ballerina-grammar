@@ -704,6 +704,18 @@ function readRecord(Details? value) {
     }
 }
 
+function fetch(string a, string b) returns string|error {
+    worker A returns string|error {
+        return a;
+    }
+
+    worker B returns string|error {
+        return b;
+    }
+
+    return wait A|B;
+}
+
 function getXsl() returns xml {
     return xml
         `<xsl:stylesheet version="1.0" 

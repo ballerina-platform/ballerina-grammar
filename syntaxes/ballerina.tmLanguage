@@ -2249,6 +2249,10 @@
             <array>
               <dict>
                 <key>include</key>
+                <string>#functionReturns</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#workerBody</string>
               </dict>
             </array>
