@@ -204,7 +204,28 @@ repository:
       - include: '#serviceDefinition'
       - include: '#objectDec'
       - include: '#functionDefinition'
+      - include: '#forkStatement'
       - include: '#code'
+
+  forkBody:
+    patterns: 
+    - begin: '\{'
+      end: '(?=\})'
+      beginCaptures:
+        '0': { name: punctuation.definition.block.ballerina }
+      patterns: 
+      - include: '#workerDef'
+
+  forkStatement:
+    patterns: 
+    - begin: '\bfork\b'
+      end: '\}'
+      beginCaptures:
+        '0': { name: keyword.control.ballerina }
+      endCaptures:
+        '0': { name: punctuation.definition.block.ballerina }
+      patterns:
+      - include: '#forkBody'
 
   functionDefinition:
     patterns:

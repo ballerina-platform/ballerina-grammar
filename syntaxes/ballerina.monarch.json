@@ -724,6 +724,9 @@
             "include": "functionDefinition"
         },
         {
+            "include": "forkStatement"
+        },
+        {
             "include": "code"
         }
     ],
@@ -1043,6 +1046,48 @@
         ],
         {
             "include": "code"
+        }
+    ],
+    "forkStatement": [
+        [
+            "\\bfork\\b",
+            {
+                "next": "forkStatement__b__0",
+                "token": "keyword.control.ballerina"
+            }
+        ]
+    ],
+    "forkStatement__b__0": [
+        [
+            "\\}",
+            {
+                "next": "@pop",
+                "token": "punctuation.definition.block.ballerina"
+            }
+        ],
+        {
+            "include": "forkBody"
+        }
+    ],
+    "forkBody": [
+        [
+            "\\{",
+            {
+                "next": "forkBody__b__0",
+                "token": "punctuation.definition.block.ballerina"
+            }
+        ]
+    ],
+    "forkBody__b__0": [
+        [
+            "(?=\\})",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "workerDef"
         }
     ],
     "butExp": [

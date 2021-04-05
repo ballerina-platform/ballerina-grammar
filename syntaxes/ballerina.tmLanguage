@@ -587,7 +587,73 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#forkStatement</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#code</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>forkBody</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\{</string>
+            <key>end</key>
+            <string>(?=\})</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.block.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#workerDef</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>forkStatement</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\bfork\b</string>
+            <key>end</key>
+            <string>\}</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.control.ballerina</string>
+              </dict>
+            </dict>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.block.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#forkBody</string>
               </dict>
             </array>
           </dict>
