@@ -1,7 +1,7 @@
 Prism.languages.ballerina = {
     'comment': /\/\/[^\r\n]*/,
     'string': {
-        pattern: /"(?:[^\\"]|\\.)*(?:"|$)/,
+        pattern: /("(?:[^\\"]|\\.)*(?:"|$)|(`(?:[^\\`])*(?:`)))/,
         greedy: true,
     },
     'boolean': /\b(?:true|false)\b/,
