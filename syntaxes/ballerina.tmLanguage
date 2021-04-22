@@ -1056,7 +1056,7 @@
                 <key>match</key>
                 <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
                 <key>name</key>
-                <string>variable.parameter.ballerina</string>
+                <string>default.variable.parameter.ballerina</string>
               </dict>
             </array>
           </dict>
@@ -1277,7 +1277,7 @@
               <key>3</key>
               <dict>
                 <key>name</key>
-                <string>variable.parameter.ballerina</string>
+                <string>default.variable.parameter.ballerina</string>
               </dict>
               <key>4</key>
               <dict>
@@ -2399,7 +2399,7 @@
                 <key>match</key>
                 <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
                 <key>name</key>
-                <string>variable.parameter.ballerina</string>
+                <string>default.variable.parameter.ballerina</string>
               </dict>
             </array>
           </dict>
@@ -2479,7 +2479,7 @@
                 <key>match</key>
                 <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
                 <key>name</key>
-                <string>variable.parameter.ballerina</string>
+                <string>default.variable.parameter.ballerina</string>
               </dict>
             </array>
           </dict>

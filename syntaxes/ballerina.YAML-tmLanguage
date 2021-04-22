@@ -348,7 +348,7 @@ repository:
       - include: '#comment'
       - include: '#parameterTuple'
       - match: '{{identifier}}'
-        name: variable.parameter.ballerina
+        name: default.variable.parameter.ballerina
 
   maps:
     patterns:
@@ -418,7 +418,7 @@ repository:
       beginCaptures:
         '1': { name:  comment.mddocs.ballerina }
         '2': { name:  keyword.ballerina }
-        '3': { name:  variable.parameter.ballerina }
+        '3': { name:  default.variable.parameter.ballerina }
         '4': { name:  keyword.ballerina }
         '5': { name:  comment.mddocs.paramdesc.ballerina }
       end: '(?=[^#\r\n]|(?:# *?\+))'
@@ -766,7 +766,7 @@ repository:
       - include: '#comment'
       - include: '#parameterTuple'
       - match: '{{identifier}}'
-        name: variable.parameter.ballerina
+        name: default.variable.parameter.ballerina
 
   parameterTuple:
     patterns:
@@ -793,7 +793,7 @@ repository:
       patterns:
       - include: '#defaultWithParentheses'
       - match: '{{identifier}}'
-        name: variable.parameter.ballerina
+        name: default.variable.parameter.ballerina
 
   parameterWithDescriptor:
     patterns: 
