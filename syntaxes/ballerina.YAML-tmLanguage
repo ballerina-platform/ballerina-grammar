@@ -371,7 +371,7 @@ repository:
     patterns:
     - begin: '\bmatch\b'
       beginCaptures:
-        '0': { name:  keyword.ballerina }
+        '0': { name:  keyword.control.ballerina }
       end: '\}'
       patterns:
       - include: '#matchStatementBody'

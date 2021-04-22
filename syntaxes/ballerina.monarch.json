@@ -499,7 +499,7 @@
             "\\bmatch\\b",
             {
                 "next": "matchStatement__b__0",
-                "token": "keyword.ballerina"
+                "token": "keyword.control.ballerina"
             }
         ]
     ],
