@@ -645,6 +645,11 @@ function process(function (int, int) returns int func, int v1, int v2) returns i
     return func(v1, v2);
 }
 
+# Description
+#
+# + name - Parameter Description  
+# + age - Parameter Description  
+# + modules - Parameter Description  
 function printDetails(string name, int age = 18, string... modules) {
     int index = 0;
     string moduleString = "Module(s): " + ", ".'join(...modules);

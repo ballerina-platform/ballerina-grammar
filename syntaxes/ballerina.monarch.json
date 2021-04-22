@@ -201,7 +201,7 @@
                     "token": "comment.mddocs.ballerina"
                 },
                 "keyword.ballerina",
-                "variable.parameter.ballerina",
+                "default.variable.parameter.ballerina",
                 "keyword.ballerina",
                 "comment.mddocs.paramdesc.ballerina"
             ]
@@ -499,7 +499,7 @@
             "\\bmatch\\b",
             {
                 "next": "matchStatement__b__0",
-                "token": "keyword.ballerina"
+                "token": "keyword.control.ballerina"
             }
         ]
     ],
@@ -782,6 +782,9 @@
         },
         {
             "include": "multiType"
+        },
+        {
+            "include": "strings"
         },
         [
             "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
@@ -1184,7 +1187,7 @@
         },
         [
             "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
-            "variable.parameter.ballerina"
+            "default.variable.parameter.ballerina"
         ]
     ],
     "parameterWithDescriptor": [
@@ -1357,7 +1360,7 @@
         },
         [
             "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
-            "variable.parameter.ballerina"
+            "default.variable.parameter.ballerina"
         ]
     ],
     "defaultWithParentheses": [
@@ -1460,7 +1463,7 @@
         },
         [
             "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
-            "variable.parameter.ballerina"
+            "default.variable.parameter.ballerina"
         ]
     ],
     "defaultValue": [

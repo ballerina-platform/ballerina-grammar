@@ -833,6 +833,10 @@
                 <string>#multiType</string>
               </dict>
               <dict>
+                <key>include</key>
+                <string>#strings</string>
+              </dict>
+              <dict>
                 <key>match</key>
                 <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
                 <key>name</key>
@@ -1056,7 +1060,7 @@
                 <key>match</key>
                 <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
                 <key>name</key>
-                <string>variable.parameter.ballerina</string>
+                <string>default.variable.parameter.ballerina</string>
               </dict>
             </array>
           </dict>
@@ -1124,7 +1128,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>keyword.ballerina</string>
+                <string>keyword.control.ballerina</string>
               </dict>
             </dict>
             <key>end</key>
@@ -1277,7 +1281,7 @@
               <key>3</key>
               <dict>
                 <key>name</key>
-                <string>variable.parameter.ballerina</string>
+                <string>default.variable.parameter.ballerina</string>
               </dict>
               <key>4</key>
               <dict>
@@ -2399,7 +2403,7 @@
                 <key>match</key>
                 <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
                 <key>name</key>
-                <string>variable.parameter.ballerina</string>
+                <string>default.variable.parameter.ballerina</string>
               </dict>
             </array>
           </dict>
@@ -2479,7 +2483,7 @@
                 <key>match</key>
                 <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
                 <key>name</key>
-                <string>variable.parameter.ballerina</string>
+                <string>default.variable.parameter.ballerina</string>
               </dict>
             </array>
           </dict>
