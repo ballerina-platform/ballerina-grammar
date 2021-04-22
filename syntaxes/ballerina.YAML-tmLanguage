@@ -280,6 +280,7 @@ repository:
         - include: '#objectDec'
         - include: '#tupleType'
         - include: '#multiType'
+        - include: '#strings' 
         - match: '{{identifier}}'
           name: '{{typeScope}}'
         - include: '#comment'
