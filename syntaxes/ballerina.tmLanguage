@@ -2934,6 +2934,10 @@
           </dict>
           <dict>
             <key>include</key>
+            <string>#mdDocumentation</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#annotationAttachment</string>
           </dict>
           <dict>
