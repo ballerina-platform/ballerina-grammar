@@ -27,6 +27,7 @@ const map<map<string>> complexData = {
     "data2": {"user": "WSO2"}
 };
 enum Color {
+    # This is red color
     RED,
     GREEN,
     BLUE

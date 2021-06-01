@@ -945,6 +945,7 @@ repository:
     - include: '#keywords'
     - include: '#strings'
     - include: '#comment'
+    - include: '#mdDocumentation'
     - include: '#annotationAttachment'
     - include: '#numbers'
     - match: '{{identifier}}'

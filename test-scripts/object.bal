@@ -1,5 +1,7 @@
 public type Person record {
+    # This is name
     string name;
+    # This is age
     int age;
     // This is an anonymous record type descriptor.
     record {|
@@ -13,7 +15,7 @@ public type Person record {
 # + fieldOne - This is the description of the `DummyObject`'s `fieldOne` field.
 # + fieldTwo - This is the description of the `DummyObject`'s `fieldTwo` field.
 public type DummyObject object {
-
+    # This is fieldOne
     public string fieldOne;
     public string fieldTwo;
 

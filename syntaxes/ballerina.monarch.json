@@ -465,6 +465,9 @@
             "include": "comment"
         },
         {
+            "include": "mdDocumentation"
+        },
+        {
             "include": "annotationAttachment"
         },
         {

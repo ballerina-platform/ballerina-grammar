@@ -43,7 +43,9 @@ class Employee {
 }
 
 class Teenager {
+    # + name - this is name
     string name;
+    # This is age
     int age;
 
     // An `init` method may return an error.
