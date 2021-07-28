@@ -457,6 +457,13 @@ repository:
     - include: '#comment'
     - include: '#functionParameters'
     - include: '#decl-block'
+    - begin: \=>
+      name: meta.block.ballerina
+      beginCaptures:
+        '0': { name: meta.arrow.ballerina storage.type.function.arrow.ballerina }
+      end: \;
+      patterns:
+      - include: '#statements'
     - name: keyword.generator.asterisk.ballerina
       match: \*
 
@@ -470,8 +477,6 @@ repository:
     patterns:
     - match: \bexternal\b
       name: keyword.ballerina
-    - match: \=>
-      name: meta.arrow.ballerina storage.type.function.arrow.ballerina
     - include: '#functionReturns'
     - include: '#functionName'
     - include: '#punctuation-semicolon'
