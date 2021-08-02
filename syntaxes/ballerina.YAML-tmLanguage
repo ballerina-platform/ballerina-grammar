@@ -21,7 +21,7 @@ variables:
   constructsAndModifiers: '(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b'
   endOfStatement: ';|^\s*$|(?:^\s*{{constructsAndModifiers}})'
   lookAheadEndOfType: '[;),}\]:?\-\+\>]|\|\||\&\&|\!\=\=|$'
-  varExprStart: '\b(string|int|boolean|var)'
+  varExprStart: '\b(string|int|boolean|float|var|const)'
   nonPropertyLookBehind: '[^\._$[:alnum:]]'
   lookBehindString: '^string|{{nonPropertyLookBehind}}string'
   lookBehindInt: '^int|{{nonPropertyLookBehind}}int'
@@ -58,10 +58,12 @@ repository:
     - include: '#stringTemplate'
     - include: '#declaration'
     - include: '#control-statement'
+    - include: '#decl-block'
     - include: '#expression'
     - include: '#punctuation-semicolon'
     - include: '#string'
     - include: '#comment'
+    - include: '#keywords'
 
   declaration:
     patterns:
@@ -71,6 +73,7 @@ repository:
     - include: '#function-defn'
     - include: '#service-decl'
     - include: '#class-defn'
+    - include: '#keywords'
 
   control-statement:
     patterns:
@@ -86,6 +89,7 @@ repository:
 
   expression:
     patterns:
+    - include: '#keywords'
     - include: '#expressionWithoutIdentifiers'
     - include: '#identifiers'
 
@@ -95,8 +99,10 @@ repository:
     - include: '#stringTemplate'
     - include: '#comment'
     #- include: '#object-literal'
+    - include: '#ternary-expression'
     - include: '#expression-operators'
     - include: '#literal'
+    - include: '#paranthesised'
 
   object-literal:
     name: meta.objectliteral.ballerina
@@ -118,6 +124,7 @@ repository:
     endCaptures: 
       '0': { name: punctuation.terminator.statement.ballerina }
     patterns:
+    - include: '#keywords'
     - include: '#comment'
     - include: '#import-clause'
 
@@ -471,8 +478,8 @@ repository:
     name: meta.function.ballerina
     begin: '(?:(public|private)\s+)?(function\b)'
     beginCaptures:
-      '1': { name: storage.modifier.ballerina } 
-      '2': { name: storage.type.function.ballerina }
+      '1': { name: keyword.other.ballerina } 
+      '2': { name: keyword.other.ballerina }
     end: (?<=\;)|(?<=\})
     patterns:
     - match: \bexternal\b
@@ -500,22 +507,29 @@ repository:
 
   function-parameters-body:
     patterns:
+    - include: '#comment'
+    - include: '#string'
     - include: '#annotationAttachment'
     - include: '#recordLiteral'
-    - include: '#parameter'
-    - include: '#parameterTuple'
-    - include: '#defaultValue'
-    - include: '#comment'
-    - include: '#variable-initializer'
+    #- include: '#variable-initializer'
     - name: punctuation.separator.parameter.ballerina
-      match: ','
+      match: \,
+    - begin: \b
+      beginCaptures:
+        '1': { name: keyword.operator.type.annotation.ballerina }
+      end: (?=[,)])
+      patterns:
+      - match: '[_$[:alpha:]][_$[:alnum:]]*(?=\s*,|\s*\))'
+        name: variable.parameter.ballerina
+      - include: '#type'
 
   functionReturns:
     patterns:
-    - begin: '(?<=\))\s*(returns)\s*({{identifier}})'
+    - begin: '(?<=\))\s*(returns)\s*({{identifier}})\s*(\?)?'
       beginCaptures:
-        '1': { name: meta.type.function.return.ballerina }
-        '2': { name: meta.return.type.ballerina support.type.primitive.ballerina}
+        '1': { name: meta.type.function.return.ballerina keyword.other.ballerina }
+        '2': { name: meta.return.type.ballerina support.type.primitive.ballerina }
+        '3': { name: keyword.operator.ballerina }
       end: (?=\{|;|,|=)
       endCaptures:
         '0': { name: curly }
@@ -600,8 +614,6 @@ repository:
         endCaptures:
           '0': { name: meta.brace.round.ballerina }
         patterns:
-        - name: keyword.operator.expression.is.ballerina
-          match: '{{startOfIdentifier}}is{{endOfIdentifier}}'
         - include: '#expression'  
       - include: '#decl-block'
 
@@ -673,21 +685,20 @@ repository:
         name: variable.parameter.ballerina
 
   mdDocumentation:
+    name: comment.mddocs.ballerina
+    begin: '\#'
+    end: '[\r\n]+'
     patterns:
     - include: '#mdDocumentationReturnParamDescription'
     - include: '#mdDocumentationParamDescription'
-    - match: '#.*'
-      name: comment.mddocs.ballerina
 
   mdDocumentationParamDescription:
     patterns:
-    - begin: '(#)(?: *?)(\+)(?: *)({{identifier}})?(?: *)(-)?(.*)'
+    - begin: '(\+\s+)([_$[:alpha:]][_$[:alnum:]]*)(\s*\-\s+)'
       beginCaptures:
-        '1': { name:  comment.mddocs.ballerina }
-        '2': { name:  keyword.ballerina }
-        '3': { name:  default.variable.parameter.ballerina }
-        '4': { name:  keyword.ballerina }
-        '5': { name:  comment.mddocs.paramdesc.ballerina }
+        '1': { name:  keyword.operator.ballerina }
+        '2': { name:  variable.other.readwrite.ballerina }
+        '3': { name:  keyword.operator.ballerina }
       end: '(?=[^#\r\n]|(?:# *?\+))'
       patterns:
       - match: '#.*'
@@ -737,19 +748,21 @@ repository:
     - begin: (?<=:)\s*
       end: (?=\s|[;),}\]:\-\+]|{{endOfStatement}})
     - include: '#decl-block'
+    - include: '#expression'
 
   access-modifier:
     patterns:
     - match: '{{startOfIdentifier}}(public|private){{endOfIdentifier}}'
-      name: storage.modifier.ballerina
+      name: storage.modifier.ballerina keyword.other.ballerina
     
   class-defn:
     name: meta.class.ballerina
     begin: '(\s+)(class\b)|^class\b(?=\s+|/[/*])'
     beginCaptures:
-      '0': { name: storage.modifier.ballerina storage.type.class.ballerina}
+      '0': { name: storage.type.class.ballerina keyword.other.ballerina }
     end: (?<=\})
     patterns:
+    - include: '#keywords'
     - match: '{{identifier}}'
       captures:
         '0': { name: 'entity.name.type.class.ballerina' }    
@@ -806,13 +819,14 @@ repository:
       - include: '#code'
 
   paranthesised:
+    begin: \(
+    beginCaptures:
+      '0': {name: meta.brace.round.ballerina }
+    end: \)
+    endCaptures:
+      '0': {name: meta.brace.round.ballerina }
     patterns:
-    - begin: \(
-      end: \)
-      patterns:
-      - include: '#function-defn'
-      - include: '#comment'
-      - include: '#code'
+    - include: '#expression'
 
   paranthesisedBracket:
     patterns:
@@ -823,16 +837,16 @@ repository:
       - include: '#code'
 
   record:
+    name: meta.record.ballerina
+    begin: '\brecord\b'
+    beginCaptures:
+      '0': { name:  keyword.ballerina }
+    end: '(\})\s*'
+    endCaptures:
+      '1': { name: punctuation.definition.block.ballerina }
+      '2': { name: punctuation.terminator.statement.ballerina }
     patterns:
-    - begin: '\brecord\b'
-      beginCaptures:
-        '0': { name:  keyword.ballerina }
-      end: '\}'
-      endCaptures:
-        '0': { name: delimiter.curly }
-      patterns:
-      - include: '#recordBody'
-      - include: '#comment'
+    - include: '#statements'
 
   recordBody:
     patterns:
@@ -944,10 +958,10 @@ repository:
     patterns:
     - begin: '\btype\b'
       beginCaptures:
-        '0': { name:  keyword.ballerina }
-      end: ';'
+        '0': { name:  keyword.other.ballerina }
+      end: \;
       endCaptures:
-        '0': { name: source.ballerina }
+        '0': { name: punctuation.terminator.statement.ballerina }
       patterns:
       - include: '#comment'
       - include: '#typeDescription'
@@ -984,7 +998,8 @@ repository:
       - include: '#stringTemplate'
       - include: '#var-single-variable' 
       - include: '#variable-initializer' 
-      # - include: '#punctuation-comma'
+      - include: '#punctuation-comma'
+    - include: '#punctuation-comma'
 
   var-single-variable:
     patterns:
@@ -1247,16 +1262,43 @@ repository:
       patterns:
       - include: '#code'
 
+  ternary-expression:
+    begin: (?!\?\.\s*[^[:digit:]])(\?)(?!\?)
+    beginCaptures:
+      '1': { name: keyword.operator.ternary.ballerina }
+    end: \s*
+    endCaptures:
+      '1': { name: keyword.operator.ternary.ballerina }
+    patterns:
+    - include: '#expression'
+
+  type:
+    patterns:
+    - include: '#comment'
+    - include: '#string'
+    - include: '#numbers'
+    - include: '#type-primitive'
+
+  type-annotation:
+    patterns:
+    - name: meta.type.annotation.ballerina
+      begin: \b
+      beginCaptures:
+        '1': { name: keyword.operator.type.annotation.ballerina }
+      end: (\S(?=\)))|(\s)
+      patterns:
+      - include: '#type'
+
   keywords:
     patterns:
     - name: keyword.control.ballerina
-      match: \b(else|fork|join|while|foreach|in|return|returns|break|transaction|transactional|retry|commit|rollback|continue|typeof|enum|wait|check|checkpanic|panic|trap|match)\b
+      match: \b(fork|join|while|foreach|in|return|returns|break|transaction|transactional|retry|commit|rollback|continue|typeof|enum|wait|check|checkpanic|panic|trap|match)\b
 
     - name: keyword.other.ballerina
-      match: \b(public|private|external|type|record|object|remote|abstract|client|true|false|fail|import|version)\b
+      match: \b(public|private|external|return|record|object|remote|abstract|client|true|false|fail|import|version)\b
 
     - name: keyword.other.ballerina
-      match: \b(as|on|resource|listener|const|final|is|null|lock|annotation|source|worker|parameter|field|isolated)\b
+      match: \b(as|on|function|resource|listener|const|final|is|null|lock|annotation|source|worker|parameter|field|isolated)\b
 
     - name: keyword.other.ballerina
       match: \b(xmlns|table|key|let|new|from|where|select|start|flush|default|do|base16|base64|conflict)\b
@@ -1265,7 +1307,7 @@ repository:
       match: \b(limit|outer|equals|order|by|ascending|descending|class|configurable|variable|module|service)\b
 
     - name: keyword.operator.ballerina
-      match: (!|%|\+|\-|~=|===|==|=|!=|!==|<|>|&|\||\?:|\.\.\.|\?|<=|=>|>=|&&|\|\||~|>>|>>>)
+      match: (!|%|\+|\-|~=|===|==|=|!=|!==|<|>|&|\||\?:|\.\.\.|<=|=>|>=|&&|\|\||~|>>|>>>)
 
     - include: '#types'
 
