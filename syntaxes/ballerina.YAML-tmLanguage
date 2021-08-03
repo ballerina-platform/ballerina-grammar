@@ -501,7 +501,7 @@ repository:
     beginCaptures:
       '0': { name: punctuation.definition.parameters.begin.ballerina }
     endCaptures:
-      '0': { name: punctuation.definition.parameters.begin.ballerina }
+      '0': { name: punctuation.definition.parameters.end.ballerina }
     patterns:
     - include: '#function-parameters-body'
 
@@ -511,18 +511,24 @@ repository:
     - include: '#string'
     - include: '#annotationAttachment'
     - include: '#recordLiteral'
-    #- include: '#variable-initializer'
+    - include: '#parameter-name'
+    - include: '#variable-initializer'
     - name: punctuation.separator.parameter.ballerina
       match: \,
-    - begin: \b
-      beginCaptures:
-        '1': { name: keyword.operator.type.annotation.ballerina }
-      end: (?=[,)])
-      patterns:
-      - match: '[_$[:alpha:]][_$[:alnum:]]*(?=\s*,|\s*\))'
-        name: variable.parameter.ballerina
-      - include: '#type'
 
+  parameter-name:
+    patterns:
+    - match: '\s*{{varExprStart}}\s*'
+      captures:
+        '1': { name: support.type.primitive.ballerina }
+    - match: |-
+        (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|({{identifier}})){{endOfIdentifier}}\s*(\??)
+      captures:
+        '2': { name: keyword.operator.rest.ballerina }
+        '3': { name: variable.parameter.ballerina }
+        '4': { name: variable.parameter.ballerina }
+        '5': { name: keyword.operator.optional.ballerina }
+        
   functionReturns:
     patterns:
     - begin: '(?<=\))\s*(returns)\s*({{identifier}})\s*(\?)?'
@@ -749,6 +755,8 @@ repository:
       end: (?=\s|[;),}\]:\-\+]|{{endOfStatement}})
     - include: '#decl-block'
     - include: '#expression'
+    - include: '#punctuation-comma'
+    - include: '#punctuation-semicolon'
 
   access-modifier:
     patterns:
@@ -1024,15 +1032,13 @@ repository:
     - begin: (?<!=|!)(=)(?!=)(?=\s*\S)
       beginCaptures:
         '1': { name: keyword.operator.assignment.ballerina }
-      end: \;
-      endCaptures:
-        '0': { name: punctuation.terminator.statement.ballerina }
+      end: (?=$|[,);}\]])
       patterns:
       - include: '#expression'
     - begin: (?<!=|!)(=)(?!=)
       beginCaptures:
         '1': { name: keyword.operator.assignment.ballerina }
-      end: (?=[,);}\]]|({{startOfIdentifier}}(of|in)\s+))|(?=^\s*$)|(?<=\S)(?<!=)(?=\s*$)
+      end: (?=[,);}\]]|({{startOfIdentifier}}\s+))|(?=^\s*$)|(?<=\S)(?<!=)(?=\s*$)
       patterns:
         - include: '#expression'
 
