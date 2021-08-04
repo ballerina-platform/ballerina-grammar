@@ -74,6 +74,7 @@ repository:
     - include: '#function-defn'
     - include: '#service-decl'
     - include: '#class-defn'
+    - include: '#enum-decl'
     - include: '#keywords'
 
   control-statement:
@@ -415,6 +416,42 @@ repository:
 
       - name: comment.block.ballerina.documentation
         match: .
+
+  enum-decl:
+    name: meta.enum.declaration.ballerina
+    begin: '(?:\b(const)\s+)?\b(enum)\s+({{identifier}})'
+    beginCaptures:
+      '1': { name: storage.modifier.ballerina}
+      '2': { name: keyword.other.ballerina }
+      '3': { name: entity.name.type.enum.ballerina }
+    end: (?<=\})
+    patterns:
+    - include: '#comment'
+    - include: '#mdDocumentation'
+    - begin: \{
+      beginCaptures:
+        '0': { name: punctuation.definition.block.ballerina }
+      end: \}
+      endCaptures:
+        '0': { name: punctuation.definition.block.ballerina }
+      patterns:
+      - include: '#comment'
+      - include: '#mdDocumentation'
+      - begin: ({{identifier}})
+        beginCaptures:
+          '0': { name: variable.other.enummember.ballerina }
+        end: (?=,|\}|$)
+        patterns:
+        - include: '#comment'
+        - include: '#variable-initializer'
+      - begin: (?=({{nonIdentifierPropertyName}}))
+        end: (?=,|\}|$)
+        patterns:
+        - include: '#string'
+        - include: '#array-literal'
+        - include: '#comment'
+        - include: '#variable-initializer'
+      - include: '#punctuation-comma'
 
   errorDestructure:
     patterns:
@@ -1056,7 +1093,7 @@ repository:
       beginCaptures:
         '1': { name: meta.definition.variable.ballerina variable.other.constant.ballerina }
       end: (?=$|^|[;,=}]|({{startOfIdentifier}}\s+))
-      
+
   variable-initializer:
     patterns:
     - begin: (?<!=|!)(=)(?!=)(?=\s*\S)
