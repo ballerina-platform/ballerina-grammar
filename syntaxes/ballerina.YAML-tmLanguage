@@ -98,7 +98,7 @@ repository:
     - include: '#string'
     - include: '#stringTemplate'
     - include: '#comment'
-    #- include: '#object-literal'
+    - include: '#object-literal'
     - include: '#ternary-expression'
     - include: '#expression-operators'
     - include: '#literal'
@@ -897,13 +897,14 @@ repository:
     beginCaptures:
       '0': { name:  keyword.ballerina }
     patterns:
+    - include: '#class-defn'
     - include: '#serviceName'
     - include: '#serviceOn'
     - include: '#serviceBody'
 
   serviceName:
     patterns:
-    - name: entity.name.function.ballerina
+    - name: entity.service.path.ballerina
       match: '(\/({{identifier}}*)|\"{{identifier}}\")'
 
   serviceOn:
@@ -1007,6 +1008,7 @@ repository:
       - include: '#var-single-variable' 
       - include: '#variable-initializer' 
       - include: '#punctuation-comma'
+      - include: '#type-annotation'
     - include: '#punctuation-comma'
 
   var-single-variable:
@@ -1024,8 +1026,6 @@ repository:
         '1': { name: meta.definition.variable.ballerina variable.other.readwrite.ballerina }
         '2': { name: keyword.operator.definiteassignment.ballerina }
       end: (?=$|^|[;,=}]|({{startOfIdentifier}}(of|in)\s+))  
-      #patterns: 
-      #- include: '#var-single-variable-type-annotation'
 
   variable-initializer:
     patterns:
@@ -1284,6 +1284,7 @@ repository:
     - include: '#string'
     - include: '#numbers'
     - include: '#type-primitive'
+    - include: '#type-tuple'
 
   type-annotation:
     patterns:
@@ -1295,10 +1296,32 @@ repository:
       patterns:
       - include: '#type'
 
+  type-tuple:
+    name: meta.type.tuple.ballerina
+    begin: \[
+    beginCaptures:
+      '0': { name: meta.brace.square.ballerina }
+    end: \]
+    endCaptures:
+      '0': { name: meta.brace.square.ballerina }
+    patterns:
+    - name: keyword.operator.rest.ballerina
+      match: \.\.\.
+    - match: '{{startOfIdentifier}}({{identifier}})\s*(\?)?\s*(:)'
+      captures:
+        '1': { name: entity.name.label.ballerina }
+        '2': { name: keyword.operator.optional.ballerina }
+        '3': { name: punctuation.separator.label.ballerina }
+    - include: '#type'
+    - include: '#punctuation-comma'
+
   keywords:
     patterns:
     - name: keyword.control.ballerina
-      match: \b(fork|join|while|foreach|in|return|returns|break|transaction|transactional|retry|commit|rollback|continue|typeof|enum|wait|check|checkpanic|panic|trap|match)\b
+      match: \b(fork|join|while|foreach|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\b
+
+    - name: keyword.control.flow.ballerina
+      match: \b(return|break|continue|check|checkpanic|panic|trap|from|where)\b
 
     - name: keyword.other.ballerina
       match: \b(public|private|external|return|record|object|remote|abstract|client|true|false|fail|import|version)\b
@@ -1307,7 +1330,7 @@ repository:
       match: \b(as|on|function|resource|listener|const|final|is|null|lock|annotation|source|worker|parameter|field|isolated)\b
 
     - name: keyword.other.ballerina
-      match: \b(xmlns|table|key|let|new|from|where|select|start|flush|default|do|base16|base64|conflict)\b
+      match: \b(xmlns|table|key|let|new|select|start|flush|default|do|base16|base64|conflict)\b
 
     - name: keyword.other.ballerina
       match: \b(limit|outer|equals|order|by|ascending|descending|class|configurable|variable|module|service)\b
@@ -1324,6 +1347,19 @@ repository:
     - include: '#strings'
     - include: '#maps'
     - include: '#self-literal'
+    - include: '#array-literal'
+
+  array-literal:
+    name: meta.array.literal.ballerina
+    begin: \s*(\[)
+    beginCaptures:
+      '1': { name: meta.brace.square.ballerina }
+    end: \]
+    endCaptures:
+      '0': { name: meta.brace.square.ballerina }
+    patterns:
+    - include: '#expression'
+    - include: '#punctuation-comma'
 
   self-literal:
     patterns:
