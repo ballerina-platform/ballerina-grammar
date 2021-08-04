@@ -21,7 +21,8 @@ variables:
   constructsAndModifiers: '(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b'
   endOfStatement: ';|^\s*$|(?:^\s*{{constructsAndModifiers}})'
   lookAheadEndOfType: '[;),}\]:?\-\+\>]|\|\||\&\&|\!\=\=|$'
-  varExprStart: '\b(string|int|boolean|float|var|const)'
+  varExprStart: '\b(string|int|boolean|float|var)'
+  constExprStart: '\b(const(?!\s+enum\b))'
   nonPropertyLookBehind: '[^\._$[:alnum:]]'
   lookBehindString: '^string|{{nonPropertyLookBehind}}string'
   lookBehindInt: '^int|{{nonPropertyLookBehind}}int'
@@ -361,6 +362,7 @@ repository:
       '0': { name: punctuation.definition.block.ballerina }
     patterns:
     - include: '#statements'
+    - include: '#mdDocumentation'
 
   defaultValue:
     patterns:
@@ -1010,6 +1012,21 @@ repository:
       - include: '#punctuation-comma'
       - include: '#type-annotation'
     - include: '#punctuation-comma'
+    # const
+    - name: meta.var.expr.ballerina
+      begin: (?={{constExprStart}})
+      end: (?!{{constExprStart}})((?=;|}|{{endOfStatement}})|((?<!{{lookBehindString}}|{{lookBehindInt}})(?=\s*$)))
+      patterns:
+      - begin: '{{constExprStart}}\s*'
+        beginCaptures:
+          '0': { name: keyword.other.ballerina }
+        end: (?=\S)
+      - include: '#stringTemplate'
+      - include: '#var-single-const' 
+      - include: '#variable-initializer' 
+      - include: '#punctuation-comma'
+      - include: '#type-annotation'
+    - include: '#punctuation-comma'
 
   var-single-variable:
     patterns:
@@ -1025,8 +1042,21 @@ repository:
       beginCaptures:
         '1': { name: meta.definition.variable.ballerina variable.other.readwrite.ballerina }
         '2': { name: keyword.operator.definiteassignment.ballerina }
-      end: (?=$|^|[;,=}]|({{startOfIdentifier}}(of|in)\s+))  
+      end: (?=$|^|[;,=}]|({{startOfIdentifier}}\s+))  
 
+  var-single-const:
+    patterns:
+    - name: meta.var-single-variable.expr.ballerina
+    - begin: '{{varExprStart}}\s*'
+      beginCaptures:
+        '0': { name: support.type.primitive.ballerina }
+      end: (?=\S)
+    - include: '#types'
+    - begin: ({{identifier}})
+      beginCaptures:
+        '1': { name: meta.definition.variable.ballerina variable.other.constant.ballerina }
+      end: (?=$|^|[;,=}]|({{startOfIdentifier}}\s+))
+      
   variable-initializer:
     patterns:
     - begin: (?<!=|!)(=)(?!=)(?=\s*\S)
