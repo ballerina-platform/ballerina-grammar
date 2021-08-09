@@ -1,0 +1,1796 @@
+// SYNTAX TEST "source.ballerina" "sample testcase"
+
+>  import ballerina/grpc;
+// ^^^^^^ source.ballerina keyword.other.ballerina
+//       ^ source.ballerina
+//        ^^^^^^^^^^^^^^ source.ballerina
+//                      ^^ source.ballerina
+>import ballerina/tcp;
+#^^^^^^ source.ballerina keyword.other.ballerina
+#      ^ source.ballerina
+#       ^^^^^^^^^^^^^ source.ballerina
+#                    ^^ source.ballerina
+>import ballerina/io;
+#^^^^^^ source.ballerina keyword.other.ballerina
+#      ^ source.ballerina
+#       ^^^^^^^^^^^^ source.ballerina
+#                   ^^ source.ballerina
+>
+> // Define a class named `Person` 
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+>  class Person {
+// ^^^^^ source.ballerina keyword.ballerina
+#     ^^^^^^^^ source.ballerina
+#             ^ source.ballerina punctuation.definition.block.ballerina
+>    string fname;
+#^^^^ source.ballerina
+#    ^^^^^^ source.ballerina storage.type.ballerina
+#          ^ source.ballerina
+#           ^^^^^ source.ballerina
+#                ^^ source.ballerina
+>    string lname;
+#^^^^ source.ballerina
+#    ^^^^^^ source.ballerina storage.type.ballerina
+#          ^ source.ballerina
+#           ^^^^^ source.ballerina
+#                ^^ source.ballerina
+>    public Person? parent = ();
+#^^^^ source.ballerina
+#    ^^^^^^ source.ballerina keyword.ballerina
+#          ^ source.ballerina
+#           ^^^^^^ source.ballerina
+#                 ^ source.ballerina keyword.operator.ballerina
+#                  ^ source.ballerina
+#                   ^^^^^^ source.ballerina
+#                         ^ source.ballerina
+#                          ^ source.ballerina keyword.operator.ballerina
+#                           ^ source.ballerina
+#                            ^ source.ballerina
+#                             ^ source.ballerina
+#                              ^^ source.ballerina
+>    private boolean employed;
+#^^^^ source.ballerina
+#    ^^^^^^^ source.ballerina keyword.ballerina
+#           ^ source.ballerina
+#            ^^^^^^^ source.ballerina storage.type.ballerina
+#                   ^ source.ballerina
+#                    ^^^^^^^^ source.ballerina
+#                            ^^ source.ballerina
+>    public string email = "default@abc.com";
+#^^^^ source.ballerina
+#    ^^^^^^ source.ballerina keyword.ballerina
+#          ^ source.ballerina
+#           ^^^^^^ source.ballerina storage.type.ballerina
+#                 ^ source.ballerina
+#                  ^^^^^ source.ballerina
+#                       ^ source.ballerina
+#                        ^ source.ballerina keyword.operator.ballerina
+#                         ^ source.ballerina
+#                          ^ source.ballerina string.begin.ballerina
+#                           ^ source.ballerina string
+#                            ^ source.ballerina string
+#                             ^ source.ballerina string
+#                              ^ source.ballerina string
+#                               ^ source.ballerina string
+#                                ^ source.ballerina string
+#                                 ^ source.ballerina string
+#                                  ^ source.ballerina string
+#                                   ^ source.ballerina string
+#                                    ^ source.ballerina string
+#                                     ^ source.ballerina string
+#                                      ^ source.ballerina string
+#                                       ^ source.ballerina string
+#                                        ^ source.ballerina string
+#                                         ^ source.ballerina string
+#                                          ^ source.ballerina string.end.ballerina
+#                                           ^^ source.ballerina
+>    // The `init` method should initialize
+#^^^^ source.ballerina
+#    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+>    function init(string fname, string lname, boolean employed) {
+#^^^^ source.ballerina
+#    ^^^^^^^^ source.ballerina keyword.ballerina
+#            ^ source.ballerina
+#             ^^^^ source.ballerina entity.name.function.ballerina
+#                 ^ source.ballerina delimiter.parenthesis
+#                  ^^^^^^ source.ballerina storage.type.ballerina
+#                        ^ source.ballerina
+#                         ^^^^^ source.ballerina default.variable.parameter.ballerina
+#                              ^ source.ballerina
+#                               ^ source.ballerina
+#                                ^^^^^^ source.ballerina storage.type.ballerina
+#                                      ^ source.ballerina
+#                                       ^^^^^ source.ballerina default.variable.parameter.ballerina
+#                                            ^ source.ballerina
+#                                             ^ source.ballerina
+#                                              ^^^^^^^ source.ballerina storage.type.ballerina
+#                                                     ^ source.ballerina
+#                                                      ^^^^^^^^ source.ballerina default.variable.parameter.ballerina
+#                                                              ^ source.ballerina delimiter.parenthesis
+#                                                               ^ source.ballerina
+#                                                                ^ source.ballerina punctuation.definition.block.ballerina
+>        self.fname = fname;
+#^^^^^^^^ source.ballerina
+#        ^^^^ source.ballerina
+#            ^ source.ballerina
+#             ^^^^^ source.ballerina
+#                  ^ source.ballerina
+#                   ^ source.ballerina keyword.operator.ballerina
+#                    ^ source.ballerina
+#                     ^^^^^ source.ballerina
+#                          ^^ source.ballerina
+>        self.lname = lname;
+#^^^^^^^^ source.ballerina
+#        ^^^^ source.ballerina
+#            ^ source.ballerina
+#             ^^^^^ source.ballerina
+#                  ^ source.ballerina
+#                   ^ source.ballerina keyword.operator.ballerina
+#                    ^ source.ballerina
+#                     ^^^^^ source.ballerina
+#                          ^^ source.ballerina
+>        self.employed = employed;
+#^^^^^^^^ source.ballerina
+#        ^^^^ source.ballerina
+#            ^ source.ballerina
+#             ^^^^^^^^ source.ballerina
+#                     ^ source.ballerina
+#                      ^ source.ballerina keyword.operator.ballerina
+#                       ^ source.ballerina
+#                        ^^^^^^^^ source.ballerina
+#                                ^^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>
+>    function getFullName() returns string {
+#^^^^ source.ballerina
+#    ^^^^^^^^ source.ballerina keyword.ballerina
+#            ^ source.ballerina
+#             ^^^^^^^^^^^ source.ballerina entity.name.function.ballerina
+#                        ^ source.ballerina delimiter.parenthesis
+#                         ^ source.ballerina delimiter.parenthesis
+#                          ^ source.ballerina
+#                           ^^^^^^^ source.ballerina keyword.ballerina
+#                                  ^ source.ballerina
+#                                   ^^^^^^ source.ballerina storage.type.ballerina
+#                                         ^ source.ballerina
+#                                          ^ source.ballerina punctuation.definition.block.ballerina
+>        return self.fname + " " + self.lname;
+#^^^^^^^^ source.ballerina
+#        ^^^^^^ source.ballerina keyword.control.ballerina
+#              ^ source.ballerina
+#               ^^^^ source.ballerina
+#                   ^ source.ballerina
+#                    ^^^^^ source.ballerina
+#                         ^ source.ballerina
+#                          ^ source.ballerina keyword.operator.ballerina
+#                           ^ source.ballerina
+#                            ^ source.ballerina string.begin.ballerina
+#                             ^ source.ballerina string
+#                              ^ source.ballerina string.end.ballerina
+#                               ^ source.ballerina
+#                                ^ source.ballerina keyword.operator.ballerina
+#                                 ^ source.ballerina
+#                                  ^^^^ source.ballerina
+#                                      ^ source.ballerina
+#                                       ^^^^^ source.ballerina
+#                                            ^^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>    // Methods can access all the fields of the class.
+#^^^^ source.ballerina
+#    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+>    function isEmployed() returns boolean => self.employed;
+#^^^^ source.ballerina
+#    ^^^^^^^^ source.ballerina keyword.ballerina
+#            ^ source.ballerina
+#             ^^^^^^^^^^ source.ballerina entity.name.function.ballerina
+#                       ^ source.ballerina delimiter.parenthesis
+#                        ^ source.ballerina delimiter.parenthesis
+#                         ^ source.ballerina
+#                          ^^^^^^^ source.ballerina keyword.ballerina
+#                                 ^ source.ballerina
+#                                  ^^^^^^^ source.ballerina storage.type.ballerina
+#                                         ^ source.ballerina
+#                                          ^ source.ballerina keyword.operator.ballerina
+#                                           ^ source.ballerina keyword.operator.ballerina
+#                                            ^ source.ballerina
+#                                             ^^^^ source.ballerina
+#                                                 ^ source.ballerina
+#                                                  ^^^^^^^^ source.ballerina
+#                                                          ^^ source.ballerina
+>}
+#^ source.ballerina delimiter.curly
+>
+>class Employee {
+#^^^^^ source.ballerina keyword.ballerina
+#     ^^^^^^^^^^ source.ballerina
+#               ^ source.ballerina punctuation.definition.block.ballerina
+>    public string name = "";
+#^^^^ source.ballerina
+#    ^^^^^^ source.ballerina keyword.ballerina
+#          ^ source.ballerina
+#           ^^^^^^ source.ballerina storage.type.ballerina
+#                 ^ source.ballerina
+#                  ^^^^ source.ballerina
+#                      ^ source.ballerina
+#                       ^ source.ballerina keyword.operator.ballerina
+#                        ^ source.ballerina
+#                         ^ source.ballerina string.begin.ballerina
+#                          ^ source.ballerina string.end.ballerina
+#                           ^^ source.ballerina
+>    public int age = 0;
+#^^^^ source.ballerina
+#    ^^^^^^ source.ballerina keyword.ballerina
+#          ^ source.ballerina
+#           ^^^ source.ballerina storage.type.ballerina
+#              ^ source.ballerina
+#               ^^^ source.ballerina
+#                  ^ source.ballerina
+#                   ^ source.ballerina keyword.operator.ballerina
+#                    ^ source.ballerina
+#                     ^ source.ballerina constant.numeric.decimal.ballerina
+#                      ^^ source.ballerina
+>    private string email = "default@abc.com";
+#^^^^ source.ballerina
+#    ^^^^^^^ source.ballerina keyword.ballerina
+#           ^ source.ballerina
+#            ^^^^^^ source.ballerina storage.type.ballerina
+#                  ^ source.ballerina
+#                   ^^^^^ source.ballerina
+#                        ^ source.ballerina
+#                         ^ source.ballerina keyword.operator.ballerina
+#                          ^ source.ballerina
+#                           ^ source.ballerina string.begin.ballerina
+#                            ^ source.ballerina string
+#                             ^ source.ballerina string
+#                              ^ source.ballerina string
+#                               ^ source.ballerina string
+#                                ^ source.ballerina string
+#                                 ^ source.ballerina string
+#                                  ^ source.ballerina string
+#                                   ^ source.ballerina string
+#                                    ^ source.ballerina string
+#                                     ^ source.ballerina string
+#                                      ^ source.ballerina string
+#                                       ^ source.ballerina string
+#                                        ^ source.ballerina string
+#                                         ^ source.ballerina string
+#                                          ^ source.ballerina string
+#                                           ^ source.ballerina string.end.ballerina
+#                                            ^^ source.ballerina
+>    string address = "No 20, Palm Grove";
+#^^^^ source.ballerina
+#    ^^^^^^ source.ballerina storage.type.ballerina
+#          ^ source.ballerina
+#           ^^^^^^^ source.ballerina
+#                  ^ source.ballerina
+#                   ^ source.ballerina keyword.operator.ballerina
+#                    ^ source.ballerina
+#                     ^ source.ballerina string.begin.ballerina
+#                      ^ source.ballerina string
+#                       ^ source.ballerina string
+#                        ^ source.ballerina string
+#                         ^ source.ballerina string
+#                          ^ source.ballerina string
+#                           ^ source.ballerina string
+#                            ^ source.ballerina string
+#                             ^ source.ballerina string
+#                              ^ source.ballerina string
+#                               ^ source.ballerina string
+#                                ^ source.ballerina string
+#                                 ^ source.ballerina string
+#                                  ^ source.ballerina string
+#                                   ^ source.ballerina string
+#                                    ^ source.ballerina string
+#                                     ^ source.ballerina string
+#                                      ^ source.ballerina string
+#                                       ^ source.ballerina string.end.ballerina
+#                                        ^^ source.ballerina
+>
+>    // Private methods can only be called from within the class;
+#^^^^ source.ballerina
+#    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+>    private function getDomainName() returns string => "abc.com";
+#^^^^ source.ballerina
+#    ^^^^^^^ source.ballerina keyword.ballerina
+#           ^ source.ballerina
+#            ^^^^^^^^ source.ballerina keyword.ballerina
+#                    ^ source.ballerina
+#                     ^^^^^^^^^^^^^ source.ballerina entity.name.function.ballerina
+#                                  ^ source.ballerina delimiter.parenthesis
+#                                   ^ source.ballerina delimiter.parenthesis
+#                                    ^ source.ballerina
+#                                     ^^^^^^^ source.ballerina keyword.ballerina
+#                                            ^ source.ballerina
+#                                             ^^^^^^ source.ballerina storage.type.ballerina
+#                                                   ^ source.ballerina
+#                                                    ^ source.ballerina keyword.operator.ballerina
+#                                                     ^ source.ballerina keyword.operator.ballerina
+#                                                      ^ source.ballerina
+#                                                       ^ source.ballerina string.begin.ballerina
+#                                                        ^ source.ballerina string
+#                                                         ^ source.ballerina string
+#                                                          ^ source.ballerina string
+#                                                           ^ source.ballerina string
+#                                                            ^ source.ballerina string
+#                                                             ^ source.ballerina string
+#                                                              ^ source.ballerina string
+#                                                               ^ source.ballerina string.end.ballerina
+#                                                                ^^ source.ballerina
+>
+>    // Methods can update fields.
+#^^^^ source.ballerina
+#    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+>    // Module-level visible methods can only be called from within the same module.
+#^^^^ source.ballerina
+#    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+>    function setEmail(string username) {
+#^^^^ source.ballerina
+#    ^^^^^^^^ source.ballerina keyword.ballerina
+#            ^ source.ballerina
+#             ^^^^^^^^ source.ballerina entity.name.function.ballerina
+#                     ^ source.ballerina delimiter.parenthesis
+#                      ^^^^^^ source.ballerina storage.type.ballerina
+#                            ^ source.ballerina
+#                             ^^^^^^^^ source.ballerina default.variable.parameter.ballerina
+#                                     ^ source.ballerina delimiter.parenthesis
+#                                      ^ source.ballerina
+#                                       ^ source.ballerina punctuation.definition.block.ballerina
+>        self.email = string `${username}@${self.getDomainName()}`;
+#^^^^^^^^ source.ballerina
+#        ^^^^ source.ballerina
+#            ^ source.ballerina
+#             ^^^^^ source.ballerina
+#                  ^ source.ballerina
+#                   ^ source.ballerina keyword.operator.ballerina
+#                    ^ source.ballerina
+#                     ^^^^^^ source.ballerina keyword.ballerina
+#                           ^ source.ballerina
+#                            ^ source.ballerina string.template.ballerina
+#                             ^^ source.ballerina constant.character.escape.ballerina
+#                               ^^^^^^^^ source.ballerina
+#                                       ^ source.ballerina constant.character.escape.ballerina
+#                                        ^ source.ballerina string
+#                                         ^^ source.ballerina constant.character.escape.ballerina
+#                                           ^^^^ source.ballerina
+#                                               ^ source.ballerina
+#                                                ^^^^^^^^^^^^^ source.ballerina
+#                                                             ^ source.ballerina
+#                                                              ^ source.ballerina
+#                                                               ^ source.ballerina constant.character.escape.ballerina
+#                                                                ^ source.ballerina string.template.ballerina
+#                                                                 ^^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>
+>    // Public methods can be called from anywhere.
+#^^^^ source.ballerina
+#    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+>    public function getEmail() returns string => self.email;
+#^^^^ source.ballerina
+#    ^^^^^^ source.ballerina keyword.ballerina
+#          ^ source.ballerina
+#           ^^^^^^^^ source.ballerina keyword.ballerina
+#                   ^ source.ballerina
+#                    ^^^^^^^^ source.ballerina entity.name.function.ballerina
+#                            ^ source.ballerina delimiter.parenthesis
+#                             ^ source.ballerina delimiter.parenthesis
+#                              ^ source.ballerina
+#                               ^^^^^^^ source.ballerina keyword.ballerina
+#                                      ^ source.ballerina
+#                                       ^^^^^^ source.ballerina storage.type.ballerina
+#                                             ^ source.ballerina
+#                                              ^ source.ballerina keyword.operator.ballerina
+#                                               ^ source.ballerina keyword.operator.ballerina
+#                                                ^ source.ballerina
+#                                                 ^^^^ source.ballerina
+#                                                     ^ source.ballerina
+#                                                      ^^^^^ source.ballerina
+#                                                           ^^ source.ballerina
+>}
+#^ source.ballerina delimiter.curly
+>
+>class Teenager {
+#^^^^^ source.ballerina keyword.ballerina
+#     ^^^^^^^^^^ source.ballerina
+#               ^ source.ballerina punctuation.definition.block.ballerina
+>    # + name - this is name
+#^^^^ source.ballerina
+#    ^ source.ballerina comment.mddocs.ballerina
+#     ^ source.ballerina
+#      ^ source.ballerina keyword.ballerina
+#       ^ source.ballerina
+#        ^^^^ source.ballerina default.variable.parameter.ballerina
+#            ^ source.ballerina
+#             ^ source.ballerina keyword.ballerina
+#              ^^^^^^^^^^^^^ source.ballerina comment.mddocs.paramdesc.ballerina
+>    string name;
+#^^^^ source.ballerina
+#    ^^^^^^ source.ballerina storage.type.ballerina
+#          ^ source.ballerina
+#           ^^^^ source.ballerina
+#               ^^ source.ballerina
+>    # This is age
+#^^^^ source.ballerina
+#    ^^^^^^^^^^^^^ source.ballerina comment.mddocs.ballerina
+>    int age;
+#^^^^ source.ballerina
+#    ^^^ source.ballerina storage.type.ballerina
+#       ^ source.ballerina
+#        ^^^ source.ballerina
+#           ^^ source.ballerina
+>
+>    // An `init` method may return an error.
+#^^^^ source.ballerina
+#    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+>    function init(string name, int age) returns error? {
+#^^^^ source.ballerina
+#    ^^^^^^^^ source.ballerina keyword.ballerina
+#            ^ source.ballerina
+#             ^^^^ source.ballerina entity.name.function.ballerina
+#                 ^ source.ballerina delimiter.parenthesis
+#                  ^^^^^^ source.ballerina storage.type.ballerina
+#                        ^ source.ballerina
+#                         ^^^^ source.ballerina default.variable.parameter.ballerina
+#                             ^ source.ballerina
+#                              ^ source.ballerina
+#                               ^^^ source.ballerina storage.type.ballerina
+#                                  ^ source.ballerina
+#                                   ^^^ source.ballerina default.variable.parameter.ballerina
+#                                      ^ source.ballerina delimiter.parenthesis
+#                                       ^ source.ballerina
+#                                        ^^^^^^^ source.ballerina keyword.ballerina
+#                                               ^ source.ballerina
+#                                                ^^^^^ source.ballerina storage.type.ballerina
+#                                                     ^^ source.ballerina
+#                                                       ^ source.ballerina punctuation.definition.block.ballerina
+>        if age > 18 {
+#^^^^^^^^ source.ballerina
+#        ^^ source.ballerina keyword.control.ballerina
+#          ^ source.ballerina
+#           ^^^ source.ballerina
+#              ^ source.ballerina
+#               ^ source.ballerina keyword.operator.ballerina
+#                ^ source.ballerina
+#                 ^^ source.ballerina constant.numeric.decimal.ballerina
+#                   ^ source.ballerina
+#                    ^ source.ballerina
+>            return error(string `${name} is not a teenager!`);
+#^^^^^^^^^^^^ source.ballerina
+#            ^^^^^^ source.ballerina keyword.control.ballerina
+#                  ^ source.ballerina
+#                   ^^^^^ source.ballerina storage.type.ballerina
+#                        ^ source.ballerina
+#                         ^^^^^^ source.ballerina keyword.ballerina
+#                               ^ source.ballerina
+#                                ^ source.ballerina string.template.ballerina
+#                                 ^^ source.ballerina constant.character.escape.ballerina
+#                                   ^^^^ source.ballerina
+#                                       ^ source.ballerina constant.character.escape.ballerina
+#                                        ^ source.ballerina string
+#                                         ^ source.ballerina string
+#                                          ^ source.ballerina string
+#                                           ^ source.ballerina string
+#                                            ^ source.ballerina string
+#                                             ^ source.ballerina string
+#                                              ^ source.ballerina string
+#                                               ^ source.ballerina string
+#                                                ^ source.ballerina string
+#                                                 ^ source.ballerina string
+#                                                  ^ source.ballerina string
+#                                                   ^ source.ballerina string
+#                                                    ^ source.ballerina string
+#                                                     ^ source.ballerina string
+#                                                      ^ source.ballerina string
+#                                                       ^ source.ballerina string
+#                                                        ^ source.ballerina string
+#                                                         ^ source.ballerina string
+#                                                          ^ source.ballerina string
+#                                                           ^ source.ballerina string.template.ballerina
+#                                                            ^ source.ballerina
+#                                                             ^^ source.ballerina
+>        }
+#^^^^^^^^ source.ballerina
+#        ^ source.ballerina
+>        self.name = name;
+#^^^^^^^^ source.ballerina
+#        ^^^^ source.ballerina
+#            ^ source.ballerina
+#             ^^^^ source.ballerina
+#                 ^ source.ballerina
+#                  ^ source.ballerina keyword.operator.ballerina
+#                   ^ source.ballerina
+#                    ^^^^ source.ballerina
+#                        ^^ source.ballerina
+>        self.age = age;
+#^^^^^^^^ source.ballerina
+#        ^^^^ source.ballerina
+#            ^ source.ballerina
+#             ^^^ source.ballerina
+#                ^ source.ballerina
+#                 ^ source.ballerina keyword.operator.ballerina
+#                  ^ source.ballerina
+#                   ^^^ source.ballerina
+#                      ^^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>}
+#^ source.ballerina delimiter.curly
+>
+>public type ContextString record {|
+#^^^^^^ source.ballerina keyword.other.ballerina
+#      ^ source.ballerina
+#       ^^^^ source.ballerina keyword.ballerina
+#           ^ source.ballerina
+#            ^^^^^^^^^^^^^ source.ballerina entity.name.function.ballerina
+#                         ^ source.ballerina
+#                          ^^^^^^ source.ballerina keyword.ballerina
+#                                ^ source.ballerina
+#                                 ^ source.ballerina punctuation.definition.block.ballerina
+#                                  ^ source.ballerina keyword.operator.ballerina
+>    string content;
+#^^^^ source.ballerina
+#    ^^^^^^ source.ballerina storage.type.ballerina
+#          ^ source.ballerina
+#           ^^^^^^^ source.ballerina
+#                  ^^ source.ballerina
+>    map<string|string[]> headers;
+#^^^^ source.ballerina
+#    ^^^ source.ballerina storage.type.ballerina
+#       ^ source.ballerina keyword.operator.ballerina
+#        ^^^^^^ source.ballerina storage.type.ballerina
+#              ^ source.ballerina keyword.operator.ballerina
+#               ^^^^^^ source.ballerina storage.type.ballerina
+#                     ^ source.ballerina
+#                      ^ source.ballerina
+#                       ^ source.ballerina keyword.operator.ballerina
+#                        ^ source.ballerina
+#                         ^^^^^^^ source.ballerina
+#                                ^^ source.ballerina
+>|};
+#^ source.ballerina keyword.operator.ballerina
+# ^ source.ballerina delimiter.curly
+#  ^ source.ballerina source.ballerina
+>
+>public client class HelloWorldClient {
+#^^^^^^ source.ballerina keyword.other.ballerina
+#      ^ source.ballerina
+#       ^^^^^^ source.ballerina keyword.other.ballerina
+#             ^ source.ballerina
+#              ^^^^^ source.ballerina keyword.ballerina
+#                   ^^^^^^^^^^^^^^^^^^ source.ballerina
+#                                     ^ source.ballerina punctuation.definition.block.ballerina
+>    *grpc:AbstractClientEndpoint;
+#^^^^^ source.ballerina
+#     ^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina
+#                                ^^ source.ballerina
+>    private grpc:Client grpcClient;
+#^^^^ source.ballerina
+#    ^^^^^^^ source.ballerina keyword.ballerina
+#           ^ source.ballerina
+#            ^^^^^^^^^^^ source.ballerina
+#                       ^ source.ballerina
+#                        ^^^^^^^^^^ source.ballerina
+#                                  ^^ source.ballerina
+>
+>    public isolated function init(string url, grpc:ClientConfiguration? config = ()) returns grpc:Error? {
+#^^^^ source.ballerina
+#    ^^^^^^ source.ballerina keyword.ballerina
+#          ^ source.ballerina
+#           ^^^^^^^^ source.ballerina keyword.ballerina
+#                   ^ source.ballerina
+#                    ^^^^^^^^ source.ballerina keyword.ballerina
+#                            ^ source.ballerina
+#                             ^^^^ source.ballerina entity.name.function.ballerina
+#                                 ^ source.ballerina delimiter.parenthesis
+#                                  ^^^^^^ source.ballerina storage.type.ballerina
+#                                        ^ source.ballerina
+#                                         ^^^ source.ballerina default.variable.parameter.ballerina
+#                                            ^ source.ballerina
+#                                             ^ source.ballerina
+#                                              ^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina storage.type.ballerina
+#                                                                      ^^ source.ballerina
+#                                                                        ^^^^^^ source.ballerina default.variable.parameter.ballerina
+#                                                                              ^ source.ballerina
+#                                                                               ^ source.ballerina keyword.operator.ballerina
+#                                                                                ^ source.ballerina
+#                                                                                 ^ source.ballerina
+#                                                                                  ^ source.ballerina
+#                                                                                   ^ source.ballerina delimiter.parenthesis
+#                                                                                    ^ source.ballerina
+#                                                                                     ^^^^^^^ source.ballerina keyword.ballerina
+#                                                                                            ^ source.ballerina
+#                                                                                             ^^^^^^^^^^ source.ballerina storage.type.ballerina
+#                                                                                                       ^^ source.ballerina
+#                                                                                                         ^ source.ballerina punctuation.definition.block.ballerina
+>        // Initialize the client endpoint.
+#^^^^^^^^ source.ballerina
+#        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+>        self.grpcClient = check new (url, config);
+#^^^^^^^^ source.ballerina
+#        ^^^^ source.ballerina
+#            ^ source.ballerina
+#             ^^^^^^^^^^ source.ballerina
+#                       ^ source.ballerina
+#                        ^ source.ballerina keyword.operator.ballerina
+#                         ^ source.ballerina
+#                          ^^^^^ source.ballerina keyword.control.ballerina
+#                               ^ source.ballerina
+#                                ^^^ source.ballerina keyword.other.ballerina
+#                                   ^ source.ballerina
+#                                    ^ source.ballerina
+#                                     ^^^ source.ballerina
+#                                        ^^ source.ballerina
+#                                          ^^^^^^ source.ballerina
+#                                                ^ source.ballerina
+#                                                 ^^ source.ballerina
+>        map<string> data = {"user": "Ballerina"};
+#^^^^^^^^ source.ballerina
+#        ^^^ source.ballerina storage.type.ballerina
+#           ^ source.ballerina keyword.operator.ballerina
+#            ^^^^^^ source.ballerina storage.type.ballerina
+#                  ^ source.ballerina keyword.operator.ballerina
+#                   ^ source.ballerina
+#                    ^^^^ source.ballerina
+#                        ^ source.ballerina
+#                         ^ source.ballerina keyword.operator.ballerina
+#                          ^ source.ballerina
+#                           ^ source.ballerina
+#                            ^ source.ballerina string.begin.ballerina
+#                             ^ source.ballerina string
+#                              ^ source.ballerina string
+#                               ^ source.ballerina string
+#                                ^ source.ballerina string
+#                                 ^ source.ballerina string.end.ballerina
+#                                  ^ source.ballerina
+#                                   ^ source.ballerina
+#                                    ^ source.ballerina string.begin.ballerina
+#                                     ^ source.ballerina string
+#                                      ^ source.ballerina string
+#                                       ^ source.ballerina string
+#                                        ^ source.ballerina string
+#                                         ^ source.ballerina string
+#                                          ^ source.ballerina string
+#                                           ^ source.ballerina string
+#                                            ^ source.ballerina string
+#                                             ^ source.ballerina string
+#                                              ^ source.ballerina string.end.ballerina
+#                                               ^ source.ballerina
+#                                                ^^ source.ballerina
+>        check self.grpcClient.initStub(self, "ROOT_DESCRIPTOR", data);
+#^^^^^^^^ source.ballerina
+#        ^^^^^ source.ballerina keyword.control.ballerina
+#             ^ source.ballerina
+#              ^^^^ source.ballerina
+#                  ^ source.ballerina
+#                   ^^^^^^^^^^ source.ballerina
+#                             ^ source.ballerina
+#                              ^^^^^^^^ source.ballerina
+#                                      ^ source.ballerina
+#                                       ^^^^ source.ballerina
+#                                           ^^ source.ballerina
+#                                             ^ source.ballerina string.begin.ballerina
+#                                              ^ source.ballerina string
+#                                               ^ source.ballerina string
+#                                                ^ source.ballerina string
+#                                                 ^ source.ballerina string
+#                                                  ^ source.ballerina string
+#                                                   ^ source.ballerina string
+#                                                    ^ source.ballerina string
+#                                                     ^ source.ballerina string
+#                                                      ^ source.ballerina string
+#                                                       ^ source.ballerina string
+#                                                        ^ source.ballerina string
+#                                                         ^ source.ballerina string
+#                                                          ^ source.ballerina string
+#                                                           ^ source.ballerina string
+#                                                            ^ source.ballerina string
+#                                                             ^ source.ballerina string.end.ballerina
+#                                                              ^^ source.ballerina
+#                                                                ^^^^ source.ballerina
+#                                                                    ^ source.ballerina
+#                                                                     ^^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>
+>    isolated remote function lotsOfGreetings() returns (LotsOfGreetingsStreamingClient|grpc:Error) {
+#^^^^ source.ballerina
+#    ^^^^^^^^ source.ballerina keyword.ballerina
+#            ^ source.ballerina
+#             ^^^^^^ source.ballerina keyword.ballerina
+#                   ^ source.ballerina
+#                    ^^^^^^^^ source.ballerina keyword.ballerina
+#                            ^ source.ballerina
+#                             ^^^^^^^^^^^^^^^ source.ballerina entity.name.function.ballerina
+#                                            ^ source.ballerina delimiter.parenthesis
+#                                             ^ source.ballerina delimiter.parenthesis
+#                                              ^ source.ballerina
+#                                               ^^^^^^^ source.ballerina keyword.ballerina
+#                                                      ^^ source.ballerina
+#                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina storage.type.ballerina
+#                                                                                      ^ source.ballerina keyword.operator.ballerina
+#                                                                                       ^^^^^^^^^^ source.ballerina storage.type.ballerina
+#                                                                                                 ^^ source.ballerina
+#                                                                                                   ^ source.ballerina punctuation.definition.block.ballerina
+>        grpc:StreamingClient sClient = check self.grpcClient->executeClientStreaming("HelloWorld/lotsOfGreetings");
+#^^^^^^^^ source.ballerina
+#        ^^^^^^^^^^^^^^^^^^^^ source.ballerina
+#                            ^ source.ballerina
+#                             ^^^^^^^ source.ballerina
+#                                    ^ source.ballerina
+#                                     ^ source.ballerina keyword.operator.ballerina
+#                                      ^ source.ballerina
+#                                       ^^^^^ source.ballerina keyword.control.ballerina
+#                                            ^ source.ballerina
+#                                             ^^^^ source.ballerina
+#                                                 ^ source.ballerina
+#                                                  ^^^^^^^^^^ source.ballerina
+#                                                            ^ source.ballerina keyword.operator.ballerina
+#                                                             ^ source.ballerina keyword.operator.ballerina
+#                                                              ^^^^^^^^^^^^^^^^^^^^^^ source.ballerina
+#                                                                                    ^ source.ballerina
+#                                                                                     ^ source.ballerina string.begin.ballerina
+#                                                                                      ^ source.ballerina string
+#                                                                                       ^ source.ballerina string
+#                                                                                        ^ source.ballerina string
+#                                                                                         ^ source.ballerina string
+#                                                                                          ^ source.ballerina string
+#                                                                                           ^ source.ballerina string
+#                                                                                            ^ source.ballerina string
+#                                                                                             ^ source.ballerina string
+#                                                                                              ^ source.ballerina string
+#                                                                                               ^ source.ballerina string
+#                                                                                                ^ source.ballerina string
+#                                                                                                 ^ source.ballerina string
+#                                                                                                  ^ source.ballerina string
+#                                                                                                   ^ source.ballerina string
+#                                                                                                    ^ source.ballerina string
+#                                                                                                     ^ source.ballerina string
+#                                                                                                      ^ source.ballerina string
+#                                                                                                       ^ source.ballerina string
+#                                                                                                        ^ source.ballerina string
+#                                                                                                         ^ source.ballerina string
+#                                                                                                          ^ source.ballerina string
+#                                                                                                           ^ source.ballerina string
+#                                                                                                            ^ source.ballerina string
+#                                                                                                             ^ source.ballerina string
+#                                                                                                              ^ source.ballerina string
+#                                                                                                               ^ source.ballerina string
+#                                                                                                                ^ source.ballerina string.end.ballerina
+#                                                                                                                 ^ source.ballerina
+#                                                                                                                  ^^ source.ballerina
+>        return new LotsOfGreetingsStreamingClient(sClient);
+#^^^^^^^^ source.ballerina
+#        ^^^^^^ source.ballerina keyword.control.ballerina
+#              ^ source.ballerina
+#               ^^^ source.ballerina keyword.other.ballerina
+#                  ^ source.ballerina
+#                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina
+#                                                 ^ source.ballerina
+#                                                  ^^^^^^^ source.ballerina
+#                                                         ^ source.ballerina
+#                                                          ^^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>
+>    isolated remote function helloContext(string|ContextString req)
+#^^^^ source.ballerina
+#    ^^^^^^^^ source.ballerina keyword.ballerina
+#            ^ source.ballerina
+#             ^^^^^^ source.ballerina keyword.ballerina
+#                   ^ source.ballerina
+#                    ^^^^^^^^ source.ballerina keyword.ballerina
+#                            ^ source.ballerina
+#                             ^^^^^^^^^^^^ source.ballerina entity.name.function.ballerina
+#                                         ^ source.ballerina delimiter.parenthesis
+#                                          ^^^^^^ source.ballerina storage.type.ballerina
+#                                                ^ source.ballerina
+#                                                 ^^^^^^^^^^^^^ source.ballerina storage.type.ballerina
+#                                                              ^ source.ballerina
+#                                                               ^^^ source.ballerina default.variable.parameter.ballerina
+#                                                                  ^ source.ballerina delimiter.parenthesis
+>                                returns (ContextString|grpc:Error) {
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina
+#                                ^^^^^^^ source.ballerina keyword.ballerina
+#                                       ^^ source.ballerina
+#                                         ^^^^^^^^^^^^^ source.ballerina storage.type.ballerina
+#                                                      ^ source.ballerina keyword.operator.ballerina
+#                                                       ^^^^^^^^^^ source.ballerina storage.type.ballerina
+#                                                                 ^^ source.ballerina
+#                                                                   ^ source.ballerina punctuation.definition.block.ballerina
+>        map<string|string[]> headers = {};
+#^^^^^^^^ source.ballerina
+#        ^^^ source.ballerina storage.type.ballerina
+#           ^ source.ballerina keyword.operator.ballerina
+#            ^^^^^^ source.ballerina storage.type.ballerina
+#                  ^ source.ballerina keyword.operator.ballerina
+#                   ^^^^^^ source.ballerina storage.type.ballerina
+#                         ^ source.ballerina
+#                          ^ source.ballerina
+#                           ^ source.ballerina keyword.operator.ballerina
+#                            ^ source.ballerina
+#                             ^^^^^^^ source.ballerina
+#                                    ^ source.ballerina
+#                                     ^ source.ballerina keyword.operator.ballerina
+#                                      ^ source.ballerina
+#                                       ^ source.ballerina
+#                                        ^ source.ballerina
+#                                         ^^ source.ballerina
+>        string message;
+#^^^^^^^^ source.ballerina
+#        ^^^^^^ source.ballerina storage.type.ballerina
+#              ^ source.ballerina
+#               ^^^^^^^ source.ballerina
+#                      ^^ source.ballerina
+>        if (req is ContextString) {
+#^^^^^^^^ source.ballerina
+#        ^^ source.ballerina keyword.control.ballerina
+#          ^ source.ballerina
+#           ^ source.ballerina
+#            ^^^ source.ballerina
+#               ^ source.ballerina
+#                ^^ source.ballerina keyword.other.ballerina
+#                  ^ source.ballerina
+#                   ^^^^^^^^^^^^^ source.ballerina
+#                                ^ source.ballerina
+#                                 ^ source.ballerina
+#                                  ^ source.ballerina
+>            message = req.content;
+#^^^^^^^^^^^^ source.ballerina
+#            ^^^^^^^ source.ballerina
+#                   ^ source.ballerina
+#                    ^ source.ballerina keyword.operator.ballerina
+#                     ^ source.ballerina
+#                      ^^^ source.ballerina
+#                         ^ source.ballerina
+#                          ^^^^^^^ source.ballerina
+#                                 ^^ source.ballerina
+>            headers = req.headers;
+#^^^^^^^^^^^^ source.ballerina
+#            ^^^^^^^ source.ballerina
+#                   ^ source.ballerina
+#                    ^ source.ballerina keyword.operator.ballerina
+#                     ^ source.ballerina
+#                      ^^^ source.ballerina
+#                         ^ source.ballerina
+#                          ^^^^^^^ source.ballerina
+#                                 ^^ source.ballerina
+>        } else {
+#^^^^^^^^ source.ballerina
+#        ^ source.ballerina
+#         ^ source.ballerina
+#          ^^^^ source.ballerina keyword.control.ballerina
+#              ^ source.ballerina
+#               ^ source.ballerina
+>            message = req;
+#^^^^^^^^^^^^ source.ballerina
+#            ^^^^^^^ source.ballerina
+#                   ^ source.ballerina
+#                    ^ source.ballerina keyword.operator.ballerina
+#                     ^ source.ballerina
+#                      ^^^ source.ballerina
+#                         ^^ source.ballerina
+>        }
+#^^^^^^^^ source.ballerina
+#        ^ source.ballerina
+>        var payload = check self.grpcClient->executeSimpleRPC(
+#^^^^^^^^ source.ballerina
+#        ^^^ source.ballerina storage.type.ballerina
+#           ^ source.ballerina
+#            ^^^^^^^ source.ballerina
+#                   ^ source.ballerina
+#                    ^ source.ballerina keyword.operator.ballerina
+#                     ^ source.ballerina
+#                      ^^^^^ source.ballerina keyword.control.ballerina
+#                           ^ source.ballerina
+#                            ^^^^ source.ballerina
+#                                ^ source.ballerina
+#                                 ^^^^^^^^^^ source.ballerina
+#                                           ^ source.ballerina keyword.operator.ballerina
+#                                            ^ source.ballerina keyword.operator.ballerina
+#                                             ^^^^^^^^^^^^^^^^ source.ballerina
+#                                                             ^ source.ballerina
+>                                        "HelloWorld/hello", message, headers);
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina
+#                                        ^ source.ballerina string.begin.ballerina
+#                                         ^ source.ballerina string
+#                                          ^ source.ballerina string
+#                                           ^ source.ballerina string
+#                                            ^ source.ballerina string
+#                                             ^ source.ballerina string
+#                                              ^ source.ballerina string
+#                                               ^ source.ballerina string
+#                                                ^ source.ballerina string
+#                                                 ^ source.ballerina string
+#                                                  ^ source.ballerina string
+#                                                   ^ source.ballerina string
+#                                                    ^ source.ballerina string
+#                                                     ^ source.ballerina string
+#                                                      ^ source.ballerina string
+#                                                       ^ source.ballerina string
+#                                                        ^ source.ballerina string
+#                                                         ^ source.ballerina string.end.ballerina
+#                                                          ^^ source.ballerina
+#                                                            ^^^^^^^ source.ballerina
+#                                                                   ^^ source.ballerina
+#                                                                     ^^^^^^^ source.ballerina
+#                                                                            ^ source.ballerina
+#                                                                             ^^ source.ballerina
+>        [anydata, map<string|string[]>][result, respHeaders] = payload;
+#^^^^^^^^ source.ballerina
+#        ^ source.ballerina
+#         ^^^^^^^ source.ballerina storage.type.ballerina
+#                ^^ source.ballerina
+#                  ^^^ source.ballerina storage.type.ballerina
+#                     ^ source.ballerina keyword.operator.ballerina
+#                      ^^^^^^ source.ballerina storage.type.ballerina
+#                            ^ source.ballerina keyword.operator.ballerina
+#                             ^^^^^^ source.ballerina storage.type.ballerina
+#                                   ^ source.ballerina
+#                                    ^ source.ballerina
+#                                     ^ source.ballerina keyword.operator.ballerina
+#                                      ^ source.ballerina
+#                                       ^ source.ballerina
+#                                        ^^^^^^ source.ballerina
+#                                              ^^ source.ballerina
+#                                                ^^^^^^^^^^^ source.ballerina
+#                                                           ^ source.ballerina
+#                                                            ^ source.ballerina
+#                                                             ^ source.ballerina keyword.operator.ballerina
+#                                                              ^ source.ballerina
+#                                                               ^^^^^^^ source.ballerina
+#                                                                      ^^ source.ballerina
+>        return {content: result.toString(), headers: respHeaders};
+#^^^^^^^^ source.ballerina
+#        ^^^^^^ source.ballerina keyword.control.ballerina
+#              ^ source.ballerina
+#               ^ source.ballerina
+#                ^^^^^^^^ source.ballerina
+#                        ^ source.ballerina
+#                         ^^^^^^ source.ballerina
+#                               ^ source.ballerina
+#                                ^^^^^^^^ source.ballerina
+#                                        ^ source.ballerina
+#                                         ^ source.ballerina
+#                                          ^^ source.ballerina
+#                                            ^^^^^^^^ source.ballerina
+#                                                    ^ source.ballerina
+#                                                     ^^^^^^^^^^^ source.ballerina
+#                                                                ^ source.ballerina
+#                                                                 ^^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>}
+#^ source.ballerina delimiter.curly
+>
+>public client class LotsOfGreetingsStreamingClient {
+#^^^^^^ source.ballerina keyword.other.ballerina
+#      ^ source.ballerina
+#       ^^^^^^ source.ballerina keyword.other.ballerina
+#             ^ source.ballerina
+#              ^^^^^ source.ballerina keyword.ballerina
+#                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina
+#                                                   ^ source.ballerina punctuation.definition.block.ballerina
+>    private grpc:StreamingClient sClient;
+#^^^^ source.ballerina
+#    ^^^^^^^ source.ballerina keyword.ballerina
+#           ^ source.ballerina
+#            ^^^^^^^^^^^^^^^^^^^^ source.ballerina
+#                                ^ source.ballerina
+#                                 ^^^^^^^ source.ballerina
+#                                        ^^ source.ballerina
+>
+>    isolated function init(grpc:StreamingClient sClient) {
+#^^^^ source.ballerina
+#    ^^^^^^^^ source.ballerina keyword.ballerina
+#            ^ source.ballerina
+#             ^^^^^^^^ source.ballerina keyword.ballerina
+#                     ^ source.ballerina
+#                      ^^^^ source.ballerina entity.name.function.ballerina
+#                          ^ source.ballerina delimiter.parenthesis
+#                           ^^^^^^^^^^^^^^^^^^^^ source.ballerina storage.type.ballerina
+#                                               ^ source.ballerina
+#                                                ^^^^^^^ source.ballerina default.variable.parameter.ballerina
+#                                                       ^ source.ballerina delimiter.parenthesis
+#                                                        ^ source.ballerina
+#                                                         ^ source.ballerina punctuation.definition.block.ballerina
+>        self.sClient = sClient;
+#^^^^^^^^ source.ballerina
+#        ^^^^ source.ballerina
+#            ^ source.ballerina
+#             ^^^^^^^ source.ballerina
+#                    ^ source.ballerina
+#                     ^ source.ballerina keyword.operator.ballerina
+#                      ^ source.ballerina
+#                       ^^^^^^^ source.ballerina
+#                              ^^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>
+>    isolated remote function sendstring(string message) returns grpc:Error? {
+#^^^^ source.ballerina
+#    ^^^^^^^^ source.ballerina keyword.ballerina
+#            ^ source.ballerina
+#             ^^^^^^ source.ballerina keyword.ballerina
+#                   ^ source.ballerina
+#                    ^^^^^^^^ source.ballerina keyword.ballerina
+#                            ^ source.ballerina
+#                             ^^^^^^^^^^ source.ballerina entity.name.function.ballerina
+#                                       ^ source.ballerina delimiter.parenthesis
+#                                        ^^^^^^ source.ballerina storage.type.ballerina
+#                                              ^ source.ballerina
+#                                               ^^^^^^^ source.ballerina default.variable.parameter.ballerina
+#                                                      ^ source.ballerina delimiter.parenthesis
+#                                                       ^ source.ballerina
+#                                                        ^^^^^^^ source.ballerina keyword.ballerina
+#                                                               ^ source.ballerina
+#                                                                ^^^^^^^^^^ source.ballerina storage.type.ballerina
+#                                                                          ^^ source.ballerina
+#                                                                            ^ source.ballerina punctuation.definition.block.ballerina
+>        return self.sClient->send(message);
+#^^^^^^^^ source.ballerina
+#        ^^^^^^ source.ballerina keyword.control.ballerina
+#              ^ source.ballerina
+#               ^^^^ source.ballerina
+#                   ^ source.ballerina
+#                    ^^^^^^^ source.ballerina
+#                           ^ source.ballerina keyword.operator.ballerina
+#                            ^ source.ballerina keyword.operator.ballerina
+#                             ^^^^ source.ballerina
+#                                 ^ source.ballerina
+#                                  ^^^^^^^ source.ballerina
+#                                         ^ source.ballerina
+#                                          ^^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>
+>    isolated remote function receiveString() returns string|grpc:Error {
+#^^^^ source.ballerina
+#    ^^^^^^^^ source.ballerina keyword.ballerina
+#            ^ source.ballerina
+#             ^^^^^^ source.ballerina keyword.ballerina
+#                   ^ source.ballerina
+#                    ^^^^^^^^ source.ballerina keyword.ballerina
+#                            ^ source.ballerina
+#                             ^^^^^^^^^^^^^ source.ballerina entity.name.function.ballerina
+#                                          ^ source.ballerina delimiter.parenthesis
+#                                           ^ source.ballerina delimiter.parenthesis
+#                                            ^ source.ballerina
+#                                             ^^^^^^^ source.ballerina keyword.ballerina
+#                                                    ^ source.ballerina
+#                                                     ^^^^^^ source.ballerina storage.type.ballerina
+#                                                           ^ source.ballerina keyword.operator.ballerina
+#                                                            ^^^^^^^^^^ source.ballerina storage.type.ballerina
+#                                                                      ^ source.ballerina
+#                                                                       ^ source.ballerina punctuation.definition.block.ballerina
+>        [anydata, map<string|string[]>] [payload, headers] = check self.sClient->receive();
+#^^^^^^^^ source.ballerina
+#        ^ source.ballerina
+#         ^^^^^^^ source.ballerina storage.type.ballerina
+#                ^^ source.ballerina
+#                  ^^^ source.ballerina storage.type.ballerina
+#                     ^ source.ballerina keyword.operator.ballerina
+#                      ^^^^^^ source.ballerina storage.type.ballerina
+#                            ^ source.ballerina keyword.operator.ballerina
+#                             ^^^^^^ source.ballerina storage.type.ballerina
+#                                   ^ source.ballerina
+#                                    ^ source.ballerina
+#                                     ^ source.ballerina keyword.operator.ballerina
+#                                      ^ source.ballerina
+#                                       ^ source.ballerina
+#                                        ^ source.ballerina
+#                                         ^^^^^^^ source.ballerina
+#                                                ^^ source.ballerina
+#                                                  ^^^^^^^ source.ballerina
+#                                                         ^ source.ballerina
+#                                                          ^ source.ballerina
+#                                                           ^ source.ballerina keyword.operator.ballerina
+#                                                            ^ source.ballerina
+#                                                             ^^^^^ source.ballerina keyword.control.ballerina
+#                                                                  ^ source.ballerina
+#                                                                   ^^^^ source.ballerina
+#                                                                       ^ source.ballerina
+#                                                                        ^^^^^^^ source.ballerina
+#                                                                               ^ source.ballerina keyword.operator.ballerina
+#                                                                                ^ source.ballerina keyword.operator.ballerina
+#                                                                                 ^^^^^^^ source.ballerina
+#                                                                                        ^ source.ballerina
+#                                                                                         ^ source.ballerina
+#                                                                                          ^^ source.ballerina
+>        return payload.toString();
+#^^^^^^^^ source.ballerina
+#        ^^^^^^ source.ballerina keyword.control.ballerina
+#              ^ source.ballerina
+#               ^^^^^^^ source.ballerina
+#                      ^ source.ballerina
+#                       ^^^^^^^^ source.ballerina
+#                               ^ source.ballerina
+#                                ^ source.ballerina
+#                                 ^^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>}
+#^ source.ballerina delimiter.curly
+>
+>// An `isolated` class.
+#^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+>isolated class UniqueGreetingsStore {
+#^^^^^^^^ source.ballerina keyword.other.ballerina
+#        ^ source.ballerina
+#         ^^^^^ source.ballerina keyword.ballerina
+#              ^^^^^^^^^^^^^^^^^^^^^^ source.ballerina
+#                                    ^ source.ballerina punctuation.definition.block.ballerina
+>    private string[] uniqueGreetings = [];
+#^^^^ source.ballerina
+#    ^^^^^^^ source.ballerina keyword.ballerina
+#           ^ source.ballerina
+#            ^^^^^^ source.ballerina storage.type.ballerina
+#                  ^ source.ballerina
+#                   ^ source.ballerina
+#                    ^ source.ballerina
+#                     ^^^^^^^^^^^^^^^ source.ballerina
+#                                    ^ source.ballerina
+#                                     ^ source.ballerina keyword.operator.ballerina
+#                                      ^ source.ballerina
+#                                       ^ source.ballerina
+#                                        ^ source.ballerina
+#                                         ^^ source.ballerina
+>
+>    isolated function add(string greeting) {
+#^^^^ source.ballerina
+#    ^^^^^^^^ source.ballerina keyword.ballerina
+#            ^ source.ballerina
+#             ^^^^^^^^ source.ballerina keyword.ballerina
+#                     ^ source.ballerina
+#                      ^^^ source.ballerina entity.name.function.ballerina
+#                         ^ source.ballerina delimiter.parenthesis
+#                          ^^^^^^ source.ballerina storage.type.ballerina
+#                                ^ source.ballerina
+#                                 ^^^^^^^^ source.ballerina default.variable.parameter.ballerina
+#                                         ^ source.ballerina delimiter.parenthesis
+#                                          ^ source.ballerina
+#                                           ^ source.ballerina punctuation.definition.block.ballerina
+>        lock {
+#^^^^^^^^ source.ballerina
+#        ^^^^ source.ballerina keyword.other.ballerina
+#            ^ source.ballerina
+#             ^ source.ballerina
+>            if self.uniqueGreetings.indexOf(greeting) == () {
+#^^^^^^^^^^^^ source.ballerina
+#            ^^ source.ballerina keyword.control.ballerina
+#              ^ source.ballerina
+#               ^^^^ source.ballerina
+#                   ^ source.ballerina
+#                    ^^^^^^^^^^^^^^^ source.ballerina
+#                                   ^ source.ballerina
+#                                    ^^^^^^^ source.ballerina
+#                                           ^ source.ballerina
+#                                            ^^^^^^^^ source.ballerina
+#                                                    ^ source.ballerina
+#                                                     ^ source.ballerina
+#                                                      ^^ source.ballerina keyword.operator.ballerina
+#                                                        ^ source.ballerina
+#                                                         ^ source.ballerina
+#                                                          ^ source.ballerina
+#                                                           ^ source.ballerina
+#                                                            ^ source.ballerina
+>                self.uniqueGreetings.push(greeting);
+#^^^^^^^^^^^^^^^^ source.ballerina
+#                ^^^^ source.ballerina
+#                    ^ source.ballerina
+#                     ^^^^^^^^^^^^^^^ source.ballerina
+#                                    ^ source.ballerina
+#                                     ^^^^ source.ballerina
+#                                         ^ source.ballerina
+#                                          ^^^^^^^^ source.ballerina
+#                                                  ^ source.ballerina
+#                                                   ^^ source.ballerina
+>            }
+#^^^^^^^^^^^^ source.ballerina
+#            ^ source.ballerina
+>        }
+#^^^^^^^^ source.ballerina
+#        ^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>
+>    isolated function remove(string greeting) {
+#^^^^ source.ballerina
+#    ^^^^^^^^ source.ballerina keyword.ballerina
+#            ^ source.ballerina
+#             ^^^^^^^^ source.ballerina keyword.ballerina
+#                     ^ source.ballerina
+#                      ^^^^^^ source.ballerina entity.name.function.ballerina
+#                            ^ source.ballerina delimiter.parenthesis
+#                             ^^^^^^ source.ballerina storage.type.ballerina
+#                                   ^ source.ballerina
+#                                    ^^^^^^^^ source.ballerina default.variable.parameter.ballerina
+#                                            ^ source.ballerina delimiter.parenthesis
+#                                             ^ source.ballerina
+#                                              ^ source.ballerina punctuation.definition.block.ballerina
+>        lock {
+#^^^^^^^^ source.ballerina
+#        ^^^^ source.ballerina keyword.other.ballerina
+#            ^ source.ballerina
+#             ^ source.ballerina
+>            int? index = self.uniqueGreetings.indexOf(greeting);
+#^^^^^^^^^^^^ source.ballerina
+#            ^^^ source.ballerina storage.type.ballerina
+#               ^ source.ballerina keyword.operator.ballerina
+#                ^ source.ballerina
+#                 ^^^^^ source.ballerina
+#                      ^ source.ballerina
+#                       ^ source.ballerina keyword.operator.ballerina
+#                        ^ source.ballerina
+#                         ^^^^ source.ballerina
+#                             ^ source.ballerina
+#                              ^^^^^^^^^^^^^^^ source.ballerina
+#                                             ^ source.ballerina
+#                                              ^^^^^^^ source.ballerina
+#                                                     ^ source.ballerina
+#                                                      ^^^^^^^^ source.ballerina
+#                                                              ^ source.ballerina
+#                                                               ^^ source.ballerina
+>
+>            if index is int {
+#^^^^^^^^^^^^ source.ballerina
+#            ^^ source.ballerina keyword.control.ballerina
+#              ^ source.ballerina
+#               ^^^^^ source.ballerina
+#                    ^ source.ballerina
+#                     ^^ source.ballerina keyword.other.ballerina
+#                       ^ source.ballerina
+#                        ^^^ source.ballerina storage.type.ballerina
+#                           ^ source.ballerina
+#                            ^ source.ballerina
+>                _ = self.uniqueGreetings.remove(index);
+#^^^^^^^^^^^^^^^^ source.ballerina
+#                ^ source.ballerina
+#                 ^ source.ballerina
+#                  ^ source.ballerina keyword.operator.ballerina
+#                   ^ source.ballerina
+#                    ^^^^ source.ballerina
+#                        ^ source.ballerina
+#                         ^^^^^^^^^^^^^^^ source.ballerina
+#                                        ^ source.ballerina
+#                                         ^^^^^^ source.ballerina
+#                                               ^ source.ballerina
+#                                                ^^^^^ source.ballerina
+#                                                     ^ source.ballerina
+#                                                      ^^ source.ballerina
+>            }
+#^^^^^^^^^^^^ source.ballerina
+#            ^ source.ballerina
+>        }
+#^^^^^^^^ source.ballerina
+#        ^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>}
+#^ source.ballerina delimiter.curly
+>
+>class IteratorGenerator {
+#^^^^^ source.ballerina keyword.ballerina
+#     ^^^^^^^^^^^^^^^^^^^ source.ballerina
+#                        ^ source.ballerina punctuation.definition.block.ballerina
+>    // The `__iterator()` method should return a new `Iterator<T>`.
+#^^^^ source.ballerina
+#    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+>    public function __iterator() returns object {
+#^^^^ source.ballerina
+#    ^^^^^^ source.ballerina keyword.ballerina
+#          ^ source.ballerina
+#           ^^^^^^^^ source.ballerina keyword.ballerina
+#                   ^ source.ballerina
+#                    ^^^^^^^^^^ source.ballerina entity.name.function.ballerina
+#                              ^ source.ballerina delimiter.parenthesis
+#                               ^ source.ballerina delimiter.parenthesis
+#                                ^ source.ballerina
+#                                 ^^^^^^^ source.ballerina keyword.ballerina
+#                                        ^ source.ballerina
+#                                         ^^^^^^ source.ballerina keyword.ballerina
+#                                               ^ source.ballerina
+#                                                ^ source.ballerina punctuation.definition.block.ballerina
+>            public function next() returns record {|int value;|}?;} {
+#^^^^^^^^^^^^ source.ballerina
+#            ^^^^^^ source.ballerina keyword.ballerina
+#                  ^ source.ballerina
+#                   ^^^^^^^^ source.ballerina keyword.ballerina
+#                           ^ source.ballerina
+#                            ^^^^ source.ballerina entity.name.function.ballerina
+#                                ^ source.ballerina delimiter.parenthesis
+#                                 ^ source.ballerina delimiter.parenthesis
+#                                  ^ source.ballerina
+#                                   ^^^^^^^ source.ballerina keyword.ballerina
+#                                          ^ source.ballerina
+#                                           ^^^^^^ source.ballerina keyword.ballerina
+#                                                 ^ source.ballerina
+#                                                  ^ source.ballerina punctuation.definition.block.ballerina
+#                                                   ^ source.ballerina keyword.operator.ballerina
+#                                                    ^^^ source.ballerina storage.type.ballerina
+#                                                       ^ source.ballerina
+#                                                        ^^^^^ source.ballerina
+#                                                             ^ source.ballerina
+#                                                              ^ source.ballerina keyword.operator.ballerina
+#                                                               ^ source.ballerina delimiter.curly
+#                                                                ^ source.ballerina
+#                                                                 ^ source.ballerina
+#                                                                  ^ source.ballerina delimiter.curly
+#                                                                   ^ source.ballerina
+#                                                                    ^ source.ballerina punctuation.definition.block.ballerina
+>        return new ArrayIterator();
+#^^^^^^^^ source.ballerina
+#        ^^^^^^ source.ballerina keyword.control.ballerina
+#              ^ source.ballerina
+#               ^^^ source.ballerina keyword.other.ballerina
+#                  ^ source.ballerina
+#                   ^^^^^^^^^^^^^ source.ballerina
+#                                ^ source.ballerina
+#                                 ^ source.ballerina
+#                                  ^^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>}
+#^ source.ballerina delimiter.curly
+>
+>// An object that is a subtype of `Iterator<int>`.
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+>class ArrayIterator {
+#^^^^^ source.ballerina keyword.ballerina
+#     ^^^^^^^^^^^^^^^ source.ballerina
+#                    ^ source.ballerina punctuation.definition.block.ballerina
+>    private int[] integers = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34];
+#^^^^ source.ballerina
+#    ^^^^^^^ source.ballerina keyword.ballerina
+#           ^ source.ballerina
+#            ^^^ source.ballerina storage.type.ballerina
+#               ^ source.ballerina
+#                ^ source.ballerina
+#                 ^ source.ballerina
+#                  ^^^^^^^^ source.ballerina
+#                          ^ source.ballerina
+#                           ^ source.ballerina keyword.operator.ballerina
+#                            ^ source.ballerina
+#                             ^ source.ballerina
+#                              ^ source.ballerina constant.numeric.decimal.ballerina
+#                               ^^ source.ballerina
+#                                 ^ source.ballerina constant.numeric.decimal.ballerina
+#                                  ^^ source.ballerina
+#                                    ^ source.ballerina constant.numeric.decimal.ballerina
+#                                     ^^ source.ballerina
+#                                       ^ source.ballerina constant.numeric.decimal.ballerina
+#                                        ^^ source.ballerina
+#                                          ^ source.ballerina constant.numeric.decimal.ballerina
+#                                           ^^ source.ballerina
+#                                             ^ source.ballerina constant.numeric.decimal.ballerina
+#                                              ^^ source.ballerina
+#                                                ^ source.ballerina constant.numeric.decimal.ballerina
+#                                                 ^^ source.ballerina
+#                                                   ^^ source.ballerina constant.numeric.decimal.ballerina
+#                                                     ^^ source.ballerina
+#                                                       ^^ source.ballerina constant.numeric.decimal.ballerina
+#                                                         ^^ source.ballerina
+#                                                           ^^ source.ballerina constant.numeric.decimal.ballerina
+#                                                             ^ source.ballerina
+#                                                              ^^ source.ballerina
+>    private int cursor = -1;
+#^^^^ source.ballerina
+#    ^^^^^^^ source.ballerina keyword.ballerina
+#           ^ source.ballerina
+#            ^^^ source.ballerina storage.type.ballerina
+#               ^ source.ballerina
+#                ^^^^^^ source.ballerina
+#                      ^ source.ballerina
+#                       ^ source.ballerina keyword.operator.ballerina
+#                        ^ source.ballerina
+#                         ^ source.ballerina keyword.operator.ballerina
+#                          ^ source.ballerina constant.numeric.decimal.ballerina
+#                           ^^ source.ballerina
+>
+>    // `next` method which generates the sequence of values of type `int`.
+#^^^^ source.ballerina
+#    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+>    public function next() returns record {|int value;|}? {
+#^^^^ source.ballerina
+#    ^^^^^^ source.ballerina keyword.ballerina
+#          ^ source.ballerina
+#           ^^^^^^^^ source.ballerina keyword.ballerina
+#                   ^ source.ballerina
+#                    ^^^^ source.ballerina entity.name.function.ballerina
+#                        ^ source.ballerina delimiter.parenthesis
+#                         ^ source.ballerina delimiter.parenthesis
+#                          ^ source.ballerina
+#                           ^^^^^^^ source.ballerina keyword.ballerina
+#                                  ^ source.ballerina
+#                                   ^^^^^^ source.ballerina keyword.ballerina
+#                                         ^ source.ballerina
+#                                          ^ source.ballerina punctuation.definition.block.ballerina
+#                                           ^ source.ballerina keyword.operator.ballerina
+#                                            ^^^ source.ballerina storage.type.ballerina
+#                                               ^ source.ballerina
+#                                                ^^^^^ source.ballerina
+#                                                     ^ source.ballerina
+#                                                      ^ source.ballerina keyword.operator.ballerina
+#                                                       ^ source.ballerina delimiter.curly
+#                                                        ^^ source.ballerina
+#                                                          ^ source.ballerina punctuation.definition.block.ballerina
+>        self.cursor += 1;
+#^^^^^^^^ source.ballerina
+#        ^^^^ source.ballerina
+#            ^ source.ballerina
+#             ^^^^^^ source.ballerina
+#                   ^ source.ballerina
+#                    ^ source.ballerina keyword.operator.ballerina
+#                     ^ source.ballerina keyword.operator.ballerina
+#                      ^ source.ballerina
+#                       ^ source.ballerina constant.numeric.decimal.ballerina
+#                        ^^ source.ballerina
+>        if (self.cursor < self.integers.length()) {
+#^^^^^^^^ source.ballerina
+#        ^^ source.ballerina keyword.control.ballerina
+#          ^ source.ballerina
+#           ^ source.ballerina
+#            ^^^^ source.ballerina
+#                ^ source.ballerina
+#                 ^^^^^^ source.ballerina
+#                       ^ source.ballerina
+#                        ^ source.ballerina keyword.operator.ballerina
+#                         ^ source.ballerina
+#                          ^^^^ source.ballerina
+#                              ^ source.ballerina
+#                               ^^^^^^^^ source.ballerina
+#                                       ^ source.ballerina
+#                                        ^^^^^^ source.ballerina
+#                                              ^ source.ballerina
+#                                               ^ source.ballerina
+#                                                ^ source.ballerina
+#                                                 ^ source.ballerina
+#                                                  ^ source.ballerina
+>            record {|int value;|} nextVal = {value: self.integers[self.cursor]};
+#^^^^^^^^^^^^ source.ballerina
+#            ^^^^^^ source.ballerina keyword.other.ballerina
+#                  ^ source.ballerina
+#                   ^ source.ballerina
+#                    ^ source.ballerina keyword.operator.ballerina
+#                     ^^^ source.ballerina storage.type.ballerina
+#                        ^ source.ballerina
+#                         ^^^^^ source.ballerina
+#                              ^ source.ballerina
+#                               ^ source.ballerina keyword.operator.ballerina
+#                                ^ source.ballerina
+#                                 ^ source.ballerina
+#                                  ^^^^^^^ source.ballerina
+#                                         ^ source.ballerina
+#                                          ^ source.ballerina keyword.operator.ballerina
+#                                           ^ source.ballerina
+#                                            ^ source.ballerina
+#                                             ^^^^^^ source.ballerina
+#                                                   ^ source.ballerina
+#                                                    ^^^^ source.ballerina
+#                                                        ^ source.ballerina
+#                                                         ^^^^^^^^ source.ballerina
+#                                                                 ^ source.ballerina
+#                                                                  ^^^^ source.ballerina
+#                                                                      ^ source.ballerina
+#                                                                       ^^^^^^ source.ballerina
+#                                                                             ^ source.ballerina
+#                                                                              ^ source.ballerina
+#                                                                               ^^ source.ballerina
+>            return nextVal;
+#^^^^^^^^^^^^ source.ballerina
+#            ^^^^^^ source.ballerina keyword.control.ballerina
+#                  ^ source.ballerina
+#                   ^^^^^^^ source.ballerina
+#                          ^^ source.ballerina
+>        }
+#^^^^^^^^ source.ballerina
+#        ^ source.ballerina
+>        return ();
+#^^^^^^^^ source.ballerina
+#        ^^^^^^ source.ballerina keyword.control.ballerina
+#              ^ source.ballerina
+#               ^ source.ballerina
+#                ^ source.ballerina
+#                 ^^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>}
+#^ source.ballerina delimiter.curly
+>
+>readonly class MainController {
+#^^^^^^^^ source.ballerina storage.type.ballerina
+#        ^ source.ballerina
+#         ^^^^^ source.ballerina keyword.ballerina
+#              ^^^^^^^^^^^^^^^^ source.ballerina
+#                              ^ source.ballerina punctuation.definition.block.ballerina
+>    int id;
+#^^^^ source.ballerina
+#    ^^^ source.ballerina storage.type.ballerina
+#       ^ source.ballerina
+#        ^^ source.ballerina
+#          ^^ source.ballerina
+>    string[] codes;
+#^^^^ source.ballerina
+#    ^^^^^^ source.ballerina storage.type.ballerina
+#          ^ source.ballerina
+#           ^ source.ballerina
+#            ^ source.ballerina
+#             ^^^^^ source.ballerina
+#                  ^^ source.ballerina
+>
+>    function init(int id, readonly & string[] codes) {
+#^^^^ source.ballerina
+#    ^^^^^^^^ source.ballerina keyword.ballerina
+#            ^ source.ballerina
+#             ^^^^ source.ballerina entity.name.function.ballerina
+#                 ^ source.ballerina delimiter.parenthesis
+#                  ^^^ source.ballerina storage.type.ballerina
+#                     ^ source.ballerina
+#                      ^^ source.ballerina default.variable.parameter.ballerina
+#                        ^ source.ballerina
+#                         ^ source.ballerina
+#                          ^^^^^^^^ source.ballerina storage.type.ballerina
+#                                  ^ source.ballerina
+#                                   ^ source.ballerina keyword.operator.ballerina
+#                                    ^ source.ballerina
+#                                     ^^^^^^ source.ballerina storage.type.ballerina
+#                                           ^ source.ballerina
+#                                            ^ source.ballerina
+#                                             ^ source.ballerina
+#                                              ^^^^^ source.ballerina default.variable.parameter.ballerina
+#                                                   ^ source.ballerina delimiter.parenthesis
+#                                                    ^ source.ballerina
+#                                                     ^ source.ballerina punctuation.definition.block.ballerina
+>        self.id = id;
+#^^^^^^^^ source.ballerina
+#        ^^^^ source.ballerina
+#            ^ source.ballerina
+#             ^^ source.ballerina
+#               ^ source.ballerina
+#                ^ source.ballerina keyword.operator.ballerina
+#                 ^ source.ballerina
+#                  ^^ source.ballerina
+#                    ^^ source.ballerina
+>        // The expected type for `codes` is `readonly & string[]`.
+#^^^^^^^^ source.ballerina
+#        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+>        self.codes = codes;
+#^^^^^^^^ source.ballerina
+#        ^^^^ source.ballerina
+#            ^ source.ballerina
+#             ^^^^^ source.ballerina
+#                  ^ source.ballerina
+#                   ^ source.ballerina keyword.operator.ballerina
+#                    ^ source.ballerina
+#                     ^^^^^ source.ballerina
+#                          ^^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>
+>    function getId() returns string {
+#^^^^ source.ballerina
+#    ^^^^^^^^ source.ballerina keyword.ballerina
+#            ^ source.ballerina
+#             ^^^^^ source.ballerina entity.name.function.ballerina
+#                  ^ source.ballerina delimiter.parenthesis
+#                   ^ source.ballerina delimiter.parenthesis
+#                    ^ source.ballerina
+#                     ^^^^^^^ source.ballerina keyword.ballerina
+#                            ^ source.ballerina
+#                             ^^^^^^ source.ballerina storage.type.ballerina
+#                                   ^ source.ballerina
+#                                    ^ source.ballerina punctuation.definition.block.ballerina
+>        return string `Main: ${self.id}`;
+#^^^^^^^^ source.ballerina
+#        ^^^^^^ source.ballerina keyword.control.ballerina
+#              ^ source.ballerina
+#               ^^^^^^ source.ballerina keyword.ballerina
+#                     ^ source.ballerina
+#                      ^ source.ballerina string.template.ballerina
+#                       ^ source.ballerina string
+#                        ^ source.ballerina string
+#                         ^ source.ballerina string
+#                          ^ source.ballerina string
+#                           ^ source.ballerina string
+#                            ^ source.ballerina string
+#                             ^^ source.ballerina constant.character.escape.ballerina
+#                               ^^^^ source.ballerina
+#                                   ^ source.ballerina
+#                                    ^^ source.ballerina
+#                                      ^ source.ballerina constant.character.escape.ballerina
+#                                       ^ source.ballerina string.template.ballerina
+#                                        ^^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>}
+#^ source.ballerina delimiter.curly
+>
+>service class EchoService {
+#^^^^^^^ source.ballerina keyword.ballerina
+#       ^ source.ballerina
+#        ^^^^^ source.ballerina keyword.ballerina
+#             ^^^^^^^^^^^^^ source.ballerina
+#                          ^ source.ballerina punctuation.definition.block.ballerina
+>    tcp:Caller caller;
+#^^^^ source.ballerina
+#    ^^^^^^^^^^ source.ballerina
+#              ^ source.ballerina
+#               ^^^^^^ source.ballerina
+#                     ^^ source.ballerina
+>
+>    public function init(tcp:Caller c) {
+#^^^^ source.ballerina
+#    ^^^^^^ source.ballerina keyword.ballerina
+#          ^ source.ballerina
+#           ^^^^^^^^ source.ballerina keyword.ballerina
+#                   ^ source.ballerina
+#                    ^^^^ source.ballerina entity.name.function.ballerina
+#                        ^ source.ballerina delimiter.parenthesis
+#                         ^^^^^^^^^^ source.ballerina storage.type.ballerina
+#                                   ^ source.ballerina
+#                                    ^ source.ballerina default.variable.parameter.ballerina
+#                                     ^ source.ballerina delimiter.parenthesis
+#                                      ^ source.ballerina
+#                                       ^ source.ballerina punctuation.definition.block.ballerina
+>        self.caller = c;
+#^^^^^^^^ source.ballerina
+#        ^^^^ source.ballerina
+#            ^ source.ballerina
+#             ^^^^^^ source.ballerina
+#                   ^ source.ballerina
+#                    ^ source.ballerina keyword.operator.ballerina
+#                     ^ source.ballerina
+#                      ^ source.ballerina
+#                       ^^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>
+>    // This remote method is invoked once the content is received from the client.
+#^^^^ source.ballerina
+#    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+>    remote function onBytes(readonly & byte[] data) returns tcp:Error? {
+#^^^^ source.ballerina
+#    ^^^^^^ source.ballerina keyword.ballerina
+#          ^ source.ballerina
+#           ^^^^^^^^ source.ballerina keyword.ballerina
+#                   ^ source.ballerina
+#                    ^^^^^^^ source.ballerina entity.name.function.ballerina
+#                           ^ source.ballerina delimiter.parenthesis
+#                            ^^^^^^^^ source.ballerina storage.type.ballerina
+#                                    ^ source.ballerina
+#                                     ^ source.ballerina keyword.operator.ballerina
+#                                      ^ source.ballerina
+#                                       ^^^^ source.ballerina storage.type.ballerina
+#                                           ^ source.ballerina
+#                                            ^ source.ballerina
+#                                             ^ source.ballerina
+#                                              ^^^^ source.ballerina default.variable.parameter.ballerina
+#                                                  ^ source.ballerina delimiter.parenthesis
+#                                                   ^ source.ballerina
+#                                                    ^^^^^^^ source.ballerina keyword.ballerina
+#                                                           ^ source.ballerina
+#                                                            ^^^^^^^^^ source.ballerina storage.type.ballerina
+#                                                                     ^^ source.ballerina
+#                                                                       ^ source.ballerina punctuation.definition.block.ballerina
+>        io:println("Echo: ", string:fromBytes(data));
+#^^^^^^^^ source.ballerina
+#        ^^^^^^^^^^ source.ballerina
+#                  ^ source.ballerina
+#                   ^ source.ballerina string.begin.ballerina
+#                    ^ source.ballerina string
+#                     ^ source.ballerina string
+#                      ^ source.ballerina string
+#                       ^ source.ballerina string
+#                        ^ source.ballerina string
+#                         ^ source.ballerina string
+#                          ^ source.ballerina string.end.ballerina
+#                           ^^ source.ballerina
+#                             ^^^^^^ source.ballerina storage.type.ballerina
+#                                   ^^^^^^^^^^ source.ballerina
+#                                             ^ source.ballerina
+#                                              ^^^^ source.ballerina
+#                                                  ^ source.ballerina
+#                                                   ^ source.ballerina
+#                                                    ^^ source.ballerina
+>        // Echo back the data to the same client which the data received from.
+#^^^^^^^^ source.ballerina
+#        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+>        check self.caller->writeBytes(data);
+#^^^^^^^^ source.ballerina
+#        ^^^^^ source.ballerina keyword.control.ballerina
+#             ^ source.ballerina
+#              ^^^^ source.ballerina
+#                  ^ source.ballerina
+#                   ^^^^^^ source.ballerina
+#                         ^ source.ballerina keyword.operator.ballerina
+#                          ^ source.ballerina keyword.operator.ballerina
+#                           ^^^^^^^^^^ source.ballerina
+#                                     ^ source.ballerina
+#                                      ^^^^ source.ballerina
+#                                          ^ source.ballerina
+#                                           ^^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>
+>    // This remote method is invoked when the connection is closed.
+#^^^^ source.ballerina
+#    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+>    remote function onClose() returns tcp:Error? {
+#^^^^ source.ballerina
+#    ^^^^^^ source.ballerina keyword.ballerina
+#          ^ source.ballerina
+#           ^^^^^^^^ source.ballerina keyword.ballerina
+#                   ^ source.ballerina
+#                    ^^^^^^^ source.ballerina entity.name.function.ballerina
+#                           ^ source.ballerina delimiter.parenthesis
+#                            ^ source.ballerina delimiter.parenthesis
+#                             ^ source.ballerina
+#                              ^^^^^^^ source.ballerina keyword.ballerina
+#                                     ^ source.ballerina
+#                                      ^^^^^^^^^ source.ballerina storage.type.ballerina
+#                                               ^^ source.ballerina
+#                                                 ^ source.ballerina punctuation.definition.block.ballerina
+>        io:println("Client left: ", self.caller.remoteHost, "/",
+#^^^^^^^^ source.ballerina
+#        ^^^^^^^^^^ source.ballerina
+#                  ^ source.ballerina
+#                   ^ source.ballerina string.begin.ballerina
+#                    ^ source.ballerina string
+#                     ^ source.ballerina string
+#                      ^ source.ballerina string
+#                       ^ source.ballerina string
+#                        ^ source.ballerina string
+#                         ^ source.ballerina string
+#                          ^ source.ballerina string
+#                           ^ source.ballerina string
+#                            ^ source.ballerina string
+#                             ^ source.ballerina string
+#                              ^ source.ballerina string
+#                               ^ source.ballerina string
+#                                ^ source.ballerina string
+#                                 ^ source.ballerina string.end.ballerina
+#                                  ^^ source.ballerina
+#                                    ^^^^ source.ballerina
+#                                        ^ source.ballerina
+#                                         ^^^^^^ source.ballerina
+#                                               ^ source.ballerina
+#                                                ^^^^^^^^^^ source.ballerina
+#                                                          ^^ source.ballerina
+#                                                            ^ source.ballerina string.begin.ballerina
+#                                                             ^ source.ballerina string
+#                                                              ^ source.ballerina string.end.ballerina
+#                                                               ^^ source.ballerina
+>            self.caller.remotePort);
+#^^^^^^^^^^^^ source.ballerina
+#            ^^^^ source.ballerina
+#                ^ source.ballerina
+#                 ^^^^^^ source.ballerina
+#                       ^ source.ballerina
+#                        ^^^^^^^^^^ source.ballerina
+#                                  ^ source.ballerina
+#                                   ^^ source.ballerina
+>    }
+#^^^^ source.ballerina
+#    ^ source.ballerina punctuation.definition.block.ballerina
+>}
+#^ source.ballerina punctuation.definition.block.ballerina
+>
