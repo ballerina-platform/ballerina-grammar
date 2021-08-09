@@ -21,7 +21,7 @@ variables:
   constructsAndModifiers: '(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b'
   endOfStatement: ';|^\s*$|(?:^\s*{{constructsAndModifiers}})'
   lookAheadEndOfType: '[;),}\]:?\-\+\>]|\|\||\&\&|\!\=\=|$'
-  varExprStart: '\b(string|int|boolean|float|var)'
+  varExprStart: '\b(string|int|boolean|float|byte|decimal|var)'
   constExprStart: '\b(const(?!\s+enum\b))'
   nonPropertyLookBehind: '[^\._$[:alnum:]]'
   lookBehindString: '^string|{{nonPropertyLookBehind}}string'
@@ -64,7 +64,9 @@ repository:
     - include: '#punctuation-semicolon'
     - include: '#string'
     - include: '#comment'
+    - include: '#mdDocumentation'
     - include: '#keywords'
+    - include: '#annotationAttachment'
 
   declaration:
     patterns:
@@ -147,18 +149,23 @@ repository:
     # vars
     - name: variable.other.readwrite.ballerina
       match: '{{identifier}}'
+    - match: '\:'
+      name: keyword.operator.type.annotation.ballerina  
 
   object-member:
     patterns:
     - include: '#comment'
+    - include: '#function-defn'
+    - include: '#literal'
+    - include: '#keywords'
     - name: meta.object.member.ballerina meta.object-literal.key.ballerina
       begin: (?=\[)
       end: (?=:)|((?<=[\]])(?=\s*[\(\<]))
       patterns:
       - include: '#comment'
-    - name: meta.object.member.ballerina meta.object-literal.key.ballerina
+    - name: meta.object.member222.ballerina meta.object-literal.key.ballerina
       begin: (?=[\'\"\`])
-      end: (?=:)|((?<=[\'\"\`])(?=((\s*[\(\<,}])|(\s+(as)\s+))))
+      end: (?=:)|((?<=[\'\"\`])(?=((\s*[\(\<,}])|(\n*})|(\s+(as)\s+))))
       patterns:
       - include: '#comment'
       - include: '#string'
@@ -266,8 +273,12 @@ repository:
 
   annotationAttachment:
     patterns:
-    - match: '@((?:{{identifier}}):)?(?:{{identifier}})'
-      name: '{{annotationScope}}'
+    - match: '(@)((?:{{identifier}}))\s*(:?)\s*((?:{{identifier}})?)'
+      captures:
+        '1': { name: punctuation.decorator.ballerina }
+        '2': { name: '{{annotationScope}}' }
+        '3': { name: punctuation.decorator.ballerina }
+        '4': { name: '{{annotationScope}}' }
 
   annotationDefinition:
     patterns:
@@ -523,8 +534,9 @@ repository:
     patterns:
     - match: \bexternal\b
       name: keyword.ballerina
-    - include: '#functionReturns'
     - include: '#functionName'
+    - include: '#functionParameters'
+    - include: '#functionReturns'
     - include: '#punctuation-semicolon'
     - include: '#function-body'
 
@@ -557,7 +569,7 @@ repository:
 
   parameter-name:
     patterns:
-    - match: '\s*{{varExprStart}}\s*'
+    - match: '\s*{{varExprStart}}\s+'
       captures:
         '1': { name: support.type.primitive.ballerina }
     - match: |-
@@ -570,14 +582,12 @@ repository:
         
   functionReturns:
     patterns:
-    - begin: '(?<=\))\s*(returns)\s*({{identifier}})\s*(\?)?'
-      beginCaptures:
+    - match: '\s*(returns)\s*({{identifier}})?\s*(\?)?'
+      captures:
         '1': { name: meta.type.function.return.ballerina keyword.other.ballerina }
         '2': { name: meta.return.type.ballerina support.type.primitive.ballerina }
         '3': { name: keyword.operator.ballerina }
-      end: (?=\{|;|,|=)
-      endCaptures:
-        '0': { name: curly }
+    - include: '#multiType'    
 
   functionType:
     patterns:
@@ -873,6 +883,15 @@ repository:
     endCaptures:
       '0': {name: meta.brace.round.ballerina }
     patterns:
+    - include: '#decl-block'
+    - include: '#comment'
+    - include: '#string'
+    - include: '#annotationAttachment'
+    - include: '#recordLiteral'
+    - include: '#parameter-name'
+    - include: '#variable-initializer'
+    - name: punctuation.separator.parameter.ballerina
+      match: \,
     - include: '#expression'
 
   paranthesisedBracket:
@@ -1004,9 +1023,10 @@ repository:
 
   typeDefinition:
     patterns:
-    - begin: '\btype\b'
+    - begin: '(\btype\b)\s+({{identifier}})'
       beginCaptures:
-        '0': { name:  keyword.other.ballerina }
+        '1': { name:  keyword.other.ballerina }
+        '2': { name:  entity.name.type.ballerina }
       end: \;
       endCaptures:
         '0': { name: punctuation.terminator.statement.ballerina }
@@ -1020,14 +1040,8 @@ repository:
       beginCaptures:
         '0': { name: entity.name.function.ballerina }
       end: '(?=;)'
-      endCaptures:
-        '0': { name: source.ballerina }
       patterns:
-      - include: '#comment'
-      - include: '#objectDec'
-      - include: '#record'
-      - include: '#objectMemberFunctionDec'
-      - include: '#literal'
+      - include: '#decl-block'
       - match: '{{identifier}}'
         name: '{{typeScope}}'
 
@@ -1039,22 +1053,28 @@ repository:
           '0': { name: storage.modifier.ballerina storage.type.ballerina }
       end: (?!{{varExprStart}})((?=;|}|{{endOfStatement}})|((?<!{{lookBehindString}}|{{lookBehindInt}})(?=\s*$)))
       patterns:
-      - begin: '{{varExprStart}}\s*'
+      - begin: '{{varExprStart}}(?=\s+|\[|\?|\|)'
         beginCaptures:
           '0': { name: support.type.primitive.ballerina }
         end: (?=\S)
+      - match: '\:'
+        name: keyword.operator.type.annotation.ballerina
+      - match: '\|'
+        name: keyword.operator.type.annotation.ballerina
       - include: '#stringTemplate'
+      - include: '#multiType'
       - include: '#var-single-variable' 
       - include: '#variable-initializer' 
       - include: '#punctuation-comma'
       - include: '#type-annotation'
+      - include: '#keywords'
     - include: '#punctuation-comma'
     # const
     - name: meta.var.expr.ballerina
       begin: (?={{constExprStart}})
       end: (?!{{constExprStart}})((?=;|}|{{endOfStatement}})|((?<!{{lookBehindString}}|{{lookBehindInt}})(?=\s*$)))
       patterns:
-      - begin: '{{constExprStart}}\s*'
+      - begin: '{{constExprStart}}\s+'
         beginCaptures:
           '0': { name: keyword.other.ballerina }
         end: (?=\S)
@@ -1068,14 +1088,16 @@ repository:
   var-single-variable:
     patterns:
     - name: meta.var-single-variable.expr.ballerina
-      begin: ({{identifier}})
+      begin: ({{identifier}})\s*
       beginCaptures:
         '1': { name: meta.definition.variable.ballerina variable.other.readwrite.ballerina }
       end: (?=$|^|[;,=}])
       endCaptures:
         '0': { name: punctuation.terminator.statement.ballerina }
+      patterns:
+      - include: '#keywords'
     - name: meta.var-single-variable.expr.ballerina
-      begin: ({{identifier}})(\!)?
+      begin: ({{identifier}})\s+(\!)?
       beginCaptures:
         '1': { name: meta.definition.variable.ballerina variable.other.readwrite.ballerina }
         '2': { name: keyword.operator.definiteassignment.ballerina }
@@ -1101,6 +1123,8 @@ repository:
         '1': { name: keyword.operator.assignment.ballerina }
       end: (?=$|[,);}\]])
       patterns:
+      # - include: '#var-expr'
+      - include: '#function-defn'
       - include: '#expression'
     - begin: (?<!=|!)(=)(?!=)
       beginCaptures:
@@ -1214,7 +1238,6 @@ repository:
 
   string:
     patterns:
-    - include: '#qstring-single'
     - include: '#qstring-double'
 
   qstring-double:
@@ -1224,19 +1247,6 @@ repository:
       beginCaptures:
         '0': { name: punctuation.definition.string.begin.ballerina }
       end: '(")|((?:[^\\\n])$)'
-      endCaptures:
-        '1': { name: punctuation.definition.string.end.ballerina }
-        '2': { name: invalid.illegal.newline.ballerina }
-      patterns:
-      - include: '#string-character-escape'
-
-  qstring-single:
-    patterns:
-    - begin: "'"
-      name: string.quoted.single.ballerina
-      beginCaptures:
-        '0': { name: punctuation.definition.string.begin.ballerina }
-      end: (\')|((?:[^\\\n])$)
       endCaptures:
         '1': { name: punctuation.definition.string.end.ballerina }
         '2': { name: invalid.illegal.newline.ballerina }
