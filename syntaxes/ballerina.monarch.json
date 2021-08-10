@@ -1,31 +1,362 @@
 {
     "root": [
         {
-            "include": "serviceDefinition"
+            "include": "statements"
+        }
+    ],
+    "statements": [
+        {
+            "include": "stringTemplate"
         },
         {
-            "include": "functionDefinition"
+            "include": "declaration"
         },
         {
-            "include": "typeDefinition"
+            "include": "control-statement"
         },
         {
-            "include": "annotationDefinition"
+            "include": "decl-block"
         },
         {
-            "include": "documentationDef"
+            "include": "expression"
+        },
+        {
+            "include": "punctuation-semicolon"
+        },
+        {
+            "include": "string"
+        },
+        {
+            "include": "comment"
         },
         {
             "include": "mdDocumentation"
         },
         {
-            "include": "objectDec"
+            "include": "keywords"
         },
         {
-            "include": "classDec"
+            "include": "annotationAttachment"
+        }
+    ],
+    "stringTemplate": [
+        [
+            "([_$[:alpha:]][_$[:alnum:]]*)?(`)",
+            [
+                {
+                    "next": "stringTemplate__b__0",
+                    "token": "entity.name.function.tagged-template.ballerina"
+                },
+                "punctuation.definition.string.template.begin.ballerina"
+            ]
+        ]
+    ],
+    "stringTemplate__b__0": [
+        [
+            "\\\\?`",
+            {
+                "next": "@pop",
+                "token": "punctuation.definition.string.template.end.ballerina"
+            }
+        ],
+        {
+            "include": "template-substitution-element"
         },
         {
-            "include": "record"
+            "include": "string-character-escape"
+        }
+    ],
+    "template-substitution-element": [
+        [
+            "\\$\\{",
+            {
+                "next": "template-substitution-element__b__0",
+                "token": "punctuation.definition.template-expression.begin.ballerina"
+            }
+        ]
+    ],
+    "template-substitution-element__b__0": [
+        [
+            "\\}",
+            {
+                "next": "@pop",
+                "token": "punctuation.definition.template-expression.end.ballerina"
+            }
+        ],
+        {
+            "include": "expression"
+        }
+    ],
+    "expression": [
+        {
+            "include": "keywords"
+        },
+        {
+            "include": "expressionWithoutIdentifiers"
+        },
+        {
+            "include": "identifiers"
+        }
+    ],
+    "keywords": [
+        [
+            "\\b(fork|join|while|foreach|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\\b",
+            "keyword.control.ballerina"
+        ],
+        [
+            "\\b(return|break|continue|check|checkpanic|panic|trap|from|where)\\b",
+            "keyword.control.flow.ballerina"
+        ],
+        [
+            "\\b(public|private|external|return|record|object|remote|abstract|client|true|false|fail|import|version)\\b",
+            "keyword.other.ballerina"
+        ],
+        [
+            "\\b(as|on|function|resource|listener|const|final|is|null|lock|annotation|source|worker|parameter|field|isolated)\\b",
+            "keyword.other.ballerina"
+        ],
+        [
+            "\\b(xmlns|table|key|let|new|select|start|flush|default|do|base16|base64|conflict)\\b",
+            "keyword.other.ballerina"
+        ],
+        [
+            "\\b(limit|outer|equals|order|by|ascending|descending|class|configurable|variable|module|service)\\b",
+            "keyword.other.ballerina"
+        ],
+        [
+            "(!|%|\\+|\\-|~=|===|==|=|!=|!==|<|>|&|\\||\\?:|\\.\\.\\.|<=|=>|>=|&&|\\|\\||~|>>|>>>)",
+            "keyword.operator.ballerina"
+        ],
+        {
+            "include": "types"
+        }
+    ],
+    "types": [
+        [
+            "\\b(boolean|int|float|string|decimal|handle|var|any|anydata|byte|future|typedesc)\\b",
+            "type"
+        ],
+        [
+            "\\b(map|json|xml|error|never|readonly|distinct)\\b",
+            "type"
+        ],
+        [
+            "\\b(stream)\\b",
+            "type"
+        ]
+    ],
+    "expressionWithoutIdentifiers": [
+        {
+            "include": "string"
+        },
+        {
+            "include": "stringTemplate"
+        },
+        {
+            "include": "comment"
+        },
+        {
+            "include": "object-literal"
+        },
+        {
+            "include": "ternary-expression"
+        },
+        {
+            "include": "expression-operators"
+        },
+        {
+            "include": "literal"
+        },
+        {
+            "include": "paranthesised"
+        }
+    ],
+    "string": [
+        {
+            "include": "qstring-double"
+        }
+    ],
+    "qstring-double": [
+        [
+            "\"",
+            {
+                "next": "qstring-double__b__0",
+                "token": "punctuation.definition.string.begin.ballerina"
+            }
+        ]
+    ],
+    "qstring-double__b__0": [
+        [
+            "((?:[^\\\\\\n])$)",
+            {
+                "next": "@pop",
+                "token": "invalid.illegal.newline.ballerina"
+            }
+        ],
+        [
+            "(\")",
+            {
+                "next": "@pop",
+                "token": "punctuation.definition.string.end.ballerina"
+            }
+        ],
+        {
+            "include": "string-character-escape"
+        }
+    ],
+    "string-character-escape": [
+        [
+            "\\\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}|u\\{[0-9A-Fa-f]+\\}|[0-2][0-7]{0,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.|$)",
+            "constant.character.escape.ballerina"
+        ]
+    ],
+    "comment": [
+        [
+            "\\/\\/.*",
+            "comment.ballerina"
+        ]
+    ],
+    "object-literal": [
+        {
+            "include": "object-member"
+        }
+    ],
+    "object-member": [
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(as)\\s+",
+            [
+                {
+                    "next": "object-member__b__5",
+                    "token": "keyword.control.as.ballerina"
+                }
+            ]
+        ],
+        [
+            "\\.\\.\\.",
+            {
+                "next": "object-member__b__4",
+                "token": "keyword.operator.spread.ballerina"
+            }
+        ],
+        {
+            "include": "comment"
+        },
+        {
+            "include": "function-defn"
+        },
+        {
+            "include": "literal"
+        },
+        {
+            "include": "keywords"
+        },
+        [
+            "(?=\\[)",
+            {
+                "next": "object-member__b__0",
+                "token": ""
+            }
+        ],
+        [
+            "(?=[\\'\\\"\\`])",
+            {
+                "next": "object-member__b__1",
+                "token": ""
+            }
+        ],
+        [
+            "(?x)(?={{anyNumber}})",
+            {
+                "next": "object-member__b__2",
+                "token": ""
+            }
+        ],
+        [
+            "(?<=[\\]\\'\\\"\\`])(?=\\s*[\\(\\<])",
+            {
+                "next": "object-member__b__3",
+                "token": ""
+            }
+        ],
+        [
+            "(?![_$[:alpha:]])([[:digit:]]+)\\s*(?=({{inlineComment}}\\s*)*:)",
+            [
+                "meta.object-literal.key.ballerina",
+                "constant.numeric.decimal.ballerina"
+            ]
+        ],
+        [
+            "(?x)(?:([_$[:alpha:]][_$[:alnum:]]*)\\s*(?=({{inlineComment}}\\s*)*:(\\s*{{inlineComment}})*{{functionOrArrowLookup}}))",
+            [
+                "meta.object-literal.key.ballerina",
+                "entity.name.function.ballerina"
+            ]
+        ],
+        [
+            "(?:[_$[:alpha:]][_$[:alnum:]]*)\\s*(?=({{inlineComment}}\\s*)*:)",
+            [
+                "meta.object-literal.key.ballerina"
+            ]
+        ],
+        [
+            "([_$[:alpha:]][_$[:alnum:]]*)\\s*(?=,|\\}|$|\\/\\/|\\/\\*)",
+            [
+                "variable.other.readwrite.ballerina"
+            ]
+        ],
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(as)\\s+(const)(?=\\s*([,}]|$))",
+            [
+                "keyword.control.as.ballerina",
+                "storage.modifier.ballerina"
+            ]
+        ],
+        [
+            "(?=[_$[:alpha:]][_$[:alnum:]]*\\s*=)",
+            {
+                "next": "object-member__b__6",
+                "token": ""
+            }
+        ]
+    ],
+    "function-defn": [
+        [
+            "\\bexternal\\b",
+            "keyword.ballerina"
+        ],
+        {
+            "include": "functionName"
+        },
+        {
+            "include": "functionParameters"
+        },
+        {
+            "include": "functionReturns"
+        },
+        {
+            "include": "punctuation-semicolon"
+        },
+        {
+            "include": "function-body"
+        }
+    ],
+    "functionName": [
+        [
+            "[_$[:alpha:]][_$[:alnum:]]*",
+            "meta.definition.function.ballerina entity.name.function.ballerina"
+        ]
+    ],
+    "functionParameters": [
+        {
+            "include": "function-parameters-body"
+        }
+    ],
+    "function-parameters-body": [
+        {
+            "include": "comment"
+        },
+        {
+            "include": "string"
         },
         {
             "include": "annotationAttachment"
@@ -34,88 +365,342 @@
             "include": "recordLiteral"
         },
         {
+            "include": "parameter-name"
+        },
+        {
+            "include": "variable-initializer"
+        },
+        [
+            "\\,",
+            "punctuation.separator.parameter.ballerina"
+        ]
+    ],
+    "annotationAttachment": [
+        [
+            "(@)((?:[_$[:alpha:]][_$[:alnum:]]*))\\s*(:?)\\s*((?:[_$[:alpha:]][_$[:alnum:]]*)?)",
+            [
+                "punctuation.decorator.ballerina",
+                "type",
+                "punctuation.decorator.ballerina",
+                "type"
+            ]
+        ]
+    ],
+    "recordLiteral": [
+        [
+            "\\{",
+            {
+                "next": "recordLiteral__b__0",
+                "token": "punctuation.definition.block.ballerina"
+            }
+        ]
+    ],
+    "recordLiteral__b__0": [
+        [
+            "\\}",
+            {
+                "next": "@pop",
+                "token": "punctuation.definition.block.ballerina"
+            }
+        ],
+        {
+            "include": "code"
+        }
+    ],
+    "code": [
+        {
+            "include": "booleans"
+        },
+        {
+            "include": "matchStatement"
+        },
+        {
+            "include": "butExp"
+        },
+        {
+            "include": "xml"
+        },
+        {
+            "include": "stringTemplate"
+        },
+        {
+            "include": "keywords"
+        },
+        {
+            "include": "strings"
+        },
+        {
+            "include": "comment"
+        },
+        {
+            "include": "mdDocumentation"
+        },
+        {
+            "include": "annotationAttachment"
+        },
+        {
+            "include": "numbers"
+        },
+        [
+            "[_$[:alpha:]][_$[:alnum:]]*",
+            null
+        ],
+        {
+            "include": "maps"
+        },
+        {
+            "include": "paranthesised"
+        },
+        {
+            "include": "paranthesisedBracket"
+        },
+        [
+            "[a-z][\\w$]*",
+            "identifier"
+        ]
+    ],
+    "booleans": [
+        [
+            "\\b(true|false)\\b",
+            "constant.language.boolean.ballerina"
+        ]
+    ],
+    "matchStatement": [
+        [
+            "\\bmatch\\b",
+            {
+                "next": "matchStatement__b__0",
+                "token": "keyword.control.ballerina"
+            }
+        ]
+    ],
+    "matchStatement__b__0": [
+        [
+            "\\}",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "matchStatementBody"
+        },
+        {
             "include": "comment"
         },
         {
             "include": "code"
         }
     ],
-    "serviceDefinition": [
+    "matchStatementBody": [
         [
-            "\\bservice\\b",
+            "\\{",
             {
-                "next": "serviceDefinition__b__0",
-                "token": "keyword.ballerina"
+                "next": "matchStatementBody__b__0",
+                "token": "punctuation.definition.block.ballerina.documentation"
             }
         ]
     ],
-    "serviceDefinition__b__0": [
+    "matchStatementBody__b__0": [
         [
-            "\\}|;|=",
+            "(?=\\})",
             {
                 "next": "@pop",
-                "token": "punctuation.definition.block.ballerina"
+                "token": "punctuation.definition.block.ballerina.documentation"
             }
         ],
+        {
+            "include": "literal"
+        },
+        {
+            "include": "matchBindingPattern"
+        },
+        {
+            "include": "matchStatementPatternClause"
+        },
         {
             "include": "comment"
         },
         {
-            "include": "objectDec"
-        },
-        {
-            "include": "classBody"
-        },
-        {
-            "include": "serviceBody"
-        },
-        {
-            "include": "serviceOn"
-        },
-        {
-            "include": "serviceName"
+            "include": "code"
         }
     ],
-    "comment": [
+    "literal": [
+        {
+            "include": "booleans"
+        },
+        {
+            "include": "numbers"
+        },
+        {
+            "include": "strings"
+        },
+        {
+            "include": "maps"
+        },
+        {
+            "include": "self-literal"
+        },
+        {
+            "include": "array-literal"
+        }
+    ],
+    "numbers": [
         [
-            "\\/\\/.*",
-            "comment.ballerina"
+            "\\b0[xX][\\da-f]+\\b|\\b\\d+(?:\\.(?:\\d+|$))?",
+            "number"
         ]
     ],
-    "objectDec": [
+    "strings": [
         [
-            "\\bobject\\b(?!:)",
+            "\\\"",
             {
-                "next": "objectDec__b__0",
-                "token": "keyword.ballerina"
+                "next": "strings__b__0",
+                "token": "string.begin.ballerina"
             }
         ]
     ],
-    "objectDec__b__0": [
+    "strings__b__0": [
+        [
+            "\\\"",
+            {
+                "next": "@pop",
+                "token": "string.end.ballerina"
+            }
+        ],
+        [
+            "\\\\.",
+            "constant.character.escape.ballerina"
+        ],
+        [
+            ".",
+            "string"
+        ]
+    ],
+    "maps": [
+        [
+            "\\{",
+            {
+                "next": "maps__b__0",
+                "token": ""
+            }
+        ]
+    ],
+    "maps__b__0": [
         [
             "\\}",
             {
                 "next": "@pop",
-                "token": "delimiter.curly"
+                "token": ""
             }
         ],
         {
-            "include": "objectBody"
-        },
-        {
-            "include": "comment"
+            "include": "code"
         }
     ],
-    "objectBody": [
+    "self-literal": [
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))self\\b(?!\\$)",
+            "variable.language.this.ballerina"
+        ]
+    ],
+    "array-literal": [
+        {
+            "include": "expression"
+        },
+        {
+            "include": "punctuation-comma"
+        }
+    ],
+    "punctuation-comma": [
+        [
+            ",",
+            "punctuation.separator.comma.ballerina"
+        ]
+    ],
+    "matchBindingPattern": [
+        [
+            "var",
+            {
+                "next": "matchBindingPattern__b__0",
+                "token": "type"
+            }
+        ]
+    ],
+    "matchBindingPattern__b__0": [
+        [
+            "(?==>)|,",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "errorDestructure"
+        },
+        {
+            "include": "code"
+        },
+        [
+            "[_$[:alpha:]][_$[:alnum:]]*",
+            "variable.parameter.ballerina"
+        ]
+    ],
+    "errorDestructure": [
+        [
+            "error",
+            {
+                "next": "errorDestructure__b__0",
+                "token": "type"
+            }
+        ]
+    ],
+    "errorDestructure__b__0": [
+        [
+            "(?==>)",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "code"
+        }
+    ],
+    "matchStatementPatternClause": [
+        [
+            "=>",
+            {
+                "next": "matchStatementPatternClause__b__0",
+                "token": "keyword.ballerina"
+            }
+        ]
+    ],
+    "matchStatementPatternClause__b__0": [
+        [
+            "((\\})|;|,)",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "callableUnitBody"
+        },
+        {
+            "include": "code"
+        }
+    ],
+    "callableUnitBody": [
         [
             "\\{",
             {
-                "next": "objectBody__b__0",
+                "next": "callableUnitBody__b__0",
                 "token": "punctuation.definition.block.ballerina"
             }
         ]
     ],
-    "objectBody__b__0": [
+    "callableUnitBody__b__0": [
         [
             "(?=\\})",
             {
@@ -124,32 +709,160 @@
             }
         ],
         {
-            "include": "mdDocumentation"
+            "include": "workerDef"
         },
         {
-            "include": "documentationDef"
+            "include": "service-decl"
         },
         {
-            "include": "functionDefinition"
+            "include": "objectDec"
         },
         {
-            "include": "annotationAttachment"
+            "include": "function-defn"
+        },
+        {
+            "include": "forkStatement"
+        },
+        {
+            "include": "code"
+        }
+    ],
+    "workerDef": [
+        [
+            "\\bworker\\b",
+            {
+                "next": "workerDef__b__0",
+                "token": "keyword.ballerina"
+            }
+        ]
+    ],
+    "workerDef__b__0": [
+        [
+            "\\}",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "functionReturns"
+        },
+        {
+            "include": "workerBody"
+        }
+    ],
+    "functionReturns": [
+        [
+            "\\s*(returns)\\s*([_$[:alpha:]][_$[:alnum:]]*)?\\s*(\\?)?",
+            [
+                "meta.type.function.return.ballerina keyword.other.ballerina",
+                "meta.return.type.ballerina support.type.primitive.ballerina",
+                "keyword.operator.ballerina"
+            ]
+        ],
+        {
+            "include": "multiType"
+        }
+    ],
+    "multiType": [
+        [
+            "(?<=\\|)([_$[:alpha:]][_$[:alnum:]]*)|([_$[:alpha:]][_$[:alnum:]]*)(?=\\|)",
+            "type"
+        ],
+        [
+            "\\|",
+            "keyword.operator.ballerina"
+        ]
+    ],
+    "workerBody": [
+        [
+            "\\{",
+            {
+                "next": "workerBody__b__0",
+                "token": ""
+            }
+        ]
+    ],
+    "workerBody__b__0": [
+        [
+            "(?=\\})",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "code"
+        }
+    ],
+    "service-decl": [
+        {
+            "include": "class-defn"
+        },
+        {
+            "include": "serviceName"
+        },
+        {
+            "include": "serviceOn"
+        },
+        {
+            "include": "serviceBody"
+        }
+    ],
+    "class-defn": [
+        {
+            "include": "keywords"
         },
         [
-            "(public|private|extern|resource|remote|isolated|final)",
-            "keyword.ballerina"
+            "[_$[:alpha:]][_$[:alnum:]]*",
+            [
+                "entity.name.type.class.ballerina"
+            ]
         ],
+        {
+            "include": "class-body"
+        }
+    ],
+    "class-body": [
         {
             "include": "comment"
         },
         {
-            "include": "variableDefInline"
+            "include": "mdDocumentation"
         },
         {
-            "include": "code"
+            "include": "function-defn"
         },
         {
-            "include": "variableDef"
+            "include": "var-expr"
+        },
+        {
+            "include": "variable-initializer"
+        },
+        {
+            "include": "access-modifier"
+        },
+        {
+            "include": "keywords"
+        },
+        [
+            "(?<=:)\\s*",
+            {
+                "next": "class-body__b__0",
+                "token": ""
+            }
+        ],
+        {
+            "include": "decl-block"
+        },
+        {
+            "include": "expression"
+        },
+        {
+            "include": "punctuation-comma"
+        },
+        {
+            "include": "punctuation-semicolon"
         }
     ],
     "mdDocumentation": [
@@ -158,11 +871,7 @@
         },
         {
             "include": "mdDocumentationParamDescription"
-        },
-        [
-            "#.*",
-            "comment.mddocs.ballerina"
-        ]
+        }
     ],
     "mdDocumentationReturnParamDescription": [
         [
@@ -194,16 +903,14 @@
     ],
     "mdDocumentationParamDescription": [
         [
-            "(#)(?: *?)(\\+)(?: *)((?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))?(?: *)(-)?(.*)",
+            "(\\+\\s+)([_$[:alpha:]][_$[:alnum:]]*)(\\s*\\-\\s+)",
             [
                 {
                     "next": "mdDocumentationParamDescription__b__0",
-                    "token": "comment.mddocs.ballerina"
+                    "token": "keyword.operator.ballerina"
                 },
-                "keyword.ballerina",
-                "default.variable.parameter.ballerina",
-                "keyword.ballerina",
-                "comment.mddocs.paramdesc.ballerina"
+                "variable.other.readwrite.ballerina",
+                "keyword.operator.ballerina"
             ]
         ]
     ],
@@ -219,6 +926,390 @@
             "#.*",
             "comment.mddocs.paramdesc.ballerina"
         ]
+    ],
+    "var-expr": [
+        [
+            "(?=\\b(string|int|boolean|float|byte|decimal|var))",
+            {
+                "next": "var-expr__b__0",
+                "token": "storage.modifier.ballerina storage.type.ballerina"
+            }
+        ],
+        {
+            "include": "punctuation-comma"
+        },
+        [
+            "(?=\\b(const(?!\\s+enum\\b)))",
+            {
+                "next": "var-expr__b__1",
+                "token": ""
+            }
+        ],
+        {
+            "include": "punctuation-comma"
+        }
+    ],
+    "var-expr__b__0": [
+        [
+            "(?!\\b(string|int|boolean|float|byte|decimal|var))((?=;|}|;|^\\s*$|(?:^\\s*{{constructsAndModifiers}}))|((?<!^string|{{nonPropertyLookBehind}}string|^int|{{nonPropertyLookBehind}}int)(?=\\s*$)))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        [
+            "\\b(string|int|boolean|float|byte|decimal|var)(?=\\s+|\\[|\\?|\\|)",
+            {
+                "next": "var-expr__b__0__b__0",
+                "token": "support.type.primitive.ballerina"
+            }
+        ],
+        [
+            "\\:",
+            "keyword.operator.type.annotation.ballerina"
+        ],
+        [
+            "\\|",
+            "keyword.operator.type.annotation.ballerina"
+        ],
+        {
+            "include": "stringTemplate"
+        },
+        {
+            "include": "multiType"
+        },
+        {
+            "include": "var-single-variable"
+        },
+        {
+            "include": "variable-initializer"
+        },
+        {
+            "include": "punctuation-comma"
+        },
+        {
+            "include": "type-annotation"
+        },
+        {
+            "include": "keywords"
+        }
+    ],
+    "var-expr__b__0__b__0": [
+        [
+            "(?=\\S)",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ]
+    ],
+    "var-single-variable": [
+        [
+            "([_$[:alpha:]][_$[:alnum:]]*)\\s+(\\!)?",
+            [
+                {
+                    "next": "var-single-variable__b__1",
+                    "token": "meta.definition.variable.ballerina variable.other.readwrite.ballerina"
+                },
+                "keyword.operator.definiteassignment.ballerina"
+            ]
+        ],
+        [
+            "([_$[:alpha:]][_$[:alnum:]]*)\\s*",
+            [
+                {
+                    "next": "var-single-variable__b__0",
+                    "token": "meta.definition.variable.ballerina variable.other.readwrite.ballerina"
+                }
+            ]
+        ]
+    ],
+    "var-single-variable__b__0": [
+        [
+            "(?=$|^|[;,=}])",
+            {
+                "next": "@pop",
+                "token": "punctuation.terminator.statement.ballerina"
+            }
+        ],
+        {
+            "include": "keywords"
+        }
+    ],
+    "var-single-variable__b__1": [
+        [
+            "(?=$|^|[;,=}]|((?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        [
+            ".",
+            "meta.var-single-variable.expr.ballerina"
+        ]
+    ],
+    "variable-initializer": [
+        [
+            "(?<!=|!)(=)(?!=)",
+            [
+                {
+                    "next": "variable-initializer__b__1",
+                    "token": "keyword.operator.assignment.ballerina"
+                }
+            ]
+        ],
+        [
+            "(?<!=|!)(=)(?!=)(?=\\s*\\S)",
+            [
+                {
+                    "next": "variable-initializer__b__0",
+                    "token": "keyword.operator.assignment.ballerina"
+                }
+            ]
+        ]
+    ],
+    "variable-initializer__b__0": [
+        [
+            "(?=$|[,);}\\]])",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "function-defn"
+        },
+        {
+            "include": "expression"
+        }
+    ],
+    "variable-initializer__b__1": [
+        [
+            "(?=[,);}\\]]|((?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+))|(?=^\\s*$)|(?<=\\S)(?<!=)(?=\\s*$)",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "expression"
+        }
+    ],
+    "type-annotation": [
+        [
+            "\\b",
+            [
+                {
+                    "next": "type-annotation__b__0",
+                    "token": "keyword.operator.type.annotation.ballerina"
+                }
+            ]
+        ]
+    ],
+    "type-annotation__b__0": [
+        [
+            "(\\S(?=\\)))|(\\s)",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "type"
+        }
+    ],
+    "type": [
+        {
+            "include": "comment"
+        },
+        {
+            "include": "string"
+        },
+        {
+            "include": "numbers"
+        },
+        {
+            "include": "type-primitive"
+        },
+        {
+            "include": "type-tuple"
+        }
+    ],
+    "type-primitive": [
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|int|boolean)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
+            "support.type.primitive.ballerina"
+        ]
+    ],
+    "type-tuple": [
+        [
+            "\\.\\.\\.",
+            "keyword.operator.rest.ballerina"
+        ],
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))([_$[:alpha:]][_$[:alnum:]]*)\\s*(\\?)?\\s*(:)",
+            [
+                "entity.name.label.ballerina",
+                "keyword.operator.optional.ballerina",
+                "punctuation.separator.label.ballerina"
+            ]
+        ],
+        {
+            "include": "type"
+        },
+        {
+            "include": "punctuation-comma"
+        }
+    ],
+    "var-expr__b__1": [
+        [
+            "(?!\\b(const(?!\\s+enum\\b)))((?=;|}|;|^\\s*$|(?:^\\s*{{constructsAndModifiers}}))|((?<!^string|{{nonPropertyLookBehind}}string|^int|{{nonPropertyLookBehind}}int)(?=\\s*$)))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        [
+            "\\b(const(?!\\s+enum\\b))\\s+",
+            {
+                "next": "var-expr__b__1__b__0",
+                "token": "keyword.other.ballerina"
+            }
+        ],
+        {
+            "include": "stringTemplate"
+        },
+        {
+            "include": "var-single-const"
+        },
+        {
+            "include": "variable-initializer"
+        },
+        {
+            "include": "punctuation-comma"
+        },
+        {
+            "include": "type-annotation"
+        }
+    ],
+    "var-expr__b__1__b__0": [
+        [
+            "(?=\\S)",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ]
+    ],
+    "var-single-const": [
+        [
+            "([_$[:alpha:]][_$[:alnum:]]*)",
+            [
+                {
+                    "next": "var-single-const__b__1",
+                    "token": "meta.definition.variable.ballerina variable.other.constant.ballerina"
+                }
+            ]
+        ],
+        [
+            "\\b(string|int|boolean|float|byte|decimal|var)\\s*",
+            {
+                "next": "var-single-const__b__0",
+                "token": "support.type.primitive.ballerina"
+            }
+        ],
+        {
+            "include": "types"
+        }
+    ],
+    "var-single-const__b__0": [
+        [
+            "(?=\\S)",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ]
+    ],
+    "var-single-const__b__1": [
+        [
+            "(?=$|^|[;,=}]|((?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ]
+    ],
+    "access-modifier": [
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(public|private)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
+            "storage.modifier.ballerina keyword.other.ballerina"
+        ]
+    ],
+    "class-body__b__0": [
+        [
+            "(?=\\s|[;),}\\]:\\-\\+]|;|^\\s*$|(?:^\\s*{{constructsAndModifiers}}))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ]
+    ],
+    "decl-block": [
+        {
+            "include": "statements"
+        },
+        {
+            "include": "mdDocumentation"
+        }
+    ],
+    "punctuation-semicolon": [
+        [
+            ";",
+            "punctuation.terminator.statement.ballerina"
+        ]
+    ],
+    "serviceName": [
+        [
+            "(\\/([_$[:alpha:]][_$[:alnum:]]**)|\\\"[_$[:alpha:]][_$[:alnum:]]*\\\")",
+            "entity.service.path.ballerina"
+        ]
+    ],
+    "serviceOn": [
+        [
+            "on",
+            {
+                "next": "serviceOn__b__0",
+                "token": "keyword.ballerina"
+            }
+        ]
+    ],
+    "serviceOn__b__0": [
+        [
+            "(?={)",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "code"
+        }
+    ],
+    "serviceBody": [
+        {
+            "include": "comment"
+        },
+        {
+            "include": "mdDocumentation"
+        },
+        {
+            "include": "documentationDef"
+        },
+        {
+            "include": "decl-block"
+        }
     ],
     "documentationDef": [
         [
@@ -335,478 +1426,16 @@
             "comment.block.code.ballerina.documentation"
         ]
     ],
-    "functionDefinition": [
+    "objectDec": [
         [
-            "\\bfunction\\b",
+            "\\bobject\\b(?!:)",
             {
-                "next": "functionDefinition__b__0",
+                "next": "objectDec__b__0",
                 "token": "keyword.ballerina"
             }
         ]
     ],
-    "functionDefinition__b__0": [
-        [
-            "\\}|(?=;|=)",
-            {
-                "next": "@pop",
-                "token": "punctuation.definition.block.ballerina"
-            }
-        ],
-        {
-            "include": "comment"
-        },
-        {
-            "include": "functionParameters"
-        },
-        {
-            "include": "functionReturns"
-        },
-        [
-            "extern\\b",
-            "keyword.ballerina"
-        ],
-        {
-            "include": "functionName"
-        },
-        {
-            "include": "callableUnitBody"
-        }
-    ],
-    "functionParameters": [
-        [
-            "\\(|\\[",
-            {
-                "next": "functionParameters__b__0",
-                "token": "delimiter.parenthesis"
-            }
-        ]
-    ],
-    "functionParameters__b__0": [
-        [
-            "\\)|\\]",
-            {
-                "next": "@pop",
-                "token": "delimiter.parenthesis"
-            }
-        ],
-        [
-            "public",
-            "keyword"
-        ],
-        {
-            "include": "annotationAttachment"
-        },
-        {
-            "include": "recordLiteral"
-        },
-        {
-            "include": "parameter"
-        },
-        {
-            "include": "parameterTuple"
-        },
-        {
-            "include": "defaultValue"
-        },
-        {
-            "include": "comment"
-        }
-    ],
-    "annotationAttachment": [
-        [
-            "@((?:(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)):)?(?:(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))",
-            "type"
-        ]
-    ],
-    "recordLiteral": [
-        [
-            "\\{",
-            {
-                "next": "recordLiteral__b__0",
-                "token": "punctuation.definition.block.ballerina"
-            }
-        ]
-    ],
-    "recordLiteral__b__0": [
-        [
-            "\\}",
-            {
-                "next": "@pop",
-                "token": "punctuation.definition.block.ballerina"
-            }
-        ],
-        {
-            "include": "code"
-        }
-    ],
-    "code": [
-        {
-            "include": "booleans"
-        },
-        {
-            "include": "matchStatement"
-        },
-        {
-            "include": "butExp"
-        },
-        {
-            "include": "xml"
-        },
-        {
-            "include": "stringTemplate"
-        },
-        {
-            "include": "keywords"
-        },
-        {
-            "include": "strings"
-        },
-        {
-            "include": "comment"
-        },
-        {
-            "include": "mdDocumentation"
-        },
-        {
-            "include": "annotationAttachment"
-        },
-        {
-            "include": "numbers"
-        },
-        [
-            "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
-            null
-        ],
-        {
-            "include": "maps"
-        },
-        {
-            "include": "paranthesised"
-        },
-        {
-            "include": "paranthesisedBracket"
-        },
-        [
-            "[a-z][\\w$]*",
-            "identifier"
-        ]
-    ],
-    "booleans": [
-        [
-            "\\b(true|false)\\b",
-            "constant.language.boolean.ballerina"
-        ]
-    ],
-    "matchStatement": [
-        [
-            "\\bmatch\\b",
-            {
-                "next": "matchStatement__b__0",
-                "token": "keyword.control.ballerina"
-            }
-        ]
-    ],
-    "matchStatement__b__0": [
-        [
-            "\\}",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        {
-            "include": "matchStatementBody"
-        },
-        {
-            "include": "comment"
-        },
-        {
-            "include": "code"
-        }
-    ],
-    "matchStatementBody": [
-        [
-            "\\{",
-            {
-                "next": "matchStatementBody__b__0",
-                "token": "punctuation.definition.block.ballerina.documentation"
-            }
-        ]
-    ],
-    "matchStatementBody__b__0": [
-        [
-            "(?=\\})",
-            {
-                "next": "@pop",
-                "token": "punctuation.definition.block.ballerina.documentation"
-            }
-        ],
-        {
-            "include": "literal"
-        },
-        {
-            "include": "matchBindingPattern"
-        },
-        {
-            "include": "matchStatementPatternClause"
-        },
-        {
-            "include": "comment"
-        },
-        {
-            "include": "code"
-        }
-    ],
-    "literal": [
-        {
-            "include": "booleans"
-        },
-        {
-            "include": "numbers"
-        },
-        {
-            "include": "strings"
-        },
-        {
-            "include": "maps"
-        }
-    ],
-    "numbers": [
-        [
-            "\\b0[xX][\\da-f]+\\b|\\b\\d+(?:\\.(?:\\d+|$))?",
-            "number"
-        ]
-    ],
-    "strings": [
-        [
-            "\\\"",
-            {
-                "next": "strings__b__0",
-                "token": "string.begin.ballerina"
-            }
-        ]
-    ],
-    "strings__b__0": [
-        [
-            "\\\"",
-            {
-                "next": "@pop",
-                "token": "string.end.ballerina"
-            }
-        ],
-        [
-            "\\\\.",
-            "constant.character.escape.ballerina"
-        ],
-        [
-            ".",
-            "string"
-        ]
-    ],
-    "maps": [
-        [
-            "\\{",
-            {
-                "next": "maps__b__0",
-                "token": ""
-            }
-        ]
-    ],
-    "maps__b__0": [
-        [
-            "\\}",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        {
-            "include": "code"
-        }
-    ],
-    "matchBindingPattern": [
-        [
-            "var",
-            {
-                "next": "matchBindingPattern__b__0",
-                "token": "type"
-            }
-        ]
-    ],
-    "matchBindingPattern__b__0": [
-        [
-            "(?==>)|,",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        {
-            "include": "errorDestructure"
-        },
-        {
-            "include": "code"
-        },
-        [
-            "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
-            "variable.parameter.ballerina"
-        ]
-    ],
-    "errorDestructure": [
-        [
-            "error",
-            {
-                "next": "errorDestructure__b__0",
-                "token": "type"
-            }
-        ]
-    ],
-    "errorDestructure__b__0": [
-        [
-            "(?==>)",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        {
-            "include": "code"
-        }
-    ],
-    "matchStatementPatternClause": [
-        [
-            "=>",
-            {
-                "next": "matchStatementPatternClause__b__0",
-                "token": "keyword.ballerina"
-            }
-        ]
-    ],
-    "matchStatementPatternClause__b__0": [
-        [
-            "((\\})|;|,)",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        {
-            "include": "callableUnitBody"
-        },
-        {
-            "include": "code"
-        }
-    ],
-    "callableUnitBody": [
-        [
-            "\\{",
-            {
-                "next": "callableUnitBody__b__0",
-                "token": "punctuation.definition.block.ballerina"
-            }
-        ]
-    ],
-    "callableUnitBody__b__0": [
-        [
-            "(?=\\})",
-            {
-                "next": "@pop",
-                "token": "punctuation.definition.block.ballerina"
-            }
-        ],
-        {
-            "include": "workerDef"
-        },
-        {
-            "include": "serviceDefinition"
-        },
-        {
-            "include": "objectDec"
-        },
-        {
-            "include": "functionDefinition"
-        },
-        {
-            "include": "forkStatement"
-        },
-        {
-            "include": "code"
-        }
-    ],
-    "workerDef": [
-        [
-            "\\bworker\\b",
-            {
-                "next": "workerDef__b__0",
-                "token": "keyword.ballerina"
-            }
-        ]
-    ],
-    "workerDef__b__0": [
-        [
-            "\\}",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        {
-            "include": "functionReturns"
-        },
-        {
-            "include": "workerBody"
-        }
-    ],
-    "functionReturns": [
-        [
-            "\\breturns\\b",
-            {
-                "next": "functionReturns__b__0",
-                "token": "keyword.ballerina"
-            }
-        ]
-    ],
-    "functionReturns__b__0": [
-        [
-            "(?=\\{|;|,|=)",
-            {
-                "next": "@pop",
-                "token": "curly"
-            }
-        ],
-        {
-            "include": "record"
-        },
-        {
-            "include": "objectDec"
-        },
-        {
-            "include": "tupleType"
-        },
-        {
-            "include": "multiType"
-        },
-        {
-            "include": "strings"
-        },
-        [
-            "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
-            "type"
-        ],
-        {
-            "include": "comment"
-        }
-    ],
-    "record": [
-        [
-            "\\brecord\\b",
-            {
-                "next": "record__b__0",
-                "token": "keyword.ballerina"
-            }
-        ]
-    ],
-    "record__b__0": [
+    "objectDec__b__0": [
         [
             "\\}",
             {
@@ -815,243 +1444,7 @@
             }
         ],
         {
-            "include": "recordBody"
-        },
-        {
             "include": "comment"
-        }
-    ],
-    "recordBody": [
-        [
-            "\\{",
-            {
-                "next": "recordBody__b__0",
-                "token": "punctuation.definition.block.ballerina"
-            }
-        ]
-    ],
-    "recordBody__b__0": [
-        [
-            "(?=\\})",
-            {
-                "next": "@pop",
-                "token": "punctuation.definition.block.ballerina"
-            }
-        ],
-        {
-            "include": "annotationAttachment"
-        },
-        {
-            "include": "comment"
-        },
-        {
-            "include": "objectMemberFunctionDec"
-        },
-        {
-            "include": "variableDefInline"
-        },
-        {
-            "include": "code"
-        },
-        {
-            "include": "variableDef"
-        }
-    ],
-    "objectMemberFunctionDec": [
-        [
-            "\\bfunction\\b",
-            {
-                "next": "objectMemberFunctionDec__b__0",
-                "token": "keyword.ballerina"
-            }
-        ]
-    ],
-    "objectMemberFunctionDec__b__0": [
-        [
-            ";",
-            {
-                "next": "@pop",
-                "token": "punctuation.definition.block.ballerina"
-            }
-        ],
-        {
-            "include": "functionParameters"
-        },
-        [
-            "\\breturns\\b",
-            "keyword.ballerina"
-        ],
-        {
-            "include": "code"
-        }
-    ],
-    "variableDefInline": [
-        [
-            "(?=record)|(?=object)",
-            {
-                "next": "variableDefInline__b__0",
-                "token": ""
-            }
-        ]
-    ],
-    "variableDefInline__b__0": [
-        [
-            "(?=;)",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        {
-            "include": "record"
-        },
-        {
-            "include": "objectDec"
-        },
-        [
-            "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
-            "source.ballerina"
-        ]
-    ],
-    "variableDef": [
-        [
-            "(?:(?!\\+)(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))(?: |\\t)|(?=\\()",
-            {
-                "next": "variableDef__b__0",
-                "token": "type"
-            }
-        ]
-    ],
-    "variableDef__b__0": [
-        [
-            "(?:(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))|(?=\\,)|(?=;)|\\.\\.\\.",
-            {
-                "next": "@pop",
-                "token": "source.ballerina"
-            }
-        ],
-        {
-            "include": "tupleType"
-        },
-        {
-            "include": "constrainType"
-        },
-        {
-            "include": "comment"
-        }
-    ],
-    "tupleType": [
-        [
-            "\\[",
-            {
-                "next": "tupleType__b__0",
-                "token": ""
-            }
-        ]
-    ],
-    "tupleType__b__0": [
-        [
-            "(?=\\]|;)",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        {
-            "include": "comment"
-        },
-        {
-            "include": "constrainType"
-        },
-        {
-            "include": "paranthesisedBracket"
-        },
-        [
-            "\\b((?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))\\b",
-            "type"
-        ]
-    ],
-    "constrainType": [
-        [
-            "<",
-            {
-                "next": "constrainType__b__0",
-                "token": "punctuation.definition.parameters.begin.ballerina"
-            }
-        ]
-    ],
-    "constrainType__b__0": [
-        [
-            ">",
-            {
-                "next": "@pop",
-                "token": "punctuation.definition.parameters.end.ballerina"
-            }
-        ],
-        {
-            "include": "comment"
-        },
-        {
-            "include": "constrainType"
-        },
-        [
-            "\\b((?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))\\b",
-            "type"
-        ]
-    ],
-    "paranthesisedBracket": [
-        [
-            "\\[",
-            {
-                "next": "paranthesisedBracket__b__0",
-                "token": ""
-            }
-        ]
-    ],
-    "paranthesisedBracket__b__0": [
-        [
-            "\\]",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        {
-            "include": "comment"
-        },
-        {
-            "include": "code"
-        }
-    ],
-    "multiType": [
-        [
-            "(?<=\\|)((?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))|((?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))(?=\\|)",
-            "type"
-        ],
-        [
-            "\\|",
-            "keyword.operator.ballerina"
-        ]
-    ],
-    "workerBody": [
-        [
-            "\\{",
-            {
-                "next": "workerBody__b__0",
-                "token": ""
-            }
-        ]
-    ],
-    "workerBody__b__0": [
-        [
-            "(?=\\})",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        {
-            "include": "code"
         }
     ],
     "forkStatement": [
@@ -1149,7 +1542,7 @@
     ],
     "parameter": [
         [
-            "((?=record|object|function)|((?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+))(?=\\|)|(?:(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)))",
+            "((?=record|object|function)|([_$[:alpha:]][_$[:alnum:]]*)(?=\\|)|(?:[_$[:alpha:]][_$[:alnum:]]*))",
             {
                 "next": "parameter__b__0",
                 "token": "type"
@@ -1189,8 +1582,8 @@
             "include": "parameterTuple"
         },
         [
-            "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
-            "default.variable.parameter.ballerina"
+            "[_$[:alpha:]][_$[:alnum:]]*",
+            "variable.parameter.ballerina"
         ]
     ],
     "parameterWithDescriptor": [
@@ -1212,6 +1605,11 @@
         ],
         {
             "include": "parameter"
+        }
+    ],
+    "record": [
+        {
+            "include": "statements"
         }
     ],
     "functionType": [
@@ -1290,6 +1688,34 @@
             "include": "comment"
         }
     ],
+    "constrainType": [
+        [
+            "<",
+            {
+                "next": "constrainType__b__0",
+                "token": "punctuation.definition.parameters.begin.ballerina"
+            }
+        ]
+    ],
+    "constrainType__b__0": [
+        [
+            ">",
+            {
+                "next": "@pop",
+                "token": "punctuation.definition.parameters.end.ballerina"
+            }
+        ],
+        {
+            "include": "comment"
+        },
+        {
+            "include": "constrainType"
+        },
+        [
+            "\\b([_$[:alpha:]][_$[:alnum:]]*)\\b",
+            "type"
+        ]
+    ],
     "parameterTuple": [
         [
             "\\[",
@@ -1325,7 +1751,7 @@
     ],
     "parameterTupleType": [
         [
-            "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
+            "[_$[:alpha:]][_$[:alnum:]]*",
             {
                 "next": "parameterTupleType__b__0",
                 "token": "type"
@@ -1362,7 +1788,7 @@
             "include": "defaultWithParentheses"
         },
         [
-            "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
+            "[_$[:alpha:]][_$[:alnum:]]*",
             "default.variable.parameter.ballerina"
         ]
     ],
@@ -1386,7 +1812,7 @@
     ],
     "functionTypeType": [
         [
-            "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
+            "[_$[:alpha:]][_$[:alnum:]]*",
             {
                 "next": "functionTypeType__b__0",
                 "token": "type"
@@ -1428,7 +1854,7 @@
     ],
     "functionTypeReturnsParameter": [
         [
-            "((?=record|object|function)|(?:(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)))",
+            "((?=record|object|function)|(?:[_$[:alpha:]][_$[:alnum:]]*))",
             {
                 "next": "functionTypeReturnsParameter__b__0",
                 "token": "type"
@@ -1465,7 +1891,7 @@
             "include": "parameterTuple"
         },
         [
-            "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
+            "[_$[:alpha:]][_$[:alnum:]]*",
             "default.variable.parameter.ballerina"
         ]
     ],
@@ -1672,223 +2098,360 @@
             "include": "code"
         }
     ],
-    "stringTemplate": [
-        [
-            "(`)",
-            {
-                "next": "stringTemplate__b__0",
-                "token": ""
-            }
-        ],
-        [
-            "(\\bstring|\\bbase[1-9]*)(\\s*)(`)",
-            {
-                "next": "stringTemplate__b__0",
-                "token": "keyword.ballerina"
-            }
-        ]
-    ],
-    "stringTemplate__b__0": [
-        [
-            "`",
-            {
-                "next": "@pop",
-                "token": "string.template.ballerina"
-            }
-        ],
-        [
-            "\\\\.",
-            "constant.character.escape.ballerina"
-        ],
-        {
-            "include": "templateVariable"
-        },
-        [
-            ".",
-            "string"
-        ]
-    ],
-    "keywords": [
-        [
-            "\\b(if|else|fork|join|while|foreach|in|return|returns|break|transaction|transactional|retry|commit|rollback|continue|typeof|enum|wait|check|checkpanic|panic|trap|match)\\b",
-            "keyword.control.ballerina"
-        ],
-        [
-            "\\b(public|private|function|external|type|record|object|remote|abstract|client|true|false|fail|import|version)\\b",
-            "keyword.other.ballerina"
-        ],
-        [
-            "\\b(as|on|resource|listener|const|final|is|null|lock|annotation|source|worker|parameter|field|isolated)\\b",
-            "keyword.other.ballerina"
-        ],
-        [
-            "\\b(xmlns|table|key|let|new|from|where|select|start|flush|default|do|base16|base64|conflict)\\b",
-            "keyword.other.ballerina"
-        ],
-        [
-            "\\b(limit|outer|equals|order|by|ascending|descending|class|configurable|variable|module|service)\\b",
-            "keyword.other.ballerina"
-        ],
-        [
-            "(!|%|\\+|\\-|~=|===|==|=|!=|!==|<|>|&|\\||\\?:|\\.\\.\\.|\\?|<=|=>|>=|&&|\\|\\||~|>>|>>>)",
-            "keyword.operator.ballerina"
-        ],
-        {
-            "include": "types"
-        }
-    ],
-    "types": [
-        [
-            "\\b(boolean|int|float|string|decimal|handle|var|any|anydata|byte|future|typedesc)\\b",
-            "type"
-        ],
-        [
-            "\\b(map|json|xml|error|never|readonly|distinct)\\b",
-            "type"
-        ],
-        [
-            "\\b(stream)\\b",
-            "type"
-        ]
-    ],
     "paranthesised": [
-        [
-            "\\(",
-            {
-                "next": "paranthesised__b__0",
-                "token": ""
-            }
-        ]
-    ],
-    "paranthesised__b__0": [
-        [
-            "\\)",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
         {
-            "include": "functionDefinition"
+            "include": "decl-block"
         },
         {
             "include": "comment"
         },
         {
-            "include": "code"
-        }
-    ],
-    "functionName": [
-        [
-            "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
-            "entity.name.function.ballerina"
-        ]
-    ],
-    "classBody": [
-        [
-            "\\bclass\\b",
-            {
-                "next": "classBody__b__0",
-                "token": "keyword.ballerina"
-            }
-        ]
-    ],
-    "classBody__b__0": [
-        [
-            "(?=\\})",
-            {
-                "next": "@pop",
-                "token": "delimiter.curly"
-            }
-        ],
-        {
-            "include": "comment"
-        },
-        {
-            "include": "objectBody"
-        }
-    ],
-    "serviceBody": [
-        [
-            "\\{",
-            {
-                "next": "serviceBody__b__0",
-                "token": "punctuation.definition.block.ballerina"
-            }
-        ]
-    ],
-    "serviceBody__b__0": [
-        [
-            "(?=\\})",
-            {
-                "next": "@pop",
-                "token": "punctuation.definition.block.ballerina"
-            }
-        ],
-        {
-            "include": "comment"
-        },
-        {
-            "include": "mdDocumentation"
-        },
-        {
-            "include": "documentationDef"
+            "include": "string"
         },
         {
             "include": "annotationAttachment"
         },
         {
-            "include": "functionDefinition"
-        },
-        {
             "include": "recordLiteral"
         },
         {
-            "include": "code"
+            "include": "parameter-name"
+        },
+        {
+            "include": "variable-initializer"
+        },
+        [
+            "\\,",
+            "punctuation.separator.parameter.ballerina"
+        ],
+        {
+            "include": "expression"
         }
     ],
-    "serviceOn": [
+    "parameter-name": [
         [
-            "on",
+            "\\s*\\b(string|int|boolean|float|byte|decimal|var)\\s+",
+            [
+                "support.type.primitive.ballerina"
+            ]
+        ],
+        [
+            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
+            [
+                "keyword.operator.rest.ballerina",
+                "variable.parameter.ballerina",
+                "variable.parameter.ballerina",
+                "keyword.operator.optional.ballerina"
+            ]
+        ]
+    ],
+    "paranthesisedBracket": [
+        [
+            "\\[",
             {
-                "next": "serviceOn__b__0",
-                "token": "keyword.ballerina"
+                "next": "paranthesisedBracket__b__0",
+                "token": ""
             }
         ]
     ],
-    "serviceOn__b__0": [
+    "paranthesisedBracket__b__0": [
         [
-            "(?={)",
+            "\\]",
             {
                 "next": "@pop",
                 "token": ""
             }
         ],
         {
+            "include": "comment"
+        },
+        {
             "include": "code"
         }
     ],
-    "serviceName": [
+    "function-body": [
         [
-            "(\\/((?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)*)|\\\"(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)\\\")",
-            "entity.name.function.ballerina"
+            "\\=>",
+            {
+                "next": "function-body__b__0",
+                "token": "meta.arrow.ballerina storage.type.function.arrow.ballerina"
+            }
+        ],
+        {
+            "include": "comment"
+        },
+        {
+            "include": "functionParameters"
+        },
+        {
+            "include": "decl-block"
+        },
+        [
+            "\\*",
+            "keyword.generator.asterisk.ballerina"
+        ]
+    ],
+    "function-body__b__0": [
+        [
+            "\\;",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "statements"
+        }
+    ],
+    "object-member__b__0": [
+        [
+            "(?=:)|((?<=[\\]])(?=\\s*[\\(\\<]))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "comment"
+        }
+    ],
+    "object-member__b__1": [
+        [
+            "(?=:)|((?<=[\\'\\\"\\`])(?=((\\s*[\\(\\<,}])|(\\n*})|(\\s+(as)\\s+))))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "comment"
+        },
+        {
+            "include": "string"
+        }
+    ],
+    "object-member__b__2": [
+        [
+            "(?=:)|(?=\\s*([\\(\\<,}])|(\\s+as\\s+))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "comment"
+        },
+        {
+            "include": "numbers"
+        }
+    ],
+    "object-member__b__3": [
+        [
+            "(?=\\}|;|,)|(?<=\\})",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "function-body"
+        }
+    ],
+    "object-member__b__4": [
+        [
+            "(?=,|\\})",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "expression"
+        }
+    ],
+    "object-member__b__5": [
+        [
+            "(?=[;),}\\]:?\\-\\+\\>]|\\|\\||\\&\\&|\\!\\=\\=|$|^|((?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(as)\\s+))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        [
+            ".",
+            "meta.object.member.ballerina"
+        ]
+    ],
+    "object-member__b__6": [
+        [
+            "(?=,|\\}|$|\\/\\/|\\/\\*)",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "expression"
+        }
+    ],
+    "ternary-expression": [
+        {
+            "include": "expression"
+        }
+    ],
+    "expression-operators": [
+        [
+            "\\*=|(?<!\\()/=|%=|\\+=|\\-=",
+            "keyword.operator.assignment.compound.ballerina"
+        ],
+        [
+            "\\&=|\\^=|<<=|>>=|>>>=|\\|=",
+            "keyword.operator.assignment.compound.bitwise.ballerina"
+        ],
+        [
+            "<<|>>>|>>",
+            "keyword.operator.bitwise.shift.ballerina"
+        ],
+        [
+            "===|!==|==|!=",
+            "keyword.operator.comparison.ballerina"
+        ],
+        [
+            "<=|>=|<>|<|>",
+            "keyword.operator.relational.ballerina"
+        ],
+        [
+            "(?<=[_$[:alnum:]])(\\!)\\s*(?:(/=)|(?:(/)(?![/*])))",
+            [
+                "keyword.operator.logical.ballerina",
+                "keyword.operator.assignment.compound.ballerina",
+                "keyword.operator.arithmetic.ballerina"
+            ]
+        ],
+        [
+            "\\!|&&|\\|\\||\\?\\?",
+            "keyword.operator.logical.ballerina"
+        ],
+        [
+            "\\&|~|\\^|\\|",
+            "keyword.operator.bitwise.ballerina"
+        ],
+        [
+            "\\=",
+            "keyword.operator.assignment.ballerina"
+        ],
+        [
+            "--",
+            "keyword.operator.decrement.ballerina"
+        ],
+        [
+            "\\+\\+",
+            "keyword.operator.increment.ballerina"
+        ],
+        [
+            "%|\\*|/|-|\\+",
+            "keyword.operator.arithmetic.ballerina"
+        ]
+    ],
+    "identifiers": [
+        [
+            "(?x)(?:(?:(\\.)|(\\?\\.(?!\\s*[[:digit:]])))\\s*)?([_$[:alpha:]][_$[:alnum:]]*)(?=\\s*={{functionOrArrowLookup}})",
+            [
+                "punctuation.accessor.ballerina",
+                "punctuation.accessor.optional.ballerina",
+                "entity.name.function.ballerina"
+            ]
+        ],
+        [
+            "(?:(\\.)|(\\?\\.(?!\\s*[[:digit:]])))\\s*(\\#?[_$[:alpha:]][_$[:alnum:]]*)",
+            [
+                "punctuation.accessor.ballerina",
+                "punctuation.accessor.optional.ballerina",
+                "variable.other.property.ballerina"
+            ]
+        ],
+        [
+            "[_$[:alpha:]][_$[:alnum:]]*",
+            "variable.other.readwrite.ballerina"
+        ],
+        [
+            "\\:",
+            "keyword.operator.type.annotation.ballerina"
+        ]
+    ],
+    "declaration": [
+        {
+            "include": "import-declaration"
+        },
+        {
+            "include": "var-expr"
+        },
+        {
+            "include": "typeDefinition"
+        },
+        {
+            "include": "function-defn"
+        },
+        {
+            "include": "service-decl"
+        },
+        {
+            "include": "class-defn"
+        },
+        {
+            "include": "enum-decl"
+        },
+        {
+            "include": "keywords"
+        }
+    ],
+    "import-declaration": [
+        {
+            "include": "keywords"
+        },
+        {
+            "include": "comment"
+        },
+        {
+            "include": "import-clause"
+        }
+    ],
+    "import-clause": [
+        {
+            "include": "comment"
+        },
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(\\bdefault)|(\\*)|(\\b[_$[:alpha:]][_$[:alnum:]]*))",
+            [
+                "keyword.control.default.ballerina",
+                "variable.other.readwrite.ballerina meta.import.module.ballerina",
+                "keyword.control.default.ballerina",
+                "variable.other.readwrite.alias.ballerina"
+            ]
+        ],
+        [
+            "([_$[:alpha:]][_$[:alnum:]]*)",
+            "variable.other.readwrite.alias.ballerina"
         ]
     ],
     "typeDefinition": [
         [
-            "\\btype\\b",
-            {
-                "next": "typeDefinition__b__0",
-                "token": "keyword.ballerina"
-            }
+            "(\\btype\\b)\\s+([_$[:alpha:]][_$[:alnum:]]*)",
+            [
+                {
+                    "next": "typeDefinition__b__0",
+                    "token": "keyword.other.ballerina"
+                },
+                "entity.name.type.ballerina"
+            ]
         ]
     ],
     "typeDefinition__b__0": [
         [
-            ";",
+            "\\;",
             {
                 "next": "@pop",
-                "token": "source.ballerina"
+                "token": "punctuation.terminator.statement.ballerina"
             }
         ],
         {
@@ -1900,7 +2463,7 @@
     ],
     "typeDescription": [
         [
-            "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
+            "[_$[:alpha:]][_$[:alnum:]]*",
             {
                 "next": "typeDescription__b__0",
                 "token": "entity.name.function.ballerina"
@@ -1912,72 +2475,172 @@
             "(?=;)",
             {
                 "next": "@pop",
-                "token": "source.ballerina"
+                "token": ""
+            }
+        ],
+        {
+            "include": "decl-block"
+        },
+        [
+            "[_$[:alpha:]][_$[:alnum:]]*",
+            "type"
+        ]
+    ],
+    "enum-decl": [
+        [
+            "\\{",
+            {
+                "next": "enum-decl__b__0",
+                "token": "punctuation.definition.block.ballerina"
             }
         ],
         {
             "include": "comment"
         },
         {
-            "include": "objectDec"
-        },
-        {
-            "include": "record"
-        },
-        {
-            "include": "objectMemberFunctionDec"
-        },
-        {
-            "include": "literal"
-        },
-        [
-            "(?:'?(?:(?:[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\])|\\\\(?:[ (){}\\[\\]\\-?*=><?;\"',.\\s])|\\\\)+)",
-            "type"
-        ]
+            "include": "mdDocumentation"
+        }
     ],
-    "annotationDefinition": [
+    "enum-decl__b__0": [
         [
-            "\\bannotation\\b",
+            "\\}",
             {
-                "next": "annotationDefinition__b__0",
-                "token": "keyword.ballerina"
+                "next": "@pop",
+                "token": "punctuation.definition.block.ballerina"
             }
-        ]
-    ],
-    "annotationDefinition__b__0": [
+        ],
         [
-            ";",
+            "([_$[:alpha:]][_$[:alnum:]]*)",
+            {
+                "next": "enum-decl__b__0__b__0",
+                "token": "variable.other.enummember.ballerina"
+            }
+        ],
+        {
+            "include": "comment"
+        },
+        {
+            "include": "mdDocumentation"
+        },
+        [
+            "(?=({{nonIdentifierPropertyName}}))",
+            {
+                "next": "enum-decl__b__0__b__1",
+                "token": ""
+            }
+        ],
+        {
+            "include": "punctuation-comma"
+        }
+    ],
+    "enum-decl__b__0__b__0": [
+        [
+            "(?=,|\\}|$)",
             {
                 "next": "@pop",
                 "token": ""
             }
         ],
         {
-            "include": "code"
+            "include": "comment"
+        },
+        {
+            "include": "variable-initializer"
         }
     ],
-    "classDec": [
+    "enum-decl__b__0__b__1": [
         [
-            "\\bclass\\b",
+            "(?=,|\\}|$)",
             {
-                "next": "classDec__b__0",
-                "token": "keyword.ballerina"
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "string"
+        },
+        {
+            "include": "array-literal"
+        },
+        {
+            "include": "comment"
+        },
+        {
+            "include": "variable-initializer"
+        }
+    ],
+    "control-statement": [
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(return)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
+            {
+                "next": "control-statement__b__0",
+                "token": "keyword.control.flow.ballerina"
+            }
+        ],
+        {
+            "include": "if-statement"
+        },
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(else|if)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
+            "keyword.control.conditional.ballerina"
+        ]
+    ],
+    "control-statement__b__0": [
+        [
+            "(?=[;}]|$|;|^\\s*$|(?:^\\s*{{constructsAndModifiers}}))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "expression"
+        }
+    ],
+    "if-statement": [
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?=\\bif\\b\\s*(?!\\{))",
+            {
+                "next": "if-statement__b__0",
+                "token": ""
             }
         ]
     ],
-    "classDec__b__0": [
+    "if-statement__b__0": [
         [
-            "\\}",
+            "(?<=\\})",
             {
                 "next": "@pop",
-                "token": "delimiter.curly"
+                "token": ""
             }
+        ],
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(if)\\s*(\\()?",
+            [
+                {
+                    "next": "if-statement__b__0__b__0",
+                    "token": "keyword.control.conditional.ballerina"
+                },
+                "meta.brace.round.ballerina"
+            ]
         ],
         {
             "include": "comment"
         },
         {
-            "include": "objectBody"
+            "include": "decl-block"
+        }
+    ],
+    "if-statement__b__0__b__0": [
+        [
+            "(\\))|(\\s(?=\\S)(?=\\s*{))",
+            {
+                "next": "@pop",
+                "token": "meta.brace.round.ballerina"
+            }
+        ],
+        {
+            "include": "expression"
         }
     ]
 }
