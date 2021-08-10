@@ -19,7 +19,7 @@
  */
 
 import { describe, it } from 'mocha';
-import { runTextMateTest } from './util-test';
+import { runTextMateTest } from './test-util';
 
 describe('Unit tests', () => {
     it('class snapshot test', () => {
