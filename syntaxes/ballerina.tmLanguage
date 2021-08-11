@@ -1580,6 +1580,12 @@
         <array>
           <dict>
             <key>name</key>
+            <string>keyword.other.ballerina</string>
+            <key>match</key>
+            <string>\bfunction\b</string>
+          </dict>
+          <dict>
+            <key>name</key>
             <string>meta.definition.function.ballerina entity.name.function.ballerina</string>
             <key>match</key>
             <string>[_$[:alpha:]][_$[:alnum:]]*</string>
@@ -1701,33 +1707,81 @@
       </dict>
       <key>functionReturns</key>
       <dict>
+        <key>name</key>
+        <string>meta.type.function.return.ballerina</string>
+        <key>begin</key>
+        <string>\s*(returns)\s*</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>meta.type.function.return.ballerina keyword.other.ballerina</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>(\=)|(?=\{)|(?==&gt;)|(\))</string>
+        <key>endCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.ballerina</string>
+          </dict>
+        </dict>
         <key>patterns</key>
         <array>
           <dict>
             <key>match</key>
-            <string>\s*(returns)\s*([_$[:alpha:]][_$[:alnum:]]*)?\s*(\?)?</string>
+            <string>\s*\b(string|int|boolean|float|byte|decimal|var)\s+</string>
             <key>captures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>meta.type.function.return.ballerina keyword.other.ballerina</string>
-              </dict>
-              <key>2</key>
-              <dict>
-                <key>name</key>
-                <string>meta.return.type.ballerina support.type.primitive.ballerina</string>
-              </dict>
-              <key>3</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.operator.ballerina</string>
+                <string>support.type.primitive.ballerina</string>
               </dict>
             </dict>
           </dict>
           <dict>
+            <key>match</key>
+            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\?)?</string>
+            <key>captures</key>
+            <dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.rest.ballerina</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>variable.other.readwrite.ballerina</string>
+              </dict>
+              <key>4</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.optional.ballerina</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\|</string>
+            <key>name</key>
+            <string>keyword.operator.ballerina</string>
+          </dict>
+          <dict>
             <key>include</key>
             <string>#multiType</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#type-annotation</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#keywords</string>
           </dict>
         </array>
       </dict>
@@ -4186,7 +4240,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(\S(?=\)))|(\s)</string>
+            <string>(\S(?=\)))|(\s)|(?=\|)</string>
             <key>patterns</key>
             <array>
               <dict>

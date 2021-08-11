@@ -342,6 +342,10 @@
     ],
     "functionName": [
         [
+            "\\bfunction\\b",
+            "keyword.other.ballerina"
+        ],
+        [
             "[_$[:alpha:]][_$[:alnum:]]*",
             "meta.definition.function.ballerina entity.name.function.ballerina"
         ]
@@ -753,15 +757,31 @@
     ],
     "functionReturns": [
         [
-            "\\s*(returns)\\s*([_$[:alpha:]][_$[:alnum:]]*)?\\s*(\\?)?",
+            "\\s*\\b(string|int|boolean|float|byte|decimal|var)\\s+",
             [
-                "meta.type.function.return.ballerina keyword.other.ballerina",
-                "meta.return.type.ballerina support.type.primitive.ballerina",
-                "keyword.operator.ballerina"
+                "support.type.primitive.ballerina"
             ]
+        ],
+        [
+            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\?)?",
+            [
+                "keyword.operator.rest.ballerina",
+                "variable.other.readwrite.ballerina",
+                "keyword.operator.optional.ballerina"
+            ]
+        ],
+        [
+            "\\|",
+            "keyword.operator.ballerina"
         ],
         {
             "include": "multiType"
+        },
+        {
+            "include": "type-annotation"
+        },
+        {
+            "include": "keywords"
         }
     ],
     "multiType": [
@@ -773,6 +793,72 @@
             "\\|",
             "keyword.operator.ballerina"
         ]
+    ],
+    "type-annotation": [
+        [
+            "\\b",
+            [
+                {
+                    "next": "type-annotation__b__0",
+                    "token": "keyword.operator.type.annotation.ballerina"
+                }
+            ]
+        ]
+    ],
+    "type-annotation__b__0": [
+        [
+            "(\\S(?=\\)))|(\\s)|(?=\\|)",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        {
+            "include": "type"
+        }
+    ],
+    "type": [
+        {
+            "include": "comment"
+        },
+        {
+            "include": "string"
+        },
+        {
+            "include": "numbers"
+        },
+        {
+            "include": "type-primitive"
+        },
+        {
+            "include": "type-tuple"
+        }
+    ],
+    "type-primitive": [
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|int|boolean)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
+            "support.type.primitive.ballerina"
+        ]
+    ],
+    "type-tuple": [
+        [
+            "\\.\\.\\.",
+            "keyword.operator.rest.ballerina"
+        ],
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))([_$[:alpha:]][_$[:alnum:]]*)\\s*(\\?)?\\s*(:)",
+            [
+                "entity.name.label.ballerina",
+                "keyword.operator.optional.ballerina",
+                "punctuation.separator.label.ballerina"
+            ]
+        ],
+        {
+            "include": "type"
+        },
+        {
+            "include": "punctuation-comma"
+        }
     ],
     "workerBody": [
         [
@@ -1094,72 +1180,6 @@
         ],
         {
             "include": "expression"
-        }
-    ],
-    "type-annotation": [
-        [
-            "\\b",
-            [
-                {
-                    "next": "type-annotation__b__0",
-                    "token": "keyword.operator.type.annotation.ballerina"
-                }
-            ]
-        ]
-    ],
-    "type-annotation__b__0": [
-        [
-            "(\\S(?=\\)))|(\\s)",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        {
-            "include": "type"
-        }
-    ],
-    "type": [
-        {
-            "include": "comment"
-        },
-        {
-            "include": "string"
-        },
-        {
-            "include": "numbers"
-        },
-        {
-            "include": "type-primitive"
-        },
-        {
-            "include": "type-tuple"
-        }
-    ],
-    "type-primitive": [
-        [
-            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|int|boolean)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
-            "support.type.primitive.ballerina"
-        ]
-    ],
-    "type-tuple": [
-        [
-            "\\.\\.\\.",
-            "keyword.operator.rest.ballerina"
-        ],
-        [
-            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))([_$[:alpha:]][_$[:alnum:]]*)\\s*(\\?)?\\s*(:)",
-            [
-                "entity.name.label.ballerina",
-                "keyword.operator.optional.ballerina",
-                "punctuation.separator.label.ballerina"
-            ]
-        ],
-        {
-            "include": "type"
-        },
-        {
-            "include": "punctuation-comma"
         }
     ],
     "var-expr__b__1": [

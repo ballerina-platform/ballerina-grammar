@@ -7196,8 +7196,8 @@
 //                                                             ^^^^^^^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina keyword.other.ballerina
 //                                                                    ^ source.ballerina meta.function.ballerina
 //                                                                     ^^^^^^ source.ballerina meta.function.ballerina meta.return.type.ballerina support.type.primitive.ballerina
-//                                                                           ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
-//                                                                            ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                                                                           ^ meta.type.tuple.ballerina meta.brace.square.ballerina
+//                                                                            ^ meta.type.tuple.ballerina meta.brace.square.ballerina
 //                                                                             ^ source.ballerina meta.function.ballerina
 //                                                                              ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >     string[] formattedCoordinates = [];
@@ -7330,8 +7330,8 @@
 //                             ^ source.ballerina meta.function.ballerina
 //                              ^^^^^^^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina keyword.other.ballerina
 //                                     ^ source.ballerina meta.function.ballerina
-//                                      ^^^^^ source.ballerina meta.function.ballerina meta.return.type.ballerina support.type.primitive.ballerina
-//                                           ^ source.ballerina meta.function.ballerina keyword.operator.ballerina
+//                                      ^^^^^ meta.type.function.return.ballerina variable.other.readwrite.ballerina
+//                                           ^ source.ballerina meta.function.ballerina keyword.operator.optional.ballerina
 //                                            ^ source.ballerina meta.function.ballerina
 //                                             ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >     io:println("Invoke local participant function.");
@@ -7451,9 +7451,9 @@
 //                                  ^ source.ballerina meta.function.ballerina
 //                                   ^^^^^^^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina keyword.other.ballerina
 //                                          ^ source.ballerina meta.function.ballerina
-//                                           ^^^^^^ source.ballerina meta.function.ballerina meta.return.type.ballerina support.type.primitive.ballerina
+//                                           ^^^^^^ meta.function.ballerina meta.type.function.return.ballerina variable.other.readwrite.ballerina
 //                                                 ^ source.ballerina meta.function.ballerina keyword.operator.ballerina
-//                                                  ^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+//                                                  ^^^^^ meta.function.ballerina meta.type.function.return.ballerina variable.other.readwrite.ballerina
 //                                                       ^ source.ballerina meta.function.ballerina
 //                                                        ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >     worker A returns string|error {
@@ -7523,7 +7523,7 @@
 //                 ^ source.ballerina meta.function.ballerina
 //                  ^^^^^^^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina keyword.other.ballerina
 //                         ^ source.ballerina meta.function.ballerina
-//                          ^^^ source.ballerina meta.function.ballerina meta.return.type.ballerina support.type.primitive.ballerina
+//                          ^^^ meta.type.function.return.ballerina variable.other.readwrite.ballerina
 //                             ^ source.ballerina meta.function.ballerina
 //                              ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >     return xml
