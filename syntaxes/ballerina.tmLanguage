@@ -2702,6 +2702,8 @@
       </dict>
       <key>paranthesised</key>
       <dict>
+        <key>name</key>
+        <string>meta.brace.round.block.ballerina</string>
         <key>begin</key>
         <string>\(</string>
         <key>beginCaptures</key>
@@ -2743,6 +2745,10 @@
           <dict>
             <key>include</key>
             <string>#recordLiteral</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#stringTemplate</string>
           </dict>
           <dict>
             <key>include</key>
@@ -3074,7 +3080,7 @@
             <key>name</key>
             <string>string.template.ballerina</string>
             <key>begin</key>
-            <string>([_$[:alpha:]][_$[:alnum:]]*)?(`)</string>
+            <string>((string)|([_$[:alpha:]][_$[:alnum:]]*))?(`)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -3083,6 +3089,11 @@
                 <string>entity.name.function.tagged-template.ballerina</string>
               </dict>
               <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>support.type.primitive.ballerina</string>
+              </dict>
+              <key>4</key>
               <dict>
                 <key>name</key>
                 <string>punctuation.definition.string.template.begin.ballerina</string>
@@ -3890,7 +3901,13 @@
             <key>name</key>
             <string>storage.type.ballerina</string>
             <key>match</key>
-            <string>\b(boolean|int|float|string|decimal|handle|var|any|anydata|byte|future|typedesc)\b</string>
+            <string>\b(handle|any|anydata|future|typedesc)\b</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.type.primitive.ballerina</string>
+            <key>match</key>
+            <string>\b(boolean|int|string|float|decimal|byte|var)\b</string>
           </dict>
           <dict>
             <key>name</key>
