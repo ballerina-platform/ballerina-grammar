@@ -542,6 +542,8 @@ repository:
 
   functionName:
     patterns:
+    - name: keyword.other.ballerina
+      match: '\bfunction\b'
     - name: meta.definition.function.ballerina entity.name.function.ballerina
       match: '{{identifier}}'
 
@@ -581,13 +583,29 @@ repository:
         '5': { name: keyword.operator.optional.ballerina }
         
   functionReturns:
+    name: meta.type.function.return.ballerina
+    begin: '\s*(returns)\s*'
+    beginCaptures:
+      '1': { name: meta.type.function.return.ballerina keyword.other.ballerina }
+    end: (\=)|(?=\{)|(?==>)|(\))
+    endCaptures:
+      '1': { name: keyword.operator.ballerina }
     patterns:
-    - match: '\s*(returns)\s*({{identifier}})?\s*(\?)?'
+    - match: '\s*{{varExprStart}}\s+'
       captures:
-        '1': { name: meta.type.function.return.ballerina keyword.other.ballerina }
-        '2': { name: meta.return.type.ballerina support.type.primitive.ballerina }
-        '3': { name: keyword.operator.ballerina }
-    - include: '#multiType'    
+        '1': { name: support.type.primitive.ballerina }
+    - match: |-
+        (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|({{identifier}})){{endOfIdentifier}}\s*(\?)?
+      captures:
+        '2': { name: keyword.operator.rest.ballerina }
+        '3': { name: variable.other.readwrite.ballerina }
+        '4': { name: keyword.operator.optional.ballerina }  
+    # - include: '#variable-initializer'  
+    - match: '\|'
+      name: keyword.operator.ballerina
+    - include: '#multiType'
+    - include: '#type-annotation'
+    - include: '#keywords'   
 
   functionType:
     patterns:
@@ -1375,7 +1393,7 @@ repository:
       begin: \b
       beginCaptures:
         '1': { name: keyword.operator.type.annotation.ballerina }
-      end: (\S(?=\)))|(\s)
+      end: (\S(?=\)))|(\s)|(?=\|)
       patterns:
       - include: '#type'
 

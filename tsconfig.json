@@ -1,0 +1,43 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "outDir": "out",
+        "lib": [
+            "es6"
+        ],
+        "sourceMap": true,
+        "rootDirs": [
+            "src",
+            "test"
+        ],
+        "types": [
+            "node"
+          ],
+        /* Strict Type-Checking Option */
+        "strict": true, /* enable all strict type-checking options */
+        /* Additional Checks */
+        "noUnusedLocals": true, /* Report errors on unused locals. */
+        // "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
+        // "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
+        // "noUnusedParameters": true,  /* Report errors on unused parameters. */
+        "baseUrl": ".",
+        "paths": {},
+        "jsx": "react",
+        "noImplicitAny": false,
+        "declaration": true,
+        "moduleResolution": "node",
+        "skipLibCheck": true,
+        "esModuleInterop": true
+    },
+    "exclude": [
+        "node_modules",
+        ".vscode-test",
+        "target",
+        "extractedDistribution"
+    ],
+    "include": [
+        "src",
+        "test"
+    ]
+}
