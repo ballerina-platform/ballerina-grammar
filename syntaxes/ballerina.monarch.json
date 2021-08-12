@@ -762,7 +762,7 @@
     ],
     "functionReturns": [
         [
-            "\\s*\\b(string|int|boolean|float|byte|decimal|var)(?=\\s+|\\[)",
+            "\\s*\\b(string|int|boolean|float|byte|decimal|var)(?=\\s+|\\[|\\?)",
             [
                 "support.type.primitive.ballerina"
             ]
@@ -778,6 +778,10 @@
         [
             "\\|",
             "keyword.operator.ballerina"
+        ],
+        [
+            "\\?",
+            "keyword.operator.optional.ballerina"
         ],
         {
             "include": "multiType"

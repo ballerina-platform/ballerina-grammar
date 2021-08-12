@@ -593,7 +593,7 @@ repository:
     endCaptures:
       '1': { name: keyword.operator.ballerina }
     patterns:
-    - match: '\s*{{varExprStart}}(?=\s+|\[)'
+    - match: '\s*{{varExprStart}}(?=\s+|\[|\?)'
       captures:
         '1': { name: support.type.primitive.ballerina }
     - match: |-
@@ -605,6 +605,8 @@ repository:
     # - include: '#variable-initializer'  
     - match: '\|'
       name: keyword.operator.ballerina
+    - match: '\?'
+      name: keyword.operator.optional.ballerina
     - include: '#multiType'
     - include: '#type-annotation'
     - include: '#keywords'   
