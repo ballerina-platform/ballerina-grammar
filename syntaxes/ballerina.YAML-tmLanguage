@@ -22,6 +22,7 @@ variables:
   endOfStatement: ';|^\s*$|(?:^\s*{{constructsAndModifiers}})'
   lookAheadEndOfType: '[;),}\]:?\-\+\>]|\|\||\&\&|\!\=\=|$'
   varExprStart: '\b(string|int|boolean|float|byte|decimal|var)'
+  primitiveTypes: '(string|int|boolean|float|byte|decimal|var)'
   constExprStart: '\b(const(?!\s+enum\b))'
   nonPropertyLookBehind: '[^\._$[:alnum:]]'
   lookBehindString: '^string|{{nonPropertyLookBehind}}string'
@@ -575,12 +576,13 @@ repository:
       captures:
         '1': { name: support.type.primitive.ballerina }
     - match: |-
-        (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|({{identifier}})){{endOfIdentifier}}\s*(\??)
+        (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|{{primitiveTypes}}|({{identifier}})){{endOfIdentifier}}\s*(\??)
       captures:
         '2': { name: keyword.operator.rest.ballerina }
-        '3': { name: variable.parameter.ballerina }
+        '3': { name: support.type.primitive.ballerina }
         '4': { name: variable.parameter.ballerina }
-        '5': { name: keyword.operator.optional.ballerina }
+        '5': { name: variable.parameter.ballerina }
+        '6': { name: keyword.operator.optional.ballerina }
         
   functionReturns:
     name: meta.type.function.return.ballerina
@@ -595,11 +597,12 @@ repository:
       captures:
         '1': { name: support.type.primitive.ballerina }
     - match: |-
-        (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|({{identifier}})){{endOfIdentifier}}\s*(\?)?
+        (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|({{primitiveTypes}}|{{identifier}})){{endOfIdentifier}}\s*(\?)?
       captures:
         '2': { name: keyword.operator.rest.ballerina }
-        '3': { name: variable.other.readwrite.ballerina }
-        '4': { name: keyword.operator.optional.ballerina }  
+        '4': { name: support.type.primitive.ballerina }
+        '5': { name: variable.other.readwrite.ballerina }
+        '6': { name: keyword.operator.optional.ballerina }  
     # - include: '#variable-initializer'  
     - match: '\|'
       name: keyword.operator.ballerina
@@ -687,7 +690,8 @@ repository:
         endCaptures:
           '0': { name: meta.brace.round.ballerina }
         patterns:
-        - include: '#expression'  
+        - include: '#type-primitive'
+        - include: '#expression'
       - include: '#decl-block'
 
   import-clause:
@@ -1066,6 +1070,7 @@ repository:
       end: '(?=;)'
       patterns:
       - include: '#decl-block'
+      - include: '#type-primitive' 
       - match: '{{identifier}}'
         name: '{{typeScope}}'
 
@@ -1112,9 +1117,10 @@ repository:
   var-single-variable:
     patterns:
     - name: meta.var-single-variable.expr.ballerina
-      begin: ({{identifier}})\s*
+      begin: ({{primitiveTypes}}|({{identifier}}))\s*
       beginCaptures:
-        '1': { name: meta.definition.variable.ballerina variable.other.readwrite.ballerina }
+        '2': { name: support.type.primitive.ballerina }
+        '3': { name: meta.definition.variable.ballerina variable.other.readwrite.ballerina }
       end: (?=$|^|[;,=}])
       endCaptures:
         '0': { name: punctuation.terminator.statement.ballerina }
@@ -1490,5 +1496,5 @@ repository:
 
   type-primitive:
     patterns:
-    - match: '{{startOfIdentifier}}(string|int|boolean|decimal|float|byte|var){{endOfIdentifier}}'
+    - match: '{{startOfIdentifier}}{{primitiveTypes}}{{endOfIdentifier}}'
       name: support.type.primitive.ballerina
