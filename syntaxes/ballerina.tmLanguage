@@ -1721,7 +1721,7 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>meta.type.function.return.ballerina keyword.other.ballerina</string>
+            <string>keyword.other.ballerina</string>
           </dict>
         </dict>
         <key>end</key>
@@ -1738,7 +1738,7 @@
         <array>
           <dict>
             <key>match</key>
-            <string>\s*\b(string|int|boolean|float|byte|decimal|var)\s+</string>
+            <string>\s*\b(string|int|boolean|float|byte|decimal|var)(?=\s+|\[)</string>
             <key>captures</key>
             <dict>
               <key>1</key>
@@ -1750,7 +1750,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|((string|int|boolean|float|byte|decimal|var)|[_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\?)?</string>
+            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\?)?</string>
             <key>captures</key>
             <dict>
               <key>2</key>
@@ -1758,17 +1758,12 @@
                 <key>name</key>
                 <string>keyword.operator.rest.ballerina</string>
               </dict>
-              <key>4</key>
-              <dict>
-                <key>name</key>
-                <string>support.type.primitive.ballerina</string>
-              </dict>
-              <key>5</key>
+              <key>3</key>
               <dict>
                 <key>name</key>
                 <string>variable.other.readwrite.ballerina</string>
               </dict>
-              <key>6</key>
+              <key>4</key>
               <dict>
                 <key>name</key>
                 <string>keyword.operator.optional.ballerina</string>

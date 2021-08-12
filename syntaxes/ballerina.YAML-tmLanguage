@@ -597,12 +597,11 @@ repository:
       captures:
         '1': { name: support.type.primitive.ballerina }
     - match: |-
-        (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|({{primitiveTypes}}|{{identifier}})){{endOfIdentifier}}\s*(\?)?
+        (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|({{identifier}})){{endOfIdentifier}}\s*(\?)?
       captures:
         '2': { name: keyword.operator.rest.ballerina }
-        '4': { name: support.type.primitive.ballerina }
-        '5': { name: variable.other.readwrite.ballerina }
-        '6': { name: keyword.operator.optional.ballerina }  
+        '3': { name: variable.other.readwrite.ballerina }
+        '4': { name: keyword.operator.optional.ballerina }  
     # - include: '#variable-initializer'  
     - match: '\|'
       name: keyword.operator.ballerina
