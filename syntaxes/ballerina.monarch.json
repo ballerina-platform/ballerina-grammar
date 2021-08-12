@@ -841,7 +841,7 @@
     ],
     "type-primitive": [
         [
-            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|int|boolean)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|int|boolean|decimal|float|byte|var)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
             "support.type.primitive.ballerina"
         ]
     ],
@@ -2484,6 +2484,15 @@
         ],
         {
             "include": "comment"
+        },
+        {
+            "include": "type-primitive"
+        },
+        {
+            "include": "string"
+        },
+        {
+            "include": "booleans"
         },
         {
             "include": "typeDescription"

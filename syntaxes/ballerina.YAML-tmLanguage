@@ -1053,6 +1053,9 @@ repository:
         '0': { name: punctuation.terminator.statement.ballerina }
       patterns:
       - include: '#comment'
+      - include: '#type-primitive'
+      - include: '#string'
+      - include: '#booleans' 
       - include: '#typeDescription'
 
   typeDescription:
@@ -1487,6 +1490,5 @@ repository:
 
   type-primitive:
     patterns:
-    - match: '{{startOfIdentifier}}(string|int|boolean){{endOfIdentifier}}'
+    - match: '{{startOfIdentifier}}(string|int|boolean|decimal|float|byte|var){{endOfIdentifier}}'
       name: support.type.primitive.ballerina
-    

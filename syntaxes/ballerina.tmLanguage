@@ -3200,6 +3200,18 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#type-primitive</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#string</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#booleans</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#typeDescription</string>
               </dict>
             </array>
@@ -4534,7 +4546,7 @@
         <array>
           <dict>
             <key>match</key>
-            <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(string|int|boolean)(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))</string>
+            <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(string|int|boolean|decimal|float|byte|var)(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))</string>
             <key>name</key>
             <string>support.type.primitive.ballerina</string>
           </dict>
