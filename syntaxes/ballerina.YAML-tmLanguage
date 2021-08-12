@@ -586,12 +586,12 @@ repository:
     name: meta.type.function.return.ballerina
     begin: '\s*(returns)\s*'
     beginCaptures:
-      '1': { name: meta.type.function.return.ballerina keyword.other.ballerina }
+      '1': { name: keyword.other.ballerina }
     end: (\=)|(?=\{)|(?==>)|(\))
     endCaptures:
       '1': { name: keyword.operator.ballerina }
     patterns:
-    - match: '\s*{{varExprStart}}\s+'
+    - match: '\s*{{varExprStart}}(?=\s+|\[)'
       captures:
         '1': { name: support.type.primitive.ballerina }
     - match: |-
