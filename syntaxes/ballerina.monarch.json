@@ -768,9 +768,10 @@
             ]
         ],
         [
-            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\?)?",
+            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|((string|int|boolean|float|byte|decimal|var)|[_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\?)?",
             [
                 "keyword.operator.rest.ballerina",
+                "support.type.primitive.ballerina",
                 "variable.other.readwrite.ballerina",
                 "keyword.operator.optional.ballerina"
             ]
@@ -841,7 +842,7 @@
     ],
     "type-primitive": [
         [
-            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|int|boolean|decimal|float|byte|var)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|int|boolean|float|byte|decimal|var)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
             "support.type.primitive.ballerina"
         ]
     ],
@@ -1103,15 +1104,6 @@
                     "token": "meta.definition.variable.ballerina variable.other.readwrite.ballerina"
                 },
                 "keyword.operator.definiteassignment.ballerina"
-            ]
-        ],
-        [
-            "([_$[:alpha:]][_$[:alnum:]]*)\\s*",
-            [
-                {
-                    "next": "var-single-variable__b__0",
-                    "token": "meta.definition.variable.ballerina variable.other.readwrite.ballerina"
-                }
             ]
         ]
     ],
@@ -2164,9 +2156,10 @@
             ]
         ],
         [
-            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
+            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|var)|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
             [
                 "keyword.operator.rest.ballerina",
+                "support.type.primitive.ballerina",
                 "variable.parameter.ballerina",
                 "variable.parameter.ballerina",
                 "keyword.operator.optional.ballerina"
@@ -2518,6 +2511,9 @@
         {
             "include": "decl-block"
         },
+        {
+            "include": "type-primitive"
+        },
         [
             "[_$[:alpha:]][_$[:alnum:]]*",
             "type"
@@ -2676,6 +2672,9 @@
                 "token": "meta.brace.round.ballerina"
             }
         ],
+        {
+            "include": "type-primitive"
+        },
         {
             "include": "expression"
         }
