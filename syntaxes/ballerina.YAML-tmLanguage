@@ -1087,8 +1087,6 @@ repository:
         beginCaptures:
           '0': { name: support.type.primitive.ballerina }
         end: (?=\S)
-      - match: '\:'
-        name: keyword.operator.type.annotation.ballerina
       - match: '\|'
         name: keyword.operator.type.annotation.ballerina
       - include: '#stringTemplate'
@@ -1118,7 +1116,7 @@ repository:
   var-single-variable:
     patterns:
     - name: meta.var-single-variable.expr.ballerina
-      begin: ({{primitiveTypes}}|({{identifier}}))\s*
+      begin: ({{primitiveTypes}}|({{identifier}}))(?=\s+|\;|\>|\|)
       beginCaptures:
         '2': { name: support.type.primitive.ballerina }
         '3': { name: meta.definition.variable.ballerina variable.other.readwrite.ballerina }
@@ -1400,12 +1398,13 @@ repository:
   type-annotation:
     patterns:
     - name: meta.type.annotation.ballerina
-      begin: \b
+      begin: (\:)
       beginCaptures:
         '1': { name: keyword.operator.type.annotation.ballerina }
-      end: (\S(?=\)))|(\s)|(?=\|)
+      end: (?<![:|&])((?=[,);\}\]]|//)|(?==[^>])|(?=^\s*$)|((?<=\S)(?=\s*$))|((?<=[\}>\]\)]|[_$[:alpha:]])\s*(?=\{)))
       patterns:
       - include: '#type'
+      - include: '#functionParameters'
 
   type-tuple:
     name: meta.type.tuple.ballerina

@@ -805,7 +805,7 @@
     ],
     "type-annotation": [
         [
-            "\\b",
+            "(\\:)",
             [
                 {
                     "next": "type-annotation__b__0",
@@ -816,7 +816,7 @@
     ],
     "type-annotation__b__0": [
         [
-            "(\\S(?=\\)))|(\\s)|(?=\\|)",
+            "(?<![:|&])((?=[,);\\}\\]]|//)|(?==[^>])|(?=^\\s*$)|((?<=\\S)(?=\\s*$))|((?<=[\\}>\\]\\)]|[_$[:alpha:]])\\s*(?=\\{)))",
             {
                 "next": "@pop",
                 "token": ""
@@ -824,6 +824,9 @@
         ],
         {
             "include": "type"
+        },
+        {
+            "include": "functionParameters"
         }
     ],
     "type": [
@@ -1058,10 +1061,6 @@
                 "next": "var-expr__b__0__b__0",
                 "token": "support.type.primitive.ballerina"
             }
-        ],
-        [
-            "\\:",
-            "keyword.operator.type.annotation.ballerina"
         ],
         [
             "\\|",

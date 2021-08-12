@@ -3307,12 +3307,6 @@
               </dict>
               <dict>
                 <key>match</key>
-                <string>\:</string>
-                <key>name</key>
-                <string>keyword.operator.type.annotation.ballerina</string>
-              </dict>
-              <dict>
-                <key>match</key>
                 <string>\|</string>
                 <key>name</key>
                 <string>keyword.operator.type.annotation.ballerina</string>
@@ -3410,7 +3404,7 @@
             <key>name</key>
             <string>meta.var-single-variable.expr.ballerina</string>
             <key>begin</key>
-            <string>((string|int|boolean|float|byte|decimal|var)|([_$[:alpha:]][_$[:alnum:]]*))\s*</string>
+            <string>((string|int|boolean|float|byte|decimal|var)|([_$[:alpha:]][_$[:alnum:]]*))(?=\s+|\;|\&gt;|\|)</string>
             <key>beginCaptures</key>
             <dict>
               <key>2</key>
@@ -4283,7 +4277,7 @@
             <key>name</key>
             <string>meta.type.annotation.ballerina</string>
             <key>begin</key>
-            <string>\b</string>
+            <string>(\:)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -4293,12 +4287,16 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(\S(?=\)))|(\s)|(?=\|)</string>
+            <string>(?&lt;![:|&amp;])((?=[,);\}\]]|//)|(?==[^&gt;])|(?=^\s*$)|((?&lt;=\S)(?=\s*$))|((?&lt;=[\}&gt;\]\)]|[_$[:alpha:]])\s*(?=\{)))</string>
             <key>patterns</key>
             <array>
               <dict>
                 <key>include</key>
                 <string>#type</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#functionParameters</string>
               </dict>
             </array>
           </dict>
