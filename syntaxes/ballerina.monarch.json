@@ -41,12 +41,13 @@
     ],
     "stringTemplate": [
         [
-            "([_$[:alpha:]][_$[:alnum:]]*)?(`)",
+            "((string)|([_$[:alpha:]][_$[:alnum:]]*))?(`)",
             [
                 {
                     "next": "stringTemplate__b__0",
                     "token": "entity.name.function.tagged-template.ballerina"
                 },
+                "support.type.primitive.ballerina",
                 "punctuation.definition.string.template.begin.ballerina"
             ]
         ]
@@ -133,8 +134,12 @@
     ],
     "types": [
         [
-            "\\b(boolean|int|float|string|decimal|handle|var|any|anydata|byte|future|typedesc)\\b",
+            "\\b(handle|any|anydata|future|typedesc)\\b",
             "type"
+        ],
+        [
+            "\\b(boolean|int|string|float|decimal|byte|var)\\b",
+            "support.type.primitive.ballerina"
         ],
         [
             "\\b(map|json|xml|error|never|readonly|distinct)\\b",
@@ -2113,6 +2118,9 @@
         },
         {
             "include": "recordLiteral"
+        },
+        {
+            "include": "stringTemplate"
         },
         {
             "include": "parameter-name"

@@ -876,6 +876,7 @@ repository:
       - include: '#code'
 
   paranthesised:
+    name: meta.brace.round.block.ballerina
     begin: \(
     beginCaptures:
       '0': {name: meta.brace.round.ballerina }
@@ -888,6 +889,7 @@ repository:
     - include: '#string'
     - include: '#annotationAttachment'
     - include: '#recordLiteral'
+    - include: '#stringTemplate' 
     - include: '#parameter-name'
     - include: '#variable-initializer'
     - name: punctuation.separator.parameter.ballerina
@@ -997,10 +999,11 @@ repository:
     patterns:
     #- include: '#template-call'
     - name: string.template.ballerina
-      begin: '({{identifier}})?(`)'
+      begin: '((string)|({{identifier}}))?(`)'
       beginCaptures:
         '1': { name: entity.name.function.tagged-template.ballerina }
-        '2': { name: punctuation.definition.string.template.begin.ballerina }
+        '2': { name: support.type.primitive.ballerina}
+        '4': { name: punctuation.definition.string.template.begin.ballerina }
       end: \\?`
       endCaptures:
         '0': { name: punctuation.definition.string.template.end.ballerina }
@@ -1256,7 +1259,10 @@ repository:
   types:
     patterns:
     - name: '{{typeScope}}'
-      match: \b(boolean|int|float|string|decimal|handle|var|any|anydata|byte|future|typedesc)\b
+      match: \b(handle|any|anydata|future|typedesc)\b
+
+    - name: support.type.primitive.ballerina
+      match: \b(boolean|int|string|float|decimal|byte|var)\b
 
     - name: '{{typeScope}}'
       match: \b(map|json|xml|error|never|readonly|distinct)\b
