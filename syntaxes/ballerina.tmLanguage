@@ -200,6 +200,10 @@
         <array>
           <dict>
             <key>include</key>
+            <string>#xml</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#string</string>
           </dict>
           <dict>
@@ -1688,6 +1692,7 @@
           </dict>
           <dict>
             <key>match</key>
+            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\b(is|new)\b|\b(true|false)\b|\b(check)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
             <key>captures</key>
             <dict>
               <key>2</key>
@@ -3446,7 +3451,7 @@
             <key>name</key>
             <string>meta.var.expr.ballerina</string>
             <key>begin</key>
-            <string>(?=(string|int|boolean|float|byte|decimal|json|xml))</string>
+            <string>(string|int|boolean|float|byte|decimal|json|xml)(?=\s+|\[|\?|\||\:)</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -3459,6 +3464,10 @@
             <string>(?!\b(var))((?=;|}|;|^\s*$|(?:^\s*{{constructsAndModifiers}}))|((?&lt;!^string|{{nonPropertyLookBehind}}string|^int|{{nonPropertyLookBehind}}int)(?=\s*$)))</string>
             <key>patterns</key>
             <array>
+              <dict>
+                <key>include</key>
+                <string>#xml</string>
+              </dict>
               <dict>
                 <key>begin</key>
                 <string>(string|int|boolean|float|byte|decimal|json|xml)(?=\s+|\[|\?|\||\:)</string>
@@ -4099,6 +4108,8 @@
           <dict>
             <key>begin</key>
             <string>(\bxml)(\s*)(`)</string>
+            <key>name</key>
+            <string>xml.template.ballerina</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -4106,27 +4117,9 @@
                 <key>name</key>
                 <string>keyword.ballerina</string>
               </dict>
-              <key>2</key>
-              <dict>
-                <key>name</key>
-                <string/>
-              </dict>
-              <key>3</key>
-              <dict>
-                <key>name</key>
-                <string>string.template.ballerina</string>
-              </dict>
             </dict>
             <key>end</key>
             <string>`</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>string.template.ballerina</string>
-              </dict>
-            </dict>
             <key>patterns</key>
             <array>
               <dict>

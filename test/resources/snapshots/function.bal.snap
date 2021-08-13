@@ -7742,43 +7742,43 @@
 >
 >  xml:Element x1 =
 //^ source.ballerina
-// ^^^ source.ballerina storage.type.ballerina
+// ^^^ source.ballerina meta.var.expr.ballerina variable.other.readwrite.ballerina
 //    ^ source.ballerina keyword.operator.type.annotation.ballerina
 //     ^^^^^^^ source.ballerina variable.other.readwrite.ballerina
 //            ^ source.ballerina
 //             ^^ source.ballerina variable.other.readwrite.ballerina
 //               ^ source.ballerina
-//                ^ source.ballerina keyword.operator.ballerina
+//                ^ meta.var.expr.ballerina keyword.operator.assignment.ballerina
 >             <xml:Element> xml `<ns0:book ns0:status="available" count="5"/>`;
 //^^^^^^^^^^^^ source.ballerina
 //            ^ source.ballerina keyword.operator.ballerina
-//             ^^^ source.ballerina storage.type.ballerina
+//             ^^^ meta.var.expr.ballerina support.type.primitive.ballerina
 //                ^ source.ballerina keyword.operator.type.annotation.ballerina
 //                 ^^^^^^^ source.ballerina variable.other.readwrite.ballerina
 //                        ^ source.ballerina keyword.operator.ballerina
 //                         ^ source.ballerina
-//                          ^^^ source.ballerina storage.type.ballerina
+//                          ^^^ source.ballerina meta.var.expr.ballerina variable.other.readwrite.ballerina
 //                             ^ source.ballerina
 //                              ^ source.ballerina string.template.ballerina punctuation.definition.string.template.begin.ballerina
 //                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina string.template.ballerina
 //                                                                           ^ source.ballerina string.template.ballerina punctuation.definition.string.template.end.ballerina
 //                                                                            ^ source.ballerina punctuation.terminator.statement.ballerina
 > xml:Element book = <xml:Element> xml `<book/>`;
-//^^^ source.ballerina storage.type.ballerina
+//^^^ meta.var.expr.ballerina support.type.primitive.ballerina
 //   ^ source.ballerina keyword.operator.type.annotation.ballerina
 //    ^^^^^^^ source.ballerina variable.other.readwrite.ballerina
 //           ^ source.ballerina
 //            ^^^^ source.ballerina variable.other.readwrite.ballerina
 //                ^ source.ballerina
-//                 ^ source.ballerina keyword.operator.ballerina
+//                 ^ meta.var.expr.ballerina keyword.operator.assignment.ballerina
 //                  ^ source.ballerina
 //                   ^ source.ballerina keyword.operator.ballerina
-//                    ^^^ source.ballerina storage.type.ballerina
+//                    ^^^ source.ballerina meta.var.expr.ballerina variable.other.readwrite.ballerina
 //                       ^ source.ballerina keyword.operator.type.annotation.ballerina
 //                        ^^^^^^^ source.ballerina variable.other.readwrite.ballerina
 //                               ^ source.ballerina keyword.operator.ballerina
 //                                ^ source.ballerina
-//                                 ^^^ source.ballerina storage.type.ballerina
+//                                 ^^^  meta.var.expr.ballerina variable.other.readwrite.ballerina
 //                                    ^ source.ballerina
 //                                     ^ source.ballerina string.template.ballerina punctuation.definition.string.template.begin.ballerina
 //                                      ^^^^^^^ source.ballerina string.template.ballerina

@@ -103,6 +103,7 @@ repository:
 
   expressionWithoutIdentifiers:
     patterns: 
+    - include: '#xml'
     - include: '#string'
     - include: '#stringTemplate'
     - include: '#comment'
@@ -154,8 +155,6 @@ repository:
     - name: variable.other.readwrite.ballerina
       match: '{{identifier}}'
     - include: '#type-annotation'
-    # - match: '\:'
-    #   name: keyword.operator.type.annotation22.ballerina  
 
   object-member:
     patterns:
@@ -1035,7 +1034,6 @@ repository:
 
   stringTemplate:
     patterns:
-    #- include: '#template-call'
     - name: string.template.ballerina
       begin: '((string)|({{identifier}}))?(`)'
       beginCaptures:
@@ -1130,11 +1128,12 @@ repository:
     - include: '#punctuation-comma'
     # primitive types
     - name: meta.var.expr.ballerina
-      begin: (?={{primitiveTypes}})
+      begin: '{{primitiveTypes}}(?=\s+|\[|\?|\||\:)'
       beginCaptures:
           '0': { name: support.type.primitive.ballerina }
       end: (?!{{varExprStart}})((?=;|}|{{endOfStatement}})|((?<!{{lookBehindString}}|{{lookBehindInt}})(?=\s*$)))
       patterns:
+      - include: '#xml'
       - begin: '{{primitiveTypes}}(?=\s+|\[|\?|\||\:)'
         beginCaptures:
           '0': { name: support.type.primitive.ballerina }
@@ -1341,13 +1340,10 @@ repository:
   xml:
     patterns:
     - begin: '(\bxml)(\s*)(`)'
+      name: xml.template.ballerina
       beginCaptures:
         '1': { name: 'keyword.ballerina' }
-        '2': { name: '' }
-        '3': { name: 'string.template.ballerina' }
       end: '`'
-      endCaptures:
-        '0': { name: 'string.template.ballerina' }
       patterns:
       - include: '#xmlTag'
       - include: '#xmlComment'
