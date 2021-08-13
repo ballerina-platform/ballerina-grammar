@@ -1670,19 +1670,19 @@
         <array>
           <dict>
             <key>match</key>
-            <string>\s*\b(string|int|boolean|float|byte|decimal|var)\s+</string>
+            <string>\s*\b(var)\s+</string>
             <key>captures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>support.type.primitive.ballerina</string>
+                <string>storage.type.ballerina</string>
               </dict>
             </dict>
           </dict>
           <dict>
             <key>match</key>
-            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|var)|\b(is|new)\b|\b(true|false)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
+            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal)|\b(is|new)\b|\b(true|false)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
             <key>captures</key>
             <dict>
               <key>2</key>
@@ -1760,13 +1760,13 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>\s*\b(string|int|boolean|float|byte|decimal|var)(?=\s+|\[|\?)</string>
+            <string>\s*\b(var)(?=\s+|\[|\?)</string>
             <key>captures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>support.type.primitive.ballerina</string>
+                <string>storage.type.ballerina</string>
               </dict>
             </dict>
           </dict>
@@ -2849,7 +2849,7 @@
           </dict>
         </dict>
         <key>end</key>
-        <string>(\})\s*</string>
+        <string>(?=\})</string>
         <key>endCaptures</key>
         <dict>
           <key>1</key>
@@ -2868,6 +2868,10 @@
           <dict>
             <key>include</key>
             <string>#statements</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#decl-block</string>
           </dict>
         </array>
       </dict>
@@ -3237,23 +3241,7 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#comment</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#type-primitive</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#string</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#booleans</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#keywords</string>
+                <string>#record</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -3308,7 +3296,7 @@
             <key>name</key>
             <string>meta.var.expr.ballerina</string>
             <key>begin</key>
-            <string>(?=\b(string|int|boolean|float|byte|decimal|var))</string>
+            <string>(?=\b(var))</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -3318,18 +3306,18 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(?!\b(string|int|boolean|float|byte|decimal|var))((?=;|}|;|^\s*$|(?:^\s*{{constructsAndModifiers}}))|((?&lt;!^string|{{nonPropertyLookBehind}}string|^int|{{nonPropertyLookBehind}}int)(?=\s*$)))</string>
+            <string>(?!\b(var))((?=;|}|;|^\s*$|(?:^\s*{{constructsAndModifiers}}))|((?&lt;!^string|{{nonPropertyLookBehind}}string|^int|{{nonPropertyLookBehind}}int)(?=\s*$)))</string>
             <key>patterns</key>
             <array>
               <dict>
                 <key>begin</key>
-                <string>\b(string|int|boolean|float|byte|decimal|var)(?=\s+|\[|\?|\|)</string>
+                <string>\b(var)(?=\s+|\[|\?|\|)</string>
                 <key>beginCaptures</key>
                 <dict>
                   <key>0</key>
                   <dict>
                     <key>name</key>
-                    <string>support.type.primitive.ballerina</string>
+                    <string>storage.type.ballerina</string>
                   </dict>
                 </dict>
                 <key>end</key>
@@ -3442,7 +3430,7 @@
             <key>name</key>
             <string>meta.var-single-variable.expr.ballerina</string>
             <key>begin</key>
-            <string>((string|int|boolean|float|byte|decimal|var)|([_$[:alpha:]][_$[:alnum:]]*))(?=\s+|\;|\&gt;|\|)</string>
+            <string>((string|int|boolean|float|byte|decimal)|([_$[:alpha:]][_$[:alnum:]]*))(?=\s+|\;|\&gt;|\|)</string>
             <key>beginCaptures</key>
             <dict>
               <key>2</key>
@@ -3515,13 +3503,13 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>\b(string|int|boolean|float|byte|decimal|var)\s*</string>
+            <string>\b(var)\s*</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>support.type.primitive.ballerina</string>
+                <string>storage.type.ballerina</string>
               </dict>
             </dict>
             <key>end</key>
@@ -3983,7 +3971,7 @@
             <key>name</key>
             <string>support.type.primitive.ballerina</string>
             <key>match</key>
-            <string>\b(boolean|int|string|float|decimal|byte|var)\b</string>
+            <string>\b(boolean|int|string|float|decimal|byte)\b</string>
           </dict>
           <dict>
             <key>name</key>
@@ -4614,7 +4602,7 @@
         <array>
           <dict>
             <key>match</key>
-            <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(string|int|boolean|float|byte|decimal|var)(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))</string>
+            <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(string|int|boolean|float|byte|decimal)(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))</string>
             <key>name</key>
             <string>support.type.primitive.ballerina</string>
           </dict>

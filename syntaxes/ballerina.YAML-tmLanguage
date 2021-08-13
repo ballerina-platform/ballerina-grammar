@@ -21,8 +21,8 @@ variables:
   constructsAndModifiers: '(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b'
   endOfStatement: ';|^\s*$|(?:^\s*{{constructsAndModifiers}})'
   lookAheadEndOfType: '[;),}\]:?\-\+\>]|\|\||\&\&|\!\=\=|$'
-  varExprStart: '\b(string|int|boolean|float|byte|decimal|var)'
-  primitiveTypes: '(string|int|boolean|float|byte|decimal|var)'
+  varExprStart: '\b(var)'
+  primitiveTypes: '(string|int|boolean|float|byte|decimal)'
   otherKeywords: '\b(is|new)\b'
   booleanTypes: '\b(true|false)\b'
   constExprStart: '\b(const(?!\s+enum\b))'
@@ -577,7 +577,7 @@ repository:
     patterns:
     - match: '\s*{{varExprStart}}\s+'
       captures:
-        '1': { name: support.type.primitive.ballerina }
+        '1': { name: storage.type.ballerina }
     - match: |-
         (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|{{primitiveTypes}}|{{otherKeywords}}|{{booleanTypes}}|({{identifier}})){{endOfIdentifier}}\s*(\??)
       captures:
@@ -602,7 +602,7 @@ repository:
     - include: '#numbers' 
     - match: '\s*{{varExprStart}}(?=\s+|\[|\?)'
       captures:
-        '1': { name: support.type.primitive.ballerina }
+        '1': { name: storage.type.ballerina }
     - match: |-
         (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|({{identifier}})){{endOfIdentifier}}\s*(\?)?
       captures:
@@ -940,12 +940,13 @@ repository:
     begin: '\brecord\b'
     beginCaptures:
       '0': { name:  keyword.ballerina }
-    end: '(\})\s*'
+    end: '(?=\})'
     endCaptures:
       '1': { name: punctuation.definition.block.ballerina }
       '2': { name: punctuation.terminator.statement.ballerina }
     patterns:
     - include: '#statements'
+    - include: '#decl-block'
 
   recordBody:
     patterns:
@@ -1065,11 +1066,7 @@ repository:
       endCaptures:
         '0': { name: punctuation.terminator.statement.ballerina }
       patterns:
-      - include: '#comment'
-      - include: '#type-primitive'
-      - include: '#string'
-      - include: '#booleans' 
-      - include: '#keywords' 
+      - include: '#record'
       - include: '#typeDescription'
 
   typeDescription:
@@ -1094,7 +1091,7 @@ repository:
       patterns:
       - begin: '{{varExprStart}}(?=\s+|\[|\?|\|)'
         beginCaptures:
-          '0': { name: support.type.primitive.ballerina }
+          '0': { name: storage.type.ballerina }
         end: (?=\S)
       - match: '\|'
         name: keyword.operator.type.annotation.ballerina
@@ -1150,7 +1147,7 @@ repository:
     - name: meta.var-single-variable.expr.ballerina
     - begin: '{{varExprStart}}\s*'
       beginCaptures:
-        '0': { name: support.type.primitive.ballerina }
+        '0': { name: storage.type.ballerina }
       end: (?=\S)
     - include: '#types'
     - begin: ({{identifier}})
@@ -1301,7 +1298,7 @@ repository:
       match: \b(handle|any|anydata|future|typedesc)\b
 
     - name: support.type.primitive.ballerina
-      match: \b(boolean|int|string|float|decimal|byte|var)\b
+      match: \b(boolean|int|string|float|decimal|byte)\b
 
     - name: '{{typeScope}}'
       match: \b(map|json|xml|error|never|readonly|distinct)\b
