@@ -761,6 +761,9 @@
         }
     ],
     "functionReturns": [
+        {
+            "include": "string"
+        },
         [
             "\\s*\\b(string|int|boolean|float|byte|decimal|var)(?=\\s+|\\[|\\?)",
             [
@@ -1117,6 +1120,9 @@
                 "token": "punctuation.terminator.statement.ballerina"
             }
         ],
+        {
+            "include": "string"
+        },
         {
             "include": "keywords"
         }
