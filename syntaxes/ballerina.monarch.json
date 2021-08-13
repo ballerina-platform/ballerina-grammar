@@ -138,11 +138,11 @@
             "type"
         ],
         [
-            "\\b(boolean|int|string|float|decimal|byte)\\b",
+            "\\b[^'](boolean|int|string|float|decimal|byte|var|json|xml)\\b",
             "support.type.primitive.ballerina"
         ],
         [
-            "\\b(map|json|xml|error|never|readonly|distinct)\\b",
+            "\\b(map|error|never|readonly|distinct)\\b",
             "type"
         ],
         [
@@ -360,7 +360,7 @@
     ],
     "type-primitive": [
         [
-            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|int|boolean|float|byte|decimal)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|int|boolean|float|byte|decimal|var|json|xml)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
             "support.type.primitive.ballerina"
         ]
     ],
@@ -776,8 +776,11 @@
         {
             "include": "numbers"
         },
+        {
+            "include": "keywords"
+        },
         [
-            "\\s*\\b(var)(?=\\s+|\\[|\\?)",
+            "\\s*\\b(string|int|boolean|float|byte|decimal|var|json|xml)(?=\\s+|\\[|\\?)",
             [
                 "storage.type.ballerina"
             ]
@@ -1046,14 +1049,14 @@
     ],
     "var-expr": [
         [
-            "(?=(string|int|boolean|float|byte|decimal))",
+            "(?=(string|int|boolean|float|byte|decimal|var|json|xml))",
             {
                 "next": "var-expr__b__2",
                 "token": "support.type.primitive.ballerina"
             }
         ],
         [
-            "(?=\\b(var))",
+            "(?=\\b(string|int|boolean|float|byte|decimal|var|json|xml))",
             {
                 "next": "var-expr__b__0",
                 "token": "storage.modifier.ballerina storage.type.ballerina"
@@ -1078,14 +1081,14 @@
     ],
     "var-expr__b__0": [
         [
-            "(?!\\b(var))((?=;|}|;|^\\s*$|(?:^\\s*{{constructsAndModifiers}}))|((?<!^string|{{nonPropertyLookBehind}}string|^int|{{nonPropertyLookBehind}}int)(?=\\s*$)))",
+            "(?!\\b(string|int|boolean|float|byte|decimal|var|json|xml))((?=;|}|;|^\\s*$|(?:^\\s*{{constructsAndModifiers}}))|((?<!^string|{{nonPropertyLookBehind}}string|^int|{{nonPropertyLookBehind}}int)(?=\\s*$)))",
             {
                 "next": "@pop",
                 "token": ""
             }
         ],
         [
-            "\\b(var)(?=\\s+|\\[|\\?|\\|)",
+            "\\b(string|int|boolean|float|byte|decimal|var|json|xml)(?=\\s+|\\[|\\?|\\|)",
             {
                 "next": "var-expr__b__0__b__0",
                 "token": "storage.type.ballerina"
@@ -1153,6 +1156,9 @@
             }
         ],
         {
+            "include": "if-statement"
+        },
+        {
             "include": "string"
         },
         {
@@ -1160,6 +1166,63 @@
         },
         {
             "include": "keywords"
+        }
+    ],
+    "if-statement": [
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?=\\bif\\b\\s*(?!\\{))",
+            {
+                "next": "if-statement__b__0",
+                "token": ""
+            }
+        ]
+    ],
+    "if-statement__b__0": [
+        [
+            "(?<=\\})",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(if)\\s*(\\()?",
+            [
+                {
+                    "next": "if-statement__b__0__b__0",
+                    "token": "keyword.control.conditional.ballerina"
+                },
+                "meta.brace.round.ballerina"
+            ]
+        ],
+        {
+            "include": "comment"
+        },
+        {
+            "include": "decl-block"
+        }
+    ],
+    "if-statement__b__0__b__0": [
+        [
+            "(\\))|(\\s(?=\\S)(?=\\s*{))",
+            {
+                "next": "@pop",
+                "token": "meta.brace.round.ballerina"
+            }
+        ],
+        {
+            "include": "type-primitive"
+        },
+        {
+            "include": "expression"
+        }
+    ],
+    "decl-block": [
+        {
+            "include": "statements"
+        },
+        {
+            "include": "mdDocumentation"
         }
     ],
     "var-single-variable__b__1": [
@@ -1273,7 +1336,7 @@
             ]
         ],
         [
-            "\\b(var)\\s*",
+            "\\b(string|int|boolean|float|byte|decimal|var|json|xml)\\s*",
             {
                 "next": "var-single-const__b__0",
                 "token": "storage.type.ballerina"
@@ -1303,14 +1366,14 @@
     ],
     "var-expr__b__2": [
         [
-            "(?!\\b(var))((?=;|}|;|^\\s*$|(?:^\\s*{{constructsAndModifiers}}))|((?<!^string|{{nonPropertyLookBehind}}string|^int|{{nonPropertyLookBehind}}int)(?=\\s*$)))",
+            "(?!\\b(string|int|boolean|float|byte|decimal|var|json|xml))((?=;|}|;|^\\s*$|(?:^\\s*{{constructsAndModifiers}}))|((?<!^string|{{nonPropertyLookBehind}}string|^int|{{nonPropertyLookBehind}}int)(?=\\s*$)))",
             {
                 "next": "@pop",
                 "token": ""
             }
         ],
         [
-            "(string|int|boolean|float|byte|decimal)(?=\\s+|\\[|\\?|\\|)",
+            "(string|int|boolean|float|byte|decimal|var|json|xml)(?=\\s+|\\[|\\?|\\|)",
             {
                 "next": "var-expr__b__2__b__0",
                 "token": "support.type.primitive.ballerina"
@@ -1371,14 +1434,6 @@
                 "token": ""
             }
         ]
-    ],
-    "decl-block": [
-        {
-            "include": "statements"
-        },
-        {
-            "include": "mdDocumentation"
-        }
     ],
     "punctuation-semicolon": [
         [
@@ -2252,13 +2307,13 @@
     ],
     "parameter-name": [
         [
-            "\\s*\\b(var)\\s+",
+            "\\s*\\b(string|int|boolean|float|byte|decimal|var|json|xml)\\s+",
             [
                 "storage.type.ballerina"
             ]
         ],
         [
-            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal)|\\b(is|new)\\b|\\b(true|false)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
+            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|var|json|xml)|\\b(is|new)\\b|\\b(true|false)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
             [
                 "keyword.operator.rest.ballerina",
                 "support.type.primitive.ballerina",
@@ -2720,55 +2775,6 @@
                 "token": ""
             }
         ],
-        {
-            "include": "expression"
-        }
-    ],
-    "if-statement": [
-        [
-            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?=\\bif\\b\\s*(?!\\{))",
-            {
-                "next": "if-statement__b__0",
-                "token": ""
-            }
-        ]
-    ],
-    "if-statement__b__0": [
-        [
-            "(?<=\\})",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        [
-            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(if)\\s*(\\()?",
-            [
-                {
-                    "next": "if-statement__b__0__b__0",
-                    "token": "keyword.control.conditional.ballerina"
-                },
-                "meta.brace.round.ballerina"
-            ]
-        ],
-        {
-            "include": "comment"
-        },
-        {
-            "include": "decl-block"
-        }
-    ],
-    "if-statement__b__0__b__0": [
-        [
-            "(\\))|(\\s(?=\\S)(?=\\s*{))",
-            {
-                "next": "@pop",
-                "token": "meta.brace.round.ballerina"
-            }
-        ],
-        {
-            "include": "type-primitive"
-        },
         {
             "include": "expression"
         }
