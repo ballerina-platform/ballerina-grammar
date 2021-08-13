@@ -1655,6 +1655,10 @@
             <string>#variable-initializer</string>
           </dict>
           <dict>
+            <key>include</key>
+            <string>#identifiers</string>
+          </dict>
+          <dict>
             <key>name</key>
             <string>punctuation.separator.parameter.ballerina</string>
             <key>match</key>
