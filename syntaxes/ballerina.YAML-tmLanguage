@@ -23,6 +23,8 @@ variables:
   lookAheadEndOfType: '[;),}\]:?\-\+\>]|\|\||\&\&|\!\=\=|$'
   varExprStart: '\b(string|int|boolean|float|byte|decimal|var)'
   primitiveTypes: '(string|int|boolean|float|byte|decimal|var)'
+  otherKeywords: '\b(is|new)\b'
+  booleanTypes: '\b(true|false)\b'
   constExprStart: '\b(const(?!\s+enum\b))'
   nonPropertyLookBehind: '[^\._$[:alnum:]]'
   lookBehindString: '^string|{{nonPropertyLookBehind}}string'
@@ -545,6 +547,7 @@ repository:
     patterns:
     - name: keyword.other.ballerina
       match: '\bfunction\b'
+    - include: '#type-primitive' 
     - name: meta.definition.function.ballerina entity.name.function.ballerina
       match: '{{identifier}}'
 
@@ -576,13 +579,15 @@ repository:
       captures:
         '1': { name: support.type.primitive.ballerina }
     - match: |-
-        (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|{{primitiveTypes}}|({{identifier}})){{endOfIdentifier}}\s*(\??)
+        (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|{{primitiveTypes}}|{{otherKeywords}}|{{booleanTypes}}|({{identifier}})){{endOfIdentifier}}\s*(\??)
       captures:
         '2': { name: keyword.operator.rest.ballerina }
         '3': { name: support.type.primitive.ballerina }
-        '4': { name: variable.parameter.ballerina }
-        '5': { name: variable.parameter.ballerina }
-        '6': { name: keyword.operator.optional.ballerina }
+        '4': { name: keyword.other.ballerina }
+        '5': { name: constant.language.boolean.ballerina }
+        '6': { name: variable.parameter.ballerina }
+        '7': { name: variable.parameter.ballerina }
+        '8': { name: keyword.operator.optional.ballerina }
         
   functionReturns:
     name: meta.type.function.return.ballerina
@@ -593,7 +598,8 @@ repository:
     endCaptures:
       '1': { name: keyword.operator.ballerina }
     patterns:
-    - include: '#string' 
+    - include: '#string'
+    - include: '#numbers' 
     - match: '\s*{{varExprStart}}(?=\s+|\[|\?)'
       captures:
         '1': { name: support.type.primitive.ballerina }
@@ -1063,6 +1069,7 @@ repository:
       - include: '#type-primitive'
       - include: '#string'
       - include: '#booleans' 
+      - include: '#keywords' 
       - include: '#typeDescription'
 
   typeDescription:
@@ -1092,6 +1099,7 @@ repository:
       - match: '\|'
         name: keyword.operator.type.annotation.ballerina
       - include: '#stringTemplate'
+      - include: '#numbers' 
       - include: '#multiType'
       - include: '#var-single-variable' 
       - include: '#variable-initializer' 
@@ -1128,6 +1136,7 @@ repository:
         '0': { name: punctuation.terminator.statement.ballerina }
       patterns:
       - include: '#string' 
+      - include: '#numbers'
       - include: '#keywords'
     - name: meta.var-single-variable.expr.ballerina
       begin: ({{identifier}})\s+(\!)?
@@ -1222,7 +1231,7 @@ repository:
       - include: '#comment'
       - include: '#parameterTuple'
       - match: '{{identifier}}'
-        name: variable.parameter.ballerina
+        name: default.variable.parameter.ballerina
 
   parameterTuple:
     patterns:
