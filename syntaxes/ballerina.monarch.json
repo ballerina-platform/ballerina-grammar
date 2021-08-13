@@ -765,16 +765,15 @@
             "include": "string"
         },
         [
-            "\\s*\\b(string|int|boolean|float|byte|decimal|var)\\s+",
+            "\\s*\\b(string|int|boolean|float|byte|decimal|var)(?=\\s+|\\[|\\?)",
             [
                 "support.type.primitive.ballerina"
             ]
         ],
         [
-            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|((string|int|boolean|float|byte|decimal|var)|[_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\?)?",
+            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\?)?",
             [
                 "keyword.operator.rest.ballerina",
-                "support.type.primitive.ballerina",
                 "variable.other.readwrite.ballerina",
                 "keyword.operator.optional.ballerina"
             ]
@@ -782,6 +781,10 @@
         [
             "\\|",
             "keyword.operator.ballerina"
+        ],
+        [
+            "\\?",
+            "keyword.operator.optional.ballerina"
         ],
         {
             "include": "multiType"
@@ -805,7 +808,7 @@
     ],
     "type-annotation": [
         [
-            "\\b",
+            "(\\:)",
             [
                 {
                     "next": "type-annotation__b__0",
@@ -816,7 +819,7 @@
     ],
     "type-annotation__b__0": [
         [
-            "(\\S(?=\\)))|(\\s)|(?=\\|)",
+            "(?<![:|&])((?=[,);\\}\\]]|//)|(?==[^>])|(?=^\\s*$)|((?<=\\S)(?=\\s*$))|((?<=[\\}>\\]\\)]|[_$[:alpha:]])\\s*(?=\\{)))",
             {
                 "next": "@pop",
                 "token": ""
@@ -824,6 +827,9 @@
         ],
         {
             "include": "type"
+        },
+        {
+            "include": "functionParameters"
         }
     ],
     "type": [
@@ -1058,10 +1064,6 @@
                 "next": "var-expr__b__0__b__0",
                 "token": "support.type.primitive.ballerina"
             }
-        ],
-        [
-            "\\:",
-            "keyword.operator.type.annotation.ballerina"
         ],
         [
             "\\|",

@@ -1721,7 +1721,7 @@
           <key>1</key>
           <dict>
             <key>name</key>
-            <string>meta.type.function.return.ballerina keyword.other.ballerina</string>
+            <string>keyword.other.ballerina</string>
           </dict>
         </dict>
         <key>end</key>
@@ -1742,7 +1742,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>\s*\b(string|int|boolean|float|byte|decimal|var)\s+</string>
+            <string>\s*\b(string|int|boolean|float|byte|decimal|var)(?=\s+|\[|\?)</string>
             <key>captures</key>
             <dict>
               <key>1</key>
@@ -1754,7 +1754,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|((string|int|boolean|float|byte|decimal|var)|[_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\?)?</string>
+            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\?)?</string>
             <key>captures</key>
             <dict>
               <key>2</key>
@@ -1762,17 +1762,12 @@
                 <key>name</key>
                 <string>keyword.operator.rest.ballerina</string>
               </dict>
-              <key>4</key>
-              <dict>
-                <key>name</key>
-                <string>support.type.primitive.ballerina</string>
-              </dict>
-              <key>5</key>
+              <key>3</key>
               <dict>
                 <key>name</key>
                 <string>variable.other.readwrite.ballerina</string>
               </dict>
-              <key>6</key>
+              <key>4</key>
               <dict>
                 <key>name</key>
                 <string>keyword.operator.optional.ballerina</string>
@@ -1784,6 +1779,12 @@
             <string>\|</string>
             <key>name</key>
             <string>keyword.operator.ballerina</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\?</string>
+            <key>name</key>
+            <string>keyword.operator.optional.ballerina</string>
           </dict>
           <dict>
             <key>include</key>
@@ -3310,12 +3311,6 @@
               </dict>
               <dict>
                 <key>match</key>
-                <string>\:</string>
-                <key>name</key>
-                <string>keyword.operator.type.annotation.ballerina</string>
-              </dict>
-              <dict>
-                <key>match</key>
                 <string>\|</string>
                 <key>name</key>
                 <string>keyword.operator.type.annotation.ballerina</string>
@@ -3413,7 +3408,7 @@
             <key>name</key>
             <string>meta.var-single-variable.expr.ballerina</string>
             <key>begin</key>
-            <string>((string|int|boolean|float|byte|decimal|var)|([_$[:alpha:]][_$[:alnum:]]*))\s*</string>
+            <string>((string|int|boolean|float|byte|decimal|var)|([_$[:alpha:]][_$[:alnum:]]*))(?=\s+|\;|\&gt;|\|)</string>
             <key>beginCaptures</key>
             <dict>
               <key>2</key>
@@ -4290,7 +4285,7 @@
             <key>name</key>
             <string>meta.type.annotation.ballerina</string>
             <key>begin</key>
-            <string>\b</string>
+            <string>(\:)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -4300,12 +4295,16 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(\S(?=\)))|(\s)|(?=\|)</string>
+            <string>(?&lt;![:|&amp;])((?=[,);\}\]]|//)|(?==[^&gt;])|(?=^\s*$)|((?&lt;=\S)(?=\s*$))|((?&lt;=[\}&gt;\]\)]|[_$[:alpha:]])\s*(?=\{)))</string>
             <key>patterns</key>
             <array>
               <dict>
                 <key>include</key>
                 <string>#type</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#functionParameters</string>
               </dict>
             </array>
           </dict>
