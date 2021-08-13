@@ -1796,6 +1796,10 @@
           </dict>
           <dict>
             <key>include</key>
+            <string>#type-tuple</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#keywords</string>
           </dict>
         </array>

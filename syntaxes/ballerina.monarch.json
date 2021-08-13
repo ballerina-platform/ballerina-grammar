@@ -793,6 +793,9 @@
             "include": "type-annotation"
         },
         {
+            "include": "type-tuple"
+        },
+        {
             "include": "keywords"
         }
     ],

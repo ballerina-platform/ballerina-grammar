@@ -610,6 +610,7 @@ repository:
       name: keyword.operator.optional.ballerina
     - include: '#multiType'
     - include: '#type-annotation'
+    - include: '#type-tuple'
     - include: '#keywords'   
 
   functionType:
