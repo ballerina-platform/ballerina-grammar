@@ -21,8 +21,8 @@ variables:
   constructsAndModifiers: '(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b'
   endOfStatement: ';|^\s*$|(?:^\s*{{constructsAndModifiers}})'
   lookAheadEndOfType: '[;),}\]:?\-\+\>]|\|\||\&\&|\!\=\=|$'
-  varExprStart: '\b(string|int|boolean|float|byte|decimal|var|json|xml)'
-  primitiveTypes: '(string|int|boolean|float|byte|decimal|var|json|xml)'
+  varExprStart: '\b(var)'
+  primitiveTypes: '(string|int|boolean|float|byte|decimal|json|xml)'
   otherKeywords: '\b(is|new)\b'
   controlKeywords: '\b(check)\b'
   booleanTypes: '\b(true|false)\b'
@@ -168,7 +168,7 @@ repository:
       end: (?=:)|((?<=[\]])(?=\s*[\(\<]))
       patterns:
       - include: '#comment'
-    - name: meta.object.member222.ballerina meta.object-literal.key.ballerina
+    - name: meta.object.member.ballerina meta.object-literal.key.ballerina
       begin: (?=[\'\"\`])
       end: (?=:)|((?<=[\'\"\`])(?=((\s*[\(\<,}])|(\n*})|(\s+(as)\s+))))
       patterns:
@@ -1097,7 +1097,7 @@ repository:
           '0': { name: storage.modifier.ballerina support.type.primitive.ballerina }
       end: (?!{{varExprStart}})((?=;|}|{{endOfStatement}})|((?<!{{lookBehindString}}|{{lookBehindInt}})(?=\s*$)))
       patterns:
-      - begin: '{{varExprStart}}(?=\s+|\[|\?|\|)'
+      - begin: '{{varExprStart}}(?=\s+|\[|\?|\||\:)'
         beginCaptures:
           '0': { name: support.type.primitive.ballerina }
         end: (?=\S)
@@ -1135,7 +1135,7 @@ repository:
           '0': { name: support.type.primitive.ballerina }
       end: (?!{{varExprStart}})((?=;|}|{{endOfStatement}})|((?<!{{lookBehindString}}|{{lookBehindInt}})(?=\s*$)))
       patterns:
-      - begin: '{{primitiveTypes}}(?=\s+|\[|\?|\|)'
+      - begin: '{{primitiveTypes}}(?=\s+|\[|\?|\||\:)'
         beginCaptures:
           '0': { name: support.type.primitive.ballerina }
         end: (?=\S)
@@ -1330,7 +1330,7 @@ repository:
       match: \b(handle|any|anydata|future|typedesc)\b
 
     - name: support.type.primitive.ballerina
-      match: \b[^'](boolean|int|string|float|decimal|byte|var|json|xml)\b
+      match: \b[^'](boolean|int|string|float|decimal|byte|json|xml)\b
 
     - name: '{{typeScope}}'
       match: \b(map|error|never|readonly|distinct)\b

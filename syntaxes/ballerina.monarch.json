@@ -138,7 +138,7 @@
             "type"
         ],
         [
-            "\\b[^'](boolean|int|string|float|decimal|byte|var|json|xml)\\b",
+            "\\b[^'](boolean|int|string|float|decimal|byte|json|xml)\\b",
             "support.type.primitive.ballerina"
         ],
         [
@@ -360,7 +360,7 @@
     ],
     "type-primitive": [
         [
-            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|int|boolean|float|byte|decimal|var|json|xml)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|int|boolean|float|byte|decimal|json|xml)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
             "support.type.primitive.ballerina"
         ]
     ],
@@ -786,7 +786,7 @@
             "include": "keywords"
         },
         [
-            "\\s*\\b(string|int|boolean|float|byte|decimal|var|json|xml)(?=\\s+|\\[|\\?)",
+            "\\s*\\b(var)(?=\\s+|\\[|\\?)",
             [
                 "support.type.primitive.ballerina"
             ]
@@ -1055,14 +1055,14 @@
     ],
     "var-expr": [
         [
-            "(?=(string|int|boolean|float|byte|decimal|var|json|xml))",
+            "(?=(string|int|boolean|float|byte|decimal|json|xml))",
             {
                 "next": "var-expr__b__2",
                 "token": "support.type.primitive.ballerina"
             }
         ],
         [
-            "(?=\\b(string|int|boolean|float|byte|decimal|var|json|xml))",
+            "(?=\\b(var))",
             {
                 "next": "var-expr__b__0",
                 "token": "storage.modifier.ballerina support.type.primitive.ballerina"
@@ -1087,14 +1087,14 @@
     ],
     "var-expr__b__0": [
         [
-            "(?!\\b(string|int|boolean|float|byte|decimal|var|json|xml))((?=;|}|;|^\\s*$|(?:^\\s*{{constructsAndModifiers}}))|((?<!^string|{{nonPropertyLookBehind}}string|^int|{{nonPropertyLookBehind}}int)(?=\\s*$)))",
+            "(?!\\b(var))((?=;|}|;|^\\s*$|(?:^\\s*{{constructsAndModifiers}}))|((?<!^string|{{nonPropertyLookBehind}}string|^int|{{nonPropertyLookBehind}}int)(?=\\s*$)))",
             {
                 "next": "@pop",
                 "token": ""
             }
         ],
         [
-            "\\b(string|int|boolean|float|byte|decimal|var|json|xml)(?=\\s+|\\[|\\?|\\|)",
+            "\\b(var)(?=\\s+|\\[|\\?|\\||\\:)",
             {
                 "next": "var-expr__b__0__b__0",
                 "token": "support.type.primitive.ballerina"
@@ -1342,7 +1342,7 @@
             ]
         ],
         [
-            "\\b(string|int|boolean|float|byte|decimal|var|json|xml)\\s*",
+            "\\b(var)\\s*",
             {
                 "next": "var-single-const__b__0",
                 "token": "support.type.primitive.ballerina"
@@ -1372,14 +1372,14 @@
     ],
     "var-expr__b__2": [
         [
-            "(?!\\b(string|int|boolean|float|byte|decimal|var|json|xml))((?=;|}|;|^\\s*$|(?:^\\s*{{constructsAndModifiers}}))|((?<!^string|{{nonPropertyLookBehind}}string|^int|{{nonPropertyLookBehind}}int)(?=\\s*$)))",
+            "(?!\\b(var))((?=;|}|;|^\\s*$|(?:^\\s*{{constructsAndModifiers}}))|((?<!^string|{{nonPropertyLookBehind}}string|^int|{{nonPropertyLookBehind}}int)(?=\\s*$)))",
             {
                 "next": "@pop",
                 "token": ""
             }
         ],
         [
-            "(string|int|boolean|float|byte|decimal|var|json|xml)(?=\\s+|\\[|\\?|\\|)",
+            "(string|int|boolean|float|byte|decimal|json|xml)(?=\\s+|\\[|\\?|\\||\\:)",
             {
                 "next": "var-expr__b__2__b__0",
                 "token": "support.type.primitive.ballerina"
@@ -2313,13 +2313,14 @@
     ],
     "parameter-name": [
         [
-            "\\s*\\b(string|int|boolean|float|byte|decimal|var|json|xml)\\s+",
+            "\\s*\\b(var)\\s+",
             [
                 "support.type.primitive.ballerina"
             ]
         ],
         [
-            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|var|json|xml)|\\b(is|new)\\b|\\b(true|false)\\b|\\b(check)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
+            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\\b(is|new)\\b|\\b(true|false)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
+
             [
                 "keyword.operator.rest.ballerina",
                 "support.type.primitive.ballerina",
