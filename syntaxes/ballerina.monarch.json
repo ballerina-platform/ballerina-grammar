@@ -21,9 +21,6 @@
             "include": "expression"
         },
         {
-            "include": "var-single-variable"
-        },
-        {
             "include": "punctuation-semicolon"
         },
         {
@@ -1049,6 +1046,13 @@
     ],
     "var-expr": [
         [
+            "(?=(string|int|boolean|float|byte|decimal))",
+            {
+                "next": "var-expr__b__2",
+                "token": "support.type.primitive.ballerina"
+            }
+        ],
+        [
             "(?=\\b(var))",
             {
                 "next": "var-expr__b__0",
@@ -1065,6 +1069,9 @@
                 "token": ""
             }
         ],
+        {
+            "include": "punctuation-comma"
+        },
         {
             "include": "punctuation-comma"
         }
@@ -1288,6 +1295,62 @@
     "var-single-const__b__1": [
         [
             "(?=$|^|[;,=}]|((?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ]
+    ],
+    "var-expr__b__2": [
+        [
+            "(?!\\b(var))((?=;|}|;|^\\s*$|(?:^\\s*{{constructsAndModifiers}}))|((?<!^string|{{nonPropertyLookBehind}}string|^int|{{nonPropertyLookBehind}}int)(?=\\s*$)))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        [
+            "(string|int|boolean|float|byte|decimal)(?=\\s+|\\[|\\?|\\|)",
+            {
+                "next": "var-expr__b__2__b__0",
+                "token": "support.type.primitive.ballerina"
+            }
+        ],
+        [
+            "\\|",
+            "keyword.operator.type.annotation.ballerina"
+        ],
+        {
+            "include": "stringTemplate"
+        },
+        {
+            "include": "numbers"
+        },
+        {
+            "include": "multiType"
+        },
+        {
+            "include": "var-single-variable"
+        },
+        {
+            "include": "variable-initializer"
+        },
+        {
+            "include": "punctuation-comma"
+        },
+        {
+            "include": "type-annotation"
+        },
+        {
+            "include": "keywords"
+        },
+        {
+            "include": "type-tuple"
+        }
+    ],
+    "var-expr__b__2__b__0": [
+        [
+            "(?=\\S)",
             {
                 "next": "@pop",
                 "token": ""

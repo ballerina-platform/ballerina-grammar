@@ -1121,6 +1121,29 @@ repository:
       - include: '#punctuation-comma'
       - include: '#type-annotation'
     - include: '#punctuation-comma'
+    # primitive types
+    - name: meta.var.expr.ballerina
+      begin: (?={{primitiveTypes}})
+      beginCaptures:
+          '0': { name: support.type.primitive.ballerina }
+      end: (?!{{varExprStart}})((?=;|}|{{endOfStatement}})|((?<!{{lookBehindString}}|{{lookBehindInt}})(?=\s*$)))
+      patterns:
+      - begin: '{{primitiveTypes}}(?=\s+|\[|\?|\|)'
+        beginCaptures:
+          '0': { name: support.type.primitive.ballerina }
+        end: (?=\S)
+      - match: '\|'
+        name: keyword.operator.type.annotation.ballerina
+      - include: '#stringTemplate'
+      - include: '#numbers' 
+      - include: '#multiType'
+      - include: '#var-single-variable' 
+      - include: '#variable-initializer' 
+      - include: '#punctuation-comma'
+      - include: '#type-annotation'
+      - include: '#keywords'
+      - include: '#type-tuple'
+    - include: '#punctuation-comma'
 
   var-single-variable:
     patterns:
