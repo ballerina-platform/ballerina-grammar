@@ -350,9 +350,18 @@
             "\\bfunction\\b",
             "keyword.other.ballerina"
         ],
+        {
+            "include": "type-primitive"
+        },
         [
             "[_$[:alpha:]][_$[:alnum:]]*",
             "meta.definition.function.ballerina entity.name.function.ballerina"
+        ]
+    ],
+    "type-primitive": [
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|int|boolean|float|byte|decimal|var)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
+            "support.type.primitive.ballerina"
         ]
     ],
     "functionParameters": [
@@ -764,6 +773,9 @@
         {
             "include": "string"
         },
+        {
+            "include": "numbers"
+        },
         [
             "\\s*\\b(string|int|boolean|float|byte|decimal|var)(?=\\s+|\\[|\\?)",
             [
@@ -848,12 +860,6 @@
         {
             "include": "type-tuple"
         }
-    ],
-    "type-primitive": [
-        [
-            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|int|boolean|float|byte|decimal|var)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
-            "support.type.primitive.ballerina"
-        ]
     ],
     "type-tuple": [
         [
@@ -1073,6 +1079,9 @@
             "include": "stringTemplate"
         },
         {
+            "include": "numbers"
+        },
+        {
             "include": "multiType"
         },
         {
@@ -1125,6 +1134,9 @@
         ],
         {
             "include": "string"
+        },
+        {
+            "include": "numbers"
         },
         {
             "include": "keywords"
@@ -1611,7 +1623,7 @@
         },
         [
             "[_$[:alpha:]][_$[:alnum:]]*",
-            "variable.parameter.ballerina"
+            "default.variable.parameter.ballerina"
         ]
     ],
     "parameterWithDescriptor": [
@@ -2167,10 +2179,12 @@
             ]
         ],
         [
-            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|var)|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
+            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|var)|\\b(is|new)\\b|\\b(true|false)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
             [
                 "keyword.operator.rest.ballerina",
                 "support.type.primitive.ballerina",
+                "keyword.other.ballerina",
+                "constant.language.boolean.ballerina",
                 "variable.parameter.ballerina",
                 "variable.parameter.ballerina",
                 "keyword.operator.optional.ballerina"
@@ -2497,6 +2511,9 @@
         },
         {
             "include": "booleans"
+        },
+        {
+            "include": "keywords"
         },
         {
             "include": "typeDescription"

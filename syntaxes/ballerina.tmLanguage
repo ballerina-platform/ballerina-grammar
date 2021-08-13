@@ -1585,6 +1585,10 @@
             <string>\bfunction\b</string>
           </dict>
           <dict>
+            <key>include</key>
+            <string>#type-primitive</string>
+          </dict>
+          <dict>
             <key>name</key>
             <string>meta.definition.function.ballerina entity.name.function.ballerina</string>
             <key>match</key>
@@ -1678,7 +1682,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|var)|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
+            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|var)|\b(is|new)\b|\b(true|false)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
             <key>captures</key>
             <dict>
               <key>2</key>
@@ -1694,14 +1698,24 @@
               <key>4</key>
               <dict>
                 <key>name</key>
-                <string>variable.parameter.ballerina</string>
+                <string>keyword.other.ballerina</string>
               </dict>
               <key>5</key>
               <dict>
                 <key>name</key>
-                <string>variable.parameter.ballerina</string>
+                <string>constant.language.boolean.ballerina</string>
               </dict>
               <key>6</key>
+              <dict>
+                <key>name</key>
+                <string>variable.parameter.ballerina</string>
+              </dict>
+              <key>7</key>
+              <dict>
+                <key>name</key>
+                <string>variable.parameter.ballerina</string>
+              </dict>
+              <key>8</key>
               <dict>
                 <key>name</key>
                 <string>keyword.operator.optional.ballerina</string>
@@ -1739,6 +1753,10 @@
           <dict>
             <key>include</key>
             <string>#string</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#numbers</string>
           </dict>
           <dict>
             <key>match</key>
@@ -3231,6 +3249,10 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#keywords</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#typeDescription</string>
               </dict>
             </array>
@@ -3318,6 +3340,10 @@
               <dict>
                 <key>include</key>
                 <string>#stringTemplate</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#numbers</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -3441,6 +3467,10 @@
               <dict>
                 <key>include</key>
                 <string>#string</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#numbers</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -3742,7 +3772,7 @@
                 <key>match</key>
                 <string>[_$[:alpha:]][_$[:alnum:]]*</string>
                 <key>name</key>
-                <string>variable.parameter.ballerina</string>
+                <string>default.variable.parameter.ballerina</string>
               </dict>
             </array>
           </dict>
