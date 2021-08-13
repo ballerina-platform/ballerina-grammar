@@ -1636,6 +1636,10 @@
           </dict>
           <dict>
             <key>include</key>
+            <string>#numbers</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#string</string>
           </dict>
           <dict>
@@ -1678,13 +1682,12 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>storage.type.ballerina</string>
+                <string>support.type.primitive.ballerina</string>
               </dict>
             </dict>
           </dict>
           <dict>
             <key>match</key>
-            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\b(is|new)\b|\b(true|false)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
             <key>captures</key>
             <dict>
               <key>2</key>
@@ -1710,7 +1713,7 @@
               <key>6</key>
               <dict>
                 <key>name</key>
-                <string>variable.parameter.ballerina</string>
+                <string>keyword.control.flow.ballerina</string>
               </dict>
               <key>7</key>
               <dict>
@@ -1718,6 +1721,11 @@
                 <string>variable.parameter.ballerina</string>
               </dict>
               <key>8</key>
+              <dict>
+                <key>name</key>
+                <string>variable.parameter.ballerina</string>
+              </dict>
+              <key>9</key>
               <dict>
                 <key>name</key>
                 <string>keyword.operator.optional.ballerina</string>
@@ -1772,7 +1780,7 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>storage.type.ballerina</string>
+                <string>support.type.primitive.ballerina</string>
               </dict>
             </dict>
           </dict>
@@ -3251,6 +3259,14 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#string</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#keywords</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#typeDescription</string>
               </dict>
             </array>
@@ -3308,7 +3324,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>storage.modifier.ballerina storage.type.ballerina</string>
+                <string>storage.modifier.ballerina support.type.primitive.ballerina</string>
               </dict>
             </dict>
             <key>end</key>
@@ -3323,7 +3339,7 @@
                   <key>0</key>
                   <dict>
                     <key>name</key>
-                    <string>storage.type.ballerina</string>
+                    <string>support.type.primitive.ballerina</string>
                   </dict>
                 </dict>
                 <key>end</key>
@@ -3598,7 +3614,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>storage.type.ballerina</string>
+                <string>support.type.primitive.ballerina</string>
               </dict>
             </dict>
             <key>end</key>

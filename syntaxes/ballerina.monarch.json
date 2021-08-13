@@ -374,6 +374,9 @@
             "include": "comment"
         },
         {
+            "include": "numbers"
+        },
+        {
             "include": "string"
         },
         {
@@ -394,6 +397,12 @@
         [
             "\\,",
             "punctuation.separator.parameter.ballerina"
+        ]
+    ],
+    "numbers": [
+        [
+            "\\b0[xX][\\da-f]+\\b|\\b\\d+(?:\\.(?:\\d+|$))?",
+            "number"
         ]
     ],
     "annotationAttachment": [
@@ -565,12 +574,6 @@
         {
             "include": "array-literal"
         }
-    ],
-    "numbers": [
-        [
-            "\\b0[xX][\\da-f]+\\b|\\b\\d+(?:\\.(?:\\d+|$))?",
-            "number"
-        ]
     ],
     "strings": [
         [
@@ -785,7 +788,7 @@
         [
             "\\s*\\b(var)(?=\\s+|\\[|\\?)",
             [
-                "storage.type.ballerina"
+                "support.type.primitive.ballerina"
             ]
         ],
         [
@@ -1062,7 +1065,7 @@
             "(?=\\b(var))",
             {
                 "next": "var-expr__b__0",
-                "token": "storage.modifier.ballerina storage.type.ballerina"
+                "token": "storage.modifier.ballerina support.type.primitive.ballerina"
             }
         ],
         {
@@ -1094,7 +1097,7 @@
             "\\b(var)(?=\\s+|\\[|\\?|\\||\\:)",
             {
                 "next": "var-expr__b__0__b__0",
-                "token": "storage.type.ballerina"
+                "token": "support.type.primitive.ballerina"
             }
         ],
         [
@@ -1342,7 +1345,7 @@
             "\\b(var)\\s*",
             {
                 "next": "var-single-const__b__0",
-                "token": "storage.type.ballerina"
+                "token": "support.type.primitive.ballerina"
             }
         ],
         {
@@ -2312,16 +2315,18 @@
         [
             "\\s*\\b(var)\\s+",
             [
-                "storage.type.ballerina"
+                "support.type.primitive.ballerina"
             ]
         ],
         [
             "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\\b(is|new)\\b|\\b(true|false)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
+
             [
                 "keyword.operator.rest.ballerina",
                 "support.type.primitive.ballerina",
                 "keyword.other.ballerina",
                 "constant.language.boolean.ballerina",
+                "keyword.control.flow.ballerina",
                 "variable.parameter.ballerina",
                 "variable.parameter.ballerina",
                 "keyword.operator.optional.ballerina"
@@ -2638,6 +2643,12 @@
         ],
         {
             "include": "record"
+        },
+        {
+            "include": "string"
+        },
+        {
+            "include": "keywords"
         },
         {
             "include": "typeDescription"
