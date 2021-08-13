@@ -152,8 +152,9 @@ repository:
     # vars
     - name: variable.other.readwrite.ballerina
       match: '{{identifier}}'
-    - match: '\:'
-      name: keyword.operator.type.annotation.ballerina  
+    - include: '#type-annotation'
+    # - match: '\:'
+    #   name: keyword.operator.type.annotation22.ballerina  
 
   object-member:
     patterns:
@@ -1411,10 +1412,13 @@ repository:
       begin: (\:)
       beginCaptures:
         '1': { name: keyword.operator.type.annotation.ballerina }
-      end: (?<![:|&])((?=[,);\}\]]|//)|(?==[^>])|(?=^\s*$)|((?<=\S)(?=\s*$))|((?<=[\}>\]\)]|[_$[:alpha:]])\s*(?=\{)))
+      end: (?<![:|&])((?=[,);\}\]\>]|//)|(?==[^>])|(?=^\s*$)|((?<=\S)(?=\s*$))|((?<=[\}>\]\)]|[_$[:alpha:]])\s*(?=\{)))
       patterns:
+      - name: variable.other.readwrite.ballerina
+        match: '{{identifier}}'
       - include: '#type'
       - include: '#functionParameters'
+      - include: '#function-parameters-body'
 
   type-tuple:
     name: meta.type.tuple.ballerina

@@ -77,6 +77,10 @@
           </dict>
           <dict>
             <key>include</key>
+            <string>#var-single-variable</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#punctuation-semicolon</string>
           </dict>
           <dict>
@@ -359,10 +363,8 @@
             <string>[_$[:alpha:]][_$[:alnum:]]*</string>
           </dict>
           <dict>
-            <key>match</key>
-            <string>\:</string>
-            <key>name</key>
-            <string>keyword.operator.type.annotation.ballerina</string>
+            <key>include</key>
+            <string>#type-annotation</string>
           </dict>
         </array>
       </dict>
@@ -4321,9 +4323,15 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(?&lt;![:|&amp;])((?=[,);\}\]]|//)|(?==[^&gt;])|(?=^\s*$)|((?&lt;=\S)(?=\s*$))|((?&lt;=[\}&gt;\]\)]|[_$[:alpha:]])\s*(?=\{)))</string>
+            <string>(?&lt;![:|&amp;])((?=[,);\}\]\&gt;]|//)|(?==[^&gt;])|(?=^\s*$)|((?&lt;=\S)(?=\s*$))|((?&lt;=[\}&gt;\]\)]|[_$[:alpha:]])\s*(?=\{)))</string>
             <key>patterns</key>
             <array>
+              <dict>
+                <key>name</key>
+                <string>variable.other.readwrite.ballerina</string>
+                <key>match</key>
+                <string>[_$[:alpha:]][_$[:alnum:]]*</string>
+              </dict>
               <dict>
                 <key>include</key>
                 <string>#type</string>
@@ -4331,6 +4339,10 @@
               <dict>
                 <key>include</key>
                 <string>#functionParameters</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#function-parameters-body</string>
               </dict>
             </array>
           </dict>

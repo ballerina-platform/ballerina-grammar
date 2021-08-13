@@ -21,6 +21,9 @@
             "include": "expression"
         },
         {
+            "include": "var-single-variable"
+        },
+        {
             "include": "punctuation-semicolon"
         },
         {
@@ -834,17 +837,24 @@
     ],
     "type-annotation__b__0": [
         [
-            "(?<![:|&])((?=[,);\\}\\]]|//)|(?==[^>])|(?=^\\s*$)|((?<=\\S)(?=\\s*$))|((?<=[\\}>\\]\\)]|[_$[:alpha:]])\\s*(?=\\{)))",
+            "(?<![:|&])((?=[,);\\}\\]\\>]|//)|(?==[^>])|(?=^\\s*$)|((?<=\\S)(?=\\s*$))|((?<=[\\}>\\]\\)]|[_$[:alpha:]])\\s*(?=\\{)))",
             {
                 "next": "@pop",
                 "token": ""
             }
+        ],
+        [
+            "[_$[:alpha:]][_$[:alnum:]]*",
+            "variable.other.readwrite.ballerina"
         ],
         {
             "include": "type"
         },
         {
             "include": "functionParameters"
+        },
+        {
+            "include": "function-parameters-body"
         }
     ],
     "type": [
@@ -2426,10 +2436,9 @@
             "[_$[:alpha:]][_$[:alnum:]]*",
             "variable.other.readwrite.ballerina"
         ],
-        [
-            "\\:",
-            "keyword.operator.type.annotation.ballerina"
-        ]
+        {
+            "include": "type-annotation"
+        }
     ],
     "declaration": [
         {
