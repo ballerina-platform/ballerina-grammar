@@ -1737,6 +1737,10 @@
         <key>patterns</key>
         <array>
           <dict>
+            <key>include</key>
+            <string>#string</string>
+          </dict>
+          <dict>
             <key>match</key>
             <string>\s*\b(string|int|boolean|float|byte|decimal|var)\s+</string>
             <key>captures</key>
@@ -3435,6 +3439,10 @@
             </dict>
             <key>patterns</key>
             <array>
+              <dict>
+                <key>include</key>
+                <string>#string</string>
+              </dict>
               <dict>
                 <key>include</key>
                 <string>#keywords</string>

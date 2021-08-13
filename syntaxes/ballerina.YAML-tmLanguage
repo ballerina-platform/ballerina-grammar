@@ -593,6 +593,7 @@ repository:
     endCaptures:
       '1': { name: keyword.operator.ballerina }
     patterns:
+    - include: '#string' 
     - match: '\s*{{varExprStart}}\s+'
       captures:
         '1': { name: support.type.primitive.ballerina }
@@ -1125,6 +1126,7 @@ repository:
       endCaptures:
         '0': { name: punctuation.terminator.statement.ballerina }
       patterns:
+      - include: '#string' 
       - include: '#keywords'
     - name: meta.var-single-variable.expr.ballerina
       begin: ({{identifier}})\s+(\!)?
