@@ -1089,6 +1089,9 @@
         },
         {
             "include": "keywords"
+        },
+        {
+            "include": "type-tuple"
         }
     ],
     "var-expr__b__0__b__0": [

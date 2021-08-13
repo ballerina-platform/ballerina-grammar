@@ -1097,6 +1097,7 @@ repository:
       - include: '#punctuation-comma'
       - include: '#type-annotation'
       - include: '#keywords'
+      - include: '#type-tuple'
     - include: '#punctuation-comma'
     # const
     - name: meta.var.expr.ballerina
