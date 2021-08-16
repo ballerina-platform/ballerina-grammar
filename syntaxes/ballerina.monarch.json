@@ -229,7 +229,7 @@
             "\\??\\/?>",
             {
                 "next": "@pop",
-                "token": "tag"
+                "token": "punctuation.definition.tag.end.xml.ballerina"
             }
         ],
         {

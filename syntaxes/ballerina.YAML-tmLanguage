@@ -1359,7 +1359,7 @@ repository:
         '2': { name: '{{xmlTag}}' }
       end: '\??\/?>'
       endCaptures:
-        '0': { name: '{{xmlTagAngle}}' }
+        '0': { name: 'punctuation.definition.tag.end.xml.ballerina' }
       patterns:
       - include: '#xmlSingleQuotedString'
       - include: '#xmlDoubleQuotedString'

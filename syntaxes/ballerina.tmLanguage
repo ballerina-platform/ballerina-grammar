@@ -4171,7 +4171,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.tag.begin.xml.ballerina</string>
+                <string>punctuation.definition.tag.end.xml.ballerina</string>
               </dict>
             </dict>
             <key>patterns</key>
