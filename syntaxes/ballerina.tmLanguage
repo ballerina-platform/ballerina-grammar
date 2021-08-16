@@ -357,6 +357,10 @@
             </dict>
           </dict>
           <dict>
+            <key>include</key>
+            <string>#type-primitive</string>
+          </dict>
+          <dict>
             <key>name</key>
             <string>variable.other.readwrite.ballerina</string>
             <key>match</key>
@@ -1778,6 +1782,10 @@
             <string>#keywords</string>
           </dict>
           <dict>
+            <key>include</key>
+            <string>#type-primitive</string>
+          </dict>
+          <dict>
             <key>match</key>
             <string>\s*\b(var)(?=\s+|\[|\?)</string>
             <key>captures</key>
@@ -1791,7 +1799,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\?)?</string>
+            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\?)?</string>
             <key>captures</key>
             <dict>
               <key>2</key>
@@ -1802,9 +1810,14 @@
               <key>3</key>
               <dict>
                 <key>name</key>
-                <string>variable.other.readwrite.ballerina</string>
+                <string>support.type.primitive.ballerina</string>
               </dict>
               <key>4</key>
+              <dict>
+                <key>name</key>
+                <string>variable.other.readwrite.ballerina</string>
+              </dict>
+              <key>5</key>
               <dict>
                 <key>name</key>
                 <string>keyword.operator.optional.ballerina</string>
@@ -3272,6 +3285,10 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#type-primitive</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#typeDescription</string>
               </dict>
             </array>
@@ -3367,6 +3384,10 @@
               <dict>
                 <key>include</key>
                 <string>#multiType</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#self-literal</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -3566,6 +3587,10 @@
             </dict>
             <key>patterns</key>
             <array>
+              <dict>
+                <key>include</key>
+                <string>#self-literal</string>
+              </dict>
               <dict>
                 <key>include</key>
                 <string>#if-statement</string>
