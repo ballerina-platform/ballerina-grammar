@@ -1439,10 +1439,12 @@ repository:
       begin: (\:)
       beginCaptures:
         '1': { name: keyword.operator.type.annotation.ballerina }
-      end: (?<![:|&])((?=[,);\}\]\>]|//)|(?==[^>])|(?=^\s*$)|((?<=\S)(?=\s*$))|((?<=[\}>\]\)]|[_$[:alpha:]])\s*(?=\{)))
+      end: (?<![:|&])((?=$|^|[,);\}\]\?]|//)|(?==[^>])|((?<=[\}>\]\)]|[_$[:alpha:]])\s*(?=\{)))(\?)?
       patterns:
       - name: variable.other.readwrite.ballerina
         match: '{{identifier}}'
+      - name: keyword.operator.optional.ballerina
+        match: '\?'
       - include: '#type'
       - include: '#functionParameters'
       - include: '#function-parameters-body'

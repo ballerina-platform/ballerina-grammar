@@ -4419,7 +4419,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(?&lt;![:|&amp;])((?=[,);\}\]\&gt;]|//)|(?==[^&gt;])|(?=^\s*$)|((?&lt;=\S)(?=\s*$))|((?&lt;=[\}&gt;\]\)]|[_$[:alpha:]])\s*(?=\{)))</string>
+            <string>(?&lt;![:|&amp;])((?=$|^|[,);\}\]\?]|//)|(?==[^&gt;])|((?&lt;=[\}&gt;\]\)]|[_$[:alpha:]])\s*(?=\{)))(\?)?</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -4427,6 +4427,12 @@
                 <string>variable.other.readwrite.ballerina</string>
                 <key>match</key>
                 <string>[_$[:alpha:]][_$[:alnum:]]*</string>
+              </dict>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.optional.ballerina</string>
+                <key>match</key>
+                <string>\?</string>
               </dict>
               <dict>
                 <key>include</key>
