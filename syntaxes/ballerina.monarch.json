@@ -101,7 +101,7 @@
     ],
     "keywords": [
         [
-            "\\b(fork|join|while|foreach|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\\b",
+            "\\b[^'](fork|join|while|foreach|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\\b",
             "keyword.control.ballerina"
         ],
         [
@@ -130,6 +130,12 @@
         ],
         {
             "include": "types"
+        },
+        {
+            "include": "self-literal"
+        },
+        {
+            "include": "type-primitive"
         }
     ],
     "types": [
@@ -148,6 +154,18 @@
         [
             "\\b(stream)\\b",
             "type"
+        ]
+    ],
+    "self-literal": [
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))self\\b(?!\\$)",
+            "variable.language.this.ballerina"
+        ]
+    ],
+    "type-primitive": [
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|int|boolean|float|byte|decimal|json|xml)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
+            "support.type.primitive.ballerina"
         ]
     ],
     "expressionWithoutIdentifiers": [
@@ -529,12 +547,6 @@
             "include": "code"
         }
     ],
-    "self-literal": [
-        [
-            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))self\\b(?!\\$)",
-            "variable.language.this.ballerina"
-        ]
-    ],
     "array-literal": [
         {
             "include": "expression"
@@ -702,10 +714,11 @@
             ]
         ],
         [
-            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\?)?",
+            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\\b(is|new|isolated)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\?)?",
             [
                 "keyword.operator.rest.ballerina",
                 "support.type.primitive.ballerina",
+                "keyword.other.ballerina",
                 "variable.other.readwrite.ballerina",
                 "keyword.operator.optional.ballerina"
             ]
@@ -770,12 +783,6 @@
             "constant.character.escape.ballerina"
         ]
     ],
-    "type-primitive": [
-        [
-            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|int|boolean|float|byte|decimal|json|xml)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
-            "support.type.primitive.ballerina"
-        ]
-    ],
     "multiType": [
         [
             "(?<=\\|)([_$[:alpha:]][_$[:alnum:]]*)|([_$[:alpha:]][_$[:alnum:]]*)(?=\\|)",
@@ -805,6 +812,9 @@
                 "token": ""
             }
         ],
+        {
+            "include": "self-literal"
+        },
         [
             "[_$[:alpha:]][_$[:alnum:]]*",
             "variable.other.readwrite.ballerina"
@@ -847,6 +857,9 @@
         ]
     ],
     "type-tuple": [
+        {
+            "include": "self-literal"
+        },
         [
             "\\.\\.\\.",
             "keyword.operator.rest.ballerina"
@@ -941,7 +954,7 @@
             ]
         ],
         [
-            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\\b(is|new)\\b|\\b(true|false)\\b|\\b(check)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
+            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\\b(is|new|isolated)\\b|\\b(true|false)\\b|\\b(check)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
             [
                 "keyword.operator.rest.ballerina",
                 "support.type.primitive.ballerina",
@@ -1017,6 +1030,12 @@
         ],
         {
             "include": "type-primitive"
+        },
+        {
+            "include": "self-literal"
+        },
+        {
+            "include": "string"
         },
         [
             "[_$[:alpha:]][_$[:alnum:]]*",
@@ -1164,6 +1183,9 @@
         ],
         {
             "include": "type-primitive"
+        },
+        {
+            "include": "self-literal"
         },
         [
             "[_$[:alpha:]][_$[:alnum:]]*",
@@ -2694,6 +2716,9 @@
                 "token": ""
             }
         ],
+        {
+            "include": "numbers"
+        },
         {
             "include": "decl-block"
         },
