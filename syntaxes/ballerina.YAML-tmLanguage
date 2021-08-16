@@ -1091,6 +1091,7 @@ repository:
       - include: '#type-primitive'
       - include: '#type-annotation'
       - include: '#typeDescription'
+      - include: '#decl-block'
 
   typeDescription:
     patterns:

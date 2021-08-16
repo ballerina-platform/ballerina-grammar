@@ -2718,6 +2718,9 @@
         },
         {
             "include": "typeDescription"
+        },
+        {
+            "include": "decl-block"
         }
     ],
     "typeDescription": [

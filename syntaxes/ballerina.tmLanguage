@@ -3342,6 +3342,10 @@
                 <key>include</key>
                 <string>#typeDescription</string>
               </dict>
+              <dict>
+                <key>include</key>
+                <string>#decl-block</string>
+              </dict>
             </array>
           </dict>
         </array>
