@@ -23,7 +23,7 @@ variables:
   lookAheadEndOfType: '[;),}\]:?\-\+\>]|\|\||\&\&|\!\=\=|$'
   varExprStart: '\b(var)'
   primitiveTypes: '(string|int|boolean|float|byte|decimal|json|xml)'
-  otherKeywords: '\b(is|new)\b'
+  otherKeywords: '\b(is|new|isolated)\b'
   controlKeywords: '\b(check)\b'
   booleanTypes: '\b(true|false)\b'
   constExprStart: '\b(const(?!\s+enum\b))'
@@ -152,7 +152,8 @@ repository:
         '2': { name: punctuation.accessor.optional.ballerina }
         '3': { name: variable.other.property.ballerina }
     # vars
-    - include: '#type-primitive' 
+    - include: '#type-primitive'
+    - include: '#self-literal' 
     - name: variable.other.readwrite.ballerina
       match: '{{identifier}}'
     - include: '#type-annotation'
@@ -377,7 +378,7 @@ repository:
     end: (?=\} external;|\})
     endCaptures:
       '0': { name: punctuation.definition.block.ballerina }
-    patterns:
+    patterns: 
     - include: '#statements'
     - include: '#mdDocumentation'
 
@@ -550,6 +551,8 @@ repository:
     - name: keyword.other.ballerina
       match: '\bfunction\b'
     - include: '#type-primitive' 
+    - include: '#self-literal' 
+    - include: '#string' 
     - name: meta.definition.function.ballerina entity.name.function.ballerina
       match: '{{identifier}}'
 
@@ -611,18 +614,19 @@ repository:
       captures:
         '1': { name: support.type.primitive.ballerina }
     - match: |-
-        (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|{{primitiveTypes}}|({{identifier}})){{endOfIdentifier}}\s*(\?)?
+        (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|{{primitiveTypes}}|{{otherKeywords}}|({{identifier}})){{endOfIdentifier}}\s*(\?)?
       captures:
         '2': { name: keyword.operator.rest.ballerina }
         '3': { name: support.type.primitive.ballerina }
-        '4': { name: variable.other.readwrite.ballerina }
-        '5': { name: keyword.operator.optional.ballerina }  
+        '4': { name: keyword.other.ballerina }
+        '5': { name: variable.other.readwrite.ballerina }
+        '6': { name: keyword.operator.optional.ballerina }  
     # - include: '#variable-initializer'  
     - match: '\|'
       name: keyword.operator.ballerina
     - match: '\?'
       name: keyword.operator.optional.ballerina
-    - include: '#multiType'
+    - include: '#multiType' 
     - include: '#type-annotation'
     - include: '#type-tuple'
     - include: '#keywords'   
@@ -825,6 +829,7 @@ repository:
       name: '{{numberScope}}'
 
   class-body:
+    name: meta.class.body.ballerina
     begin: \{
     beginCaptures:
       '0': { name: punctuation.definition.block.ballerina }
@@ -1074,7 +1079,7 @@ repository:
         '0': { name: punctuation.terminator.statement.ballerina }
       patterns:
       - include: '#record'
-      - include: '#string'
+      - include: '#string' 
       - include: '#keywords' 
       - include: '#type-primitive' 
       - include: '#typeDescription'
@@ -1086,6 +1091,7 @@ repository:
         '0': { name: entity.name.function.ballerina }
       end: '(?=;)'
       patterns:
+      - include: '#numbers'
       - include: '#decl-block'
       - include: '#type-primitive' 
       - match: '{{identifier}}'
@@ -1447,6 +1453,7 @@ repository:
         '1': { name: keyword.operator.type.annotation.ballerina }
       end: (?<![:|&])((?=$|^|[,);\}\]\?]|//)|(?==[^>])|((?<=[\}>\]\)]|[_$[:alpha:]])\s*(?=\{)))(\?)?
       patterns:
+      - include: '#self-literal'
       - name: variable.other.readwrite.ballerina
         match: '{{identifier}}'
       - name: keyword.operator.optional.ballerina
@@ -1463,6 +1470,7 @@ repository:
     endCaptures:
       '0': { name: meta.brace.square.ballerina }
     patterns:
+    - include: '#self-literal' 
     - name: keyword.operator.rest.ballerina
       match: \.\.\.
     - match: '{{startOfIdentifier}}({{identifier}})\s*(\?)?\s*(:)'
@@ -1476,7 +1484,7 @@ repository:
   keywords:
     patterns:
     - name: keyword.control.ballerina
-      match: \b(fork|join|while|foreach|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\b
+      match: \b[^'](fork|join|while|foreach|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\b
 
     - name: keyword.control.flow.ballerina
       match: \b(return|break|continue|check|checkpanic|panic|trap|from|where)\b
@@ -1497,6 +1505,8 @@ repository:
       match: (!|%|\+|\-|~=|===|==|=|!=|!==|<|>|&|\||\?:|\.\.\.|<=|=>|>=|&&|\|\||~|>>|>>>)
 
     - include: '#types'
+    - include: '#self-literal' 
+    - include: '#type-primitive' 
 
   literal:
     patterns:
