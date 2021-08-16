@@ -1446,8 +1446,8 @@ repository:
       - name: keyword.operator.optional.ballerina
         match: '\?'
       - include: '#type'
-      - include: '#functionParameters'
-      - include: '#function-parameters-body'
+      - include: '#paranthesised'
+      # - include: '#function-parameters-body'
 
   type-tuple:
     name: meta.type.tuple.ballerina

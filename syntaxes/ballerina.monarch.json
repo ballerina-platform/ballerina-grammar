@@ -807,10 +807,7 @@
             "include": "type"
         },
         {
-            "include": "functionParameters"
-        },
-        {
-            "include": "function-parameters-body"
+            "include": "paranthesised"
         }
     ],
     "type": [
@@ -862,17 +859,12 @@
             "include": "punctuation-comma"
         }
     ],
-    "functionParameters": [
+    "paranthesised": [
         {
-            "include": "function-parameters-body"
-        }
-    ],
-    "function-parameters-body": [
-        {
-            "include": "comment"
+            "include": "decl-block"
         },
         {
-            "include": "numbers"
+            "include": "comment"
         },
         {
             "include": "string"
@@ -884,17 +876,90 @@
             "include": "recordLiteral"
         },
         {
+            "include": "stringTemplate"
+        },
+        {
             "include": "parameter-name"
         },
         {
             "include": "variable-initializer"
         },
-        {
-            "include": "identifiers"
-        },
         [
             "\\,",
             "punctuation.separator.parameter.ballerina"
+        ],
+        {
+            "include": "expression"
+        }
+    ],
+    "decl-block": [
+        {
+            "include": "statements"
+        },
+        {
+            "include": "mdDocumentation"
+        }
+    ],
+    "mdDocumentation": [
+        {
+            "include": "mdDocumentationReturnParamDescription"
+        },
+        {
+            "include": "mdDocumentationParamDescription"
+        }
+    ],
+    "mdDocumentationReturnParamDescription": [
+        [
+            "(#)(?: *?)(\\+)(?: *)(return)(?: *)(-)?(.*)",
+            [
+                {
+                    "next": "mdDocumentationReturnParamDescription__b__0",
+                    "token": "comment.mddocs.ballerina"
+                },
+                "keyword.ballerina",
+                "keyword.ballerina",
+                "keyword.ballerina",
+                "comment.mddocs.returnparamdesc.ballerina"
+            ]
+        ]
+    ],
+    "mdDocumentationReturnParamDescription__b__0": [
+        [
+            "(?=[^#\\r\\n]|(?:# *?\\+))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        [
+            "#.*",
+            "comment.mddocs.returnparamdesc.ballerina"
+        ]
+    ],
+    "mdDocumentationParamDescription": [
+        [
+            "(\\+\\s+)([_$[:alpha:]][_$[:alnum:]]*)(\\s*\\-\\s+)",
+            [
+                {
+                    "next": "mdDocumentationParamDescription__b__0",
+                    "token": "keyword.operator.ballerina"
+                },
+                "variable.other.readwrite.ballerina",
+                "keyword.operator.ballerina"
+            ]
+        ]
+    ],
+    "mdDocumentationParamDescription__b__0": [
+        [
+            "(?=[^#\\r\\n]|(?:# *?\\+))",
+            {
+                "next": "@pop",
+                "token": ""
+            }
+        ],
+        [
+            "#.*",
+            "comment.mddocs.paramdesc.ballerina"
         ]
     ],
     "annotationAttachment": [
@@ -1019,6 +1084,66 @@
             "meta.definition.function.ballerina entity.name.function.ballerina"
         ]
     ],
+    "functionParameters": [
+        {
+            "include": "function-parameters-body"
+        }
+    ],
+    "function-parameters-body": [
+        {
+            "include": "comment"
+        },
+        {
+            "include": "numbers"
+        },
+        {
+            "include": "string"
+        },
+        {
+            "include": "annotationAttachment"
+        },
+        {
+            "include": "recordLiteral"
+        },
+        {
+            "include": "parameter-name"
+        },
+        {
+            "include": "variable-initializer"
+        },
+        {
+            "include": "identifiers"
+        },
+        [
+            "\\,",
+            "punctuation.separator.parameter.ballerina"
+        ]
+    ],
+    "identifiers": [
+        [
+            "(?x)(?:(?:(\\.)|(\\?\\.(?!\\s*[[:digit:]])))\\s*)?([_$[:alpha:]][_$[:alnum:]]*)(?=\\s*={{functionOrArrowLookup}})",
+            [
+                "punctuation.accessor.ballerina",
+                "punctuation.accessor.optional.ballerina",
+                "entity.name.function.ballerina"
+            ]
+        ],
+        [
+            "(?:(\\.)|(\\?\\.(?!\\s*[[:digit:]])))\\s*(\\#?[_$[:alpha:]][_$[:alnum:]]*)",
+            [
+                "punctuation.accessor.ballerina",
+                "punctuation.accessor.optional.ballerina",
+                "variable.other.property.ballerina"
+            ]
+        ],
+        [
+            "[_$[:alpha:]][_$[:alnum:]]*",
+            "variable.other.readwrite.ballerina"
+        ],
+        {
+            "include": "type-annotation"
+        }
+    ],
     "punctuation-semicolon": [
         [
             ";",
@@ -1047,76 +1172,6 @@
             "keyword.generator.asterisk.ballerina"
         ]
     ],
-    "decl-block": [
-        {
-            "include": "statements"
-        },
-        {
-            "include": "mdDocumentation"
-        }
-    ],
-    "mdDocumentation": [
-        {
-            "include": "mdDocumentationReturnParamDescription"
-        },
-        {
-            "include": "mdDocumentationParamDescription"
-        }
-    ],
-    "mdDocumentationReturnParamDescription": [
-        [
-            "(#)(?: *?)(\\+)(?: *)(return)(?: *)(-)?(.*)",
-            [
-                {
-                    "next": "mdDocumentationReturnParamDescription__b__0",
-                    "token": "comment.mddocs.ballerina"
-                },
-                "keyword.ballerina",
-                "keyword.ballerina",
-                "keyword.ballerina",
-                "comment.mddocs.returnparamdesc.ballerina"
-            ]
-        ]
-    ],
-    "mdDocumentationReturnParamDescription__b__0": [
-        [
-            "(?=[^#\\r\\n]|(?:# *?\\+))",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        [
-            "#.*",
-            "comment.mddocs.returnparamdesc.ballerina"
-        ]
-    ],
-    "mdDocumentationParamDescription": [
-        [
-            "(\\+\\s+)([_$[:alpha:]][_$[:alnum:]]*)(\\s*\\-\\s+)",
-            [
-                {
-                    "next": "mdDocumentationParamDescription__b__0",
-                    "token": "keyword.operator.ballerina"
-                },
-                "variable.other.readwrite.ballerina",
-                "keyword.operator.ballerina"
-            ]
-        ]
-    ],
-    "mdDocumentationParamDescription__b__0": [
-        [
-            "(?=[^#\\r\\n]|(?:# *?\\+))",
-            {
-                "next": "@pop",
-                "token": ""
-            }
-        ],
-        [
-            "#.*",
-            "comment.mddocs.paramdesc.ballerina"
-        ]
-    ],
     "function-body__b__0": [
         [
             "\\;",
@@ -1139,31 +1194,6 @@
         ],
         {
             "include": "expression"
-        }
-    ],
-    "identifiers": [
-        [
-            "(?x)(?:(?:(\\.)|(\\?\\.(?!\\s*[[:digit:]])))\\s*)?([_$[:alpha:]][_$[:alnum:]]*)(?=\\s*={{functionOrArrowLookup}})",
-            [
-                "punctuation.accessor.ballerina",
-                "punctuation.accessor.optional.ballerina",
-                "entity.name.function.ballerina"
-            ]
-        ],
-        [
-            "(?:(\\.)|(\\?\\.(?!\\s*[[:digit:]])))\\s*(\\#?[_$[:alpha:]][_$[:alnum:]]*)",
-            [
-                "punctuation.accessor.ballerina",
-                "punctuation.accessor.optional.ballerina",
-                "variable.other.property.ballerina"
-            ]
-        ],
-        [
-            "[_$[:alpha:]][_$[:alnum:]]*",
-            "variable.other.readwrite.ballerina"
-        ],
-        {
-            "include": "type-annotation"
         }
     ],
     "workerBody": [
@@ -2261,39 +2291,6 @@
         ],
         {
             "include": "code"
-        }
-    ],
-    "paranthesised": [
-        {
-            "include": "decl-block"
-        },
-        {
-            "include": "comment"
-        },
-        {
-            "include": "string"
-        },
-        {
-            "include": "annotationAttachment"
-        },
-        {
-            "include": "recordLiteral"
-        },
-        {
-            "include": "stringTemplate"
-        },
-        {
-            "include": "parameter-name"
-        },
-        {
-            "include": "variable-initializer"
-        },
-        [
-            "\\,",
-            "punctuation.separator.parameter.ballerina"
-        ],
-        {
-            "include": "expression"
         }
     ],
     "paranthesisedBracket": [

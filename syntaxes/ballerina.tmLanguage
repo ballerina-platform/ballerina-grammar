@@ -4440,11 +4440,7 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#functionParameters</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#function-parameters-body</string>
+                <string>#paranthesised</string>
               </dict>
             </array>
           </dict>
