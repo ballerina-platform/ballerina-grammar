@@ -361,6 +361,10 @@
             <string>#type-primitive</string>
           </dict>
           <dict>
+            <key>include</key>
+            <string>#self-literal</string>
+          </dict>
+          <dict>
             <key>name</key>
             <string>variable.other.readwrite.ballerina</string>
             <key>match</key>
@@ -1595,6 +1599,14 @@
             <string>#type-primitive</string>
           </dict>
           <dict>
+            <key>include</key>
+            <string>#self-literal</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string</string>
+          </dict>
+          <dict>
             <key>name</key>
             <string>meta.definition.function.ballerina entity.name.function.ballerina</string>
             <key>match</key>
@@ -1696,7 +1708,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\b(is|new)\b|\b(true|false)\b|\b(check)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
+            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\b(is|new|isolated)\b|\b(true|false)\b|\b(check)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
             <key>captures</key>
             <dict>
               <key>2</key>
@@ -1799,7 +1811,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\?)?</string>
+            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\b(is|new|isolated)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\?)?</string>
             <key>captures</key>
             <dict>
               <key>2</key>
@@ -1815,9 +1827,14 @@
               <key>4</key>
               <dict>
                 <key>name</key>
-                <string>variable.other.readwrite.ballerina</string>
+                <string>keyword.other.ballerina</string>
               </dict>
               <key>5</key>
+              <dict>
+                <key>name</key>
+                <string>variable.other.readwrite.ballerina</string>
+              </dict>
+              <key>6</key>
               <dict>
                 <key>name</key>
                 <string>keyword.operator.optional.ballerina</string>
@@ -2487,6 +2504,8 @@
       </dict>
       <key>class-body</key>
       <dict>
+        <key>name</key>
+        <string>meta.class.body.ballerina</string>
         <key>begin</key>
         <string>\{</string>
         <key>beginCaptures</key>
@@ -3314,6 +3333,10 @@
             <string>(?=;)</string>
             <key>patterns</key>
             <array>
+              <dict>
+                <key>include</key>
+                <string>#numbers</string>
+              </dict>
               <dict>
                 <key>include</key>
                 <string>#decl-block</string>
@@ -4448,6 +4471,10 @@
             <key>patterns</key>
             <array>
               <dict>
+                <key>include</key>
+                <string>#self-literal</string>
+              </dict>
+              <dict>
                 <key>name</key>
                 <string>variable.other.readwrite.ballerina</string>
                 <key>match</key>
@@ -4496,6 +4523,10 @@
         <key>patterns</key>
         <array>
           <dict>
+            <key>include</key>
+            <string>#self-literal</string>
+          </dict>
+          <dict>
             <key>name</key>
             <string>keyword.operator.rest.ballerina</string>
             <key>match</key>
@@ -4541,7 +4572,7 @@
             <key>name</key>
             <string>keyword.control.ballerina</string>
             <key>match</key>
-            <string>\b(fork|join|while|foreach|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\b</string>
+            <string>\b[^'](fork|join|while|foreach|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\b</string>
           </dict>
           <dict>
             <key>name</key>
@@ -4582,6 +4613,14 @@
           <dict>
             <key>include</key>
             <string>#types</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#self-literal</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#type-primitive</string>
           </dict>
         </array>
       </dict>
