@@ -153,7 +153,7 @@ repository:
         '3': { name: variable.other.property.ballerina }
     # vars
     - include: '#type-primitive'
-    - include: '#self-literal' 
+    - include: '#self-literal'
     - name: variable.other.readwrite.ballerina
       match: '{{identifier}}'
     - include: '#type-annotation'
@@ -540,6 +540,7 @@ repository:
     patterns:
     - match: \bexternal\b
       name: keyword.ballerina
+    - include: '#stringTemplate'
     - include: '#functionName'
     - include: '#functionParameters'
     - include: '#functionReturns'
@@ -574,6 +575,7 @@ repository:
     - include: '#string'
     - include: '#annotationAttachment'
     - include: '#recordLiteral'
+    - include: '#keywords' 
     - include: '#parameter-name'
     - include: '#variable-initializer'
     - include: '#identifiers'
@@ -606,9 +608,10 @@ repository:
     endCaptures:
       '1': { name: keyword.operator.ballerina }
     patterns:
+    - include: '#comment' 
     - include: '#string'
     - include: '#numbers'
-    - include: '#keywords' 
+    - include: '#keywords'
     - include: '#type-primitive' 
     - match: '\s*{{varExprStart}}(?=\s+|\[|\?)'
       captures:
@@ -1078,10 +1081,11 @@ repository:
       endCaptures:
         '0': { name: punctuation.terminator.statement.ballerina }
       patterns:
+      - include: '#mdDocumentation' 
       - include: '#record'
       - include: '#string' 
-      - include: '#keywords' 
-      - include: '#type-primitive' 
+      - include: '#keywords'
+      - include: '#type-primitive'
       - include: '#typeDescription'
 
   typeDescription:
