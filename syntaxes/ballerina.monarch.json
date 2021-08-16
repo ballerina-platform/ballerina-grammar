@@ -692,6 +692,9 @@
         {
             "include": "keywords"
         },
+        {
+            "include": "type-primitive"
+        },
         [
             "\\s*\\b(var)(?=\\s+|\\[|\\?)",
             [
@@ -699,9 +702,10 @@
             ]
         ],
         [
-            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\?)?",
+            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\?)?",
             [
                 "keyword.operator.rest.ballerina",
+                "support.type.primitive.ballerina",
                 "variable.other.readwrite.ballerina",
                 "keyword.operator.optional.ballerina"
             ]
@@ -764,6 +768,12 @@
         [
             "\\\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}|u\\{[0-9A-Fa-f]+\\}|[0-2][0-7]{0,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.|$)",
             "constant.character.escape.ballerina"
+        ]
+    ],
+    "type-primitive": [
+        [
+            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|int|boolean|float|byte|decimal|json|xml)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
+            "support.type.primitive.ballerina"
         ]
     ],
     "multiType": [
@@ -834,12 +844,6 @@
         [
             "\\/\\/.*",
             "comment.ballerina"
-        ]
-    ],
-    "type-primitive": [
-        [
-            "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|int|boolean|float|byte|decimal|json|xml)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
-            "support.type.primitive.ballerina"
         ]
     ],
     "type-tuple": [
@@ -1158,6 +1162,9 @@
                 "variable.other.property.ballerina"
             ]
         ],
+        {
+            "include": "type-primitive"
+        },
         [
             "[_$[:alpha:]][_$[:alnum:]]*",
             "variable.other.readwrite.ballerina"
@@ -1318,6 +1325,9 @@
             "include": "multiType"
         },
         {
+            "include": "self-literal"
+        },
+        {
             "include": "var-single-variable"
         },
         {
@@ -1365,6 +1375,9 @@
                 "token": "punctuation.terminator.statement.ballerina"
             }
         ],
+        {
+            "include": "self-literal"
+        },
         {
             "include": "if-statement"
         },
@@ -2656,6 +2669,9 @@
         },
         {
             "include": "keywords"
+        },
+        {
+            "include": "type-primitive"
         },
         {
             "include": "typeDescription"
