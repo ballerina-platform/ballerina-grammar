@@ -696,6 +696,9 @@
     ],
     "functionReturns": [
         {
+            "include": "comment"
+        },
+        {
             "include": "string"
         },
         {
@@ -743,6 +746,12 @@
         {
             "include": "keywords"
         }
+    ],
+    "comment": [
+        [
+            "\\/\\/.*",
+            "comment.ballerina"
+        ]
     ],
     "string": [
         {
@@ -850,12 +859,6 @@
             "include": "type-tuple"
         }
     ],
-    "comment": [
-        [
-            "\\/\\/.*",
-            "comment.ballerina"
-        ]
-    ],
     "type-tuple": [
         {
             "include": "self-literal"
@@ -899,6 +902,9 @@
         },
         {
             "include": "recordLiteral"
+        },
+        {
+            "include": "keywords"
         },
         {
             "include": "parameter-name"
@@ -1007,6 +1013,9 @@
             "\\bexternal\\b",
             "keyword.ballerina"
         ],
+        {
+            "include": "stringTemplate"
+        },
         {
             "include": "functionName"
         },
@@ -2683,6 +2692,9 @@
                 "token": "punctuation.terminator.statement.ballerina"
             }
         ],
+        {
+            "include": "mdDocumentation"
+        },
         {
             "include": "record"
         },
