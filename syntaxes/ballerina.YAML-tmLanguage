@@ -1447,7 +1447,6 @@ repository:
         match: '\?'
       - include: '#type'
       - include: '#paranthesised'
-      # - include: '#function-parameters-body'
 
   type-tuple:
     name: meta.type.tuple.ballerina
