@@ -1087,14 +1087,14 @@ repository:
       - include: '#record'
       - include: '#string' 
       - include: '#keywords'
+      - include: '#multiType'
       - include: '#type-primitive'
+      - include: '#type-annotation'
       - include: '#typeDescription'
 
   typeDescription:
     patterns:
     - begin: '{{identifier}}'
-      beginCaptures:
-        '0': { name: entity.name.function.ballerina }
       end: '(?=;)'
       patterns:
       - include: '#numbers'

@@ -3328,7 +3328,15 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#multiType</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#type-primitive</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#type-annotation</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -3345,14 +3353,6 @@
           <dict>
             <key>begin</key>
             <string>[_$[:alpha:]][_$[:alnum:]]*</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>entity.name.function.ballerina</string>
-              </dict>
-            </dict>
             <key>end</key>
             <string>(?=;)</string>
             <key>patterns</key>

@@ -2708,7 +2708,13 @@
             "include": "keywords"
         },
         {
+            "include": "multiType"
+        },
+        {
             "include": "type-primitive"
+        },
+        {
+            "include": "type-annotation"
         },
         {
             "include": "typeDescription"
@@ -2719,7 +2725,7 @@
             "[_$[:alpha:]][_$[:alnum:]]*",
             {
                 "next": "typeDescription__b__0",
-                "token": "entity.name.function.ballerina"
+                "token": ""
             }
         ]
     ],
