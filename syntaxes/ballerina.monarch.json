@@ -896,10 +896,7 @@
             "include": "recordLiteral"
         },
         {
-            "include": "keywords"
-        },
-        {
-            "include": "parameter-name"
+            "include": "stringTemplate"
         },
         {
             "include": "parameter-name"
@@ -1138,6 +1135,9 @@
             "include": "recordLiteral"
         },
         {
+            "include": "keywords"
+        },
+        {
             "include": "parameter-name"
         },
         {
@@ -1168,6 +1168,12 @@
                 "variable.other.property.ballerina"
             ]
         ],
+        {
+            "include": "type-primitive"
+        },
+        {
+            "include": "self-literal"
+        },
         [
             "[_$[:alpha:]][_$[:alnum:]]*",
             "variable.other.readwrite.ballerina"
@@ -1226,37 +1232,6 @@
         ],
         {
             "include": "expression"
-        }
-    ],
-    "identifiers": [
-        [
-            "(?x)(?:(?:(\\.)|(\\?\\.(?!\\s*[[:digit:]])))\\s*)?([_$[:alpha:]][_$[:alnum:]]*)(?=\\s*={{functionOrArrowLookup}})",
-            [
-                "punctuation.accessor.ballerina",
-                "punctuation.accessor.optional.ballerina",
-                "entity.name.function.ballerina"
-            ]
-        ],
-        [
-            "(?:(\\.)|(\\?\\.(?!\\s*[[:digit:]])))\\s*(\\#?[_$[:alpha:]][_$[:alnum:]]*)",
-            [
-                "punctuation.accessor.ballerina",
-                "punctuation.accessor.optional.ballerina",
-                "variable.other.property.ballerina"
-            ]
-        ],
-        {
-            "include": "type-primitive"
-        },
-        {
-            "include": "self-literal"
-        },
-        [
-            "[_$[:alpha:]][_$[:alnum:]]*",
-            "variable.other.readwrite.ballerina"
-        ],
-        {
-            "include": "type-annotation"
         }
     ],
     "workerBody": [
@@ -2714,6 +2689,12 @@
                 "token": "punctuation.terminator.statement.ballerina"
             }
         ],
+        {
+            "include": "functionParameters"
+        },
+        {
+            "include": "functionReturns"
+        },
         {
             "include": "mdDocumentation"
         },

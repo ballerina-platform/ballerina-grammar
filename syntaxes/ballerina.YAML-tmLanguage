@@ -604,7 +604,7 @@ repository:
     begin: '\s*(returns)\s*'
     beginCaptures:
       '1': { name: keyword.other.ballerina }
-    end: (\=)|(?=\{)|(?==>)|(\))
+    end: (\=)|(?=\{)|(?==>)|(\))|(?=\;)
     endCaptures:
       '1': { name: keyword.operator.ballerina }
     patterns:
@@ -1081,6 +1081,8 @@ repository:
       endCaptures:
         '0': { name: punctuation.terminator.statement.ballerina }
       patterns:
+      - include: '#functionParameters' 
+      - include: '#functionReturns' 
       - include: '#mdDocumentation' 
       - include: '#record'
       - include: '#string' 

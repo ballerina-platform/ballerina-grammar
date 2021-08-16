@@ -1778,7 +1778,7 @@
           </dict>
         </dict>
         <key>end</key>
-        <string>(\=)|(?=\{)|(?==&gt;)|(\))</string>
+        <string>(\=)|(?=\{)|(?==&gt;)|(\))|(?=\;)</string>
         <key>endCaptures</key>
         <dict>
           <key>1</key>
@@ -3302,6 +3302,14 @@
             </dict>
             <key>patterns</key>
             <array>
+              <dict>
+                <key>include</key>
+                <string>#functionParameters</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#functionReturns</string>
+              </dict>
               <dict>
                 <key>include</key>
                 <string>#mdDocumentation</string>
