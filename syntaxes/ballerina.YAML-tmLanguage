@@ -1243,7 +1243,7 @@ repository:
         '1': { name: keyword.operator.assignment.ballerina }
       end: (?=$|[,);}\]])
       patterns:
-      # - include: '#var-expr'
+      - include: '#xml'
       - include: '#function-defn'
       - include: '#expression'
     - begin: (?<!=|!)(=)(?!=)

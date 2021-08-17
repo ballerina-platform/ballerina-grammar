@@ -1067,6 +1067,9 @@
             }
         ],
         {
+            "include": "xml"
+        },
+        {
             "include": "function-defn"
         },
         {
