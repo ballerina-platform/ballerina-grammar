@@ -12,16 +12,13 @@ uuid: c01f5512-489a-41bd-ba5d-caf4b55ae3b3
 #mdDocumentation
 
 variables:
-  identifier: "[_$[:alpha:]][_$[:alnum:]]*"
   letter: "[^ (){}\\[\\]\\-?*=><?;\"',.\\s\\\\]"
   nonLetter: "[ (){}\\[\\]\\-?*=><?;\"',.\\s]"
   startOfIdentifier: (?<![_$[:alnum:]])(?:(?<=\.\.\.)|(?<!\.))
   endOfIdentifier: (?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))
-  matchingParenthesis: (\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))
   nonIdentifierPropertyName: '{{quotedStrings}}|(\[([^\[\]]|\[[^\[\]]*\])+\])'
-  quotedStrings: (\'([^\'\\]|\\.)*\')|(\"([^\"\\]|\\.)*\")|(\`([^\`\\]|\\.)*\`)
-  constructsAndModifiers: '(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b'
   endOfStatement: ';|^\s*$|(?:^\s*{{constructsAndModifiers}})'
+  constructsAndModifiers: '(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b'
   lookAheadEndOfType: '[;),}\]:?\-\+\>]|\|\||\&\&|\!\=\=|$'
   varExprStart: '\b(var)'
   primitiveTypes: '(string|int|boolean|float|byte|decimal|json|xml)'
@@ -29,7 +26,6 @@ variables:
   controlKeywords: '\b(check)\b'
   booleanTypes: '\b(true|false)\b'
   constExprStart: '\b(const(?!\s+enum\b))'
-  nonPropertyLookBehind: '[^\._$[:alnum:]]'
   lookBehindString: '^string|{{nonPropertyLookBehind}}string'
   lookBehindInt: '^int|{{nonPropertyLookBehind}}int'
   propertyAccess: (?:(\.)|(\?\.(?!\s*[[:digit:]])))
@@ -39,7 +35,6 @@ variables:
   functionCallLookup: \s*(?:(\?\.\s*)|(\!))?(({{typeArguments}}\s*)?\()
   functionCallNamedTarget: (({{identifier}})(\s*{{propertyAccessPreIdentifier}}({{propertyIdentifier}}))*)|({{propertyAccessPreIdentifier}}{{propertyIdentifier}})
   functionCallTarget: (({{functionCallNamedTarget}})|(?<=[\)]))
-  inlineComment: \/\*([^\*]|(\*[^\/]))*\*\/
   functionOrArrowLookup: |-
     \s*(
       ((
@@ -52,6 +47,7 @@ variables:
         {{arrowLookup}}
       ))
     )
+  anyNumber: ({{hexNumber}})|({{binaryNumber}})|({{octalNumber}})|({{decimalNumber}})
   hexNumber: \b(?<!\$)0(?:x|X)[0-9a-fA-F][0-9a-fA-F_]*(n)?\b(?!\$)
   binaryNumber: \b(?<!\$)0(?:b|B)[01][01_]*(n)?\b(?!\$)
   octalNumber: \b(?<!\$)0(?:o|O)?[0-7][0-7_]*(n)?\b(?!\$)
@@ -66,7 +62,40 @@ variables:
       (?:\B(\.)[0-9][0-9_]*(n)?\b)|                                  # .1
       (?:\b[0-9][0-9_]*(n)?\b(?!\.))                                 # 1
     )(?!\$)
-  anyNumber: ({{hexNumber}})|({{binaryNumber}})|({{octalNumber}})|({{decimalNumber}})
+  arrowLookup: |-
+    # sure shot arrow functions even if => is on new line
+    (
+      {{typeParameters}}?
+      [(]\s*({{inlineComment}}\s*)*
+      (
+        ([)]\s*:) |                                                                                       # ():
+        ((\.\.\.\s*)?{{identifier}}\s*:)                                                                  # [(]param: | [(]...param:
+      )
+    ) |
+    {{typeparamertStartOfArrow}}
+    # arrow function possible to detect only with => on same line
+    (
+      {{typeParameters}}?                                                                                 # typeparameters
+      \(\s*({{inlineComment}}\s*)*(([_$[:alpha:]]|{{matchingBraces}}|{{matchingBrackets}}|(\.\.\.\s*[_$[:alpha:]]))([^()\'\"\`]|{{matchingParenthesis}}|{{quotedStrings}})*)?\)   # parameters
+      (\s*:{{possiblyType}})?                                                                        # return type
+      \s*=>                                                                                               # arrow operator
+    )
+  possiblyMultilineArrow: ((<\s*$)|({{typeParameters}}?{{possiblyMultilineArrowWithoutTypeParameters}}))
+  possiblyMultilineArrowWithoutTypeParameters: '[\(]\s*{{possiblyMultilineArrowWParamters}}'
+  possiblyMultilineArrowWParamters: '((([\{\[]\s*)?$)|({{possiblyMultilineObjectBindingPattern}})|({{possiblyMultilineArrayBindingPattern}}))'
+  possiblyMultilineArrayBindingPattern: '{{matchingBrackets}}\s*((:\s*\[?$)|(({{possiblyType}}\s*)?=\s*))'
+  possiblyMultilineObjectBindingPattern: '{{matchingBraces}}\s*((:\s*\{?$)|(({{possiblyType}}\s*)?=\s*))'
+  typeParameters: (<\s*{{typeParamersStart}}([^=<>]|=[^<]|\<\s*{{typeParamersStart}}([^=<>]|=[^<]|\<\s*{{typeParamersStart}}([^=<>]|=[^<])*\>)*\>)*>\s*)
+  typeParamersStart: ([_$[:alpha:]]|{{matchingBraces}}|{{matchingParenthesis}}|{{matchingBrackets}})
+  matchingParenthesis: (\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))
+  matchingBrackets: (\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\])
+  matchingBraces: (\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})
+  possiblyType: \s*([^<>\(\)\{\}]|\<([^<>]|\<([^<>]|\<[^<>]+\>)+\>)+\>|\([^\(\)]+\)|\{[^\{\}]+\})+
+  inlineComment: \/\*([^\*]|(\*[^\/]))*\*\/
+  quotedStrings: (\'([^\'\\]|\\.)*\')|(\"([^\"\\]|\\.)*\")|(\`([^\`\\]|\\.)*\`)
+  identifier: "[_$[:alpha:]][_$[:alnum:]]*"
+  typeparamertStartOfArrow: ''
+  nonPropertyLookBehind: '[^\._$[:alnum:]]'
 
 monarchVariables:
   typeScope: 'type'
