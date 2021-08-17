@@ -67,7 +67,7 @@ variables:
       (?:\b[0-9][0-9_]*(n)?\b(?!\.))                                 # 1
     )(?!\$)
   anyNumber: ({{hexNumber}})|({{binaryNumber}})|({{octalNumber}})|({{decimalNumber}})
-  
+
 monarchVariables:
   typeScope: 'type'
   annotationScope: 'type'
@@ -1496,6 +1496,7 @@ repository:
         match: '{{identifier}}'
       - name: keyword.operator.optional.ballerina
         match: '\?'
+      - include: '#multiType'
       - include: '#type'
       - include: '#paranthesised'
 

@@ -4540,6 +4540,10 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#multiType</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#type</string>
               </dict>
               <dict>

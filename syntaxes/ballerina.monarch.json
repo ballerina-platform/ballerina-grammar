@@ -833,6 +833,9 @@
             "keyword.operator.optional.ballerina"
         ],
         {
+            "include": "multiType"
+        },
+        {
             "include": "type"
         },
         {
