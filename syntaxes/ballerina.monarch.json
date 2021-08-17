@@ -47,7 +47,7 @@
                     "next": "stringTemplate__b__0",
                     "token": "entity.name.function.tagged-template.ballerina"
                 },
-                "support.type.primitive.ballerina",
+                "type",
                 "punctuation.definition.string.template.begin.ballerina"
             ]
         ]
@@ -145,7 +145,7 @@
         ],
         [
             "\\b[^'](boolean|int|string|float|decimal|byte|json|xml)\\b",
-            "support.type.primitive.ballerina"
+            "type"
         ],
         [
             "\\b(map|error|never|readonly|distinct)\\b",
@@ -165,7 +165,7 @@
     "type-primitive": [
         [
             "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|int|boolean|float|byte|decimal|json|xml)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))",
-            "support.type.primitive.ballerina"
+            "type"
         ]
     ],
     "expressionWithoutIdentifiers": [
@@ -390,10 +390,6 @@
         {
             "include": "numbers"
         },
-        [
-            "[_$[:alpha:]][_$[:alnum:]]*",
-            null
-        ],
         {
             "include": "maps"
         },
@@ -713,14 +709,14 @@
         [
             "\\s*\\b(var)(?=\\s+|\\[|\\?)",
             [
-                "support.type.primitive.ballerina"
+                "type"
             ]
         ],
         [
             "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\\b(is|new|isolated)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\?)?",
             [
                 "keyword.operator.rest.ballerina",
-                "support.type.primitive.ballerina",
+                "type",
                 "keyword.other.ballerina",
                 "variable.other.readwrite.ballerina",
                 "keyword.operator.optional.ballerina"
@@ -1021,14 +1017,14 @@
         [
             "\\s*\\b(var)\\s+",
             [
-                "support.type.primitive.ballerina"
+                "type"
             ]
         ],
         [
             "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\\b(is|new|isolated)\\b|\\b(true|false)\\b|\\b(check)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
             [
                 "keyword.operator.rest.ballerina",
-                "support.type.primitive.ballerina",
+                "type",
                 "keyword.other.ballerina",
                 "constant.language.boolean.ballerina",
                 "keyword.control.flow.ballerina",
@@ -1339,7 +1335,7 @@
             "(string|int|boolean|float|byte|decimal|json|xml)(?=\\s+|\\[|\\?|\\||\\:)",
             {
                 "next": "var-expr__b__2",
-                "token": "support.type.primitive.ballerina"
+                "token": "type"
             }
         ],
         [
@@ -1378,7 +1374,7 @@
             "\\b(var)(?=\\s+|\\[|\\?|\\||\\:)",
             {
                 "next": "var-expr__b__0__b__0",
-                "token": "support.type.primitive.ballerina"
+                "token": "type"
             }
         ],
         [
@@ -1577,7 +1573,7 @@
             "\\b(var)\\s*",
             {
                 "next": "var-single-const__b__0",
-                "token": "support.type.primitive.ballerina"
+                "token": "type"
             }
         ],
         {
@@ -1614,7 +1610,7 @@
             "(string|int|boolean|float|byte|decimal|json|xml)(?=\\s+|\\[|\\?|\\||\\:)",
             {
                 "next": "var-expr__b__2__b__0",
-                "token": "support.type.primitive.ballerina"
+                "token": "type"
             }
         ],
         {
@@ -2800,7 +2796,7 @@
             "include": "mdDocumentation"
         },
         [
-            "(?=({{quotedStrings}}|(\\[([^\\[\\]]|\\[[^\\[\\]]*\\])+\\])))",
+            "(?=((\\'([^\\'\\\\]|\\\\.)*\\')|(\\\"([^\\\"\\\\]|\\\\.)*\\\")|(\\`([^\\`\\\\]|\\\\.)*\\`)|(\\[([^\\[\\]]|\\[[^\\[\\]]*\\])+\\])))",
             {
                 "next": "enum-decl__b__0__b__1",
                 "token": ""

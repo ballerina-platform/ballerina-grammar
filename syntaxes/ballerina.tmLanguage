@@ -26,6 +26,8 @@
       <string>variable.parameter</string>
       <key>xmlTag</key>
       <string>tag</string>
+      <key>primitiveScope</key>
+      <string>type</string>
     </dict>
     <key>tmlVariables</key>
     <dict>
@@ -41,6 +43,8 @@
       <string>entity.other.attribute-name.xml.ballerina</string>
       <key>xmlTag</key>
       <string>entity.name.tag.xml.ballerina</string>
+      <key>primitiveScope</key>
+      <string>support.type.primitive.ballerina</string>
     </dict>
     <key>patterns</key>
     <array>
@@ -1331,7 +1335,7 @@
               </dict>
               <dict>
                 <key>begin</key>
-                <string>(?=({{quotedStrings}}|(\[([^\[\]]|\[[^\[\]]*\])+\])))</string>
+                <string>(?=((\'([^\'\\]|\\.)*\')|(\"([^\"\\]|\\.)*\")|(\`([^\`\\]|\\.)*\`)|(\[([^\[\]]|\[[^\[\]]*\])+\])))</string>
                 <key>end</key>
                 <string>(?=,|\}|$)</string>
                 <key>patterns</key>
@@ -4811,10 +4815,6 @@
           <dict>
             <key>include</key>
             <string>#numbers</string>
-          </dict>
-          <dict>
-            <key>match</key>
-            <string>[_$[:alpha:]][_$[:alnum:]]*</string>
           </dict>
           <dict>
             <key>include</key>

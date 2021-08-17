@@ -18,8 +18,8 @@ variables:
   startOfIdentifier: (?<![_$[:alnum:]])(?:(?<=\.\.\.)|(?<!\.))
   endOfIdentifier: (?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))
   matchingParenthesis: (\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))
-  quotedStrings: (\'([^\'\\]|\\.)*\')|(\"([^\"\\]|\\.)*\")|(\`([^\`\\]|\\.)*\`)
   nonIdentifierPropertyName: '{{quotedStrings}}|(\[([^\[\]]|\[[^\[\]]*\])+\])'
+  quotedStrings: (\'([^\'\\]|\\.)*\')|(\"([^\"\\]|\\.)*\")|(\`([^\`\\]|\\.)*\`)
   constructsAndModifiers: '(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b'
   endOfStatement: ';|^\s*$|(?:^\s*{{constructsAndModifiers}})'
   lookAheadEndOfType: '[;),}\]:?\-\+\>]|\|\||\&\&|\!\=\=|$'
@@ -75,6 +75,7 @@ monarchVariables:
   xmlTagAngle: 'tag'
   xmlAttribute: 'variable.parameter'
   xmlTag: 'tag'
+  primitiveScope: 'type'
 
 tmlVariables:
   typeScope: 'storage.type.ballerina'
@@ -83,6 +84,7 @@ tmlVariables:
   xmlTagAngle: 'punctuation.definition.tag.begin.xml.ballerina'
   xmlAttribute: 'entity.other.attribute-name.xml.ballerina'
   xmlTag: 'entity.name.tag.xml.ballerina'
+  primitiveScope: 'support.type.primitive.ballerina'
 
 patterns:
 - include: '#statements'
@@ -617,12 +619,12 @@ repository:
     patterns:
     - match: '\s*{{varExprStart}}\s+'
       captures:
-        '1': { name: support.type.primitive.ballerina }
+        '1': { name: '{{primitiveScope}}' }
     - match: |-
         (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|{{primitiveTypes}}|{{otherKeywords}}|{{booleanTypes}}|{{controlKeywords}}|({{identifier}})){{endOfIdentifier}}\s*(\??)
       captures:
         '2': { name: keyword.operator.rest.ballerina }
-        '3': { name: support.type.primitive.ballerina }
+        '3': { name: '{{primitiveScope}}' }
         '4': { name: keyword.other.ballerina }
         '5': { name: constant.language.boolean.ballerina }
         '6': { name: keyword.control.flow.ballerina }
@@ -646,12 +648,12 @@ repository:
     - include: '#type-primitive' 
     - match: '\s*{{varExprStart}}(?=\s+|\[|\?)'
       captures:
-        '1': { name: support.type.primitive.ballerina }
+        '1': { name: '{{primitiveScope}}' }
     - match: |-
         (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|{{primitiveTypes}}|{{otherKeywords}}|({{identifier}})){{endOfIdentifier}}\s*(\?)?
       captures:
         '2': { name: keyword.operator.rest.ballerina }
-        '3': { name: support.type.primitive.ballerina }
+        '3': { name: '{{primitiveScope}}' }
         '4': { name: keyword.other.ballerina }
         '5': { name: variable.other.readwrite.ballerina }
         '6': { name: keyword.operator.optional.ballerina }  
@@ -1080,7 +1082,7 @@ repository:
       begin: '((string)|({{identifier}}))?(`)'
       beginCaptures:
         '1': { name: entity.name.function.tagged-template.ballerina }
-        '2': { name: support.type.primitive.ballerina }
+        '2': { name: '{{primitiveScope}}' }
         '4': { name: punctuation.definition.string.template.begin.ballerina }
       end: \\?`
       endCaptures:
@@ -1145,7 +1147,7 @@ repository:
       patterns:
       - begin: '{{varExprStart}}(?=\s+|\[|\?|\||\:)'
         beginCaptures:
-          '0': { name: support.type.primitive.ballerina }
+          '0': { name: '{{primitiveScope}}' }
         end: (?=\S)
       - match: '\|'
         name: keyword.operator.type.annotation.ballerina
@@ -1179,13 +1181,13 @@ repository:
     - name: meta.var.expr.ballerina
       begin: '{{primitiveTypes}}(?=\s+|\[|\?|\||\:)'
       beginCaptures:
-          '0': { name: support.type.primitive.ballerina }
+          '0': { name: '{{primitiveScope}}' }
       end: (?!{{varExprStart}})((?=;|}|{{endOfStatement}})|((?<!{{lookBehindString}}|{{lookBehindInt}})(?=\s*$)))
       patterns:
       - include: '#xml'
       - begin: '{{primitiveTypes}}(?=\s+|\[|\?|\||\:)'
         beginCaptures:
-          '0': { name: support.type.primitive.ballerina }
+          '0': { name: '{{primitiveScope}}' }
         end: (?=\S)
       - match: '\|'
         name: keyword.operator.type.annotation.ballerina
@@ -1205,7 +1207,7 @@ repository:
     - name: meta.var-single-variable.expr.ballerina
       begin: ({{primitiveTypes}}|({{identifier}}))(?=\s+|\;|\>|\|)
       beginCaptures:
-        '2': { name: support.type.primitive.ballerina }
+        '2': { name: '{{primitiveScope}}' }
         '3': { name: meta.definition.variable.ballerina variable.other.readwrite.ballerina }
       end: (?=$|^|[;,=}])
       endCaptures:
@@ -1228,7 +1230,7 @@ repository:
     - name: meta.var-single-variable.expr.ballerina
     - begin: '{{varExprStart}}\s*'
       beginCaptures:
-        '0': { name: support.type.primitive.ballerina }
+        '0': { name: '{{primitiveScope}}' }
       end: (?=\S)
     - include: '#types'
     - begin: ({{identifier}})
@@ -1378,7 +1380,7 @@ repository:
     - name: '{{typeScope}}'
       match: \b(handle|any|anydata|future|typedesc)\b
 
-    - name: support.type.primitive.ballerina
+    - name: '{{primitiveScope}}'
       match: \b[^'](boolean|int|string|float|decimal|byte|json|xml)\b
 
     - name: '{{typeScope}}'
@@ -1586,7 +1588,6 @@ repository:
     - include: '#mdDocumentation'
     - include: '#annotationAttachment'
     - include: '#numbers'
-    - match: '{{identifier}}'
     - include: '#maps'
     - include: '#paranthesised'
     - include: '#paranthesisedBracket'
@@ -1594,4 +1595,4 @@ repository:
   type-primitive:
     patterns:
     - match: '{{startOfIdentifier}}{{primitiveTypes}}{{endOfIdentifier}}'
-      name: support.type.primitive.ballerina
+      name: '{{primitiveScope}}'
