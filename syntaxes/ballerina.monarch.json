@@ -1156,7 +1156,7 @@
     ],
     "identifiers": [
         [
-            "(?x)(?:(?:(\\.)|(\\?\\.(?!\\s*[[:digit:]])))\\s*)?([_$[:alpha:]][_$[:alnum:]]*)(?=\\s*={{functionOrArrowLookup}})",
+            "(?x)(?:(?:(\\.)|(\\?\\.(?!\\s*[[:digit:]])))\\s*)?([_$[:alpha:]][_$[:alnum:]]*)(?=\\s*=\\s*(\n  ((\n    (function\\s*[(<*]) |\n    (function\\s+) |\n    ({{identifier}}\\s*=>)\n  )) |\n  ((\n    {{possiblyMultilineArrow}} |\n    {{arrowLookup}}\n  ))\n))",
             [
                 "punctuation.accessor.ballerina",
                 "punctuation.accessor.optional.ballerina",
@@ -2413,7 +2413,7 @@
             }
         ],
         [
-            "(?x)(?={{anyNumber}})",
+            "(?x)(?=({{hexNumber}})|({{binaryNumber}})|({{octalNumber}})|({{decimalNumber}}))",
             {
                 "next": "object-member__b__2",
                 "token": ""
@@ -2427,21 +2427,21 @@
             }
         ],
         [
-            "(?![_$[:alpha:]])([[:digit:]]+)\\s*(?=({{inlineComment}}\\s*)*:)",
+            "(?![_$[:alpha:]])([[:digit:]]+)\\s*(?=(\\/\\*([^\\*]|(\\*[^\\/]))*\\*\\/\\s*)*:)",
             [
                 "meta.object-literal.key.ballerina",
                 "constant.numeric.decimal.ballerina"
             ]
         ],
         [
-            "(?x)(?:([_$[:alpha:]][_$[:alnum:]]*)\\s*(?=({{inlineComment}}\\s*)*:(\\s*{{inlineComment}})*{{functionOrArrowLookup}}))",
+            "(?x)(?:([_$[:alpha:]][_$[:alnum:]]*)\\s*(?=(\\/\\*([^\\*]|(\\*[^\\/]))*\\*\\/\\s*)*:(\\s*\\/\\*([^\\*]|(\\*[^\\/]))*\\*\\/)*\\s*(\n  ((\n    (function\\s*[(<*]) |\n    (function\\s+) |\n    ({{identifier}}\\s*=>)\n  )) |\n  ((\n    {{possiblyMultilineArrow}} |\n    {{arrowLookup}}\n  ))\n)))",
             [
                 "meta.object-literal.key.ballerina",
                 "entity.name.function.ballerina"
             ]
         ],
         [
-            "(?:[_$[:alpha:]][_$[:alnum:]]*)\\s*(?=({{inlineComment}}\\s*)*:)",
+            "(?:[_$[:alpha:]][_$[:alnum:]]*)\\s*(?=(\\/\\*([^\\*]|(\\*[^\\/]))*\\*\\/\\s*)*:)",
             [
                 "meta.object-literal.key.ballerina"
             ]
@@ -2794,7 +2794,7 @@
             "include": "mdDocumentation"
         },
         [
-            "(?=({{nonIdentifierPropertyName}}))",
+            "(?=({{quotedStrings}}|(\\[([^\\[\\]]|\\[[^\\[\\]]*\\])+\\])))",
             {
                 "next": "enum-decl__b__0__b__1",
                 "token": ""

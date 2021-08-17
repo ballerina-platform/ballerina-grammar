@@ -18,6 +18,8 @@ variables:
   startOfIdentifier: (?<![_$[:alnum:]])(?:(?<=\.\.\.)|(?<!\.))
   endOfIdentifier: (?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))
   matchingParenthesis: (\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))
+  quotedStrings: (\'([^\'\\]|\\.)*\')|(\"([^\"\\]|\\.)*\")|(\`([^\`\\]|\\.)*\`)
+  nonIdentifierPropertyName: '{{quotedStrings}}|(\[([^\[\]]|\[[^\[\]]*\])+\])'
   constructsAndModifiers: '(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b'
   endOfStatement: ';|^\s*$|(?:^\s*{{constructsAndModifiers}})'
   lookAheadEndOfType: '[;),}\]:?\-\+\>]|\|\||\&\&|\!\=\=|$'
@@ -37,7 +39,35 @@ variables:
   functionCallLookup: \s*(?:(\?\.\s*)|(\!))?(({{typeArguments}}\s*)?\()
   functionCallNamedTarget: (({{identifier}})(\s*{{propertyAccessPreIdentifier}}({{propertyIdentifier}}))*)|({{propertyAccessPreIdentifier}}{{propertyIdentifier}})
   functionCallTarget: (({{functionCallNamedTarget}})|(?<=[\)]))
-
+  inlineComment: \/\*([^\*]|(\*[^\/]))*\*\/
+  functionOrArrowLookup: |-
+    \s*(
+      ((
+        (function\s*[(<*]) |
+        (function\s+) |
+        ({{identifier}}\s*=>)
+      )) |
+      ((
+        {{possiblyMultilineArrow}} |
+        {{arrowLookup}}
+      ))
+    )
+  hexNumber: \b(?<!\$)0(?:x|X)[0-9a-fA-F][0-9a-fA-F_]*(n)?\b(?!\$)
+  binaryNumber: \b(?<!\$)0(?:b|B)[01][01_]*(n)?\b(?!\$)
+  octalNumber: \b(?<!\$)0(?:o|O)?[0-7][0-7_]*(n)?\b(?!\$)
+  decimalNumber: |-
+    (?<!\$)(?:
+      (?:\b[0-9][0-9_]*(\.)[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(n)?\b)| # 1.1E+3
+      (?:\b[0-9][0-9_]*(\.)[eE][+-]?[0-9][0-9_]*(n)?\b)|             # 1.E+3
+      (?:\B(\.)[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(n)?\b)|             # .1E+3
+      (?:\b[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(n)?\b)|                 # 1E+3
+      (?:\b[0-9][0-9_]*(\.)[0-9][0-9_]*(n)?\b)|                      # 1.1
+      (?:\b[0-9][0-9_]*(\.)(n)?\B)|                                  # 1.
+      (?:\B(\.)[0-9][0-9_]*(n)?\b)|                                  # .1
+      (?:\b[0-9][0-9_]*(n)?\b(?!\.))                                 # 1
+    )(?!\$)
+  anyNumber: ({{hexNumber}})|({{binaryNumber}})|({{octalNumber}})|({{decimalNumber}})
+  
 monarchVariables:
   typeScope: 'type'
   annotationScope: 'type'

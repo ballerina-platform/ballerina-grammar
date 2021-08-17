@@ -314,7 +314,17 @@
         <array>
           <dict>
             <key>match</key>
-            <string>(?x)(?:(?:(\.)|(\?\.(?!\s*[[:digit:]])))\s*)?([_$[:alpha:]][_$[:alnum:]]*)(?=\s*={{functionOrArrowLookup}})</string>
+            <string>(?x)(?:(?:(\.)|(\?\.(?!\s*[[:digit:]])))\s*)?([_$[:alpha:]][_$[:alnum:]]*)(?=\s*=\s*(
+  ((
+    (function\s*[(&lt;*]) |
+    (function\s+) |
+    ({{identifier}}\s*=&gt;)
+  )) |
+  ((
+    {{possiblyMultilineArrow}} |
+    {{arrowLookup}}
+  ))
+))</string>
             <key>captures</key>
             <dict>
               <key>1</key>
@@ -434,7 +444,7 @@
             <key>name</key>
             <string>meta.object.member.ballerina meta.object-literal.key.ballerina</string>
             <key>begin</key>
-            <string>(?x)(?={{anyNumber}})</string>
+            <string>(?x)(?=({{hexNumber}})|({{binaryNumber}})|({{octalNumber}})|({{decimalNumber}}))</string>
             <key>end</key>
             <string>(?=:)|(?=\s*([\(\&lt;,}])|(\s+as\s+))</string>
             <key>patterns</key>
@@ -468,7 +478,7 @@
             <key>name</key>
             <string>meta.object.member.ballerina</string>
             <key>match</key>
-            <string>(?![_$[:alpha:]])([[:digit:]]+)\s*(?=({{inlineComment}}\s*)*:)</string>
+            <string>(?![_$[:alpha:]])([[:digit:]]+)\s*(?=(\/\*([^\*]|(\*[^\/]))*\*\/\s*)*:)</string>
             <key>captures</key>
             <dict>
               <key>0</key>
@@ -487,7 +497,17 @@
             <key>name</key>
             <string>meta.object.member.ballerina</string>
             <key>match</key>
-            <string>(?x)(?:([_$[:alpha:]][_$[:alnum:]]*)\s*(?=({{inlineComment}}\s*)*:(\s*{{inlineComment}})*{{functionOrArrowLookup}}))</string>
+            <string>(?x)(?:([_$[:alpha:]][_$[:alnum:]]*)\s*(?=(\/\*([^\*]|(\*[^\/]))*\*\/\s*)*:(\s*\/\*([^\*]|(\*[^\/]))*\*\/)*\s*(
+  ((
+    (function\s*[(&lt;*]) |
+    (function\s+) |
+    ({{identifier}}\s*=&gt;)
+  )) |
+  ((
+    {{possiblyMultilineArrow}} |
+    {{arrowLookup}}
+  ))
+)))</string>
             <key>captures</key>
             <dict>
               <key>0</key>
@@ -506,7 +526,7 @@
             <key>name</key>
             <string>meta.object.member.ballerina</string>
             <key>match</key>
-            <string>(?:[_$[:alpha:]][_$[:alnum:]]*)\s*(?=({{inlineComment}}\s*)*:)</string>
+            <string>(?:[_$[:alpha:]][_$[:alnum:]]*)\s*(?=(\/\*([^\*]|(\*[^\/]))*\*\/\s*)*:)</string>
             <key>captures</key>
             <dict>
               <key>0</key>
@@ -1311,7 +1331,7 @@
               </dict>
               <dict>
                 <key>begin</key>
-                <string>(?=({{nonIdentifierPropertyName}}))</string>
+                <string>(?=({{quotedStrings}}|(\[([^\[\]]|\[[^\[\]]*\])+\])))</string>
                 <key>end</key>
                 <string>(?=,|\}|$)</string>
                 <key>patterns</key>
