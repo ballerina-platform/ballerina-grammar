@@ -577,6 +577,7 @@ repository:
     - include: '#recordLiteral'
     - include: '#keywords' 
     - include: '#parameter-name'
+    - include: '#array-literal'
     - include: '#variable-initializer'
     - include: '#identifiers'
     - name: punctuation.separator.parameter.ballerina

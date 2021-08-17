@@ -1141,6 +1141,9 @@
             "include": "parameter-name"
         },
         {
+            "include": "array-literal"
+        },
+        {
             "include": "variable-initializer"
         },
         {

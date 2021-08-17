@@ -1684,6 +1684,10 @@
           </dict>
           <dict>
             <key>include</key>
+            <string>#array-literal</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#variable-initializer</string>
           </dict>
           <dict>
