@@ -4679,7 +4679,7 @@
             <key>name</key>
             <string>keyword.control.ballerina</string>
             <key>match</key>
-            <string>\b[^'](fork|join|while|foreach|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\b</string>
+            <string>\b(fork|join|while|foreach|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\b</string>
           </dict>
           <dict>
             <key>name</key>
