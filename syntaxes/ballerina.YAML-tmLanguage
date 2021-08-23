@@ -952,12 +952,10 @@ repository:
     patterns:
     - begin: '\bobject\b(?!:)'
       beginCaptures:
-        '0': { name:  keyword.ballerina }
-      end: '\}'
-      endCaptures:
-        '0': { name: delimiter.curly }
+        '0': { name:  keyword.other.ballerina }
+      end: '(?=\})'
       patterns:
-      - include: '#comment'
+      - include: '#decl-block'
 
   objectInitBody:
     patterns:
@@ -1085,6 +1083,7 @@ repository:
     - include: '#serviceName'
     - include: '#serviceOn'
     - include: '#serviceBody'
+    - include: '#objectDec'
 
   serviceName:
     patterns:

@@ -1272,6 +1272,9 @@
         },
         {
             "include": "serviceBody"
+        },
+        {
+            "include": "objectDec"
         }
     ],
     "class-defn": [
@@ -1833,20 +1836,20 @@
             "\\bobject\\b(?!:)",
             {
                 "next": "objectDec__b__0",
-                "token": "keyword.ballerina"
+                "token": "keyword.other.ballerina"
             }
         ]
     ],
     "objectDec__b__0": [
         [
-            "\\}",
+            "(?=\\})",
             {
                 "next": "@pop",
-                "token": "delimiter.curly"
+                "token": ""
             }
         ],
         {
-            "include": "comment"
+            "include": "decl-block"
         }
     ],
     "forkStatement": [

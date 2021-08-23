@@ -2770,24 +2770,16 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>keyword.ballerina</string>
+                <string>keyword.other.ballerina</string>
               </dict>
             </dict>
             <key>end</key>
-            <string>\}</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>delimiter.curly</string>
-              </dict>
-            </dict>
+            <string>(?=\})</string>
             <key>patterns</key>
             <array>
               <dict>
                 <key>include</key>
-                <string>#comment</string>
+                <string>#decl-block</string>
               </dict>
             </array>
           </dict>
@@ -3197,6 +3189,10 @@
           <dict>
             <key>include</key>
             <string>#serviceBody</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#objectDec</string>
           </dict>
         </array>
       </dict>
