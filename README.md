@@ -29,3 +29,14 @@ npm run build
 
 * prism-ballerina.js
     - Run `cd prism && node extract-keywords.js [path to ballerina-lang/compiler/ballerina-parser/src/main/java/io/ballerina/compiler/internal/parser/LexerTerminals.java]`
+
+**Add Test Cases**
+
+* First, build the grammar
+    - Run `npm run build`
+
+* Generate test snapshot
+    - Run `node node_modules/vscode-tmgrammar-test/dist/src/snapshot.js -s source.ballerina -g syntaxes/ballerina.tmLanguage -t test/resources/config/<BALLERINA_FILE>`
+
+* Test snapshot againt the grammar
+    - Run `node node_modules/vscode-tmgrammar-test/dist/src/unit.js -s source.ballerina -g syntaxes/ballerina.tmLanguage -t test/resources/snapshots/<NAME>.bal.snap`
