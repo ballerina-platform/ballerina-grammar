@@ -431,6 +431,10 @@
             <string>#keywords</string>
           </dict>
           <dict>
+            <key>include</key>
+            <string>#expression</string>
+          </dict>
+          <dict>
             <key>name</key>
             <string>meta.object.member.ballerina meta.object-literal.key.ballerina</string>
             <key>begin</key>

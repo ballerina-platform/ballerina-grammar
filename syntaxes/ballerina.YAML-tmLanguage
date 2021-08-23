@@ -226,6 +226,7 @@ repository:
     - include: '#function-defn'
     - include: '#literal'
     - include: '#keywords'
+    - include: '#expression'
     - name: meta.object.member.ballerina meta.object-literal.key.ballerina
       begin: (?=\[)
       end: (?=:)|((?<=[\]])(?=\s*[\(\<]))
