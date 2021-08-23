@@ -1031,7 +1031,7 @@ repository:
     name: meta.record.ballerina
     begin: '\brecord\b'
     beginCaptures:
-      '0': { name:  keyword.ballerina }
+      '0': { name:  keyword.other.ballerina }
     end: '(?=\})'
     endCaptures:
       '1': { name: punctuation.definition.block.ballerina }
