@@ -2938,6 +2938,10 @@
         <array>
           <dict>
             <key>include</key>
+            <string>#function-defn</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#decl-block</string>
           </dict>
           <dict>
