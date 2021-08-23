@@ -274,6 +274,10 @@
             <key>include</key>
             <string>#object-member</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#punctuation-comma</string>
+          </dict>
         </array>
       </dict>
       <key>import-declaration</key>

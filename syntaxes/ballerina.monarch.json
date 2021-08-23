@@ -2375,6 +2375,9 @@
     "object-literal": [
         {
             "include": "object-member"
+        },
+        {
+            "include": "punctuation-comma"
         }
     ],
     "object-member": [

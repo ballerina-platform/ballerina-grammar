@@ -185,6 +185,7 @@ repository:
       '0': { name: punctuation.definition.block.ballerina }
     patterns:
     - include: '#object-member'
+    - include: '#punctuation-comma'
 
   import-declaration:
     name: meta.import.ballerina
