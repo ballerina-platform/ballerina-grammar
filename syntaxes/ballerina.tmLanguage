@@ -1945,38 +1945,6 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\b(is|new|isolated)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\?)?</string>
-            <key>captures</key>
-            <dict>
-              <key>2</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.operator.rest.ballerina</string>
-              </dict>
-              <key>3</key>
-              <dict>
-                <key>name</key>
-                <string>support.type.primitive.ballerina</string>
-              </dict>
-              <key>4</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.other.ballerina</string>
-              </dict>
-              <key>5</key>
-              <dict>
-                <key>name</key>
-                <string>variable.other.readwrite.ballerina</string>
-              </dict>
-              <key>6</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.operator.optional.ballerina</string>
-              </dict>
-            </dict>
-          </dict>
-          <dict>
-            <key>match</key>
             <string>\|</string>
             <key>name</key>
             <string>keyword.operator.ballerina</string>
@@ -2002,6 +1970,12 @@
           <dict>
             <key>include</key>
             <string>#keywords</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>[_$[:alpha:]][_$[:alnum:]]*</string>
+            <key>name</key>
+            <string>variable.other.readwrite.ballerina }</string>
           </dict>
         </array>
       </dict>

@@ -713,16 +713,6 @@
             ]
         ],
         [
-            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\\b(is|new|isolated)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\?)?",
-            [
-                "keyword.operator.rest.ballerina",
-                "type",
-                "keyword.other.ballerina",
-                "variable.other.readwrite.ballerina",
-                "keyword.operator.optional.ballerina"
-            ]
-        ],
-        [
             "\\|",
             "keyword.operator.ballerina"
         ],
@@ -741,7 +731,11 @@
         },
         {
             "include": "keywords"
-        }
+        },
+        [
+            "[_$[:alpha:]][_$[:alnum:]]*",
+            "variable.other.readwrite.ballerina }"
+        ]
     ],
     "comment": [
         [

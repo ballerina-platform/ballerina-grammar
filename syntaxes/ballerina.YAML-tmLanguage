@@ -686,23 +686,14 @@ repository:
     endCaptures:
       '1': { name: keyword.operator.ballerina }
     patterns:
-    - include: '#comment' 
+    - include: '#comment'
     - include: '#string'
     - include: '#numbers'
     - include: '#keywords'
-    - include: '#type-primitive' 
+    - include: '#type-primitive'
     - match: '\s*{{varExprStart}}(?=\s+|\[|\?)'
       captures:
         '1': { name: '{{primitiveScope}}' }
-    - match: |-
-        (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|{{primitiveTypes}}|{{otherKeywords}}|({{identifier}})){{endOfIdentifier}}\s*(\?)?
-      captures:
-        '2': { name: keyword.operator.rest.ballerina }
-        '3': { name: '{{primitiveScope}}' }
-        '4': { name: keyword.other.ballerina }
-        '5': { name: variable.other.readwrite.ballerina }
-        '6': { name: keyword.operator.optional.ballerina }  
-    # - include: '#variable-initializer'  
     - match: '\|'
       name: keyword.operator.ballerina
     - match: '\?'
@@ -710,7 +701,9 @@ repository:
     - include: '#multiType' 
     - include: '#type-annotation'
     - include: '#type-tuple'
-    - include: '#keywords'   
+    - include: '#keywords'
+    - match: '{{identifier}}'
+      name: variable.other.readwrite.ballerina }  
 
   functionType:
     patterns:
