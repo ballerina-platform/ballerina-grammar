@@ -152,6 +152,7 @@ repository:
       end: (?=[;}]|$|{{endOfStatement}})
       patterns:
       - include: '#expression'
+    - include: '#for-loop'  
     - include: '#if-statement'
     - name: keyword.control.conditional.ballerina
       match: '{{startOfIdentifier}}(else|if){{endOfIdentifier}}'
@@ -555,6 +556,19 @@ repository:
       - include: '#function-defn'
       - include: '#forkStatement'
       - include: '#code'
+
+  for-loop:
+    begin: '{{startOfIdentifier}}foreach\s*(var)'
+    beginCaptures:
+      '0': { name: keyword.control.loop.ballerina }
+      '1': { name: support.type.primitive.ballerina }
+    end: (?=\{)
+    patterns:
+    - name: keyword.control.ballerina
+      match: in
+    - include: '#comment'
+    - include: '#var-expr'
+    - include: '#expression'
 
   forkBody:
     patterns: 
@@ -1554,7 +1568,7 @@ repository:
   keywords:
     patterns:
     - name: keyword.control.ballerina
-      match: \b(fork|join|while|foreach|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\b
+      match: \b(fork|join|while|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\b
 
     - name: keyword.control.flow.ballerina
       match: \b(return|break|continue|check|checkpanic|panic|trap|from|where)\b

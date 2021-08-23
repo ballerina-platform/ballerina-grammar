@@ -101,7 +101,7 @@
     ],
     "keywords": [
         [
-            "\\b(fork|join|while|foreach|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\\b",
+            "\\b(fork|join|while|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\\b",
             "keyword.control.ballerina"
         ],
         [
@@ -2851,6 +2851,9 @@
             }
         ],
         {
+            "include": "for-loop"
+        },
+        {
             "include": "if-statement"
         },
         [
@@ -2866,6 +2869,21 @@
                 "token": ""
             }
         ],
+        {
+            "include": "expression"
+        }
+    ],
+    "for-loop": [
+        [
+            "in",
+            "keyword.control.ballerina"
+        ],
+        {
+            "include": "comment"
+        },
+        {
+            "include": "var-expr"
+        },
         {
             "include": "expression"
         }

@@ -170,6 +170,10 @@
           </dict>
           <dict>
             <key>include</key>
+            <string>#for-loop</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#if-statement</string>
           </dict>
           <dict>
@@ -1486,6 +1490,47 @@
                 <string>#code</string>
               </dict>
             </array>
+          </dict>
+        </array>
+      </dict>
+      <key>for-loop</key>
+      <dict>
+        <key>begin</key>
+        <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))foreach\s*(var)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.loop.ballerina</string>
+          </dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>support.type.primitive.ballerina</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>(?=\{)</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.ballerina</string>
+            <key>match</key>
+            <string>in</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#comment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#var-expr</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#expression</string>
           </dict>
         </array>
       </dict>
@@ -4679,7 +4724,7 @@
             <key>name</key>
             <string>keyword.control.ballerina</string>
             <key>match</key>
-            <string>\b(fork|join|while|foreach|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\b</string>
+            <string>\b(fork|join|while|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\b</string>
           </dict>
           <dict>
             <key>name</key>
