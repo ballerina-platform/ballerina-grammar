@@ -1516,7 +1516,7 @@
         <array>
           <dict>
             <key>name</key>
-            <string>keyword.control.ballerina</string>
+            <string>keyword.other.ballerina</string>
             <key>match</key>
             <string>in</string>
           </dict>

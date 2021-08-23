@@ -564,7 +564,7 @@ repository:
       '1': { name: support.type.primitive.ballerina }
     end: (?=\{)
     patterns:
-    - name: keyword.control.ballerina
+    - name: keyword.other.ballerina
       match: in
     - include: '#comment'
     - include: '#var-expr'

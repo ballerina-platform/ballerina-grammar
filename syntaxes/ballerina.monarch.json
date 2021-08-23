@@ -2876,7 +2876,7 @@
     "for-loop": [
         [
             "in",
-            "keyword.control.ballerina"
+            "keyword.other.ballerina"
         ],
         {
             "include": "comment"
