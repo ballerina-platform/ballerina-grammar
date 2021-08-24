@@ -42,11 +42,11 @@ describe('Unit tests', () => {
         return runTextMateTest('test');
     });
 
-    it('main.bal snapshot test', () => {
-        return runTextMateTest('semtype/main');
-    });
+    // it('main.bal snapshot test', () => {
+    //     return runTextMateTest('semtype/main');
+    // });
 
-    it('main.bal snapshot test', () => {
-        return runTextMateTest('semtype/bmain');
-    });
+    // it('main.bal snapshot test', () => {
+    //     return runTextMateTest('semtype/bmain');
+    // });
 });

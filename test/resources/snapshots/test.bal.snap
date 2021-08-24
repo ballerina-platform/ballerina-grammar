@@ -93,9 +93,9 @@
 //                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina string.end.ballerina
 //                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina
 //                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina
-//                             ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina string.begin.ballerina
-//                              ^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina string
-//                                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina string.end.ballerina
+//                             ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                              ^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina string.quoted.double.ballerina
+//                                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //                                    ^ source.ballerina meta.function.ballerina
 //                                     ^ source.ballerina punctuation.terminator.statement.ballerina
 >     var response = httpEndpoint->post("/foo/bar", payload);
