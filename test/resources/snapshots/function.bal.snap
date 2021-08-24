@@ -350,9 +350,9 @@
 //                                  ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina
 //                                   ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina keyword.operator.ballerina
 //                                    ^^ source.ballerina meta.function.ballerina
-//                                      ^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+//                                      ^^^^ source.ballerina meta.function.ballerina
 //                                          ^ source.ballerina meta.function.ballerina
-//                                           ^^^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+//                                           ^^^^^^^^ source.ballerina meta.function.ballerina
 //                                                   ^ source.ballerina meta.function.ballerina
 //                                                    ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >     name: "PI",
@@ -7359,9 +7359,9 @@
 //                                                         ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina
 //                                                          ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina keyword.operator.ballerina
 //                                                           ^^ source.ballerina meta.function.ballerina
-//                                                             ^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+//                                                             ^^^^ source.ballerina meta.function.ballerina
 //                                                                 ^ source.ballerina meta.function.ballerina
-//                                                                  ^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+//                                                                  ^^^^^^ source.ballerina meta.function.ballerina
 //                                                                        ^ source.ballerina meta.function.ballerina
 //                                                                         ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >     'class: "java.util.ArrayDeque"
@@ -7393,9 +7393,9 @@
 //                                       ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina
 //                                        ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina keyword.operator.ballerina
 //                                         ^^ source.ballerina meta.function.ballerina
-//                                           ^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+//                                           ^^^^ source.ballerina meta.function.ballerina
 //                                               ^ source.ballerina meta.function.ballerina
-//                                                ^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+//                                                ^^^^^^^^^^^ source.ballerina meta.function.ballerina
 //                                                           ^ source.ballerina meta.function.ballerina
 //                                                            ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >     'class: "java.util.ArrayDeque"
