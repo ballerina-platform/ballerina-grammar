@@ -108,7 +108,7 @@ monarchVariables:
 
 tmlVariables:
   typeScope: 'storage.type.ballerina'
-  annotationScope: 'storage.type.annotation.ballerina'
+  annotationScope: 'support.type.ballerina'
   numberScope: 'constant.numeric.decimal.ballerina'
   xmlTagAngle: 'punctuation.definition.tag.begin.xml.ballerina'
   xmlAttribute: 'entity.other.attribute-name.xml.ballerina'
@@ -627,6 +627,7 @@ repository:
     - match: \bexternal\b
       name: keyword.ballerina
     - include: '#stringTemplate'
+    - include: '#annotationAttachment'
     - include: '#functionReturns'
     - include: '#functionName'
     - include: '#functionParameters'

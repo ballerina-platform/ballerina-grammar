@@ -922,6 +922,9 @@
             "include": "stringTemplate"
         },
         {
+            "include": "annotationAttachment"
+        },
+        {
             "include": "functionReturns"
         },
         {
@@ -936,6 +939,17 @@
         {
             "include": "function-body"
         }
+    ],
+    "annotationAttachment": [
+        [
+            "(@)((?:[_$[:alpha:]][_$[:alnum:]]*))\\s*(:?)\\s*((?:[_$[:alpha:]][_$[:alnum:]]*)?)",
+            [
+                "punctuation.decorator.ballerina",
+                "type",
+                "punctuation.decorator.ballerina",
+                "type"
+            ]
+        ]
     ],
     "functionName": [
         [
@@ -1000,17 +1014,6 @@
         [
             "\\,",
             "punctuation.separator.parameter.ballerina"
-        ]
-    ],
-    "annotationAttachment": [
-        [
-            "(@)((?:[_$[:alpha:]][_$[:alnum:]]*))\\s*(:?)\\s*((?:[_$[:alpha:]][_$[:alnum:]]*)?)",
-            [
-                "punctuation.decorator.ballerina",
-                "type",
-                "punctuation.decorator.ballerina",
-                "type"
-            ]
         ]
     ],
     "recordLiteral": [

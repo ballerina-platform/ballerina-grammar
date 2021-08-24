@@ -34,7 +34,7 @@
       <key>typeScope</key>
       <string>storage.type.ballerina</string>
       <key>annotationScope</key>
-      <string>storage.type.annotation.ballerina</string>
+      <string>support.type.ballerina</string>
       <key>numberScope</key>
       <string>constant.numeric.decimal.ballerina</string>
       <key>xmlTagAngle</key>
@@ -874,7 +874,7 @@
               <key>2</key>
               <dict>
                 <key>name</key>
-                <string>storage.type.annotation.ballerina</string>
+                <string>support.type.ballerina</string>
               </dict>
               <key>3</key>
               <dict>
@@ -884,7 +884,7 @@
               <key>4</key>
               <dict>
                 <key>name</key>
-                <string>storage.type.annotation.ballerina</string>
+                <string>support.type.ballerina</string>
               </dict>
             </dict>
           </dict>
@@ -1723,6 +1723,10 @@
           <dict>
             <key>include</key>
             <string>#stringTemplate</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#annotationAttachment</string>
           </dict>
           <dict>
             <key>include</key>
