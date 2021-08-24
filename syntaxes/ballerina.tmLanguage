@@ -1739,31 +1739,10 @@
             <string>#string</string>
           </dict>
           <dict>
+            <key>name</key>
+            <string>meta.definition.function.ballerina entity.name.function.ballerina</string>
             <key>match</key>
-            <string>\s+(\b(self)|\b(is|new|isolated|null|function)\b|(string|int|boolean|float|byte|decimal|json|xml)|([_$[:alpha:]][_$[:alnum:]]*))</string>
-            <key>captures</key>
-            <dict>
-              <key>2</key>
-              <dict>
-                <key>name</key>
-                <string>variable.language.this.ballerina</string>
-              </dict>
-              <key>3</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.other.ballerina</string>
-              </dict>
-              <key>4</key>
-              <dict>
-                <key>name</key>
-                <string>support.type.primitive.ballerina</string>
-              </dict>
-              <key>5</key>
-              <dict>
-                <key>name</key>
-                <string>meta.definition.function.ballerina entity.name.function.ballerina</string>
-              </dict>
-            </dict>
+            <string>\s+[_$[:alpha:]][_$[:alnum:]]*</string>
           </dict>
         </array>
       </dict>
@@ -1869,7 +1848,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\b(is|new|isolated|null|function)\b|\b(true|false)\b|\b(check|foreach)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
+            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\b(is|new|isolated)\b|\b(true|false)\b|\b(check|foreach)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
             <key>captures</key>
             <dict>
               <key>2</key>
@@ -4630,26 +4609,10 @@
                 <string>#self-literal</string>
               </dict>
               <dict>
+                <key>name</key>
+                <string>variable.other.readwrite.ballerina</string>
                 <key>match</key>
-                <string>\b(is|new|isolated|null|function)\b|\b(true|false)\b|[_$[:alpha:]][_$[:alnum:]]*</string>
-                <key>captures</key>
-                <dict>
-                  <key>1</key>
-                  <dict>
-                    <key>name</key>
-                    <string>keyword.other.ballerina</string>
-                  </dict>
-                  <key>2</key>
-                  <dict>
-                    <key>name</key>
-                    <string>constant.language.boolean.ballerina</string>
-                  </dict>
-                  <key>3</key>
-                  <dict>
-                    <key>name</key>
-                    <string>variable.other.readwrite.ballerina</string>
-                  </dict>
-                </dict>
+                <string>[_$[:alpha:]][_$[:alnum:]]*</string>
               </dict>
               <dict>
                 <key>name</key>
