@@ -246,7 +246,7 @@
 //        ^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina variable.other.readwrite.ballerina
 //               ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.type.annotation.ballerina
 //                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
-//                 ^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                 ^^^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina constant.language.boolean.ballerina
 //                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.separator.comma.ballerina
 >         salary: 8000.0
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -425,7 +425,7 @@
 //        ^^^^^^^ source.ballerina meta.block.ballerina variable.other.readwrite.ballerina
 //               ^ source.ballerina meta.block.ballerina keyword.operator.type.annotation.ballerina
 //                ^ source.ballerina meta.block.ballerina
-//                 ^^^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                 ^^^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina constant.language.boolean.ballerina
 //                      ^ source.ballerina meta.block.ballerina punctuation.separator.comma.ballerina
 >         salary: 0.0
 //^^^^^^^^ source.ballerina meta.block.ballerina

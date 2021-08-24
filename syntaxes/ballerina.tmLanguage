@@ -4602,6 +4602,10 @@
             <array>
               <dict>
                 <key>include</key>
+                <string>#booleans</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#self-literal</string>
               </dict>
               <dict>

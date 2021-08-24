@@ -701,7 +701,6 @@ repository:
       name: keyword.operator.ballerina
     - match: '\?'
       name: keyword.operator.optional.ballerina
-    # - include: '#multiType' 
     - include: '#type-annotation'
     - include: '#type-tuple'
     - include: '#keywords'
@@ -1532,6 +1531,7 @@ repository:
         '1': { name: keyword.operator.type.annotation.ballerina }
       end: (?<![:|&])((?=$|^|[,);\}\]\?\>]|//)|(?==[^>])|((?<=[\}>\]\)]|[_$[:alpha:]])\s*(?=\{)))(\?)?
       patterns:
+      - include: '#booleans'
       - include: '#self-literal'
       - name: variable.other.readwrite.ballerina
         match: '{{identifier}}'
