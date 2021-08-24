@@ -701,7 +701,7 @@ repository:
       name: keyword.operator.ballerina
     - match: '\?'
       name: keyword.operator.optional.ballerina
-    - include: '#multiType' 
+    # - include: '#multiType' 
     - include: '#type-annotation'
     - include: '#type-tuple'
     - include: '#keywords'

@@ -725,9 +725,6 @@
             "keyword.operator.optional.ballerina"
         ],
         {
-            "include": "multiType"
-        },
-        {
             "include": "type-annotation"
         },
         {
@@ -781,16 +778,6 @@
             "constant.character.escape.ballerina"
         ]
     ],
-    "multiType": [
-        [
-            "(?<=\\|)([_$[:alpha:]][_$[:alnum:]]*)|([_$[:alpha:]][_$[:alnum:]]*)(?=\\|)",
-            "type"
-        ],
-        [
-            "\\|",
-            "keyword.operator.ballerina"
-        ]
-    ],
     "type-annotation": [
         [
             "(\\:)",
@@ -830,6 +817,16 @@
         {
             "include": "paranthesised"
         }
+    ],
+    "multiType": [
+        [
+            "(?<=\\|)([_$[:alpha:]][_$[:alnum:]]*)|([_$[:alpha:]][_$[:alnum:]]*)(?=\\|)",
+            "type"
+        ],
+        [
+            "\\|",
+            "keyword.operator.ballerina"
+        ]
     ],
     "type": [
         {
