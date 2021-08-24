@@ -1,0 +1,529 @@
+// SYNTAX TEST "source.ballerina" "semtype/modules/json/schema.bal highlighting testcase"
+
+> // JSON representation of types
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> 
+> public type Type Nil|Boolean|Int|Float|Decimal|String|Error|Typedesc|Handle|Xml|Json|Never|Any|ReadOnly
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^ source.ballerina keyword.other.ballerina
+//           ^ source.ballerina
+//            ^^^^ source.ballerina entity.name.type.ballerina
+//                ^ source.ballerina
+//                 ^^^ source.ballerina storage.type.ballerina
+//                    ^ source.ballerina keyword.operator.ballerina
+//                     ^^^^^^^ source.ballerina storage.type.ballerina
+//                            ^ source.ballerina keyword.operator.ballerina
+//                             ^^^ source.ballerina storage.type.ballerina
+//                                ^ source.ballerina keyword.operator.ballerina
+//                                 ^^^^^ source.ballerina storage.type.ballerina
+//                                      ^ source.ballerina keyword.operator.ballerina
+//                                       ^^^^^^^ source.ballerina storage.type.ballerina
+//                                              ^ source.ballerina keyword.operator.ballerina
+//                                               ^^^^^^ source.ballerina storage.type.ballerina
+//                                                     ^ source.ballerina keyword.operator.ballerina
+//                                                      ^^^^^ source.ballerina storage.type.ballerina
+//                                                           ^ source.ballerina keyword.operator.ballerina
+//                                                            ^^^^^^^^ source.ballerina storage.type.ballerina
+//                                                                    ^ source.ballerina keyword.operator.ballerina
+//                                                                     ^^^^^^ source.ballerina storage.type.ballerina
+//                                                                           ^ source.ballerina keyword.operator.ballerina
+//                                                                            ^^^ source.ballerina storage.type.ballerina
+//                                                                               ^ source.ballerina keyword.operator.ballerina
+//                                                                                ^^^^ source.ballerina storage.type.ballerina
+//                                                                                    ^ source.ballerina keyword.operator.ballerina
+//                                                                                     ^^^^^ source.ballerina storage.type.ballerina
+//                                                                                          ^ source.ballerina keyword.operator.ballerina
+//                                                                                           ^^^ source.ballerina storage.type.ballerina
+//                                                                                              ^ source.ballerina keyword.operator.ballerina
+//                                                                                               ^^^^^^^^ source.ballerina storage.type.ballerina
+>     |Byte|BuiltinIntSubtype|Single|Union|Intersection|Tuple|Record|Function|Rec|Ref;
+//^^^^ source.ballerina
+//    ^ source.ballerina keyword.operator.ballerina
+//     ^^^^ source.ballerina storage.type.ballerina
+//         ^ source.ballerina keyword.operator.ballerina
+//          ^^^^^^^^^^^^^^^^^ source.ballerina storage.type.ballerina
+//                           ^ source.ballerina keyword.operator.ballerina
+//                            ^^^^^^ source.ballerina storage.type.ballerina
+//                                  ^ source.ballerina keyword.operator.ballerina
+//                                   ^^^^^ source.ballerina storage.type.ballerina
+//                                        ^ source.ballerina keyword.operator.ballerina
+//                                         ^^^^^^^^^^^^ source.ballerina storage.type.ballerina
+//                                                     ^ source.ballerina keyword.operator.ballerina
+//                                                      ^^^^^ source.ballerina storage.type.ballerina
+//                                                           ^ source.ballerina keyword.operator.ballerina
+//                                                            ^^^^^^ source.ballerina storage.type.ballerina
+//                                                                  ^ source.ballerina keyword.operator.ballerina
+//                                                                   ^^^^^^^^ source.ballerina storage.type.ballerina
+//                                                                           ^ source.ballerina keyword.operator.ballerina
+//                                                                            ^^^ source.ballerina storage.type.ballerina
+//                                                                               ^ source.ballerina keyword.operator.ballerina
+//                                                                                ^^^ source.ballerina storage.type.ballerina
+//                                                                                   ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> public const Nil = "nil";
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//             ^^^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//                ^ source.ballerina meta.var.expr.ballerina
+//                 ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//                  ^ source.ballerina meta.var.expr.ballerina
+//                   ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                    ^^^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina
+//                       ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                        ^ source.ballerina punctuation.terminator.statement.ballerina
+> public const Boolean = "boolean";
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//             ^^^^^^^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//                    ^ source.ballerina meta.var.expr.ballerina
+//                     ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//                      ^ source.ballerina meta.var.expr.ballerina
+//                       ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                        ^^^^^^^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina
+//                               ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                                ^ source.ballerina punctuation.terminator.statement.ballerina
+> public const Int = "int";
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//             ^^^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//                ^ source.ballerina meta.var.expr.ballerina
+//                 ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//                  ^ source.ballerina meta.var.expr.ballerina
+//                   ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                    ^^^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina
+//                       ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                        ^ source.ballerina punctuation.terminator.statement.ballerina
+> public const Float = "float";
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//             ^^^^^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//                  ^ source.ballerina meta.var.expr.ballerina
+//                   ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//                    ^ source.ballerina meta.var.expr.ballerina
+//                     ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                      ^^^^^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina
+//                           ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                            ^ source.ballerina punctuation.terminator.statement.ballerina
+> public const Decimal = "decimal";
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//             ^^^^^^^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//                    ^ source.ballerina meta.var.expr.ballerina
+//                     ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//                      ^ source.ballerina meta.var.expr.ballerina
+//                       ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                        ^^^^^^^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina
+//                               ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                                ^ source.ballerina punctuation.terminator.statement.ballerina
+> public const String = "string";
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//             ^^^^^^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//                   ^ source.ballerina meta.var.expr.ballerina
+//                    ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//                     ^ source.ballerina meta.var.expr.ballerina
+//                      ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                       ^^^^^^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina
+//                             ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                              ^ source.ballerina punctuation.terminator.statement.ballerina
+> public const Typedesc = "typedesc";
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//             ^^^^^^^^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//                     ^ source.ballerina meta.var.expr.ballerina
+//                      ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//                       ^ source.ballerina meta.var.expr.ballerina
+//                        ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                         ^^^^^^^^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina
+//                                 ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                                  ^ source.ballerina punctuation.terminator.statement.ballerina
+> public const Handle = "handle";
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//             ^^^^^^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//                   ^ source.ballerina meta.var.expr.ballerina
+//                    ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//                     ^ source.ballerina meta.var.expr.ballerina
+//                      ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                       ^^^^^^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina
+//                             ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                              ^ source.ballerina punctuation.terminator.statement.ballerina
+> public const Xml = "xml";
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//             ^^^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//                ^ source.ballerina meta.var.expr.ballerina
+//                 ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//                  ^ source.ballerina meta.var.expr.ballerina
+//                   ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                    ^^^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina
+//                       ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                        ^ source.ballerina punctuation.terminator.statement.ballerina
+> public const Json = "json";
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//             ^^^^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//                 ^ source.ballerina meta.var.expr.ballerina
+//                  ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//                   ^ source.ballerina meta.var.expr.ballerina
+//                    ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                     ^^^^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina
+//                         ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                          ^ source.ballerina punctuation.terminator.statement.ballerina
+> public const Never = "never";
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//             ^^^^^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//                  ^ source.ballerina meta.var.expr.ballerina
+//                   ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//                    ^ source.ballerina meta.var.expr.ballerina
+//                     ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                      ^^^^^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina
+//                           ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                            ^ source.ballerina punctuation.terminator.statement.ballerina
+> public const Any = "any";
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//             ^^^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//                ^ source.ballerina meta.var.expr.ballerina
+//                 ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//                  ^ source.ballerina meta.var.expr.ballerina
+//                   ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                    ^^^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina
+//                       ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                        ^ source.ballerina punctuation.terminator.statement.ballerina
+> public const ReadOnly = "readonly";
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//             ^^^^^^^^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//                     ^ source.ballerina meta.var.expr.ballerina
+//                      ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//                       ^ source.ballerina meta.var.expr.ballerina
+//                        ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                         ^^^^^^^^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina
+//                                 ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                                  ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> public const Byte = "byte";
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//             ^^^^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//                 ^ source.ballerina meta.var.expr.ballerina
+//                  ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//                   ^ source.ballerina meta.var.expr.ballerina
+//                    ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                     ^^^^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina
+//                         ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                          ^ source.ballerina punctuation.terminator.statement.ballerina
+> public type BuiltinIntSubtype "int32"|"int16"|"int8"|"uint32"|"uint16"|"uint8";
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^ source.ballerina keyword.other.ballerina
+//           ^ source.ballerina
+//            ^^^^^^^^^^^^^^^^^ source.ballerina entity.name.type.ballerina
+//                             ^ source.ballerina
+//                              ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                               ^^^^^ source.ballerina string.quoted.double.ballerina
+//                                    ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                                     ^ source.ballerina keyword.operator.ballerina
+//                                      ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                                       ^^^^^ source.ballerina string.quoted.double.ballerina
+//                                            ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                                             ^ source.ballerina keyword.operator.ballerina
+//                                              ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                                               ^^^^ source.ballerina string.quoted.double.ballerina
+//                                                   ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                                                    ^ source.ballerina keyword.operator.ballerina
+//                                                     ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                                                      ^^^^^^ source.ballerina string.quoted.double.ballerina
+//                                                            ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                                                             ^ source.ballerina keyword.operator.ballerina
+//                                                              ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                                                               ^^^^^^ source.ballerina string.quoted.double.ballerina
+//                                                                     ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                                                                      ^ source.ballerina keyword.operator.ballerina
+//                                                                       ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                                                                        ^^^^^ source.ballerina string.quoted.double.ballerina
+//                                                                             ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                                                                              ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> public type Single SingleString|SingleInt|SingleBoolean;
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^ source.ballerina keyword.other.ballerina
+//           ^ source.ballerina
+//            ^^^^^^ source.ballerina entity.name.type.ballerina
+//                  ^ source.ballerina
+//                   ^^^^^^^^^^^^ source.ballerina storage.type.ballerina
+//                               ^ source.ballerina keyword.operator.ballerina
+//                                ^^^^^^^^^ source.ballerina storage.type.ballerina
+//                                         ^ source.ballerina keyword.operator.ballerina
+//                                          ^^^^^^^^^^^^^ source.ballerina storage.type.ballerina
+//                                                       ^ source.ballerina punctuation.terminator.statement.ballerina
+> public type SingleString ["string", string];
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^ source.ballerina keyword.other.ballerina
+//           ^ source.ballerina
+//            ^^^^^^^^^^^^ source.ballerina entity.name.type.ballerina
+//                        ^ source.ballerina
+//                         ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                          ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                           ^^^^^^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina
+//                                 ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                                  ^ source.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
+//                                   ^ source.ballerina meta.parameters.ballerina
+//                                    ^^^^^^ source.ballerina meta.parameters.ballerina support.type.primitive.ballerina
+//                                          ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                                           ^ source.ballerina punctuation.terminator.statement.ballerina
+> // Allow string here, so it can work with JSON parsers that represent numbers using doubles
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> public type SingleInt ["int", int|string];
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^ source.ballerina keyword.other.ballerina
+//           ^ source.ballerina
+//            ^^^^^^^^^ source.ballerina entity.name.type.ballerina
+//                     ^ source.ballerina
+//                      ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                       ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                        ^^^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina
+//                           ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                            ^ source.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
+//                             ^ source.ballerina meta.parameters.ballerina
+//                              ^^^ source.ballerina meta.parameters.ballerina support.type.primitive.ballerina
+//                                 ^ source.ballerina meta.parameters.ballerina keyword.operator.ballerina
+//                                  ^^^^^^ source.ballerina meta.parameters.ballerina support.type.primitive.ballerina
+//                                        ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                                         ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> public type SingleBoolean boolean;
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^ source.ballerina keyword.other.ballerina
+//           ^ source.ballerina
+//            ^^^^^^^^^^^^^ source.ballerina entity.name.type.ballerina
+//                         ^ source.ballerina
+//                          ^^^^^^^ source.ballerina support.type.primitive.ballerina
+//                                 ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> public type Union ["|", Type...];
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^ source.ballerina keyword.other.ballerina
+//           ^ source.ballerina
+//            ^^^^^ source.ballerina entity.name.type.ballerina
+//                 ^ source.ballerina
+//                  ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                   ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                    ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina
+//                     ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                      ^ source.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
+//                       ^ source.ballerina meta.parameters.ballerina
+//                        ^^^^ source.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                            ^^^ source.ballerina meta.parameters.ballerina keyword.operator.ballerina
+//                               ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                                ^ source.ballerina punctuation.terminator.statement.ballerina
+> public type Intersection ["&", Type...];
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^ source.ballerina keyword.other.ballerina
+//           ^ source.ballerina
+//            ^^^^^^^^^^^^ source.ballerina entity.name.type.ballerina
+//                        ^ source.ballerina
+//                         ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                          ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                           ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina
+//                            ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                             ^ source.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
+//                              ^ source.ballerina meta.parameters.ballerina
+//                               ^^^^ source.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                                   ^^^ source.ballerina meta.parameters.ballerina keyword.operator.ballerina
+//                                      ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                                       ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> public type Tuple ["tuple", Type...];
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^ source.ballerina keyword.other.ballerina
+//           ^ source.ballerina
+//            ^^^^^ source.ballerina entity.name.type.ballerina
+//                 ^ source.ballerina
+//                  ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                   ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                    ^^^^^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina
+//                         ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                          ^ source.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
+//                           ^ source.ballerina meta.parameters.ballerina
+//                            ^^^^ source.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                                ^^^ source.ballerina meta.parameters.ballerina keyword.operator.ballerina
+//                                   ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                                    ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> // Last Type if present is interpreted as the tuple rest type. So
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // `["list"]` means any list
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // `["list", "int"]` means a list of any length containing only integers
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // `["list", "string", "int"]` means a list whose first member is a string
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // and whose other members are integers
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Note that `["list", "int", "boolean", "never"]`
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // is the same as `["tuple", "int", "boolean"]`
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> public type List ["list", Type...];
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^ source.ballerina keyword.other.ballerina
+//           ^ source.ballerina
+//            ^^^^ source.ballerina entity.name.type.ballerina
+//                ^ source.ballerina
+//                 ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                  ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                   ^^^^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina
+//                       ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                        ^ source.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
+//                         ^ source.ballerina meta.parameters.ballerina
+//                          ^^^^ source.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                              ^^^ source.ballerina meta.parameters.ballerina keyword.operator.ballerina
+//                                 ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                                  ^ source.ballerina punctuation.terminator.statement.ballerina
+> public type Record ["record", Field...];
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^ source.ballerina keyword.other.ballerina
+//           ^ source.ballerina
+//            ^^^^^^ source.ballerina entity.name.type.ballerina
+//                  ^ source.ballerina
+//                   ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                    ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                     ^^^^^^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina
+//                           ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                            ^ source.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
+//                             ^ source.ballerina meta.parameters.ballerina
+//                              ^^^^^ source.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                                   ^^^ source.ballerina meta.parameters.ballerina keyword.operator.ballerina
+//                                      ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                                       ^ source.ballerina punctuation.terminator.statement.ballerina
+> public type Field [string, Type];
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^ source.ballerina keyword.other.ballerina
+//           ^ source.ballerina
+//            ^^^^^ source.ballerina entity.name.type.ballerina
+//                 ^ source.ballerina
+//                  ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                   ^^^^^^ source.ballerina meta.parameters.ballerina support.type.primitive.ballerina
+//                         ^ source.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
+//                          ^ source.ballerina meta.parameters.ballerina
+//                           ^^^^ source.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                               ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                                ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> // This should be `Type`, not `Type...` but slalpha5 does not allow it.
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> 
+> public type Error "error" | ["error", Type...];
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^ source.ballerina keyword.other.ballerina
+//           ^ source.ballerina
+//            ^^^^^ source.ballerina entity.name.type.ballerina
+//                 ^ source.ballerina
+//                  ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                   ^^^^^ source.ballerina string.quoted.double.ballerina
+//                        ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                         ^ source.ballerina
+//                          ^ source.ballerina keyword.operator.ballerina
+//                           ^ source.ballerina
+//                            ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                             ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                              ^^^^^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina
+//                                   ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                                    ^ source.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
+//                                     ^ source.ballerina meta.parameters.ballerina
+//                                      ^^^^ source.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                                          ^^^ source.ballerina meta.parameters.ballerina keyword.operator.ballerina
+//                                             ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                                              ^ source.ballerina punctuation.terminator.statement.ballerina
+> // `["function" "string", "boolean", "int"]` means any function of two arguments, string and boolean, returning an integer
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // `["function" "int"]` means any function of zero arguments returning an integer
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // `["function"]` means any function
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> public type Function ["function", Type...];
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^ source.ballerina keyword.other.ballerina
+//           ^ source.ballerina
+//            ^^^^^^^^ source.ballerina entity.name.type.ballerina
+//                    ^ source.ballerina
+//                     ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                      ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                       ^^^^^^^^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina
+//                               ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                                ^ source.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
+//                                 ^ source.ballerina meta.parameters.ballerina
+//                                  ^^^^ source.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                                      ^^^ source.ballerina meta.parameters.ballerina keyword.operator.ballerina
+//                                         ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                                          ^ source.ballerina punctuation.terminator.statement.ballerina
+> // This should be `Type`, not `Type...` but slalpha5 does not allow it.
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> public type Rec ["rec", string, Type...];
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^ source.ballerina keyword.other.ballerina
+//           ^ source.ballerina
+//            ^^^ source.ballerina entity.name.type.ballerina
+//               ^ source.ballerina
+//                ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                 ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                  ^^^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina
+//                     ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                      ^ source.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
+//                       ^ source.ballerina meta.parameters.ballerina
+//                        ^^^^^^ source.ballerina meta.parameters.ballerina support.type.primitive.ballerina
+//                              ^ source.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
+//                               ^ source.ballerina meta.parameters.ballerina
+//                                ^^^^ source.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                                    ^^^ source.ballerina meta.parameters.ballerina keyword.operator.ballerina
+//                                       ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                                        ^ source.ballerina punctuation.terminator.statement.ballerina
+> public type Ref ["ref", string];
+//^^^^^^ source.ballerina keyword.other.ballerina
+//      ^ source.ballerina
+//       ^^^^ source.ballerina keyword.other.ballerina
+//           ^ source.ballerina
+//            ^^^ source.ballerina entity.name.type.ballerina
+//               ^ source.ballerina
+//                ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                 ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//                  ^^^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina
+//                     ^ source.ballerina meta.parameters.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//                      ^ source.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
+//                       ^ source.ballerina meta.parameters.ballerina
+//                        ^^^^^^ source.ballerina meta.parameters.ballerina support.type.primitive.ballerina
+//                              ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                               ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> 

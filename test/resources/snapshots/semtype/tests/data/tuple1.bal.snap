@@ -1,0 +1,61 @@
+// SYNTAX TEST "source.ballerina" "semtype/tests/data/tuple1.bal highlighting testcase"
+
+> // T1<:T2
+//^^^^^^^^^ source.ballerina comment.ballerina
+> // T3<:T4
+//^^^^^^^^^ source.ballerina comment.ballerina
+> // T4<:T3
+//^^^^^^^^^ source.ballerina comment.ballerina
+> type T1 [int];
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^ source.ballerina entity.name.type.ballerina
+//       ^ source.ballerina
+//        ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//         ^^^ source.ballerina meta.parameters.ballerina support.type.primitive.ballerina
+//            ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//             ^ source.ballerina punctuation.terminator.statement.ballerina
+> type T2 [int?];
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^ source.ballerina entity.name.type.ballerina
+//       ^ source.ballerina
+//        ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//         ^^^ source.ballerina meta.parameters.ballerina support.type.primitive.ballerina
+//            ^ source.ballerina meta.parameters.ballerina
+//             ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//              ^ source.ballerina punctuation.terminator.statement.ballerina
+> type T3 [int, int?];
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^ source.ballerina entity.name.type.ballerina
+//       ^ source.ballerina
+//        ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//         ^^^ source.ballerina meta.parameters.ballerina support.type.primitive.ballerina
+//            ^ source.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
+//             ^ source.ballerina meta.parameters.ballerina
+//              ^^^ source.ballerina meta.parameters.ballerina support.type.primitive.ballerina
+//                 ^ source.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                  ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                   ^ source.ballerina punctuation.terminator.statement.ballerina
+> type T4 [int, int] | [int, ()];
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^ source.ballerina entity.name.type.ballerina
+//       ^ source.ballerina
+//        ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//         ^^^ source.ballerina meta.parameters.ballerina support.type.primitive.ballerina
+//            ^ source.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
+//             ^ source.ballerina meta.parameters.ballerina
+//              ^^^ source.ballerina meta.parameters.ballerina support.type.primitive.ballerina
+//                 ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                  ^ source.ballerina
+//                   ^ source.ballerina keyword.operator.ballerina
+//                    ^ source.ballerina
+//                     ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                      ^^^ source.ballerina meta.parameters.ballerina support.type.primitive.ballerina
+//                         ^ source.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
+//                          ^^ source.ballerina meta.parameters.ballerina
+//                            ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                             ^ source.ballerina
+//                              ^ source.ballerina punctuation.terminator.statement.ballerina
