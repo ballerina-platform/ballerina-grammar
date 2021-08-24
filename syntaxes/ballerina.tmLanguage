@@ -4665,30 +4665,40 @@
               </dict>
               <dict>
                 <key>match</key>
-                <string>([_$[:alpha:]][_$[:alnum:]]*)((\.)([_$[:alpha:]][_$[:alnum:]]*)(\()(\)))?</string>
+                <string>\b(is|new|isolated|null|function)\b|\b(true|false)\b|([_$[:alpha:]][_$[:alnum:]]*)((\.)([_$[:alpha:]][_$[:alnum:]]*)(\()(\)))?</string>
                 <key>captures</key>
                 <dict>
                   <key>1</key>
                   <dict>
                     <key>name</key>
-                    <string>variable.other.readwrite.ballerina</string>
+                    <string>keyword.other.ballerina</string>
+                  </dict>
+                  <key>2</key>
+                  <dict>
+                    <key>name</key>
+                    <string>constant.language.boolean.ballerina</string>
                   </dict>
                   <key>3</key>
                   <dict>
                     <key>name</key>
-                    <string>punctuation.accessor.ballerina</string>
-                  </dict>
-                  <key>4</key>
-                  <dict>
-                    <key>name</key>
-                    <string>entity.name.function.ballerina</string>
+                    <string>variable.other.readwrite.ballerina</string>
                   </dict>
                   <key>5</key>
                   <dict>
                     <key>name</key>
-                    <string>punctuation.definition.parameters.begin.ballerina</string>
+                    <string>punctuation.accessor.ballerina</string>
                   </dict>
                   <key>6</key>
+                  <dict>
+                    <key>name</key>
+                    <string>entity.name.function.ballerina</string>
+                  </dict>
+                  <key>7</key>
+                  <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.parameters.begin.ballerina</string>
+                  </dict>
+                  <key>8</key>
                   <dict>
                     <key>name</key>
                     <string>punctuation.definition.parameters.end.ballerina</string>

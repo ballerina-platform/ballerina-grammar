@@ -1544,13 +1544,15 @@ repository:
       patterns:
       - include: '#booleans'
       - include: '#self-literal'
-      - match: '({{identifier}})((\.)({{identifier}})(\()(\)))?'
+      - match: '{{otherKeywords}}|{{booleanTypes}}|({{identifier}})((\.)({{identifier}})(\()(\)))?'
         captures: 
-          '1': { name: variable.other.readwrite.ballerina }
-          '3': { name: punctuation.accessor.ballerina }
-          '4': { name: entity.name.function.ballerina }
-          '5': { name: punctuation.definition.parameters.begin.ballerina }
-          '6': { name: punctuation.definition.parameters.end.ballerina }
+          '1': { name: keyword.other.ballerina }
+          '2': { name: constant.language.boolean.ballerina }
+          '3': { name: variable.other.readwrite.ballerina }
+          '5': { name: punctuation.accessor.ballerina }
+          '6': { name: entity.name.function.ballerina }
+          '7': { name: punctuation.definition.parameters.begin.ballerina }
+          '8': { name: punctuation.definition.parameters.end.ballerina }
       - name: keyword.operator.optional.ballerina
         match: '\?'
       - include: '#multiType'
