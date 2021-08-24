@@ -1692,15 +1692,15 @@
           </dict>
           <dict>
             <key>include</key>
+            <string>#functionReturns</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#functionName</string>
           </dict>
           <dict>
             <key>include</key>
             <string>#functionParameters</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#functionReturns</string>
           </dict>
           <dict>
             <key>include</key>

@@ -620,9 +620,9 @@ repository:
     - match: \bexternal\b
       name: keyword.ballerina
     - include: '#stringTemplate'
+    - include: '#functionReturns'
     - include: '#functionName'
     - include: '#functionParameters'
-    - include: '#functionReturns'
     - include: '#punctuation-semicolon'
     - include: '#function-body'
 

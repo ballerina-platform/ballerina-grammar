@@ -916,13 +916,13 @@
             "include": "stringTemplate"
         },
         {
+            "include": "functionReturns"
+        },
+        {
             "include": "functionName"
         },
         {
             "include": "functionParameters"
-        },
-        {
-            "include": "functionReturns"
         },
         {
             "include": "punctuation-semicolon"
