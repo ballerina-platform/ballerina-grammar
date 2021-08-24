@@ -1453,6 +1453,8 @@ repository:
       patterns:
       - include: '#xmlSingleQuotedString'
       - include: '#xmlDoubleQuotedString'
+      - name: 'keyword.other.ballerina'
+        match: 'xmlns'
       - name: '{{xmlAttribute}}'
         match: '([a-zA-Z0-9-]+)'
 

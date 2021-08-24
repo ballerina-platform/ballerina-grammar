@@ -4362,6 +4362,12 @@
               </dict>
               <dict>
                 <key>name</key>
+                <string>keyword.other.ballerina</string>
+                <key>match</key>
+                <string>xmlns</string>
+              </dict>
+              <dict>
+                <key>name</key>
                 <string>entity.other.attribute-name.xml.ballerina</string>
                 <key>match</key>
                 <string>([a-zA-Z0-9-]+)</string>

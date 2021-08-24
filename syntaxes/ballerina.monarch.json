@@ -257,6 +257,10 @@
             "include": "xmlDoubleQuotedString"
         },
         [
+            "xmlns",
+            "keyword.other.ballerina"
+        ],
+        [
             "([a-zA-Z0-9-]+)",
             "variable.parameter"
         ]
