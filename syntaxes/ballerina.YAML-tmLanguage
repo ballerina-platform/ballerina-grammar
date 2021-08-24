@@ -22,7 +22,7 @@ variables:
   lookAheadEndOfType: '[;),}\]:?\-\+\>]|\|\||\&\&|\!\=\=|$'
   varExprStart: '\b(var)'
   primitiveTypes: '(string|int|boolean|float|byte|decimal|json|xml)'
-  otherKeywords: '\b(is|new|isolated)\b'
+  otherKeywords: '\b(is|new|isolated|null|function)\b'
   controlKeywords: '\b(check|foreach)\b'
   booleanTypes: '\b(true|false)\b'
   constExprStart: '\b(const(?!\s+enum\b))'
@@ -633,8 +633,12 @@ repository:
     - include: '#type-primitive' 
     - include: '#self-literal' 
     - include: '#string' 
-    - name: meta.definition.function.ballerina entity.name.function.ballerina
-      match: '\s+{{identifier}}'
+    - match: '\s+(\b(self)|{{otherKeywords}}|{{primitiveTypes}}|({{identifier}}))'
+      captures:
+        '2': { name: variable.language.this.ballerina }
+        '3': { name: keyword.other.ballerina }
+        '4': { name: '{{primitiveScope}}' }
+        '5': { name: meta.definition.function.ballerina entity.name.function.ballerina }
 
   functionParameters:
     name: meta.parameters.ballerina
@@ -1532,8 +1536,11 @@ repository:
       end: (?<![:|&])((?=$|^|[,);\}\]\?\>]|//)|(?==[^>])|((?<=[\}>\]\)]|[_$[:alpha:]])\s*(?=\{)))(\?)?
       patterns:
       - include: '#self-literal'
-      - name: variable.other.readwrite.ballerina
-        match: '{{identifier}}'
+      - match: '{{otherKeywords}}|{{booleanTypes}}|{{identifier}}'
+        captures: 
+          '1': { name: keyword.other.ballerina }
+          '2': { name: constant.language.boolean.ballerina }
+          '3': { name: variable.other.readwrite.ballerina }
       - name: keyword.operator.optional.ballerina
         match: '\?'
       - include: '#multiType'

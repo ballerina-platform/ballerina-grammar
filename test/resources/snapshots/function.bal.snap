@@ -350,9 +350,9 @@
 //                                  ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina
 //                                   ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina keyword.operator.ballerina
 //                                    ^^ source.ballerina meta.function.ballerina
-//                                      ^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+//                                      ^^^^ source.ballerina meta.function.ballerina
 //                                          ^ source.ballerina meta.function.ballerina
-//                                           ^^^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+//                                           ^^^^^^^^ source.ballerina meta.function.ballerina
 //                                                   ^ source.ballerina meta.function.ballerina
 //                                                    ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >     name: "PI",
@@ -2273,7 +2273,7 @@
 //             ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //              ^ source.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
 //               ^ source.ballerina meta.type.annotation.ballerina
-//                ^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina keyword.other.ballerina
+//                ^^^^ source.ballerina meta.type.annotation.ballerina keyword.other.ballerina
 //                    ^ source.ballerina punctuation.separator.comma.ballerina
 >         "url": "https://postman-echo.com/post"
 //^^^^^^^^ source.ballerina
@@ -7358,9 +7358,9 @@
 //                                                         ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina
 //                                                          ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina keyword.operator.ballerina
 //                                                           ^^ source.ballerina meta.function.ballerina
-//                                                             ^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+//                                                             ^^^^ source.ballerina meta.function.ballerina
 //                                                                 ^ source.ballerina meta.function.ballerina
-//                                                                  ^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+//                                                                  ^^^^^^ source.ballerina meta.function.ballerina
 //                                                                        ^ source.ballerina meta.function.ballerina
 //                                                                         ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >     'class: "java.util.ArrayDeque"
@@ -7392,9 +7392,9 @@
 //                                       ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina
 //                                        ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina keyword.operator.ballerina
 //                                         ^^ source.ballerina meta.function.ballerina
-//                                           ^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+//                                           ^^^^ source.ballerina meta.function.ballerina
 //                                               ^ source.ballerina meta.function.ballerina
-//                                                ^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+//                                                ^^^^^^^^^^^ source.ballerina meta.function.ballerina
 //                                                           ^ source.ballerina meta.function.ballerina
 //                                                            ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >     'class: "java.util.ArrayDeque"
