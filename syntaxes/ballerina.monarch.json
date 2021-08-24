@@ -144,7 +144,7 @@
             "type"
         ],
         [
-            "\\b[^'](boolean|int|string|float|decimal|byte|json|xml)\\b",
+            "\\b(boolean|int|string|float|decimal|byte|json|xml)\\b",
             "type"
         ],
         [
@@ -748,20 +748,15 @@
         ]
     ],
     "string": [
-        {
-            "include": "qstring-double"
-        }
-    ],
-    "qstring-double": [
         [
             "\"",
             {
-                "next": "qstring-double__b__0",
+                "next": "string__b__0",
                 "token": "punctuation.definition.string.begin.ballerina"
             }
         ]
     ],
-    "qstring-double__b__0": [
+    "string__b__0": [
         [
             "((?:[^\\\\\\n])$)",
             {
@@ -1036,7 +1031,7 @@
             ]
         ],
         [
-            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\\b(is|new|isolated)\\b|\\b(true|false)\\b|\\b(check)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
+            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\\b(is|new|isolated)\\b|\\b(true|false)\\b|\\b(check|foreach)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
             [
                 "keyword.operator.rest.ballerina",
                 "type",
@@ -1122,6 +1117,10 @@
         {
             "include": "self-literal"
         },
+        [
+            "\\b(check|foreach)\\b",
+            "keyword.control.ballerina"
+        ],
         [
             "[_$[:alpha:]][_$[:alnum:]]*",
             "variable.other.readwrite.ballerina"

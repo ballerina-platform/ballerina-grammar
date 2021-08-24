@@ -41,4 +41,12 @@ describe('Unit tests', () => {
     it('test snapshot test', () => {
         return runTextMateTest('test');
     });
+
+    it('main.bal snapshot test', () => {
+        return runTextMateTest('semtype/main');
+    });
+
+    it('main.bal snapshot test', () => {
+        return runTextMateTest('semtype/bmain');
+    });
 });

@@ -404,6 +404,12 @@
           </dict>
           <dict>
             <key>name</key>
+            <string>keyword.control.ballerina</string>
+            <key>match</key>
+            <string>\b(check|foreach)\b</string>
+          </dict>
+          <dict>
+            <key>name</key>
             <string>variable.other.readwrite.ballerina</string>
             <key>match</key>
             <string>[_$[:alpha:]][_$[:alnum:]]*</string>
@@ -1838,7 +1844,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\b(is|new|isolated)\b|\b(true|false)\b|\b(check)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
+            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\b(is|new|isolated)\b|\b(true|false)\b|\b(check|foreach)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
             <key>captures</key>
             <dict>
               <key>2</key>
@@ -4200,16 +4206,6 @@
         <key>patterns</key>
         <array>
           <dict>
-            <key>include</key>
-            <string>#qstring-double</string>
-          </dict>
-        </array>
-      </dict>
-      <key>qstring-double</key>
-      <dict>
-        <key>patterns</key>
-        <array>
-          <dict>
             <key>begin</key>
             <string>"</string>
             <key>name</key>
@@ -4261,7 +4257,7 @@
             <key>name</key>
             <string>support.type.primitive.ballerina</string>
             <key>match</key>
-            <string>\b[^'](boolean|int|string|float|decimal|byte|json|xml)\b</string>
+            <string>\b(boolean|int|string|float|decimal|byte|json|xml)\b</string>
           </dict>
           <dict>
             <key>name</key>

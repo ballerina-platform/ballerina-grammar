@@ -23,7 +23,7 @@ variables:
   varExprStart: '\b(var)'
   primitiveTypes: '(string|int|boolean|float|byte|decimal|json|xml)'
   otherKeywords: '\b(is|new|isolated)\b'
-  controlKeywords: '\b(check)\b'
+  controlKeywords: '\b(check|foreach)\b'
   booleanTypes: '\b(true|false)\b'
   constExprStart: '\b(const(?!\s+enum\b))'
   lookBehindString: '^string|{{nonPropertyLookBehind}}string'
@@ -217,6 +217,8 @@ repository:
     # vars
     - include: '#type-primitive'
     - include: '#self-literal'
+    - name: 'keyword.control.ballerina'
+      match: '{{controlKeywords}}'
     - name: variable.other.readwrite.ballerina
       match: '{{identifier}}'
     - include: '#type-annotation'
@@ -1398,10 +1400,6 @@ repository:
 
   string:
     patterns:
-    - include: '#qstring-double'
-
-  qstring-double:
-    patterns:
     - begin: '"'
       name: string.quoted.double.ballerina
       beginCaptures:
@@ -1419,7 +1417,7 @@ repository:
       match: \b(handle|any|anydata|future|typedesc)\b
 
     - name: '{{primitiveScope}}'
-      match: \b[^'](boolean|int|string|float|decimal|byte|json|xml)\b
+      match: \b(boolean|int|string|float|decimal|byte|json|xml)\b
 
     - name: '{{typeScope}}'
       match: \b(map|error|never|readonly|distinct)\b
