@@ -470,7 +470,7 @@
 //           ^ source.ballerina
 //            ^^^^^^^^^^^^^ source.ballerina entity.name.type.ballerina
 //                         ^ source.ballerina
-//                          ^^^^^^ source.ballerina meta.record.ballerina keyword.ballerina
+//                          ^^^^^^ source.ballerina meta.record.ballerina keyword.other.ballerina
 //                                ^ source.ballerina meta.record.ballerina
 //                                 ^ source.ballerina meta.record.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                                  ^ source.ballerina meta.record.ballerina meta.block.ballerina keyword.operator.ballerina

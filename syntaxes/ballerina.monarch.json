@@ -1031,7 +1031,7 @@
             ]
         ],
         [
-            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\\b(is|new|isolated)\\b|\\b(true|false)\\b|\\b(check)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
+            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\\b(is|new|isolated)\\b|\\b(true|false)\\b|\\b(check|foreach)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
             [
                 "keyword.operator.rest.ballerina",
                 "type",
@@ -1117,6 +1117,10 @@
         {
             "include": "self-literal"
         },
+        [
+            "\\b(check|foreach)\\b",
+            "keyword.control.ballerina"
+        ],
         [
             "[_$[:alpha:]][_$[:alnum:]]*",
             "variable.other.readwrite.ballerina"

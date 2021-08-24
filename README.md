@@ -40,3 +40,4 @@ npm run build
 
 * Test snapshot againt the grammar
     - Run `node node_modules/vscode-tmgrammar-test/dist/src/unit.js -s source.ballerina -g syntaxes/ballerina.tmLanguage -t test/resources/snapshots/<NAME>.bal.snap`
+    (Makesure, the snapshot's lines start with `//` and `// SYNTAX TEST "source.ballerina" "description"` is added to the top of the snapshot file to enable the test.)
