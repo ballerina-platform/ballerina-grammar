@@ -192,7 +192,7 @@
 //                                           ^^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina
 //                                             ^^^^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina variable.language.this.ballerina
 //                                                 ^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina
-//                                                  ^^^^^^^^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+//                                                  ^^^^^^^^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina meta.block.ballerina variable.other.property.ballerina
 //                                                          ^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina punctuation.terminator.statement.ballerina
 > }
 //^ source.ballerina meta.class.ballerina meta.class.body.ballerina punctuation.definition.block.ballerina
@@ -346,7 +346,7 @@
 //                                               ^^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina
 //                                                 ^^^^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina variable.language.this.ballerina
 //                                                     ^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina
-//                                                      ^^^^^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+//                                                      ^^^^^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina meta.block.ballerina variable.other.property.ballerina
 //                                                           ^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina punctuation.terminator.statement.ballerina
 > }
 //^ source.ballerina meta.class.ballerina meta.class.body.ballerina punctuation.definition.block.ballerina
