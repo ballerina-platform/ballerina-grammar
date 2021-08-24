@@ -22,7 +22,7 @@ variables:
   lookAheadEndOfType: '[;),}\]:?\-\+\>]|\|\||\&\&|\!\=\=|$'
   varExprStart: '\b(var)'
   primitiveTypes: '(string|int|boolean|float|byte|decimal|json|xml)'
-  otherKeywords: '\b(is|new|isolated)\b'
+  otherKeywords: '\b(is|new|isolated|null|function)\b'
   controlKeywords: '\b(check|foreach)\b'
   booleanTypes: '\b(true|false)\b'
   constExprStart: '\b(const(?!\s+enum\b))'
@@ -219,8 +219,14 @@ repository:
     - include: '#self-literal'
     - name: 'keyword.control.ballerina'
       match: '{{controlKeywords}}'
-    - name: variable.other.readwrite.ballerina
-      match: '{{identifier}}'
+    - include: '#call' 
+    - match: '({{identifier}})((\.)({{identifier}})(\()(\)))?'
+      captures: 
+        '1': { name: variable.other.readwrite.ballerina }
+        '3': { name: punctuation.accessor.ballerina }
+        '4': { name: entity.name.function.ballerina }
+        '5': { name: punctuation.definition.parameters.begin.ballerina }
+        '6': { name: punctuation.definition.parameters.end.ballerina }
     - include: '#type-annotation'
 
   object-member:
@@ -634,8 +640,12 @@ repository:
     - include: '#type-primitive' 
     - include: '#self-literal' 
     - include: '#string' 
-    - name: meta.definition.function.ballerina entity.name.function.ballerina
-      match: '\s+{{identifier}}'
+    - match: '\s+(\b(self)|{{otherKeywords}}|{{primitiveTypes}}|({{identifier}}))'
+      captures:
+        '2': { name: variable.language.this.ballerina }
+        '3': { name: keyword.other.ballerina }
+        '4': { name: '{{primitiveScope}}' }
+        '5': { name: meta.definition.function.ballerina entity.name.function.ballerina }
 
   functionParameters:
     name: meta.parameters.ballerina
@@ -1533,8 +1543,13 @@ repository:
       patterns:
       - include: '#booleans'
       - include: '#self-literal'
-      - name: variable.other.readwrite.ballerina
-        match: '{{identifier}}'
+      - match: '({{identifier}})((\.)({{identifier}})(\()(\)))?'
+        captures: 
+          '1': { name: variable.other.readwrite.ballerina }
+          '3': { name: punctuation.accessor.ballerina }
+          '4': { name: entity.name.function.ballerina }
+          '5': { name: punctuation.definition.parameters.begin.ballerina }
+          '6': { name: punctuation.definition.parameters.end.ballerina }
       - name: keyword.operator.optional.ballerina
         match: '\?'
       - include: '#multiType'
