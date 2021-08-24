@@ -1640,12 +1640,16 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>\;</string>
+            <string>(?=\;)</string>
             <key>patterns</key>
             <array>
               <dict>
                 <key>include</key>
                 <string>#statements</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#punctuation-comma</string>
               </dict>
             </array>
           </dict>
@@ -1906,7 +1910,7 @@
           </dict>
         </dict>
         <key>end</key>
-        <string>(\=)|(?=\{)|(?==&gt;)|(\))|(?=\;)</string>
+        <string>(?==&gt;)|(\=)|(?=\{)|(\))|(?=\;)</string>
         <key>endCaptures</key>
         <dict>
           <key>1</key>

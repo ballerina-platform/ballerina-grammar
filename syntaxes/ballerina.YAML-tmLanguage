@@ -603,9 +603,10 @@ repository:
       name: meta.block.ballerina
       beginCaptures:
         '0': { name: meta.arrow.ballerina storage.type.function.arrow.ballerina }
-      end: \;
+      end: (?=\;)
       patterns:
       - include: '#statements'
+      - include: '#punctuation-comma'
     - name: keyword.generator.asterisk.ballerina
       match: \*
 
@@ -684,7 +685,7 @@ repository:
     begin: '\s*(returns)\s*'
     beginCaptures:
       '1': { name: keyword.other.ballerina }
-    end: (\=)|(?=\{)|(?==>)|(\))|(?=\;)
+    end: (?==>)|(\=)|(?=\{)|(\))|(?=\;)
     endCaptures:
       '1': { name: keyword.operator.ballerina }
     patterns:

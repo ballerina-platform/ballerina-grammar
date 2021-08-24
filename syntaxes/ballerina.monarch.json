@@ -1229,7 +1229,7 @@
     ],
     "function-body__b__0": [
         [
-            "\\;",
+            "(?=\\;)",
             {
                 "next": "@pop",
                 "token": ""
@@ -1237,6 +1237,9 @@
         ],
         {
             "include": "statements"
+        },
+        {
+            "include": "punctuation-comma"
         }
     ],
     "workerBody": [
