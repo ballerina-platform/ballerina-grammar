@@ -814,8 +814,12 @@
             "include": "self-literal"
         },
         [
-            "[_$[:alpha:]][_$[:alnum:]]*",
-            "variable.other.readwrite.ballerina"
+            "\\b(is|new|isolated|null|function)\\b|\\b(true|false)\\b|[_$[:alpha:]][_$[:alnum:]]*",
+            [
+                "keyword.other.ballerina",
+                "constant.language.boolean.ballerina",
+                "variable.other.readwrite.ballerina"
+            ]
         ],
         [
             "\\?",
@@ -946,8 +950,13 @@
             "include": "string"
         },
         [
-            "\\s+[_$[:alpha:]][_$[:alnum:]]*",
-            "meta.definition.function.ballerina entity.name.function.ballerina"
+            "\\s+(\\b(self)|\\b(is|new|isolated|null|function)\\b|(string|int|boolean|float|byte|decimal|json|xml)|([_$[:alpha:]][_$[:alnum:]]*))",
+            [
+                "variable.language.this.ballerina",
+                "keyword.other.ballerina",
+                "type",
+                "meta.definition.function.ballerina entity.name.function.ballerina"
+            ]
         ]
     ],
     "functionParameters": [
@@ -1031,7 +1040,7 @@
             ]
         ],
         [
-            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\\b(is|new|isolated)\\b|\\b(true|false)\\b|\\b(check|foreach)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
+            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\\b(is|new|isolated|null|function)\\b|\\b(true|false)\\b|\\b(check|foreach)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
             [
                 "keyword.operator.rest.ballerina",
                 "type",
