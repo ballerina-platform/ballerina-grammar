@@ -1683,7 +1683,7 @@
             "on",
             {
                 "next": "serviceOn__b__0",
-                "token": "keyword.ballerina"
+                "token": "keyword.other.ballerina"
             }
         ]
     ],

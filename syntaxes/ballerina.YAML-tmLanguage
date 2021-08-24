@@ -1091,7 +1091,7 @@ repository:
     - begin: 'on'
       end: '(?={)'
       beginCaptures:
-        '0': { name: keyword.ballerina }
+        '0': { name: keyword.other.ballerina }
       patterns:
       - include: "#code"
 
