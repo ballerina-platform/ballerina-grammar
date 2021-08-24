@@ -1738,7 +1738,7 @@
             <key>name</key>
             <string>meta.definition.function.ballerina entity.name.function.ballerina</string>
             <key>match</key>
-            <string>[_$[:alpha:]][_$[:alnum:]]*</string>
+            <string>\s+[_$[:alpha:]][_$[:alnum:]]*</string>
           </dict>
         </array>
       </dict>

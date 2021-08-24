@@ -634,7 +634,7 @@ repository:
     - include: '#self-literal' 
     - include: '#string' 
     - name: meta.definition.function.ballerina entity.name.function.ballerina
-      match: '{{identifier}}'
+      match: '\s+{{identifier}}'
 
   functionParameters:
     name: meta.parameters.ballerina
