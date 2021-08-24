@@ -804,8 +804,10 @@
             "include": "self-literal"
         },
         [
-            "([_$[:alpha:]][_$[:alnum:]]*)((\\.)([_$[:alpha:]][_$[:alnum:]]*)(\\()(\\)))?",
+            "\\b(is|new|isolated|null|function)\\b|\\b(true|false)\\b|([_$[:alpha:]][_$[:alnum:]]*)((\\.)([_$[:alpha:]][_$[:alnum:]]*)(\\()(\\)))?",
             [
+                "keyword.other.ballerina",
+                "constant.language.boolean.ballerina",
                 "variable.other.readwrite.ballerina",
                 "punctuation.accessor.ballerina",
                 "entity.name.function.ballerina",
