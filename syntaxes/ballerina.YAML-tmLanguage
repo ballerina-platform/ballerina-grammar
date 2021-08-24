@@ -703,7 +703,7 @@ repository:
     - include: '#type-tuple'
     - include: '#keywords'
     - match: '{{identifier}}'
-      name: variable.other.readwrite.ballerina }  
+      name: variable.other.readwrite.ballerina 
 
   functionType:
     patterns:

@@ -1975,7 +1975,7 @@
             <key>match</key>
             <string>[_$[:alpha:]][_$[:alnum:]]*</string>
             <key>name</key>
-            <string>variable.other.readwrite.ballerina }</string>
+            <string>variable.other.readwrite.ballerina</string>
           </dict>
         </array>
       </dict>

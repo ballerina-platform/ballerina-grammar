@@ -734,7 +734,7 @@
         },
         [
             "[_$[:alpha:]][_$[:alnum:]]*",
-            "variable.other.readwrite.ballerina }"
+            "variable.other.readwrite.ballerina"
         ]
     ],
     "comment": [
