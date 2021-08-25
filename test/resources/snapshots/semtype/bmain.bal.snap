@@ -353,7 +353,7 @@
 //            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.objectliteral.ballerina punctuation.definition.block.ballerina
 >             if core:isSubtype(tc, t2, t1) {
 //^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
-//            ^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//            ^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.control.ballerina
 //              ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //               ^^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
 //                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina

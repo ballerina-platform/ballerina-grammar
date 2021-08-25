@@ -1248,7 +1248,7 @@
 //             ^ source.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
 //              ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
 //               ^ source.ballerina meta.var.expr.ballerina
-//                ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina keyword.ballerina
+//                ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina support.type.primitive.ballerina
 //                   ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
 //                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
 //                      ^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
@@ -7902,7 +7902,7 @@
 //      ^ source.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
 //       ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
 //        ^ source.ballerina meta.var.expr.ballerina
-//         ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina keyword.ballerina
+//         ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina support.type.primitive.ballerina
 //            ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
 //              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
 //               ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
@@ -8037,7 +8037,7 @@
 //      ^ source.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
 //       ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
 //        ^ source.ballerina meta.var.expr.ballerina
-//         ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina keyword.ballerina
+//         ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina support.type.primitive.ballerina
 //            ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
 //              ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
 //                ^^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
@@ -8053,7 +8053,7 @@
 //      ^ source.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
 //       ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
 //        ^ source.ballerina meta.var.expr.ballerina
-//         ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina keyword.ballerina
+//         ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina support.type.primitive.ballerina
 //            ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
 //              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
 //               ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
@@ -8117,7 +8117,7 @@
 //           ^ source.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
 //            ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
 //             ^ source.ballerina meta.var.expr.ballerina
-//              ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina keyword.ballerina
+//              ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina support.type.primitive.ballerina
 //                 ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
 //                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
 //                    ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
@@ -8437,7 +8437,7 @@
 //                 ^^^^^^^ source.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
 //                        ^ source.ballerina meta.var.expr.ballerina keyword.operator.ballerina
 //                         ^ source.ballerina meta.var.expr.ballerina
-//                          ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina keyword.ballerina
+//                          ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina support.type.primitive.ballerina
 //                             ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
 //                               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
 //                                ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
@@ -8483,7 +8483,7 @@
 //                        ^^^^^^^ source.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
 //                               ^ source.ballerina meta.var.expr.ballerina keyword.operator.ballerina
 //                                ^ source.ballerina meta.var.expr.ballerina
-//                                 ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina keyword.ballerina
+//                                 ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina support.type.primitive.ballerina
 //                                    ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
 //                                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
 //                                       ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
