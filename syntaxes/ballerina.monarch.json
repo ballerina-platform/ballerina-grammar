@@ -811,6 +811,9 @@
         {
             "include": "self-literal"
         },
+        {
+            "include": "call"
+        },
         [
             "\\b(is|new|isolated|null|function)\\b|\\b(true|false)\\b|\\b(check|foreach)\\b|([_$[:alpha:]][_$[:alnum:]]*)((\\.)([_$[:alpha:]][_$[:alnum:]]*)(\\()(\\)))?",
             [
@@ -837,6 +840,12 @@
         {
             "include": "paranthesised"
         }
+    ],
+    "call": [
+        [
+            "(?:\\')?([_$[:alpha:]][_$[:alnum:]]*)\\s*(?=\\()",
+            "entity.name.function.ballerina"
+        ]
     ],
     "multiType": [
         [
@@ -1180,12 +1189,6 @@
         {
             "include": "type-annotation"
         }
-    ],
-    "call": [
-        [
-            "(?:\\')?([_$[:alpha:]][_$[:alnum:]]*)\\s*(?=\\()",
-            "entity.name.function.ballerina"
-        ]
     ],
     "punctuation-semicolon": [
         [
