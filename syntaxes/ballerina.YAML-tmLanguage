@@ -643,7 +643,7 @@ repository:
     - include: '#type-primitive' 
     - include: '#self-literal' 
     - include: '#string' 
-    - match: '\s+(\b(self)|{{otherKeywords}}|{{primitiveTypes}}|({{identifier}}))'
+    - match: '\s+(\b(self)|{{otherKeywords}}|{{primitiveTypes}}\b|({{identifier}}))'
       captures:
         '2': { name: variable.language.this.ballerina }
         '3': { name: keyword.other.ballerina }

@@ -1780,7 +1780,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>\s+(\b(self)|\b(is|new|isolated|null|function)\b|(string|int|boolean|float|byte|decimal|json|xml)|([_$[:alpha:]][_$[:alnum:]]*))</string>
+            <string>\s+(\b(self)|\b(is|new|isolated|null|function)\b|(string|int|boolean|float|byte|decimal|json|xml)\b|([_$[:alpha:]][_$[:alnum:]]*))</string>
             <key>captures</key>
             <dict>
               <key>2</key>
