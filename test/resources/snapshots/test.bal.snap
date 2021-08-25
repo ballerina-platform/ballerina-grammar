@@ -643,7 +643,7 @@
 //                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina
 //                   ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
 //                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina
-//                       ^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
+//                       ^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina keyword.other.ballerina
 //                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina
 //                          ^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
 //                                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina

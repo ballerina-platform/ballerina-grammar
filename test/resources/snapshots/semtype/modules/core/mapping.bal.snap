@@ -1697,7 +1697,7 @@
 //                                                ^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
 //                                                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                                                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
-//                                                         ^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.control.ballerina
+//                                                         ^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.other.ballerina
 //                                                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                                                            ^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina variable.other.readwrite.ballerina
 //                                                                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -1830,7 +1830,7 @@
 //                                                 ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
 //                                                  ^^^^^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
 //                                                         ^^ source.ballerina
-//                                                           ^^ source.ballerina keyword.control.ballerina
+//                                                           ^^ source.ballerina keyword.other.ballerina
 //                                                             ^ source.ballerina
 //                                                              ^^^^^^^ source.ballerina variable.other.readwrite.ballerina
 //                                                                     ^ source.ballerina
@@ -2343,7 +2343,7 @@
 //                                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                                     ^ source.ballerina meta.function.ballerina
 //                                      ^ source.ballerina
-//                                       ^^ source.ballerina keyword.control.ballerina
+//                                       ^^ source.ballerina keyword.other.ballerina
 //                                         ^ source.ballerina
 //                                          ^^^ source.ballerina keyword.other.ballerina
 //                                             ^ source.ballerina

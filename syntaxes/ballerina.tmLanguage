@@ -428,7 +428,7 @@
             <key>name</key>
             <string>keyword.control.ballerina</string>
             <key>match</key>
-            <string>\b(check|foreach|if)\b</string>
+            <string>\b(check|foreach|if|checkpanic)\b</string>
           </dict>
           <dict>
             <key>include</key>
@@ -1802,7 +1802,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>\s+(\b(self)|\b(is|new|isolated|null|function)\b|(string|int|boolean|float|byte|decimal|json|xml)\b|([_$[:alpha:]][_$[:alnum:]]*))</string>
+            <string>\s+(\b(self)|\b(is|new|isolated|null|function|in)\b|(string|int|boolean|float|byte|decimal|json|xml)\b|([_$[:alpha:]][_$[:alnum:]]*))</string>
             <key>captures</key>
             <dict>
               <key>2</key>
@@ -1931,7 +1931,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\b(is|new|isolated|null|function)\b|\b(true|false)\b|\b(check|foreach|if)\b|\b(readonly)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
+            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\b(is|new|isolated|null|function|in)\b|\b(true|false)\b|\b(check|foreach|if|checkpanic)\b|\b(readonly)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
             <key>captures</key>
             <dict>
               <key>2</key>
@@ -3302,6 +3302,10 @@
         <key>patterns</key>
         <array>
           <dict>
+            <key>include</key>
+            <string>#string</string>
+          </dict>
+          <dict>
             <key>name</key>
             <string>entity.service.path.ballerina</string>
             <key>match</key>
@@ -3823,7 +3827,7 @@
             <key>name</key>
             <string>meta.var-single-variable.expr.ballerina</string>
             <key>begin</key>
-            <string>((string|int|boolean|float|byte|decimal|json|xml)|([_$[:alpha:]][_$[:alnum:]]*))(?=\s+|\;|\&gt;|\|)</string>
+            <string>((string|int|boolean|float|byte|decimal|json|xml)|\b(readonly)\b|([_$[:alpha:]][_$[:alnum:]]*))(?=\s+|\;|\&gt;|\|)</string>
             <key>beginCaptures</key>
             <dict>
               <key>2</key>
@@ -3832,6 +3836,11 @@
                 <string>support.type.primitive.ballerina</string>
               </dict>
               <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.ballerina</string>
+              </dict>
+              <key>4</key>
               <dict>
                 <key>name</key>
                 <string>meta.definition.variable.ballerina variable.other.readwrite.ballerina</string>
@@ -4727,7 +4736,7 @@
               </dict>
               <dict>
                 <key>match</key>
-                <string>\b(is|new|isolated|null|function)\b|\b(true|false)\b|\b(check|foreach|if)\b|([_$[:alpha:]][_$[:alnum:]]*)((\.)([_$[:alpha:]][_$[:alnum:]]*)(\()(\)))?</string>
+                <string>\b(is|new|isolated|null|function|in)\b|\b(true|false)\b|\b(check|foreach|if|checkpanic)\b|([_$[:alpha:]][_$[:alnum:]]*)((\.)([_$[:alpha:]][_$[:alnum:]]*)(\()(\)))?</string>
                 <key>captures</key>
                 <dict>
                   <key>1</key>
@@ -4878,7 +4887,7 @@
             <key>name</key>
             <string>keyword.control.ballerina</string>
             <key>match</key>
-            <string>\b(fork|join|while|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\b</string>
+            <string>\b(fork|join|while|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\b</string>
           </dict>
           <dict>
             <key>name</key>
@@ -4896,7 +4905,7 @@
             <key>name</key>
             <string>keyword.other.ballerina</string>
             <key>match</key>
-            <string>\b(as|on|function|resource|listener|const|final|is|null|lock|annotation|source|worker|parameter|field|isolated)\b</string>
+            <string>\b(as|on|function|resource|listener|const|final|is|null|lock|annotation|source|worker|parameter|field|isolated|in)\b</string>
           </dict>
           <dict>
             <key>name</key>
