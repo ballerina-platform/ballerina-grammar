@@ -1588,6 +1588,7 @@ repository:
         '1': { name: entity.name.label.ballerina }
         '2': { name: keyword.operator.optional.ballerina }
         '3': { name: punctuation.separator.label.ballerina }
+    - include: '#identifiers'
     - include: '#type'
     - include: '#punctuation-comma'
 
