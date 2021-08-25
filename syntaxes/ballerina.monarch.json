@@ -101,7 +101,7 @@
     ],
     "keywords": [
         [
-            "\\b(fork|join|while|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\\b",
+            "\\b(fork|join|while|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\\b",
             "keyword.control.ballerina"
         ],
         [
@@ -113,7 +113,7 @@
             "keyword.other.ballerina"
         ],
         [
-            "\\b(as|on|function|resource|listener|const|final|is|null|lock|annotation|source|worker|parameter|field|isolated)\\b",
+            "\\b(as|on|function|resource|listener|const|final|is|null|lock|annotation|source|worker|parameter|field|isolated|in)\\b",
             "keyword.other.ballerina"
         ],
         [
@@ -819,7 +819,7 @@
             "include": "call"
         },
         [
-            "\\b(is|new|isolated|null|function)\\b|\\b(true|false)\\b|\\b(check|foreach|if)\\b|([_$[:alpha:]][_$[:alnum:]]*)((\\.)([_$[:alpha:]][_$[:alnum:]]*)(\\()(\\)))?",
+            "\\b(is|new|isolated|null|function|in)\\b|\\b(true|false)\\b|\\b(check|foreach|if|checkpanic)\\b|([_$[:alpha:]][_$[:alnum:]]*)((\\.)([_$[:alpha:]][_$[:alnum:]]*)(\\()(\\)))?",
             [
                 "keyword.other.ballerina",
                 "constant.language.boolean.ballerina",
@@ -939,7 +939,7 @@
             "include": "self-literal"
         },
         [
-            "\\b(check|foreach|if)\\b",
+            "\\b(check|foreach|if|checkpanic)\\b",
             "keyword.control.ballerina"
         ],
         {
@@ -1055,7 +1055,7 @@
             "include": "string"
         },
         [
-            "\\s+(\\b(self)|\\b(is|new|isolated|null|function)\\b|(string|int|boolean|float|byte|decimal|json|xml)\\b|([_$[:alpha:]][_$[:alnum:]]*))",
+            "\\s+(\\b(self)|\\b(is|new|isolated|null|function|in)\\b|(string|int|boolean|float|byte|decimal|json|xml)\\b|([_$[:alpha:]][_$[:alnum:]]*))",
             [
                 "variable.language.this.ballerina",
                 "keyword.other.ballerina",
@@ -1134,7 +1134,7 @@
             ]
         ],
         [
-            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\\b(is|new|isolated|null|function)\\b|\\b(true|false)\\b|\\b(check|foreach|if)\\b|\\b(readonly)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
+            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\\b(is|new|isolated|null|function|in)\\b|\\b(true|false)\\b|\\b(check|foreach|if|checkpanic)\\b|\\b(readonly)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
             [
                 "keyword.operator.rest.ballerina",
                 "type",
@@ -1773,6 +1773,9 @@
         ]
     ],
     "serviceName": [
+        {
+            "include": "string"
+        },
         [
             "(\\/([_$[:alpha:]][_$[:alnum:]]**)|\\\"[_$[:alpha:]][_$[:alnum:]]*\\\")",
             "entity.service.path.ballerina"

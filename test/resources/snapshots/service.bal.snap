@@ -791,7 +791,9 @@
 > service "localObserver" on inFolder {
 //^^^^^^^ source.ballerina meta.service.declaration.ballerina keyword.ballerina
 //       ^ source.ballerina meta.service.declaration.ballerina
-//        ^^^^^^^^^^^^^^^ source.ballerina meta.service.declaration.ballerina entity.service.path.ballerina
+//        ^ source.ballerina meta.service.declaration.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//         ^^^^^^^^^^^^^ source.ballerina meta.service.declaration.ballerina string.quoted.double.ballerina
+//                      ^ source.ballerina meta.service.declaration.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //                       ^ source.ballerina meta.service.declaration.ballerina
 //                        ^^ source.ballerina meta.service.declaration.ballerina keyword.other.ballerina
 //                          ^^^^^^^^^^ source.ballerina meta.service.declaration.ballerina
@@ -1706,7 +1708,7 @@
 //                                        ^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina meta.brace.round.block.ballerina support.type.primitive.ballerina
 //                                              ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
 //                                               ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina meta.brace.round.block.ballerina
-//                                                ^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
+//                                                ^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina meta.brace.round.block.ballerina keyword.control.flow.ballerina
 //                                                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina meta.brace.round.block.ballerina
 //                                                           ^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
 //                                                                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
@@ -2021,7 +2023,9 @@
 > service "HelloWorld" on helloWorldEP {
 //^^^^^^^ source.ballerina meta.service.declaration.ballerina keyword.ballerina
 //       ^ source.ballerina meta.service.declaration.ballerina
-//        ^^^^^^^^^^^^ source.ballerina meta.service.declaration.ballerina entity.service.path.ballerina
+//        ^ source.ballerina meta.service.declaration.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//         ^^^^^^^^^^ source.ballerina meta.service.declaration.ballerina string.quoted.double.ballerina
+//                   ^ source.ballerina meta.service.declaration.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //                    ^ source.ballerina meta.service.declaration.ballerina
 //                     ^^ source.ballerina meta.service.declaration.ballerina keyword.other.ballerina
 //                       ^^^^^^^^^^^^^^ source.ballerina meta.service.declaration.ballerina

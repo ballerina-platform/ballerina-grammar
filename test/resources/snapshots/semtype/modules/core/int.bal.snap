@@ -2050,7 +2050,7 @@
 //               ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                ^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina
-//                  ^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.control.ballerina
+//                  ^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.other.ballerina
 //                    ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                     ^ source.ballerina meta.function.ballerina meta.block.ballerina constant.numeric.decimal.ballerina
 //                      ^^^ source.ballerina meta.function.ballerina meta.block.ballerina

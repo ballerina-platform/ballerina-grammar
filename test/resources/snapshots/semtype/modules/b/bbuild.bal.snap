@@ -954,7 +954,7 @@
 //                                             ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.var.expr.ballerina
 //                                              ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina meta.definition.variable.ballerina variable.other.readwrite.ballerina
 //                                               ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
-//                                                ^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina keyword.control.ballerina
+//                                                ^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina keyword.other.ballerina
 //                                                  ^^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
 //                                                     ^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina keyword.other.ballerina
 //                                                           ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
@@ -1134,7 +1134,7 @@
 //                                                           ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
 //                                                            ^ source.ballerina meta.block.ballerina
 //                                                             ^ source.ballerina meta.block.ballerina
-//                                                              ^^ source.ballerina meta.block.ballerina keyword.control.ballerina
+//                                                              ^^ source.ballerina meta.block.ballerina keyword.other.ballerina
 //                                                                ^ source.ballerina meta.block.ballerina
 //                                                                 ^ source.ballerina meta.block.ballerina variable.other.readwrite.ballerina
 //                                                                  ^ source.ballerina meta.block.ballerina
@@ -1321,7 +1321,7 @@
 //                                          ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.var.expr.ballerina
 //                                           ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina meta.definition.variable.ballerina variable.other.readwrite.ballerina
 //                                            ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
-//                                             ^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina keyword.control.ballerina
+//                                             ^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina keyword.other.ballerina
 //                                               ^^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
 //                                                  ^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina keyword.other.ballerina
 //                                                        ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina

@@ -22,8 +22,8 @@ variables:
   lookAheadEndOfType: '[;),}\]:?\-\+\>]|\|\||\&\&|\!\=\=|$'
   varExprStart: '\b(var)'
   primitiveTypes: '(string|int|boolean|float|byte|decimal|json|xml)'
-  otherKeywords: '\b(is|new|isolated|null|function)\b'
-  controlKeywords: '\b(check|foreach|if)\b'
+  otherKeywords: '\b(is|new|isolated|null|function|in)\b'
+  controlKeywords: '\b(check|foreach|if|checkpanic)\b'
   booleanTypes: '\b(true|false)\b'
   definedTypes: '\b(readonly)\b'
   constExprStart: '\b(const(?!\s+enum\b))'
@@ -1111,6 +1111,7 @@ repository:
 
   serviceName:
     patterns:
+    - include: '#string' 
     - name: entity.service.path.ballerina
       match: '(\/({{identifier}}*)|\"{{identifier}}\")'
 
@@ -1271,10 +1272,11 @@ repository:
   var-single-variable:
     patterns:
     - name: meta.var-single-variable.expr.ballerina
-      begin: ({{primitiveTypes}}|({{identifier}}))(?=\s+|\;|\>|\|)
+      begin: ({{primitiveTypes}}|{{definedTypes}}|({{identifier}}))(?=\s+|\;|\>|\|)
       beginCaptures:
         '2': { name: '{{primitiveScope}}' }
-        '3': { name: meta.definition.variable.ballerina variable.other.readwrite.ballerina }
+        '3': { name: '{{typeScope}}' }
+        '4': { name: meta.definition.variable.ballerina variable.other.readwrite.ballerina }
       end: (?=$|^|[;,=}])
       endCaptures:
         '0': { name: punctuation.terminator.statement.ballerina }
@@ -1602,7 +1604,7 @@ repository:
   keywords:
     patterns:
     - name: keyword.control.ballerina
-      match: \b(fork|join|while|in|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\b
+      match: \b(fork|join|while|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\b
 
     - name: keyword.control.flow.ballerina
       match: \b(return|break|continue|check|checkpanic|panic|trap|from|where)\b
@@ -1611,7 +1613,7 @@ repository:
       match: \b(public|private|external|return|record|object|remote|abstract|client|true|false|fail|import|version)\b
 
     - name: keyword.other.ballerina
-      match: \b(as|on|function|resource|listener|const|final|is|null|lock|annotation|source|worker|parameter|field|isolated)\b
+      match: \b(as|on|function|resource|listener|const|final|is|null|lock|annotation|source|worker|parameter|field|isolated|in)\b
 
     - name: keyword.other.ballerina
       match: \b(xmlns|table|key|let|new|select|start|flush|default|do|base16|base64|conflict)\b
