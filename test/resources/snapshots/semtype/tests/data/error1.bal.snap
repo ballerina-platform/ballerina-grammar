@@ -1,0 +1,89 @@
+// SYNTAX TEST "source.ballerina" "semtype/tests/data/error1.bal highlighting testcase"
+
+> // EL<:E
+//^^^^^^^^ source.ballerina comment.ballerina
+> // ER1<:E
+//^^^^^^^^^ source.ballerina comment.ballerina
+> // ER1<:ER2
+//^^^^^^^^^^^ source.ballerina comment.ballerina
+> // ER2<:E
+//^^^^^^^^^ source.ballerina comment.ballerina
+> // ER2<:ER1
+//^^^^^^^^^^^ source.ballerina comment.ballerina
+> type EL error<record {| int[] codes; |}>;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^ source.ballerina entity.name.type.ballerina
+//       ^ source.ballerina
+//        ^^^^^ source.ballerina storage.type.ballerina
+//             ^ source.ballerina keyword.operator.ballerina
+//              ^^^^^^ source.ballerina meta.record.ballerina keyword.other.ballerina
+//                    ^ source.ballerina meta.record.ballerina
+//                     ^ source.ballerina meta.record.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+//                      ^ source.ballerina meta.record.ballerina meta.block.ballerina keyword.operator.ballerina
+//                       ^ source.ballerina meta.record.ballerina meta.block.ballerina
+//                        ^^^ source.ballerina meta.record.ballerina meta.block.ballerina meta.var.expr.ballerina support.type.primitive.ballerina
+//                           ^ source.ballerina meta.record.ballerina meta.block.ballerina meta.var.expr.ballerina meta.type.tuple.ballerina meta.brace.square.ballerina
+//                            ^ source.ballerina meta.record.ballerina meta.block.ballerina meta.var.expr.ballerina meta.type.tuple.ballerina meta.brace.square.ballerina
+//                             ^ source.ballerina meta.record.ballerina meta.block.ballerina meta.var.expr.ballerina
+//                              ^^^^^ source.ballerina meta.record.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina meta.definition.variable.ballerina variable.other.readwrite.ballerina
+//                                   ^ source.ballerina meta.record.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+//                                    ^ source.ballerina meta.record.ballerina meta.block.ballerina
+//                                     ^ source.ballerina meta.record.ballerina meta.block.ballerina keyword.operator.ballerina
+//                                      ^ source.ballerina
+//                                       ^ source.ballerina keyword.operator.ballerina
+//                                        ^ source.ballerina punctuation.terminator.statement.ballerina
+> type ER1 error<record {| ER1? e; |}>;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^ source.ballerina entity.name.type.ballerina
+//        ^ source.ballerina
+//         ^^^^^ source.ballerina storage.type.ballerina
+//              ^ source.ballerina keyword.operator.ballerina
+//               ^^^^^^ source.ballerina meta.record.ballerina keyword.other.ballerina
+//                     ^ source.ballerina meta.record.ballerina
+//                      ^ source.ballerina meta.record.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+//                       ^ source.ballerina meta.record.ballerina meta.block.ballerina keyword.operator.ballerina
+//                        ^ source.ballerina meta.record.ballerina meta.block.ballerina
+//                         ^^^ source.ballerina meta.record.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//                            ^ source.ballerina meta.record.ballerina meta.block.ballerina keyword.operator.ternary.ballerina
+//                             ^ source.ballerina meta.record.ballerina meta.block.ballerina
+//                              ^ source.ballerina meta.record.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//                               ^ source.ballerina meta.record.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+//                                ^ source.ballerina meta.record.ballerina meta.block.ballerina
+//                                 ^ source.ballerina meta.record.ballerina meta.block.ballerina keyword.operator.ballerina
+//                                  ^ source.ballerina
+//                                   ^ source.ballerina keyword.operator.ballerina
+//                                    ^ source.ballerina punctuation.terminator.statement.ballerina
+> type ER2 error<record {| ER2|() e; |}>;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^ source.ballerina entity.name.type.ballerina
+//        ^ source.ballerina
+//         ^^^^^ source.ballerina storage.type.ballerina
+//              ^ source.ballerina keyword.operator.ballerina
+//               ^^^^^^ source.ballerina meta.record.ballerina keyword.other.ballerina
+//                     ^ source.ballerina meta.record.ballerina
+//                      ^ source.ballerina meta.record.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+//                       ^ source.ballerina meta.record.ballerina meta.block.ballerina keyword.operator.ballerina
+//                        ^ source.ballerina meta.record.ballerina meta.block.ballerina
+//                         ^^^ source.ballerina meta.record.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//                            ^ source.ballerina meta.record.ballerina meta.block.ballerina keyword.operator.ballerina
+//                             ^ source.ballerina meta.record.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                              ^ source.ballerina meta.record.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                               ^ source.ballerina meta.record.ballerina meta.block.ballerina
+//                                ^ source.ballerina meta.record.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//                                 ^ source.ballerina meta.record.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+//                                  ^ source.ballerina meta.record.ballerina meta.block.ballerina
+//                                   ^ source.ballerina meta.record.ballerina meta.block.ballerina keyword.operator.ballerina
+//                                    ^ source.ballerina
+//                                     ^ source.ballerina keyword.operator.ballerina
+//                                      ^ source.ballerina punctuation.terminator.statement.ballerina
+> type E error;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^ source.ballerina entity.name.type.ballerina
+//      ^ source.ballerina
+//       ^^^^^ source.ballerina storage.type.ballerina
+//            ^ source.ballerina punctuation.terminator.statement.ballerina
+> 

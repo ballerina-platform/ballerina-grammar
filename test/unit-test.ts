@@ -42,11 +42,139 @@ describe('Unit tests', () => {
         return runTextMateTest('test');
     });
 
-    // it('main.bal snapshot test', () => {
-    //     return runTextMateTest('semtype/main');
-    // });
+    it('semtype/main.bal snapshot test', () => {
+        return runTextMateTest('semtype/main');
+    });
 
-    // it('main.bal snapshot test', () => {
-    //     return runTextMateTest('semtype/bmain');
-    // });
+    it('semtype/main.bal snapshot test', () => {
+        return runTextMateTest('semtype/bmain');
+    });
+
+    it('semtype/tests/baltest.bal snapshot test', () => {
+        return runTextMateTest('semtype/tests/baltest');
+    });
+
+    it('semtype/tests/data/basic.bal snapshot test', () => {
+        return runTextMateTest('semtype/tests/data/basic');
+    });
+
+    it('semtype/tests/data/boolean-subtype.bal snapshot test', () => {
+        return runTextMateTest('semtype/tests/data/boolean-subtype');
+    });
+
+    it('semtype/tests/data/error1.bal snapshot test', () => {
+        return runTextMateTest('semtype/tests/data/error1');
+    });
+
+    it('semtype/tests/data/error2.bal snapshot test', () => {
+        return runTextMateTest('semtype/tests/data/error2');
+    });
+
+    it('semtype/tests/data/function.bal snapshot test', () => {
+        return runTextMateTest('semtype/tests/data/function');
+    });
+
+    it('semtype/tests/data/hard.bal snapshot test', () => {
+        return runTextMateTest('semtype/tests/data/hard');
+    });
+
+    it('semtype/tests/data/int-singleton.bal snapshot test', () => {
+        return runTextMateTest('semtype/tests/data/int-singleton');
+    });
+
+    it('semtype/tests/data/int-subtype.bal snapshot test', () => {
+        return runTextMateTest('semtype/tests/data/int-subtype');
+    });
+    
+    it('semtype/tests/data/never.bal snapshot test', () => {
+        return runTextMateTest('semtype/tests/data/never');
+    });
+
+    it('semtype/tests/data/readonly1.bal snapshot test', () => {
+        return runTextMateTest('semtype/tests/data/readonly1');
+    });
+
+    it('semtype/tests/data/readonly2.bal snapshot test', () => {
+        return runTextMateTest('semtype/tests/data/readonly2');
+    });
+
+    it('semtype/tests/data/string-singleton.bal snapshot test', () => {
+        return runTextMateTest('semtype/tests/data/string-singleton');
+    });
+
+    it('semtype/tests/data/tuple1.bal snapshot test', () => {
+        return runTextMateTest('semtype/tests/data/tuple1');
+    });
+
+    it('semtype/modules/b/bbuild.bal snapshot test', () => {
+        return runTextMateTest('semtype/modules/b/bbuild');
+    });
+    
+    it('semtype/modules/b/bparse.bal snapshot test', () => {
+        return runTextMateTest('semtype/modules/b/bparse');
+    });
+
+    it('semtype/modules/b/btoken.bal snapshot test', () => {
+        return runTextMateTest('semtype/modules/b/btoken');
+    });
+
+    it('semtype/modules/b/tests/btokentest.bal snapshot test', () => {
+        return runTextMateTest('semtype/modules/b/tests/btokentest');
+    });
+
+    it('semtype/modules/bdd/bdd.bal snapshot test', () => {
+        return runTextMateTest('semtype/modules/bdd/bdd');
+    });
+
+    it('semtype/modules/bdd/tests/bddtest.bal snapshot test', () => {
+        return runTextMateTest('semtype/modules/bdd/tests/bddtest');
+    });
+
+    it('semtype/modules/core/string.bal snapshot test', () => {
+        return runTextMateTest('semtype/modules/core/string');
+    });
+
+    it('semtype/modules/core/mapping.bal snapshot test', () => {
+        return runTextMateTest('semtype/modules/core/mapping');
+    });
+
+    it('semtype/modules/core/list.bal snapshot test', () => {
+        return runTextMateTest('semtype/modules/core/list');
+    });
+
+    it('semtype/modules/core/int.bal snapshot test', () => {
+        return runTextMateTest('semtype/modules/core/int');
+    });
+
+    it('semtype/modules/core/function.bal snapshot test', () => {
+        return runTextMateTest('semtype/modules/core/function');
+    });
+
+    it('semtype/modules/core/error.bal snapshot test', () => {
+        return runTextMateTest('semtype/modules/core/error');
+    });
+
+    it('semtype/modules/core/core.bal snapshot test', () => {
+        return runTextMateTest('semtype/modules/core/core');
+    });
+
+    it('semtype/modules/core/common.bal snapshot test', () => {
+        return runTextMateTest('semtype/modules/core/common');
+    });
+
+    it('semtype/modules/core/boolean.bal snapshot test', () => {
+        return runTextMateTest('semtype/modules/core/boolean');
+    });
+
+    it('semtype/modules/core/tests/coretest.bal snapshot test', () => {
+        return runTextMateTest('semtype/modules/core/tests/coretest');
+    });
+
+    it('semtype/modules/json/parse.bal snapshot test', () => {
+        return runTextMateTest('semtype/modules/json/parse');
+    });
+
+    it('semtype/modules/json/schema.bal snapshot test', () => {
+        return runTextMateTest('semtype/modules/json/schema');
+    });
 });

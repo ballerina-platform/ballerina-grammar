@@ -1,0 +1,98 @@
+// SYNTAX TEST "source.ballerina" "semtype/tests/data/string-singleton.bal highlighting testcase"
+
+> // X<:S
+//^^^^^^^ source.ballerina comment.ballerina
+> // X<:XY
+//^^^^^^^^ source.ballerina comment.ballerina
+> // X<:XYZ
+//^^^^^^^^^ source.ballerina comment.ballerina
+> // X<:XZ
+//^^^^^^^^ source.ballerina comment.ballerina
+> // XY<:S
+//^^^^^^^^ source.ballerina comment.ballerina
+> // XY<:XYZ
+//^^^^^^^^^^ source.ballerina comment.ballerina
+> // XYZ<:S
+//^^^^^^^^^ source.ballerina comment.ballerina
+> // XZ<:S
+//^^^^^^^^ source.ballerina comment.ballerina
+> // XZ<:XYZ
+//^^^^^^^^^^ source.ballerina comment.ballerina
+> // Y<:S
+//^^^^^^^ source.ballerina comment.ballerina
+> // Y<:XY
+//^^^^^^^^ source.ballerina comment.ballerina
+> // Y<:XYZ
+//^^^^^^^^^ source.ballerina comment.ballerina
+> // Z<:S
+//^^^^^^^ source.ballerina comment.ballerina
+> // Z<:XYZ
+//^^^^^^^^^ source.ballerina comment.ballerina
+> // Z<:XZ
+//^^^^^^^^ source.ballerina comment.ballerina
+> type X "x";
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^ source.ballerina entity.name.type.ballerina
+//      ^ source.ballerina
+//       ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//        ^ source.ballerina string.quoted.double.ballerina
+//         ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//          ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Y "y";
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^ source.ballerina entity.name.type.ballerina
+//      ^ source.ballerina
+//       ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//        ^ source.ballerina string.quoted.double.ballerina
+//         ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//          ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Z "z";
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^ source.ballerina entity.name.type.ballerina
+//      ^ source.ballerina
+//       ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//        ^ source.ballerina string.quoted.double.ballerina
+//         ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//          ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> type XYZ X|Y|Z;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^ source.ballerina entity.name.type.ballerina
+//        ^ source.ballerina
+//         ^ source.ballerina storage.type.ballerina
+//          ^ source.ballerina keyword.operator.ballerina
+//           ^ source.ballerina storage.type.ballerina
+//            ^ source.ballerina keyword.operator.ballerina
+//             ^ source.ballerina storage.type.ballerina
+//              ^ source.ballerina punctuation.terminator.statement.ballerina
+> type XY X|Y;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^ source.ballerina entity.name.type.ballerina
+//       ^ source.ballerina
+//        ^ source.ballerina storage.type.ballerina
+//         ^ source.ballerina keyword.operator.ballerina
+//          ^ source.ballerina storage.type.ballerina
+//           ^ source.ballerina punctuation.terminator.statement.ballerina
+> type XZ X|Z;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^ source.ballerina entity.name.type.ballerina
+//       ^ source.ballerina
+//        ^ source.ballerina storage.type.ballerina
+//         ^ source.ballerina keyword.operator.ballerina
+//          ^ source.ballerina storage.type.ballerina
+//           ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> type S string;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^ source.ballerina entity.name.type.ballerina
+//      ^ source.ballerina
+//       ^^^^^^ source.ballerina support.type.primitive.ballerina
+//             ^ source.ballerina punctuation.terminator.statement.ballerina
+> 

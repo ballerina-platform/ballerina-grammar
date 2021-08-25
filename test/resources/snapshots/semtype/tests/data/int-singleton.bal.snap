@@ -1,0 +1,58 @@
+// SYNTAX TEST "source.ballerina" "semtype/tests/data/int-singleton.bal highlighting testcase"
+
+> // INT_MIN<:Int
+//^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // ONE<:Int
+//^^^^^^^^^^^ source.ballerina comment.ballerina
+> // ONE<:ZERO_OR_ONE
+//^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // ZERO<:Int
+//^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // ZERO<:ZERO_OR_ONE
+//^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // ZERO_OR_ONE<:Int
+//^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> const ONE = 1;
+//^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//      ^^^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//         ^ source.ballerina meta.var.expr.ballerina
+//          ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//           ^ source.ballerina meta.var.expr.ballerina
+//            ^ source.ballerina meta.var.expr.ballerina constant.numeric.decimal.ballerina
+//             ^ source.ballerina punctuation.terminator.statement.ballerina
+> const ZERO = 0;
+//^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//      ^^^^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//          ^ source.ballerina meta.var.expr.ballerina
+//           ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//            ^ source.ballerina meta.var.expr.ballerina
+//             ^ source.ballerina meta.var.expr.ballerina constant.numeric.decimal.ballerina
+//              ^ source.ballerina punctuation.terminator.statement.ballerina
+> const INT_MIN = -9223372036854775808;
+//^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//      ^^^^^^^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//             ^ source.ballerina meta.var.expr.ballerina
+//              ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//               ^ source.ballerina meta.var.expr.ballerina
+//                ^ source.ballerina meta.var.expr.ballerina keyword.operator.ballerina
+//                 ^^^^^^^^^^^^^^^^^^^ source.ballerina meta.var.expr.ballerina constant.numeric.decimal.ballerina
+//                                    ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> type ZERO_OR_ONE ZERO|ONE;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^^^^^^^^ source.ballerina entity.name.type.ballerina
+//                ^ source.ballerina
+//                 ^^^^ source.ballerina storage.type.ballerina
+//                     ^ source.ballerina keyword.operator.ballerina
+//                      ^^^ source.ballerina storage.type.ballerina
+//                         ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Int int;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^ source.ballerina entity.name.type.ballerina
+//        ^ source.ballerina
+//         ^^^ source.ballerina support.type.primitive.ballerina
+//            ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> 
