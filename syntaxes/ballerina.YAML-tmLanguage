@@ -219,7 +219,9 @@ repository:
     - include: '#self-literal'
     - name: 'keyword.control.ballerina'
       match: '{{controlKeywords}}'
-    - include: '#call' 
+    - include: '#call'  
+    - name: 'support.type.primitive.ballerina'
+      match: '{{varExprStart}}\b'
     - match: '({{identifier}})((\.)({{identifier}})(\()(\)))?'
       captures: 
         '1': { name: variable.other.readwrite.ballerina }
@@ -1264,6 +1266,7 @@ repository:
       endCaptures:
         '0': { name: punctuation.terminator.statement.ballerina }
       patterns:
+      - include: '#call' 
       - include: '#self-literal' 
       - include: '#if-statement' 
       - include: '#string' 

@@ -413,6 +413,12 @@
             <string>#call</string>
           </dict>
           <dict>
+            <key>name</key>
+            <string>support.type.primitive.ballerina</string>
+            <key>match</key>
+            <string>\b(var)\b</string>
+          </dict>
+          <dict>
             <key>match</key>
             <string>([_$[:alpha:]][_$[:alnum:]]*)((\.)([_$[:alpha:]][_$[:alnum:]]*)(\()(\)))?</string>
             <key>captures</key>
@@ -3795,6 +3801,10 @@
             </dict>
             <key>patterns</key>
             <array>
+              <dict>
+                <key>include</key>
+                <string>#call</string>
+              </dict>
               <dict>
                 <key>include</key>
                 <string>#self-literal</string>

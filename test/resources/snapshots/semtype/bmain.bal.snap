@@ -207,7 +207,7 @@
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina
 //                  ^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina keyword.control.flow.ballerina
 //                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina
-//                       ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina variable.other.readwrite.ballerina
+//                       ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina support.type.primitive.ballerina
 //                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.array.literal.ballerina
 //                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
 //                            ^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
@@ -399,7 +399,7 @@
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
 //        ^^^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.control.flow.ballerina
 //            ^ source.ballerina meta.function.ballerina meta.block.ballerina
-//             ^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//             ^^^ source.ballerina meta.function.ballerina meta.block.ballerina support.type.primitive.ballerina
 //                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
 //                  ^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina

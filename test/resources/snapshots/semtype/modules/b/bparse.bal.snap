@@ -942,7 +942,7 @@
 //         ^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
 //                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.array.literal.ballerina punctuation.separator.comma.ballerina
 //                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.array.literal.ballerina
-//                         ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
+//                         ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.array.literal.ballerina support.type.primitive.ballerina
 //                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.array.literal.ballerina
 //                             ^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
 //                                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
@@ -2308,7 +2308,7 @@
 //         ^^^^^^^^^^ source.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
 //                   ^ source.ballerina meta.array.literal.ballerina punctuation.separator.comma.ballerina
 //                    ^ source.ballerina meta.array.literal.ballerina
-//                     ^^^ source.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
+//                     ^^^ source.ballerina meta.array.literal.ballerina support.type.primitive.ballerina
 //                        ^ source.ballerina meta.array.literal.ballerina
 //                         ^^^ source.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
 //                            ^ source.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
@@ -2365,7 +2365,7 @@
 //         ^^^^^^^^^^^^^^ source.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
 //                       ^ source.ballerina meta.array.literal.ballerina punctuation.separator.comma.ballerina
 //                        ^ source.ballerina meta.array.literal.ballerina
-//                         ^^^ source.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
+//                         ^^^ source.ballerina meta.array.literal.ballerina support.type.primitive.ballerina
 //                            ^ source.ballerina meta.array.literal.ballerina
 //                             ^^^ source.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
 //                                ^ source.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
@@ -3228,7 +3228,7 @@
 //             ^^^^^^^^^^ source.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
 //                       ^ source.ballerina meta.array.literal.ballerina punctuation.separator.comma.ballerina
 //                        ^ source.ballerina meta.array.literal.ballerina
-//                         ^^^ source.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
+//                         ^^^ source.ballerina meta.array.literal.ballerina support.type.primitive.ballerina
 //                            ^ source.ballerina meta.array.literal.ballerina
 //                             ^^^^ source.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
 //                                 ^ source.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
