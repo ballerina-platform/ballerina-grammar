@@ -2539,8 +2539,7 @@
 > function stringTest() {
 //^^^^^^^^ source.ballerina meta.function.ballerina keyword.other.ballerina
 //        ^ source.ballerina meta.function.ballerina
-//         ^^^^^^ source.ballerina meta.function.ballerina support.type.primitive.ballerina
-//               ^^^^ source.ballerina meta.function.ballerina
+//         ^^^^^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
 //                   ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
 //                    ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
 //                     ^ source.ballerina meta.function.ballerina

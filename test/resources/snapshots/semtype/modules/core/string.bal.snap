@@ -40,8 +40,7 @@
 //      ^ source.ballerina meta.function.ballerina
 //       ^^^^^^^^ source.ballerina meta.function.ballerina keyword.other.ballerina
 //               ^ source.ballerina meta.function.ballerina
-//                ^^^^^^ source.ballerina meta.function.ballerina support.type.primitive.ballerina
-//                      ^^^^^ source.ballerina meta.function.ballerina
+//                ^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
 //                           ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
 //                            ^^^^^^ source.ballerina meta.function.ballerina meta.parameters.ballerina support.type.primitive.ballerina
 //                                  ^ source.ballerina meta.function.ballerina meta.parameters.ballerina
@@ -96,8 +95,7 @@
 > function stringSubtypeUnion(SubtypeData d1, SubtypeData d2) returns SubtypeData {
 //^^^^^^^^ source.ballerina meta.function.ballerina keyword.other.ballerina
 //        ^ source.ballerina meta.function.ballerina
-//         ^^^^^^ source.ballerina meta.function.ballerina support.type.primitive.ballerina
-//               ^^^^^^^^^^^^ source.ballerina meta.function.ballerina
+//         ^^^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
 //                           ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
 //                            ^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.parameters.ballerina variable.parameter.ballerina
 //                                       ^ source.ballerina meta.function.ballerina meta.parameters.ballerina
@@ -327,8 +325,7 @@
 > function stringSubtypeIntersect(SubtypeData d1, SubtypeData d2) returns SubtypeData {
 //^^^^^^^^ source.ballerina meta.function.ballerina keyword.other.ballerina
 //        ^ source.ballerina meta.function.ballerina
-//         ^^^^^^ source.ballerina meta.function.ballerina support.type.primitive.ballerina
-//               ^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina
+//         ^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
 //                               ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
 //                                ^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.parameters.ballerina variable.parameter.ballerina
 //                                           ^ source.ballerina meta.function.ballerina meta.parameters.ballerina
@@ -558,8 +555,7 @@
 > function stringSubtypeDiff(SubtypeData d1, SubtypeData d2) returns SubtypeData {
 //^^^^^^^^ source.ballerina meta.function.ballerina keyword.other.ballerina
 //        ^ source.ballerina meta.function.ballerina
-//         ^^^^^^ source.ballerina meta.function.ballerina support.type.primitive.ballerina
-//               ^^^^^^^^^^^ source.ballerina meta.function.ballerina
+//         ^^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
 //                          ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
 //                           ^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.parameters.ballerina variable.parameter.ballerina
 //                                      ^ source.ballerina meta.function.ballerina meta.parameters.ballerina
@@ -597,8 +593,7 @@
 > function stringSubtypeComplement(SubtypeData d) returns SubtypeData {
 //^^^^^^^^ source.ballerina meta.function.ballerina keyword.other.ballerina
 //        ^ source.ballerina meta.function.ballerina
-//         ^^^^^^ source.ballerina meta.function.ballerina support.type.primitive.ballerina
-//               ^^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina
+//         ^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
 //                                ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
 //                                 ^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.parameters.ballerina variable.parameter.ballerina
 //                                            ^ source.ballerina meta.function.ballerina meta.parameters.ballerina
@@ -646,8 +641,7 @@
 > function stringListUnion(string[] v1, string[] v2) returns (readonly & string[]) {
 //^^^^^^^^ source.ballerina meta.function.ballerina keyword.other.ballerina
 //        ^ source.ballerina meta.function.ballerina
-//         ^^^^^^ source.ballerina meta.function.ballerina support.type.primitive.ballerina
-//               ^^^^^^^^^ source.ballerina meta.function.ballerina
+//         ^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
 //                        ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
 //                         ^^^^^^ source.ballerina meta.function.ballerina meta.parameters.ballerina support.type.primitive.ballerina
 //                               ^ source.ballerina meta.function.ballerina meta.parameters.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
@@ -989,8 +983,7 @@
 > function stringListIntersect(string[] v1, string[] v2) returns (readonly & string[]) {
 //^^^^^^^^ source.ballerina meta.function.ballerina keyword.other.ballerina
 //        ^ source.ballerina meta.function.ballerina
-//         ^^^^^^ source.ballerina meta.function.ballerina support.type.primitive.ballerina
-//               ^^^^^^^^^^^^^ source.ballerina meta.function.ballerina
+//         ^^^^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
 //                            ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
 //                             ^^^^^^ source.ballerina meta.function.ballerina meta.parameters.ballerina support.type.primitive.ballerina
 //                                   ^ source.ballerina meta.function.ballerina meta.parameters.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
@@ -1250,8 +1243,7 @@
 > function stringListDiff(string[] v1, string[] v2) returns (readonly & string[]) {
 //^^^^^^^^ source.ballerina meta.function.ballerina keyword.other.ballerina
 //        ^ source.ballerina meta.function.ballerina
-//         ^^^^^^ source.ballerina meta.function.ballerina support.type.primitive.ballerina
-//               ^^^^^^^^ source.ballerina meta.function.ballerina
+//         ^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
 //                       ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
 //                        ^^^^^^ source.ballerina meta.function.ballerina meta.parameters.ballerina support.type.primitive.ballerina
 //                              ^ source.ballerina meta.function.ballerina meta.parameters.ballerina meta.array.literal.ballerina meta.brace.square.ballerina

@@ -983,7 +983,7 @@
             "include": "string"
         },
         [
-            "\\s+(\\b(self)|\\b(is|new|isolated|null|function)\\b|(string|int|boolean|float|byte|decimal|json|xml)|([_$[:alpha:]][_$[:alnum:]]*))",
+            "\\s+(\\b(self)|\\b(is|new|isolated|null|function)\\b|(string|int|boolean|float|byte|decimal|json|xml)\\b|([_$[:alpha:]][_$[:alnum:]]*))",
             [
                 "variable.language.this.ballerina",
                 "keyword.other.ballerina",
