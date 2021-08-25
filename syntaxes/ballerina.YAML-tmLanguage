@@ -806,7 +806,12 @@ repository:
           '0': { name: meta.brace.round.ballerina }
         patterns:
         - include: '#type-primitive'
-        - include: '#expression'
+        - include: '#expression' 
+      - begin: '(?<=\))'
+        end: (?=\{) 
+        patterns:  
+        - include: '#literal'
+        - include: '#keywords'
       - include: '#decl-block'
 
   import-clause:

@@ -1342,7 +1342,11 @@
 //                      ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                       ^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
 //                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
-//                         ^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
+//                         ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//                          ^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.operator.ballerina
+//                            ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//                             ^ source.ballerina meta.function.ballerina meta.block.ballerina constant.numeric.decimal.ballerina
+//                              ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                               ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             return true;
 //^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
