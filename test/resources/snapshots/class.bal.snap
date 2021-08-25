@@ -1471,7 +1471,7 @@
 //                      ^^ source.ballerina meta.class.ballerina meta.function.ballerina meta.parameters.ballerina variable.parameter.ballerina
 //                        ^ source.ballerina meta.class.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
 //                         ^ source.ballerina meta.class.ballerina meta.function.ballerina meta.parameters.ballerina
-//                          ^^^^^^^^ source.ballerina meta.class.ballerina meta.function.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                          ^^^^^^^^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina meta.parameters.ballerina storage.type.ballerina
 //                                  ^ source.ballerina meta.class.ballerina meta.function.ballerina meta.parameters.ballerina
 //                                   ^ source.ballerina meta.class.ballerina meta.function.ballerina meta.parameters.ballerina
 //                                    ^ source.ballerina meta.class.ballerina meta.function.ballerina meta.parameters.ballerina

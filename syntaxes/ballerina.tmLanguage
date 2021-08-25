@@ -1931,7 +1931,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\b(is|new|isolated|null|function)\b|\b(true|false)\b|\b(check|foreach|if)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
+            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\b(is|new|isolated|null|function)\b|\b(true|false)\b|\b(check|foreach|if)\b|\b(readonly)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
             <key>captures</key>
             <dict>
               <key>2</key>
@@ -1962,7 +1962,7 @@
               <key>7</key>
               <dict>
                 <key>name</key>
-                <string>variable.parameter.ballerina</string>
+                <string>storage.type.ballerina</string>
               </dict>
               <key>8</key>
               <dict>
@@ -1970,6 +1970,11 @@
                 <string>variable.parameter.ballerina</string>
               </dict>
               <key>9</key>
+              <dict>
+                <key>name</key>
+                <string>variable.parameter.ballerina</string>
+              </dict>
+              <key>10</key>
               <dict>
                 <key>name</key>
                 <string>keyword.operator.optional.ballerina</string>

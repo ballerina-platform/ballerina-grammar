@@ -1130,13 +1130,14 @@
             ]
         ],
         [
-            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\\b(is|new|isolated|null|function)\\b|\\b(true|false)\\b|\\b(check|foreach|if)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
+            "(?x)(?:(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))\\s+)?(?:(\\.\\.\\.)\\s*)?(?<!=|:)(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\\b(is|new|isolated|null|function)\\b|\\b(true|false)\\b|\\b(check|foreach|if)\\b|\\b(readonly)\\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))\\s*(\\??)",
             [
                 "keyword.operator.rest.ballerina",
                 "type",
                 "keyword.other.ballerina",
                 "constant.language.boolean.ballerina",
                 "keyword.control.flow.ballerina",
+                "type",
                 "variable.parameter.ballerina",
                 "variable.parameter.ballerina",
                 "keyword.operator.optional.ballerina"

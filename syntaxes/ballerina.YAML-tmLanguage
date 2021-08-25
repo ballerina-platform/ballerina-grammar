@@ -25,6 +25,7 @@ variables:
   otherKeywords: '\b(is|new|isolated|null|function)\b'
   controlKeywords: '\b(check|foreach|if)\b'
   booleanTypes: '\b(true|false)\b'
+  definedTypes: '\b(readonly)\b'
   constExprStart: '\b(const(?!\s+enum\b))'
   lookBehindString: '^string|{{nonPropertyLookBehind}}string'
   lookBehindInt: '^int|{{nonPropertyLookBehind}}int'
@@ -687,16 +688,17 @@ repository:
       captures:
         '1': { name: '{{primitiveScope}}' }
     - match: |-
-        (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|{{primitiveTypes}}|{{otherKeywords}}|{{booleanTypes}}|{{controlKeywords}}|({{identifier}})){{endOfIdentifier}}\s*(\??)
+        (?x)(?:{{startOfIdentifier}}\s+)?(?:(\.\.\.)\s*)?(?<!=|:){{startOfIdentifier}}(?:(this)|{{primitiveTypes}}|{{otherKeywords}}|{{booleanTypes}}|{{controlKeywords}}|{{definedTypes}}|({{identifier}})){{endOfIdentifier}}\s*(\??)
       captures:
         '2': { name: keyword.operator.rest.ballerina }
         '3': { name: '{{primitiveScope}}' }
         '4': { name: keyword.other.ballerina }
         '5': { name: constant.language.boolean.ballerina }
         '6': { name: keyword.control.flow.ballerina }
-        '7': { name: variable.parameter.ballerina }
+        '7': { name: '{{typeScope}}' }
         '8': { name: variable.parameter.ballerina }
-        '9': { name: keyword.operator.optional.ballerina }
+        '9': { name: variable.parameter.ballerina }
+        '10': { name: keyword.operator.optional.ballerina }
         
   functionReturns:
     name: meta.type.function.return.ballerina
