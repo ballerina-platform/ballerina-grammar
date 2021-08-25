@@ -4941,6 +4941,28 @@
         <array>
           <dict>
             <key>match</key>
+            <string>(\bself\b)\s*(.)\s*([_$[:alpha:]][_$[:alnum:]]*)\s*(?=\()</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>variable.language.this.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.accessor.ballerina</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>entity.name.function.ballerina</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>match</key>
             <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))self\b(?!\$)</string>
             <key>name</key>
             <string>variable.language.this.ballerina</string>

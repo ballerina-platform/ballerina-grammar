@@ -158,6 +158,14 @@
     ],
     "self-literal": [
         [
+            "(\\bself\\b)\\s*(.)\\s*([_$[:alpha:]][_$[:alnum:]]*)\\s*(?=\\()",
+            [
+                "variable.language.this.ballerina",
+                "punctuation.accessor.ballerina",
+                "entity.name.function.ballerina"
+            ]
+        ],
+        [
             "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))self\\b(?!\\$)",
             "variable.language.this.ballerina"
         ]

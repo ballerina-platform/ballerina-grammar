@@ -1633,6 +1633,11 @@ repository:
 
   self-literal:
     patterns:
+    - match: (\bself\b)\s*(.)\s*({{identifier}})\s*(?=\()
+      captures:
+        '1': { name: variable.language.this.ballerina }
+        '2': { name: punctuation.accessor.ballerina }
+        '3': { name: entity.name.function.ballerina }
     - match: '{{startOfIdentifier}}self\b(?!\$)'
       name: variable.language.this.ballerina
 
