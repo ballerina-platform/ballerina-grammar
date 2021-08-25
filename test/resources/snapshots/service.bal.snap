@@ -155,7 +155,7 @@
 //                              ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                               ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
 //                                ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina punctuation.decorator.ballerina
-//                                 ^^^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina storage.type.annotation.ballerina
+//                                 ^^^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina support.type.ballerina
 //                                          ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
 //                                           ^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
 //                                                  ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
@@ -185,7 +185,7 @@
 //                          ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                           ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
 //                            ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina punctuation.decorator.ballerina
-//                             ^^^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina storage.type.annotation.ballerina
+//                             ^^^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina support.type.ballerina
 //                                      ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
 //                                       ^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.other.readwrite.ballerina
 //                                              ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina punctuation.accessor.ballerina
@@ -567,7 +567,7 @@
 //                          ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                           ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
 //                            ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina punctuation.decorator.ballerina
-//                             ^^^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina storage.type.annotation.ballerina
+//                             ^^^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina support.type.ballerina
 //                                      ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
 //                                       ^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.other.readwrite.ballerina
 //                                              ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina punctuation.accessor.ballerina
@@ -1163,9 +1163,9 @@
 >
 > @docker:Expose {}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^^^ source.ballerina support.type.ballerina
 //       ^ source.ballerina punctuation.decorator.ballerina
-//        ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//        ^^^^^^ source.ballerina support.type.ballerina
 //              ^ source.ballerina
 //               ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                ^^ source.ballerina
@@ -1191,9 +1191,9 @@
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
 > @docker:Config {
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^^^ source.ballerina support.type.ballerina
 //       ^ source.ballerina punctuation.decorator.ballerina
-//        ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//        ^^^^^^ source.ballerina support.type.ballerina
 //              ^ source.ballerina
 //               ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >     //Docker image name should be helloworld.
@@ -1908,7 +1908,7 @@
 //                             ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                              ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
 //                               ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina punctuation.decorator.ballerina
-//                                ^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina storage.type.annotation.ballerina
+//                                ^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina support.type.ballerina
 //                                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
 //                                          ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
 //                                             ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
@@ -2805,7 +2805,7 @@
 //                      ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                       ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
 //                        ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.decorator.ballerina
-//                         ^^^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina storage.type.annotation.ballerina
+//                         ^^^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina support.type.ballerina
 //                                  ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
 >                          (ageQueryParam is string ? ageQueryParam : "");
 //^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina

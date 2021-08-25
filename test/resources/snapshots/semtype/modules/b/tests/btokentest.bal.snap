@@ -11,9 +11,9 @@
 >
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function test1() {

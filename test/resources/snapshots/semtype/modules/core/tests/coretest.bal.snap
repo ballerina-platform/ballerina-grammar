@@ -10,9 +10,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function testBitTwiddling() {
@@ -164,9 +164,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function test1() {
@@ -375,9 +375,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function test2() {
@@ -414,9 +414,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function test3() {
@@ -581,9 +581,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function test4() {
@@ -771,9 +771,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function test5() {
@@ -988,9 +988,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function recTest() {
@@ -1138,9 +1138,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function recTest2() {
@@ -1267,9 +1267,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function recTest3() {
@@ -1406,9 +1406,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function tupleTest1() {
@@ -1520,9 +1520,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function tupleTest2() {
@@ -1631,9 +1631,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function tupleTest3() {
@@ -1814,9 +1814,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function tupleTest4() {
@@ -2044,9 +2044,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function funcTest1() {
@@ -2159,9 +2159,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function funcTest2() {
@@ -2273,9 +2273,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function funcTest3() {
@@ -2399,9 +2399,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function funcTest4() {
@@ -2531,9 +2531,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function stringTest() {
@@ -2700,9 +2700,9 @@
 > 
 > @test:Config{}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //             ^^ source.ballerina
 > function roTest() {

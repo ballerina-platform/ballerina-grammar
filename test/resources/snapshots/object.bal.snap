@@ -585,7 +585,7 @@
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
 > @deprecated
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^^^^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^^^^^^^ source.ballerina support.type.ballerina
 > public type Address record {|
 //^^^^^^ source.ballerina keyword.other.ballerina
 //      ^ source.ballerina

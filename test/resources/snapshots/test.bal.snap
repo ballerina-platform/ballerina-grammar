@@ -31,9 +31,9 @@
 >
 > @test:Config {}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina
 //             ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //              ^^ source.ballerina
@@ -196,9 +196,9 @@
 >
 > @test:Mock {
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^ source.ballerina support.type.ballerina
 //          ^ source.ballerina
 //           ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >     moduleName: "ballerina/time",
@@ -420,9 +420,9 @@
 >
 > @test:Config {}
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina
 //             ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //              ^^ source.ballerina
@@ -686,9 +686,9 @@
 >
 > @test:BeforeSuite
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^^^^^^ source.ballerina support.type.ballerina
 > function beforeSuit() {
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina keyword.other.ballerina
 //        ^ source.ballerina meta.function.ballerina
@@ -713,9 +713,9 @@
 >
 > @test:AfterSuite { }
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^^^^^ source.ballerina support.type.ballerina
 //                ^ source.ballerina
 //                 ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                  ^ source.ballerina meta.block.ballerina
@@ -744,9 +744,9 @@
 >
 > @test:BeforeGroups { value:["g1"] }
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^^^^^^^ source.ballerina support.type.ballerina
 //                  ^ source.ballerina
 //                   ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                    ^ source.ballerina meta.block.ballerina
@@ -787,9 +787,9 @@
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
 > @test:AfterGroups { value:["g1"] }
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^^^^^^ source.ballerina support.type.ballerina
 //                 ^ source.ballerina
 //                  ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                   ^ source.ballerina meta.block.ballerina
@@ -826,9 +826,9 @@
 >
 > @test:BeforeEach
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^^^^^ source.ballerina support.type.ballerina
 > function beforeEachFunc() {
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina keyword.other.ballerina
 //        ^ source.ballerina meta.function.ballerina
@@ -855,9 +855,9 @@
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
 > @test:AfterEach
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^^^^ source.ballerina support.type.ballerina
 > function afterEachFunc() {
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina keyword.other.ballerina
 //        ^ source.ballerina meta.function.ballerina
@@ -882,9 +882,9 @@
 >
 > @test:Config {
 //^ source.ballerina punctuation.decorator.ballerina
-// ^^^^ source.ballerina storage.type.annotation.ballerina
+// ^^^^ source.ballerina support.type.ballerina
 //     ^ source.ballerina punctuation.decorator.ballerina
-//      ^^^^^^ source.ballerina storage.type.annotation.ballerina
+//      ^^^^^^ source.ballerina support.type.ballerina
 //            ^ source.ballerina
 //             ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >     before: testFunc1,
