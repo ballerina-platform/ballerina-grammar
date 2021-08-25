@@ -23,7 +23,7 @@ variables:
   varExprStart: '\b(var)'
   primitiveTypes: '(string|int|boolean|float|byte|decimal|json|xml)'
   otherKeywords: '\b(is|new|isolated|null|function)\b'
-  controlKeywords: '\b(check|foreach)\b'
+  controlKeywords: '\b(check|foreach|if)\b'
   booleanTypes: '\b(true|false)\b'
   constExprStart: '\b(const(?!\s+enum\b))'
   lookBehindString: '^string|{{nonPropertyLookBehind}}string'
