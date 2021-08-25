@@ -1,0 +1,108 @@
+// SYNTAX TEST "source.ballerina" "semtype/tests/data/int-subtype.bal highlighting testcase"
+
+> // Byte<:Sint16
+//^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Byte<:Sint32
+//^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Byte<:Uint16
+//^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Byte<:Uint32
+//^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Byte<:Uint8
+//^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // N33000<:Sint32
+//^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // N33000<:Uint16
+//^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // N33000<:Uint32
+//^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Sint16<:Sint32
+//^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Sint8<:Sint16
+//^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Sint8<:Sint32
+//^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Uint16<:Sint32
+//^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Uint16<:Uint32
+//^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Uint8<:Byte
+//^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Uint8<:Sint16
+//^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Uint8<:Sint32
+//^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Uint8<:Uint16
+//^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Uint8<:Uint32
+//^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> type Byte byte;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^ source.ballerina entity.name.type.ballerina
+//         ^ source.ballerina
+//          ^^^^ source.ballerina support.type.primitive.ballerina
+//              ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Uint8 int:Unsigned8;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^^ source.ballerina entity.name.type.ballerina
+//          ^ source.ballerina
+//           ^^^ source.ballerina support.type.primitive.ballerina
+//              ^ source.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+//               ^^^^^^^^^ source.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                        ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Uint16 int:Unsigned16;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^^^ source.ballerina entity.name.type.ballerina
+//           ^ source.ballerina
+//            ^^^ source.ballerina support.type.primitive.ballerina
+//               ^ source.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+//                ^^^^^^^^^^ source.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                          ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Uint32 int:Unsigned32;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^^^ source.ballerina entity.name.type.ballerina
+//           ^ source.ballerina
+//            ^^^ source.ballerina support.type.primitive.ballerina
+//               ^ source.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+//                ^^^^^^^^^^ source.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                          ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Sint8 int:Signed8;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^^ source.ballerina entity.name.type.ballerina
+//          ^ source.ballerina
+//           ^^^ source.ballerina support.type.primitive.ballerina
+//              ^ source.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+//               ^^^^^^^ source.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                      ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Sint16 int:Signed16;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^^^ source.ballerina entity.name.type.ballerina
+//           ^ source.ballerina
+//            ^^^ source.ballerina support.type.primitive.ballerina
+//               ^ source.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+//                ^^^^^^^^ source.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                        ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Sint32 int:Signed32;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^^^ source.ballerina entity.name.type.ballerina
+//           ^ source.ballerina
+//            ^^^ source.ballerina support.type.primitive.ballerina
+//               ^ source.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+//                ^^^^^^^^ source.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                        ^ source.ballerina punctuation.terminator.statement.ballerina
+> const N33000 = 33000;
+//^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//      ^^^^^^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//            ^ source.ballerina meta.var.expr.ballerina
+//             ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//              ^ source.ballerina meta.var.expr.ballerina
+//               ^^^^^ source.ballerina meta.var.expr.ballerina constant.numeric.decimal.ballerina
+//                    ^ source.ballerina punctuation.terminator.statement.ballerina
+> 

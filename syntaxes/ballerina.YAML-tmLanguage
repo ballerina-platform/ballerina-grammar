@@ -1568,6 +1568,7 @@ repository:
       '0': { name: meta.brace.square.ballerina }
     patterns:
     - include: '#self-literal' 
+    - include: '#booleans' 
     - name: keyword.operator.rest.ballerina
       match: \.\.\.
     - match: '{{startOfIdentifier}}({{identifier}})\s*(\?)?\s*(:)'

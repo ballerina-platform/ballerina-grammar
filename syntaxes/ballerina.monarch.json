@@ -860,6 +860,9 @@
         {
             "include": "self-literal"
         },
+        {
+            "include": "booleans"
+        },
         [
             "\\.\\.\\.",
             "keyword.operator.rest.ballerina"

@@ -1,4 +1,4 @@
-// SYNTAX TEST "source.ballerina" "bmain.bal highlighting testcase"
+// SYNTAX TEST "source.ballerina" "semtype/bmain.bal highlighting testcase"
 
 > import ballerina/io;
 //^^^^^^ source.ballerina meta.import.ballerina keyword.control.import.ballerina
@@ -89,7 +89,7 @@
 //                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina
 //                       ^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina keyword.control.flow.ballerina
 //                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina
-//                             ^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina variable.other.readwrite.ballerina
+//                             ^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina entity.name.function.ballerina
 //                                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                         ^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
 //                                                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
@@ -220,9 +220,9 @@
 //                                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina
 //                                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina variable.other.readwrite.ballerina
 //                                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina punctuation.accessor.ballerina
-//                                          ^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina variable.other.property.ballerina
-//                                                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                                                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                                          ^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina entity.name.function.ballerina
+//                                                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina punctuation.definition.parameters.begin.ballerina
+//                                                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina punctuation.definition.parameters.end.ballerina
 //                                                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina
 //                                                    ^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina keyword.other.ballerina
 //                                                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina

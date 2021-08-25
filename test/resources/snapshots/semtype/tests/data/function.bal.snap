@@ -1,0 +1,69 @@
+// SYNTAX TEST "source.ballerina" "semtype/tests/data/function.bal highlighting testcase"
+
+> // F<:A
+//^^^^^^^ source.ballerina comment.ballerina
+> // S<:T
+//^^^^^^^ source.ballerina comment.ballerina
+> 
+> type F function() returns F;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^ source.ballerina entity.name.type.ballerina
+//      ^ source.ballerina
+//       ^^^^^^^^ source.ballerina keyword.other.ballerina
+//               ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                 ^ source.ballerina meta.type.function.return.ballerina
+//                  ^^^^^^^ source.ballerina meta.type.function.return.ballerina keyword.other.ballerina
+//                         ^ source.ballerina meta.type.function.return.ballerina
+//                          ^ source.ballerina meta.type.function.return.ballerina variable.other.readwrite.ballerina
+//                           ^ source.ballerina punctuation.terminator.statement.ballerina
+> type A function() returns any|error;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^ source.ballerina entity.name.type.ballerina
+//      ^ source.ballerina
+//       ^^^^^^^^ source.ballerina keyword.other.ballerina
+//               ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                 ^ source.ballerina meta.type.function.return.ballerina
+//                  ^^^^^^^ source.ballerina meta.type.function.return.ballerina keyword.other.ballerina
+//                         ^ source.ballerina meta.type.function.return.ballerina
+//                          ^^^ source.ballerina meta.type.function.return.ballerina storage.type.ballerina
+//                             ^ source.ballerina meta.type.function.return.ballerina keyword.operator.ballerina
+//                              ^^^^^ source.ballerina meta.type.function.return.ballerina storage.type.ballerina
+//                                   ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> type S function(int?) returns string;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^ source.ballerina entity.name.type.ballerina
+//      ^ source.ballerina
+//       ^^^^^^^^ source.ballerina keyword.other.ballerina
+//               ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                ^^^ source.ballerina meta.parameters.ballerina support.type.primitive.ballerina
+//                   ^ source.ballerina meta.parameters.ballerina
+//                    ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                     ^ source.ballerina meta.type.function.return.ballerina
+//                      ^^^^^^^ source.ballerina meta.type.function.return.ballerina keyword.other.ballerina
+//                             ^ source.ballerina meta.type.function.return.ballerina
+//                              ^^^^^^ source.ballerina meta.type.function.return.ballerina support.type.primitive.ballerina
+//                                    ^ source.ballerina punctuation.terminator.statement.ballerina
+> type T function(int) returns string?;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^ source.ballerina entity.name.type.ballerina
+//      ^ source.ballerina
+//       ^^^^^^^^ source.ballerina keyword.other.ballerina
+//               ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                ^^^ source.ballerina meta.parameters.ballerina support.type.primitive.ballerina
+//                   ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                    ^ source.ballerina meta.type.function.return.ballerina
+//                     ^^^^^^^ source.ballerina meta.type.function.return.ballerina keyword.other.ballerina
+//                            ^ source.ballerina meta.type.function.return.ballerina
+//                             ^^^^^^ source.ballerina meta.type.function.return.ballerina support.type.primitive.ballerina
+//                                   ^ source.ballerina meta.type.function.return.ballerina keyword.operator.optional.ballerina
+//                                    ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> 
+> 
