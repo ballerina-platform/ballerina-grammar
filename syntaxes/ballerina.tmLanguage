@@ -1051,7 +1051,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>keyword.operator.ballerina</string>
+                <string>meta.arrow.ballerina storage.type.function.arrow.ballerina</string>
               </dict>
             </dict>
             <key>end</key>
@@ -4912,9 +4912,15 @@
           </dict>
           <dict>
             <key>name</key>
+            <string>meta.arrow.ballerina storage.type.function.arrow.ballerina</string>
+            <key>match</key>
+            <string>(=&gt;)</string>
+          </dict>
+          <dict>
+            <key>name</key>
             <string>keyword.operator.ballerina</string>
             <key>match</key>
-            <string>(!|%|\+|\-|~=|===|==|=|!=|!==|&lt;|&gt;|&amp;|\||\?:|\.\.\.|&lt;=|=&gt;|&gt;=|&amp;&amp;|\|\||~|&gt;&gt;|&gt;&gt;&gt;)</string>
+            <string>(!|%|\+|\-|~=|===|==|=|!=|!==|&lt;|&gt;|&amp;|\||\?:|\.\.\.|&lt;=|&gt;=|&amp;&amp;|\|\||~|&gt;&gt;|&gt;&gt;&gt;)</string>
           </dict>
           <dict>
             <key>include</key>

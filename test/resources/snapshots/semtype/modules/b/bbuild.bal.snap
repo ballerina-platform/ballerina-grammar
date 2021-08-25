@@ -482,8 +482,7 @@
 //         ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina
 //            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //             ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
-//              ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
-//               ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
+//              ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -501,8 +500,7 @@
 //         ^^^^^^^ source.ballerina string.quoted.double.ballerina
 //                ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //                 ^ source.ballerina
-//                  ^ source.ballerina keyword.operator.ballerina
-//                   ^ source.ballerina keyword.operator.ballerina
+//                  ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                    ^ source.ballerina
 //                     ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                      ^ source.ballerina meta.block.ballerina
@@ -520,8 +518,7 @@
 //         ^^^^^^^ source.ballerina string.quoted.double.ballerina
 //                ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //                 ^ source.ballerina
-//                  ^ source.ballerina keyword.operator.ballerina
-//                   ^ source.ballerina keyword.operator.ballerina
+//                  ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                    ^ source.ballerina
 //                     ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                      ^ source.ballerina meta.block.ballerina
@@ -539,8 +536,7 @@
 //         ^^^^^ source.ballerina string.quoted.double.ballerina
 //              ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //               ^ source.ballerina
-//                ^ source.ballerina keyword.operator.ballerina
-//                 ^ source.ballerina keyword.operator.ballerina
+//                ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                  ^ source.ballerina
 //                   ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                    ^ source.ballerina meta.block.ballerina
@@ -558,8 +554,7 @@
 //         ^^^^^ source.ballerina string.quoted.double.ballerina
 //              ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //               ^ source.ballerina
-//                ^ source.ballerina keyword.operator.ballerina
-//                 ^ source.ballerina keyword.operator.ballerina
+//                ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                  ^ source.ballerina
 //                   ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                    ^ source.ballerina meta.block.ballerina
@@ -577,8 +572,7 @@
 //         ^^^^^^ source.ballerina string.quoted.double.ballerina
 //               ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //                ^ source.ballerina
-//                 ^ source.ballerina keyword.operator.ballerina
-//                  ^ source.ballerina keyword.operator.ballerina
+//                 ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                   ^ source.ballerina
 //                    ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                     ^ source.ballerina meta.block.ballerina
@@ -596,8 +590,7 @@
 //         ^^^ source.ballerina string.quoted.double.ballerina
 //            ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //             ^ source.ballerina
-//              ^ source.ballerina keyword.operator.ballerina
-//               ^ source.ballerina keyword.operator.ballerina
+//              ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                ^ source.ballerina
 //                 ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                  ^ source.ballerina meta.block.ballerina
@@ -615,8 +608,7 @@
 //         ^^^^^ source.ballerina string.quoted.double.ballerina
 //              ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //               ^ source.ballerina
-//                ^ source.ballerina keyword.operator.ballerina
-//                 ^ source.ballerina keyword.operator.ballerina
+//                ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                  ^ source.ballerina
 //                   ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                    ^ source.ballerina meta.block.ballerina
@@ -634,8 +626,7 @@
 //         ^^^^^^^^ source.ballerina string.quoted.double.ballerina
 //                 ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //                  ^ source.ballerina
-//                   ^ source.ballerina keyword.operator.ballerina
-//                    ^ source.ballerina keyword.operator.ballerina
+//                   ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                     ^ source.ballerina
 //                      ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                       ^ source.ballerina meta.block.ballerina
@@ -653,8 +644,7 @@
 //         ^^^^^^ source.ballerina string.quoted.double.ballerina
 //               ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //                ^ source.ballerina
-//                 ^ source.ballerina keyword.operator.ballerina
-//                  ^ source.ballerina keyword.operator.ballerina
+//                 ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                   ^ source.ballerina
 //                    ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                     ^ source.ballerina meta.block.ballerina
@@ -672,8 +662,7 @@
 //         ^^^^^^^^ source.ballerina string.quoted.double.ballerina
 //                 ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //                  ^ source.ballerina
-//                   ^ source.ballerina keyword.operator.ballerina
-//                    ^ source.ballerina keyword.operator.ballerina
+//                   ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                     ^ source.ballerina
 //                      ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                       ^ source.ballerina meta.block.ballerina
@@ -691,8 +680,7 @@
 //         ^^^ source.ballerina string.quoted.double.ballerina
 //            ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //             ^ source.ballerina
-//              ^ source.ballerina keyword.operator.ballerina
-//               ^ source.ballerina keyword.operator.ballerina
+//              ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                ^ source.ballerina
 //                 ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                  ^ source.ballerina meta.block.ballerina
@@ -710,8 +698,7 @@
 //         ^^^^^ source.ballerina string.quoted.double.ballerina
 //              ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //               ^ source.ballerina
-//                ^ source.ballerina keyword.operator.ballerina
-//                 ^ source.ballerina keyword.operator.ballerina
+//                ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                  ^ source.ballerina
 //                   ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                    ^ source.ballerina meta.block.ballerina
@@ -732,8 +719,7 @@
 //         ^^^^^^ source.ballerina string.quoted.double.ballerina
 //               ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //                ^ source.ballerina
-//                 ^ source.ballerina keyword.operator.ballerina
-//                  ^ source.ballerina keyword.operator.ballerina
+//                 ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                   ^ source.ballerina
 //                    ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                     ^ source.ballerina meta.block.ballerina
@@ -754,8 +740,7 @@
 //         ^^^^^^ source.ballerina string.quoted.double.ballerina
 //               ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //                ^ source.ballerina
-//                 ^ source.ballerina keyword.operator.ballerina
-//                  ^ source.ballerina keyword.operator.ballerina
+//                 ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                   ^ source.ballerina
 //                    ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                     ^ source.ballerina meta.block.ballerina
@@ -776,8 +761,7 @@
 //         ^^^^^ source.ballerina string.quoted.double.ballerina
 //              ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //               ^ source.ballerina
-//                ^ source.ballerina keyword.operator.ballerina
-//                 ^ source.ballerina keyword.operator.ballerina
+//                ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                  ^ source.ballerina
 //                   ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                    ^ source.ballerina meta.block.ballerina
@@ -795,8 +779,7 @@
 //         ^^^^^^ source.ballerina string.quoted.double.ballerina
 //               ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //                ^ source.ballerina
-//                 ^ source.ballerina keyword.operator.ballerina
-//                  ^ source.ballerina keyword.operator.ballerina
+//                 ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                   ^ source.ballerina
 //                    ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                     ^ source.ballerina meta.block.ballerina
@@ -817,8 +800,7 @@
 //         ^^^^^^ source.ballerina string.quoted.double.ballerina
 //               ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //                ^ source.ballerina
-//                 ^ source.ballerina keyword.operator.ballerina
-//                  ^ source.ballerina keyword.operator.ballerina
+//                 ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                   ^ source.ballerina
 //                    ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                     ^ source.ballerina meta.block.ballerina
@@ -839,8 +821,7 @@
 //         ^^^^ source.ballerina string.quoted.double.ballerina
 //             ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //              ^ source.ballerina
-//               ^ source.ballerina keyword.operator.ballerina
-//                ^ source.ballerina keyword.operator.ballerina
+//               ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                 ^ source.ballerina
 //                  ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                   ^ source.ballerina meta.block.ballerina
@@ -861,8 +842,7 @@
 //         ^^ source.ballerina string.quoted.double.ballerina
 //           ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //            ^ source.ballerina
-//             ^ source.ballerina keyword.operator.ballerina
-//              ^ source.ballerina keyword.operator.ballerina
+//             ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //               ^ source.ballerina
 //                ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                 ^ source.ballerina meta.block.ballerina

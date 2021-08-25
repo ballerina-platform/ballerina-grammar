@@ -3107,7 +3107,7 @@
 //                                                 ^ source.ballerina meta.function.ballerina meta.parameters.ballerina variable.parameter.ballerina
 //                                                  ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
 //                                                   ^ source.ballerina meta.function.ballerina
-//                                                    ^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
+//                                                    ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                                                      ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                                                       ^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
 //                                                        ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.accessor.ballerina
@@ -3142,8 +3142,7 @@
 //                                                           ^ source.ballerina meta.var.expr.ballerina meta.function.ballerina meta.type.function.return.ballerina
 //                                                            ^^^^^^^^ source.ballerina meta.var.expr.ballerina meta.function.ballerina meta.type.function.return.ballerina variable.other.readwrite.ballerina
 //                                                                    ^ source.ballerina meta.var.expr.ballerina meta.function.ballerina meta.type.function.return.ballerina
-//                                                                     ^ source.ballerina meta.var.expr.ballerina meta.function.ballerina meta.block.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
-//                                                                      ^ source.ballerina meta.var.expr.ballerina meta.function.ballerina meta.block.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
+//                                                                     ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                                                                       ^ source.ballerina meta.var.expr.ballerina meta.function.ballerina
 //                                                                        ^ source.ballerina meta.var.expr.ballerina meta.function.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                          name: p.name,
@@ -5740,8 +5739,7 @@
 //                        ^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
 //                             ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
 //                              ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
-//                               ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
-//                                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
+//                               ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             io:println("Matched a value with a tuple shape");
@@ -5780,8 +5778,7 @@
 //                                       ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
 //                                        ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
 //                                         ^^ source.ballerina
-//                                           ^ source.ballerina keyword.operator.ballerina
-//                                            ^ source.ballerina keyword.operator.ballerina
+//                                           ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                                             ^ source.ballerina
 //                                              ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             io:println("Matched a value with a record shape");
@@ -5824,8 +5821,7 @@
 //                                             ^ source.ballerina
 //                                              ^^^^^^ source.ballerina support.type.primitive.ballerina
 //                                                    ^ source.ballerina
-//                                                     ^ source.ballerina keyword.operator.ballerina
-//                                                      ^ source.ballerina keyword.operator.ballerina
+//                                                     ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                                                       ^ source.ballerina meta.brace.round.ballerina
 //                                                        ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             io:println("Matched with string typeguard");
@@ -5878,7 +5874,8 @@
 //                                                             ^ source.ballerina
 //                                                              ^^^ source.ballerina support.type.primitive.ballerina
 //                                                                 ^ source.ballerina meta.brace.round.ballerina
-//                                                                  ^^^^ source.ballerina
+//                                                                  ^ source.ballerina
+//                                                                   ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                                                                      ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             io:println("Matched with int and int typeguard : ", var1);
 //^^^^^^^^^^^^ source.ballerina meta.block.ballerina
@@ -5903,8 +5900,7 @@
 //         ^^^^^ source.ballerina string.quoted.double.ballerina
 //              ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //               ^ source.ballerina
-//                ^ source.ballerina keyword.operator.ballerina
-//                 ^ source.ballerina keyword.operator.ballerina
+//                ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                  ^ source.ballerina
 //                   ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             io:println("Mouse");
@@ -5925,8 +5921,7 @@
 //^^^^^^^^ source.ballerina
 //        ^ source.ballerina constant.numeric.decimal.ballerina
 //         ^ source.ballerina
-//          ^ source.ballerina keyword.operator.ballerina
-//           ^ source.ballerina keyword.operator.ballerina
+//          ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //            ^ source.ballerina
 //             ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             io:println("value is: 1");
@@ -5958,8 +5953,7 @@
 //                                      ^ source.ballerina meta.brace.round.block.ballerina variable.other.readwrite.ballerina
 //                                       ^ source.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                        ^ source.ballerina
-//                                         ^ source.ballerina keyword.operator.ballerina
-//                                          ^ source.ballerina keyword.operator.ballerina
+//                                         ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                                           ^ source.ballerina
 //                                            ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             io:println("Matched `InvalidError` id=", a);
@@ -5997,8 +5991,7 @@
 //                                             ^ source.ballerina meta.brace.round.block.ballerina variable.other.readwrite.ballerina
 //                                              ^ source.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                               ^ source.ballerina
-//                                                ^ source.ballerina keyword.operator.ballerina
-//                                                 ^ source.ballerina keyword.operator.ballerina
+//                                                ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                                                  ^ source.ballerina
 //                                                   ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             io:println("Matched an error value : ", io:sprintf("message: %s", a));
@@ -6062,8 +6055,7 @@
 //         ^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina
 //                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
-//                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
-//                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
+//                        ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -6088,8 +6080,7 @@
 //         ^^^^^^^^^^ source.ballerina string.quoted.double.ballerina
 //                   ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //                    ^ source.ballerina
-//                     ^ source.ballerina keyword.operator.ballerina
-//                      ^ source.ballerina keyword.operator.ballerina
+//                     ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                       ^ source.ballerina
 //                        ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 //                         ^ source.ballerina meta.block.ballerina

@@ -409,7 +409,7 @@ repository:
     patterns:
     - begin: '=>'
       beginCaptures:
-        '0': { name:  keyword.operator.ballerina }
+        '0': { name:  meta.arrow.ballerina storage.type.function.arrow.ballerina }
       end: ',|(?=\})'
       patterns:
       - include: '#code'
@@ -1619,8 +1619,11 @@ repository:
     - name: keyword.other.ballerina
       match: \b(limit|outer|equals|order|by|ascending|descending|class|configurable|variable|module|service)\b
 
+    - name: meta.arrow.ballerina storage.type.function.arrow.ballerina
+      match: (=>)
+      
     - name: keyword.operator.ballerina
-      match: (!|%|\+|\-|~=|===|==|=|!=|!==|<|>|&|\||\?:|\.\.\.|<=|=>|>=|&&|\|\||~|>>|>>>)
+      match: (!|%|\+|\-|~=|===|==|=|!=|!==|<|>|&|\||\?:|\.\.\.|<=|>=|&&|\|\||~|>>|>>>)  
 
     - include: '#types'
     - include: '#self-literal' 

@@ -947,8 +947,7 @@
 //                             ^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
 //                                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
 //                                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
-//                                     ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
-//                                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
+//                                     ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             error|int res = int:fromString(sign + digits);
@@ -1718,8 +1717,7 @@
 //         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina
 //          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
-//            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
-//             ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
+//            ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //              ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //               ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             check tok.advance();
@@ -1883,8 +1881,7 @@
 //            ^^^^^^^^ source.ballerina string.quoted.double.ballerina
 //                    ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //                     ^ source.ballerina
-//                      ^ source.ballerina keyword.operator.ballerina
-//                       ^ source.ballerina keyword.operator.ballerina
+//                      ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                        ^ source.ballerina
 //                         ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             check tok.advance();
@@ -1918,8 +1915,7 @@
 //         ^^^^ source.ballerina string.quoted.double.ballerina
 //             ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //              ^ source.ballerina
-//               ^ source.ballerina keyword.operator.ballerina
-//                ^ source.ballerina keyword.operator.ballerina
+//               ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                 ^ source.ballerina
 //                  ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             check tok.advance();
@@ -1949,8 +1945,7 @@
 //         ^ source.ballerina string.quoted.double.ballerina
 //          ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //           ^ source.ballerina
-//            ^ source.ballerina keyword.operator.ballerina
-//             ^ source.ballerina keyword.operator.ballerina
+//            ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //              ^ source.ballerina
 //               ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             return parseTuple(tok);
@@ -1971,8 +1966,7 @@
 //         ^^^ source.ballerina string.quoted.double.ballerina
 //            ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //             ^ source.ballerina
-//              ^ source.ballerina keyword.operator.ballerina
-//               ^ source.ballerina keyword.operator.ballerina
+//              ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                ^ source.ballerina
 //                 ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             check tok.advance();
@@ -2021,8 +2015,7 @@
 //         ^^^^^ source.ballerina string.quoted.double.ballerina
 //              ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //               ^ source.ballerina
-//                ^ source.ballerina keyword.operator.ballerina
-//                 ^ source.ballerina keyword.operator.ballerina
+//                ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                  ^ source.ballerina
 //                   ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             check tok.advance();
@@ -2093,8 +2086,7 @@
 //         ^^^^^^ source.ballerina string.quoted.double.ballerina
 //               ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //                ^ source.ballerina
-//                 ^ source.ballerina keyword.operator.ballerina
-//                  ^ source.ballerina keyword.operator.ballerina
+//                 ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                   ^ source.ballerina
 //                    ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             return parseRecord(tok);         
@@ -2116,8 +2108,7 @@
 //         ^^^ source.ballerina string.quoted.double.ballerina
 //            ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //             ^ source.ballerina
-//              ^ source.ballerina keyword.operator.ballerina
-//               ^ source.ballerina keyword.operator.ballerina
+//              ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                ^ source.ballerina
 //                 ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             check tok.advance();
@@ -2313,8 +2304,7 @@
 //                         ^^^ source.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
 //                            ^ source.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
 //                             ^ source.ballerina
-//                              ^ source.ballerina keyword.operator.ballerina
-//                               ^ source.ballerina keyword.operator.ballerina
+//                              ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                                ^ source.ballerina
 //                                 ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             TypeDescRef r = { ref, pos: tok.currentPos() };
@@ -2370,8 +2360,7 @@
 //                             ^^^ source.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
 //                                ^ source.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
 //                                 ^ source.ballerina
-//                                  ^ source.ballerina keyword.operator.ballerina
-//                                   ^ source.ballerina keyword.operator.ballerina
+//                                  ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                                    ^ source.ballerina
 //                                     ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             check tok.advance();
@@ -2408,8 +2397,7 @@
 //         ^^^^ source.ballerina string.quoted.double.ballerina
 //             ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //              ^ source.ballerina
-//               ^ source.ballerina keyword.operator.ballerina
-//                ^ source.ballerina keyword.operator.ballerina
+//               ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                 ^ source.ballerina
 //                  ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             check tok.advance();
@@ -2446,8 +2434,7 @@
 //         ^^^^^ source.ballerina string.quoted.double.ballerina
 //              ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //               ^ source.ballerina
-//                ^ source.ballerina keyword.operator.ballerina
-//                 ^ source.ballerina keyword.operator.ballerina
+//                ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                  ^ source.ballerina
 //                   ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             check tok.advance();
@@ -3197,8 +3184,7 @@
 //             ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina
 //                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
-//                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
-//                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
+//                  ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
 //                     ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                 rest = td;
@@ -3233,8 +3219,7 @@
 //                             ^^^^ source.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
 //                                 ^ source.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
 //                                  ^ source.ballerina
-//                                   ^ source.ballerina keyword.operator.ballerina
-//                                    ^ source.ballerina keyword.operator.ballerina
+//                                   ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                                     ^ source.ballerina
 //                                      ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                 check tok.advance();
@@ -3271,8 +3256,7 @@
 //^^^^^^^^^^^^ source.ballerina
 //            ^ source.ballerina variable.other.readwrite.ballerina
 //             ^ source.ballerina
-//              ^ source.ballerina keyword.operator.ballerina
-//               ^ source.ballerina keyword.operator.ballerina
+//              ^^ source.ballerina meta.arrow.ballerina storage.type.function.arrow.ballerina
 //                ^ source.ballerina
 //                 ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                 return parseError(tok);

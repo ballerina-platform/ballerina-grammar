@@ -125,7 +125,11 @@
             "keyword.other.ballerina"
         ],
         [
-            "(!|%|\\+|\\-|~=|===|==|=|!=|!==|<|>|&|\\||\\?:|\\.\\.\\.|<=|=>|>=|&&|\\|\\||~|>>|>>>)",
+            "(=>)",
+            "meta.arrow.ballerina storage.type.function.arrow.ballerina"
+        ],
+        [
+            "(!|%|\\+|\\-|~=|===|==|=|!=|!==|<|>|&|\\||\\?:|\\.\\.\\.|<=|>=|&&|\\|\\||~|>>|>>>)",
             "keyword.operator.ballerina"
         ],
         {
@@ -2422,7 +2426,7 @@
             "=>",
             {
                 "next": "butClause__b__0",
-                "token": "keyword.operator.ballerina"
+                "token": "meta.arrow.ballerina storage.type.function.arrow.ballerina"
             }
         ]
     ],
