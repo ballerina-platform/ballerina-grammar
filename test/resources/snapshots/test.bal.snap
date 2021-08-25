@@ -308,7 +308,7 @@
 //^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
 //    ^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
 //           ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.accessor.ballerina
-//            ^^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.property.ballerina
+//            ^^^^ source.ballerina meta.function.ballerina meta.block.ballerina entity.name.function.ballerina
 //                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
 >     toString(val.reduce(function(any|error a, any|error b) returns string => toString(a) + toString(b), "")));
 //^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
@@ -316,7 +316,7 @@
 //            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
 //             ^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
 //                ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.accessor.ballerina
-//                 ^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.property.ballerina
+//                 ^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina entity.name.function.ballerina
 //                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
 //                        ^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.function.ballerina keyword.other.ballerina
 //                                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina

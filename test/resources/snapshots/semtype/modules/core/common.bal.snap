@@ -204,7 +204,7 @@
 //^^^^^^^^ source.ballerina
 //        ^^^^^ source.ballerina variable.other.readwrite.ballerina
 //             ^ source.ballerina punctuation.accessor.ballerina
-//              ^^^^ source.ballerina variable.other.property.ballerina
+//              ^^^^ source.ballerina entity.name.function.ballerina
 //                  ^ source.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                   ^ source.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
 //                    ^ source.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina

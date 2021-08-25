@@ -1135,6 +1135,14 @@
             ]
         ],
         [
+            "(?:(\\.)|(\\?\\.(?!\\s*[[:digit:]])))\\s*(\\#?[_$[:alpha:]][_$[:alnum:]]*)\\s*(?=\\()",
+            [
+                "punctuation.accessor.ballerina",
+                "punctuation.accessor.optional.ballerina",
+                "entity.name.function.ballerina"
+            ]
+        ],
+        [
             "(?:(\\.)|(\\?\\.(?!\\s*[[:digit:]])))\\s*(\\#?[_$[:alpha:]][_$[:alnum:]]*)",
             [
                 "punctuation.accessor.ballerina",

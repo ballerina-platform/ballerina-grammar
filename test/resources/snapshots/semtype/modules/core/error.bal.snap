@@ -268,7 +268,7 @@
 //          ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.accessor.ballerina
 //           ^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.property.ballerina
 //                      ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.accessor.ballerina
-//                       ^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.property.ballerina
+//                       ^^^ source.ballerina meta.function.ballerina meta.block.ballerina entity.name.function.ballerina
 //                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
 //                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
