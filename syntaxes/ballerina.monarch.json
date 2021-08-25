@@ -1183,7 +1183,7 @@
     ],
     "call": [
         [
-            "([_$[:alpha:]][_$[:alnum:]]*)\\s*(?=\\()",
+            "(?:\\')?([_$[:alpha:]][_$[:alnum:]]*)\\s*(?=\\()",
             "entity.name.function.ballerina"
         ]
     ],

@@ -415,7 +415,7 @@ repository:
 
   call:
     patterns:
-    - match: ({{identifier}})\s*(?=\()
+    - match: (?:\')?({{identifier}})\s*(?=\()
       name: entity.name.function.ballerina
 
   comment:
