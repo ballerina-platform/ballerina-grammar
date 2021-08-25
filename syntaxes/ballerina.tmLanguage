@@ -4400,7 +4400,7 @@
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>keyword.ballerina</string>
+                <string>support.type.primitive.ballerina</string>
               </dict>
             </dict>
             <key>end</key>

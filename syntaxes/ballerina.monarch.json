@@ -211,7 +211,7 @@
             [
                 {
                     "next": "xml__b__0",
-                    "token": "keyword.ballerina"
+                    "token": "type"
                 }
             ]
         ]

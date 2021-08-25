@@ -1457,7 +1457,7 @@ repository:
     - begin: '(\bxml)(\s*)(`)'
       name: xml.template.ballerina
       beginCaptures:
-        '1': { name: 'keyword.ballerina' }
+        '1': { name: '{{primitiveScope}}' }
       end: '`'
       patterns:
       - include: '#xmlTag'
