@@ -1144,6 +1144,10 @@
             "include": "call"
         },
         [
+            "\\b(var)\\b",
+            "support.type.primitive.ballerina"
+        ],
+        [
             "([_$[:alpha:]][_$[:alnum:]]*)((\\.)([_$[:alpha:]][_$[:alnum:]]*)(\\()(\\)))?",
             [
                 "variable.other.readwrite.ballerina",
@@ -1481,6 +1485,9 @@
                 "token": "punctuation.terminator.statement.ballerina"
             }
         ],
+        {
+            "include": "call"
+        },
         {
             "include": "self-literal"
         },
