@@ -3955,7 +3955,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(?&lt;!=|!)(=)(?!=)(?=\s*\S)</string>
+            <string>(?&lt;!=|!)(=)(?!=|&gt;)(?=\s*\S)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -3984,7 +3984,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;!=|!)(=)(?!=)</string>
+            <string>(?&lt;!=|!)(=)(?!=|&gt;)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
