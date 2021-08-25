@@ -893,6 +893,9 @@
     ],
     "paranthesised": [
         {
+            "include": "self-literal"
+        },
+        {
             "include": "function-defn"
         },
         {

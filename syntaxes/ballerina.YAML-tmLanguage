@@ -1015,6 +1015,7 @@ repository:
     endCaptures:
       '0': {name: meta.brace.round.ballerina }
     patterns:
+    - include: '#self-literal'
     - include: '#function-defn'
     - include: '#decl-block'
     - include: '#comment'

@@ -2987,6 +2987,10 @@
         <array>
           <dict>
             <key>include</key>
+            <string>#self-literal</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#function-defn</string>
           </dict>
           <dict>
