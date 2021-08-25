@@ -4700,6 +4700,10 @@
                 <string>#self-literal</string>
               </dict>
               <dict>
+                <key>include</key>
+                <string>#call</string>
+              </dict>
+              <dict>
                 <key>match</key>
                 <string>\b(is|new|isolated|null|function)\b|\b(true|false)\b|\b(check|foreach)\b|([_$[:alpha:]][_$[:alnum:]]*)((\.)([_$[:alpha:]][_$[:alnum:]]*)(\()(\)))?</string>
                 <key>captures</key>

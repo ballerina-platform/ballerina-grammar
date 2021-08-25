@@ -1619,7 +1619,7 @@
 //^^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina
 //        ^^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
 //          ^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina keyword.operator.type.annotation.ballerina
-//           ^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//           ^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina entity.name.function.ballerina
 //                  ^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
 //                   ^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
 //                    ^^^^^^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina string.quoted.double.ballerina
@@ -1628,7 +1628,7 @@
 //                            ^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina
 //                             ^^^^^^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina meta.brace.round.block.ballerina support.type.primitive.ballerina
 //                                   ^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina keyword.operator.type.annotation.ballerina
-//                                    ^^^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//                                    ^^^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina meta.brace.round.block.ballerina meta.type.annotation.ballerina entity.name.function.ballerina
 //                                             ^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
 //                                              ^^^^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina variable.parameter.ballerina
 //                                                  ^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
@@ -1679,7 +1679,7 @@
 //^^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina
 //        ^^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
 //          ^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina keyword.operator.type.annotation.ballerina
-//           ^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//           ^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina entity.name.function.ballerina
 //                  ^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
 //                   ^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
 //                    ^^^^^^^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina string.quoted.double.ballerina

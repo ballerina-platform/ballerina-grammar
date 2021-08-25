@@ -1553,6 +1553,7 @@ repository:
       patterns:
       - include: '#booleans'
       - include: '#self-literal'
+      - include: '#call' 
       - match: '{{otherKeywords}}|{{booleanTypes}}|{{controlKeywords}}|({{identifier}})((\.)({{identifier}})(\()(\)))?'
         captures: 
           '1': { name: keyword.other.ballerina }
