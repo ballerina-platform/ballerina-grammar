@@ -4754,6 +4754,10 @@
             <string>#self-literal</string>
           </dict>
           <dict>
+            <key>include</key>
+            <string>#booleans</string>
+          </dict>
+          <dict>
             <key>name</key>
             <string>keyword.operator.rest.ballerina</string>
             <key>match</key>

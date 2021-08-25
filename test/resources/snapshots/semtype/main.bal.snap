@@ -357,10 +357,10 @@
 //                 ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina
 //                  ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina
 //                   ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina meta.brace.square.ballerina
-//                    ^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina
+//                    ^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina constant.language.boolean.ballerina
 //                        ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina punctuation.separator.comma.ballerina
 //                         ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina
-//                          ^^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina
+//                          ^^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina constant.language.boolean.ballerina
 //                               ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina meta.brace.square.ballerina
 //                                ^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina
 >    equivalent: [true, true],
@@ -369,10 +369,10 @@
 //             ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina
 //              ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina
 //               ^ meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina meta.brace.square.ballerina
-//                ^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina
+//                ^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina constant.language.boolean.ballerina
 //                    ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina punctuation.separator.comma.ballerina
 //                     ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina
-//                      ^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina
+//                      ^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina constant.language.boolean.ballerina
 //                          ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina meta.brace.square.ballerina
 //                           ^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina
 >    incomparable: [false, false]
@@ -381,10 +381,10 @@
 //               ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina
 //                ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina
 //                 ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina meta.brace.square.ballerina
-//                  ^^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina
+//                  ^^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina constant.language.boolean.ballerina
 //                       ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina punctuation.separator.comma.ballerina
 //                        ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina
-//                         ^^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina
+//                         ^^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina constant.language.boolean.ballerina
 //                              ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina meta.brace.square.ballerina
 > };
 //^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina punctuation.definition.block.ballerina
