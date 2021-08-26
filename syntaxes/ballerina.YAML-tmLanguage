@@ -197,9 +197,12 @@ repository:
     endCaptures: 
       '0': { name: punctuation.terminator.statement.ballerina }
     patterns:
+    - match: (\')({{identifier}})  
+      name: variable.other.property.ballerina
     - include: '#keywords'
     - include: '#comment'
     - include: '#import-clause'
+    - include: '#punctuation-accessor'
 
   identifiers:
     patterns:
@@ -235,6 +238,8 @@ repository:
         '4': { name: entity.name.function.ballerina }
         '5': { name: punctuation.definition.parameters.begin.ballerina }
         '6': { name: punctuation.definition.parameters.end.ballerina }
+    - match: (\')({{identifier}})  
+      name: variable.other.property.ballerina
     - include: '#type-annotation'
 
   object-member:
@@ -352,7 +357,7 @@ repository:
 
   punctuation-accessor:
     patterns:
-      match: '{{propertyAccess}}'
+    - match: '{{propertyAccess}}'
       captures:
         '1': { name: punctuation.accessor.ballerina }
         '2': { name: punctuation.accessor.optional.ballerina }
@@ -1314,9 +1319,12 @@ repository:
         '1': { name: keyword.operator.assignment.ballerina }
       end: (?=$|[,);}\]])
       patterns:
+      - match: (\')({{identifier}})  
+        name: variable.other.property.ballerina
       - include: '#xml'
       - include: '#function-defn'
       - include: '#expression'
+      - include: '#punctuation-accessor'
     - begin: (?<!=|!)(=)(?!=|>)
       beginCaptures:
         '1': { name: keyword.operator.assignment.ballerina }

@@ -959,6 +959,10 @@
                 "punctuation.definition.parameters.end.ballerina"
             ]
         ],
+        [
+            "(\\')([_$[:alpha:]][_$[:alnum:]]*)",
+            "variable.other.property.ballerina"
+        ],
         {
             "include": "type-annotation"
         }
@@ -1176,6 +1180,10 @@
                 "token": ""
             }
         ],
+        [
+            "(\\')([_$[:alpha:]][_$[:alnum:]]*)",
+            "variable.other.property.ballerina"
+        ],
         {
             "include": "xml"
         },
@@ -1184,7 +1192,19 @@
         },
         {
             "include": "expression"
+        },
+        {
+            "include": "punctuation-accessor"
         }
+    ],
+    "punctuation-accessor": [
+        [
+            "(?:(\\.)|(\\?\\.(?!\\s*[[:digit:]])))",
+            [
+                "punctuation.accessor.ballerina",
+                "punctuation.accessor.optional.ballerina"
+            ]
+        ]
     ],
     "variable-initializer__b__1": [
         [
@@ -2755,6 +2775,10 @@
         }
     ],
     "import-declaration": [
+        [
+            "(\\')([_$[:alpha:]][_$[:alnum:]]*)",
+            "variable.other.property.ballerina"
+        ],
         {
             "include": "keywords"
         },
@@ -2763,6 +2787,9 @@
         },
         {
             "include": "import-clause"
+        },
+        {
+            "include": "punctuation-accessor"
         }
     ],
     "import-clause": [

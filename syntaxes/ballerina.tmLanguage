@@ -307,6 +307,12 @@
         <key>patterns</key>
         <array>
           <dict>
+            <key>match</key>
+            <string>(\')([_$[:alpha:]][_$[:alnum:]]*)</string>
+            <key>name</key>
+            <string>variable.other.property.ballerina</string>
+          </dict>
+          <dict>
             <key>include</key>
             <string>#keywords</string>
           </dict>
@@ -317,6 +323,10 @@
           <dict>
             <key>include</key>
             <string>#import-clause</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#punctuation-accessor</string>
           </dict>
         </array>
       </dict>
@@ -471,6 +481,12 @@
                 <string>punctuation.definition.parameters.end.ballerina</string>
               </dict>
             </dict>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(\')([_$[:alpha:]][_$[:alnum:]]*)</string>
+            <key>name</key>
+            <string>variable.other.property.ballerina</string>
           </dict>
           <dict>
             <key>include</key>
@@ -867,23 +883,25 @@
       <key>punctuation-accessor</key>
       <dict>
         <key>patterns</key>
-        <dict>
-          <key>match</key>
-          <string>(?:(\.)|(\?\.(?!\s*[[:digit:]])))</string>
-          <key>captures</key>
+        <array>
           <dict>
-            <key>1</key>
+            <key>match</key>
+            <string>(?:(\.)|(\?\.(?!\s*[[:digit:]])))</string>
+            <key>captures</key>
             <dict>
-              <key>name</key>
-              <string>punctuation.accessor.ballerina</string>
-            </dict>
-            <key>2</key>
-            <dict>
-              <key>name</key>
-              <string>punctuation.accessor.optional.ballerina</string>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.accessor.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.accessor.optional.ballerina</string>
+              </dict>
             </dict>
           </dict>
-        </dict>
+        </array>
       </dict>
       <key>annotationAttachment</key>
       <dict>
@@ -3969,6 +3987,12 @@
             <key>patterns</key>
             <array>
               <dict>
+                <key>match</key>
+                <string>(\')([_$[:alpha:]][_$[:alnum:]]*)</string>
+                <key>name</key>
+                <string>variable.other.property.ballerina</string>
+              </dict>
+              <dict>
                 <key>include</key>
                 <string>#xml</string>
               </dict>
@@ -3979,6 +4003,10 @@
               <dict>
                 <key>include</key>
                 <string>#expression</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#punctuation-accessor</string>
               </dict>
             </array>
           </dict>

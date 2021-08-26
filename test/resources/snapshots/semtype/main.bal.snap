@@ -25,8 +25,8 @@
 //^^^^^^ source.ballerina meta.import.ballerina keyword.control.import.ballerina
 //      ^ source.ballerina meta.import.ballerina
 //       ^^^^^^^ source.ballerina meta.import.ballerina variable.other.readwrite.ballerina meta.import.module.ballerina
-//              ^^ source.ballerina meta.import.ballerina
-//                ^^^^ source.ballerina meta.import.ballerina support.type.primitive.ballerina
+//              ^ punctuation.accessor.ballerina
+//               ^^^^^ source.ballerina meta.import.ballerina variable.other.property.ballerina
 //                    ^ source.ballerina meta.import.ballerina
 //                     ^^ source.ballerina meta.import.ballerina keyword.other.ballerina
 //                       ^ source.ballerina meta.import.ballerina
