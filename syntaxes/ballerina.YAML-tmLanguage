@@ -1571,7 +1571,7 @@ repository:
       begin: (\:)
       beginCaptures:
         '1': { name: keyword.operator.type.annotation.ballerina }
-      end: (?<![:|&])((?=$|^|[,);\}\]\?\>]|//)|(?==[^>])|((?<=[\}>\]\)]|[_$[:alpha:]])\s*(?=\{)))(\?)?
+      end: (?<![:|&])((?=$|^|[,);\}\]\?\>\=>]|//)|(?==[^>])|((?<=[\}>\]\)]|[_$[:alpha:]])\s*(?=\{)))(\?)?
       patterns:
       - include: '#booleans'
       - include: '#self-literal'
