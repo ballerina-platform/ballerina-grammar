@@ -1573,17 +1573,18 @@ repository:
       - include: '#booleans'
       - include: '#self-literal'
       - include: '#call' 
-      - match: '{{otherKeywords}}|{{booleanTypes}}|{{controlKeywords}}|{{definedTypes}}|({{identifier}})((\.)({{identifier}})(\()(\)))?'
+      - match: '{{otherKeywords}}|{{booleanTypes}}|{{controlKeywords}}|{{definedTypes}}|{{varExprStart}}\b|({{identifier}})((\.)({{identifier}})(\()(\)))?'
         captures: 
           '1': { name: keyword.other.ballerina }
           '2': { name: constant.language.boolean.ballerina }
           '3': { name: keyword.control.ballerina }
           '4': { name: '{{typeScope}}' }
-          '5': { name: variable.other.readwrite.ballerina }
-          '7': { name: punctuation.accessor.ballerina }
-          '8': { name: entity.name.function.ballerina }
-          '9': { name: punctuation.definition.parameters.begin.ballerina }
-          '10': { name: punctuation.definition.parameters.end.ballerina }
+          '5': { name: '{{primitiveScope}}' }
+          '6': { name: variable.other.readwrite.ballerina }
+          '8': { name: punctuation.accessor.ballerina }
+          '9': { name: entity.name.function.ballerina }
+          '10': { name: punctuation.definition.parameters.begin.ballerina }
+          '11': { name: punctuation.definition.parameters.end.ballerina }
       - name: keyword.operator.optional.ballerina
         match: '\?'
       - include: '#multiType'

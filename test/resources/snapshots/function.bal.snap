@@ -5763,7 +5763,7 @@
 //                 ^ source.ballerina meta.block.ballerina
 //                  ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
 //                   ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
-//                    ^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                    ^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina support.type.primitive.ballerina
 //                       ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
 //                        ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
 //                         ^ source.ballerina meta.block.ballerina punctuation.separator.comma.ballerina
@@ -5772,7 +5772,7 @@
 //                                ^ source.ballerina meta.block.ballerina
 //                                 ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
 //                                  ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
-//                                   ^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                                   ^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina support.type.primitive.ballerina
 //                                      ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
 //                                       ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
 //                                        ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
@@ -5800,7 +5800,7 @@
 //         ^ source.ballerina meta.block.ballerina variable.other.readwrite.ballerina
 //          ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
 //           ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
-//            ^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//            ^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina support.type.primitive.ballerina
 //               ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
 //                ^^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
 //                    ^ source.ballerina meta.block.ballerina punctuation.separator.comma.ballerina
@@ -5808,7 +5808,7 @@
 //                      ^ source.ballerina meta.block.ballerina variable.other.readwrite.ballerina
 //                       ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
 //                        ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
-//                         ^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                         ^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina support.type.primitive.ballerina
 //                            ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
 //                             ^^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
 //                                 ^^ source.ballerina
@@ -5843,7 +5843,7 @@
 //         ^ source.ballerina meta.block.ballerina variable.other.readwrite.ballerina
 //          ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
 //           ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
-//            ^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//            ^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina support.type.primitive.ballerina
 //               ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
 //                ^^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
 //                    ^ source.ballerina meta.block.ballerina punctuation.separator.comma.ballerina
@@ -5851,7 +5851,7 @@
 //                      ^ source.ballerina meta.block.ballerina variable.other.readwrite.ballerina
 //                       ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
 //                        ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
-//                         ^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                         ^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina support.type.primitive.ballerina
 //                            ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
 //                             ^^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
 //                                 ^^ source.ballerina
