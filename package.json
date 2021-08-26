@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-tm": "node build-tm",
-    "build-monarch": "node build-monarch",
-    "build": "npm run build-tm && npm run build-monarch",
+    "build": "npm run build-tm",
     "test": "mocha -r ts-node/register 'test/unit-test.ts'"
   },
   "repository": {
