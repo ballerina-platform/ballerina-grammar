@@ -580,9 +580,9 @@
 //                       ^ source.ballerina keyword.operator.ballerina
 //                        ^^^^^^^ source.ballerina
 //                               ^^ source.ballerina
-//                                 ^^^ source.ballerina storage.type.ballerina
+//                                 ^^^ source.ballerina keyword.other.ballerina
 //                                    ^ source.ballerina
-//                                     ^^^ source.ballerina storage.type.ballerina
+//                                     ^^^ source.ballerina meta.parameters.ballerina variable.parameter.ballerina
 //                                        ^ source.ballerina
 //                                         ^ source.ballerina punctuation.terminator.statement.ballerina
 > 

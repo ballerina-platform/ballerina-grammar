@@ -1194,6 +1194,8 @@ repository:
       - include: '#keywords'
       - include: '#multiType'
       - include: '#type-primitive'
+      - match: '{{identifier}}'
+        name: variable.other.readwrite.ballerina 
       - include: '#type-annotation'
       - include: '#typeDescription'
       - include: '#decl-block'
