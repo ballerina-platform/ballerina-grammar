@@ -25,7 +25,7 @@ variables:
   otherKeywords: '\b(is|new|isolated|null|function|in)\b'
   controlKeywords: '\b(check|foreach|if|checkpanic)\b'
   booleanTypes: '\b(true|false)\b'
-  definedTypes: '\b(readonly|error)\b'
+  definedTypes: '\b(readonly|error|map)\b'
   constExprStart: '\b(const(?!\s+enum\b))'
   lookBehindString: '^string|{{nonPropertyLookBehind}}string'
   lookBehindInt: '^int|{{nonPropertyLookBehind}}int'

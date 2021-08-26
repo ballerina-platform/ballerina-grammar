@@ -6530,7 +6530,7 @@
 //                                       ^^^^^^^^^ source.ballerina meta.block.ballerina entity.name.function.ballerina
 //                                                ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                                 ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
-//                                                  ^^^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
+//                                                  ^^^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina storage.type.ballerina
 //                                                     ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
 //                                                      ^^^^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina support.type.primitive.ballerina
 //                                                          ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
