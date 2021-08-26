@@ -4091,7 +4091,7 @@
 //                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina
 //                       ^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
 //                                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina keyword.operator.ballerina
-//                                   ^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                                   ^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina storage.type.ballerina
 //                                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina
 //                                         ^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
 //                                                  ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
@@ -5329,7 +5329,7 @@
 //                 ^ source.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina meta.brace.square.ballerina
 //                  ^ source.ballerina meta.type.annotation.ballerina meta.type.tuple.ballerina meta.brace.square.ballerina
 //                   ^ source.ballerina meta.type.annotation.ballerina keyword.operator.ballerina
-//                    ^^^^^ source.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                    ^^^^^ source.ballerina meta.type.annotation.ballerina storage.type.ballerina
 //                         ^ source.ballerina meta.type.annotation.ballerina
 //                          ^^^^^^^^^^^^^^ source.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
 //                                        ^ source.ballerina meta.type.annotation.ballerina
@@ -7562,7 +7562,7 @@
 //                                                   ^^^^ source.ballerina meta.function.ballerina meta.parameters.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
 //                                                       ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
 //                                                        ^ source.ballerina meta.function.ballerina meta.parameters.ballerina
-//                                                         ^^^^^ source.ballerina meta.function.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                                                         ^^^^^ source.ballerina meta.function.ballerina meta.parameters.ballerina storage.type.ballerina
 //                                                              ^ source.ballerina meta.function.ballerina meta.parameters.ballerina variable.parameter.ballerina
 //                                                               ^ source.ballerina meta.function.ballerina meta.parameters.ballerina
 //                                                                ^^^^^ source.ballerina meta.function.ballerina meta.parameters.ballerina variable.parameter.ballerina

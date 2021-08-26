@@ -25,7 +25,7 @@ variables:
   otherKeywords: '\b(is|new|isolated|null|function|in)\b'
   controlKeywords: '\b(check|foreach|if|checkpanic)\b'
   booleanTypes: '\b(true|false)\b'
-  definedTypes: '\b(readonly)\b'
+  definedTypes: '\b(readonly|error)\b'
   constExprStart: '\b(const(?!\s+enum\b))'
   lookBehindString: '^string|{{nonPropertyLookBehind}}string'
   lookBehindInt: '^int|{{nonPropertyLookBehind}}int'
@@ -1573,16 +1573,17 @@ repository:
       - include: '#booleans'
       - include: '#self-literal'
       - include: '#call' 
-      - match: '{{otherKeywords}}|{{booleanTypes}}|{{controlKeywords}}|({{identifier}})((\.)({{identifier}})(\()(\)))?'
+      - match: '{{otherKeywords}}|{{booleanTypes}}|{{controlKeywords}}|{{definedTypes}}|({{identifier}})((\.)({{identifier}})(\()(\)))?'
         captures: 
           '1': { name: keyword.other.ballerina }
           '2': { name: constant.language.boolean.ballerina }
           '3': { name: keyword.control.ballerina }
-          '4': { name: variable.other.readwrite.ballerina }
-          '6': { name: punctuation.accessor.ballerina }
-          '7': { name: entity.name.function.ballerina }
-          '8': { name: punctuation.definition.parameters.begin.ballerina }
-          '9': { name: punctuation.definition.parameters.end.ballerina }
+          '4': { name: '{{typeScope}}' }
+          '5': { name: variable.other.readwrite.ballerina }
+          '7': { name: punctuation.accessor.ballerina }
+          '8': { name: entity.name.function.ballerina }
+          '9': { name: punctuation.definition.parameters.begin.ballerina }
+          '10': { name: punctuation.definition.parameters.end.ballerina }
       - name: keyword.operator.optional.ballerina
         match: '\?'
       - include: '#multiType'
