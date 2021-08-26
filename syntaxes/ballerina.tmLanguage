@@ -1949,7 +1949,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\b(is|new|isolated|null|function|in)\b|\b(true|false)\b|\b(check|foreach|if|checkpanic)\b|\b(readonly)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
+            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\b(is|new|isolated|null|function|in)\b|\b(true|false)\b|\b(check|foreach|if|checkpanic)\b|\b(readonly|error)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
             <key>captures</key>
             <dict>
               <key>2</key>
@@ -3851,7 +3851,7 @@
             <key>name</key>
             <string>meta.var-single-variable.expr.ballerina</string>
             <key>begin</key>
-            <string>((string|int|boolean|float|byte|decimal|json|xml)|\b(readonly)\b|([_$[:alpha:]][_$[:alnum:]]*))(?=\s+|\;|\&gt;|\|)</string>
+            <string>((string|int|boolean|float|byte|decimal|json|xml)|\b(readonly|error)\b|([_$[:alpha:]][_$[:alnum:]]*))(?=\s+|\;|\&gt;|\|)</string>
             <key>beginCaptures</key>
             <dict>
               <key>2</key>
@@ -4770,7 +4770,7 @@
               </dict>
               <dict>
                 <key>match</key>
-                <string>\b(is|new|isolated|null|function|in)\b|\b(true|false)\b|\b(check|foreach|if|checkpanic)\b|([_$[:alpha:]][_$[:alnum:]]*)((\.)([_$[:alpha:]][_$[:alnum:]]*)(\()(\)))?</string>
+                <string>\b(is|new|isolated|null|function|in)\b|\b(true|false)\b|\b(check|foreach|if|checkpanic)\b|\b(readonly|error)\b|\b(var)\b|([_$[:alpha:]][_$[:alnum:]]*)((\.)([_$[:alpha:]][_$[:alnum:]]*)(\()(\)))?</string>
                 <key>captures</key>
                 <dict>
                   <key>1</key>
@@ -4791,24 +4791,34 @@
                   <key>4</key>
                   <dict>
                     <key>name</key>
-                    <string>variable.other.readwrite.ballerina</string>
+                    <string>storage.type.ballerina</string>
+                  </dict>
+                  <key>5</key>
+                  <dict>
+                    <key>name</key>
+                    <string>support.type.primitive.ballerina</string>
                   </dict>
                   <key>6</key>
                   <dict>
                     <key>name</key>
-                    <string>punctuation.accessor.ballerina</string>
-                  </dict>
-                  <key>7</key>
-                  <dict>
-                    <key>name</key>
-                    <string>entity.name.function.ballerina</string>
+                    <string>variable.other.readwrite.ballerina</string>
                   </dict>
                   <key>8</key>
                   <dict>
                     <key>name</key>
-                    <string>punctuation.definition.parameters.begin.ballerina</string>
+                    <string>punctuation.accessor.ballerina</string>
                   </dict>
                   <key>9</key>
+                  <dict>
+                    <key>name</key>
+                    <string>entity.name.function.ballerina</string>
+                  </dict>
+                  <key>10</key>
+                  <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.parameters.begin.ballerina</string>
+                  </dict>
+                  <key>11</key>
                   <dict>
                     <key>name</key>
                     <string>punctuation.definition.parameters.end.ballerina</string>
