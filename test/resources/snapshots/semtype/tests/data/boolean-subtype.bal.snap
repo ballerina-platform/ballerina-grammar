@@ -1,0 +1,45 @@
+// SYNTAX TEST "source.ballerina" "semtype/tests/data/boolean-subtype.bal highlighting testcase"
+
+> // B<:TF
+//^^^^^^^^ source.ballerina comment.ballerina
+> // F<:B
+//^^^^^^^ source.ballerina comment.ballerina
+> // F<:TF
+//^^^^^^^^ source.ballerina comment.ballerina
+> // T<:B
+//^^^^^^^ source.ballerina comment.ballerina
+> // T<:TF
+//^^^^^^^^ source.ballerina comment.ballerina
+> // TF<:B
+//^^^^^^^^ source.ballerina comment.ballerina
+> type T true;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^ source.ballerina entity.name.type.ballerina
+//      ^ source.ballerina
+//       ^^^^ source.ballerina keyword.other.ballerina
+//           ^ source.ballerina punctuation.terminator.statement.ballerina
+> type F false;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^ source.ballerina entity.name.type.ballerina
+//      ^ source.ballerina
+//       ^^^^^ source.ballerina keyword.other.ballerina
+//            ^ source.ballerina punctuation.terminator.statement.ballerina
+> type TF true|false;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^ source.ballerina entity.name.type.ballerina
+//       ^ source.ballerina
+//        ^^^^ source.ballerina keyword.other.ballerina
+//            ^ source.ballerina keyword.operator.ballerina
+//             ^^^^^ source.ballerina keyword.other.ballerina
+//                  ^ source.ballerina punctuation.terminator.statement.ballerina
+> type B boolean;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^ source.ballerina entity.name.type.ballerina
+//      ^ source.ballerina
+//       ^^^^^^^ source.ballerina support.type.primitive.ballerina
+//              ^ source.ballerina punctuation.terminator.statement.ballerina
+> 

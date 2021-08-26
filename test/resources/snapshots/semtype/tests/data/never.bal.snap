@@ -1,0 +1,89 @@
+// SYNTAX TEST "source.ballerina" "semtype/tests/data/never.bal highlighting testcase"
+
+> // Fun<:FunOrNever
+//^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // FunOrNever<:Fun
+//^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Int<:IntOrNever
+//^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // IntOrNever<:Int
+//^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Key<:KeyOrNever
+//^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // KeyOrNever<:Key
+//^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Never<:Fun
+//^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Never<:FunOrNever
+//^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Never<:Int
+//^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Never<:IntOrNever
+//^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Never<:Key
+//^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Never<:KeyOrNever
+//^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> type Never never;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^^ source.ballerina entity.name.type.ballerina
+//          ^ source.ballerina
+//           ^^^^^ source.ballerina storage.type.ballerina
+//                ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Int int;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^ source.ballerina entity.name.type.ballerina
+//        ^ source.ballerina
+//         ^^^ source.ballerina support.type.primitive.ballerina
+//            ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Fun function(int);
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^ source.ballerina entity.name.type.ballerina
+//        ^ source.ballerina
+//         ^^^^^^^^ source.ballerina keyword.other.ballerina
+//                 ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                  ^^^ source.ballerina meta.parameters.ballerina support.type.primitive.ballerina
+//                     ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                      ^ source.ballerina punctuation.terminator.statement.ballerina
+> type FunOrNever Fun|never;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^^^^^^^ source.ballerina entity.name.type.ballerina
+//               ^ source.ballerina
+//                ^^^ source.ballerina storage.type.ballerina
+//                   ^ source.ballerina keyword.operator.ballerina
+//                    ^^^^^ source.ballerina storage.type.ballerina
+//                         ^ source.ballerina punctuation.terminator.statement.ballerina
+> type IntOrNever Int|never;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^^^^^^^ source.ballerina entity.name.type.ballerina
+//               ^ source.ballerina
+//                ^^^ source.ballerina storage.type.ballerina
+//                   ^ source.ballerina keyword.operator.ballerina
+//                    ^^^^^ source.ballerina storage.type.ballerina
+//                         ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Key "key";
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^ source.ballerina entity.name.type.ballerina
+//        ^ source.ballerina
+//         ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+//          ^^^ source.ballerina string.quoted.double.ballerina
+//             ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+//              ^ source.ballerina punctuation.terminator.statement.ballerina
+> type KeyOrNever Key|never;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^^^^^^^ source.ballerina entity.name.type.ballerina
+//               ^ source.ballerina
+//                ^^^ source.ballerina storage.type.ballerina
+//                   ^ source.ballerina keyword.operator.ballerina
+//                    ^^^^^ source.ballerina storage.type.ballerina
+//                         ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> 
+> 

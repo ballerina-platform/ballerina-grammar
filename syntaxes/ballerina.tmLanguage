@@ -26,13 +26,15 @@
       <string>variable.parameter</string>
       <key>xmlTag</key>
       <string>tag</string>
+      <key>primitiveScope</key>
+      <string>type</string>
     </dict>
     <key>tmlVariables</key>
     <dict>
       <key>typeScope</key>
       <string>storage.type.ballerina</string>
       <key>annotationScope</key>
-      <string>storage.type.annotation.ballerina</string>
+      <string>support.type.ballerina</string>
       <key>numberScope</key>
       <string>constant.numeric.decimal.ballerina</string>
       <key>xmlTagAngle</key>
@@ -41,73 +43,896 @@
       <string>entity.other.attribute-name.xml.ballerina</string>
       <key>xmlTag</key>
       <string>entity.name.tag.xml.ballerina</string>
+      <key>primitiveScope</key>
+      <string>support.type.primitive.ballerina</string>
     </dict>
     <key>patterns</key>
     <array>
       <dict>
         <key>include</key>
-        <string>#serviceDefinition</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#functionDefinition</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#typeDefinition</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#annotationDefinition</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#documentationDef</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#mdDocumentation</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#objectDec</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#classDec</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#record</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#annotationAttachment</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#recordLiteral</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#comment</string>
-      </dict>
-      <dict>
-        <key>include</key>
-        <string>#code</string>
+        <string>#statements</string>
       </dict>
     </array>
     <key>repository</key>
     <dict>
+      <key>statements</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#stringTemplate</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#declaration</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#control-statement</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#decl-block</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#expression</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#punctuation-semicolon</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#comment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#mdDocumentation</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#keywords</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#annotationAttachment</string>
+          </dict>
+        </array>
+      </dict>
+      <key>declaration</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#import-declaration</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#var-expr</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#typeDefinition</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#function-defn</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#service-decl</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#class-defn</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#enum-decl</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#keywords</string>
+          </dict>
+        </array>
+      </dict>
+      <key>control-statement</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(return)(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.control.flow.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=[;}]|$|;|^\s*$|(?:^\s*(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b))</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#expression</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#for-loop</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#if-statement</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.conditional.ballerina</string>
+            <key>match</key>
+            <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(else|if)(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))</string>
+          </dict>
+        </array>
+      </dict>
+      <key>expression</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#keywords</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#expressionWithoutIdentifiers</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#identifiers</string>
+          </dict>
+        </array>
+      </dict>
+      <key>expressionWithoutIdentifiers</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#xml</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#stringTemplate</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#comment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#object-literal</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#ternary-expression</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#expression-operators</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#literal</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#paranthesised</string>
+          </dict>
+        </array>
+      </dict>
+      <key>object-literal</key>
+      <dict>
+        <key>name</key>
+        <string>meta.objectliteral.ballerina</string>
+        <key>begin</key>
+        <string>\{</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.block.ballerina</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>\}</string>
+        <key>endCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.block.ballerina</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#object-member</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#punctuation-comma</string>
+          </dict>
+        </array>
+      </dict>
+      <key>import-declaration</key>
+      <dict>
+        <key>name</key>
+        <string>meta.import.ballerina</string>
+        <key>begin</key>
+        <string>\bimport\b</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.import.ballerina</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>\;</string>
+        <key>endCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.terminator.statement.ballerina</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>(\')([_$[:alpha:]][_$[:alnum:]]*)</string>
+            <key>name</key>
+            <string>variable.other.property.ballerina</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#keywords</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#comment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#import-clause</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#punctuation-accessor</string>
+          </dict>
+        </array>
+      </dict>
+      <key>identifiers</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>(?x)(?:(?:(\.)|(\?\.(?!\s*[[:digit:]])))\s*)?([_$[:alpha:]][_$[:alnum:]]*)(?=\s*=\s*(
+  ((
+    (function\s*[(&lt;*]) |
+    (function\s+) |
+    ([_$[:alpha:]][_$[:alnum:]]*\s*=&gt;)
+  )) |
+  ((
+    ((&lt;\s*$)|((&lt;\s*([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\]))([^=&lt;&gt;]|=[^&lt;]|\&lt;\s*([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\]))([^=&lt;&gt;]|=[^&lt;]|\&lt;\s*([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\]))([^=&lt;&gt;]|=[^&lt;])*\&gt;)*\&gt;)*&gt;\s*)?[\(]\s*((([\{\[]\s*)?$)|((\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})\s*((:\s*\{?$)|((\s*([^&lt;&gt;\(\)\{\}]|\&lt;([^&lt;&gt;]|\&lt;([^&lt;&gt;]|\&lt;[^&lt;&gt;]+\&gt;)+\&gt;)+\&gt;|\([^\(\)]+\)|\{[^\{\}]+\})+\s*)?=\s*)))|((\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\])\s*((:\s*\[?$)|((\s*([^&lt;&gt;\(\)\{\}]|\&lt;([^&lt;&gt;]|\&lt;([^&lt;&gt;]|\&lt;[^&lt;&gt;]+\&gt;)+\&gt;)+\&gt;|\([^\(\)]+\)|\{[^\{\}]+\})+\s*)?=\s*)))))) |
+    # sure shot arrow functions even if =&gt; is on new line
+(
+  (&lt;\s*([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\]))([^=&lt;&gt;]|=[^&lt;]|\&lt;\s*([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\]))([^=&lt;&gt;]|=[^&lt;]|\&lt;\s*([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\]))([^=&lt;&gt;]|=[^&lt;])*\&gt;)*\&gt;)*&gt;\s*)?
+  [(]\s*(\/\*([^\*]|(\*[^\/]))*\*\/\s*)*
+  (
+    ([)]\s*:) |                                                                                       # ():
+    ((\.\.\.\s*)?[_$[:alpha:]][_$[:alnum:]]*\s*:)                                                                  # [(]param: | [(]...param:
+  )
+) |
+
+# arrow function possible to detect only with =&gt; on same line
+(
+  (&lt;\s*([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\]))([^=&lt;&gt;]|=[^&lt;]|\&lt;\s*([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\]))([^=&lt;&gt;]|=[^&lt;]|\&lt;\s*([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\]))([^=&lt;&gt;]|=[^&lt;])*\&gt;)*\&gt;)*&gt;\s*)?                                                                                 # typeparameters
+  \(\s*(\/\*([^\*]|(\*[^\/]))*\*\/\s*)*(([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\])|(\.\.\.\s*[_$[:alpha:]]))([^()\'\"\`]|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\'([^\'\\]|\\.)*\')|(\"([^\"\\]|\\.)*\")|(\`([^\`\\]|\\.)*\`))*)?\)   # parameters
+  (\s*:\s*([^&lt;&gt;\(\)\{\}]|\&lt;([^&lt;&gt;]|\&lt;([^&lt;&gt;]|\&lt;[^&lt;&gt;]+\&gt;)+\&gt;)+\&gt;|\([^\(\)]+\)|\{[^\{\}]+\})+)?                                                                        # return type
+  \s*=&gt;                                                                                               # arrow operator
+)
+  ))
+))</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.accessor.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.accessor.optional.ballerina</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>entity.name.function.ballerina</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(?:(\.)|(\?\.(?!\s*[[:digit:]])))\s*(\#?[_$[:alpha:]][_$[:alnum:]]*)\s*(?=\()</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.accessor.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.accessor.optional.ballerina</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>entity.name.function.ballerina</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(?:(\.)|(\?\.(?!\s*[[:digit:]])))\s*(\#?[_$[:alpha:]][_$[:alnum:]]*)</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.accessor.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.accessor.optional.ballerina</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>variable.other.property.ballerina</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#type-primitive</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#self-literal</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.ballerina</string>
+            <key>match</key>
+            <string>\b(check|foreach|if|checkpanic)\b</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#call</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.type.primitive.ballerina</string>
+            <key>match</key>
+            <string>\b(var)\b</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>([_$[:alpha:]][_$[:alnum:]]*)((\.)([_$[:alpha:]][_$[:alnum:]]*)(\()(\)))?</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>variable.other.readwrite.ballerina</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.accessor.ballerina</string>
+              </dict>
+              <key>4</key>
+              <dict>
+                <key>name</key>
+                <string>entity.name.function.ballerina</string>
+              </dict>
+              <key>5</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.parameters.begin.ballerina</string>
+              </dict>
+              <key>6</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.parameters.end.ballerina</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(\')([_$[:alpha:]][_$[:alnum:]]*)</string>
+            <key>name</key>
+            <string>variable.other.property.ballerina</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#type-annotation</string>
+          </dict>
+        </array>
+      </dict>
+      <key>object-member</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#comment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#function-defn</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#literal</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#keywords</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#expression</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>meta.object.member.ballerina meta.object-literal.key.ballerina</string>
+            <key>begin</key>
+            <string>(?=\[)</string>
+            <key>end</key>
+            <string>(?=:)|((?&lt;=[\]])(?=\s*[\(\&lt;]))</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>meta.object.member.ballerina meta.object-literal.key.ballerina</string>
+            <key>begin</key>
+            <string>(?=[\'\"\`])</string>
+            <key>end</key>
+            <string>(?=:)|((?&lt;=[\'\"\`])(?=((\s*[\(\&lt;,}])|(\n*})|(\s+(as)\s+))))</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#string</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>meta.object.member.ballerina meta.object-literal.key.ballerina</string>
+            <key>begin</key>
+            <string>(?x)(?=(\b(?&lt;!\$)0(?:x|X)[0-9a-fA-F][0-9a-fA-F_]*(n)?\b(?!\$))|(\b(?&lt;!\$)0(?:b|B)[01][01_]*(n)?\b(?!\$))|(\b(?&lt;!\$)0(?:o|O)?[0-7][0-7_]*(n)?\b(?!\$))|((?&lt;!\$)(?:
+  (?:\b[0-9][0-9_]*(\.)[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(n)?\b)| # 1.1E+3
+  (?:\b[0-9][0-9_]*(\.)[eE][+-]?[0-9][0-9_]*(n)?\b)|             # 1.E+3
+  (?:\B(\.)[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(n)?\b)|             # .1E+3
+  (?:\b[0-9][0-9_]*[eE][+-]?[0-9][0-9_]*(n)?\b)|                 # 1E+3
+  (?:\b[0-9][0-9_]*(\.)[0-9][0-9_]*(n)?\b)|                      # 1.1
+  (?:\b[0-9][0-9_]*(\.)(n)?\B)|                                  # 1.
+  (?:\B(\.)[0-9][0-9_]*(n)?\b)|                                  # .1
+  (?:\b[0-9][0-9_]*(n)?\b(?!\.))                                 # 1
+)(?!\$)))</string>
+            <key>end</key>
+            <string>(?=:)|(?=\s*([\(\&lt;,}])|(\s+as\s+))</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#numbers</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>meta.method.declaration.ballerina</string>
+            <key>begin</key>
+            <string>(?&lt;=[\]\'\"\`])(?=\s*[\(\&lt;])</string>
+            <key>end</key>
+            <string>(?=\}|;|,)|(?&lt;=\})</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#function-body</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>meta.object.member.ballerina</string>
+            <key>match</key>
+            <string>(?![_$[:alpha:]])([[:digit:]]+)\s*(?=(\/\*([^\*]|(\*[^\/]))*\*\/\s*)*:)</string>
+            <key>captures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>meta.object-literal.key.ballerina</string>
+              </dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>constant.numeric.decimal.ballerina</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>meta.object.member.ballerina</string>
+            <key>match</key>
+            <string>(?x)(?:([_$[:alpha:]][_$[:alnum:]]*)\s*(?=(\/\*([^\*]|(\*[^\/]))*\*\/\s*)*:(\s*\/\*([^\*]|(\*[^\/]))*\*\/)*\s*(
+  ((
+    (function\s*[(&lt;*]) |
+    (function\s+) |
+    ([_$[:alpha:]][_$[:alnum:]]*\s*=&gt;)
+  )) |
+  ((
+    ((&lt;\s*$)|((&lt;\s*([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\]))([^=&lt;&gt;]|=[^&lt;]|\&lt;\s*([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\]))([^=&lt;&gt;]|=[^&lt;]|\&lt;\s*([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\]))([^=&lt;&gt;]|=[^&lt;])*\&gt;)*\&gt;)*&gt;\s*)?[\(]\s*((([\{\[]\s*)?$)|((\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})\s*((:\s*\{?$)|((\s*([^&lt;&gt;\(\)\{\}]|\&lt;([^&lt;&gt;]|\&lt;([^&lt;&gt;]|\&lt;[^&lt;&gt;]+\&gt;)+\&gt;)+\&gt;|\([^\(\)]+\)|\{[^\{\}]+\})+\s*)?=\s*)))|((\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\])\s*((:\s*\[?$)|((\s*([^&lt;&gt;\(\)\{\}]|\&lt;([^&lt;&gt;]|\&lt;([^&lt;&gt;]|\&lt;[^&lt;&gt;]+\&gt;)+\&gt;)+\&gt;|\([^\(\)]+\)|\{[^\{\}]+\})+\s*)?=\s*)))))) |
+    # sure shot arrow functions even if =&gt; is on new line
+(
+  (&lt;\s*([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\]))([^=&lt;&gt;]|=[^&lt;]|\&lt;\s*([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\]))([^=&lt;&gt;]|=[^&lt;]|\&lt;\s*([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\]))([^=&lt;&gt;]|=[^&lt;])*\&gt;)*\&gt;)*&gt;\s*)?
+  [(]\s*(\/\*([^\*]|(\*[^\/]))*\*\/\s*)*
+  (
+    ([)]\s*:) |                                                                                       # ():
+    ((\.\.\.\s*)?[_$[:alpha:]][_$[:alnum:]]*\s*:)                                                                  # [(]param: | [(]...param:
+  )
+) |
+
+# arrow function possible to detect only with =&gt; on same line
+(
+  (&lt;\s*([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\]))([^=&lt;&gt;]|=[^&lt;]|\&lt;\s*([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\]))([^=&lt;&gt;]|=[^&lt;]|\&lt;\s*([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\]))([^=&lt;&gt;]|=[^&lt;])*\&gt;)*\&gt;)*&gt;\s*)?                                                                                 # typeparameters
+  \(\s*(\/\*([^\*]|(\*[^\/]))*\*\/\s*)*(([_$[:alpha:]]|(\{([^\{\}]|(\{([^\{\}]|\{[^\{\}]*\})*\}))*\})|(\[([^\[\]]|(\[([^\[\]]|\[[^\[\]]*\])*\]))*\])|(\.\.\.\s*[_$[:alpha:]]))([^()\'\"\`]|(\(([^\(\)]|(\(([^\(\)]|\([^\(\)]*\))*\)))*\))|(\'([^\'\\]|\\.)*\')|(\"([^\"\\]|\\.)*\")|(\`([^\`\\]|\\.)*\`))*)?\)   # parameters
+  (\s*:\s*([^&lt;&gt;\(\)\{\}]|\&lt;([^&lt;&gt;]|\&lt;([^&lt;&gt;]|\&lt;[^&lt;&gt;]+\&gt;)+\&gt;)+\&gt;|\([^\(\)]+\)|\{[^\{\}]+\})+)?                                                                        # return type
+  \s*=&gt;                                                                                               # arrow operator
+)
+  ))
+)))</string>
+            <key>captures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>meta.object-literal.key.ballerina</string>
+              </dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>entity.name.function.ballerina</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>meta.object.member.ballerina</string>
+            <key>match</key>
+            <string>(?:[_$[:alpha:]][_$[:alnum:]]*)\s*(?=(\/\*([^\*]|(\*[^\/]))*\*\/\s*)*:)</string>
+            <key>captures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>meta.object-literal.key.ballerina</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>meta.object.member.ballerina</string>
+            <key>begin</key>
+            <string>\.\.\.</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.spread.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=,|\})</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#expression</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>meta.object.member.ballerina</string>
+            <key>match</key>
+            <string>([_$[:alpha:]][_$[:alnum:]]*)\s*(?=,|\}|$|\/\/|\/\*)</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>variable.other.readwrite.ballerina</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>meta.object.member.ballerina</string>
+            <key>match</key>
+            <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(as)\s+(const)(?=\s*([,}]|$))</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.control.as.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>storage.modifier.ballerina</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>meta.object.member.ballerina</string>
+            <key>begin</key>
+            <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(as)\s+</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.control.as.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=[;),}\]:?\-\+\&gt;]|\|\||\&amp;\&amp;|\!\=\=|$|^|((?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(as)\s+))</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>meta.object.member.ballerina</string>
+            <key>begin</key>
+            <string>(?=[_$[:alpha:]][_$[:alnum:]]*\s*=)</string>
+            <key>end</key>
+            <string>(?=,|\}|$|\/\/|\/\*)</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#expression</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>expression-operators</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.assignment.compound.ballerina</string>
+            <key>match</key>
+            <string>\*=|(?&lt;!\()/=|%=|\+=|\-=</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.assignment.compound.bitwise.ballerina</string>
+            <key>match</key>
+            <string>\&amp;=|\^=|&lt;&lt;=|&gt;&gt;=|&gt;&gt;&gt;=|\|=</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.bitwise.shift.ballerina</string>
+            <key>match</key>
+            <string>&lt;&lt;|&gt;&gt;&gt;|&gt;&gt;</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.comparison.ballerina</string>
+            <key>match</key>
+            <string>===|!==|==|!=</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.relational.ballerina</string>
+            <key>match</key>
+            <string>&lt;=|&gt;=|&lt;&gt;|&lt;|&gt;</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(?&lt;=[_$[:alnum:]])(\!)\s*(?:(/=)|(?:(/)(?![/*])))</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.logical.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.assignment.compound.ballerina</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.arithmetic.ballerina</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.logical.ballerina</string>
+            <key>match</key>
+            <string>\!|&amp;&amp;|\|\||\?\?</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.bitwise.ballerina</string>
+            <key>match</key>
+            <string>\&amp;|~|\^|\|</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.assignment.ballerina</string>
+            <key>match</key>
+            <string>\=</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.decrement.ballerina</string>
+            <key>match</key>
+            <string>--</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.increment.ballerina</string>
+            <key>match</key>
+            <string>\+\+</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.arithmetic.ballerina</string>
+            <key>match</key>
+            <string>%|\*|/|-|\+</string>
+          </dict>
+        </array>
+      </dict>
+      <key>punctuation-comma</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>punctuation.separator.comma.ballerina</string>
+            <key>match</key>
+            <string>,</string>
+          </dict>
+        </array>
+      </dict>
+      <key>punctuation-semicolon</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>;</string>
+            <key>name</key>
+            <string>punctuation.terminator.statement.ballerina</string>
+          </dict>
+        </array>
+      </dict>
+      <key>punctuation-accessor</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>(?:(\.)|(\?\.(?!\s*[[:digit:]])))</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.accessor.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.accessor.optional.ballerina</string>
+              </dict>
+            </dict>
+          </dict>
+        </array>
+      </dict>
       <key>annotationAttachment</key>
       <dict>
         <key>patterns</key>
         <array>
           <dict>
             <key>match</key>
-            <string>@((?:(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)):)?(?:(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+))</string>
-            <key>name</key>
-            <string>storage.type.annotation.ballerina</string>
+            <string>(@)((?:[_$[:alpha:]][_$[:alnum:]]*))\s*(:?)\s*((?:[_$[:alpha:]][_$[:alnum:]]*)?)</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.decorator.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>support.type.ballerina</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.decorator.ballerina</string>
+              </dict>
+              <key>4</key>
+              <dict>
+                <key>name</key>
+                <string>support.type.ballerina</string>
+              </dict>
+            </dict>
           </dict>
         </array>
       </dict>
@@ -244,7 +1069,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>keyword.operator.ballerina</string>
+                <string>meta.arrow.ballerina storage.type.function.arrow.ballerina</string>
               </dict>
             </dict>
             <key>end</key>
@@ -265,7 +1090,7 @@
         <array>
           <dict>
             <key>match</key>
-            <string>((?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+))\s*(?=\()</string>
+            <string>(?:\')?([_$[:alpha:]][_$[:alnum:]]*)\s*(?=\()</string>
             <key>name</key>
             <string>entity.name.function.ballerina</string>
           </dict>
@@ -322,7 +1147,7 @@
                 <key>name</key>
                 <string>storage.type.ballerina</string>
                 <key>match</key>
-                <string>\b((?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+))\b</string>
+                <string>\b([_$[:alpha:]][_$[:alnum:]]*)\b</string>
               </dict>
             </array>
           </dict>
@@ -355,9 +1180,45 @@
                 <key>name</key>
                 <string>storage.type.ballerina</string>
                 <key>match</key>
-                <string>\b((?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+))\b</string>
+                <string>\b([_$[:alpha:]][_$[:alnum:]]*)\b</string>
               </dict>
             </array>
+          </dict>
+        </array>
+      </dict>
+      <key>decl-block</key>
+      <dict>
+        <key>name</key>
+        <string>meta.block.ballerina</string>
+        <key>begin</key>
+        <string>\{</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.block.ballerina</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>(?=\} external;|\})</string>
+        <key>endCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.block.ballerina</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#statements</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#mdDocumentation</string>
           </dict>
         </array>
       </dict>
@@ -515,6 +1376,131 @@
           </dict>
         </array>
       </dict>
+      <key>enum-decl</key>
+      <dict>
+        <key>name</key>
+        <string>meta.enum.declaration.ballerina</string>
+        <key>begin</key>
+        <string>(?:\b(const)\s+)?\b(enum)\s+([_$[:alpha:]][_$[:alnum:]]*)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>storage.modifier.ballerina</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.other.ballerina</string>
+          </dict>
+          <key>3</key>
+          <dict>
+            <key>name</key>
+            <string>entity.name.type.enum.ballerina</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>(?&lt;=\})</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#comment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#mdDocumentation</string>
+          </dict>
+          <dict>
+            <key>begin</key>
+            <string>\{</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.block.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>\}</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.block.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#mdDocumentation</string>
+              </dict>
+              <dict>
+                <key>begin</key>
+                <string>([_$[:alpha:]][_$[:alnum:]]*)</string>
+                <key>beginCaptures</key>
+                <dict>
+                  <key>0</key>
+                  <dict>
+                    <key>name</key>
+                    <string>variable.other.enummember.ballerina</string>
+                  </dict>
+                </dict>
+                <key>end</key>
+                <string>(?=,|\}|$)</string>
+                <key>patterns</key>
+                <array>
+                  <dict>
+                    <key>include</key>
+                    <string>#comment</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#variable-initializer</string>
+                  </dict>
+                </array>
+              </dict>
+              <dict>
+                <key>begin</key>
+                <string>(?=((\'([^\'\\]|\\.)*\')|(\"([^\"\\]|\\.)*\")|(\`([^\`\\]|\\.)*\`)|(\[([^\[\]]|\[[^\[\]]*\])+\])))</string>
+                <key>end</key>
+                <string>(?=,|\}|$)</string>
+                <key>patterns</key>
+                <array>
+                  <dict>
+                    <key>include</key>
+                    <string>#string</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#array-literal</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#comment</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#variable-initializer</string>
+                  </dict>
+                </array>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#punctuation-comma</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
       <key>errorDestructure</key>
       <dict>
         <key>patterns</key>
@@ -575,7 +1561,7 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#serviceDefinition</string>
+                <string>#service-decl</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -583,7 +1569,7 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#functionDefinition</string>
+                <string>#function-defn</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -594,6 +1580,47 @@
                 <string>#code</string>
               </dict>
             </array>
+          </dict>
+        </array>
+      </dict>
+      <key>for-loop</key>
+      <dict>
+        <key>begin</key>
+        <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))foreach\s*(var)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.loop.ballerina</string>
+          </dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>support.type.primitive.ballerina</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>(?=\{)</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>keyword.other.ballerina</string>
+            <key>match</key>
+            <string>in</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#comment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#var-expr</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#expression</string>
           </dict>
         </array>
       </dict>
@@ -659,60 +1686,113 @@
           </dict>
         </array>
       </dict>
-      <key>functionDefinition</key>
+      <key>function-body</key>
       <dict>
         <key>patterns</key>
         <array>
           <dict>
+            <key>include</key>
+            <string>#comment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#functionParameters</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#decl-block</string>
+          </dict>
+          <dict>
             <key>begin</key>
-            <string>\bfunction\b</string>
+            <string>\=&gt;</string>
+            <key>name</key>
+            <string>meta.block.ballerina</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>keyword.ballerina</string>
+                <string>meta.arrow.ballerina storage.type.function.arrow.ballerina</string>
               </dict>
             </dict>
             <key>end</key>
-            <string>\}|(?=;|=)</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.block.ballerina</string>
-              </dict>
-            </dict>
+            <string>(?=\;)</string>
             <key>patterns</key>
             <array>
               <dict>
                 <key>include</key>
-                <string>#comment</string>
+                <string>#statements</string>
               </dict>
               <dict>
                 <key>include</key>
-                <string>#functionParameters</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#functionReturns</string>
-              </dict>
-              <dict>
-                <key>name</key>
-                <string>keyword.ballerina</string>
-                <key>match</key>
-                <string>extern\b</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#functionName</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#callableUnitBody</string>
+                <string>#punctuation-comma</string>
               </dict>
             </array>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.generator.asterisk.ballerina</string>
+            <key>match</key>
+            <string>\*</string>
+          </dict>
+        </array>
+      </dict>
+      <key>function-defn</key>
+      <dict>
+        <key>name</key>
+        <string>meta.function.ballerina</string>
+        <key>begin</key>
+        <string>(?:(public|private)\s+)?(function\b)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.other.ballerina</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.other.ballerina</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>(?&lt;=\;)|(?&lt;=\})</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>\bexternal\b</string>
+            <key>name</key>
+            <string>keyword.ballerina</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#stringTemplate</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#annotationAttachment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#functionReturns</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#functionName</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#functionParameters</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#punctuation-semicolon</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#function-body</string>
           </dict>
         </array>
       </dict>
@@ -722,131 +1802,292 @@
         <array>
           <dict>
             <key>name</key>
-            <string>entity.name.function.ballerina</string>
+            <string>keyword.other.ballerina</string>
             <key>match</key>
-            <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
+            <string>\bfunction\b</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#type-primitive</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#self-literal</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\s+(\b(self)|\b(is|new|isolated|null|function|in)\b|(string|int|boolean|float|byte|decimal|json|xml)\b|([_$[:alpha:]][_$[:alnum:]]*))</string>
+            <key>captures</key>
+            <dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>variable.language.this.ballerina</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.other.ballerina</string>
+              </dict>
+              <key>4</key>
+              <dict>
+                <key>name</key>
+                <string>support.type.primitive.ballerina</string>
+              </dict>
+              <key>5</key>
+              <dict>
+                <key>name</key>
+                <string>meta.definition.function.ballerina entity.name.function.ballerina</string>
+              </dict>
+            </dict>
           </dict>
         </array>
       </dict>
       <key>functionParameters</key>
       <dict>
+        <key>name</key>
+        <string>meta.parameters.ballerina</string>
+        <key>begin</key>
+        <string>\(|\[</string>
+        <key>end</key>
+        <string>\)|\]</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.parameters.begin.ballerina</string>
+          </dict>
+        </dict>
+        <key>endCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.parameters.end.ballerina</string>
+          </dict>
+        </dict>
         <key>patterns</key>
         <array>
           <dict>
-            <key>begin</key>
-            <string>\(|\[</string>
-            <key>end</key>
-            <string>\)|\]</string>
-            <key>beginCaptures</key>
+            <key>include</key>
+            <string>#function-parameters-body</string>
+          </dict>
+        </array>
+      </dict>
+      <key>function-parameters-body</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#comment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#numbers</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#annotationAttachment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#recordLiteral</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#keywords</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#parameter-name</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#array-literal</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#variable-initializer</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#identifiers</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>punctuation.separator.parameter.ballerina</string>
+            <key>match</key>
+            <string>\,</string>
+          </dict>
+        </array>
+      </dict>
+      <key>parameter-name</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>\s*\b(var)\s+</string>
+            <key>captures</key>
             <dict>
-              <key>0</key>
+              <key>1</key>
               <dict>
                 <key>name</key>
-                <string>delimiter.parenthesis</string>
+                <string>support.type.primitive.ballerina</string>
               </dict>
             </dict>
-            <key>endCaptures</key>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\b(is|new|isolated|null|function|in)\b|\b(true|false)\b|\b(check|foreach|if|checkpanic)\b|\b(readonly)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
+            <key>captures</key>
             <dict>
-              <key>0</key>
+              <key>2</key>
               <dict>
                 <key>name</key>
-                <string>delimiter.parenthesis</string>
+                <string>keyword.operator.rest.ballerina</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>support.type.primitive.ballerina</string>
+              </dict>
+              <key>4</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.other.ballerina</string>
+              </dict>
+              <key>5</key>
+              <dict>
+                <key>name</key>
+                <string>constant.language.boolean.ballerina</string>
+              </dict>
+              <key>6</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.control.flow.ballerina</string>
+              </dict>
+              <key>7</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.ballerina</string>
+              </dict>
+              <key>8</key>
+              <dict>
+                <key>name</key>
+                <string>variable.parameter.ballerina</string>
+              </dict>
+              <key>9</key>
+              <dict>
+                <key>name</key>
+                <string>variable.parameter.ballerina</string>
+              </dict>
+              <key>10</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.optional.ballerina</string>
               </dict>
             </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>match</key>
-                <string>public</string>
-                <key>name</key>
-                <string>keyword</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#annotationAttachment</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#recordLiteral</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#parameter</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#parameterTuple</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#defaultValue</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
-              </dict>
-            </array>
           </dict>
         </array>
       </dict>
       <key>functionReturns</key>
       <dict>
+        <key>name</key>
+        <string>meta.type.function.return.ballerina</string>
+        <key>begin</key>
+        <string>\s*(returns)\s*</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.other.ballerina</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>(?==&gt;)|(\=)|(?=\{)|(\))|(?=\;)</string>
+        <key>endCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.ballerina</string>
+          </dict>
+        </dict>
         <key>patterns</key>
         <array>
           <dict>
-            <key>begin</key>
-            <string>\breturns\b</string>
-            <key>beginCaptures</key>
+            <key>include</key>
+            <string>#comment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#numbers</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#keywords</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#type-primitive</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\s*\b(var)(?=\s+|\[|\?)</string>
+            <key>captures</key>
             <dict>
-              <key>0</key>
+              <key>1</key>
               <dict>
                 <key>name</key>
-                <string>keyword.ballerina</string>
+                <string>support.type.primitive.ballerina</string>
               </dict>
             </dict>
-            <key>end</key>
-            <string>(?=\{|;|,|=)</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>curly</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#record</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#objectDec</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#tupleType</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#multiType</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#strings</string>
-              </dict>
-              <dict>
-                <key>match</key>
-                <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
-                <key>name</key>
-                <string>storage.type.ballerina</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
-              </dict>
-            </array>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\|</string>
+            <key>name</key>
+            <string>keyword.operator.ballerina</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>\?</string>
+            <key>name</key>
+            <string>keyword.operator.optional.ballerina</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#type-annotation</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#type-tuple</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#keywords</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>[_$[:alpha:]][_$[:alnum:]]*</string>
+            <key>name</key>
+            <string>variable.other.readwrite.ballerina</string>
           </dict>
         </array>
       </dict>
@@ -964,7 +2205,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
+            <string>[_$[:alpha:]][_$[:alnum:]]*</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1015,7 +2256,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>((?=record|object|function)|(?:(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)))</string>
+            <string>((?=record|object|function)|(?:[_$[:alpha:]][_$[:alnum:]]*))</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1058,11 +2299,132 @@
               </dict>
               <dict>
                 <key>match</key>
-                <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
+                <string>[_$[:alpha:]][_$[:alnum:]]*</string>
                 <key>name</key>
                 <string>default.variable.parameter.ballerina</string>
               </dict>
             </array>
+          </dict>
+        </array>
+      </dict>
+      <key>if-statement</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?=\bif\b\s*(?!\{))</string>
+            <key>end</key>
+            <string>(?&lt;=\})</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
+              </dict>
+              <dict>
+                <key>begin</key>
+                <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(if)\s*(\()?</string>
+                <key>beginCaptures</key>
+                <dict>
+                  <key>1</key>
+                  <dict>
+                    <key>name</key>
+                    <string>keyword.control.conditional.ballerina</string>
+                  </dict>
+                  <key>2</key>
+                  <dict>
+                    <key>name</key>
+                    <string>meta.brace.round.ballerina</string>
+                  </dict>
+                </dict>
+                <key>end</key>
+                <string>(\))|(\s(?=\S)(?=\s*{))</string>
+                <key>endCaptures</key>
+                <dict>
+                  <key>0</key>
+                  <dict>
+                    <key>name</key>
+                    <string>meta.brace.round.ballerina</string>
+                  </dict>
+                </dict>
+                <key>patterns</key>
+                <array>
+                  <dict>
+                    <key>include</key>
+                    <string>#type-primitive</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#expression</string>
+                  </dict>
+                </array>
+              </dict>
+              <dict>
+                <key>begin</key>
+                <string>(?&lt;=\))</string>
+                <key>end</key>
+                <string>(?=\{)</string>
+                <key>patterns</key>
+                <array>
+                  <dict>
+                    <key>include</key>
+                    <string>#literal</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#keywords</string>
+                  </dict>
+                </array>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#decl-block</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>import-clause</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#comment</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(\bdefault)|(\*)|(\b[_$[:alpha:]][_$[:alnum:]]*))</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.control.default.ballerina</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>variable.other.readwrite.ballerina meta.import.module.ballerina</string>
+              </dict>
+              <key>5</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.control.default.ballerina</string>
+              </dict>
+              <key>6</key>
+              <dict>
+                <key>name</key>
+                <string>variable.other.readwrite.alias.ballerina</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>variable.other.readwrite.alias.ballerina</string>
+            <key>match</key>
+            <string>([_$[:alpha:]][_$[:alnum:]]*)</string>
           </dict>
         </array>
       </dict>
@@ -1231,7 +2593,7 @@
               </dict>
               <dict>
                 <key>match</key>
-                <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
+                <string>[_$[:alpha:]][_$[:alnum:]]*</string>
                 <key>name</key>
                 <string>variable.parameter.ballerina</string>
               </dict>
@@ -1241,6 +2603,12 @@
       </dict>
       <key>mdDocumentation</key>
       <dict>
+        <key>name</key>
+        <string>comment.mddocs.ballerina</string>
+        <key>begin</key>
+        <string>\#</string>
+        <key>end</key>
+        <string>[\r\n]+</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -1251,12 +2619,6 @@
             <key>include</key>
             <string>#mdDocumentationParamDescription</string>
           </dict>
-          <dict>
-            <key>match</key>
-            <string>#.*</string>
-            <key>name</key>
-            <string>comment.mddocs.ballerina</string>
-          </dict>
         </array>
       </dict>
       <key>mdDocumentationParamDescription</key>
@@ -1265,33 +2627,23 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(#)(?: *?)(\+)(?: *)((?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+))?(?: *)(-)?(.*)</string>
+            <string>(\+\s+)([_$[:alpha:]][_$[:alnum:]]*)(\s*\-\s+)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>comment.mddocs.ballerina</string>
+                <string>keyword.operator.ballerina</string>
               </dict>
               <key>2</key>
               <dict>
                 <key>name</key>
-                <string>keyword.ballerina</string>
+                <string>variable.other.readwrite.ballerina</string>
               </dict>
               <key>3</key>
               <dict>
                 <key>name</key>
-                <string>default.variable.parameter.ballerina</string>
-              </dict>
-              <key>4</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.ballerina</string>
-              </dict>
-              <key>5</key>
-              <dict>
-                <key>name</key>
-                <string>comment.mddocs.paramdesc.ballerina</string>
+                <string>keyword.operator.ballerina</string>
               </dict>
             </dict>
             <key>end</key>
@@ -1363,7 +2715,7 @@
         <array>
           <dict>
             <key>match</key>
-            <string>(?&lt;=\|)((?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+))|((?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+))(?=\|)</string>
+            <string>(?&lt;=\|)([_$[:alpha:]][_$[:alnum:]]*)|([_$[:alpha:]][_$[:alnum:]]*)(?=\|)</string>
             <key>name</key>
             <string>storage.type.ballerina</string>
           </dict>
@@ -1387,150 +2739,133 @@
           </dict>
         </array>
       </dict>
-      <key>objectBody</key>
+      <key>class-body</key>
       <dict>
+        <key>name</key>
+        <string>meta.class.body.ballerina</string>
+        <key>begin</key>
+        <string>\{</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.block.ballerina</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>\}</string>
+        <key>endCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.block.ballerina</string>
+          </dict>
+        </dict>
         <key>patterns</key>
         <array>
           <dict>
+            <key>include</key>
+            <string>#comment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#mdDocumentation</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#function-defn</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#var-expr</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#variable-initializer</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#access-modifier</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#keywords</string>
+          </dict>
+          <dict>
             <key>begin</key>
-            <string>\{</string>
+            <string>(?&lt;=:)\s*</string>
             <key>end</key>
-            <string>(?=\})</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.block.ballerina</string>
-              </dict>
-            </dict>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.block.ballerina</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#mdDocumentation</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#documentationDef</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#functionDefinition</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#annotationAttachment</string>
-              </dict>
-              <dict>
-                <key>match</key>
-                <string>(public|private|extern|resource|remote|isolated|final)</string>
-                <key>name</key>
-                <string>keyword.ballerina</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#variableDefInline</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#code</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#variableDef</string>
-              </dict>
-            </array>
+            <string>(?=\s|[;),}\]:\-\+]|;|^\s*$|(?:^\s*(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b))</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#decl-block</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#expression</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#punctuation-comma</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#punctuation-semicolon</string>
           </dict>
         </array>
       </dict>
-      <key>classBody</key>
+      <key>access-modifier</key>
       <dict>
         <key>patterns</key>
         <array>
           <dict>
-            <key>begin</key>
-            <string>\bclass\b</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.ballerina</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>(?=\})</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>delimiter.curly</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#objectBody</string>
-              </dict>
-            </array>
+            <key>match</key>
+            <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(public|private)(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))</string>
+            <key>name</key>
+            <string>storage.modifier.ballerina keyword.other.ballerina</string>
           </dict>
         </array>
       </dict>
-      <key>classDec</key>
+      <key>class-defn</key>
       <dict>
+        <key>name</key>
+        <string>meta.class.ballerina</string>
+        <key>begin</key>
+        <string>(\s+)(class\b)|^class\b(?=\s+|/[/*])</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.class.ballerina keyword.other.ballerina</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>(?&lt;=\})</string>
         <key>patterns</key>
         <array>
           <dict>
-            <key>begin</key>
-            <string>\bclass\b</string>
-            <key>beginCaptures</key>
+            <key>include</key>
+            <string>#keywords</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>[_$[:alpha:]][_$[:alnum:]]*</string>
+            <key>captures</key>
             <dict>
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>keyword.ballerina</string>
+                <string>entity.name.type.class.ballerina</string>
               </dict>
             </dict>
-            <key>end</key>
-            <string>\}</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>delimiter.curly</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#objectBody</string>
-              </dict>
-            </array>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#class-body</string>
           </dict>
         </array>
       </dict>
@@ -1546,28 +2881,16 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>keyword.ballerina</string>
+                <string>keyword.other.ballerina</string>
               </dict>
             </dict>
             <key>end</key>
-            <string>\}</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>delimiter.curly</string>
-              </dict>
-            </dict>
+            <string>(?=\})</string>
             <key>patterns</key>
             <array>
               <dict>
                 <key>include</key>
-                <string>#objectBody</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
+                <string>#decl-block</string>
               </dict>
             </array>
           </dict>
@@ -1645,7 +2968,7 @@
               </dict>
               <dict>
                 <key>match</key>
-                <string>\b((?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+))\b</string>
+                <string>\b([_$[:alpha:]][_$[:alnum:]]*)\b</string>
                 <key>name</key>
                 <string>variable.parameter.ballerina</string>
               </dict>
@@ -1700,28 +3023,79 @@
       </dict>
       <key>paranthesised</key>
       <dict>
+        <key>name</key>
+        <string>meta.brace.round.block.ballerina</string>
+        <key>begin</key>
+        <string>\(</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>meta.brace.round.ballerina</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>\)</string>
+        <key>endCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>meta.brace.round.ballerina</string>
+          </dict>
+        </dict>
         <key>patterns</key>
         <array>
           <dict>
-            <key>begin</key>
-            <string>\(</string>
-            <key>end</key>
-            <string>\)</string>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#functionDefinition</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#code</string>
-              </dict>
-            </array>
+            <key>include</key>
+            <string>#self-literal</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#function-defn</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#decl-block</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#comment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#annotationAttachment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#recordLiteral</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#stringTemplate</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#parameter-name</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#variable-initializer</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>punctuation.separator.parameter.ballerina</string>
+            <key>match</key>
+            <string>\,</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#expression</string>
           </dict>
         </array>
       </dict>
@@ -1750,40 +3124,42 @@
       </dict>
       <key>record</key>
       <dict>
+        <key>name</key>
+        <string>meta.record.ballerina</string>
+        <key>begin</key>
+        <string>\brecord\b</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.other.ballerina</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>(?=\})</string>
+        <key>endCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.block.ballerina</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.terminator.statement.ballerina</string>
+          </dict>
+        </dict>
         <key>patterns</key>
         <array>
           <dict>
-            <key>begin</key>
-            <string>\brecord\b</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.ballerina</string>
-              </dict>
-            </dict>
-            <key>end</key>
-            <string>\}</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>delimiter.curly</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#recordBody</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
-              </dict>
-            </array>
+            <key>include</key>
+            <string>#statements</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#decl-block</string>
           </dict>
         </array>
       </dict>
@@ -1882,112 +3258,60 @@
         <key>patterns</key>
         <array>
           <dict>
-            <key>begin</key>
-            <string>\{</string>
-            <key>end</key>
-            <string>(?=\})</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.block.ballerina</string>
-              </dict>
-            </dict>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.block.ballerina</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#mdDocumentation</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#documentationDef</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#annotationAttachment</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#functionDefinition</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#recordLiteral</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#code</string>
-              </dict>
-            </array>
+            <key>include</key>
+            <string>#comment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#mdDocumentation</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#documentationDef</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#decl-block</string>
           </dict>
         </array>
       </dict>
-      <key>serviceDefinition</key>
+      <key>service-decl</key>
       <dict>
+        <key>name</key>
+        <string>meta.service.declaration.ballerina</string>
+        <key>begin</key>
+        <string>\bservice\b</string>
+        <key>end</key>
+        <string>(?=;|^\s*$|(?:^\s*(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b))|(?&lt;=\})</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.ballerina</string>
+          </dict>
+        </dict>
         <key>patterns</key>
         <array>
           <dict>
-            <key>begin</key>
-            <string>\bservice\b</string>
-            <key>end</key>
-            <string>\}|;|=</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>keyword.ballerina</string>
-              </dict>
-            </dict>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.block.ballerina</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#objectDec</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#classBody</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#serviceBody</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#serviceOn</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#serviceName</string>
-              </dict>
-            </array>
+            <key>include</key>
+            <string>#class-defn</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#serviceName</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#serviceOn</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#serviceBody</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#objectDec</string>
           </dict>
         </array>
       </dict>
@@ -1996,10 +3320,14 @@
         <key>patterns</key>
         <array>
           <dict>
+            <key>include</key>
+            <string>#string</string>
+          </dict>
+          <dict>
             <key>name</key>
-            <string>entity.name.function.ballerina</string>
+            <string>entity.service.path.ballerina</string>
             <key>match</key>
-            <string>(\/((?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)*)|\"(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)\")</string>
+            <string>(\/([_$[:alpha:]][_$[:alnum:]]**)|\"[_$[:alpha:]][_$[:alnum:]]*\")</string>
           </dict>
         </array>
       </dict>
@@ -2017,7 +3345,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>keyword.ballerina</string>
+                <string>keyword.other.ballerina</string>
               </dict>
             </dict>
             <key>patterns</key>
@@ -2073,60 +3401,105 @@
           </dict>
         </array>
       </dict>
+      <key>string-character-escape</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>constant.character.escape.ballerina</string>
+            <key>match</key>
+            <string>\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}|u\{[0-9A-Fa-f]+\}|[0-2][0-7]{0,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.|$)</string>
+          </dict>
+        </array>
+      </dict>
       <key>stringTemplate</key>
       <dict>
         <key>patterns</key>
         <array>
           <dict>
+            <key>name</key>
+            <string>string.template.ballerina</string>
             <key>begin</key>
-            <string>(\bstring|\bbase[1-9]*)(\s*)(`)|(`)</string>
+            <string>((string)|([_$[:alpha:]][_$[:alnum:]]*))?(`)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>keyword.ballerina</string>
+                <string>entity.name.function.tagged-template.ballerina</string>
               </dict>
               <key>2</key>
               <dict>
                 <key>name</key>
-                <string/>
+                <string>support.type.primitive.ballerina</string>
               </dict>
-              <key>3</key>
+              <key>4</key>
               <dict>
                 <key>name</key>
-                <string>string.template.ballerina</string>
+                <string>punctuation.definition.string.template.begin.ballerina</string>
               </dict>
             </dict>
             <key>end</key>
-            <string>`</string>
+            <string>\\?`</string>
             <key>endCaptures</key>
             <dict>
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>string.template.ballerina</string>
+                <string>punctuation.definition.string.template.end.ballerina</string>
               </dict>
             </dict>
             <key>patterns</key>
             <array>
               <dict>
-                <key>name</key>
-                <string>constant.character.escape.ballerina</string>
-                <key>match</key>
-                <string>\\.</string>
+                <key>include</key>
+                <string>#template-substitution-element</string>
               </dict>
               <dict>
                 <key>include</key>
-                <string>#templateVariable</string>
-              </dict>
-              <dict>
-                <key>name</key>
-                <string>string</string>
-                <key>match</key>
-                <string>.</string>
+                <string>#string-character-escape</string>
               </dict>
             </array>
+          </dict>
+        </array>
+      </dict>
+      <key>template-substitution-element</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>meta.template.expression.ballerina</string>
+            <key>begin</key>
+            <string>\$\{</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.template-expression.begin.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>\}</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.template-expression.end.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#expression</string>
+              </dict>
+            </array>
+            <key>contentName</key>
+            <string>meta.embedded.line.ballerina</string>
           </dict>
         </array>
       </dict>
@@ -2136,34 +3509,75 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>\btype\b</string>
+            <string>(\btype\b)\s+([_$[:alpha:]][_$[:alnum:]]*)</string>
             <key>beginCaptures</key>
             <dict>
-              <key>0</key>
+              <key>1</key>
               <dict>
                 <key>name</key>
-                <string>keyword.ballerina</string>
+                <string>keyword.other.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>entity.name.type.ballerina</string>
               </dict>
             </dict>
             <key>end</key>
-            <string>;</string>
+            <string>\;</string>
             <key>endCaptures</key>
             <dict>
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>source.ballerina</string>
+                <string>punctuation.terminator.statement.ballerina</string>
               </dict>
             </dict>
             <key>patterns</key>
             <array>
               <dict>
                 <key>include</key>
-                <string>#comment</string>
+                <string>#functionParameters</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#functionReturns</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#mdDocumentation</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#record</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#string</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#keywords</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#multiType</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#type-primitive</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#type-annotation</string>
               </dict>
               <dict>
                 <key>include</key>
                 <string>#typeDescription</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#decl-block</string>
               </dict>
             </array>
           </dict>
@@ -2175,52 +3589,445 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
+            <string>[_$[:alpha:]][_$[:alnum:]]*</string>
+            <key>end</key>
+            <string>(?=;)</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#numbers</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#decl-block</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#type-primitive</string>
+              </dict>
+              <dict>
+                <key>match</key>
+                <string>[_$[:alpha:]][_$[:alnum:]]*</string>
+                <key>name</key>
+                <string>storage.type.ballerina</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>var-expr</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>meta.var.expr.ballerina</string>
+            <key>begin</key>
+            <string>(?=\b(var))</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>entity.name.function.ballerina</string>
+                <string>storage.modifier.ballerina support.type.primitive.ballerina</string>
               </dict>
             </dict>
             <key>end</key>
-            <string>(?=;)</string>
+            <string>(?!\b(var))((?=;|}|;|^\s*$|(?:^\s*(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b))|((?&lt;!^string|[^\._$[:alnum:]]string|^int|[^\._$[:alnum:]]int)(?=\s*$)))</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>begin</key>
+                <string>\b(var)(?=\s+|\[|\?|\||\:)</string>
+                <key>beginCaptures</key>
+                <dict>
+                  <key>0</key>
+                  <dict>
+                    <key>name</key>
+                    <string>support.type.primitive.ballerina</string>
+                  </dict>
+                </dict>
+                <key>end</key>
+                <string>(?=\S)</string>
+              </dict>
+              <dict>
+                <key>match</key>
+                <string>\|</string>
+                <key>name</key>
+                <string>keyword.operator.type.annotation.ballerina</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#stringTemplate</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#numbers</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#multiType</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#self-literal</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#var-single-variable</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#variable-initializer</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#punctuation-comma</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#type-annotation</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#keywords</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#type-tuple</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#punctuation-comma</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>meta.var.expr.ballerina</string>
+            <key>begin</key>
+            <string>(?=\b(const(?!\s+enum\b)))</string>
+            <key>end</key>
+            <string>(?!\b(const(?!\s+enum\b)))((?=;|}|;|^\s*$|(?:^\s*(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b))|((?&lt;!^string|[^\._$[:alnum:]]string|^int|[^\._$[:alnum:]]int)(?=\s*$)))</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>begin</key>
+                <string>\b(const(?!\s+enum\b))\s+</string>
+                <key>beginCaptures</key>
+                <dict>
+                  <key>0</key>
+                  <dict>
+                    <key>name</key>
+                    <string>keyword.other.ballerina</string>
+                  </dict>
+                </dict>
+                <key>end</key>
+                <string>(?=\S)</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#stringTemplate</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#var-single-const</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#variable-initializer</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#punctuation-comma</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#type-annotation</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#punctuation-comma</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>meta.var.expr.ballerina</string>
+            <key>begin</key>
+            <string>(string|int|boolean|float|byte|decimal|json|xml)(?=\s+|\[|\?|\||\:)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>support.type.primitive.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?!\b(var))((?=;|}|;|^\s*$|(?:^\s*(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b))|((?&lt;!^string|[^\._$[:alnum:]]string|^int|[^\._$[:alnum:]]int)(?=\s*$)))</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#xml</string>
+              </dict>
+              <dict>
+                <key>begin</key>
+                <string>(string|int|boolean|float|byte|decimal|json|xml)(?=\s+|\[|\?|\||\:)</string>
+                <key>beginCaptures</key>
+                <dict>
+                  <key>0</key>
+                  <dict>
+                    <key>name</key>
+                    <string>support.type.primitive.ballerina</string>
+                  </dict>
+                </dict>
+                <key>end</key>
+                <string>(?=\S)</string>
+              </dict>
+              <dict>
+                <key>match</key>
+                <string>\|</string>
+                <key>name</key>
+                <string>keyword.operator.type.annotation.ballerina</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#stringTemplate</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#numbers</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#multiType</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#var-single-variable</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#variable-initializer</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#punctuation-comma</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#type-annotation</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#keywords</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#type-tuple</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#punctuation-comma</string>
+          </dict>
+        </array>
+      </dict>
+      <key>var-single-variable</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>meta.var-single-variable.expr.ballerina</string>
+            <key>begin</key>
+            <string>((string|int|boolean|float|byte|decimal|json|xml)|\b(readonly)\b|([_$[:alpha:]][_$[:alnum:]]*))(?=\s+|\;|\&gt;|\|)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>support.type.primitive.ballerina</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.ballerina</string>
+              </dict>
+              <key>4</key>
+              <dict>
+                <key>name</key>
+                <string>meta.definition.variable.ballerina variable.other.readwrite.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=$|^|[;,=}])</string>
             <key>endCaptures</key>
             <dict>
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>source.ballerina</string>
+                <string>punctuation.terminator.statement.ballerina</string>
               </dict>
             </dict>
             <key>patterns</key>
             <array>
               <dict>
                 <key>include</key>
-                <string>#comment</string>
+                <string>#call</string>
               </dict>
               <dict>
                 <key>include</key>
-                <string>#objectDec</string>
+                <string>#self-literal</string>
               </dict>
               <dict>
                 <key>include</key>
-                <string>#record</string>
+                <string>#if-statement</string>
               </dict>
               <dict>
                 <key>include</key>
-                <string>#objectMemberFunctionDec</string>
+                <string>#string</string>
               </dict>
               <dict>
                 <key>include</key>
-                <string>#literal</string>
+                <string>#numbers</string>
               </dict>
+              <dict>
+                <key>include</key>
+                <string>#keywords</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>meta.var-single-variable.expr.ballerina</string>
+            <key>begin</key>
+            <string>([_$[:alpha:]][_$[:alnum:]]*)\s+(\!)?</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>meta.definition.variable.ballerina variable.other.readwrite.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.definiteassignment.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=$|^|[;,=}]|((?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+))</string>
+          </dict>
+        </array>
+      </dict>
+      <key>var-single-const</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>meta.var-single-variable.expr.ballerina</string>
+          </dict>
+          <dict>
+            <key>begin</key>
+            <string>\b(var)\s*</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>support.type.primitive.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=\S)</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#types</string>
+          </dict>
+          <dict>
+            <key>begin</key>
+            <string>([_$[:alpha:]][_$[:alnum:]]*)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>meta.definition.variable.ballerina variable.other.constant.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=$|^|[;,=}]|((?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+))</string>
+          </dict>
+        </array>
+      </dict>
+      <key>variable-initializer</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>(?&lt;!=|!)(=)(?!=|&gt;)(?=\s*\S)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.assignment.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=$|[,);}\]])</string>
+            <key>patterns</key>
+            <array>
               <dict>
                 <key>match</key>
-                <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
+                <string>(\')([_$[:alpha:]][_$[:alnum:]]*)</string>
                 <key>name</key>
-                <string>storage.type.ballerina</string>
+                <string>variable.other.property.ballerina</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#xml</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#function-defn</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#expression</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#punctuation-accessor</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>begin</key>
+            <string>(?&lt;!=|!)(=)(?!=|&gt;)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.assignment.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=[,);}\]]|((?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+))|(?=^\s*$)|(?&lt;=\S)(?&lt;!=)(?=\s*$)</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#expression</string>
               </dict>
             </array>
           </dict>
@@ -2232,7 +4039,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(?:(?!\+)(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+))(?: |\t)|(?=\()</string>
+            <string>(?:(?!\+)[_$[:alpha:]][_$[:alnum:]]*)(?: |\t)|(?=\()</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -2242,7 +4049,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(?:(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+))|(?=\,)|(?=;)|\.\.\.</string>
+            <string>(?:[_$[:alpha:]][_$[:alnum:]]*)|(?=\,)|(?=;)|\.\.\.</string>
             <key>endCaptures</key>
             <dict>
               <key>0</key>
@@ -2290,7 +4097,7 @@
               </dict>
               <dict>
                 <key>match</key>
-                <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
+                <string>[_$[:alpha:]][_$[:alnum:]]*</string>
                 <key>name</key>
                 <string>source.ballerina</string>
               </dict>
@@ -2354,7 +4161,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>((?=record|object|function)|((?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+))(?=\|)|(?:(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)))</string>
+            <string>((?=record|object|function)|([_$[:alpha:]][_$[:alnum:]]*)(?=\|)|(?:[_$[:alpha:]][_$[:alnum:]]*))</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -2401,7 +4208,7 @@
               </dict>
               <dict>
                 <key>match</key>
-                <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
+                <string>[_$[:alpha:]][_$[:alnum:]]*</string>
                 <key>name</key>
                 <string>default.variable.parameter.ballerina</string>
               </dict>
@@ -2450,7 +4257,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
+            <string>[_$[:alpha:]][_$[:alnum:]]*</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -2481,7 +4288,7 @@
               </dict>
               <dict>
                 <key>match</key>
-                <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
+                <string>[_$[:alpha:]][_$[:alnum:]]*</string>
                 <key>name</key>
                 <string>default.variable.parameter.ballerina</string>
               </dict>
@@ -2544,6 +4351,48 @@
           </dict>
         </array>
       </dict>
+      <key>string</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>"</string>
+            <key>name</key>
+            <string>string.quoted.double.ballerina</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.string.begin.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(")|((?:[^\\\n])$)</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.string.end.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>invalid.illegal.newline.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#string-character-escape</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
       <key>types</key>
       <dict>
         <key>patterns</key>
@@ -2552,13 +4401,19 @@
             <key>name</key>
             <string>storage.type.ballerina</string>
             <key>match</key>
-            <string>\b(boolean|int|float|string|decimal|handle|var|any|anydata|byte|future|typedesc)\b</string>
+            <string>\b(handle|any|anydata|future|typedesc)\b</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>support.type.primitive.ballerina</string>
+            <key>match</key>
+            <string>\b(boolean|int|string|float|decimal|byte|json|xml)\b</string>
           </dict>
           <dict>
             <key>name</key>
             <string>storage.type.ballerina</string>
             <key>match</key>
-            <string>\b(map|json|xml|error|never|readonly|distinct)\b</string>
+            <string>\b(map|error|never|readonly|distinct)\b</string>
           </dict>
           <dict>
             <key>name</key>
@@ -2575,34 +4430,18 @@
           <dict>
             <key>begin</key>
             <string>(\bxml)(\s*)(`)</string>
+            <key>name</key>
+            <string>xml.template.ballerina</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
               <dict>
                 <key>name</key>
-                <string>keyword.ballerina</string>
-              </dict>
-              <key>2</key>
-              <dict>
-                <key>name</key>
-                <string/>
-              </dict>
-              <key>3</key>
-              <dict>
-                <key>name</key>
-                <string>string.template.ballerina</string>
+                <string>support.type.primitive.ballerina</string>
               </dict>
             </dict>
             <key>end</key>
             <string>`</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>string.template.ballerina</string>
-              </dict>
-            </dict>
             <key>patterns</key>
             <array>
               <dict>
@@ -2654,7 +4493,7 @@
               <key>0</key>
               <dict>
                 <key>name</key>
-                <string>punctuation.definition.tag.begin.xml.ballerina</string>
+                <string>punctuation.definition.tag.end.xml.ballerina</string>
               </dict>
             </dict>
             <key>patterns</key>
@@ -2666,6 +4505,12 @@
               <dict>
                 <key>include</key>
                 <string>#xmlDoubleQuotedString</string>
+              </dict>
+              <dict>
+                <key>name</key>
+                <string>keyword.other.ballerina</string>
+                <key>match</key>
+                <string>xmlns</string>
               </dict>
               <dict>
                 <key>name</key>
@@ -2828,6 +4673,240 @@
           </dict>
         </array>
       </dict>
+      <key>ternary-expression</key>
+      <dict>
+        <key>begin</key>
+        <string>(?!\?\.\s*[^[:digit:]])(\?)(?!\?)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.ternary.ballerina</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>\s*</string>
+        <key>endCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.ternary.ballerina</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#expression</string>
+          </dict>
+        </array>
+      </dict>
+      <key>type</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#comment</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#string</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#numbers</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#type-primitive</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#type-tuple</string>
+          </dict>
+        </array>
+      </dict>
+      <key>type-annotation</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>meta.type.annotation.ballerina</string>
+            <key>begin</key>
+            <string>(\:)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.type.annotation.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?&lt;![:|&amp;])((?=$|^|[,);\}\]\?\&gt;]|//)|(?==[^&gt;])|((?&lt;=[\}&gt;\]\)]|[_$[:alpha:]])\s*(?=\{)))(\?)?</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#booleans</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#self-literal</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#call</string>
+              </dict>
+              <dict>
+                <key>match</key>
+                <string>\b(is|new|isolated|null|function|in)\b|\b(true|false)\b|\b(check|foreach|if|checkpanic)\b|([_$[:alpha:]][_$[:alnum:]]*)((\.)([_$[:alpha:]][_$[:alnum:]]*)(\()(\)))?</string>
+                <key>captures</key>
+                <dict>
+                  <key>1</key>
+                  <dict>
+                    <key>name</key>
+                    <string>keyword.other.ballerina</string>
+                  </dict>
+                  <key>2</key>
+                  <dict>
+                    <key>name</key>
+                    <string>constant.language.boolean.ballerina</string>
+                  </dict>
+                  <key>3</key>
+                  <dict>
+                    <key>name</key>
+                    <string>keyword.control.ballerina</string>
+                  </dict>
+                  <key>4</key>
+                  <dict>
+                    <key>name</key>
+                    <string>variable.other.readwrite.ballerina</string>
+                  </dict>
+                  <key>6</key>
+                  <dict>
+                    <key>name</key>
+                    <string>punctuation.accessor.ballerina</string>
+                  </dict>
+                  <key>7</key>
+                  <dict>
+                    <key>name</key>
+                    <string>entity.name.function.ballerina</string>
+                  </dict>
+                  <key>8</key>
+                  <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.parameters.begin.ballerina</string>
+                  </dict>
+                  <key>9</key>
+                  <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.parameters.end.ballerina</string>
+                  </dict>
+                </dict>
+              </dict>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.optional.ballerina</string>
+                <key>match</key>
+                <string>\?</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#multiType</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#type</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#paranthesised</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>type-tuple</key>
+      <dict>
+        <key>name</key>
+        <string>meta.type.tuple.ballerina</string>
+        <key>begin</key>
+        <string>\[</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>meta.brace.square.ballerina</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>\]</string>
+        <key>endCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>meta.brace.square.ballerina</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#self-literal</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#booleans</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.rest.ballerina</string>
+            <key>match</key>
+            <string>\.\.\.</string>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))([_$[:alpha:]][_$[:alnum:]]*)\s*(\?)?\s*(:)</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>entity.name.label.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.optional.ballerina</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.separator.label.ballerina</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#identifiers</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#type</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#punctuation-comma</string>
+          </dict>
+        </array>
+      </dict>
       <key>keywords</key>
       <dict>
         <key>patterns</key>
@@ -2836,25 +4915,31 @@
             <key>name</key>
             <string>keyword.control.ballerina</string>
             <key>match</key>
-            <string>\b(if|else|fork|join|while|foreach|in|return|returns|break|transaction|transactional|retry|commit|rollback|continue|typeof|enum|wait|check|checkpanic|panic|trap|match)\b</string>
+            <string>\b(fork|join|while|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\b</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.flow.ballerina</string>
+            <key>match</key>
+            <string>\b(return|break|continue|check|checkpanic|panic|trap|from|where)\b</string>
           </dict>
           <dict>
             <key>name</key>
             <string>keyword.other.ballerina</string>
             <key>match</key>
-            <string>\b(public|private|function|external|type|record|object|remote|abstract|client|true|false|fail|import|version)\b</string>
+            <string>\b(public|private|external|return|record|object|remote|abstract|client|true|false|fail|import|version)\b</string>
           </dict>
           <dict>
             <key>name</key>
             <string>keyword.other.ballerina</string>
             <key>match</key>
-            <string>\b(as|on|resource|listener|const|final|is|null|lock|annotation|source|worker|parameter|field|isolated)\b</string>
+            <string>\b(as|on|function|resource|listener|const|final|is|null|lock|annotation|source|worker|parameter|field|isolated|in)\b</string>
           </dict>
           <dict>
             <key>name</key>
             <string>keyword.other.ballerina</string>
             <key>match</key>
-            <string>\b(xmlns|table|key|let|new|from|where|select|start|flush|default|do|base16|base64|conflict)\b</string>
+            <string>\b(xmlns|table|key|let|new|select|start|flush|default|do|base16|base64|conflict)\b</string>
           </dict>
           <dict>
             <key>name</key>
@@ -2864,13 +4949,27 @@
           </dict>
           <dict>
             <key>name</key>
+            <string>meta.arrow.ballerina storage.type.function.arrow.ballerina</string>
+            <key>match</key>
+            <string>(=&gt;)</string>
+          </dict>
+          <dict>
+            <key>name</key>
             <string>keyword.operator.ballerina</string>
             <key>match</key>
-            <string>(!|%|\+|\-|~=|===|==|=|!=|!==|&lt;|&gt;|&amp;|\||\?:|\.\.\.|\?|&lt;=|=&gt;|&gt;=|&amp;&amp;|\|\||~|&gt;&gt;|&gt;&gt;&gt;)</string>
+            <string>(!|%|\+|\-|~=|===|==|=|!=|!==|&lt;|&gt;|&amp;|\||\?:|\.\.\.|&lt;=|&gt;=|&amp;&amp;|\|\||~|&gt;&gt;|&gt;&gt;&gt;)</string>
           </dict>
           <dict>
             <key>include</key>
             <string>#types</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#self-literal</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#type-primitive</string>
           </dict>
         </array>
       </dict>
@@ -2893,6 +4992,84 @@
           <dict>
             <key>include</key>
             <string>#maps</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#self-literal</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#array-literal</string>
+          </dict>
+        </array>
+      </dict>
+      <key>array-literal</key>
+      <dict>
+        <key>name</key>
+        <string>meta.array.literal.ballerina</string>
+        <key>begin</key>
+        <string>\s*(\[)</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>meta.brace.square.ballerina</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>\]</string>
+        <key>endCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>meta.brace.square.ballerina</string>
+          </dict>
+        </dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#expression</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#punctuation-comma</string>
+          </dict>
+        </array>
+      </dict>
+      <key>self-literal</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>(\bself\b)\s*(.)\s*([_$[:alpha:]][_$[:alnum:]]*)\s*(?=\()</string>
+            <key>captures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>variable.language.this.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.accessor.ballerina</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>entity.name.function.ballerina</string>
+              </dict>
+            </dict>
+          </dict>
+          <dict>
+            <key>match</key>
+            <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))self\b(?!\$)</string>
+            <key>name</key>
+            <string>variable.language.this.ballerina</string>
           </dict>
         </array>
       </dict>
@@ -2945,10 +5122,6 @@
             <string>#numbers</string>
           </dict>
           <dict>
-            <key>match</key>
-            <string>(?:'?(?:(?:[^ (){}\[\]\-?*=&gt;&lt;?;"',.\s\\])|\\(?:[ (){}\[\]\-?*=&gt;&lt;?;"',.\s])|\\)+)</string>
-          </dict>
-          <dict>
             <key>include</key>
             <string>#maps</string>
           </dict>
@@ -2959,6 +5132,18 @@
           <dict>
             <key>include</key>
             <string>#paranthesisedBracket</string>
+          </dict>
+        </array>
+      </dict>
+      <key>type-primitive</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(string|int|boolean|float|byte|decimal|json|xml)(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))</string>
+            <key>name</key>
+            <string>support.type.primitive.ballerina</string>
           </dict>
         </array>
       </dict>

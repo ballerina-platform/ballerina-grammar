@@ -1,0 +1,151 @@
+// SYNTAX TEST "source.ballerina" "semtype/tests/data/readonly2.bal highlighting testcase"
+
+> // E<:ER
+//^^^^^^^^ source.ballerina comment.ballerina
+> // ER<:E
+//^^^^^^^^ source.ballerina comment.ballerina
+> // IR<:Int
+//^^^^^^^^^^ source.ballerina comment.ballerina
+> // Int<:IR
+//^^^^^^^^^^ source.ballerina comment.ballerina
+> // LR1<:LR
+//^^^^^^^^^^ source.ballerina comment.ballerina
+> // LR1<:LR2
+//^^^^^^^^^^^ source.ballerina comment.ballerina
+> // LR2<:LR
+//^^^^^^^^^^ source.ballerina comment.ballerina
+> // LR2<:LR1
+//^^^^^^^^^^^ source.ballerina comment.ballerina
+> // MR1<:MR
+//^^^^^^^^^^ source.ballerina comment.ballerina
+> // MR1<:MR2
+//^^^^^^^^^^^ source.ballerina comment.ballerina
+> // MR2<:MR
+//^^^^^^^^^^ source.ballerina comment.ballerina
+> // MR2<:MR1
+//^^^^^^^^^^^ source.ballerina comment.ballerina
+> type E error;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^ source.ballerina entity.name.type.ballerina
+//      ^ source.ballerina
+//       ^^^^^ source.ballerina storage.type.ballerina
+//            ^ source.ballerina punctuation.terminator.statement.ballerina
+> type ER error<map<readonly>>;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^ source.ballerina entity.name.type.ballerina
+//       ^ source.ballerina
+//        ^^^^^ source.ballerina storage.type.ballerina
+//             ^ source.ballerina keyword.operator.ballerina
+//              ^^^ source.ballerina storage.type.ballerina
+//                 ^ source.ballerina keyword.operator.ballerina
+//                  ^^^^^^^^ source.ballerina storage.type.ballerina
+//                          ^ source.ballerina keyword.operator.ballerina
+//                           ^ source.ballerina keyword.operator.ballerina
+//                            ^ source.ballerina punctuation.terminator.statement.ballerina
+> type LR readonly[];
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^ source.ballerina entity.name.type.ballerina
+//       ^ source.ballerina
+//        ^^^^^^^^ source.ballerina storage.type.ballerina
+//                ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                 ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                  ^ source.ballerina punctuation.terminator.statement.ballerina
+> type MR map<readonly>;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^ source.ballerina entity.name.type.ballerina
+//       ^ source.ballerina
+//        ^^^ source.ballerina storage.type.ballerina
+//           ^ source.ballerina keyword.operator.ballerina
+//            ^^^^^^^^ source.ballerina storage.type.ballerina
+//                    ^ source.ballerina keyword.operator.ballerina
+//                     ^ source.ballerina punctuation.terminator.statement.ballerina
+> // These two should be equivalent
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> type MR1 readonly & map<any|error>;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^ source.ballerina entity.name.type.ballerina
+//        ^ source.ballerina
+//         ^^^^^^^^ source.ballerina storage.type.ballerina
+//                 ^ source.ballerina
+//                  ^ source.ballerina keyword.operator.ballerina
+//                   ^ source.ballerina
+//                    ^^^ source.ballerina storage.type.ballerina
+//                       ^ source.ballerina keyword.operator.ballerina
+//                        ^^^ source.ballerina storage.type.ballerina
+//                           ^ source.ballerina keyword.operator.ballerina
+//                            ^^^^^ source.ballerina storage.type.ballerina
+//                                 ^ source.ballerina keyword.operator.ballerina
+//                                  ^ source.ballerina punctuation.terminator.statement.ballerina
+> type MR2 readonly & map<readonly>;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^ source.ballerina entity.name.type.ballerina
+//        ^ source.ballerina
+//         ^^^^^^^^ source.ballerina storage.type.ballerina
+//                 ^ source.ballerina
+//                  ^ source.ballerina keyword.operator.ballerina
+//                   ^ source.ballerina
+//                    ^^^ source.ballerina storage.type.ballerina
+//                       ^ source.ballerina keyword.operator.ballerina
+//                        ^^^^^^^^ source.ballerina storage.type.ballerina
+//                                ^ source.ballerina keyword.operator.ballerina
+//                                 ^ source.ballerina punctuation.terminator.statement.ballerina
+> // As should these
+//^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> type LR1 readonly & (any|error)[];
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^ source.ballerina entity.name.type.ballerina
+//        ^ source.ballerina
+//         ^^^^^^^^ source.ballerina storage.type.ballerina
+//                 ^ source.ballerina
+//                  ^ source.ballerina keyword.operator.ballerina
+//                   ^ source.ballerina
+//                    ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                     ^^^ source.ballerina meta.parameters.ballerina storage.type.ballerina
+//                        ^ source.ballerina meta.parameters.ballerina keyword.operator.ballerina
+//                         ^^^^^ source.ballerina meta.parameters.ballerina storage.type.ballerina
+//                              ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                               ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                                ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                                 ^ source.ballerina punctuation.terminator.statement.ballerina
+> type LR2 readonly & readonly[];
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^ source.ballerina entity.name.type.ballerina
+//        ^ source.ballerina
+//         ^^^^^^^^ source.ballerina storage.type.ballerina
+//                 ^ source.ballerina
+//                  ^ source.ballerina keyword.operator.ballerina
+//                   ^ source.ballerina
+//                    ^^^^^^^^ source.ballerina storage.type.ballerina
+//                            ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                             ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                              ^ source.ballerina punctuation.terminator.statement.ballerina
+> // As should these
+//^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> type IR int & readonly;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^ source.ballerina entity.name.type.ballerina
+//       ^ source.ballerina
+//        ^^^ source.ballerina support.type.primitive.ballerina
+//           ^ source.ballerina
+//            ^ source.ballerina keyword.operator.ballerina
+//             ^ source.ballerina
+//              ^^^^^^^^ source.ballerina storage.type.ballerina
+//                      ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Int int;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^ source.ballerina entity.name.type.ballerina
+//        ^ source.ballerina
+//         ^^^ source.ballerina support.type.primitive.ballerina
+//            ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> 

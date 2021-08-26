@@ -1,0 +1,108 @@
+// SYNTAX TEST "source.ballerina" "semtype/tests/data/readonly1.bal highlighting testcase"
+
+> // Boolean<:RO
+//^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Decimal<:RO
+//^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Error<:RO
+//^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Float<:RO
+//^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Handle<:RO
+//^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // Int<:RO
+//^^^^^^^^^^ source.ballerina comment.ballerina
+> // Nil<:RO
+//^^^^^^^^^^ source.ballerina comment.ballerina
+> // String<:RO
+//^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> type RO readonly;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^ source.ballerina entity.name.type.ballerina
+//       ^ source.ballerina
+//        ^^^^^^^^ source.ballerina storage.type.ballerina
+//                ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Nil ();
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^ source.ballerina entity.name.type.ballerina
+//        ^ source.ballerina
+//         ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//          ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//           ^ source.ballerina punctuation.terminator.statement.ballerina
+> type String string;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^^^ source.ballerina entity.name.type.ballerina
+//           ^ source.ballerina
+//            ^^^^^^ source.ballerina support.type.primitive.ballerina
+//                  ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Boolean boolean;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^^^^ source.ballerina entity.name.type.ballerina
+//            ^ source.ballerina
+//             ^^^^^^^ source.ballerina support.type.primitive.ballerina
+//                    ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Int int;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^ source.ballerina entity.name.type.ballerina
+//        ^ source.ballerina
+//         ^^^ source.ballerina support.type.primitive.ballerina
+//            ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Float float;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^^ source.ballerina entity.name.type.ballerina
+//          ^ source.ballerina
+//           ^^^^^ source.ballerina support.type.primitive.ballerina
+//                ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Decimal decimal;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^^^^ source.ballerina entity.name.type.ballerina
+//            ^ source.ballerina
+//             ^^^^^^^ source.ballerina support.type.primitive.ballerina
+//                    ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Error error;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^^ source.ballerina entity.name.type.ballerina
+//          ^ source.ballerina
+//           ^^^^^ source.ballerina storage.type.ballerina
+//                ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Handle handle;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^^^ source.ballerina entity.name.type.ballerina
+//           ^ source.ballerina
+//            ^^^^^^ source.ballerina storage.type.ballerina
+//                  ^ source.ballerina punctuation.terminator.statement.ballerina
+> type List (any|error)[];
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^ source.ballerina entity.name.type.ballerina
+//         ^ source.ballerina
+//          ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//           ^^^ source.ballerina meta.parameters.ballerina storage.type.ballerina
+//              ^ source.ballerina meta.parameters.ballerina keyword.operator.ballerina
+//               ^^^^^ source.ballerina meta.parameters.ballerina storage.type.ballerina
+//                    ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                     ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                      ^ source.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                       ^ source.ballerina punctuation.terminator.statement.ballerina
+> type Mapping map<any|error>;
+//^^^^ source.ballerina keyword.other.ballerina
+//    ^ source.ballerina
+//     ^^^^^^^ source.ballerina entity.name.type.ballerina
+//            ^ source.ballerina
+//             ^^^ source.ballerina storage.type.ballerina
+//                ^ source.ballerina keyword.operator.ballerina
+//                 ^^^ source.ballerina storage.type.ballerina
+//                    ^ source.ballerina keyword.operator.ballerina
+//                     ^^^^^ source.ballerina storage.type.ballerina
+//                          ^ source.ballerina keyword.operator.ballerina
+//                           ^ source.ballerina punctuation.terminator.statement.ballerina
+> 

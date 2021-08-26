@@ -1,0 +1,437 @@
+// SYNTAX TEST "source.ballerina" "semtype/modules/core/error.bal highlighting testcase"
+
+> // Implementation specific to basic type error.
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> import semtype.bdd;
+//^^^^^^ source.ballerina meta.import.ballerina keyword.control.import.ballerina
+//      ^ source.ballerina meta.import.ballerina
+//       ^^^^^^^ source.ballerina meta.import.ballerina variable.other.readwrite.ballerina meta.import.module.ballerina
+//              ^ source.ballerina meta.import.ballerina
+//               ^^^ source.ballerina meta.import.ballerina variable.other.readwrite.alias.ballerina
+//                  ^ source.ballerina meta.import.ballerina punctuation.terminator.statement.ballerina
+> 
+> public function errorDetail(SemType detail) returns SemType {
+//^^^^^^ source.ballerina meta.function.ballerina keyword.other.ballerina
+//      ^ source.ballerina meta.function.ballerina
+//       ^^^^^^^^ source.ballerina meta.function.ballerina keyword.other.ballerina
+//               ^ source.ballerina meta.function.ballerina
+//                ^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+//                           ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                            ^^^^^^^ source.ballerina meta.function.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                                   ^ source.ballerina meta.function.ballerina meta.parameters.ballerina
+//                                    ^^^^^^ source.ballerina meta.function.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                                          ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                                           ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina
+//                                            ^^^^^^^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina keyword.other.ballerina
+//                                                   ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina
+//                                                    ^^^^^^^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina variable.other.readwrite.ballerina
+//                                                           ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina
+//                                                            ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+>     SubtypeData sd = subtypeData(detail, UT_MAPPING_RO);
+//^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
+//    ^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//               ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//                ^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//                  ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//                   ^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.operator.ballerina
+//                    ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//                     ^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina entity.name.function.ballerina
+//                                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                                 ^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
+//                                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina punctuation.separator.parameter.ballerina
+//                                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina
+//                                         ^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
+//                                                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                                                       ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+>     if sd is boolean {
+//^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
+//    ^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.control.conditional.ballerina
+//      ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//       ^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//         ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//          ^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.other.ballerina
+//            ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//             ^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina support.type.primitive.ballerina
+//                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                     ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+>         if sd {
+//^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
+//        ^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.control.conditional.ballerina
+//          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
+//           ^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//             ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//              ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+>             return ERROR;
+//^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
+//            ^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina keyword.control.flow.ballerina
+//                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
+//                   ^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+>          }
+//^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
+//         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
+>         else {
+//^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
+//        ^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.control.conditional.ballerina
+//            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
+//             ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+>             // XXX This should be reported as an error
+//^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
+//            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina comment.ballerina
+>             return NEVER;
+//^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
+//            ^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina keyword.control.flow.ballerina
+//                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
+//                   ^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+>         }
+//^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
+//        ^ source.ballerina meta.function.ballerina meta.block.ballerina
+>     }
+//^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
+//    ^ source.ballerina meta.function.ballerina
+>     else {
+//^^^^ source.ballerina
+//    ^^^^ source.ballerina keyword.control.conditional.ballerina
+//        ^ source.ballerina
+//         ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+>         return uniformSubtype(UT_ERROR, sd);
+//^^^^^^^^ source.ballerina meta.block.ballerina
+//        ^^^^^^ source.ballerina meta.block.ballerina keyword.control.flow.ballerina
+//              ^ source.ballerina meta.block.ballerina
+//               ^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina entity.name.function.ballerina
+//                             ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                              ^^^^^^^^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
+//                                      ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina punctuation.separator.parameter.ballerina
+//                                       ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina
+//                                        ^^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
+//                                          ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                                           ^ source.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+>     }
+//^^^^ source.ballerina meta.block.ballerina
+//    ^^ source.ballerina
+> }
+//^^ source.ballerina
+> 
+> // distinctId must be > = 0
+//^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> public function errorDistinct(int distinctId) returns SemType {
+//^^^^^^ source.ballerina meta.function.ballerina keyword.other.ballerina
+//      ^ source.ballerina meta.function.ballerina
+//       ^^^^^^^^ source.ballerina meta.function.ballerina keyword.other.ballerina
+//               ^ source.ballerina meta.function.ballerina
+//                ^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+//                             ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                              ^^^ source.ballerina meta.function.ballerina meta.parameters.ballerina support.type.primitive.ballerina
+//                                 ^ source.ballerina meta.function.ballerina meta.parameters.ballerina
+//                                  ^^^^^^^^^^ source.ballerina meta.function.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                                            ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                                             ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina
+//                                              ^^^^^^^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina keyword.other.ballerina
+//                                                     ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina
+//                                                      ^^^^^^^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina variable.other.readwrite.ballerina
+//                                                             ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina
+//                                                              ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+>     bdd:Node bdd = bdd:atom(-distinctId - 1);
+//^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
+//    ^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+//        ^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina
+//             ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina
+//                 ^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.operator.ballerina
+//                  ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//                   ^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+//                       ^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina entity.name.function.ballerina
+//                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
+//                             ^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
+//                                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina meta.brace.round.block.ballerina
+//                                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
+//                                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina meta.brace.round.block.ballerina
+//                                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina meta.brace.round.block.ballerina constant.numeric.decimal.ballerina
+//                                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                                            ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+>     return uniformSubtype(UT_ERROR, bdd);
+//^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
+//    ^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.control.flow.ballerina
+//          ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//           ^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina entity.name.function.ballerina
+//                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                          ^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
+//                                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina punctuation.separator.parameter.ballerina
+//                                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina
+//                                    ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
+//                                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                                        ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+> }
+//^ source.ballerina meta.function.ballerina
+> 
+> // Similar to mappingSubtypeRoIsEmpty,
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> // except that we use bddEveryPositive to ignore the distinct ids
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina comment.ballerina
+> function errorSubtypeIsEmpty(TypeCheckContext tc, SubtypeData t) returns boolean {
+//^^^^^^^^ source.ballerina meta.function.ballerina keyword.other.ballerina
+//        ^ source.ballerina meta.function.ballerina
+//         ^^^^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+//                            ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+//                             ^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                                             ^ source.ballerina meta.function.ballerina meta.parameters.ballerina
+//                                              ^^ source.ballerina meta.function.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                                                ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.separator.parameter.ballerina
+//                                                 ^ source.ballerina meta.function.ballerina meta.parameters.ballerina
+//                                                  ^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                                                             ^ source.ballerina meta.function.ballerina meta.parameters.ballerina
+//                                                              ^ source.ballerina meta.function.ballerina meta.parameters.ballerina variable.parameter.ballerina
+//                                                               ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+//                                                                ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina
+//                                                                 ^^^^^^^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina keyword.other.ballerina
+//                                                                        ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina
+//                                                                         ^^^^^^^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina support.type.primitive.ballerina
+//                                                                                ^ source.ballerina meta.function.ballerina meta.type.function.return.ballerina
+//                                                                                 ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+>     bdd:Bdd b = bddFixReadOnly(<bdd:Bdd>t);
+//^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
+//    ^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+//        ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina
+//            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//             ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.type.annotation.ballerina
+//              ^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.operator.ballerina
+//               ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//                ^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina entity.name.function.ballerina
+//                              ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                               ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
+//                                ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
+//                                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+//                                    ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
+//                                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
+//                                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                                          ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+>     BddMemo? mm = tc.mappingMemo[b];
+//^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
+//    ^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//           ^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.operator.ternary.ballerina
+//            ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//             ^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//               ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//                ^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.operator.ballerina
+//                 ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//                  ^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//                    ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.accessor.ballerina
+//                     ^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.property.ballerina
+//                                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
+//                                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
+//                                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
+//                                   ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+>     BddMemo m;
+//^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
+//    ^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//           ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//            ^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//             ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+>     if mm is () {
+//^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
+//    ^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.control.conditional.ballerina
+//      ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//       ^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//         ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//          ^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.other.ballerina
+//            ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//             ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//              ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//               ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+>         m = { bdd: b };
+//^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
+//        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
+//          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
+//           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
+//            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+//             ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
+//              ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+//                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.type.annotation.ballerina
+//                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.type.annotation.ballerina
+//                     ^ source.ballerina meta.function.ballerina meta.block.ballerina
+//                      ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+>         tc.mappingMemo.add(m);
+//^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
+//        ^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//          ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.accessor.ballerina
+//           ^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.property.ballerina
+//                      ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.accessor.ballerina
+//                       ^^^ source.ballerina meta.function.ballerina meta.block.ballerina entity.name.function.ballerina
+//                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
+//                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                             ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+>     }
+//^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
+//    ^ source.ballerina meta.function.ballerina
+>     else {
+//^^^^ source.ballerina
+//    ^^^^ source.ballerina keyword.control.conditional.ballerina
+//        ^ source.ballerina
+//         ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+>         m = mm;
+//^^^^^^^^ source.ballerina meta.block.ballerina
+//        ^ source.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//         ^ source.ballerina meta.block.ballerina
+//          ^ source.ballerina meta.block.ballerina keyword.operator.ballerina
+//           ^ source.ballerina meta.block.ballerina
+//            ^^ source.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//              ^ source.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+>         boolean? res = m.isEmpty;
+//^^^^^^^^ source.ballerina meta.block.ballerina
+//        ^^^^^^^ source.ballerina meta.block.ballerina meta.var.expr.ballerina support.type.primitive.ballerina
+//               ^^ source.ballerina meta.block.ballerina meta.var.expr.ballerina
+//                 ^^^ source.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina meta.definition.variable.ballerina variable.other.readwrite.ballerina
+//                    ^ source.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
+//                     ^ source.ballerina meta.block.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//                      ^ source.ballerina meta.block.ballerina meta.var.expr.ballerina
+//                       ^ source.ballerina meta.block.ballerina meta.var.expr.ballerina variable.other.readwrite.ballerina
+//                        ^ source.ballerina meta.block.ballerina meta.var.expr.ballerina punctuation.accessor.ballerina
+//                         ^^^^^^^ source.ballerina meta.block.ballerina meta.var.expr.ballerina variable.other.property.ballerina
+//                                ^ source.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+>         if res is () {
+//^^^^^^^^ source.ballerina meta.block.ballerina
+//        ^^ source.ballerina meta.block.ballerina keyword.control.conditional.ballerina
+//          ^ source.ballerina meta.block.ballerina
+//           ^^^ source.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//              ^ source.ballerina meta.block.ballerina
+//               ^^ source.ballerina meta.block.ballerina keyword.other.ballerina
+//                 ^ source.ballerina meta.block.ballerina
+//                  ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                   ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                    ^ source.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                     ^ source.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+>             return true;
+//^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina
+//            ^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina keyword.control.flow.ballerina
+//                  ^ source.ballerina meta.block.ballerina meta.block.ballerina
+//                   ^^^^ source.ballerina meta.block.ballerina meta.block.ballerina keyword.other.ballerina
+//                       ^ source.ballerina meta.block.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+>         }
+//^^^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina
+//        ^ source.ballerina meta.block.ballerina
+>         else {
+//^^^^^^^^ source.ballerina meta.block.ballerina
+//        ^^^^ source.ballerina meta.block.ballerina keyword.control.conditional.ballerina
+//            ^ source.ballerina meta.block.ballerina
+//             ^ source.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+>             return res;
+//^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina
+//            ^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina keyword.control.flow.ballerina
+//                  ^ source.ballerina meta.block.ballerina meta.block.ballerina
+//                   ^^^ source.ballerina meta.block.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//                      ^ source.ballerina meta.block.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+>         }
+//^^^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina
+//        ^^ source.ballerina
+>     }
+//^^^^^^ source.ballerina
+>     boolean isEmpty = bddEveryPositive(tc, b, (), (), mappingFormulaIsEmpty);
+//^^^^ source.ballerina
+//    ^^^^^^^ source.ballerina meta.var.expr.ballerina support.type.primitive.ballerina
+//           ^ source.ballerina meta.var.expr.ballerina
+//            ^^^^^^^ source.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina meta.definition.variable.ballerina variable.other.readwrite.ballerina
+//                   ^ source.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
+//                    ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//                     ^ source.ballerina meta.var.expr.ballerina
+//                      ^^^^^^^^^^^^^^^^ source.ballerina meta.var.expr.ballerina entity.name.function.ballerina
+//                                      ^ source.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                                       ^^ source.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
+//                                         ^ source.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina punctuation.separator.parameter.ballerina
+//                                          ^ source.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina
+//                                           ^ source.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
+//                                            ^ source.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina punctuation.separator.parameter.ballerina
+//                                             ^ source.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina
+//                                              ^ source.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                                               ^ source.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                                                ^ source.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina punctuation.separator.parameter.ballerina
+//                                                 ^ source.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina
+//                                                  ^ source.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                                                   ^ source.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                                                    ^ source.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina punctuation.separator.parameter.ballerina
+//                                                     ^ source.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina
+//                                                      ^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
+//                                                                           ^ source.ballerina meta.var.expr.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
+//                                                                            ^ source.ballerina punctuation.terminator.statement.ballerina
+>     m.isEmpty = isEmpty;
+//^^^^ source.ballerina
+//    ^ source.ballerina variable.other.readwrite.ballerina
+//     ^ source.ballerina punctuation.accessor.ballerina
+//      ^^^^^^^ source.ballerina variable.other.property.ballerina
+//             ^ source.ballerina
+//              ^ source.ballerina keyword.operator.ballerina
+//               ^ source.ballerina
+//                ^^^^^^^ source.ballerina variable.other.readwrite.ballerina
+//                       ^ source.ballerina punctuation.terminator.statement.ballerina
+>     return isEmpty;    
+//^^^^ source.ballerina
+//    ^^^^^^ source.ballerina keyword.control.flow.ballerina
+//          ^ source.ballerina
+//           ^^^^^^^ source.ballerina variable.other.readwrite.ballerina
+//                  ^ source.ballerina punctuation.terminator.statement.ballerina
+//                   ^^^^^ source.ballerina
+> }
+//^^ source.ballerina
+> 
+> final UniformTypeOps errorOps = {
+//^^^^^ source.ballerina keyword.other.ballerina
+//     ^ source.ballerina
+//      ^^^^^^^^^^^^^^ source.ballerina variable.other.readwrite.ballerina
+//                    ^ source.ballerina
+//                     ^^^^^^^^ source.ballerina variable.other.readwrite.ballerina
+//                             ^ source.ballerina
+//                              ^ source.ballerina keyword.operator.ballerina
+//                               ^ source.ballerina
+//                                ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+>     union: bddSubtypeUnion,
+//^^^^ source.ballerina meta.block.ballerina
+//    ^^^^^ source.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//         ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+//          ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
+//           ^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                          ^ source.ballerina meta.block.ballerina punctuation.separator.comma.ballerina
+>     intersect: bddSubtypeIntersect,
+//^^^^ source.ballerina meta.block.ballerina
+//    ^^^^^^^^^ source.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//             ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+//              ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
+//               ^^^^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                                  ^ source.ballerina meta.block.ballerina punctuation.separator.comma.ballerina
+>     diff: bddSubtypeDiff,
+//^^^^ source.ballerina meta.block.ballerina
+//    ^^^^ source.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//        ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+//         ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
+//          ^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                        ^ source.ballerina meta.block.ballerina punctuation.separator.comma.ballerina
+>     complement: bddSubtypeComplement,
+//^^^^ source.ballerina meta.block.ballerina
+//    ^^^^^^^^^^ source.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//              ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+//               ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
+//                ^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+//                                    ^ source.ballerina meta.block.ballerina punctuation.separator.comma.ballerina
+>     isEmpty: errorSubtypeIsEmpty
+//^^^^ source.ballerina meta.block.ballerina
+//    ^^^^^^^ source.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+//           ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+//            ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
+//             ^^^^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+> };
+//^ source.ballerina
+// ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> 
+> 
