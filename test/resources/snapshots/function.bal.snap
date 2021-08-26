@@ -1248,342 +1248,342 @@
 //             ^ source.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
 //              ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
 //               ^ source.ballerina meta.var.expr.ballerina
-//                ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina support.type.primitive.ballerina
-//                   ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                      ^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                ^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina support.type.primitive.ballerina
+//                   ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                      ^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                        <book>
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                        ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                        ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                            <name>Sherlock Holmes</name>
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                            ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                                                  ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                                                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                            ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                                                  ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                                                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                            <author>Sir Arthur Conan Doyle</author>
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                            ^^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                         ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                                                           ^^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                                                                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                            ^^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                         ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                                                           ^^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                                                                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                        </book>
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                       ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                         ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                       ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                         ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                        <book>
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                        ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                        ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                            <name>Harry Potter</name>
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                            ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                             ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                                               ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                                                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                            ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                             ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                                               ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                                                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                            <author>J.K. Rowling</author>
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                            ^^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                               ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                                                 ^^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                                                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                            ^^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                               ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                                                 ^^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                                                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                        </book>
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                       ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                         ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                       ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                         ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                      </books>`;
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                     ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                       ^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                     ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                       ^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
 //                              ^ source.ballerina punctuation.terminator.statement.ballerina
 >     // Iterating an XML will return an individual element in each iteration.
 //^^^^ source.ballerina
@@ -6530,7 +6530,7 @@
 //                                       ^^^^^^^^^ source.ballerina meta.block.ballerina entity.name.function.ballerina
 //                                                ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                                 ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
-//                                                  ^^^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
+//                                                  ^^^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina storage.type.ballerina
 //                                                     ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
 //                                                      ^^^^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina support.type.primitive.ballerina
 //                                                          ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina keyword.operator.ballerina
@@ -7892,133 +7892,133 @@
 //      ^ source.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
 //       ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
 //        ^ source.ballerina meta.var.expr.ballerina
-//         ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina support.type.primitive.ballerina
-//            ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//               ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//         ^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina support.type.primitive.ballerina
+//            ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//               ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                 <name>Sherlock Holmes</name>
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                 ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                     ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                                       ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                 ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                     ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                                       ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                 <author>Sir Arthur Conan Doyle</author>
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                 ^^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                              ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                                                ^^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                                                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                 ^^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                              ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                                                ^^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                                                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                 <!--Price: $10-->
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina comment.block.xml.ballerina comment.block.xml.ballerina
-//                    ^^^^^^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina comment.block.xml.ballerina
-//                              ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina comment.block.xml.ballerina comment.block.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina comment.block.xml.ballerina comment.block.xml.ballerina
+//                    ^^^^^^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina comment.block.xml.ballerina
+//                              ^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina comment.block.xml.ballerina comment.block.xml.ballerina
 >               </book>`;
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
 //                      ^ source.ballerina punctuation.terminator.statement.ballerina
 > xml x4 = xml `<?target data?>`;
 //^^^ source.ballerina meta.var.expr.ballerina support.type.primitive.ballerina
@@ -8027,14 +8027,14 @@
 //      ^ source.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
 //       ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
 //        ^ source.ballerina meta.var.expr.ballerina
-//         ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina support.type.primitive.ballerina
-//            ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//              ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                ^^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//                       ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.other.attribute-name.xml.ballerina
-//                           ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
+//         ^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina support.type.primitive.ballerina
+//            ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//              ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                ^^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                       ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.other.attribute-name.xml.ballerina
+//                           ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
 //                              ^ source.ballerina punctuation.terminator.statement.ballerina
 > xml x6 = xml `<book>The Lost World -2</book>` + 
 //^^^ source.ballerina meta.var.expr.ballerina support.type.primitive.ballerina
@@ -8043,32 +8043,33 @@
 //      ^ source.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
 //       ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
 //        ^ source.ballerina meta.var.expr.ballerina
-//         ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina support.type.primitive.ballerina
-//            ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//               ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                     ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                                       ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
+//         ^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina support.type.primitive.ballerina
+//            ^ source.ballerina meta.var.expr.ballerina
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.string.template.begin.ballerina
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//               ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                     ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                                       ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.string.template.end.ballerina
 //                                             ^ source.ballerina meta.var.expr.ballerina
 //                                              ^ source.ballerina meta.var.expr.ballerina keyword.operator.ballerina
 //                                               ^ source.ballerina meta.var.expr.ballerina
@@ -8107,295 +8108,296 @@
 //           ^ source.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
 //            ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
 //             ^ source.ballerina meta.var.expr.ballerina
-//              ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina support.type.primitive.ballerina
-//                 ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                    ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//              ^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina support.type.primitive.ballerina
+//                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.string.template.begin.ballerina
+//                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                    ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                 <name>Sherlock Holmes</name>
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                 ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                     ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                                       ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                 ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                     ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                                       ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                 <author>
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                 ^^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                 ^^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                     <fname title="Sir">Arthur</fname>
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                     ^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//                           ^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.other.attribute-name.xml.ballerina
-//                                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//                                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string.begin.ballerina
-//                                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string.end.ballerina
-//                                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                             ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                                               ^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                                                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                     ^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                           ^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.other.attribute-name.xml.ballerina
+//                                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string.begin.ballerina
+//                                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string.end.ballerina
+//                                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                             ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                                               ^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                                                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                     <mname>Conan</mname>
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                     ^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                                  ^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                     ^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                                  ^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                     <lname>Doyle</lname>
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                     ^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                                  ^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                     ^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                                  ^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                 </author>
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                  ^^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                  ^^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                 <bar:year xmlns:bar="http://ballerina.com/a">2019</bar:year>
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                 ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//                     ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.other.attribute-name.xml.ballerina
-//                         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//                          ^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina keyword.other.ballerina
-//                               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//                                ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.other.attribute-name.xml.ballerina
-//                                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//                                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string.begin.ballerina
-//                                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                 ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string.end.ballerina
-//                                                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                                                             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                                ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                                 ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                                                                   ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                                                                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//                                                                       ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.other.attribute-name.xml.ballerina
-//                                                                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                 ^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                     ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.other.attribute-name.xml.ballerina
+//                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                          ^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina keyword.other.ballerina
+//                               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                                ^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.other.attribute-name.xml.ballerina
+//                                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string.begin.ballerina
+//                                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                 ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string.end.ballerina
+//                                                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                                                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                                ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                                 ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                                                                   ^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                                                                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                                                                       ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.other.attribute-name.xml.ballerina
+//                                                                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
 >                 <!--Price: $10-->
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina comment.block.xml.ballerina comment.block.xml.ballerina
-//                    ^^^^^^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina comment.block.xml.ballerina
-//                              ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina comment.block.xml.ballerina comment.block.xml.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina comment.block.xml.ballerina comment.block.xml.ballerina
+//                    ^^^^^^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina comment.block.xml.ballerina
+//                              ^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina comment.block.xml.ballerina comment.block.xml.ballerina
 >                 </book>`;
-//^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-// ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//  ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                  ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
+//^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+// ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//  ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                  ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.string.template.end.ballerina
 //                        ^ source.ballerina punctuation.terminator.statement.ballerina
 >  xmlns "http://ballerina.com/a" as bar;
 //^ source.ballerina
@@ -8427,36 +8429,37 @@
 //                 ^^^^^^^ source.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
 //                        ^ source.ballerina meta.var.expr.ballerina keyword.operator.ballerina
 //                         ^ source.ballerina meta.var.expr.ballerina
-//                          ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina support.type.primitive.ballerina
-//                             ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//                               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                                ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//                                    ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.other.attribute-name.xml.ballerina
-//                                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//                                         ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.other.attribute-name.xml.ballerina
-//                                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//                                             ^^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.other.attribute-name.xml.ballerina
-//                                                   ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//                                                    ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string.begin.ballerina
-//                                                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                         ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                          ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                            ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                              ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string.end.ballerina
-//                                                               ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//                                                                ^^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.other.attribute-name.xml.ballerina
-//                                                                     ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//                                                                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string.begin.ballerina
-//                                                                       ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string
-//                                                                        ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina string.end.ballerina
-//                                                                         ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                                                                           ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
+//                          ^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina support.type.primitive.ballerina
+//                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.string.template.begin.ballerina
+//                               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                                ^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                                    ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.other.attribute-name.xml.ballerina
+//                                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                                         ^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.other.attribute-name.xml.ballerina
+//                                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                                             ^^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.other.attribute-name.xml.ballerina
+//                                                   ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                                                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string.begin.ballerina
+//                                                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                            ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                              ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string.end.ballerina
+//                                                               ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                                                                ^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.other.attribute-name.xml.ballerina
+//                                                                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                                                                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string.begin.ballerina
+//                                                                       ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string
+//                                                                        ^ source.ballerina meta.var.expr.ballerina string.template.ballerina string.end.ballerina
+//                                                                         ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                                                                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.string.template.end.ballerina
 //                                                                            ^ source.ballerina punctuation.terminator.statement.ballerina
 > xml:Element book = <xml:Element> xml `<book/>`;
 //^^^ source.ballerina meta.var.expr.ballerina support.type.primitive.ballerina
@@ -8473,11 +8476,12 @@
 //                        ^^^^^^^ source.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
 //                               ^ source.ballerina meta.var.expr.ballerina keyword.operator.ballerina
 //                                ^ source.ballerina meta.var.expr.ballerina
-//                                 ^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina support.type.primitive.ballerina
-//                                    ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
-//                                      ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.begin.xml.ballerina
-//                                       ^^^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina entity.name.tag.xml.ballerina
-//                                           ^^ source.ballerina meta.var.expr.ballerina xml.template.ballerina punctuation.definition.tag.end.xml.ballerina
-//                                             ^ source.ballerina meta.var.expr.ballerina xml.template.ballerina
+//                                 ^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina support.type.primitive.ballerina
+//                                    ^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                                     ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.string.template.begin.ballerina
+//                                      ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.begin.xml.ballerina
+//                                       ^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina entity.name.tag.xml.ballerina
+//                                           ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.tag.end.xml.ballerina
+//                                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.string.template.end.ballerina
 //                                              ^ source.ballerina punctuation.terminator.statement.ballerina
 >

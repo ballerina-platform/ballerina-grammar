@@ -25,7 +25,7 @@ variables:
   otherKeywords: '\b(is|new|isolated|null|function|in)\b'
   controlKeywords: '\b(check|foreach|if|checkpanic)\b'
   booleanTypes: '\b(true|false)\b'
-  definedTypes: '\b(readonly|error)\b'
+  definedTypes: '\b(readonly|error|map)\b'
   constExprStart: '\b(const(?!\s+enum\b))'
   lookBehindString: '^string|{{nonPropertyLookBehind}}string'
   lookBehindInt: '^int|{{nonPropertyLookBehind}}int'
@@ -1467,10 +1467,13 @@ repository:
   xml:
     patterns:
     - begin: '(\bxml)(\s*)(`)'
-      name: xml.template.ballerina
+      name: string.template.ballerina
       beginCaptures:
         '1': { name: '{{primitiveScope}}' }
+        '3': { name: punctuation.definition.string.template.begin.ballerina }
       end: '`'
+      endCaptures:
+        '0': { name: punctuation.definition.string.template.end.ballerina }
       patterns:
       - include: '#xmlTag'
       - include: '#xmlComment'
