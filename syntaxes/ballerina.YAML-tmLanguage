@@ -655,12 +655,13 @@ repository:
     - include: '#type-primitive' 
     - include: '#self-literal' 
     - include: '#string' 
-    - match: '\s+(\b(self)|{{otherKeywords}}|{{primitiveTypes}}\b|({{identifier}}))'
+    - match: '\s+(\b(self)|{{otherKeywords}}|{{primitiveTypes}}\b|{{definedTypes}}|({{identifier}}))'
       captures:
         '2': { name: variable.language.this.ballerina }
         '3': { name: keyword.other.ballerina }
         '4': { name: '{{primitiveScope}}' }
-        '5': { name: meta.definition.function.ballerina entity.name.function.ballerina }
+        '5': { name: '{{typeScope}}' }
+        '6': { name: meta.definition.function.ballerina entity.name.function.ballerina }
 
   functionParameters:
     name: meta.parameters.ballerina
