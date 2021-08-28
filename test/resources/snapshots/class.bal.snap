@@ -416,7 +416,7 @@
 //               ^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina meta.block.ballerina keyword.operator.ballerina
 //                ^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina meta.block.ballerina
 //                 ^^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina meta.block.ballerina constant.numeric.decimal.ballerina
-//                   ^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                   ^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina meta.block.ballerina
 //                    ^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             return error(string `${name} is not a teenager!`);
 //^^^^^^^^^^^^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -1098,7 +1098,7 @@
 //                                                        ^ source.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                                                         ^ source.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
 //                                                          ^ source.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
-//                                                           ^ source.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                                           ^ source.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                                                            ^ source.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                 self.uniqueGreetings.push(greeting);
 //^^^^^^^^^^^^^^^^ source.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1167,7 +1167,7 @@
 //                     ^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.other.ballerina
 //                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                        ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina support.type.primitive.ballerina
-//                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                 _ = self.uniqueGreetings.remove(index);
 //^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina

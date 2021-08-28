@@ -1201,7 +1201,7 @@
           </dict>
         </dict>
         <key>end</key>
-        <string>(?=\} external;|\})</string>
+        <string>(?=\} external;)|(\})</string>
         <key>endCaptures</key>
         <dict>
           <key>0</key>
@@ -1586,7 +1586,7 @@
       <key>for-loop</key>
       <dict>
         <key>begin</key>
-        <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))foreach\s*(var)</string>
+        <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))foreach\s*</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -1608,7 +1608,11 @@
             <key>name</key>
             <string>keyword.other.ballerina</string>
             <key>match</key>
-            <string>in</string>
+            <string>\bin\b</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#identifiers</string>
           </dict>
           <dict>
             <key>include</key>
@@ -1716,7 +1720,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(?=\;)</string>
+            <string>(?=\;)|(?=\,)</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -1757,7 +1761,7 @@
           </dict>
         </dict>
         <key>end</key>
-        <string>(?&lt;=\;)|(?&lt;=\})</string>
+        <string>(?&lt;=\;)|(?&lt;=\})|(?&lt;=\,)</string>
         <key>patterns</key>
         <array>
           <dict>
@@ -2339,10 +2343,10 @@
                   </dict>
                 </dict>
                 <key>end</key>
-                <string>(\))|(\s(?=\S)(?=\s*{))</string>
+                <string>(\))|(?=\{)</string>
                 <key>endCaptures</key>
                 <dict>
-                  <key>0</key>
+                  <key>1</key>
                   <dict>
                     <key>name</key>
                     <string>meta.brace.round.ballerina</string>
@@ -2352,11 +2356,51 @@
                 <array>
                   <dict>
                     <key>include</key>
+                    <string>#decl-block</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#keywords</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#identifiers</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
                     <string>#type-primitive</string>
                   </dict>
                   <dict>
                     <key>include</key>
-                    <string>#expression</string>
+                    <string>#xml</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#string</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#stringTemplate</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#comment</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#ternary-expression</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#expression-operators</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#literal</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#paranthesised</string>
                   </dict>
                 </array>
               </dict>
@@ -2885,7 +2929,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(?=\})</string>
+            <string>(?&lt;=\})</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -3137,29 +3181,12 @@
           </dict>
         </dict>
         <key>end</key>
-        <string>(?=\})</string>
-        <key>endCaptures</key>
-        <dict>
-          <key>1</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.block.ballerina</string>
-          </dict>
-          <key>2</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.terminator.statement.ballerina</string>
-          </dict>
-        </dict>
+        <string>(?&lt;=\})</string>
         <key>patterns</key>
         <array>
           <dict>
             <key>include</key>
-            <string>#statements</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#decl-block</string>
+            <string>#recordBody</string>
           </dict>
         </array>
       </dict>
@@ -3168,53 +3195,8 @@
         <key>patterns</key>
         <array>
           <dict>
-            <key>begin</key>
-            <string>\{</string>
-            <key>end</key>
-            <string>(?=\})</string>
-            <key>beginCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.block.ballerina</string>
-              </dict>
-            </dict>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>punctuation.definition.block.ballerina</string>
-              </dict>
-            </dict>
-            <key>patterns</key>
-            <array>
-              <dict>
-                <key>include</key>
-                <string>#annotationAttachment</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#comment</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#objectMemberFunctionDec</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#variableDefInline</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#code</string>
-              </dict>
-              <dict>
-                <key>include</key>
-                <string>#variableDef</string>
-              </dict>
-            </array>
+            <key>include</key>
+            <string>#decl-block</string>
           </dict>
         </array>
       </dict>
@@ -3664,6 +3646,12 @@
                 <string>keyword.operator.type.annotation.ballerina</string>
               </dict>
               <dict>
+                <key>name</key>
+                <string>keyword.other.ballerina</string>
+                <key>match</key>
+                <string>\bin\b</string>
+              </dict>
+              <dict>
                 <key>include</key>
                 <string>#stringTemplate</string>
               </dict>
@@ -4056,14 +4044,6 @@
             </dict>
             <key>end</key>
             <string>(?:[_$[:alpha:]][_$[:alnum:]]*)|(?=\,)|(?=;)|\.\.\.</string>
-            <key>endCaptures</key>
-            <dict>
-              <key>0</key>
-              <dict>
-                <key>name</key>
-                <string>source.ballerina</string>
-              </dict>
-            </dict>
             <key>patterns</key>
             <array>
               <dict>
@@ -4100,12 +4080,6 @@
               <dict>
                 <key>include</key>
                 <string>#objectDec</string>
-              </dict>
-              <dict>
-                <key>match</key>
-                <string>[_$[:alpha:]][_$[:alnum:]]*</string>
-                <key>name</key>
-                <string>source.ballerina</string>
               </dict>
             </array>
           </dict>

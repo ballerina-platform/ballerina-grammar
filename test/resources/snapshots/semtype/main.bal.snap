@@ -135,7 +135,7 @@
 //       ^^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
 //           ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.accessor.ballerina
 //            ^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.property.ballerina
-//               ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//               ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >         return bmain(f);
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -233,7 +233,7 @@
 //^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
 //    ^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.control.loop.ballerina
 //           ^ source.ballerina meta.function.ballerina meta.block.ballerina
-//            ^^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.control.loop.ballerina support.type.primitive.ballerina
+//            ^^^ source.ballerina meta.function.ballerina meta.block.ballerina support.type.primitive.ballerina
 //               ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina
 //                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
 //                 ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
@@ -276,7 +276,7 @@
 //                               ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina
 //                                ^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
 //                                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                        ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             testsPassed += 1;
 //^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -805,7 +805,7 @@
 //                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
 //                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina variable.other.readwrite.ballerina
 //                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
-//                     ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                     ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >         io:println("  created ", bdd:getCount() - tem, " BDDs");
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina

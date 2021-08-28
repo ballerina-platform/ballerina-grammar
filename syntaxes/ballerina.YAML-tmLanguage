@@ -460,7 +460,7 @@ repository:
     begin: \{
     beginCaptures:
       '0': { name: punctuation.definition.block.ballerina }
-    end: (?=\} external;|\})
+    end: (?=\} external;)|(\})
     endCaptures:
       '0': { name: punctuation.definition.block.ballerina }
     patterns: 
@@ -581,14 +581,15 @@ repository:
       - include: '#code'
 
   for-loop:
-    begin: '{{startOfIdentifier}}foreach\s*(var)'
+    begin: '{{startOfIdentifier}}foreach\s*'
     beginCaptures:
       '0': { name: keyword.control.loop.ballerina }
       '1': { name: support.type.primitive.ballerina }
     end: (?=\{)
     patterns:
     - name: keyword.other.ballerina
-      match: in
+      match: \bin\b
+    - include: '#identifiers'
     - include: '#comment'
     - include: '#var-expr'
     - include: '#expression'
@@ -622,7 +623,7 @@ repository:
       name: meta.block.ballerina
       beginCaptures:
         '0': { name: meta.arrow.ballerina storage.type.function.arrow.ballerina }
-      end: (?=\;)
+      end: (?=\;)|(?=\,)
       patterns:
       - include: '#statements'
       - include: '#punctuation-comma'
@@ -635,7 +636,7 @@ repository:
     beginCaptures:
       '1': { name: keyword.other.ballerina } 
       '2': { name: keyword.other.ballerina }
-    end: (?<=\;)|(?<=\})
+    end: (?<=\;)|(?<=\})|(?<=\,)
     patterns:
     - match: \bexternal\b
       name: keyword.ballerina
@@ -808,12 +809,22 @@ repository:
         beginCaptures:
           '1': { name: keyword.control.conditional.ballerina }
           '2': { name: meta.brace.round.ballerina }
-        end: (\))|(\s(?=\S)(?=\s*{))
+        end: (\))|(?=\{)
         endCaptures:
-          '0': { name: meta.brace.round.ballerina }
+          '1': { name: meta.brace.round.ballerina }
         patterns:
+        - include: '#decl-block'
+        - include: '#keywords'
+        - include: '#identifiers'
         - include: '#type-primitive'
-        - include: '#expression' 
+        - include: '#xml'
+        - include: '#string'
+        - include: '#stringTemplate'
+        - include: '#comment'
+        - include: '#ternary-expression'
+        - include: '#expression-operators'
+        - include: '#literal'
+        - include: '#paranthesised'
       - begin: '(?<=\))'
         end: (?=\{) 
         patterns:  
@@ -980,7 +991,7 @@ repository:
     - begin: '\bobject\b(?!:)'
       beginCaptures:
         '0': { name:  keyword.other.ballerina }
-      end: '(?=\})'
+      end: '(?<=\})'
       patterns:
       - include: '#decl-block'
 
@@ -1059,29 +1070,13 @@ repository:
     begin: '\brecord\b'
     beginCaptures:
       '0': { name:  keyword.other.ballerina }
-    end: '(?=\})'
-    endCaptures:
-      '1': { name: punctuation.definition.block.ballerina }
-      '2': { name: punctuation.terminator.statement.ballerina }
+    end: (?<=\})
     patterns:
-    - include: '#statements'
-    - include: '#decl-block'
+    - include: '#recordBody'
 
   recordBody:
     patterns:
-    - begin: '\{'
-      end: '(?=\})'
-      beginCaptures:
-        '0': { name: punctuation.definition.block.ballerina }
-      endCaptures:
-        '0': { name: punctuation.definition.block.ballerina }
-      patterns:
-      - include: '#annotationAttachment'
-      - include: '#comment'
-      - include: '#objectMemberFunctionDec'
-      - include: '#variableDefInline'
-      - include: '#code'
-      - include: '#variableDef'
+    - include: '#decl-block'
 
   recordLiteral:
     patterns:
@@ -1225,6 +1220,8 @@ repository:
         end: (?=\S)
       - match: '\|'
         name: keyword.operator.type.annotation.ballerina
+      - name: keyword.other.ballerina
+        match: \bin\b  
       - include: '#stringTemplate'
       - include: '#numbers' 
       - include: '#multiType'
@@ -1340,8 +1337,6 @@ repository:
       beginCaptures:
         '0': { name: '{{typeScope}}' }
       end: '(?:{{identifier}})|(?=\,)|(?=;)|\.\.\.'
-      endCaptures:
-        '0': { name: source.ballerina }
       patterns:
       - include: '#tupleType'
       - include: '#constrainType'
@@ -1354,8 +1349,6 @@ repository:
       patterns:
       - include: '#record'
       - include: '#objectDec'
-      - match: '{{identifier}}'
-        name: source.ballerina
 
   workerDef:
     patterns:

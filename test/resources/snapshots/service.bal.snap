@@ -2404,7 +2404,7 @@
 //^^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina
 //        ^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina keyword.control.loop.ballerina
 //               ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina
-//                ^^^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina keyword.control.loop.ballerina support.type.primitive.ballerina
+//                ^^^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina support.type.primitive.ballerina
 //                   ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina
 //                    ^^^^^^^^^^^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
 //                               ^ source.ballerina meta.service.declaration.ballerina meta.block.ballerina meta.function.ballerina meta.block.ballerina
