@@ -955,7 +955,7 @@
 //                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                     ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                 return ();
 //^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -980,7 +980,7 @@
 //                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
 //                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina
 //                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
-//                             ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                             ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                              ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                 ch = self.getc();
 //^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1005,7 +1005,7 @@
 //                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
 //                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina
 //                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
-//                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
 //                             ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                     // Skip the comment and loop
 //^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1039,7 +1039,7 @@
 //                                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
 //                                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
 //                                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                             break;
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1060,7 +1060,7 @@
 //                                                     ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                                      ^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
 //                                                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                                                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
 //                                                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                             // handle line counting in startToken
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1106,7 +1106,7 @@
 //                                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                     self.ungetc(ch);
 //^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1147,7 +1147,7 @@
 //                          ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
 //                           ^ source.ballerina string.quoted.double.ballerina
 //                            ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
-//                             ^ source.ballerina meta.brace.round.ballerina
+//                             ^ source.ballerina
 //                              ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                 ch = self.getc();
 //^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina
@@ -1172,7 +1172,7 @@
 //                         ^ source.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
 //                          ^ source.ballerina meta.block.ballerina string.quoted.double.ballerina
 //                           ^ source.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
-//                            ^ source.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                            ^ source.ballerina meta.block.ballerina
 //                             ^ source.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                     return "{|";
 //^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina
@@ -1200,7 +1200,7 @@
 //                                ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                 ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                  ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                                   ^ source.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                   ^ source.ballerina meta.block.ballerina
 //                                    ^ source.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                     self.ungetc(ch);
 //^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina
@@ -1238,7 +1238,7 @@
 //                          ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
 //                           ^ source.ballerina string.quoted.double.ballerina
 //                            ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
-//                             ^ source.ballerina meta.brace.round.ballerina
+//                             ^ source.ballerina
 //                              ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                 ch = self.getc();
 //^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina
@@ -1263,7 +1263,7 @@
 //                         ^ source.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
 //                          ^ source.ballerina meta.block.ballerina string.quoted.double.ballerina
 //                           ^ source.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
-//                            ^ source.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                            ^ source.ballerina meta.block.ballerina
 //                             ^ source.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                     return "|}";
 //^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina
@@ -1291,7 +1291,7 @@
 //                                ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                 ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                  ^ source.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                                   ^ source.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                   ^ source.ballerina meta.block.ballerina
 //                                    ^ source.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                     self.ungetc(ch);
 //^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina
@@ -1329,7 +1329,7 @@
 //                          ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
 //                           ^ source.ballerina string.quoted.double.ballerina
 //                            ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
-//                             ^ source.ballerina meta.brace.round.ballerina
+//                             ^ source.ballerina
 //                              ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                 if self.getc() != "." || self.getc() != "." {
 //^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina
@@ -1363,7 +1363,7 @@
 //                                                        ^ source.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
 //                                                         ^ source.ballerina meta.block.ballerina string.quoted.double.ballerina
 //                                                          ^ source.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
-//                                                           ^ source.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                                           ^ source.ballerina meta.block.ballerina
 //                                                            ^ source.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                     break;
 //^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina
@@ -1394,7 +1394,7 @@
 //                       ^^ source.ballerina keyword.other.ballerina
 //                         ^ source.ballerina
 //                          ^^^^^^^^^^^^^^^ source.ballerina variable.other.readwrite.ballerina
-//                                         ^ source.ballerina meta.brace.round.ballerina
+//                                         ^ source.ballerina
 //                                          ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                 return ch;
 //^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina
@@ -1417,7 +1417,7 @@
 //                                  ^ source.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                   ^^ source.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
 //                                     ^ source.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                                      ^ source.ballerina meta.brace.round.ballerina
+//                                      ^ source.ballerina
 //                                       ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                 string ident = ch;
 //^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina
@@ -1458,7 +1458,7 @@
 //                            ^ source.ballerina meta.block.ballerina meta.block.ballerina
 //                             ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                              ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                               ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                               ^ source.ballerina meta.block.ballerina meta.block.ballerina
 //                                ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                         break;
 //^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1480,7 +1480,7 @@
 //                                           ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                            ^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
 //                                              ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                                               ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                               ^ source.ballerina meta.block.ballerina meta.block.ballerina
 //                                                ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                         self.ungetc(ch);
 //^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1526,7 +1526,7 @@
 //                         ^^ source.ballerina keyword.other.ballerina
 //                           ^ source.ballerina
 //                            ^^^^^^^ source.ballerina variable.other.readwrite.ballerina
-//                                   ^ source.ballerina meta.brace.round.ballerina
+//                                   ^ source.ballerina
 //                                    ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                     return ident;
 //^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina
@@ -1562,7 +1562,7 @@
 //                                  ^ source.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                   ^^ source.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
 //                                     ^ source.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                                      ^ source.ballerina meta.brace.round.ballerina
+//                                      ^ source.ballerina
 //                                       ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                 string digits = ch;
 //^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina
@@ -1603,7 +1603,7 @@
 //                            ^ source.ballerina meta.block.ballerina meta.block.ballerina
 //                             ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                              ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                               ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                               ^ source.ballerina meta.block.ballerina meta.block.ballerina
 //                                ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                         break;
 //^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1625,7 +1625,7 @@
 //                                           ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                            ^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
 //                                              ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                                               ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                               ^ source.ballerina meta.block.ballerina meta.block.ballerina
 //                                                ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                         self.ungetc(ch);
 //^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1688,7 +1688,7 @@
 //                          ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
 //                           ^^ source.ballerina string.quoted.double.ballerina constant.character.escape.ballerina
 //                             ^ source.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
-//                              ^ source.ballerina meta.brace.round.ballerina
+//                              ^ source.ballerina
 //                               ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                 string content = "";
 //^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina
@@ -1731,7 +1731,7 @@
 //                             ^ source.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
 //                              ^^ source.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina constant.character.escape.ballerina
 //                                ^ source.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
-//                                 ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                 ^ source.ballerina meta.block.ballerina meta.block.ballerina
 //                                  ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                         break;
 //^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1760,7 +1760,7 @@
 //                                                        ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                                         ^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina variable.parameter.ballerina
 //                                                           ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                                                            ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                                            ^ source.ballerina meta.block.ballerina meta.block.ballerina
 //                                                             ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                         return self.err("missing close quote");
 //^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1791,7 +1791,7 @@
 //                                  ^ source.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
 //                                   ^^ source.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina constant.character.escape.ballerina
 //                                     ^ source.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
-//                                      ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                      ^ source.ballerina meta.block.ballerina meta.block.ballerina
 //                                       ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                         ch = self.getc();
 //^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1815,7 +1815,7 @@
 //                                ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
 //                                 ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                  ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                                   ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                   ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
 //                                    ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                             return self.err("missing close quote");
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1859,7 +1859,7 @@
 //                                    ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
 //                                     ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                      ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                                       ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                       ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
 //                                        ^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                                 return self.err("bad character after backslash");
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -2075,7 +2075,7 @@
 //                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                     ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                 break;
 //^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -2100,7 +2100,7 @@
 //                                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
 //                                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
 //                                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                     // Line terminators are part of the line they terminate
 //^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -2156,7 +2156,7 @@
 //                                                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
 //                                                         ^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina constant.character.escape.ballerina
 //                                                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
-//                                                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
 //                                                             ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                         self.lineNumber += 1;
 //^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -2197,7 +2197,7 @@
 //                                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
 //                                        ^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina constant.character.escape.ballerina
 //                                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
-//                                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
 //                                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                     prevCharLineEnd = ch;
 //^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -2234,7 +2234,7 @@
 //                                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
 //                                            ^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina constant.character.escape.ballerina
 //                                              ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
-//                                               ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                               ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
 //                                                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                     prevCharLineEnd = ();
 //^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -2398,7 +2398,7 @@
 //                ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                   ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             return self.nextc();
 //^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -2477,7 +2477,7 @@
 //                        ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                           ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             panic error("double ungetc");
 //^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -2549,7 +2549,7 @@
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
 //                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.block.ballerina meta.brace.round.ballerina
-//                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                    ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                     ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             return ();
 //^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -2624,7 +2624,7 @@
 //                     ^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.operator.ballerina
 //                      ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                       ^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
-//                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                          ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             // JBUG should not need to cast here //30734
 //^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -2678,7 +2678,7 @@
 //                 ^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.other.ballerina
 //                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                    ^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina support.type.primitive.ballerina
-//                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                           ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >                 // JBUG cast //30734
 //^^^^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina

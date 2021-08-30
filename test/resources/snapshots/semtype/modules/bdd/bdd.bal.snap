@@ -171,7 +171,7 @@
 //          ^^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.operator.ballerina
 //             ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //              ^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
-//                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >         return b1;
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -193,7 +193,7 @@
 //               ^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.other.ballerina
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                  ^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina support.type.primitive.ballerina
-//                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                         ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >         return b1 == true ? true : b2;
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -227,7 +227,7 @@
 //               ^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.other.ballerina
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                  ^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina support.type.primitive.ballerina
-//                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                         ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >         return b2 == true ? true : b1;
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -283,7 +283,7 @@
 //               ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
 //                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina constant.numeric.decimal.ballerina
-//                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             return create(b1.atom,
 //^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -334,7 +334,7 @@
 //                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
 //                     ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina constant.numeric.decimal.ballerina
-//                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >              return create(b2.atom,
 //^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -473,7 +473,7 @@
 //          ^^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.operator.ballerina
 //             ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //              ^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
-//                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >         return b1;
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -495,7 +495,7 @@
 //               ^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.other.ballerina
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                  ^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina support.type.primitive.ballerina
-//                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                         ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >         return b1 == true ? b2 : false;
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -529,7 +529,7 @@
 //               ^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.other.ballerina
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                  ^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina support.type.primitive.ballerina
-//                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                         ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >         return b2 == true ? b1 : false;
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -585,7 +585,7 @@
 //               ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
 //                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina constant.numeric.decimal.ballerina
-//                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             return create(b1.atom,
 //^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -648,7 +648,7 @@
 //                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
 //                     ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina constant.numeric.decimal.ballerina
-//                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             return create(b2.atom,
 //^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -820,7 +820,7 @@
 //          ^^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.operator.ballerina
 //             ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //              ^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
-//                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >         return false;
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -842,7 +842,7 @@
 //               ^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.other.ballerina
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                  ^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina support.type.primitive.ballerina
-//                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                         ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >         return b2 == true ? false : b1;
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -876,7 +876,7 @@
 //               ^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.other.ballerina
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                  ^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina support.type.primitive.ballerina
-//                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                         ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >         return b1 == true ?  complement(b2) : false;
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -935,7 +935,7 @@
 //               ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
 //                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina constant.numeric.decimal.ballerina
-//                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             return create(b1.atom,
 //^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1006,7 +1006,7 @@
 //                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
 //                     ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina constant.numeric.decimal.ballerina
-//                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             return create(b2.atom,
 //^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1167,7 +1167,7 @@
 //         ^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.other.ballerina
 //           ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //            ^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina support.type.primitive.ballerina
-//                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                   ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >         return !b;
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -1195,7 +1195,7 @@
 //                   ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
 //                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                       ^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.other.ballerina
-//                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                             ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             return create(b.atom,
 //^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1254,7 +1254,7 @@
 //                       ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
 //                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                           ^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.other.ballerina
-//                                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >             return create(b.atom,
 //^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1313,7 +1313,7 @@
 //                         ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.operator.ballerina
 //                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                             ^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina keyword.other.ballerina
-//                                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
 //                                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >              return create(b.atom,
 //^^^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina meta.block.ballerina
@@ -1481,7 +1481,7 @@
 //              ^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.operator.ballerina
 //                ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                 ^^^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.other.ballerina
-//                     ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                     ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >         return true;
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
@@ -1501,7 +1501,7 @@
 //            ^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.operator.ballerina
 //              ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //               ^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina variable.other.readwrite.ballerina
-//                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.brace.round.ballerina
+//                    ^ source.ballerina meta.function.ballerina meta.block.ballerina
 //                     ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina punctuation.definition.block.ballerina
 >         return union(left, middle);
 //^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.block.ballerina
