@@ -1824,7 +1824,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>\s+(\b(self)|\b(is|new|isolated|null|function|in)\b|(string|int|boolean|float|byte|decimal|json|xml)\b|([_$[:alpha:]][_$[:alnum:]]*))</string>
+            <string>\s+(\b(self)|\b(is|new|isolated|null|function|in)\b|(string|int|boolean|float|byte|decimal|json|xml)\b|\b(readonly|error|map)\b|([_$[:alpha:]][_$[:alnum:]]*))</string>
             <key>captures</key>
             <dict>
               <key>2</key>
@@ -1843,6 +1843,11 @@
                 <string>support.type.primitive.ballerina</string>
               </dict>
               <key>5</key>
+              <dict>
+                <key>name</key>
+                <string>storage.type.ballerina</string>
+              </dict>
+              <key>6</key>
               <dict>
                 <key>name</key>
                 <string>meta.definition.function.ballerina entity.name.function.ballerina</string>
