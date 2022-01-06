@@ -4758,6 +4758,10 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#xml</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#call</string>
               </dict>
               <dict>

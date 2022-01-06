@@ -1569,6 +1569,7 @@ repository:
       patterns:
       - include: '#booleans'
       - include: '#self-literal'
+      - include: '#xml'
       - include: '#call' 
       - match: '{{otherKeywords}}|{{booleanTypes}}|{{controlKeywords}}|{{definedTypes}}|{{varExprStart}}\b|({{identifier}})((\.)({{identifier}})(\()(\)))?'
         captures: 
