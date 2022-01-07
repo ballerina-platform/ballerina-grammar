@@ -1213,7 +1213,7 @@ repository:
       begin: (?={{varExprStart}})
       beginCaptures:
           '0': { name: storage.modifier.ballerina support.type.primitive.ballerina }
-      end: (?!{{varExprStart}})((?=;|}|{{endOfStatement}})|((?<!{{lookBehindString}}|{{lookBehindInt}})(?=\s*$)))
+      end: (?!{{varExprStart}})((?=;|}|{{endOfStatement}})|({{startOfIdentifier}}(?=(if)\s+))|((?<!{{lookBehindString}}|{{lookBehindInt}})(?=\s*$)))
       patterns:
       - begin: '{{varExprStart}}(?=\s+|\[|\?|\||\:)'
         beginCaptures:
