@@ -3658,6 +3658,10 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#comment</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#stringTemplate</string>
               </dict>
               <dict>
@@ -3724,6 +3728,10 @@
                 </dict>
                 <key>end</key>
                 <string>(?=\S)</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
               </dict>
               <dict>
                 <key>include</key>

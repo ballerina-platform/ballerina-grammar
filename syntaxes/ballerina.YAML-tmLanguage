@@ -1223,6 +1223,7 @@ repository:
         name: keyword.operator.type.annotation.ballerina
       - name: keyword.other.ballerina
         match: \bin\b  
+      - include: '#comment'
       - include: '#stringTemplate'
       - include: '#numbers' 
       - include: '#multiType'
@@ -1243,6 +1244,7 @@ repository:
         beginCaptures:
           '0': { name: keyword.other.ballerina }
         end: (?=\S)
+      - include: '#comment'
       - include: '#stringTemplate'
       - include: '#var-single-const' 
       - include: '#variable-initializer' 
