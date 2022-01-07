@@ -139,6 +139,10 @@
           </dict>
           <dict>
             <key>include</key>
+            <string>#source</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#keywords</string>
           </dict>
         </array>
@@ -4383,6 +4387,31 @@
                 <string>#string-character-escape</string>
               </dict>
             </array>
+          </dict>
+        </array>
+      </dict>
+      <key>source</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>(\bsource\b)\s+([_$[:alpha:]][_$[:alnum:]]*)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.other.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>variable.other.readwrite.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=\,)|(?=\;)</string>
           </dict>
         </array>
       </dict>
