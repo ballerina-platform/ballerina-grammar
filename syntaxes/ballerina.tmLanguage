@@ -4791,6 +4791,10 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#stringTemplate</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#self-literal</string>
               </dict>
               <dict>

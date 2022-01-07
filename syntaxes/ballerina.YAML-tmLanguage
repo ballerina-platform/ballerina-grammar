@@ -1579,6 +1579,7 @@ repository:
       end: (?<![:|&])((?=$|^|[,);\}\]\?\>\=>]|//)|(?==[^>])|((?<=[\}>\]\)]|[_$[:alpha:]])\s*(?=\{)))(\?)?
       patterns:
       - include: '#booleans'
+      - include: '#stringTemplate'
       - include: '#self-literal'
       - include: '#xml'
       - include: '#call' 
