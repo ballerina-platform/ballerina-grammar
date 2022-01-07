@@ -1100,7 +1100,7 @@ repository:
   service-decl:
     name: meta.service.declaration.ballerina
     begin: '\bservice\b'
-    end: '(?={{endOfStatement}})|(?<=\})'
+    end: '(?={{endOfStatement}})|(?<=\})|(?<=\,)'
     beginCaptures:
       '0': { name:  keyword.ballerina }
     patterns:
