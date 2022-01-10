@@ -1,0 +1,64 @@
+// SYNTAX TEST "source.ballerina" "string template highlighting testcase"
+
+> const int i = 1;
+//^^^^^^ source.ballerina meta.var.expr.ballerina keyword.other.ballerina
+//      ^^^ source.ballerina meta.var.expr.ballerina support.type.primitive.ballerina
+//         ^ source.ballerina meta.var.expr.ballerina
+//          ^ source.ballerina meta.var.expr.ballerina meta.definition.variable.ballerina variable.other.constant.ballerina
+//           ^ source.ballerina meta.var.expr.ballerina
+//            ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//             ^ source.ballerina meta.var.expr.ballerina
+//              ^ source.ballerina meta.var.expr.ballerina constant.numeric.decimal.ballerina
+//               ^ source.ballerina punctuation.terminator.statement.ballerina
+> final string message = string`foo bar: ${i}`;
+//^^^^^ source.ballerina keyword.other.ballerina
+//     ^ source.ballerina
+//      ^^^^^^ source.ballerina meta.var.expr.ballerina support.type.primitive.ballerina
+//            ^ source.ballerina meta.var.expr.ballerina
+//             ^^^^^^^ source.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina meta.definition.variable.ballerina variable.other.readwrite.ballerina
+//                    ^ source.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
+//                     ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//                      ^ source.ballerina meta.var.expr.ballerina
+//                       ^^^^^^ source.ballerina meta.var.expr.ballerina support.type.primitive.ballerina
+//                             ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.string.template.begin.ballerina
+//                              ^^^^^^^^^ source.ballerina meta.var.expr.ballerina string.template.ballerina
+//                                       ^^ source.ballerina meta.var.expr.ballerina string.template.ballerina meta.template.expression.ballerina punctuation.definition.template-expression.begin.ballerina
+//                                         ^ source.ballerina meta.var.expr.ballerina string.template.ballerina meta.template.expression.ballerina meta.embedded.line.ballerina variable.other.readwrite.ballerina
+//                                          ^ source.ballerina meta.var.expr.ballerina string.template.ballerina meta.template.expression.ballerina punctuation.definition.template-expression.end.ballerina
+//                                           ^ source.ballerina meta.var.expr.ballerina string.template.ballerina punctuation.definition.string.template.end.ballerina
+//                                            ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
+> var obj = {
+//^^^ source.ballerina meta.var.expr.ballerina support.type.primitive.ballerina
+//   ^ source.ballerina meta.var.expr.ballerina
+//    ^^^ source.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina meta.definition.variable.ballerina variable.other.readwrite.ballerina
+//       ^ source.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
+//        ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+//         ^ source.ballerina meta.var.expr.ballerina
+//          ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina punctuation.definition.block.ballerina
+>     // rendering of the string template should be the same as 
+//^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina
+//    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina comment.ballerina
+>     // for 'final string message' above
+//^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina
+//    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina comment.ballerina
+>     message: string`foo bar with ${i}`
+//^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina
+//    ^^^^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina variable.other.readwrite.ballerina
+//           ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+//            ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina
+//             ^^^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina string.template.ballerina entity.name.function.tagged-template.ballerina support.type.primitive.ballerina
+//                   ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina string.template.ballerina punctuation.definition.string.template.begin.ballerina
+//                    ^^^^^^^^^^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina string.template.ballerina
+//                                 ^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina string.template.ballerina meta.template.expression.ballerina punctuation.definition.template-expression.begin.ballerina
+//                                   ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina string.template.ballerina meta.template.expression.ballerina meta.embedded.line.ballerina variable.other.readwrite.ballerina
+//                                    ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina string.template.ballerina meta.template.expression.ballerina punctuation.definition.template-expression.end.ballerina
+//                                     ^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina meta.type.annotation.ballerina string.template.ballerina punctuation.definition.string.template.end.ballerina
+> 
+> // this comment should be rendered in green
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina comment.ballerina
+> 
+> };
+//^ source.ballerina meta.var.expr.ballerina meta.objectliteral.ballerina punctuation.definition.block.ballerina
+// ^ source.ballerina punctuation.terminator.statement.ballerina
+> 
