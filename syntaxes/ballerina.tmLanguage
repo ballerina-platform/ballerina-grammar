@@ -3716,7 +3716,7 @@
             <key>begin</key>
             <string>(?=\b(const(?!\s+enum\b)))</string>
             <key>end</key>
-            <string>(?!\b(const(?!\s+enum\b)))((?=;|}|;|^\s*$|(?:^\s*(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b))|((?&lt;!^string|[^\._$[:alnum:]]string|^int|[^\._$[:alnum:]]int)(?=\s*$)))</string>
+            <string>(?!\b(const(?!\s+enum\b)))((?=\bannotation\b|;|}|;|^\s*$|(?:^\s*(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b))|((?&lt;!^string|[^\._$[:alnum:]]string|^int|[^\._$[:alnum:]]int)(?=\s*$)))</string>
             <key>patterns</key>
             <array>
               <dict>

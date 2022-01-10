@@ -1239,7 +1239,7 @@ repository:
     # const
     - name: meta.var.expr.ballerina
       begin: (?={{constExprStart}})
-      end: (?!{{constExprStart}})((?=;|}|{{endOfStatement}})|((?<!{{lookBehindString}}|{{lookBehindInt}})(?=\s*$)))
+      end: (?!{{constExprStart}})((?=\bannotation\b|;|}|{{endOfStatement}})|((?<!{{lookBehindString}}|{{lookBehindInt}})(?=\s*$)))
       patterns:
       - begin: '{{constExprStart}}\s+'
         beginCaptures:
