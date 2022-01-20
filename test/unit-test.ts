@@ -177,4 +177,21 @@ describe('Unit tests', () => {
     it('semtype/modules/json/schema.bal snapshot test', () => {
         return runTextMateTest('semtype/modules/json/schema');
     });
+
+    it('const snapshot test', () => {
+        return runTextMateTest('const');
+    });
+
+    it('annotation snapshot test', () => {
+        return runTextMateTest('annotation');
+    });
+
+    it('String Template snapshot test', () => {
+        return runTextMateTest('stringTemplate');
+    });
+
+    it('match snapshot test', () => {
+        return runTextMateTest('match');
+    });
+
 });

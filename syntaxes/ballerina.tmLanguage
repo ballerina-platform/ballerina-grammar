@@ -139,6 +139,10 @@
           </dict>
           <dict>
             <key>include</key>
+            <string>#source</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#keywords</string>
           </dict>
         </array>
@@ -2782,7 +2786,7 @@
         <array>
           <dict>
             <key>match</key>
-            <string>\b0[xX][\da-f]+\b|\b\d+(?:\.(?:\d+|$))?</string>
+            <string>\b0[xX][\da-fA-F]+\b|\b\d+(?:\.(?:\d+|$))?</string>
             <key>name</key>
             <string>constant.numeric.decimal.ballerina</string>
           </dict>
@@ -3269,7 +3273,7 @@
         <key>begin</key>
         <string>\bservice\b</string>
         <key>end</key>
-        <string>(?=;|^\s*$|(?:^\s*(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b))|(?&lt;=\})</string>
+        <string>(?=;|^\s*$|(?:^\s*(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b))|(?&lt;=\})|(?&lt;=\,)</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
@@ -3627,7 +3631,7 @@
               </dict>
             </dict>
             <key>end</key>
-            <string>(?!\b(var))((?=;|}|;|^\s*$|(?:^\s*(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b))|((?&lt;!^string|[^\._$[:alnum:]]string|^int|[^\._$[:alnum:]]int)(?=\s*$)))</string>
+            <string>(?!\b(var))((?=;|}|;|^\s*$|(?:^\s*(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b))|((?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?=(if)\s+))|((?&lt;!^string|[^\._$[:alnum:]]string|^int|[^\._$[:alnum:]]int)(?=\s*$)))</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -3655,6 +3659,10 @@
                 <string>keyword.other.ballerina</string>
                 <key>match</key>
                 <string>\bin\b</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -3708,7 +3716,7 @@
             <key>begin</key>
             <string>(?=\b(const(?!\s+enum\b)))</string>
             <key>end</key>
-            <string>(?!\b(const(?!\s+enum\b)))((?=;|}|;|^\s*$|(?:^\s*(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b))|((?&lt;!^string|[^\._$[:alnum:]]string|^int|[^\._$[:alnum:]]int)(?=\s*$)))</string>
+            <string>(?!\b(const(?!\s+enum\b)))((?=\bannotation\b|;|}|;|^\s*$|(?:^\s*(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b))|((?&lt;!^string|[^\._$[:alnum:]]string|^int|[^\._$[:alnum:]]int)(?=\s*$)))</string>
             <key>patterns</key>
             <array>
               <dict>
@@ -3724,6 +3732,10 @@
                 </dict>
                 <key>end</key>
                 <string>(?=\S)</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#comment</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -4378,6 +4390,31 @@
           </dict>
         </array>
       </dict>
+      <key>source</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>(\bsource\b)\s+([_$[:alpha:]][_$[:alnum:]]*)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.other.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>variable.other.readwrite.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=\,)|(?=\;)</string>
+          </dict>
+        </array>
+      </dict>
       <key>types</key>
       <dict>
         <key>patterns</key>
@@ -4754,7 +4791,15 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#stringTemplate</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#self-literal</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#xml</string>
               </dict>
               <dict>
                 <key>include</key>

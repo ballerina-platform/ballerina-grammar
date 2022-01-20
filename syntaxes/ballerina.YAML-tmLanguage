@@ -143,6 +143,7 @@ repository:
     - include: '#service-decl'
     - include: '#class-defn'
     - include: '#enum-decl'
+    - include: '#source'
     - include: '#keywords'
 
   control-statement:
@@ -943,7 +944,7 @@ repository:
 
   numbers:
     patterns:
-    - match: '\b0[xX][\da-f]+\b|\b\d+(?:\.(?:\d+|$))?'
+    - match: '\b0[xX][\da-fA-F]+\b|\b\d+(?:\.(?:\d+|$))?'
       name: '{{numberScope}}'
 
   class-body:
@@ -1100,7 +1101,7 @@ repository:
   service-decl:
     name: meta.service.declaration.ballerina
     begin: '\bservice\b'
-    end: '(?={{endOfStatement}})|(?<=\})'
+    end: '(?={{endOfStatement}})|(?<=\})|(?<=\,)'
     beginCaptures:
       '0': { name:  keyword.ballerina }
     patterns:
@@ -1213,7 +1214,7 @@ repository:
       begin: (?={{varExprStart}})
       beginCaptures:
           '0': { name: storage.modifier.ballerina support.type.primitive.ballerina }
-      end: (?!{{varExprStart}})((?=;|}|{{endOfStatement}})|((?<!{{lookBehindString}}|{{lookBehindInt}})(?=\s*$)))
+      end: (?!{{varExprStart}})((?=;|}|{{endOfStatement}})|({{startOfIdentifier}}(?=(if)\s+))|((?<!{{lookBehindString}}|{{lookBehindInt}})(?=\s*$)))
       patterns:
       - begin: '{{varExprStart}}(?=\s+|\[|\?|\||\:)'
         beginCaptures:
@@ -1223,6 +1224,7 @@ repository:
         name: keyword.operator.type.annotation.ballerina
       - name: keyword.other.ballerina
         match: \bin\b  
+      - include: '#comment'
       - include: '#stringTemplate'
       - include: '#numbers' 
       - include: '#multiType'
@@ -1237,12 +1239,13 @@ repository:
     # const
     - name: meta.var.expr.ballerina
       begin: (?={{constExprStart}})
-      end: (?!{{constExprStart}})((?=;|}|{{endOfStatement}})|((?<!{{lookBehindString}}|{{lookBehindInt}})(?=\s*$)))
+      end: (?!{{constExprStart}})((?=\bannotation\b|;|}|{{endOfStatement}})|((?<!{{lookBehindString}}|{{lookBehindInt}})(?=\s*$)))
       patterns:
       - begin: '{{constExprStart}}\s+'
         beginCaptures:
           '0': { name: keyword.other.ballerina }
         end: (?=\S)
+      - include: '#comment'
       - include: '#stringTemplate'
       - include: '#var-single-const' 
       - include: '#variable-initializer' 
@@ -1444,6 +1447,14 @@ repository:
       patterns:
       - include: '#string-character-escape'
 
+  source: 
+    patterns:
+    - begin: '(\bsource\b)\s+({{identifier}})'
+      beginCaptures:
+        '1': { name:  keyword.other.ballerina }
+        '2': { name:  variable.other.readwrite.ballerina }  
+      end: (?=\,)|(?=\;)
+
   types:
     patterns:
     - name: '{{typeScope}}'
@@ -1568,7 +1579,9 @@ repository:
       end: (?<![:|&])((?=$|^|[,);\}\]\?\>\=>]|//)|(?==[^>])|((?<=[\}>\]\)]|[_$[:alpha:]])\s*(?=\{)))(\?)?
       patterns:
       - include: '#booleans'
+      - include: '#stringTemplate'
       - include: '#self-literal'
+      - include: '#xml'
       - include: '#call' 
       - match: '{{otherKeywords}}|{{booleanTypes}}|{{controlKeywords}}|{{definedTypes}}|{{varExprStart}}\b|({{identifier}})((\.)({{identifier}})(\()(\)))?'
         captures: 
