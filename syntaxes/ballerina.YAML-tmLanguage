@@ -24,6 +24,7 @@ variables:
   primitiveTypes: '(string|int|boolean|float|byte|decimal|json|xml)'
   otherKeywords: '\b(is|new|isolated|null|function|in)\b'
   controlKeywords: '\b(check|foreach|if|checkpanic)\b'
+  controlFlowKeywords: (return|break|continue|check|checkpanic|panic|trap|from|where)
   booleanTypes: '\b(true|false)\b'
   definedTypes: '\b(readonly|error|map)\b'
   constExprStart: '\b(const(?!\s+enum\b))'
@@ -1050,13 +1051,12 @@ repository:
     - include: '#decl-block'
     - include: '#comment'
     - include: '#string'
+    - include: '#parameters'
     - include: '#annotationAttachment'
     - include: '#recordLiteral'
     - include: '#stringTemplate' 
     - include: '#parameter-name'
     - include: '#variable-initializer'
-    - name: punctuation.separator.parameter.ballerina
-      match: \,
     - include: '#expression'
 
   paranthesisedBracket:
@@ -1066,6 +1066,15 @@ repository:
       patterns:
       - include: '#comment'
       - include: '#code'
+
+  parameters:
+    patterns:
+      - name: keyword.control.flow.ballerina
+        match: '\s*{{controlFlowKeywords}}\b'
+      - name: keyword.other.ballerina
+        match: '\s*(let|select)\b'  
+      - name: punctuation.separator.parameter.ballerina
+        match: \, 
 
   record:
     name: meta.record.ballerina
@@ -1629,7 +1638,7 @@ repository:
       match: \b(fork|join|while|returns|transaction|transactional|retry|commit|rollback|typeof|enum|wait|match)\b
 
     - name: keyword.control.flow.ballerina
-      match: \b(return|break|continue|check|checkpanic|panic|trap|from|where)\b
+      match: \b{{controlFlowKeywords}}\b
 
     - name: keyword.other.ballerina
       match: \b(public|private|external|return|record|object|remote|abstract|client|true|false|fail|import|version)\b

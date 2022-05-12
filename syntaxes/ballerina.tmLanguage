@@ -3122,6 +3122,10 @@
           </dict>
           <dict>
             <key>include</key>
+            <string>#parameters</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#annotationAttachment</string>
           </dict>
           <dict>
@@ -3139,12 +3143,6 @@
           <dict>
             <key>include</key>
             <string>#variable-initializer</string>
-          </dict>
-          <dict>
-            <key>name</key>
-            <string>punctuation.separator.parameter.ballerina</string>
-            <key>match</key>
-            <string>\,</string>
           </dict>
           <dict>
             <key>include</key>
@@ -3172,6 +3170,30 @@
                 <string>#code</string>
               </dict>
             </array>
+          </dict>
+        </array>
+      </dict>
+      <key>parameters</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.flow.ballerina</string>
+            <key>match</key>
+            <string>\s*(return|break|continue|check|checkpanic|panic|trap|from|where)\b</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.other.ballerina</string>
+            <key>match</key>
+            <string>\s*(let|select)\b</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>punctuation.separator.parameter.ballerina</string>
+            <key>match</key>
+            <string>\,</string>
           </dict>
         </array>
       </dict>

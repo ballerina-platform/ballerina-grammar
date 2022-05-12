@@ -194,4 +194,8 @@ describe('Unit tests', () => {
         return runTextMateTest('match');
     });
 
+    it('where snapshot test', () => {
+        return runTextMateTest('where');
+    });
+
 });
