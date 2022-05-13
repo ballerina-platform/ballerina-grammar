@@ -828,8 +828,8 @@ repository:
         - include: '#expression-operators'
         - include: '#literal'
         - include: '#paranthesised'
-      - begin: '(?<=\))'
-        end: (?=\{) 
+      - begin: '(?<=\))(?=\s|\=)'
+        end: (?=\{)
         patterns:  
         - include: '#literal'
         - include: '#keywords'
