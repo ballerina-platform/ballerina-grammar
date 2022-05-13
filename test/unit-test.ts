@@ -198,4 +198,8 @@ describe('Unit tests', () => {
         return runTextMateTest('where');
     });
 
+    it('json snapshot test', () => {
+        return runTextMateTest('json');
+    });
+
 });

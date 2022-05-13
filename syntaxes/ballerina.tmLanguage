@@ -3688,6 +3688,10 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#string</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#stringTemplate</string>
               </dict>
               <dict>
@@ -3761,6 +3765,10 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#string</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#stringTemplate</string>
               </dict>
               <dict>
@@ -3825,6 +3833,10 @@
                 <string>\|</string>
                 <key>name</key>
                 <string>keyword.operator.type.annotation.ballerina</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#string</string>
               </dict>
               <dict>
                 <key>include</key>
