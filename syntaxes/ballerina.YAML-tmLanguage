@@ -828,8 +828,8 @@ repository:
         - include: '#expression-operators'
         - include: '#literal'
         - include: '#paranthesised'
-      - begin: '(?<=\))'
-        end: (?=\{) 
+      - begin: '(?<=\))(?=\s|\=)'
+        end: (?=\{)
         patterns:  
         - include: '#literal'
         - include: '#keywords'
@@ -1234,6 +1234,7 @@ repository:
       - name: keyword.other.ballerina
         match: \bin\b  
       - include: '#comment'
+      - include: '#string'
       - include: '#stringTemplate'
       - include: '#numbers' 
       - include: '#multiType'
@@ -1255,6 +1256,7 @@ repository:
           '0': { name: keyword.other.ballerina }
         end: (?=\S)
       - include: '#comment'
+      - include: '#string'
       - include: '#stringTemplate'
       - include: '#var-single-const' 
       - include: '#variable-initializer' 
@@ -1275,6 +1277,7 @@ repository:
         end: (?=\S)
       - match: '\|'
         name: keyword.operator.type.annotation.ballerina
+      - include: '#string'
       - include: '#stringTemplate'
       - include: '#numbers' 
       - include: '#multiType'
