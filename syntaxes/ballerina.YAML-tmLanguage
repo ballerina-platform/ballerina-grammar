@@ -625,7 +625,7 @@ repository:
       name: meta.block.ballerina
       beginCaptures:
         '0': { name: meta.arrow.ballerina storage.type.function.arrow.ballerina }
-      end: (?=\;)|(?=\,)
+      end: (?=\;)|(?=\,)|(?=)(?=\);)
       patterns:
       - include: '#statements'
       - include: '#punctuation-comma'
@@ -638,7 +638,7 @@ repository:
     beginCaptures:
       '1': { name: keyword.other.ballerina } 
       '2': { name: keyword.other.ballerina }
-    end: (?<=\;)|(?<=\})|(?<=\,)
+    end: (?<=\;)|(?<=\})|(?<=\,)|(?=)(?=\);)
     patterns:
     - match: \bexternal\b
       name: keyword.ballerina
