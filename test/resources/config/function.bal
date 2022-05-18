@@ -778,3 +778,26 @@ xml bookXML = xml `<book>
  xml:Element x1 =
             <xml:Element> xml `<ns0:book ns0:status="available" count="5"/>`;
 xml:Element book = <xml:Element> xml `<book/>`;
+
+
+# Returns the number of steps
+#
+# + userID - User id  
+# + 'from - Start date
+# + to - End date
+# + return - Number of steps
+function getTotalSteps(string userID, string 'from, anydata to) returns int|error {
+    json fileReadJson = check io:fileReadJson("inputFile");
+    FillUpEntry[] fillupEntries = check fileReadJson.cloneWithType();
+    
+    FillUpEntry[] sortedInput = fillupEntries.sort(array:ASCENDING,
+        isolated function(FillUpEntry value) returns int => value.employeeId
+    );
+}
+
+type FillUpEntry record {|
+    int employeeId;
+    int odometerReading;
+    decimal gallons;
+    decimal gasPrice;
+|};
