@@ -912,7 +912,7 @@ repository:
 
   mdDocumentationParamDescription:
     patterns:
-    - begin: '(\+\s+)([_$[:alpha:]][_$[:alnum:]]*)(\s*\-\s+)'
+    - begin: (\+\s+)(\'?[_$[:alpha:]][_$[:alnum:]]*)(\s*\-\s+)
       beginCaptures:
         '1': { name:  keyword.operator.ballerina }
         '2': { name:  variable.other.readwrite.ballerina }

@@ -2680,7 +2680,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(\+\s+)([_$[:alpha:]][_$[:alnum:]]*)(\s*\-\s+)</string>
+            <string>(\+\s+)(\'?[_$[:alpha:]][_$[:alnum:]]*)(\s*\-\s+)</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
