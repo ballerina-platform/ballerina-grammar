@@ -1828,7 +1828,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>\s+(\b(self)|\b(is|new|isolated|null|function|in)\b|(string|int|boolean|float|byte|decimal|json|xml)\b|\b(readonly|error|map)\b|([_$[:alpha:]][_$[:alnum:]]*))</string>
+            <string>\s+(\b(self)|\b(is|new|isolated|null|function|in)\b|(string|int|boolean|float|byte|decimal|json|xml|anydata)\b|\b(readonly|error|map)\b|([_$[:alpha:]][_$[:alnum:]]*))</string>
             <key>captures</key>
             <dict>
               <key>2</key>
@@ -1962,7 +1962,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml)|\b(is|new|isolated|null|function|in)\b|\b(true|false)\b|\b(check|foreach|if|checkpanic)\b|\b(readonly|error|map)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
+            <string>(?x)(?:(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))\s+)?(?:(\.\.\.)\s*)?(?&lt;!=|:)(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(?:(this)|(string|int|boolean|float|byte|decimal|json|xml|anydata)|\b(is|new|isolated|null|function|in)\b|\b(true|false)\b|\b(check|foreach|if|checkpanic)\b|\b(readonly|error|map)\b|([_$[:alpha:]][_$[:alnum:]]*))(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))\s*(\??)</string>
             <key>captures</key>
             <dict>
               <key>2</key>
@@ -3797,7 +3797,7 @@
             <key>name</key>
             <string>meta.var.expr.ballerina</string>
             <key>begin</key>
-            <string>(string|int|boolean|float|byte|decimal|json|xml)(?=\s+|\[|\?|\||\:)</string>
+            <string>(string|int|boolean|float|byte|decimal|json|xml|anydata)(?=\s+|\[|\?|\||\:)</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -3816,7 +3816,7 @@
               </dict>
               <dict>
                 <key>begin</key>
-                <string>(string|int|boolean|float|byte|decimal|json|xml)(?=\s+|\[|\?|\||\:)</string>
+                <string>(string|int|boolean|float|byte|decimal|json|xml|anydata)(?=\s+|\[|\?|\||\:)</string>
                 <key>beginCaptures</key>
                 <dict>
                   <key>0</key>
@@ -3890,7 +3890,7 @@
             <key>name</key>
             <string>meta.var-single-variable.expr.ballerina</string>
             <key>begin</key>
-            <string>((string|int|boolean|float|byte|decimal|json|xml)|\b(readonly|error|map)\b|([_$[:alpha:]][_$[:alnum:]]*))(?=\s+|\;|\&gt;|\|)</string>
+            <string>((string|int|boolean|float|byte|decimal|json|xml|anydata)|\b(readonly|error|map)\b|([_$[:alpha:]][_$[:alnum:]]*))(?=\s+|\;|\&gt;|\|)</string>
             <key>beginCaptures</key>
             <dict>
               <key>2</key>
@@ -4457,13 +4457,13 @@
             <key>name</key>
             <string>storage.type.ballerina</string>
             <key>match</key>
-            <string>\b(handle|any|anydata|future|typedesc)\b</string>
+            <string>\b(handle|any|future|typedesc)\b</string>
           </dict>
           <dict>
             <key>name</key>
             <string>support.type.primitive.ballerina</string>
             <key>match</key>
-            <string>\b(boolean|int|string|float|decimal|byte|json|xml)\b</string>
+            <string>\b(boolean|int|string|float|decimal|byte|json|xml|anydata)\b</string>
           </dict>
           <dict>
             <key>name</key>
@@ -5228,7 +5228,7 @@
         <array>
           <dict>
             <key>match</key>
-            <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(string|int|boolean|float|byte|decimal|json|xml)(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))</string>
+            <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(string|int|boolean|float|byte|decimal|json|xml|anydata)(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))</string>
             <key>name</key>
             <string>support.type.primitive.ballerina</string>
           </dict>

@@ -828,7 +828,7 @@
 >         [anydata, map<string|string[]>][result, respHeaders] = payload;
 //^^^^^^^^ source.ballerina meta.array.literal.ballerina
 //        ^ source.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
-//         ^^^^^^^ source.ballerina meta.array.literal.ballerina storage.type.ballerina
+//         ^^^^^^^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina support.type.primitive.ballerina
 //                ^ source.ballerina meta.array.literal.ballerina punctuation.separator.comma.ballerina
 //                 ^ source.ballerina meta.array.literal.ballerina
 //                  ^^^ source.ballerina meta.array.literal.ballerina storage.type.ballerina
@@ -988,7 +988,7 @@
 >         [anydata, map<string|string[]>] [payload, headers] = check self.sClient->receive();
 //^^^^^^^^ source.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina
 //        ^ source.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina meta.brace.square.ballerina
-//         ^^^^^^^ source.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina storage.type.ballerina
+//         ^^^^^^^ source.ballerina meta.class.ballerina meta.class.body.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina support.type.primitive.ballerina
 //                ^ source.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina punctuation.separator.comma.ballerina
 //                 ^ source.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina
 //                  ^^^ source.ballerina meta.class.ballerina meta.function.ballerina meta.block.ballerina meta.array.literal.ballerina storage.type.ballerina
