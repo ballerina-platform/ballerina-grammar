@@ -21,7 +21,7 @@ variables:
   constructsAndModifiers: '(?:abstract|async|class|const|declare|enum|export|function|import|interface|let|module|namespace|return|service|type|var)\b'
   lookAheadEndOfType: '[;),}\]:?\-\+\>]|\|\||\&\&|\!\=\=|$'
   varExprStart: '\b(var)'
-  primitiveTypes: '(string|int|boolean|float|byte|decimal|json|xml)'
+  primitiveTypes: '(string|int|boolean|float|byte|decimal|json|xml|anydata)'
   otherKeywords: '\b(is|new|isolated|null|function|in)\b'
   controlKeywords: '\b(check|foreach|if|checkpanic)\b'
   controlFlowKeywords: (return|break|continue|check|checkpanic|panic|trap|from|where)
@@ -625,7 +625,7 @@ repository:
       name: meta.block.ballerina
       beginCaptures:
         '0': { name: meta.arrow.ballerina storage.type.function.arrow.ballerina }
-      end: (?=\;)|(?=\,)
+      end: (?=\;)|(?=\,)|(?=)(?=\);)
       patterns:
       - include: '#statements'
       - include: '#punctuation-comma'
@@ -638,7 +638,7 @@ repository:
     beginCaptures:
       '1': { name: keyword.other.ballerina } 
       '2': { name: keyword.other.ballerina }
-    end: (?<=\;)|(?<=\})|(?<=\,)
+    end: (?<=\;)|(?<=\})|(?<=\,)|(?=)(?=\);)
     patterns:
     - match: \bexternal\b
       name: keyword.ballerina
@@ -912,7 +912,7 @@ repository:
 
   mdDocumentationParamDescription:
     patterns:
-    - begin: '(\+\s+)([_$[:alpha:]][_$[:alnum:]]*)(\s*\-\s+)'
+    - begin: (\+\s+)(\'?[_$[:alpha:]][_$[:alnum:]]*)(\s*\-\s+)
       beginCaptures:
         '1': { name:  keyword.operator.ballerina }
         '2': { name:  variable.other.readwrite.ballerina }
@@ -1470,10 +1470,10 @@ repository:
   types:
     patterns:
     - name: '{{typeScope}}'
-      match: \b(handle|any|anydata|future|typedesc)\b
+      match: \b(handle|any|future|typedesc)\b
 
     - name: '{{primitiveScope}}'
-      match: \b(boolean|int|string|float|decimal|byte|json|xml)\b
+      match: \b(boolean|int|string|float|decimal|byte|json|xml|anydata)\b
 
     - name: '{{typeScope}}'
       match: \b(map|error|never|readonly|distinct)\b
