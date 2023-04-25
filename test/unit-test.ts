@@ -202,4 +202,9 @@ describe('Unit tests', () => {
         return runTextMateTest('json');
     });
 
+    it('regexp snapshot test', () => {
+        return runTextMateTest('regexp');
+    });
+
+
 });
