@@ -1,5 +1,103 @@
 // SYNTAX TEST "source.ballerina" "regexp template highlighting testcase"
-
+>
+>string str = "pattern";
+#^^^^^^ source.ballerina meta.var.expr.ballerina support.type.primitive.ballerina
+#      ^ source.ballerina meta.var.expr.ballerina
+#       ^^^ source.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina meta.definition.variable.ballerina variable.other.readwrite.ballerina
+#          ^ source.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
+#           ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+#            ^ source.ballerina meta.var.expr.ballerina
+#             ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+#              ^^^^^^^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina
+#                     ^ source.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+#                      ^ source.ballerina punctuation.terminator.statement.ballerina
+>type MyRecord record {
+#^^^^ source.ballerina keyword.other.ballerina
+#    ^ source.ballerina
+#     ^^^^^^^^ source.ballerina entity.name.type.ballerina
+#             ^ source.ballerina
+#              ^^^^^^ source.ballerina meta.record.ballerina keyword.other.ballerina
+#                    ^ source.ballerina meta.record.ballerina
+#                     ^ source.ballerina meta.record.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+>   string myStr = "aaa";
+#^^^ source.ballerina meta.record.ballerina meta.block.ballerina
+#   ^^^^^^ source.ballerina meta.record.ballerina meta.block.ballerina meta.var.expr.ballerina support.type.primitive.ballerina
+#         ^ source.ballerina meta.record.ballerina meta.block.ballerina meta.var.expr.ballerina
+#          ^^^^^ source.ballerina meta.record.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina meta.definition.variable.ballerina variable.other.readwrite.ballerina
+#               ^ source.ballerina meta.record.ballerina meta.block.ballerina meta.var.expr.ballerina meta.var-single-variable.expr.ballerina
+#                ^ source.ballerina meta.record.ballerina meta.block.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+#                 ^ source.ballerina meta.record.ballerina meta.block.ballerina meta.var.expr.ballerina
+#                  ^ source.ballerina meta.record.ballerina meta.block.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+#                   ^^^ source.ballerina meta.record.ballerina meta.block.ballerina meta.var.expr.ballerina string.quoted.double.ballerina
+#                      ^ source.ballerina meta.record.ballerina meta.block.ballerina meta.var.expr.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+#                       ^ source.ballerina meta.record.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+>};
+#^ source.ballerina meta.record.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+# ^ source.ballerina punctuation.terminator.statement.ballerina
+>
+>MyRecord rA = { myStr: "abc" };
+#^^^^^^^^ source.ballerina variable.other.readwrite.ballerina
+#        ^ source.ballerina
+#         ^^ source.ballerina variable.other.readwrite.ballerina
+#           ^ source.ballerina
+#            ^ source.ballerina keyword.operator.ballerina
+#             ^ source.ballerina
+#              ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+#               ^ source.ballerina meta.block.ballerina
+#                ^^^^^ source.ballerina meta.block.ballerina variable.other.readwrite.ballerina
+#                     ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+#                      ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
+#                       ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+#                        ^^^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina string.quoted.double.ballerina
+#                           ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+#                            ^ source.ballerina meta.block.ballerina meta.type.annotation.ballerina
+#                             ^ source.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+#                              ^ source.ballerina punctuation.terminator.statement.ballerina
+>string:RegExp _ = re `(abc)|${str}|[abc-f\d\-]|(?i:abc)|\p{Ll}|${rA.myStr}`;
+#^^^^^^ source.ballerina meta.var.expr.ballerina support.type.primitive.ballerina
+#      ^ source.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+#       ^^^^^^ source.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+#             ^ source.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina
+#              ^ source.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+#               ^ source.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina
+#                ^ source.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+#                 ^ source.ballerina meta.var.expr.ballerina
+#                  ^^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina support.type.primitive.ballerina
+#                    ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina
+#                     ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina punctuation.definition.regexp.template.begin.ballerina
+#                      ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina meta.group.assertion.regexp.ballerina punctuation.definition.group.regexp.ballerina
+#                       ^^^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina meta.group.assertion.regexp.ballerina
+#                          ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina meta.group.assertion.regexp.ballerina punctuation.definition.group.regexp.ballerina
+#                           ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina keyword.operator.or.regexp.ballerina
+#                            ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina keyword.control.assertion.regexp.ballerina
+#                             ^^^^^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina
+#                                  ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina keyword.operator.or.regexp.ballerina
+#                                   ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina constant.other.character-class.set.regexp.ballerina punctuation.definition.character-class.start.regexp.ballerina
+#                                    ^^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina constant.other.character-class.set.regexp.ballerina
+#                                      ^^^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina constant.other.character-class.set.regexp.ballerina constant.other.character-class.range.regexp.ballerina
+#                                         ^^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina constant.other.character-class.set.regexp.ballerina keyword.other.character-class.regexp.ballerina
+#                                           ^^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina constant.other.character-class.set.regexp.ballerina constant.character.escape.backslash.regexp
+#                                             ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina constant.other.character-class.set.regexp.ballerina punctuation.definition.character-class.end.regexp.ballerina
+#                                              ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina keyword.operator.or.regexp.ballerina
+#                                               ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina meta.group.assertion.regexp.ballerina punctuation.definition.group.regexp.ballerina
+#                                                ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina meta.group.assertion.regexp.ballerina keyword.operator.quantifier.regexp.ballerina
+#                                                 ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina meta.group.assertion.regexp.ballerina constant.other.flag.regexp.ballerina keyword.other.non-capturing-group.flags-on.regexp.ballerina
+#                                                  ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina meta.group.assertion.regexp.ballerina constant.other.flag.regexp.ballerina punctuation.other.non-capturing-group-end.regexp.ballerina
+#                                                   ^^^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina meta.group.assertion.regexp.ballerina
+#                                                      ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina meta.group.assertion.regexp.ballerina punctuation.definition.group.regexp.ballerina
+#                                                       ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina keyword.operator.or.regexp.ballerina
+#                                                        ^^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina keyword.other.unicode-property.regexp.ballerina keyword.other.unicode-property.regexp.ballerina
+#                                                          ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina keyword.other.unicode-property.regexp.ballerina punctuation.other.unicode-property.begin.regexp.ballerina
+#                                                           ^^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina keyword.other.unicode-property.regexp.ballerina
+#                                                             ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina keyword.other.unicode-property.regexp.ballerina punctuation.other.unicode-property.end.regexp.ballerina
+#                                                              ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina keyword.operator.or.regexp.ballerina
+#                                                               ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina keyword.control.assertion.regexp.ballerina
+#                                                                ^^^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina
+#                                                                   ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina keyword.other.character-class.regexp.ballerina
+#                                                                    ^^^^^^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina
+#                                                                          ^ source.ballerina meta.var.expr.ballerina regexp.template.ballerina
+#                                                                           ^ source.ballerina punctuation.terminator.statement.ballerina
+>
 >function name() {
 #^^^^^^^^ source.ballerina meta.function.ballerina keyword.other.ballerina
 #        ^ source.ballerina meta.function.ballerina
@@ -306,6 +404,69 @@
 #                                            ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina constant.other.character-class.set.regexp.ballerina punctuation.definition.character-class.end.regexp.ballerina
 #                                             ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina
 #                                              ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+>    string:RegExp _ = re `[a-z\w]`;
+#^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
+#    ^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina support.type.primitive.ballerina
+#          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+#           ^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+#                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina
+#                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+#                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina
+#                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+#                     ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina
+#                      ^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina support.type.primitive.ballerina
+#                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina
+#                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina punctuation.definition.regexp.template.begin.ballerina
+#                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina constant.other.character-class.set.regexp.ballerina punctuation.definition.character-class.start.regexp.ballerina
+#                           ^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina constant.other.character-class.set.regexp.ballerina constant.other.character-class.range.regexp.ballerina
+#                              ^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina constant.other.character-class.set.regexp.ballerina keyword.other.character-class.regexp.ballerina
+#                                ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina constant.other.character-class.set.regexp.ballerina punctuation.definition.character-class.end.regexp.ballerina
+#                                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina
+#                                  ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
 >
+>    string:RegExp _ = re `${myFunction()}`;
+#^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
+#    ^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina support.type.primitive.ballerina
+#          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina keyword.operator.type.annotation.ballerina
+#           ^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+#                 ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina
+#                  ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina variable.other.readwrite.ballerina
+#                   ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina meta.type.annotation.ballerina
+#                    ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina keyword.operator.assignment.ballerina
+#                     ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina
+#                      ^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina support.type.primitive.ballerina
+#                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina
+#                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina punctuation.definition.regexp.template.begin.ballerina
+#                          ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina keyword.control.assertion.regexp.ballerina
+#                           ^^^^^^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina
+#                                      ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina meta.group.assertion.regexp.ballerina punctuation.definition.group.regexp.ballerina
+#                                       ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina meta.group.assertion.regexp.ballerina punctuation.definition.group.regexp.ballerina
+#                                        ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina
+#                                         ^ source.ballerina meta.function.ballerina meta.block.ballerina meta.var.expr.ballerina regexp.template.ballerina
+#                                          ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
 >}
 #^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+>
+>function myFunction() retunrns string {
+#^^^^^^^^ source.ballerina meta.function.ballerina keyword.other.ballerina
+#        ^ source.ballerina meta.function.ballerina
+#         ^^^^^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+#                   ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.begin.ballerina
+#                    ^ source.ballerina meta.function.ballerina meta.parameters.ballerina punctuation.definition.parameters.end.ballerina
+#                     ^ source.ballerina meta.function.ballerina
+#                      ^^^^^^^^ source.ballerina meta.function.ballerina meta.definition.function.ballerina entity.name.function.ballerina
+#                              ^ source.ballerina meta.function.ballerina
+#                               ^^^^^^ source.ballerina meta.function.ballerina support.type.primitive.ballerina
+#                                     ^ source.ballerina meta.function.ballerina
+#                                      ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+>    return "abc";
+#^^^^ source.ballerina meta.function.ballerina meta.block.ballerina
+#    ^^^^^^ source.ballerina meta.function.ballerina meta.block.ballerina keyword.control.flow.ballerina
+#          ^ source.ballerina meta.function.ballerina meta.block.ballerina
+#           ^ source.ballerina meta.function.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.begin.ballerina
+#            ^^^ source.ballerina meta.function.ballerina meta.block.ballerina string.quoted.double.ballerina
+#               ^ source.ballerina meta.function.ballerina meta.block.ballerina string.quoted.double.ballerina punctuation.definition.string.end.ballerina
+#                ^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.terminator.statement.ballerina
+>}
+#^ source.ballerina meta.function.ballerina meta.block.ballerina punctuation.definition.block.ballerina
+>

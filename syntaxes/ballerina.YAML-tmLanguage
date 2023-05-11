@@ -1725,7 +1725,6 @@ repository:
     - include: '#paranthesisedBracket'
     - include: '#regex'
 
-
   type-primitive:
     patterns:
     - match: '{{startOfIdentifier}}{{primitiveTypes}}{{endOfIdentifier}}'
@@ -1852,4 +1851,3 @@ repository:
       name: constant.other.flag.regexp.ballerina
       patterns:
       - include: '#regexp'
-      

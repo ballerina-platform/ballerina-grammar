@@ -205,6 +205,4 @@ describe('Unit tests', () => {
     it('regexp snapshot test', () => {
         return runTextMateTest('regexp');
     });
-
-
 });

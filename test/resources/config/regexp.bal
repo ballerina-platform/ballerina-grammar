@@ -1,3 +1,12 @@
+
+string str = "pattern";
+type MyRecord record {
+   string myStr = "aaa";
+};
+
+MyRecord rA = { myStr: "abc" };
+string:RegExp _ = re `(abc)|${str}|[abc-f\d\-]|(?i:abc)|\p{Ll}|${rA.myStr}`;
+
 function name() {
 
     string pattern = "ABC";
@@ -20,5 +29,11 @@ function name() {
     string:RegExp _ = re `[((abc))))\]]`;
 
     string:RegExp _ = re `[abc\w\p{Ll}\u{FF}]`;
+    string:RegExp _ = re `[a-z\w]`;
 
+    string:RegExp _ = re `${myFunction()}`;
+}
+
+function myFunction() retunrns string {
+    return "abc";
 }
