@@ -18,7 +18,6 @@ function name() {
     string:RegExp _ = re `\p{gc=Ll}|\P{Lm}|\p{sc=Latin}`;
     string:RegExp _ = re `\u{12FFFF}`;
 
-    string:RegExp _ = re `${pattern}`;
     string:RegExp _ = re `\w\s\n`;
 
     string:RegExp _ = re `(?-:abc)`;
@@ -31,9 +30,15 @@ function name() {
     string:RegExp _ = re `[abc\w\p{Ll}\u{FF}]`;
     string:RegExp _ = re `[a-z\w]`;
 
+    string:RegExp _ = re `${pattern}`;
     string:RegExp _ = re `${myFunction()}`;
+    string:RegExp _ = re `${"ABC"}`;
+    string:RegExp _ = re `(?:${pattern})`;
+    string:RegExp _ = re `(${myFunction()})`;
+    string:RegExp _ = re `[(${"ABC"})]|[${"ABC"}]`;
+
 }
 
-function myFunction() retunrns string {
+function myFunction() returns string {
     return "abc";
 }

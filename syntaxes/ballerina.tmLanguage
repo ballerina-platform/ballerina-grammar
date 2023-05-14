@@ -5318,6 +5318,10 @@
             <array>
               <dict>
                 <key>include</key>
+                <string>#template-substitution-element</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#regexp</string>
               </dict>
             </array>
@@ -5371,6 +5375,10 @@
             </dict>
             <key>patterns</key>
             <array>
+              <dict>
+                <key>include</key>
+                <string>#template-substitution-element</string>
+              </dict>
               <dict>
                 <key>include</key>
                 <string>#regexp</string>
@@ -5457,6 +5465,10 @@
                 <string>#unicode-property-escape</string>
               </dict>
             </array>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#template-substitution-element</string>
           </dict>
           <dict>
             <key>include</key>
@@ -5675,6 +5687,10 @@
               <dict>
                 <key>include</key>
                 <string>#regexp</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#template-substitution-element</string>
               </dict>
             </array>
           </dict>

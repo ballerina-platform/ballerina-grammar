@@ -1741,6 +1741,7 @@ repository:
       endCaptures:
         '1': { name: punctuation.definition.regexp.template.end.ballerina }
       patterns:
+      - include: '#template-substitution-element'
       - include: '#regexp'
 
   regexp:
@@ -1759,6 +1760,7 @@ repository:
       endCaptures:
         '1': { name: punctuation.definition.group.regexp.ballerina }
       patterns:
+      - include: '#template-substitution-element'
       - include: '#regexp'
       - include: '#flags-on-off'
       - include: '#unicode-property-escape'
@@ -1781,10 +1783,11 @@ repository:
       - include: '#regex-character-class'
       - include: '#unicode-values'
       - include: '#unicode-property-escape'
+    - include: '#template-substitution-element'
     - include: '#regex-character-class'
     - include: '#unicode-values'
     - include: '#unicode-property-escape'
-
+    
   regex-character-class:
     patterns:
     - name: keyword.other.character-class.regexp.ballerina
@@ -1851,3 +1854,4 @@ repository:
       name: constant.other.flag.regexp.ballerina
       patterns:
       - include: '#regexp'
+      - include: '#template-substitution-element'
