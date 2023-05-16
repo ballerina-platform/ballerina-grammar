@@ -5032,7 +5032,7 @@
             <key>name</key>
             <string>keyword.other.ballerina</string>
             <key>match</key>
-            <string>\b(limit|outer|equals|order|by|ascending|descending|class|configurable|variable|module|service)\b</string>
+            <string>\b(limit|outer|equals|order|by|ascending|descending|class|configurable|variable|module|service|group|collect)\b</string>
           </dict>
           <dict>
             <key>name</key>
