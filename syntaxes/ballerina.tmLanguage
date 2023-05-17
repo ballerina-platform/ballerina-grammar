@@ -103,6 +103,10 @@
             <key>include</key>
             <string>#annotationAttachment</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#regex</string>
+          </dict>
         </array>
       </dict>
       <key>declaration</key>
@@ -204,6 +208,10 @@
             <key>include</key>
             <string>#identifiers</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#regex</string>
+          </dict>
         </array>
       </dict>
       <key>expressionWithoutIdentifiers</key>
@@ -245,6 +253,10 @@
           <dict>
             <key>include</key>
             <string>#paranthesised</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#regex</string>
           </dict>
         </array>
       </dict>
@@ -1802,6 +1814,10 @@
             <key>include</key>
             <string>#function-body</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#regex</string>
+          </dict>
         </array>
       </dict>
       <key>functionName</key>
@@ -1935,6 +1951,10 @@
           <dict>
             <key>include</key>
             <string>#identifiers</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#regex</string>
           </dict>
           <dict>
             <key>name</key>
@@ -2410,6 +2430,10 @@
                   <dict>
                     <key>include</key>
                     <string>#paranthesised</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#regex</string>
                   </dict>
                 </array>
               </dict>
@@ -3148,6 +3172,10 @@
             <key>include</key>
             <string>#expression</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#regex</string>
+          </dict>
         </array>
       </dict>
       <key>paranthesisedBracket</key>
@@ -3730,6 +3758,10 @@
                 <key>include</key>
                 <string>#type-tuple</string>
               </dict>
+              <dict>
+                <key>include</key>
+                <string>#regex</string>
+              </dict>
             </array>
           </dict>
           <dict>
@@ -3873,6 +3905,10 @@
               <dict>
                 <key>include</key>
                 <string>#type-tuple</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#regex</string>
               </dict>
             </array>
           </dict>
@@ -4052,6 +4088,10 @@
               <dict>
                 <key>include</key>
                 <string>#punctuation-accessor</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#regex</string>
               </dict>
             </array>
           </dict>
@@ -4829,6 +4869,10 @@
               </dict>
               <dict>
                 <key>include</key>
+                <string>#regex</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#self-literal</string>
               </dict>
               <dict>
@@ -5220,6 +5264,10 @@
             <key>include</key>
             <string>#paranthesisedBracket</string>
           </dict>
+          <dict>
+            <key>include</key>
+            <string>#regex</string>
+          </dict>
         </array>
       </dict>
       <key>type-primitive</key>
@@ -5231,6 +5279,420 @@
             <string>(?&lt;![_$[:alnum:]])(?:(?&lt;=\.\.\.)|(?&lt;!\.))(string|int|boolean|float|byte|decimal|json|xml|anydata)(?![_$[:alnum:]])(?:(?=\.\.\.)|(?!\.))</string>
             <key>name</key>
             <string>support.type.primitive.ballerina</string>
+          </dict>
+        </array>
+      </dict>
+      <key>regex</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>(\bre)(\s*)(`)</string>
+            <key>name</key>
+            <string>regexp.template.ballerina</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>support.type.primitive.ballerina</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.regexp.template.begin.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>`</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.regexp.template.end.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#template-substitution-element</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#regexp</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>regexp</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>keyword.control.assertion.regexp.ballerina</string>
+            <key>match</key>
+            <string>\^|\$</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.quantifier.regexp.ballerina</string>
+            <key>match</key>
+            <string>[?+*]|\{(\d+,\d+|\d+,|,\d+|\d+)\}\??</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>keyword.operator.or.regexp.ballerina</string>
+            <key>match</key>
+            <string>\|</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>meta.group.assertion.regexp.ballerina</string>
+            <key>begin</key>
+            <string>(\()</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.group.regexp.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(\))</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.group.regexp.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#template-substitution-element</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#regexp</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#flags-on-off</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#unicode-property-escape</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>constant.other.character-class.set.regexp.ballerina</string>
+            <key>begin</key>
+            <string>(\[)(\^)?</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.character-class.start.regexp.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.operator.negation.regexp.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(\])</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.character-class.end.regexp.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>name</key>
+                <string>constant.other.character-class.range.regexp.ballerina</string>
+                <key>match</key>
+                <string>(?:.|(\\(?:[0-7]{3}|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}))|(\\[^pPu]))\-(?:[^\]\\]|(\\(?:[0-7]{3}|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}))|(\\[^pPu]))</string>
+                <key>captures</key>
+                <dict>
+                  <key>1</key>
+                  <dict>
+                    <key>name</key>
+                    <string>constant.character.numeric.regexp</string>
+                  </dict>
+                  <key>2</key>
+                  <dict>
+                    <key>name</key>
+                    <string>constant.character.escape.backslash.regexp</string>
+                  </dict>
+                  <key>3</key>
+                  <dict>
+                    <key>name</key>
+                    <string>constant.character.numeric.regexp</string>
+                  </dict>
+                  <key>4</key>
+                  <dict>
+                    <key>name</key>
+                    <string>constant.character.escape.backslash.regexp</string>
+                  </dict>
+                </dict>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#regex-character-class</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#unicode-values</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#unicode-property-escape</string>
+              </dict>
+            </array>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#template-substitution-element</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#regex-character-class</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#unicode-values</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#unicode-property-escape</string>
+          </dict>
+        </array>
+      </dict>
+      <key>regex-character-class</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>keyword.other.character-class.regexp.ballerina</string>
+            <key>match</key>
+            <string>\\[wWsSdDtrn]|\.</string>
+          </dict>
+          <dict>
+            <key>name</key>
+            <string>constant.character.escape.backslash.regexp</string>
+            <key>match</key>
+            <string>\\[^pPu]</string>
+          </dict>
+        </array>
+      </dict>
+      <key>unicode-property-escape</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>keyword.other.unicode-property.regexp.ballerina</string>
+            <key>begin</key>
+            <string>(\\p|\\P)(\{)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.other.unicode-property.regexp.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.other.unicode-property.begin.regexp.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(\})</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.other.unicode-property.end.regexp.ballerina</string>
+              </dict>
+              <key>patterns</key>
+              <array>
+                <dict>
+                  <key>include</key>
+                  <string>#regex-unicode-properties-general-category</string>
+                </dict>
+                <dict>
+                  <key>include</key>
+                  <string>#regex-unicode-property-key</string>
+                </dict>
+              </array>
+            </dict>
+          </dict>
+        </array>
+      </dict>
+      <key>regex-unicode-property-key</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>keyword.other.unicode-property-key.regexp.ballerina</string>
+            <key>begin</key>
+            <string>(sc=|gc=)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.other.unicode-property-key.regexp.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>()</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.other.unicode-property.end.regexp.ballerina</string>
+              </dict>
+              <key>patterns</key>
+              <array>
+                <dict>
+                  <key>include</key>
+                  <string>#regex-unicode-properties-general-category</string>
+                </dict>
+              </array>
+            </dict>
+          </dict>
+        </array>
+      </dict>
+      <key>regex-unicode-properties-general-category</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>match</key>
+            <string>(Lu|Ll|Lt|Lm|Lo|L|Mn|Mc|Me|M|Nd|Nl|No|N|Pc|Pd|Ps|Pe|Pi|Pf|Po|P|Sm|Sc|Sk|So|S|Zs|Zl|Zp|Z|Cf|Cc|Cn|Co|C)</string>
+            <key>name</key>
+            <string>constant.other.unicode-property-general-category.regexp.ballerina</string>
+          </dict>
+        </array>
+      </dict>
+      <key>unicode-values</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>name</key>
+            <string>keyword.other.unicode-value.ballerina</string>
+            <key>begin</key>
+            <string>(\\u)(\{)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.other.unicode-value.regexp.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.other.unicode-value.begin.regexp.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>(\})</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.other.unicode-value.end.regexp.ballerina</string>
+              </dict>
+              <key>patterns</key>
+              <array>
+                <dict>
+                  <key>match</key>
+                  <string>([0-9A-Fa-f]{1,6})</string>
+                  <key>name</key>
+                  <string>constant.other.unicode-value.regexp.ballerina</string>
+                </dict>
+              </array>
+            </dict>
+          </dict>
+        </array>
+      </dict>
+      <key>flags-on-off</key>
+      <dict>
+        <key>name</key>
+        <string>meta.flags.regexp.ballerina</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>(\??)([imsx]*)(-?)([imsx]*)(:)</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>1</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.other.non-capturing-group-begin.regexp.ballerina</string>
+              </dict>
+              <key>2</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.other.non-capturing-group.flags-on.regexp.ballerina</string>
+              </dict>
+              <key>3</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.other.non-capturing-group.off.regexp.ballerina</string>
+              </dict>
+              <key>4</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.other.non-capturing-group.flags-off.regexp.ballerina</string>
+              </dict>
+              <key>5</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.other.non-capturing-group-end.regexp.ballerina</string>
+              </dict>
+            </dict>
+            <key>end</key>
+            <string>()</string>
+            <key>name</key>
+            <string>constant.other.flag.regexp.ballerina</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#regexp</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#template-substitution-element</string>
+              </dict>
+            </array>
           </dict>
         </array>
       </dict>
