@@ -194,8 +194,8 @@ describe('Unit tests', () => {
         return runTextMateTest('match');
     });
 
-    it('where snapshot test', () => {
-        return runTextMateTest('where');
+    it('query snapshot test', () => {
+        return runTextMateTest('query');
     });
 
     it('json snapshot test', () => {

@@ -30,4 +30,14 @@ function testFunction() {
             where memberAge > minMemberAge
             select memberAge).pop() >  minLeaderAge
         select leader;
+
+    var orders = [{orderCategory: "A", price: 123, id: 1}, {orderCategory: "B", price: 123, id: 2}];
+
+    var _  = from var {orderCategory, price} in orders 
+            group by orderCategory where orderCategory == "A" order by orderCategory limit 1 select sum(price);
+
+    var _  = from var {orderCategory, price} in orders group by var x = orderCategory where x == "A" order by x limit 1 select sum(price);        
+
+    int _ = from var {x, y} in [{"x":2, "y":3}, {"x":4, "y":5}]
+                collect sum(x);           
 }
