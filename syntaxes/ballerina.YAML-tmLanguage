@@ -1131,7 +1131,7 @@ repository:
     patterns:
     - include: '#string' 
     - name: entity.service.path.ballerina
-      match: '(\/({{identifier}}*)|\"{{identifier}}\")'
+      match: '(\/({{identifier}})|\"{{identifier}}\")'
 
   serviceOn:
     patterns:

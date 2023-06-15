@@ -3368,7 +3368,7 @@
             <key>name</key>
             <string>entity.service.path.ballerina</string>
             <key>match</key>
-            <string>(\/([_$[:alpha:]][_$[:alnum:]]**)|\"[_$[:alpha:]][_$[:alnum:]]*\")</string>
+            <string>(\/([_$[:alpha:]][_$[:alnum:]]*)|\"[_$[:alpha:]][_$[:alnum:]]*\")</string>
           </dict>
         </array>
       </dict>
