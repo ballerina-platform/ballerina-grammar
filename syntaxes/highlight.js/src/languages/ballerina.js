@@ -1,8 +1,7 @@
 /*
 Language: Ballerina
-Author: John Smith <email@domain.com>
-Contributors: Mike Johnson <...@...>, Matt Wilson <...@...>
-Description: Some cool language definition
+Requires: xml.js
+Author: Yasith Deelaka <yasitham@wso2.com>
 Website: https://ballerina.io
 */
 
