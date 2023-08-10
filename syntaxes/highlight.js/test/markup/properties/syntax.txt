@@ -1,0 +1,20 @@
+# comment
+  # comment
+! comment
+  ! comment
+key=val
+key = val
+key:val
+key : val
+key val
+key   val
+key = val\
+      val
+key\ key\:\= val
+key
+# if the number of backslashes at the end of the line is even, the next line is not included in the value
+key = val\\
+key = diffValue\\\\
+# val with odd number of backslash, here val2 is part of the key
+key = val\\\
+      val2

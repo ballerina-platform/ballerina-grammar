@@ -1,0 +1,21 @@
+def f do
+  :ok
+end
+
+def f(list) do
+  :ok
+end
+
+def f :clear, list do
+  :ok
+end
+
+def f!, do: IO.puts "hello world"
+
+defp f?, do: true
+
+defmacro foo, do: :ok
+
+defmacrop do_foo, do: :ok
+
+x = 5

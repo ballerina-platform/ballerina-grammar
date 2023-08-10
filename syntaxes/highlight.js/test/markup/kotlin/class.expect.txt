@@ -1,0 +1,16 @@
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span> {
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">B</span>()
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">C</span>() {}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">D</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">E1</span>&lt;<span class="hljs-type">T</span>&gt;
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">E2</span>&lt;<span class="hljs-type">T, R</span>&gt;
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">E3</span>&lt;<span class="hljs-type">T,R</span>&gt;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">F1</span> : <span class="hljs-type">A</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">F2</span> : <span class="hljs-type">A</span>, <span class="hljs-type">B</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">F3</span> : <span class="hljs-type">A</span>&lt;<span class="hljs-type">T</span>&gt;

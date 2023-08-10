@@ -1,0 +1,2 @@
+def f(x: int, *, y: bool = True) -> None:
+    pass

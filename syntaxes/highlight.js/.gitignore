@@ -1,0 +1,24 @@
+.DS_Store
+build
+docs/_build
+__pycache__
+*.swp
+node_modules
+.project
+yarn.lock
+extra/
+
+# play stuff
+quick*
+test*.*
+extra*
+
+# editors
+.idea/
+.nova/
+.vscode/
+.Rproj.user
+
+# misc
+/work
+/website

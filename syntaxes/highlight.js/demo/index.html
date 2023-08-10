@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- This file is intended to be built using the instructions here: http://highlightjs.readthedocs.io/en/latest/building-testing.html#building -->
+<head>
+  <meta charset="utf-8">
+  <title>highlight.js demo</title>
+  <link rel="shortcut icon" type="image/png" href="https://highlightjs.org/static/favicon.png">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" title="Default" href="styles/default.css">
+  <% styles.forEach(({ name, path }) => {%>
+  <link rel="alternate stylesheet" title="<%= name %>" href="<%= path %>" disabled="disabled">
+  <% }); %>
+
+  <script defer src="../highlight<%= minify ? '.min' : '' %>.js"></script>
+  <script defer src="demo.js"></script>
+</head>
+<body>
+  <aside>
+    <header>
+      <h1><a href="https://highlightjs.org">highlight.js</a> demo</h1>
+    </header>
+    <h2>Language Categories</h2>
+    <ul class="categories">
+      <% categories.forEach(({category, count}, i) => {%>
+      <li><a <%= i ? '' : 'class="current"'%> data-category="<%= category %>" href="#<%= category %>"><%= `${category} (${count})` %></a></li>
+      <% }); %>
+    </ul>
+    <h2>Themes</h2>
+    <ul class="styles">
+      <li><a class="current" href="#default">Default</a></li>
+      <% styles.forEach(({name}) => {%>
+      <li><a href="#<%= name %>"><%= name %></a></li>
+      <% }); %>
+    </ul>
+  </aside>
+
+  <main>
+    <% languages.forEach(({categories, name, prettyName, sample}) => { %>
+    <div class="<%= categories.includes('common') ? '' : 'hidden ' %><%= categories.join(' ') %>">
+      <h2><%= prettyName %></h2>
+      <pre><code class="language-<%= name %>"><%- sample %></code></pre>
+    </div>
+    <% }); %>
+  </main>
+</body>
+</html>

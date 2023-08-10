@@ -1,0 +1,18 @@
+public class Greet {
+    public Either<Integer, String> f(int val) {
+        new Type();
+        if (val) {
+            return getType();
+        } else if (!val) {
+            throw getError();
+        }
+    }
+}
+
+sealed interface Command permits LoginCommand {
+    void run();
+}
+
+non-sealed abstract class UserPluginCommand extends Command {
+    void runAsUser();
+}

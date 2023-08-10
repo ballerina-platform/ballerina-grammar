@@ -1,0 +1,1 @@
+(<span class="hljs-name">scheme</span> <span class="hljs-symbol">&#x27;a</span> &#x27;(a quoted (list)) `(quoted))

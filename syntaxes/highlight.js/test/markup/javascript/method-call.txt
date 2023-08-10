@@ -1,0 +1,7 @@
+x.continue(0);
+
+x = [
+hljs.COMMENT(/\{%\s*comment\s*%}/, /\{%\s*endcomment\s*%}/),
+hljs.COMMENT(/\{#/, /#}/),
+]
+

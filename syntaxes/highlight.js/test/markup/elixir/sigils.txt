@@ -1,0 +1,49 @@
+~R'this + i\s "a" regex too'
+~w(hello #{ ["has" <> "123", '\c\d', "\123 interpol" | []] } world)s
+~W(hello #{no "123" \c\d \123 interpol} world)s
+~s{Escapes terminators \{ and \}, but no {balancing} # outside of sigil here }
+~S"No escapes \s\t\n and no #{interpolation}"
+
+~S(No escapes \" \' \\ \a \b \d \e \f \n \r \s \t \v \0)
+~s(Plenty of escapes \" \' \\ \a \b \d \e \f \n \r \s \t \v \0)
+
+~S/hello/
+~S|hello|
+~S"hello"
+~S'hello'
+~S(hello)
+~S[hello]
+~S{hello}
+~S<hello>
+
+~s/hello #{name}/
+~s|hello #{name}|
+~s"hello #{name}"
+~s'hello #{name}'
+~s(hello #{name})
+~s[hello #{name}]
+~s{hello #{name}}
+~s<hello #{name}>
+
+~r/hello/
+~r|hello|u
+~r"hello"i
+~r'hello'm
+~r(hello)x
+~r[hello]f
+~r{hello}U
+~r<hello>
+
+~r<regex here>uismxfU
+~r/regex here/uismxfU
+~R<regex here>uismxfU
+~R/regex here/uismxfU
+
+~r|foo\|bar|
+~R|foo\|bar|
+
+~r(hello( there\)*!)u
+~R(hello( there\)*!)u
+
+~s|foo\|bar|
+~S|foo\|bar|

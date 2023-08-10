@@ -1,0 +1,19 @@
+class MyComponent extends Component<Props> {
+    render() {
+        let a : Array<Array<number>> = [[1,2]];
+        let b = new Map<string,number>();
+        return (
+            <div />
+        );
+    }
+}
+
+export function getModuleInstanceState(node: Node): ModuleInstanceState {
+    else if (node.kind === SyntaxKind.ModuleDeclaration) {
+        return getModuleInstanceState((<Array<Array<number>>node).body);
+        return getModuleInstanceState((<ModuleDeclaration>node).body);
+    }
+    else {
+        return ModuleInstanceState.Instantiated;
+    }
+}
