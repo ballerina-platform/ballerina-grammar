@@ -121,8 +121,6 @@ export default function (hljs) {
     "readonly",
     "distinct",
     "stream",
-
-    // manually added
     "type",
     "var",
   ];
