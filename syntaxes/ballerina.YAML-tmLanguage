@@ -1805,9 +1805,9 @@ repository:
       end: (\})
       endCaptures:
         '1': { name: punctuation.other.unicode-property.end.regexp.ballerina }
-        patterns:
-        - include: '#regex-unicode-properties-general-category'
-        - include: '#regex-unicode-property-key'
+      patterns:
+      - include: '#regex-unicode-properties-general-category'
+      - include: '#regex-unicode-property-key'
 
   regex-unicode-property-key:
     patterns:
@@ -1818,8 +1818,8 @@ repository:
       end: ()
       endCaptures:
         '1': { name: punctuation.other.unicode-property.end.regexp.ballerina }
-        patterns:
-        - include: '#regex-unicode-properties-general-category'
+      patterns:
+      - include: '#regex-unicode-properties-general-category'
 
   regex-unicode-properties-general-category:
     patterns:
@@ -1836,9 +1836,9 @@ repository:
       end: (\})
       endCaptures:
         '1': { name: punctuation.other.unicode-value.end.regexp.ballerina }
-        patterns:
-        - match: ([0-9A-Fa-f]{1,6})
-          name: constant.other.unicode-value.regexp.ballerina
+      patterns:
+      - match: ([0-9A-Fa-f]{1,6})
+        name: constant.other.unicode-value.regexp.ballerina
 
   flags-on-off:
     name: meta.flags.regexp.ballerina

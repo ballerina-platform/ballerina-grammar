@@ -5533,18 +5533,18 @@
                 <key>name</key>
                 <string>punctuation.other.unicode-property.end.regexp.ballerina</string>
               </dict>
-              <key>patterns</key>
-              <array>
-                <dict>
-                  <key>include</key>
-                  <string>#regex-unicode-properties-general-category</string>
-                </dict>
-                <dict>
-                  <key>include</key>
-                  <string>#regex-unicode-property-key</string>
-                </dict>
-              </array>
             </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#regex-unicode-properties-general-category</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#regex-unicode-property-key</string>
+              </dict>
+            </array>
           </dict>
         </array>
       </dict>
@@ -5574,14 +5574,14 @@
                 <key>name</key>
                 <string>punctuation.other.unicode-property.end.regexp.ballerina</string>
               </dict>
-              <key>patterns</key>
-              <array>
-                <dict>
-                  <key>include</key>
-                  <string>#regex-unicode-properties-general-category</string>
-                </dict>
-              </array>
             </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#regex-unicode-properties-general-category</string>
+              </dict>
+            </array>
           </dict>
         </array>
       </dict>
@@ -5628,16 +5628,16 @@
                 <key>name</key>
                 <string>punctuation.other.unicode-value.end.regexp.ballerina</string>
               </dict>
-              <key>patterns</key>
-              <array>
-                <dict>
-                  <key>match</key>
-                  <string>([0-9A-Fa-f]{1,6})</string>
-                  <key>name</key>
-                  <string>constant.other.unicode-value.regexp.ballerina</string>
-                </dict>
-              </array>
             </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>match</key>
+                <string>([0-9A-Fa-f]{1,6})</string>
+                <key>name</key>
+                <string>constant.other.unicode-value.regexp.ballerina</string>
+              </dict>
+            </array>
           </dict>
         </array>
       </dict>
