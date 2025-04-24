@@ -458,7 +458,7 @@
           </dict>
           <dict>
             <key>include</key>
-            <string>#naturalFunction</string>
+            <string>#natural-expr</string>
           </dict>
           <dict>
             <key>include</key>
@@ -1745,7 +1745,7 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#naturalFunction</string>
+                <string>#natural-expr</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -1765,7 +1765,7 @@
           </dict>
         </array>
       </dict>
-      <key>naturalFunction</key>
+      <key>natural-expr</key>
       <dict>
         <key>patterns</key>
         <array>
@@ -1794,13 +1794,13 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#naturalFunction-body</string>
+                <string>#natural-expr-body</string>
               </dict>
             </array>
           </dict>
         </array>
       </dict>
-      <key>naturalFunction-body</key>
+      <key>natural-expr-body</key>
       <dict>
         <key>patterns</key>
         <array>

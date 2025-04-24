@@ -233,7 +233,7 @@ repository:
     - include: '#self-literal'
     - name: 'keyword.control.ballerina'
       match: '{{controlKeywords}}'
-    - include: '#naturalFunction'
+    - include: '#natural-expr'
     - include: '#call'  
     - name: 'support.type.primitive.ballerina'
       match: '{{varExprStart}}\b'
@@ -631,13 +631,13 @@ repository:
         '0': { name: meta.arrow.ballerina storage.type.function.arrow.ballerina }
       end: (?=\;)|(?=\,)|(?=)(?=\);)
       patterns:
-      - include: '#naturalFunction'
+      - include: '#natural-expr'
       - include: '#statements'
       - include: '#punctuation-comma'
     - name: keyword.generator.asterisk.ballerina
       match: \*
 
-  naturalFunction:
+  natural-expr:
     patterns:
     - begin: 'natural'
       end: (?=\})
@@ -646,9 +646,9 @@ repository:
       endCaptures:
         '0': { name: punctuation.definition.block.ballerina }
       patterns:
-      - include: '#naturalFunction-body'
+      - include: '#natural-expr-body'
 
-  naturalFunction-body:
+  natural-expr-body:
     patterns:
     - begin: \{
       beginCaptures:
