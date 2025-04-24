@@ -458,6 +458,10 @@
           </dict>
           <dict>
             <key>include</key>
+            <string>#naturalFunction</string>
+          </dict>
+          <dict>
+            <key>include</key>
             <string>#call</string>
           </dict>
           <dict>
@@ -1741,6 +1745,10 @@
             <array>
               <dict>
                 <key>include</key>
+                <string>#naturalFunction</string>
+              </dict>
+              <dict>
+                <key>include</key>
                 <string>#statements</string>
               </dict>
               <dict>
@@ -1754,6 +1762,86 @@
             <string>keyword.generator.asterisk.ballerina</string>
             <key>match</key>
             <string>\*</string>
+          </dict>
+        </array>
+      </dict>
+      <key>naturalFunction</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>natural</string>
+            <key>end</key>
+            <string>(?=\})</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>keyword.other.ballerina</string>
+              </dict>
+            </dict>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.block.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#naturalFunction-body</string>
+              </dict>
+            </array>
+          </dict>
+        </array>
+      </dict>
+      <key>naturalFunction-body</key>
+      <dict>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>begin</key>
+            <string>\{</string>
+            <key>beginCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.block.ballerina</string>
+              </dict>
+            </dict>
+            <key>contentName</key>
+            <string>string.template.ballerina</string>
+            <key>end</key>
+            <string>(?=\})</string>
+            <key>endCaptures</key>
+            <dict>
+              <key>0</key>
+              <dict>
+                <key>name</key>
+                <string>punctuation.definition.block.ballerina</string>
+              </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#template-substitution-element</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#string-character-escape</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#templateVariable</string>
+              </dict>
+            </array>
           </dict>
         </array>
       </dict>
