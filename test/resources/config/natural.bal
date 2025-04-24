@@ -8,26 +8,20 @@ type Person record {|
     string sport;
 |};
 
-public function main() returns error? {
-    do {
-    } on fail error e {
-        log:printError("Error occurred", 'error = e);
-        return e;
-    }
-}
-
 function getPopularSportsPerson(int year, string nameSegment, np:ModelProvider model) returns Person|error => 
     natural(model) {
-        Who is apopular atheleteborn in the decade startingfrom  ${year} with
-        ${nameSegment} in theirname?
+        Who is a popular sportsperson born in the decade starting from  ${year} with
+        ${nameSegment} in their name?
     }; 
 
 int a = 1;
 int b = 2;
-
+int x = check natural { Give me a random number between ${startN} and ${endN} }
 int x = natural (a, b, a + b) {
     Test possibilities
     a: ${a}
     a and b: ${a} ${b}
     sum: ${sum(a, b)}
 };
+
+function sum(int x, int y) returns int => x + y;
