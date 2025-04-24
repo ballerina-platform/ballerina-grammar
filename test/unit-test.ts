@@ -42,6 +42,10 @@ describe('Unit tests', () => {
         return runTextMateTest('test');
     });
 
+    it('test snapshot test', () => {
+        return runTextMateTest('natural');
+    });
+
     it('semtype/main.bal snapshot test', () => {
         return runTextMateTest('semtype/main');
     });
@@ -85,7 +89,7 @@ describe('Unit tests', () => {
     it('semtype/tests/data/int-subtype.bal snapshot test', () => {
         return runTextMateTest('semtype/tests/data/int-subtype');
     });
-    
+
     it('semtype/tests/data/never.bal snapshot test', () => {
         return runTextMateTest('semtype/tests/data/never');
     });
@@ -109,7 +113,7 @@ describe('Unit tests', () => {
     it('semtype/modules/b/bbuild.bal snapshot test', () => {
         return runTextMateTest('semtype/modules/b/bbuild');
     });
-    
+
     it('semtype/modules/b/bparse.bal snapshot test', () => {
         return runTextMateTest('semtype/modules/b/bparse');
     });
