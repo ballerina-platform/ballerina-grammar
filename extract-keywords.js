@@ -14,7 +14,7 @@ const chunk = (arr, size) =>
     arr.slice(i * size, i * size + size)
 );
 
-let ballerinaYAML = yaml.safeLoad(fs.readFileSync("syntaxes/ballerina.YAML-tmLanguage").toString());
+let ballerinaYAML = yaml.load(fs.readFileSync("syntaxes/ballerina.YAML-tmLanguage").toString());
 
 const control = yaml2Array(ballerinaYAML.repository.keywords.patterns[0].match); 
 

@@ -25,7 +25,7 @@ const outFile = path.join(__dirname, 'syntaxes', 'ballerina.monarch.json');
 
 const inText = fs.readFileSync(inFile, 'utf-8');
 
-grammar = yaml.safeLoad(inText);
+grammar = yaml.load(inText);
 
 const variables = Object.assign({}, grammar.monarchVariables, grammar.variables);
 

@@ -25,7 +25,7 @@ const inFile = path.join(__dirname, 'syntaxes', 'ballerina.YAML-tmLanguage');
 const outFile = path.join(__dirname, 'syntaxes', 'ballerina.tmLanguage');
 
 const inText = fs.readFileSync(inFile, 'utf-8');
-const grammar = yaml.safeLoad(inText);
+const grammar = yaml.load(inText);
 
 const variables = Object.assign({}, grammar.tmlVariables, grammar.variables);
 
