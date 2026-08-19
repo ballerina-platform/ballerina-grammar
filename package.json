@@ -30,7 +30,7 @@
   },
   "overrides": {
     "diff": "^8.0.3",
-    "brace-expansion": "1.1.16",
+    "brace-expansion": "1.1.18",
     "vscode-tmgrammar-test": {
       "minimatch": "3.1.4"
     }
